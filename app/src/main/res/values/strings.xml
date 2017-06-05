@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Find The Shipper</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="facebook_app_id">432808617097084</string>
+    <string name="fb_login_protocol_scheme">fb432808617097084</string>
+    <string name="please_wait_facebooklogin">Just a moment</string>
+</resources>

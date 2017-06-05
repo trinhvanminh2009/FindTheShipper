@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "260595537255",
+    "firebase_url": "https://find-the-shipper.firebaseio.com",
+    "project_id": "find-the-shipper",
+    "storage_bucket": "find-the-shipper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260595537255:android:df8bd89ae58ee54a",
+        "android_client_info": {
+          "package_name": "com.minh.findtheshipper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260595537255-rkgjmpotnpj359ah8tuf14jc27gmjtf8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.minh.findtheshipper",
+            "certificate_hash": "e56d8287f9f3c66672c8192164428ec85763c269"
+          }
+        },
+        {
+          "client_id": "260595537255-7jfvd35ctqslf4vo71tuchr12rfjeenv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.minh.findtheshipper",
+            "certificate_hash": "91bcb528e0767a913ce424e6d4c9443d364aede6"
+          }
+        },
+        {
+          "client_id": "260595537255-sfotcr2nh9tl6rftcbrphhicuttgn7qd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC5a8NBcqkEhZoAWY1-dVJ1AbMM8LMTao"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260595537255-sfotcr2nh9tl6rftcbrphhicuttgn7qd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

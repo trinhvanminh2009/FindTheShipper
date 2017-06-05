@@ -1,0 +1,358 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-71:12
+	package
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:3:5-38
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.LOCATION_HARDWARE
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:10:5-75
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:10:22-73
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:12:22-76
+uses-permission#android.permission.INTERNET
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:13:5-66
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\trinh\.android\build-cache\1d80a7931e0bc1b2b61f2f0a474dcabebf01a986\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\trinh\.android\build-cache\403200fd219d0861420f8f781e8f4b3414fcea2c\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:13:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:14:5-78
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\trinh\.android\build-cache\1d80a7931e0bc1b2b61f2f0a474dcabebf01a986\output\AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\trinh\.android\build-cache\403200fd219d0861420f8f781e8f4b3414fcea2c\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:14:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:15:5-80
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:15:22-78
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:17:5-80
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:17:22-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:18:5-74
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:18:22-72
+application
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:21:5-69:19
+MERGED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-cache\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:25.3.1] C:\Users\trinh\.android\build-cache\847f7a117dec7306730194f41be07a6accc70956\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\trinh\.android\build-cache\40da3a2ba64f20294e49f8cf6bd72a2064c6f17f\output\AndroidManifest.xml:9:5-20
+MERGED from [com.mikepenz:google-material-typeface:3.0.1.0.original] C:\Users\trinh\.android\build-cache\c535f725c3721f3ff676d3706a6805a2ed08fc5b\output\AndroidManifest.xml:27:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:28:5-48:19
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\trinh\.android\build-cache\29c861ce95268b494dc776416fb3cb2cd83d3c88\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:customtabs:25.3.1] C:\Users\trinh\.android\build-cache\4c94fa0e59b6313d1bf4b62d1775b7bd4eda48dd\output\AndroidManifest.xml:26:5-20
+MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] C:\Users\trinh\.android\build-cache\92134a31c132b650bdbc3fa6874e694918843fdf\output\AndroidManifest.xml:11:5-12:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\trinh\.android\build-cache\e7e9c6ae7afd7a2c193795a03996b915b83645a4\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\trinh\.android\build-cache\79682b3c1d4e82701cbef8816b330af610a98eb1\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\trinh\.android\build-cache\ec2855ce93ca920641b5c639179bff84d9bb03b5\output\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\trinh\.android\build-cache\1d80a7931e0bc1b2b61f2f0a474dcabebf01a986\output\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\trinh\.android\build-cache\8ea8c79c584d55c13076b88db01fc0196b659694\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\trinh\.android\build-cache\a34236f09608e7b37b304823920c8117e3228ea9\output\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\trinh\.android\build-cache\403200fd219d0861420f8f781e8f4b3414fcea2c\output\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\trinh\.android\build-cache\848959570b11c8b090f325ef682059f0c883ee3e\output\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] C:\Users\trinh\.android\build-cache\9ce183b42d09423ea75ce97e5e93234f07ed365a\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\trinh\.android\build-cache\bbbdbf01cbf2468f8151316162f5ed7f17260a6d\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\trinh\.android\build-cache\d6375d539dc0368a9087b9b046dfa8cfe87f6acb\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\trinh\.android\build-cache\f4877f52d969bd37e61048a0043b6e57e1a596a5\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\trinh\.android\build-cache\ebb435d7e277ece861155c978adcffa2d79f3252\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\trinh\.android\build-cache\a22c86e8cc8f7520c2351a50a301f70ed25385f4\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\trinh\.android\build-cache\c2348715f34b9b1aa5af3d2bfd6bf4c6f7c86f7e\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\trinh\.android\build-cache\63dd41d715036611ee43dc374ed2b484f63a9c32\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:24:9-41
+	android:supportsRtl
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:26:9-35
+	android:roundIcon
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:25:9-54
+	android:allowBackup
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:22:9-35
+	android:icon
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:23:9-43
+	android:theme
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:27:9-40
+activity#com.minh.findtheshipper.MainActivity
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:29:9-35:20
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:29:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:30:13-34:29
+action#android.intent.action.MAIN
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:31:17-69
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:31:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:33:17-77
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:33:27-74
+meta-data#com.google.android.geo.API_KEY
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:44:9-46:55
+	android:value
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:46:13-52
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:45:13-58
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:48:9-49:54
+	android:value
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:49:13-52
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:48:20-65
+activity#com.facebook.FacebookActivity
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:51:9-54:48
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:29:9-32:66
+	android:label
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:54:13-45
+	android:configChanges
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:52:13-113
+	android:theme
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:32:13-63
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:51:19-63
+activity#com.facebook.CustomTabActivity
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:55:9-64:20
+	android:exported
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:57:13-36
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:56:13-58
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:58:13-63:29
+action#android.intent.action.VIEW
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:59:17-69
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:59:25-66
+category#android.intent.category.DEFAULT
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:60:17-76
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:60:27-73
+category#android.intent.category.BROWSABLE
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:61:17-78
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:61:27-75
+data
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:62:17-75
+	android:scheme
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:62:23-72
+activity#com.minh.findtheshipper.MapsActivity
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:66:9-68:68
+	android:label
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:68:13-56
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:67:13-41
+uses-sdk
+INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.mikepenz:materialdrawer:5.9.2] C:\Users\trinh\.android\build-cache\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-cache\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\trinh\.android\build-cache\94ff97efc0c93c126f7876b342959bcf320f421b\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] C:\Users\trinh\.android\build-cache\847f7a117dec7306730194f41be07a6accc70956\output\AndroidManifest.xml:20:5-44
+MERGED from [com.mikepenz:materialize:1.0.2] C:\Users\trinh\.android\build-cache\8bc2704e91a53111f0f1ab71d5fd36bd68dbae7f\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:iconics-core:2.8.5] C:\Users\trinh\.android\build-cache\9440437a5a3e146bd9759d7749ea66099881273f\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.mikepenz:fastadapter:2.5.3] C:\Users\trinh\.android\build-cache\e8fe5d07a59d11dd38b1735b69340e6569e44df6\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\trinh\.android\build-cache\40da3a2ba64f20294e49f8cf6bd72a2064c6f17f\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.jakewharton:butterknife:8.6.0] C:\Users\trinh\.android\build-cache\302a706348691c9d11f7a2f56d0ef794692725d1\output\AndroidManifest.xml:5:5-43
+MERGED from [com.mikepenz:google-material-typeface:3.0.1.0.original] C:\Users\trinh\.android\build-cache\c535f725c3721f3ff676d3706a6805a2ed08fc5b\output\AndroidManifest.xml:23:5-25:41
+MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.0] C:\Users\trinh\.android\build-cache\f5a1162db8ca50b74416141ca2e8006c6a7921a6\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\trinh\.android\build-cache\29c861ce95268b494dc776416fb3cb2cd83d3c88\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:customtabs:25.3.1] C:\Users\trinh\.android\build-cache\4c94fa0e59b6313d1bf4b62d1775b7bd4eda48dd\output\AndroidManifest.xml:20:5-44
+MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] C:\Users\trinh\.android\build-cache\92134a31c132b650bdbc3fa6874e694918843fdf\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\trinh\.android\build-cache\e7e9c6ae7afd7a2c193795a03996b915b83645a4\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\trinh\.android\build-cache\79682b3c1d4e82701cbef8816b330af610a98eb1\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\trinh\.android\build-cache\ec2855ce93ca920641b5c639179bff84d9bb03b5\output\AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-database:10.0.1] C:\Users\trinh\.android\build-cache\951aa0845da43ad3c9e96e2b32aa6078cb1a7d15\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-database-connection:10.0.1] C:\Users\trinh\.android\build-cache\5d1e6e71b45b0a30e885ea5464acc1f046954b56\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\trinh\.android\build-cache\1d80a7931e0bc1b2b61f2f0a474dcabebf01a986\output\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\trinh\.android\build-cache\8ea8c79c584d55c13076b88db01fc0196b659694\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\trinh\.android\build-cache\a34236f09608e7b37b304823920c8117e3228ea9\output\AndroidManifest.xml:4:5-42
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\trinh\.android\build-cache\403200fd219d0861420f8f781e8f4b3414fcea2c\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\trinh\.android\build-cache\848959570b11c8b090f325ef682059f0c883ee3e\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] C:\Users\trinh\.android\build-cache\9ce183b42d09423ea75ce97e5e93234f07ed365a\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\trinh\.android\build-cache\bbbdbf01cbf2468f8151316162f5ed7f17260a6d\output\AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\trinh\.android\build-cache\d6375d539dc0368a9087b9b046dfa8cfe87f6acb\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\trinh\.android\build-cache\f4877f52d969bd37e61048a0043b6e57e1a596a5\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\trinh\.android\build-cache\ebb435d7e277ece861155c978adcffa2d79f3252\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\trinh\.android\build-cache\a22c86e8cc8f7520c2351a50a301f70ed25385f4\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\trinh\.android\build-cache\c2348715f34b9b1aa5af3d2bfd6bf4c6f7c86f7e\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\trinh\.android\build-cache\63dd41d715036611ee43dc374ed2b484f63a9c32\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-cache\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-cache\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\trinh\.android\build-cache\94ff97efc0c93c126f7876b342959bcf320f421b\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] C:\Users\trinh\.android\build-cache\847f7a117dec7306730194f41be07a6accc70956\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\trinh\.android\build-cache\29c861ce95268b494dc776416fb3cb2cd83d3c88\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:customtabs:25.3.1] C:\Users\trinh\.android\build-cache\4c94fa0e59b6313d1bf4b62d1775b7bd4eda48dd\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\trinh\.android\build-cache\e7e9c6ae7afd7a2c193795a03996b915b83645a4\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\trinh\.android\build-cache\79682b3c1d4e82701cbef8816b330af610a98eb1\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\trinh\.android\build-cache\ec2855ce93ca920641b5c639179bff84d9bb03b5\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\trinh\.android\build-cache\d6375d539dc0368a9087b9b046dfa8cfe87f6acb\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\trinh\.android\build-cache\f4877f52d969bd37e61048a0043b6e57e1a596a5\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\trinh\.android\build-cache\ebb435d7e277ece861155c978adcffa2d79f3252\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\trinh\.android\build-cache\a22c86e8cc8f7520c2351a50a301f70ed25385f4\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\trinh\.android\build-cache\c2348715f34b9b1aa5af3d2bfd6bf4c6f7c86f7e\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\trinh\.android\build-cache\63dd41d715036611ee43dc374ed2b484f63a9c32\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-cache\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-cache\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\output\AndroidManifest.xml:26:9-47
+activity#com.facebook.CustomTabMainActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:33:9-71
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:33:19-68
+provider#com.facebook.internal.FacebookInitProvider
+ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:44:9-47:40
+	android:authorities
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:46:13-72
+	android:exported
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.23.0] C:\Users\trinh\.android\build-cache\30162e923c3211c432942bf8773a694acca8aad2\output\AndroidManifest.xml:45:13-70
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\trinh\.android\build-cache\1d80a7931e0bc1b2b61f2f0a474dcabebf01a986\output\AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\trinh\.android\build-cache\1d80a7931e0bc1b2b61f2f0a474dcabebf01a986\output\AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\trinh\.android\build-cache\1d80a7931e0bc1b2b61f2f0a474dcabebf01a986\output\AndroidManifest.xml:21:52-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\trinh\.android\build-cache\8ea8c79c584d55c13076b88db01fc0196b659694\output\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\trinh\.android\build-cache\8ea8c79c584d55c13076b88db01fc0196b659694\output\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\trinh\.android\build-cache\8ea8c79c584d55c13076b88db01fc0196b659694\output\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\trinh\.android\build-cache\8ea8c79c584d55c13076b88db01fc0196b659694\output\AndroidManifest.xml:19:19-85
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\trinh\.android\build-cache\403200fd219d0861420f8f781e8f4b3414fcea2c\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:22:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\trinh\.android\build-cache\403200fd219d0861420f8f781e8f4b3414fcea2c\output\AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:27:162-184
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\trinh\.android\build-cache\403200fd219d0861420f8f781e8f4b3414fcea2c\output\AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:32:16-87
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:22:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:30:9-36:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:31:13-35:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:32:25-78
+action#com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:33:17-85
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:33:25-83
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:34:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:34:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:40:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:40:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:40:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:44:9-48:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:44:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:44:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:45:13-47:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:45:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:46:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\trinh\.android\build-cache\798ac70d88966643c4e885113808a6784554345b\output\AndroidManifest.xml:46:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\trinh\.android\build-cache\848959570b11c8b090f325ef682059f0c883ee3e\output\AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\trinh\.android\build-cache\848959570b11c8b090f325ef682059f0c883ee3e\output\AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\trinh\.android\build-cache\848959570b11c8b090f325ef682059f0c883ee3e\output\AndroidManifest.xml:6:144-168
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\trinh\.android\build-cache\848959570b11c8b090f325ef682059f0c883ee3e\output\AndroidManifest.xml:6:169-192
+	android:name
+		ADDED from [com.google.firebase:firebase-common:10.0.1] C:\Users\trinh\.android\build-cache\848959570b11c8b090f325ef682059f0c883ee3e\output\AndroidManifest.xml:6:79-143
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\trinh\.android\build-cache\bbbdbf01cbf2468f8151316162f5ed7f17260a6d\output\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\trinh\.android\build-cache\bbbdbf01cbf2468f8151316162f5ed7f17260a6d\output\AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\trinh\.android\build-cache\bbbdbf01cbf2468f8151316162f5ed7f17260a6d\output\AndroidManifest.xml:20:20-65
