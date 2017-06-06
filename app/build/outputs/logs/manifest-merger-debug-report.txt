@@ -63,6 +63,7 @@ MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\trinh\.android\bu
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\trinh\.android\build-cache\79682b3c1d4e82701cbef8816b330af610a98eb1\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\trinh\.android\build-cache\ec2855ce93ca920641b5c639179bff84d9bb03b5\output\AndroidManifest.xml:26:5-20
 MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\trinh\.android\build-cache\1d80a7931e0bc1b2b61f2f0a474dcabebf01a986\output\AndroidManifest.xml:24:5-19
+MERGED from [com.google.firebase:firebase-auth:10.0.1] C:\Users\trinh\.android\build-cache\c6fa2a908a12b8296d854c2ee35e444443d2d6bc\output\AndroidManifest.xml:19:5-20:19
 MERGED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\trinh\.android\build-cache\8ea8c79c584d55c13076b88db01fc0196b659694\output\AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\trinh\.android\build-cache\a34236f09608e7b37b304823920c8117e3228ea9\output\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:24:5-33:19
@@ -179,6 +180,9 @@ MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\trinh\
 MERGED from [com.google.firebase:firebase-database:10.0.1] C:\Users\trinh\.android\build-cache\951aa0845da43ad3c9e96e2b32aa6078cb1a7d15\output\AndroidManifest.xml:3:5-42
 MERGED from [com.google.firebase:firebase-database-connection:10.0.1] C:\Users\trinh\.android\build-cache\5d1e6e71b45b0a30e885ea5464acc1f046954b56\output\AndroidManifest.xml:3:5-42
 MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\trinh\.android\build-cache\1d80a7931e0bc1b2b61f2f0a474dcabebf01a986\output\AndroidManifest.xml:23:5-42
+MERGED from [com.google.firebase:firebase-storage:10.0.1] C:\Users\trinh\.android\build-cache\742169a396252a7d6d9bd170b947ca0df3ba7e17\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage-common:10.0.1] C:\Users\trinh\.android\build-cache\cff6c50e2814f3eef88d303232e2aaa81fc9db83\output\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-auth:10.0.1] C:\Users\trinh\.android\build-cache\c6fa2a908a12b8296d854c2ee35e444443d2d6bc\output\AndroidManifest.xml:17:5-42
 MERGED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\trinh\.android\build-cache\8ea8c79c584d55c13076b88db01fc0196b659694\output\AndroidManifest.xml:17:5-42
 MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\trinh\.android\build-cache\a34236f09608e7b37b304823920c8117e3228ea9\output\AndroidManifest.xml:4:5-42
 MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\trinh\.android\build-cache\f1cce3c31e129c4dc2c578124c887ee01f7b95c5\output\AndroidManifest.xml:17:5-42
