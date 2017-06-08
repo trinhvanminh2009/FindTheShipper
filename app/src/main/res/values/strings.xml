@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Find The Shipper</string>
     <string name="title_activity_maps">Map</string>
-    <string name="facebook_app_id">432808617097084</string>
-    <string name="fb_login_protocol_scheme">fb432808617097084</string>
+    <string name="facebook_app_id" translatable="false">432808617097084</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb432808617097084</string>
     <string name="please_wait_facebooklogin">Just a moment</string>
     <string name="required_permission_location">Access to the location is required turn on location.</string>
     <string name="ok">OK</string>

@@ -59,7 +59,7 @@ public class MainActivity extends FragmentActivity {
                         public void onCompleted(JSONObject object, GraphResponse response) {
 
                             try {
-                                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                                Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
                                 String email = response.getJSONObject().getString("email");
                                 String gender = response.getJSONObject().getString("gender");
                                 String name = response.getJSONObject().getString("name");

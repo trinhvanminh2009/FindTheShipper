@@ -64,7 +64,8 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".DistanceMapsActivity">
+        <activity android:name=".DistanceMapsActivity"></activity>
+        <activity android:name=".HandleMapsActivity">
 
         </activity>
     </application>

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-72:12
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-73:12
 	package
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:3:5-38
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
@@ -50,7 +50,7 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:17:5-79
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:17:22-76
 application
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:19:5-70:19
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:19:5-71:19
 MERGED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-cache\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.1] C:\Users\trinh\.android\build-cache\847f7a117dec7306730194f41be07a6accc70956\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\trinh\.android\build-cache\40da3a2ba64f20294e49f8cf6bd72a2064c6f17f\output\AndroidManifest.xml:9:5-20
@@ -160,9 +160,13 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:64:9-66
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:65:13-41
 activity#com.minh.findtheshipper.DistanceMapsActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:67:9-69:20
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:67:9-67
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:67:19-55
+activity#com.minh.findtheshipper.HandleMapsActivity
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:68:9-70:20
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:68:19-53
 uses-sdk
 INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.mikepenz:materialdrawer:5.9.2] C:\Users\trinh\.android\build-cache\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\output\AndroidManifest.xml:8:5-10:41

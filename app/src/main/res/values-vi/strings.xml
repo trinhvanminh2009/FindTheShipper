@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Find The Shipper</string>
+    <string name="cancel">Hủy</string>
+    <string name="ok">Đồng ý</string>
+    <string name="permission_required_toast">Chức năng này yêu cầu quyền truy cập vị trí</string>
+    <string name="please_wait_facebooklogin">Chỉ một lát</string>
+    <string name="required_permission_location">Để truy cập vị trí hiện tại cần mở vị trí</string>
+    <string name="title_activity_maps">Bản đồ</string>
+</resources>

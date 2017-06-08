@@ -1,13 +1,8 @@
 package com.minh.findtheshipper;
 
-import android.*;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
@@ -19,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -44,13 +38,10 @@ import com.minh.findtheshipper.utils.GPSTracker;
 import com.minh.findtheshipper.utils.PermissionUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.OnItemClick;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -103,6 +94,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Toast.makeText(this, "Checked on " + listControl.getContent(), Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode != MY_PERMISSION_REQUEST_FINE_LOCATION)
+        {
+
+            return;
+        }
+
+
+
+    }
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -135,13 +138,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSION_REQUEST_FINE_LOCATION);
-                // mMap.setMyLocationEnabled(true);
-                // mMap.getUiSettings().setMyLocationButtonEnabled(true);
+                Log.d("Permission 0", "updateMyLocation: in MapsA");
+                mMap.setMyLocationEnabled(true);
+                mMap.getUiSettings().setMyLocationButtonEnabled(true);
             } else {
 
                 mMap.setMyLocationEnabled(true);
                 mMap.getUiSettings().setMyLocationButtonEnabled(true);
             }
+
         }
     }
 
@@ -166,12 +171,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+            Log.d("Permission1", "updateMyLocation: in MapsB");
             mMap.setMyLocationEnabled(true);
             return;
         }
         else {
-            PermissionUtils.requestPermission(this,MY_PERMISSION_REQUEST_FINE_LOCATION,
-                    Manifest.permission.ACCESS_FINE_LOCATION,false);
+           /* PermissionUtils.requestPermission(this,MY_PERMISSION_REQUEST_FINE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION,false);*/
         }
 
 
@@ -191,20 +197,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         else
         {
-            gpsTracker.showSettingAlert();
+          //  gpsTracker.showSettingNetworkAlert();
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-       if(requestCode != MY_PERMISSION_REQUEST_FINE_LOCATION)
-       {
-           return;
-       }
 
-
-    }
 
     public void NavigationDrawer()
     {

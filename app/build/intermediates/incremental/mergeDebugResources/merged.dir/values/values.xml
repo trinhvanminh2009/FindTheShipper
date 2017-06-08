@@ -513,6 +513,7 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <color name="white">#FFFF</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode">
             
             <enum name="normal" value="0"/>
@@ -1244,7 +1245,7 @@
     <string name="define_font_fontawesome">com.mikepenz.fontawesome_typeface_library.FontAwesome</string>
     <string name="define_materialdrawer">year;owner</string>
     <string name="define_materialize">year;owner</string>
-    <string name="facebook_app_id">432808617097084</string>
+    <string name="facebook_app_id" translatable="false">432808617097084</string>
     <string name="faw_500px">faw_500px</string>
     <string name="faw_address_book">faw_address_book</string>
     <string name="faw_address_book_o">faw_address_book_o</string>
@@ -1920,7 +1921,7 @@
     <string name="faw_youtube">faw_youtube</string>
     <string name="faw_youtube_play">faw_youtube_play</string>
     <string name="faw_youtube_square">faw_youtube_square</string>
-    <string name="fb_login_protocol_scheme">fb432808617097084</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb432808617097084</string>
     <string name="firebase_database_url" translatable="false">https://find-the-shipper.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">260595537255</string>
     <string name="gmd_3d_rotation">gmd_3d_rotation</string>
@@ -2966,11 +2967,10 @@
         <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
     </style>
     <style name="AppTheme" parent="MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus">
-        
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>

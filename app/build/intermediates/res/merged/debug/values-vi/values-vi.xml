@@ -19,6 +19,8 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Chia sẻ với"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Chia sẻ với %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Thu gọn"</string>
+    <string name="app_name">Find The Shipper</string>
+    <string name="cancel">Hủy</string>
     <string name="com_facebook_device_auth_instructions">Truy cập &lt;b>facebook.com/device&lt;/b> và nhập mã hiển thị ở trên.</string>
     <string name="com_facebook_image_download_unknown_error">Lỗi bất ngờ khi tải ảnh xuống.</string>
     <string name="com_facebook_internet_permission_error_message">Đăng nhập WebView yêu cầu INTERNET cho phép</string>
@@ -59,6 +61,11 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"Đăng nhập"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Đăng nhập bằng Google"</string>
     <string name="messenger_send_button_text">Gửi</string>
+    <string name="ok">Đồng ý</string>
+    <string name="permission_required_toast">Chức năng này yêu cầu quyền truy cập vị trí</string>
+    <string name="please_wait_facebooklogin">Chỉ một lát</string>
+    <string name="required_permission_location">Để truy cập vị trí hiện tại cần mở vị trí</string>
     <string msgid="146198913615257606" name="search_menu_title">"Tìm kiếm"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="title_activity_maps">Bản đồ</string>
 </resources>

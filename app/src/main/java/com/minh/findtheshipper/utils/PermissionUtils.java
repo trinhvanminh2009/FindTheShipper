@@ -11,6 +11,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.minh.findtheshipper.R;
 import com.sdsmdg.tastytoast.TastyToast;
@@ -22,7 +23,7 @@ import com.sdsmdg.tastytoast.TastyToast;
 public abstract class PermissionUtils {
 
 
-    public static void requestPermission(FragmentActivity activity, int requestID, String permission, boolean finishActivity)
+    public static void requestPermission(AppCompatActivity activity, int requestID, String permission, boolean finishActivity)
     {
         if(ActivityCompat.shouldShowRequestPermissionRationale(activity,permission)){
             PermissionUtils.RationaleDialog.newInstance(requestID,finishActivity)
@@ -31,6 +32,15 @@ public abstract class PermissionUtils {
         else {
             ActivityCompat.requestPermissions(activity, new String[]{permission},requestID);
         }
+    }
+    public static boolean isPermissionGranted(String[] grantPermissions, int[] grantResults,
+                                              String permission) {
+        for (int i = 0; i < grantPermissions.length; i++) {
+            if (permission.equals(grantPermissions[i])) {
+                return grantResults[i] == PackageManager.PERMISSION_GRANTED;
+            }
+        }
+        return false;
     }
 /**
  * This class using for Rationale Dialog
@@ -49,6 +59,8 @@ public abstract class PermissionUtils {
             rationaleDialog.setArguments(bundle);
             return rationaleDialog;
         }
+
+
 
 
         @NonNull
@@ -80,4 +92,45 @@ public abstract class PermissionUtils {
             }
         }
     }
+
+    public static class PermissionDeniedDialog extends DialogFragment {
+
+        private static final String ARGUMENT_FINISH_ACTIVITY = "finish";
+
+        private boolean mFinishActivity = false;
+
+        /**
+         * Creates a new instance of this dialog and optionally finishes the calling Activity
+         * when the 'Ok' button is clicked.
+         */
+        public static PermissionDeniedDialog newInstance(boolean finishActivity) {
+            Bundle arguments = new Bundle();
+            arguments.putBoolean(ARGUMENT_FINISH_ACTIVITY, finishActivity);
+
+            PermissionDeniedDialog dialog = new PermissionDeniedDialog();
+            dialog.setArguments(arguments);
+            return dialog;
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            mFinishActivity = getArguments().getBoolean(ARGUMENT_FINISH_ACTIVITY);
+
+            return new android.app.AlertDialog.Builder(getActivity())
+                    .setMessage("Permission denied")
+                    .setPositiveButton(android.R.string.ok, null)
+                    .create();
+        }
+
+        @Override
+        public void onDismiss(DialogInterface dialog) {
+            super.onDismiss(dialog);
+            if (mFinishActivity) {
+                Toast.makeText(getActivity(), R.string.permission_required_toast,
+                        Toast.LENGTH_SHORT).show();
+                getActivity().finish();
+            }
+        }
+    }
+
 }

@@ -10,12 +10,15 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.media.audiofx.BassBoost;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
+
+import com.minh.findtheshipper.R;
 
 /**
  * Created by trinh on 6/6/2017.
@@ -35,29 +38,37 @@ public class GPSTracker extends Service implements LocationListener {
 
     public GPSTracker(Context context) {
         this.context = context;
-        getLocation();
+       getLocation();
     }
 
     public Location getLocation() {
         locationManager = (LocationManager) context.getSystemService(LOCATION_SERVICE);
         isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         isNetworkEnable = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-        if (!isGPSEnabled && !isNetworkEnable) {
-
+        if (!isGPSEnabled  ) {
+            showSettingLocationAlert();
+        }
+        if(!isNetworkEnable)
+        {
+            showSettingNetworkAlert();
         }
         if(isGPSEnabled)
         {
             if(location == null)
             {
+
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_UPDATES,
+                        MIN_DISTANCE_FOR_UPDATES, this);
                 locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_UPDATES,MIN_DISTANCE_FOR_UPDATES,this);
-                if(locationManager != null)
+
+            }
+            if(locationManager != null)
+            {
+                location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                if(location != null)
                 {
-                    location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                    if(location != null)
-                    {
-                        latitude = location.getLatitude();
-                        longitude = location.getLongitude();
-                    }
+                    latitude = location.getLatitude();
+                    longitude = location.getLongitude();
                 }
             }
         }
@@ -72,6 +83,7 @@ public class GPSTracker extends Service implements LocationListener {
                     //                                          int[] grantResults)
                     // to handle the case where the user grants the permission. See the documentation
                     // for ActivityCompat#requestPermissions for more details.
+                    Log.d("Permission3", "updateMyLocation: in MapsD");
                     return null;
                 }
                 locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_UPDATES,
@@ -120,10 +132,10 @@ public class GPSTracker extends Service implements LocationListener {
         return canGetLocation;
     }
 
-    public void showSettingAlert()
+    public void showSettingLocationAlert()
     {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-        alertDialog.setTitle("GPS settings");
+        alertDialog.setTitle("GPS Settings");
         alertDialog.setMessage("GPS is not enabled. Do you want to go to settings menu?");
         alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
             @Override
@@ -142,6 +154,32 @@ public class GPSTracker extends Service implements LocationListener {
 
         alertDialog.show();
     }
+
+
+    public void showSettingNetworkAlert()
+    {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+        alertDialog.setTitle("Wifi settings");
+        alertDialog.setMessage("Wifi is not available. Do you want to go to settings menu?");
+        alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK);
+                context.startActivity(intent);
+            }
+        });
+
+        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        alertDialog.show();
+    }
+
+
 
     @Nullable
     @Override

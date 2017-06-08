@@ -388,6 +388,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_fits_not.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_handle_maps.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_handle_maps.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
