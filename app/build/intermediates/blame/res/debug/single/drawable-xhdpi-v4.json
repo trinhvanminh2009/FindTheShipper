@@ -724,6 +724,10 @@
         "source": "C:\\Users\\Minh\\.android\\build-cache\\25398c8e8cfd485f69c8ecb2ca84af4b3681d944\\output\\res\\drawable-xhdpi-v4\\tw__heart_animation_detail_60fps_00044.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\amu_bubble_mask.9.png",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\drawable-xhdpi-v4\\amu_bubble_mask.9.png"
+    },
+    {
         "merged": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\common_plus_signin_btn_icon_dark_normal.9.png",
         "source": "C:\\Users\\Minh\\.android\\build-cache\\71e3949cadec5d4dc4d3fcfdca577a20608a424e\\output\\res\\drawable-xhdpi-v4\\common_plus_signin_btn_icon_dark_normal.9.png"
     },
@@ -1658,6 +1662,10 @@
     {
         "merged": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\messenger_bubble_large_white.png",
         "source": "C:\\Users\\Minh\\.android\\build-cache\\4974d45cb47b0854f71a04f1126f3b1363de0979\\output\\res\\drawable-xhdpi-v4\\messenger_bubble_large_white.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\amu_bubble_shadow.9.png",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\drawable-xhdpi-v4\\amu_bubble_shadow.9.png"
     },
     {
         "merged": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_vol_type_speaker_dark.png",

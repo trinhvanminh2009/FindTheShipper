@@ -48,8 +48,8 @@ public class MainActivity extends FragmentActivity {
         callbackManager = CallbackManager.Factory.create();
         final LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
-      /*  if(checkLoginFacebook() == false)
-        {*/
+      //  if(checkLoginFacebook() == false)
+      //  {
             loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override
                 public void onSuccess(final LoginResult loginResult) {
@@ -93,7 +93,7 @@ public class MainActivity extends FragmentActivity {
 
                 } });
 
-      /*  }
+     /*  }
         else {
             Intent intent = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(intent);

@@ -18,5 +18,9 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_avatar.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-hdpi\\ic_avatar.png"
     }
 ]

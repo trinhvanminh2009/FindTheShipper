@@ -4,4 +4,8 @@
     <string name="facebook_app_id">432808617097084</string>
     <string name="fb_login_protocol_scheme">fb432808617097084</string>
     <string name="please_wait_facebooklogin">Just a moment</string>
+    <string name="required_permission_location">Access to the location is required turn on location.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="permission_required_toast"> Location permission is required for this function.</string>
 </resources>

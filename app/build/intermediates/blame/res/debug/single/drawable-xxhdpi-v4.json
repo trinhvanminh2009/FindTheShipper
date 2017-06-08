@@ -180,6 +180,10 @@
         "source": "C:\\Users\\Minh\\.android\\build-cache\\71e3949cadec5d4dc4d3fcfdca577a20608a424e\\output\\res\\drawable-xxhdpi-v4\\common_ic_googleplayservices.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\amu_bubble_shadow.9.png",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\drawable-xxhdpi-v4\\amu_bubble_shadow.9.png"
+    },
+    {
         "merged": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\tw__ic_logo_default.png",
         "source": "C:\\Users\\Minh\\.android\\build-cache\\ea19b7d78544662169c409e9bb1c0becd384030a\\output\\res\\drawable-xxhdpi-v4\\tw__ic_logo_default.png"
     },
@@ -522,6 +526,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\messenger_bubble_large_blue.png",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\30162e923c3211c432942bf8773a694acca8aad2\\output\\res\\drawable-xxhdpi-v4\\messenger_bubble_large_blue.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\amu_bubble_mask.9.png",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\drawable-xxhdpi-v4\\amu_bubble_mask.9.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",

@@ -1,15 +1,25 @@
 package com.minh.findtheshipper;
 
+import android.*;
+import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,21 +40,35 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
 import com.minh.findtheshipper.models.ListControl;
+import com.minh.findtheshipper.utils.GPSTracker;
+import com.minh.findtheshipper.utils.PermissionUtils;
+import com.sdsmdg.tastytoast.TastyToast;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.OnItemClick;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private GPSTracker gpsTracker;
     private GoogleMap mMap;
-    private ArrayList<ListControl>listControls;
+    private ArrayList<ListControl> listControls;
     private CustomAdapterListView adapterListView;
-    @BindView(R.id.toolBar) Toolbar toolbar;
-    @BindView(R.id.listAction)ListView listView;
-    private String []listProfile = new String[4];
+    @BindView(R.id.toolBar)
+    Toolbar toolbar;
+    @BindView(R.id.listAction)
+    ListView listView;
+    private String[] listProfile = new String[4];
+    private LocationManager locationManager;
+    private static final int MY_PERMISSION_REQUEST_FINE_LOCATION = 101;
+
+    private boolean permissionIsGranted = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,23 +79,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         ButterKnife.bind(this);
+
         listProfile = getIntent().getStringArrayExtra("profile");
         NavigationDrawer();
         listControls = new ArrayList<>();
-        listControls.add(new ListControl(R.drawable.ic_starting_point,"Choose place to start"));
-        listControls.add(new ListControl(R.drawable.ic_test,"Choose place to finish"));
-        adapterListView = new CustomAdapterListView(this,listControls);
+        listControls.add(new ListControl(R.drawable.ic_starting_point, "Choose place to start"));
+        listControls.add(new ListControl(R.drawable.ic_test, "Choose place to finish"));
+        adapterListView = new CustomAdapterListView(this, listControls);
         listView.setAdapter(adapterListView);
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
 
     }
 
     @OnItemClick(R.id.listAction)
-    public void listViewItemClicked(AdapterView<?> parent,View view, int position, long id )
-    {
+    public void listViewItemClicked(AdapterView<?> parent, View view, int position, long id) {
         ListControl listControl = listControls.get(position);
-        Toast.makeText(this,"Checked on "+listControl.getContent(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Checked on " + listControl.getContent(), Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -86,13 +115,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        updateMyLocation();
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(10.766333, 106.694036);
+        showLatitude();
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Ho Chi Minh City"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,18));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 18));
 
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -100,9 +132,77 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSION_REQUEST_FINE_LOCATION);
+                // mMap.setMyLocationEnabled(true);
+                // mMap.getUiSettings().setMyLocationButtonEnabled(true);
+            } else {
+
+                mMap.setMyLocationEnabled(true);
+                mMap.getUiSettings().setMyLocationButtonEnabled(true);
+            }
+        }
+    }
+
+    private boolean checkReady() {
+        if (mMap == null) {
+            TastyToast.makeText(MapsActivity.this, "The maps not ready", TastyToast.LENGTH_LONG, TastyToast.INFO);
+            return false;
+        }
+        return true;
+    }
+
+    private void updateMyLocation() {
+        if (!checkReady()) {
             return;
         }
-        mMap.setMyLocationEnabled(true);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            mMap.setMyLocationEnabled(true);
+            return;
+        }
+        else {
+            PermissionUtils.requestPermission(this,MY_PERMISSION_REQUEST_FINE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION,false);
+        }
+
+
+
+    }
+
+
+    public void showLatitude()
+    {
+        gpsTracker = new GPSTracker(MapsActivity.this);
+        if(gpsTracker.isCanGetLocation())
+        {
+            double latitude = gpsTracker.getLatitude();
+            double longitude = gpsTracker.getLongitude();
+            TastyToast.makeText(MapsActivity.this, "My Location is" + latitude + ","+ longitude, TastyToast.LENGTH_LONG,TastyToast.SUCCESS);
+
+        }
+        else
+        {
+            gpsTracker.showSettingAlert();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+       if(requestCode != MY_PERMISSION_REQUEST_FINE_LOCATION)
+       {
+           return;
+       }
+
 
     }
 

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_avatar.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-mdpi\\ic_avatar.png"
+    },
+    {
         "merged": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
         "source": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
