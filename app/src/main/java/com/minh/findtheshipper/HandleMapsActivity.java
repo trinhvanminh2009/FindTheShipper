@@ -2,6 +2,7 @@ package com.minh.findtheshipper;
 
 import android.*;
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
@@ -13,11 +14,22 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -27,28 +39,41 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.minh.findtheshipper.helpers.DirectionHelpers;
+import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
 import com.minh.findtheshipper.models.ListControl;
+import com.minh.findtheshipper.models.Route;
 import com.minh.findtheshipper.utils.PermissionUtils;
+import com.sdsmdg.tastytoast.TastyToast;
+
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
-
-public class HandleMapsActivity extends AppCompatActivity  implements OnMapReadyCallback, ActivityCompat.OnRequestPermissionsResultCallback{
+public class HandleMapsActivity extends AppCompatActivity  implements OnMapReadyCallback, ActivityCompat.OnRequestPermissionsResultCallback, DirectionFinderListeners{
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     private GoogleMap mMap;
-    private ArrayList<ListControl> listControls;
-    private CustomAdapterListView adapterListView;
     @BindView(R.id.toolBar)
     Toolbar toolbar;
-    @BindView(R.id.listAction)
-    ListView listView;
+    @BindView(R.id.btnFindDirection) Button btnFindDirection;
+    @BindView(R.id.txtStart) EditText txtStart;
+    @BindView(R.id.txtFinish) EditText txtFinish;
+    @BindView(R.id.txtDistance)TextView txtDistance;
+    @BindView(R.id.txtTime)TextView txtTime;
     private String[] listProfile = new String[4];
     private boolean showPermissionDeniedDialog = false;
+    private List<Marker>startMarkers = new ArrayList<>();
+    private List<Marker>finishMarkers = new ArrayList<>();
+    private List<Polyline> polylinePaths = new ArrayList<>();
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +86,40 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         mapFragment.getMapAsync(this);
 
         listProfile = getIntent().getStringArrayExtra("profile");
-        listControls = new ArrayList<>();
-        listControls.add(new ListControl(R.drawable.ic_starting_point, "Choose place to start"));
-        listControls.add(new ListControl(R.drawable.ic_test, "Choose place to finish"));
-        adapterListView = new CustomAdapterListView(this, listControls);
-        listView.setAdapter(adapterListView);
+
         NavigationDrawer();
     }
+
+    private void sendRequest(){
+        String start = txtStart.getText().toString();
+        String finish = txtFinish.getText().toString();
+        if(start.isEmpty())
+        {
+            TastyToast.makeText(this,"Please enter place to start",TastyToast.LENGTH_LONG,TastyToast.WARNING);
+            return;
+
+        }
+        if(finish.isEmpty())
+        {
+            TastyToast.makeText(this,"Please enter place to finish",TastyToast.LENGTH_LONG,TastyToast.WARNING);
+            return;
+        }
+
+        try {
+            new DirectionHelpers((DirectionFinderListeners) this, start, finish).execute();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @OnClick(R.id.btnFindDirection)
+    public void findDirection()
+    {
+        sendRequest();
+    }
+
+
 
     private void NavigationDrawer() {
         Uri myUri = Uri.parse(listProfile[3]);
@@ -131,7 +183,9 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        LatLng HCMCity = new LatLng(10.766333, 106.694036);
+        mMap.addMarker(new MarkerOptions().position(HCMCity).title(getResources().getString(R.string.start_place)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(HCMCity, 18));
         updateMyLocation();
 
     }
@@ -192,4 +246,55 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         }
     }
 
+    @Override
+    public void onDirectionFinderStart() {
+        progressDialog = ProgressDialog.show(this ,"Please wait...","Finding direction...",true);
+        if(startMarkers != null)
+        {
+            for(Marker marker: startMarkers)
+            {
+                marker.remove();
+            }
+        }
+        if(finishMarkers != null)
+        {
+            for(Marker marker: finishMarkers)
+            {
+                marker.remove();
+            }
+        }
+        if(polylinePaths != null)
+        {
+            for(Polyline polyline : polylinePaths)
+            {
+                polyline.remove();
+            }
+        }
+    }
+
+    @Override
+    public void onDirectionFinderSuccess(List<Route> routes) {
+        progressDialog.dismiss();
+        polylinePaths = new ArrayList<>();
+        startMarkers = new ArrayList<>();
+        finishMarkers = new ArrayList<>();
+        for(Route route: routes)
+        {
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(route.startLocation,16));
+            txtDistance.setText(route.distance.text);
+            txtTime.setText(route.duration.text);
+
+            startMarkers.add(mMap.addMarker(new MarkerOptions().title(route.startAddress)
+            .position(route.startLocation).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))));
+            finishMarkers.add(mMap.addMarker(new MarkerOptions().title(route.endAddress)
+                    .position(route.endLocation).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))));
+
+            PolylineOptions polylineOptions = new PolylineOptions().geodesic(true).color(Color.GREEN).width(10);
+            for(int i = 0 ; i < route.points.size(); i++)
+            {
+                polylineOptions.add(route.points.get(i));
+            }
+            polylinePaths.add(mMap.addPolyline(polylineOptions));
+        }
+    }
 }

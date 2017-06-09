@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_time_duration.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-hdpi\\ic_time_duration.png"
+    },
+    {
         "merged": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher_round.png",
         "source": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
@@ -10,6 +14,10 @@
     {
         "merged": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
         "source": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_distance.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-hdpi\\ic_distance.png"
     },
     {
         "merged": "C:\\Users\\Minh\\AndroidStudioProjects\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\background_drawer.png",

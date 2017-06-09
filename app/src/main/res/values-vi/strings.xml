@@ -7,4 +7,7 @@
     <string name="please_wait_facebooklogin">Chỉ một lát</string>
     <string name="required_permission_location">Để truy cập vị trí hiện tại cần mở vị trí</string>
     <string name="title_activity_maps">Bản đồ</string>
+    <string name="finish_place">Chọn điểm bắt đầu</string>
+    <string name="start_place">Chọn điểm kết thúc</string>
+    <string name="cityCenter">Thành phố Hồ Chí Minh</string>
 </resources>
