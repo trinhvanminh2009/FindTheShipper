@@ -3687,25 +3687,25 @@ public final class R2 {
     public static final int avd_hide_password = 0x7f020055;
 
     @DrawableRes
-    public static final int avd_hide_password_1 = 0x7f0200be;
+    public static final int avd_hide_password_1 = 0x7f0200c4;
 
     @DrawableRes
-    public static final int avd_hide_password_2 = 0x7f0200bf;
+    public static final int avd_hide_password_2 = 0x7f0200c5;
 
     @DrawableRes
-    public static final int avd_hide_password_3 = 0x7f0200c0;
+    public static final int avd_hide_password_3 = 0x7f0200c6;
 
     @DrawableRes
     public static final int avd_show_password = 0x7f020056;
 
     @DrawableRes
-    public static final int avd_show_password_1 = 0x7f0200c1;
+    public static final int avd_show_password_1 = 0x7f0200c7;
 
     @DrawableRes
-    public static final int avd_show_password_2 = 0x7f0200c2;
+    public static final int avd_show_password_2 = 0x7f0200c8;
 
     @DrawableRes
-    public static final int avd_show_password_3 = 0x7f0200c3;
+    public static final int avd_show_password_3 = 0x7f0200c9;
 
     @DrawableRes
     public static final int background_drawer = 0x7f020057;
@@ -3894,127 +3894,145 @@ public final class R2 {
     public static final int ic_about = 0x7f020094;
 
     @DrawableRes
-    public static final int ic_create_new = 0x7f020095;
+    public static final int ic_add = 0x7f020095;
 
     @DrawableRes
-    public static final int ic_created = 0x7f020096;
+    public static final int ic_cash = 0x7f020096;
 
     @DrawableRes
-    public static final int ic_logout = 0x7f020097;
+    public static final int ic_create_new = 0x7f020097;
 
     @DrawableRes
-    public static final int ic_placehoder = 0x7f020098;
+    public static final int ic_created = 0x7f020098;
 
     @DrawableRes
-    public static final int ic_settings = 0x7f020099;
+    public static final int ic_distance = 0x7f020099;
 
     @DrawableRes
-    public static final int ic_starting_point = 0x7f02009a;
+    public static final int ic_duration = 0x7f02009a;
 
     @DrawableRes
-    public static final int ic_test = 0x7f02009b;
+    public static final int ic_logout = 0x7f02009b;
 
     @DrawableRes
-    public static final int ic_tutorials = 0x7f02009c;
+    public static final int ic_marker = 0x7f02009c;
 
     @DrawableRes
-    public static final int ic_version = 0x7f02009d;
+    public static final int ic_ok = 0x7f02009d;
 
     @DrawableRes
-    public static final int ic_your_profile = 0x7f02009e;
+    public static final int ic_placehoder = 0x7f02009e;
 
     @DrawableRes
-    public static final int info_toast = 0x7f02009f;
+    public static final int ic_settings = 0x7f02009f;
 
     @DrawableRes
-    public static final int material_drawer_badge = 0x7f0200a0;
+    public static final int ic_starting_point = 0x7f0200a0;
 
     @DrawableRes
-    public static final int material_drawer_circle_mask = 0x7f0200a1;
+    public static final int ic_test = 0x7f0200a1;
 
     @DrawableRes
-    public static final int material_drawer_shadow_bottom = 0x7f0200a2;
+    public static final int ic_tutorials = 0x7f0200a2;
 
     @DrawableRes
-    public static final int material_drawer_shadow_left = 0x7f0200a3;
+    public static final int ic_version = 0x7f0200a3;
 
     @DrawableRes
-    public static final int material_drawer_shadow_right = 0x7f0200a4;
+    public static final int ic_your_profile = 0x7f0200a4;
 
     @DrawableRes
-    public static final int material_drawer_shadow_top = 0x7f0200a5;
+    public static final int info_toast = 0x7f0200a5;
 
     @DrawableRes
-    public static final int messenger_bubble_large_blue = 0x7f0200a6;
+    public static final int material_drawer_badge = 0x7f0200a6;
 
     @DrawableRes
-    public static final int messenger_bubble_large_white = 0x7f0200a7;
+    public static final int material_drawer_circle_mask = 0x7f0200a7;
 
     @DrawableRes
-    public static final int messenger_bubble_small_blue = 0x7f0200a8;
+    public static final int material_drawer_shadow_bottom = 0x7f0200a8;
 
     @DrawableRes
-    public static final int messenger_bubble_small_white = 0x7f0200a9;
+    public static final int material_drawer_shadow_left = 0x7f0200a9;
 
     @DrawableRes
-    public static final int messenger_button_blue_bg_round = 0x7f0200aa;
+    public static final int material_drawer_shadow_right = 0x7f0200aa;
 
     @DrawableRes
-    public static final int messenger_button_blue_bg_selector = 0x7f0200ab;
+    public static final int material_drawer_shadow_top = 0x7f0200ab;
 
     @DrawableRes
-    public static final int messenger_button_send_round_shadow = 0x7f0200ac;
+    public static final int messenger_bubble_large_blue = 0x7f0200ac;
 
     @DrawableRes
-    public static final int messenger_button_white_bg_round = 0x7f0200ad;
+    public static final int messenger_bubble_large_white = 0x7f0200ad;
 
     @DrawableRes
-    public static final int messenger_button_white_bg_selector = 0x7f0200ae;
+    public static final int messenger_bubble_small_blue = 0x7f0200ae;
 
     @DrawableRes
-    public static final int navigation_empty_icon = 0x7f0200af;
+    public static final int messenger_bubble_small_white = 0x7f0200af;
 
     @DrawableRes
-    public static final int notification_action_background = 0x7f0200b0;
+    public static final int messenger_button_blue_bg_round = 0x7f0200b0;
 
     @DrawableRes
-    public static final int notification_bg = 0x7f0200b1;
+    public static final int messenger_button_blue_bg_selector = 0x7f0200b1;
 
     @DrawableRes
-    public static final int notification_bg_low = 0x7f0200b2;
+    public static final int messenger_button_send_round_shadow = 0x7f0200b2;
 
     @DrawableRes
-    public static final int notification_bg_low_normal = 0x7f0200b3;
+    public static final int messenger_button_white_bg_round = 0x7f0200b3;
 
     @DrawableRes
-    public static final int notification_bg_low_pressed = 0x7f0200b4;
+    public static final int messenger_button_white_bg_selector = 0x7f0200b4;
 
     @DrawableRes
-    public static final int notification_bg_normal = 0x7f0200b5;
+    public static final int navigation_empty_icon = 0x7f0200b5;
 
     @DrawableRes
-    public static final int notification_bg_normal_pressed = 0x7f0200b6;
+    public static final int notification_action_background = 0x7f0200b6;
 
     @DrawableRes
-    public static final int notification_icon_background = 0x7f0200b7;
+    public static final int notification_bg = 0x7f0200b7;
 
     @DrawableRes
-    public static final int notification_template_icon_bg = 0x7f0200bc;
+    public static final int notification_bg_low = 0x7f0200b8;
 
     @DrawableRes
-    public static final int notification_template_icon_low_bg = 0x7f0200bd;
+    public static final int notification_bg_low_normal = 0x7f0200b9;
 
     @DrawableRes
-    public static final int notification_tile_bg = 0x7f0200b8;
+    public static final int notification_bg_low_pressed = 0x7f0200ba;
 
     @DrawableRes
-    public static final int notify_panel_notification_icon_bg = 0x7f0200b9;
+    public static final int notification_bg_normal = 0x7f0200bb;
 
     @DrawableRes
-    public static final int success_toast = 0x7f0200ba;
+    public static final int notification_bg_normal_pressed = 0x7f0200bc;
 
     @DrawableRes
-    public static final int warning_toast = 0x7f0200bb;
+    public static final int notification_icon_background = 0x7f0200bd;
+
+    @DrawableRes
+    public static final int notification_template_icon_bg = 0x7f0200c2;
+
+    @DrawableRes
+    public static final int notification_template_icon_low_bg = 0x7f0200c3;
+
+    @DrawableRes
+    public static final int notification_tile_bg = 0x7f0200be;
+
+    @DrawableRes
+    public static final int notify_panel_notification_icon_bg = 0x7f0200bf;
+
+    @DrawableRes
+    public static final int success_toast = 0x7f0200c0;
+
+    @DrawableRes
+    public static final int warning_toast = 0x7f0200c1;
   }
 
   public static final class id {
@@ -4121,7 +4139,10 @@ public final class R2 {
     public static final int box_count = 0x7f0e006d;
 
     @IdRes
-    public static final int btnFindDirection = 0x7f0e00aa;
+    public static final int btnAdd = 0x7f0e00ad;
+
+    @IdRes
+    public static final int btnOK = 0x7f0e00ae;
 
     @IdRes
     public static final int button = 0x7f0e006e;
@@ -4316,7 +4337,7 @@ public final class R2 {
     public static final int image = 0x7f0e007a;
 
     @IdRes
-    public static final int imgBackground = 0x7f0e00ae;
+    public static final int imgBackground = 0x7f0e00af;
 
     @IdRes
     public static final int imgIcon = 0x7f0e00d7;
@@ -4355,7 +4376,7 @@ public final class R2 {
     public static final int linearLayout = 0x7f0e00c2;
 
     @IdRes
-    public static final int listAction = 0x7f0e00b0;
+    public static final int listAction = 0x7f0e00a8;
 
     @IdRes
     public static final int listMode = 0x7f0e0030;
@@ -4364,10 +4385,10 @@ public final class R2 {
     public static final int list_item = 0x7f0e007c;
 
     @IdRes
-    public static final int login_button = 0x7f0e00af;
+    public static final int login_button = 0x7f0e00b0;
 
     @IdRes
-    public static final int map = 0x7f0e00ad;
+    public static final int map = 0x7f0e00ac;
 
     @IdRes
     public static final int masked = 0x7f0e010e;
@@ -4781,19 +4802,16 @@ public final class R2 {
     public static final int transition_scene_layoutid_cache = 0x7f0e0024;
 
     @IdRes
+    public static final int txtCash = 0x7f0e00ab;
+
+    @IdRes
     public static final int txtControl = 0x7f0e00d8;
 
     @IdRes
-    public static final int txtDistance = 0x7f0e00ab;
+    public static final int txtDistance = 0x7f0e00a9;
 
     @IdRes
-    public static final int txtFinish = 0x7f0e00a9;
-
-    @IdRes
-    public static final int txtStart = 0x7f0e00a8;
-
-    @IdRes
-    public static final int txtTime = 0x7f0e00ac;
+    public static final int txtTime = 0x7f0e00aa;
 
     @IdRes
     public static final int unknown = 0x7f0e006c;

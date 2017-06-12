@@ -7,20 +7,20 @@
     android:gravity="center">
 
     <ImageView
-        android:layout_marginLeft="20dp"
-        android:layout_width="wrap_content"
+
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher_round"
         android:id="@+id/imgIcon"
-        android:layout_weight="2"
+        android:layout_weight="1"
         />
 
     <EditText
         android:text= "Where to going"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:id="@+id/txtControl"
         android:background="@android:color/transparent"
-    android:layout_weight="3" />
+    android:layout_weight="5" />
 
 </LinearLayout>

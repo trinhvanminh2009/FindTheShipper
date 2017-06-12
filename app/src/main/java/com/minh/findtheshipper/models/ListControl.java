@@ -21,7 +21,8 @@ public class ListControl {
         this.idIcon = idIcon;
     }
 
-    public String getContent() {
+    public String getContent()
+    {
         return content;
     }
 

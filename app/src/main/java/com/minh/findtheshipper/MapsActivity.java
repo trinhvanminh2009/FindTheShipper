@@ -34,8 +34,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
 import com.minh.findtheshipper.models.ListControl;
-import com.minh.findtheshipper.utils.GPSTracker;
-import com.minh.findtheshipper.utils.PermissionUtils;
+import com.minh.findtheshipper.utils.GPSTrackerUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.ArrayList;
@@ -46,7 +45,7 @@ import butterknife.OnItemClick;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GPSTracker gpsTracker;
+    private GPSTrackerUtils gpsTracker;
     private GoogleMap mMap;
     private ArrayList<ListControl> listControls;
     private CustomAdapterListView adapterListView;
@@ -187,7 +186,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void showLatitude()
     {
-        gpsTracker = new GPSTracker(MapsActivity.this);
+        gpsTracker = new GPSTrackerUtils(MapsActivity.this);
         if(gpsTracker.isCanGetLocation())
         {
             double latitude = gpsTracker.getLatitude();

@@ -4225,13 +4225,13 @@ containing a value of this type.
         public static final int amu_bubble_mask=0x7f020053;
         public static final int amu_bubble_shadow=0x7f020054;
         public static final int avd_hide_password=0x7f020055;
-        public static final int avd_hide_password_1=0x7f0200be;
-        public static final int avd_hide_password_2=0x7f0200bf;
-        public static final int avd_hide_password_3=0x7f0200c0;
+        public static final int avd_hide_password_1=0x7f0200c4;
+        public static final int avd_hide_password_2=0x7f0200c5;
+        public static final int avd_hide_password_3=0x7f0200c6;
         public static final int avd_show_password=0x7f020056;
-        public static final int avd_show_password_1=0x7f0200c1;
-        public static final int avd_show_password_2=0x7f0200c2;
-        public static final int avd_show_password_3=0x7f0200c3;
+        public static final int avd_show_password_1=0x7f0200c7;
+        public static final int avd_show_password_2=0x7f0200c8;
+        public static final int avd_show_password_3=0x7f0200c9;
         public static final int background_drawer=0x7f020057;
         public static final int background_home=0x7f020058;
         public static final int background_toast=0x7f020059;
@@ -4294,47 +4294,53 @@ containing a value of this type.
         public static final int design_snackbar_background=0x7f020092;
         public static final int error_toast=0x7f020093;
         public static final int ic_about=0x7f020094;
-        public static final int ic_create_new=0x7f020095;
-        public static final int ic_created=0x7f020096;
-        public static final int ic_logout=0x7f020097;
-        public static final int ic_placehoder=0x7f020098;
-        public static final int ic_settings=0x7f020099;
-        public static final int ic_starting_point=0x7f02009a;
-        public static final int ic_test=0x7f02009b;
-        public static final int ic_tutorials=0x7f02009c;
-        public static final int ic_version=0x7f02009d;
-        public static final int ic_your_profile=0x7f02009e;
-        public static final int info_toast=0x7f02009f;
-        public static final int material_drawer_badge=0x7f0200a0;
-        public static final int material_drawer_circle_mask=0x7f0200a1;
-        public static final int material_drawer_shadow_bottom=0x7f0200a2;
-        public static final int material_drawer_shadow_left=0x7f0200a3;
-        public static final int material_drawer_shadow_right=0x7f0200a4;
-        public static final int material_drawer_shadow_top=0x7f0200a5;
-        public static final int messenger_bubble_large_blue=0x7f0200a6;
-        public static final int messenger_bubble_large_white=0x7f0200a7;
-        public static final int messenger_bubble_small_blue=0x7f0200a8;
-        public static final int messenger_bubble_small_white=0x7f0200a9;
-        public static final int messenger_button_blue_bg_round=0x7f0200aa;
-        public static final int messenger_button_blue_bg_selector=0x7f0200ab;
-        public static final int messenger_button_send_round_shadow=0x7f0200ac;
-        public static final int messenger_button_white_bg_round=0x7f0200ad;
-        public static final int messenger_button_white_bg_selector=0x7f0200ae;
-        public static final int navigation_empty_icon=0x7f0200af;
-        public static final int notification_action_background=0x7f0200b0;
-        public static final int notification_bg=0x7f0200b1;
-        public static final int notification_bg_low=0x7f0200b2;
-        public static final int notification_bg_low_normal=0x7f0200b3;
-        public static final int notification_bg_low_pressed=0x7f0200b4;
-        public static final int notification_bg_normal=0x7f0200b5;
-        public static final int notification_bg_normal_pressed=0x7f0200b6;
-        public static final int notification_icon_background=0x7f0200b7;
-        public static final int notification_template_icon_bg=0x7f0200bc;
-        public static final int notification_template_icon_low_bg=0x7f0200bd;
-        public static final int notification_tile_bg=0x7f0200b8;
-        public static final int notify_panel_notification_icon_bg=0x7f0200b9;
-        public static final int success_toast=0x7f0200ba;
-        public static final int warning_toast=0x7f0200bb;
+        public static final int ic_add=0x7f020095;
+        public static final int ic_cash=0x7f020096;
+        public static final int ic_create_new=0x7f020097;
+        public static final int ic_created=0x7f020098;
+        public static final int ic_distance=0x7f020099;
+        public static final int ic_duration=0x7f02009a;
+        public static final int ic_logout=0x7f02009b;
+        public static final int ic_marker=0x7f02009c;
+        public static final int ic_ok=0x7f02009d;
+        public static final int ic_placehoder=0x7f02009e;
+        public static final int ic_settings=0x7f02009f;
+        public static final int ic_starting_point=0x7f0200a0;
+        public static final int ic_test=0x7f0200a1;
+        public static final int ic_tutorials=0x7f0200a2;
+        public static final int ic_version=0x7f0200a3;
+        public static final int ic_your_profile=0x7f0200a4;
+        public static final int info_toast=0x7f0200a5;
+        public static final int material_drawer_badge=0x7f0200a6;
+        public static final int material_drawer_circle_mask=0x7f0200a7;
+        public static final int material_drawer_shadow_bottom=0x7f0200a8;
+        public static final int material_drawer_shadow_left=0x7f0200a9;
+        public static final int material_drawer_shadow_right=0x7f0200aa;
+        public static final int material_drawer_shadow_top=0x7f0200ab;
+        public static final int messenger_bubble_large_blue=0x7f0200ac;
+        public static final int messenger_bubble_large_white=0x7f0200ad;
+        public static final int messenger_bubble_small_blue=0x7f0200ae;
+        public static final int messenger_bubble_small_white=0x7f0200af;
+        public static final int messenger_button_blue_bg_round=0x7f0200b0;
+        public static final int messenger_button_blue_bg_selector=0x7f0200b1;
+        public static final int messenger_button_send_round_shadow=0x7f0200b2;
+        public static final int messenger_button_white_bg_round=0x7f0200b3;
+        public static final int messenger_button_white_bg_selector=0x7f0200b4;
+        public static final int navigation_empty_icon=0x7f0200b5;
+        public static final int notification_action_background=0x7f0200b6;
+        public static final int notification_bg=0x7f0200b7;
+        public static final int notification_bg_low=0x7f0200b8;
+        public static final int notification_bg_low_normal=0x7f0200b9;
+        public static final int notification_bg_low_pressed=0x7f0200ba;
+        public static final int notification_bg_normal=0x7f0200bb;
+        public static final int notification_bg_normal_pressed=0x7f0200bc;
+        public static final int notification_icon_background=0x7f0200bd;
+        public static final int notification_template_icon_bg=0x7f0200c2;
+        public static final int notification_template_icon_low_bg=0x7f0200c3;
+        public static final int notification_tile_bg=0x7f0200be;
+        public static final int notify_panel_notification_icon_bg=0x7f0200bf;
+        public static final int success_toast=0x7f0200c0;
+        public static final int warning_toast=0x7f0200c1;
     }
     public static final class id {
         public static final int action0=0x7f0e00f7;
@@ -4371,7 +4377,8 @@ containing a value of this type.
         public static final int beginning=0x7f0e0057;
         public static final int bottom=0x7f0e0046;
         public static final int box_count=0x7f0e006d;
-        public static final int btnFindDirection=0x7f0e00aa;
+        public static final int btnAdd=0x7f0e00ad;
+        public static final int btnOK=0x7f0e00ae;
         public static final int button=0x7f0e006e;
         public static final int buttonPanel=0x7f0e007f;
         public static final int cancel_action=0x7f0e00f8;
@@ -4436,7 +4443,7 @@ containing a value of this type.
         public static final int iconics_tag_id=0x7f0e0006;
         public static final int ifRoom=0x7f0e0060;
         public static final int image=0x7f0e007a;
-        public static final int imgBackground=0x7f0e00ae;
+        public static final int imgBackground=0x7f0e00af;
         public static final int imgIcon=0x7f0e00d7;
         public static final int info=0x7f0e0101;
         public static final int infoView=0x7f0e00d6;
@@ -4449,11 +4456,11 @@ containing a value of this type.
         public static final int line1=0x7f0e0106;
         public static final int line3=0x7f0e0108;
         public static final int linearLayout=0x7f0e00c2;
-        public static final int listAction=0x7f0e00b0;
+        public static final int listAction=0x7f0e00a8;
         public static final int listMode=0x7f0e0030;
         public static final int list_item=0x7f0e007c;
-        public static final int login_button=0x7f0e00af;
-        public static final int map=0x7f0e00ad;
+        public static final int login_button=0x7f0e00b0;
+        public static final int map=0x7f0e00ac;
         public static final int masked=0x7f0e010e;
         public static final int material_drawer_account_header=0x7f0e00db;
         public static final int material_drawer_account_header_background=0x7f0e00da;
@@ -4591,11 +4598,10 @@ containing a value of this type.
         public static final int touch_outside=0x7f0e00c9;
         public static final int transition_current_scene=0x7f0e0023;
         public static final int transition_scene_layoutid_cache=0x7f0e0024;
+        public static final int txtCash=0x7f0e00ab;
         public static final int txtControl=0x7f0e00d8;
-        public static final int txtDistance=0x7f0e00ab;
-        public static final int txtFinish=0x7f0e00a9;
-        public static final int txtStart=0x7f0e00a8;
-        public static final int txtTime=0x7f0e00ac;
+        public static final int txtDistance=0x7f0e00a9;
+        public static final int txtTime=0x7f0e00aa;
         public static final int unknown=0x7f0e006c;
         public static final int up=0x7f0e0025;
         public static final int useLogo=0x7f0e0038;
@@ -4733,10 +4739,8 @@ containing a value of this type.
     }
     public static final class mipmap {
         public static final int ic_avatar=0x7f030000;
-        public static final int ic_distance=0x7f030001;
-        public static final int ic_launcher=0x7f030002;
-        public static final int ic_launcher_round=0x7f030003;
-        public static final int ic_time_duration=0x7f030004;
+        public static final int ic_launcher=0x7f030001;
+        public static final int ic_launcher_round=0x7f030002;
     }
     public static final class raw {
         public static final int amu_ballon_gx_prefix=0x7f070000;
@@ -6713,8 +6717,14 @@ containing a value of this type.
         public static final int CardView_Light=0x7f0a00f0;
         public static final int Material_DrawerArrowStyle=0x7f0a00f1;
         public static final int Material_Light_DrawerArrowStyle=0x7f0a00f2;
+        /**  Material specific values 
+         */
         public static final int MaterialBaseBaseTheme=0x7f0a00f3;
+        /**  Material specific values 
+         */
         public static final int MaterialBaseBaseTheme_Light=0x7f0a00f4;
+        /**  Material specific values 
+         */
         public static final int MaterialBaseBaseTheme_Light_DarkToolbar=0x7f0a00f5;
         /** 
         <item name="android:dialogTheme">@style/MaterialBaseTheme.Dialog</item>
