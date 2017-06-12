@@ -74,7 +74,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         NavigationDrawer();
         listControls = new ArrayList<>();
         listControls.add(new ListControl(R.drawable.ic_starting_point, "Choose place to start"));
-        listControls.add(new ListControl(R.drawable.ic_test, "Choose place to finish"));
+        listControls.add(new ListControl(R.drawable.ic_finish_point, "Choose place to finish"));
         adapterListView = new CustomAdapterListView(this, listControls);
         listView.setAdapter(adapterListView);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);

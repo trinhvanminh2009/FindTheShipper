@@ -82,6 +82,11 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
     @BindView(R.id.btnOK) ImageButton btnOk;
     @BindView(R.id.btnAdd)ImageButton btnPlace;
     @BindView(R.id.txtCash) TextView txtCash;
+    @BindView(R.id.layoutItem) LinearLayout layoutItem;
+    @BindView(R.id.btnCreateNewOrder) Button btnCreateNewOrder;
+    @BindView(R.id.layoutCreateNewOrder) LinearLayout layoutCreateNewOrder;
+    @BindView(R.id.layoutControl)LinearLayout layoutControl;
+    @BindView(R.id.btnCancelOrder)Button btnCancelOrder;
     private String[] listProfile = new String[4];
     private boolean showPermissionDeniedDialog = false;
     private List<Marker>startMarkers = new ArrayList<>();
@@ -104,7 +109,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         listProfile = getIntent().getStringArrayExtra("profile");
         listControls = new ArrayList<>();
         listControls.add(new ListControl(R.drawable.ic_starting_point, getResources().getString(R.string.start_place)));
-        listControls.add(new ListControl(R.drawable.ic_test, getResources().getString(R.string.finish_place)));
+        listControls.add(new ListControl(R.drawable.ic_finish_point, getResources().getString(R.string.finish_place)));
         adapterListView = new CustomAdapterListView(this, listControls);
         listPlaces.setAdapter(adapterListView);
         NavigationDrawer();
@@ -135,6 +140,21 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
 
     }
 
+    @OnClick(R.id.btnCancelOrder)
+    public void cancelOrder()
+    {
+        btnCreateNewOrder.setVisibility(View.GONE);
+        layoutCreateNewOrder.setVisibility(View.GONE);
+        layoutControl.setVisibility(View.VISIBLE);
+    }
+    @OnClick(R.id.btnCreateNewOrder)
+    public void createNewOrder()
+    {
+        btnCreateNewOrder.setVisibility(View.GONE);
+        layoutCreateNewOrder.setVisibility(View.VISIBLE);
+        layoutControl.setVisibility(View.GONE);
+    }
+
     @OnItemClick(R.id.listAction)
     public void listViewClicked(AdapterView<?>parent, View view , int position, long id)
     {
@@ -143,6 +163,11 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         {
             btnOk.setVisibility(View.VISIBLE);
             btnPlace.setVisibility(View.VISIBLE);
+            layoutCreateNewOrder.setVisibility(View.GONE);
+            btnCreateNewOrder.setVisibility(View.GONE);
+
+
+            TastyToast.makeText(HandleMapsActivity.this,getResources().getString( R.string.choosing_starting_point),TastyToast.LENGTH_LONG,TastyToast.INFO);
             mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
                 @Override
                 public void onCameraChange(CameraPosition cameraPosition) {
@@ -156,22 +181,21 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
                 }
             });
         }
-        if(listControl.getIdIcon() == R.drawable.ic_test)
+        if(listControl.getIdIcon() == R.drawable.ic_finish_point)
         {
+            btnCreateNewOrder.setVisibility(View.GONE);
             btnOk.setVisibility(View.VISIBLE);
             btnPlace.setVisibility(View.VISIBLE);
+            layoutCreateNewOrder.setVisibility(View.GONE);
+            TastyToast.makeText(HandleMapsActivity.this,getResources().getString( R.string.choosing_finish_point),TastyToast.LENGTH_LONG,TastyToast.INFO);
             mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
                 @Override
                 public void onCameraChange(CameraPosition cameraPosition) {
-
                     LatLng center = mMap.getCameraPosition().target;
                     String tempAddress = getCompleteAddressString(center.latitude, center.longitude);
-                    listControls.set(1,new ListControl(R.drawable.ic_test,tempAddress));
+                    listControls.set(1,new ListControl(R.drawable.ic_finish_point,tempAddress));
                     listPlaces.setAdapter(adapterListView);
                     itemClicked = 2;
-
-
-
                 }
             });
 
@@ -184,13 +208,16 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
     {
         if(itemClicked == 1)
         {
+            btnCreateNewOrder.setVisibility(View.GONE);
+            layoutCreateNewOrder.setVisibility(View.GONE);
+            TastyToast.makeText(HandleMapsActivity.this,getResources().getString( R.string.choosing_finish_point),TastyToast.LENGTH_LONG,TastyToast.INFO);
             mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
                 @Override
                 public void onCameraChange(CameraPosition cameraPosition) {
 
                     LatLng center = mMap.getCameraPosition().target;
                     String tempAddress = getCompleteAddressString(center.latitude, center.longitude);
-                    listControls.set(1,new ListControl(R.drawable.ic_test,tempAddress));
+                    listControls.set(1,new ListControl(R.drawable.ic_finish_point,tempAddress));
                     listPlaces.setAdapter(adapterListView);
                     itemClicked = 2;
 
@@ -201,15 +228,18 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         }
         if(itemClicked == 2)
         {
+            sendRequest();
             btnOk.setVisibility(View.GONE);
             btnPlace.setVisibility(View.GONE);
-            sendRequest();
+            layoutItem.setVisibility(View.VISIBLE);
             mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
                 @Override
                 public void onCameraChange(CameraPosition cameraPosition) {
 
                 }
             });
+            TastyToast.makeText(HandleMapsActivity.this,getResources().getString( R.string.choosing_places_success),TastyToast.LENGTH_LONG,TastyToast.SUCCESS);
+            btnCreateNewOrder.setVisibility(View.VISIBLE);
         }
         else {
 

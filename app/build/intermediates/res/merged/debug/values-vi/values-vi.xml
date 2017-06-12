@@ -21,6 +21,9 @@
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Thu gọn"</string>
     <string name="app_name">Find The Shipper</string>
     <string name="cancel">Hủy</string>
+    <string name="choosing_finish_point">Kéo bản đồ đến điểm cần giao. Địa điểm ngay điểm đánh dấu.</string>
+    <string name="choosing_places_success">Chọn địa điểm thành công. Tiếp tục tạo đơn hàng bên dưới.</string>
+    <string name="choosing_starting_point">Kéo bản đồ đến điểm cần bắt đầu. Địa điểm sẽ ngay điểm đánh dấu</string>
     <string name="cityCenter">Thành phố Hồ Chí Minh</string>
     <string name="com_facebook_device_auth_instructions">Truy cập &lt;b>facebook.com/device&lt;/b> và nhập mã hiển thị ở trên.</string>
     <string name="com_facebook_image_download_unknown_error">Lỗi bất ngờ khi tải ảnh xuống.</string>

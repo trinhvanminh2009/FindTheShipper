@@ -6,57 +6,60 @@
     density="420dpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1497251712801"
+    timestamp="1497266050330"
     token="6640650149846725895"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1638" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="59" />
+        duration="0" />
     <task
         name="verifier"
-        duration="15" />
+        duration="0" />
 
     <artifact
-        location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
+        location="D:\My Project\FindTheShipper\app\build\outputs\apk\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1497237941071"
+        timestamp="1497258569185"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="D:\My Project\FindTheShipper\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
+        <artifact
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
@@ -64,59 +67,46 @@
         <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
-        <artifact
-            location="D:\My Project\FindTheShipper\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1497246709619"
+        timestamp="1497265914027"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1497247284053"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1497247321101"
+        timestamp="1497266050330"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\My Project\FindTheShipper\app\build\outputs\apk\app-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1497251712801"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
     </build>
 
 </instant-run>

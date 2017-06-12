@@ -10,4 +10,7 @@
     <string name="finish_place">Chọn điểm bắt đầu</string>
     <string name="start_place">Chọn điểm kết thúc</string>
     <string name="cityCenter">Thành phố Hồ Chí Minh</string>
+    <string name="choosing_finish_point">Kéo bản đồ đến điểm cần giao. Địa điểm ngay điểm đánh dấu.</string>
+    <string name="choosing_places_success">Chọn địa điểm thành công. Tiếp tục tạo đơn hàng bên dưới.</string>
+    <string name="choosing_starting_point">Kéo bản đồ đến điểm cần bắt đầu. Địa điểm sẽ ngay điểm đánh dấu</string>
 </resources>

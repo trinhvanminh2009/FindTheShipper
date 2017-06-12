@@ -11,4 +11,9 @@
     <string name="start_place">Choose place to start</string>
     <string name="finish_place">Choose place to finish</string>
     <string name="cityCenter">Ho Chi Minh city</string>
+    <string name="choosing_starting_point">Drag the maps into place you want to start. Your place right marker.</string>
+    <string name="choosing_finish_point">Drag the maps into place you want to finish.Your place right marker.</string>
+    <string name="choosing_places_success">Choose places success. Move on create new order.</string>
+    <string name="create_order">Create Order</string>
+
 </resources>
