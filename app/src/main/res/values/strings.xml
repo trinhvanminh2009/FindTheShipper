@@ -15,5 +15,16 @@
     <string name="choosing_finish_point">Drag the maps into place you want to finish.Your place right marker.</string>
     <string name="choosing_places_success">Choose places success. Move on create new order.</string>
     <string name="create_order">Create Order</string>
+    <string name="text_view_start_place">Start place</string>
+    <string name="edit_text_start_place">Place for shipper get products</string>
+    <string name="text_view_advance_money">Advance money</string>
+    <string name="edit_text_advance_money">Count by k (100 display 100k)</string>
+    <string name="text_view_ship_money">Ship money</string>
+    <string name="edit_text_ship_money">About 25k</string>
+    <string name="text_view_note">Note</string>
+    <string name="edit_text_note">Descriptive more</string>
+    <string name="text_view_phone_number">Phone number</string>
+    <string name="edit_text_phone_number">Your phone number</string>
+
 
 </resources>

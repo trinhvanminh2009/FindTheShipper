@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">260595537255-sfotcr2nh9tl6rftcbrphhicuttgn7qd.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://find-the-shipper.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">260595537255</string>
+    <string name="google_api_key" translatable="false">AIzaSyAC5a8NBcqkEhZoAWY1-dVJ1AbMM8LMTao</string>
+    <string name="google_app_id" translatable="false">1:260595537255:android:df8bd89ae58ee54a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAC5a8NBcqkEhZoAWY1-dVJ1AbMM8LMTao</string>
+    <string name="google_storage_bucket" translatable="false">find-the-shipper.appspot.com</string>
+    <string name="project_id" translatable="false">find-the-shipper</string>
+</resources>

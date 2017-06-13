@@ -39,7 +39,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:layout_marginLeft="5dp"
                     android:text="0 km"
                     android:id="@+id/txtDistance"/>
@@ -65,7 +65,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:text="0 mins"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:id="@+id/txtTime"/>
             </LinearLayout>
 
@@ -87,7 +87,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:text="0 VNĐ"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:id="@+id/txtCash"/>
             </LinearLayout>
 
@@ -102,7 +102,7 @@
             android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
+            android:layout_weight="1"
             class="com.google.android.gms.maps.SupportMapFragment">
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -154,7 +154,7 @@
             android:orientation="vertical"
             android:layout_gravity="bottom"
             android:visibility="gone"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_marginLeft="5dp"
             android:id="@+id/layoutCreateNewOrder">
             <LinearLayout
@@ -165,15 +165,16 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Điểm hẹn" />
+                    android:layout_weight="2"
+                    android:text="@string/text_view_start_place" />
 
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
+                    android:layout_weight="5"
+                    android:id="@+id/editStartPlace"
                     android:background="@drawable/shape_edittext"
-                    android:hint="Thành phố hồ chí Minh" />
+                    android:hint="@string/edit_text_start_place" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -183,15 +184,16 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Tiền ứng" />
+                    android:layout_weight="2"
+                    android:text="@string/text_view_advance_money" />
 
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
+                    android:layout_weight="5"
+                    android:inputType="number"
                     android:background="@drawable/shape_edittext"
-                    android:hint="Thành phố hồ chí Minh" />
+                    android:hint="@string/edit_text_advance_money" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -201,15 +203,17 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Tiền Ship" />
+                    android:layout_weight="2"
+                    android:text="@string/text_view_ship_money" />
 
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
+                    android:layout_weight="5"
+                    android:id="@+id/editShipMoney"
                     android:background="@drawable/shape_edittext"
-                    android:hint="Thành phố hồ chí Minh" />
+                    android:inputType="number"
+                    android:hint="@string/edit_text_ship_money" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -219,15 +223,15 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Ghi chú" />
+                    android:layout_weight="2"
+                    android:text="@string/text_view_note" />
 
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
+                    android:layout_weight="5"
                     android:background="@drawable/shape_edittext"
-                    android:hint="Thành phố hồ chí Minh" />
+                    android:hint="@string/edit_text_note" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -237,15 +241,17 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="SĐT" />
+                    android:layout_weight="2"
+                    android:text="@string/text_view_phone_number" />
 
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
+                    android:layout_weight="5"
+                    android:id="@+id/editNumber"
                     android:background="@drawable/shape_edittext"
-                    android:hint="Thành phố hồ chí Minh" />
+                    android:hint="@string/edit_text_phone_number"
+                    android:inputType="number" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -256,7 +262,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/md_red_800"
-                    android:text="Hủy"
+                    android:text="@string/cancel"
                     android:id="@+id/btnCancelOrder"
                     android:layout_weight="1"
                     android:layout_marginLeft="20dp"
@@ -269,13 +275,10 @@
                     android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="Tạo"
+                    android:text="@string/create_order"
+                    android:id="@+id/btnConfirmCreateOrder"
                     android:background="@drawable/shape_button"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-
-
-
 </LinearLayout>

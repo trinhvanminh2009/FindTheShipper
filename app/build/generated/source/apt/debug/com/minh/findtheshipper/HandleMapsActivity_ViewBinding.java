@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -20,13 +21,15 @@ import java.lang.Override;
 public class HandleMapsActivity_ViewBinding implements Unbinder {
   private HandleMapsActivity target;
 
-  private View view2131624105;
-
-  private View view2131624112;
-
-  private View view2131624113;
+  private View view2131624108;
 
   private View view2131624115;
+
+  private View view2131624116;
+
+  private View view2131624121;
+
+  private View view2131624122;
 
   @UiThread
   public HandleMapsActivity_ViewBinding(HandleMapsActivity target) {
@@ -41,7 +44,7 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolBar, "field 'toolbar'", Toolbar.class);
     view = Utils.findRequiredView(source, R.id.listAction, "field 'listPlaces' and method 'listViewClicked'");
     target.listPlaces = Utils.castView(view, R.id.listAction, "field 'listPlaces'", ListView.class);
-    view2131624105 = view;
+    view2131624108 = view;
     ((AdapterView<?>) view).setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> p0, View p1, int p2, long p3) {
@@ -52,7 +55,7 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.txtTime = Utils.findRequiredViewAsType(source, R.id.txtTime, "field 'txtTime'", TextView.class);
     view = Utils.findRequiredView(source, R.id.btnOK, "field 'btnOk' and method 'getAddress'");
     target.btnOk = Utils.castView(view, R.id.btnOK, "field 'btnOk'", ImageButton.class);
-    view2131624112 = view;
+    view2131624115 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -64,7 +67,7 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.layoutItem = Utils.findRequiredViewAsType(source, R.id.layoutItem, "field 'layoutItem'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.btnCreateNewOrder, "field 'btnCreateNewOrder' and method 'createNewOrder'");
     target.btnCreateNewOrder = Utils.castView(view, R.id.btnCreateNewOrder, "field 'btnCreateNewOrder'", Button.class);
-    view2131624113 = view;
+    view2131624116 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -75,11 +78,23 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.layoutControl = Utils.findRequiredViewAsType(source, R.id.layoutControl, "field 'layoutControl'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.btnCancelOrder, "field 'btnCancelOrder' and method 'cancelOrder'");
     target.btnCancelOrder = Utils.castView(view, R.id.btnCancelOrder, "field 'btnCancelOrder'", Button.class);
-    view2131624115 = view;
+    view2131624121 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
         target.cancelOrder();
+      }
+    });
+    target.editStartPlace = Utils.findRequiredViewAsType(source, R.id.editStartPlace, "field 'editStartPlace'", EditText.class);
+    target.editShipMoney = Utils.findRequiredViewAsType(source, R.id.editShipMoney, "field 'editShipMoney'", EditText.class);
+    target.editPhoneNumber = Utils.findRequiredViewAsType(source, R.id.editNumber, "field 'editPhoneNumber'", EditText.class);
+    view = Utils.findRequiredView(source, R.id.btnConfirmCreateOrder, "field 'btnConfirmCreateOrder' and method 'confirmCreateOrder'");
+    target.btnConfirmCreateOrder = Utils.castView(view, R.id.btnConfirmCreateOrder, "field 'btnConfirmCreateOrder'", Button.class);
+    view2131624122 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.confirmCreateOrder();
       }
     });
   }
@@ -103,14 +118,20 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.layoutCreateNewOrder = null;
     target.layoutControl = null;
     target.btnCancelOrder = null;
+    target.editStartPlace = null;
+    target.editShipMoney = null;
+    target.editPhoneNumber = null;
+    target.btnConfirmCreateOrder = null;
 
-    ((AdapterView<?>) view2131624105).setOnItemClickListener(null);
-    view2131624105 = null;
-    view2131624112.setOnClickListener(null);
-    view2131624112 = null;
-    view2131624113.setOnClickListener(null);
-    view2131624113 = null;
+    ((AdapterView<?>) view2131624108).setOnItemClickListener(null);
+    view2131624108 = null;
     view2131624115.setOnClickListener(null);
     view2131624115 = null;
+    view2131624116.setOnClickListener(null);
+    view2131624116 = null;
+    view2131624121.setOnClickListener(null);
+    view2131624121 = null;
+    view2131624122.setOnClickListener(null);
+    view2131624122 = null;
   }
 }

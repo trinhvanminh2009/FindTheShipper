@@ -236,6 +236,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\drawable-xxhdpi-v4\\design_ic_visibility.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\061ca05575032ac78167c0546f39e4868f0fac2d\\output\\res\\drawable-xxhdpi-v4\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_disabled.9.png",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\8ea8c79c584d55c13076b88db01fc0196b659694\\output\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_disabled.9.png"
     },

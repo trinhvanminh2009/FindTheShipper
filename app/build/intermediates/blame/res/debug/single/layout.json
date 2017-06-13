@@ -12,6 +12,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\92134a31c132b650bdbc3fa6874e694918843fdf\\output\\res\\layout\\default_toast_layout.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_layout.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\40702c4f844db47384ec645f82d5f15061e9a442\\output\\res\\layout\\dialog_layout.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
@@ -54,6 +58,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\alert_dialog.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\layout\\alert_dialog.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_profile_setting.xml",
@@ -120,12 +128,12 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_primary.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_primary.xml"
-    },
-    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_small.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\30162e923c3211c432942bf8773a694acca8aad2\\output\\res\\layout\\messenger_button_send_white_small.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_primary.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_primary.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",

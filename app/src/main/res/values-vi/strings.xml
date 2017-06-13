@@ -13,4 +13,15 @@
     <string name="choosing_finish_point">Kéo bản đồ đến điểm cần giao. Địa điểm ngay điểm đánh dấu.</string>
     <string name="choosing_places_success">Chọn địa điểm thành công. Tiếp tục tạo đơn hàng bên dưới.</string>
     <string name="choosing_starting_point">Kéo bản đồ đến điểm cần bắt đầu. Địa điểm sẽ ngay điểm đánh dấu</string>
+    <string name="create_order">Tạo đơn hàng</string>
+    <string name="edit_text_advance_money">Tính bằng k (100 hiển thị 100k)</string>
+    <string name="edit_text_note">Mô tả thêm</string>
+    <string name="edit_text_phone_number">Số điện thoại</string>
+    <string name="edit_text_ship_money">Khoảng 25k</string>
+    <string name="edit_text_start_place">Nơi shipper tới lấy hàng</string>
+    <string name="text_view_advance_money">Tiền ứng</string>
+    <string name="text_view_note">Ghi chú</string>
+    <string name="text_view_phone_number">SĐT</string>
+    <string name="text_view_ship_money">Tiền ship</string>
+    <string name="text_view_start_place">Nơi đón</string>
 </resources>

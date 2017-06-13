@@ -15,7 +15,7 @@ import java.lang.Override;
 public class MapsActivity_ViewBinding implements Unbinder {
   private MapsActivity target;
 
-  private View view2131624105;
+  private View view2131624108;
 
   @UiThread
   public MapsActivity_ViewBinding(MapsActivity target) {
@@ -30,7 +30,7 @@ public class MapsActivity_ViewBinding implements Unbinder {
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolBar, "field 'toolbar'", Toolbar.class);
     view = Utils.findRequiredView(source, R.id.listAction, "field 'listView' and method 'listViewItemClicked'");
     target.listView = Utils.castView(view, R.id.listAction, "field 'listView'", ListView.class);
-    view2131624105 = view;
+    view2131624108 = view;
     ((AdapterView<?>) view).setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> p0, View p1, int p2, long p3) {
@@ -49,7 +49,7 @@ public class MapsActivity_ViewBinding implements Unbinder {
     target.toolbar = null;
     target.listView = null;
 
-    ((AdapterView<?>) view2131624105).setOnItemClickListener(null);
-    view2131624105 = null;
+    ((AdapterView<?>) view2131624108).setOnItemClickListener(null);
+    view2131624108 = null;
   }
 }

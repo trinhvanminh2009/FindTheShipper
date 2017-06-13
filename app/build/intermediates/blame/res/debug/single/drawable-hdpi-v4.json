@@ -100,6 +100,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\8ea8c79c584d55c13076b88db01fc0196b659694\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal.9.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\061ca05575032ac78167c0546f39e4868f0fac2d\\output\\res\\drawable-hdpi-v4\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messenger_bubble_small_blue.png",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\30162e923c3211c432942bf8773a694acca8aad2\\output\\res\\drawable-hdpi-v4\\messenger_bubble_small_blue.png"
     },

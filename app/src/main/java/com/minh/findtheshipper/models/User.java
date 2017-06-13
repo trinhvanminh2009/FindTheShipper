@@ -1,22 +1,39 @@
 package com.minh.findtheshipper.models;
 
+import io.realm.Realm;
+import io.realm.RealmList;
+import io.realm.RealmObject;
+
 /**
  * Created by Minh on 6/1/2017.
  */
 
 public class User {
+    private int userID;
     private String fullName;
     private String email;
     private String phoneNumber;
-    private String birthday;
-    private String url;
+    private String avatar;
+    private RealmList<Order>orders;
 
-    public User(String fullName, String email, String phoneNumber, String birthday, String url) {
+
+
+    public User(int userID, String fullName, String email, String phoneNumber, String avatar, RealmList<Order> orders) {
+        this.userID = userID;
         this.fullName = fullName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.birthday = birthday;
-        this.url = url;
+        this.avatar = avatar;
+        this.orders = orders;
+
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     public String getFullName() {
@@ -43,19 +60,19 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
-    public String getUrl() {
-        return url;
+    public RealmList<Order> getOrders() {
+        return orders;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setOrders(RealmList<Order> orders) {
+        this.orders = orders;
     }
 }

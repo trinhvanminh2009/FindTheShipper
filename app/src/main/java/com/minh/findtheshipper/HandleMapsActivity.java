@@ -3,6 +3,7 @@ package com.minh.findtheshipper;
 import android.*;
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Address;
@@ -11,11 +12,16 @@ import android.location.Location;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DialogTitle;
 import android.support.v7.widget.Toolbar;
+import android.telephony.PhoneNumberUtils;
+import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,7 +32,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -48,6 +53,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.MapDragHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
@@ -68,6 +74,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 public class HandleMapsActivity extends AppCompatActivity  implements OnMapReadyCallback,
@@ -87,6 +94,10 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
     @BindView(R.id.layoutCreateNewOrder) LinearLayout layoutCreateNewOrder;
     @BindView(R.id.layoutControl)LinearLayout layoutControl;
     @BindView(R.id.btnCancelOrder)Button btnCancelOrder;
+    @BindView(R.id.editStartPlace) EditText editStartPlace;
+    @BindView(R.id.editShipMoney)EditText editShipMoney;
+    @BindView(R.id.editNumber)EditText editPhoneNumber;
+    @BindView(R.id.btnConfirmCreateOrder) Button btnConfirmCreateOrder;
     private String[] listProfile = new String[4];
     private boolean showPermissionDeniedDialog = false;
     private List<Marker>startMarkers = new ArrayList<>();
@@ -100,22 +111,25 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handle_maps);
-
         ButterKnife.bind(this);
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
         listProfile = getIntent().getStringArrayExtra("profile");
         listControls = new ArrayList<>();
         listControls.add(new ListControl(R.drawable.ic_starting_point, getResources().getString(R.string.start_place)));
         listControls.add(new ListControl(R.drawable.ic_finish_point, getResources().getString(R.string.finish_place)));
         adapterListView = new CustomAdapterListView(this, listControls);
         listPlaces.setAdapter(adapterListView);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Create new order");
         NavigationDrawer();
 
 
     }
+
+
 
     private void sendRequest(){
         String start = listControls.get(0).getContent();
@@ -140,12 +154,69 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
 
     }
 
+    private boolean isPhoneNumberValid(String phoneNumber)
+    {
+
+        if(phoneNumber.length() >=9 && phoneNumber.length() <=11)
+        {
+
+
+            if( phoneNumber.charAt(0) == '0' && phoneNumber.charAt(1) != '0' )
+            {
+                int countNumber = 0;
+                for (int i = 0 ; i < phoneNumber.length(); i++)
+                {
+                    if(phoneNumber.charAt(i) == '0')
+                    {
+                        countNumber++;
+                    }
+                }
+                if(countNumber <5)
+                {
+                    return true;
+                }
+
+            }
+        }
+        return false;
+    }
+
+
+    public void handleCreateNewOrder()
+    {
+
+        editStartPlace.setText(listControls.get(0).getContent());
+    }
+
+    @OnClick(R.id.btnConfirmCreateOrder)
+    public void confirmCreateOrder()
+    {
+
+        if(!isPhoneNumberValid(editPhoneNumber.getText().toString()))
+        {
+            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(HandleMapsActivity.this, SweetAlertDialog.WARNING_TYPE);
+            sweetAlertDialog.setTitleText("Phone number invalid");
+            sweetAlertDialog.setContentText("Please check your phone number again");
+            sweetAlertDialog.show();
+        }
+        if(editShipMoney.getText().length() == 0)
+        {
+            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(HandleMapsActivity.this, SweetAlertDialog.WARNING_TYPE);
+            sweetAlertDialog.setTitleText("Money ship invalid");
+            sweetAlertDialog.setContentText("You have to input money ship");
+            sweetAlertDialog.show();
+        }
+
+    }
+
+
     @OnClick(R.id.btnCancelOrder)
     public void cancelOrder()
     {
-        btnCreateNewOrder.setVisibility(View.GONE);
+        btnCreateNewOrder.setVisibility(View.VISIBLE);
         layoutCreateNewOrder.setVisibility(View.GONE);
         layoutControl.setVisibility(View.VISIBLE);
+
     }
     @OnClick(R.id.btnCreateNewOrder)
     public void createNewOrder()
@@ -153,6 +224,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         btnCreateNewOrder.setVisibility(View.GONE);
         layoutCreateNewOrder.setVisibility(View.VISIBLE);
         layoutControl.setVisibility(View.GONE);
+        handleCreateNewOrder();
     }
 
     @OnItemClick(R.id.listAction)
@@ -163,6 +235,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         {
             btnOk.setVisibility(View.VISIBLE);
             btnPlace.setVisibility(View.VISIBLE);
+            layoutItem.setVisibility(View.GONE);
             layoutCreateNewOrder.setVisibility(View.GONE);
             btnCreateNewOrder.setVisibility(View.GONE);
 
@@ -184,6 +257,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         if(listControl.getIdIcon() == R.drawable.ic_finish_point)
         {
             btnCreateNewOrder.setVisibility(View.GONE);
+            layoutItem.setVisibility(View.GONE);
             btnOk.setVisibility(View.VISIBLE);
             btnPlace.setVisibility(View.VISIBLE);
             layoutCreateNewOrder.setVisibility(View.GONE);
@@ -248,8 +322,6 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
 
     }
 
-
-
     private void NavigationDrawer() {
         Uri myUri = Uri.parse(listProfile[3]);
         Log.d("myTags",myUri.toString());
@@ -304,6 +376,24 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version));
         item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
         item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
+
+        item1.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+            @Override
+            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                if(drawerItem instanceof Nameable)
+                {
+                    Toast.makeText(HandleMapsActivity.this, ((Nameable) drawerItem).getName().getText(HandleMapsActivity.this), Toast.LENGTH_SHORT).show();
+                }
+                return false;
+            }
+        });
+        item2.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+            @Override
+            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+
+                return false;
+            }
+        });
         result.openDrawer();
         result.closeDrawer();
         result.getDrawerLayout();
@@ -468,6 +558,5 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         }
         return result;
     }
-
 
 }
