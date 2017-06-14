@@ -21,7 +21,7 @@ public class Order extends RealmObject{
     private String note;
     private String distance;
     private String phoneNumber;
-    private Calendar dateTime;
+    private String dateTime;
     private int like;
     private int dislike;
 
@@ -98,11 +98,11 @@ public class Order extends RealmObject{
         this.phoneNumber = phoneNumber;
     }
 
-    public Calendar getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(Calendar dateTime) {
+    public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
 

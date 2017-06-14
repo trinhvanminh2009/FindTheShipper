@@ -59,14 +59,20 @@ import com.minh.findtheshipper.helpers.MapDragHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
 import com.minh.findtheshipper.models.ListControl;
+import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.Route;
+import com.minh.findtheshipper.realm.RealmController;
 import com.minh.findtheshipper.utils.MapDragUtils;
 import com.minh.findtheshipper.utils.PermissionUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -75,6 +81,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 
 public class HandleMapsActivity extends AppCompatActivity  implements OnMapReadyCallback,
@@ -98,6 +106,8 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
     @BindView(R.id.editShipMoney)EditText editShipMoney;
     @BindView(R.id.editNumber)EditText editPhoneNumber;
     @BindView(R.id.btnConfirmCreateOrder) Button btnConfirmCreateOrder;
+    @BindView(R.id.editAdvancedMoney) EditText editAdvancedMoney;
+    @BindView(R.id.editNote) EditText editNote;
     private String[] listProfile = new String[4];
     private boolean showPermissionDeniedDialog = false;
     private List<Marker>startMarkers = new ArrayList<>();
@@ -107,6 +117,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
     private ArrayList<ListControl> listControls;
     private CustomAdapterListView adapterListView;
     private int itemClicked = 0;
+    private Realm realm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,6 +126,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        realm.init(HandleMapsActivity.this);
         listProfile = getIntent().getStringArrayExtra("profile");
         listControls = new ArrayList<>();
         listControls.add(new ListControl(R.drawable.ic_starting_point, getResources().getString(R.string.start_place)));
@@ -125,7 +137,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Create new order");
         NavigationDrawer();
-
+        initRealm();
 
     }
 
@@ -206,7 +218,69 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
             sweetAlertDialog.setContentText("You have to input money ship");
             sweetAlertDialog.show();
         }
+        else {
+           insertOrder();
+            Order order = realm.where(Order.class).equalTo("orderID","order0").findFirst();
+            TastyToast.makeText(HandleMapsActivity.this,order.getFinishPoint(),TastyToast.LENGTH_SHORT,TastyToast.INFO);
 
+
+        }
+
+    }
+
+    public void test()
+    {
+        RealmResults<Order> orders = realm.where(Order.class).findAll();
+        TastyToast.makeText(HandleMapsActivity.this,orders.get(0).getOrderID() + orders.get(0).getAdvancedMoney()
+                +orders.get(0).getPhoneNumber()
+                ,TastyToast.LENGTH_SHORT,TastyToast.INFO);
+
+    }
+    public void insertOrder()
+    {
+
+        try{
+
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    final Order order = realm.createObject(Order.class,"order"+countOrder());
+                    order.setStatus("Đang tìm kiếm shipper");
+                    order.setStartPoint(editStartPlace.getText().toString());
+                    order.setFinishPoint(listControls.get(1).getContent());
+                    order.setAdvancedMoney(editAdvancedMoney.getText().toString());
+                    order.setDistance(txtDistance.getText().toString());
+                    if(!editNote.getText().toString().equals(""))
+                    {
+                        order.setNote(editNote.getText().toString());
+                    }
+                    order.setDistance(txtDistance.getText().toString());
+                    order.setPhoneNumber(editPhoneNumber.getText().toString());
+                    DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
+                    String date = df.format(Calendar.getInstance().getTime());
+                    order.setDateTime(date);
+                    realm.insertOrUpdate(order);
+                    TastyToast.makeText(HandleMapsActivity.this, "Success",TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
+                }
+            });
+
+        }finally {
+            if(realm != null)
+            {
+                realm.close();
+            }
+        }
+
+    }
+
+    public void initRealm()
+    {
+        realm = null;
+        realm = Realm.getDefaultInstance();
+    }
+    public long countOrder()
+    {
+        return realm.where(Order.class).count();
     }
 
 
@@ -322,7 +396,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
 
     }
 
-    private void NavigationDrawer() {
+    public void NavigationDrawer() {
         Uri myUri = Uri.parse(listProfile[3]);
         Log.d("myTags",myUri.toString());
         new DrawerBuilder().withActivity(this).build();

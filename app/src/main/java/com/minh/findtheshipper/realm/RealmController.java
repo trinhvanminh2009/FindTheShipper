@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.Application;
 import android.app.Fragment;
 
+import com.minh.findtheshipper.HandleMapsActivity;
 import com.minh.findtheshipper.models.Order;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -74,11 +76,30 @@ public class RealmController {
         return !realm.isEmpty();
     }
 
-    public void insertOrder()
+    public long countOrder()
+    {
+        return realm.where(Order.class).count();
+    }
+
+    public void insertOrder( String status, String startPoint, String finishPoint, String advancedMoney,
+                            String note, String distance, String phoneNumber, String datetime)
     {
         realm.beginTransaction();
-        Order order = realm.createObject(Order.class);
-
+        final Order order = realm.createObject(Order.class);
+        order.setOrderID("order"+countOrder());
+        order.setStatus(status);
+        order.setStartPoint(startPoint);
+        order.setFinishPoint(finishPoint);
+        order.setAdvancedMoney(advancedMoney);
+        if(note != null)
+        {
+            order.setNote(note);
+        }
+        order.setDistance(distance);
+        order.setPhoneNumber(phoneNumber);
+        order.setDateTime(datetime);
+        realm.copyToRealm(order);
+        realm.commitTransaction();
 
     }
 }

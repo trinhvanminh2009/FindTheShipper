@@ -192,6 +192,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
                     android:inputType="number"
+                    android:id="@+id/editAdvancedMoney"
                     android:background="@drawable/shape_edittext"
                     android:hint="@string/edit_text_advance_money" />
             </LinearLayout>
@@ -230,6 +231,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
+                    android:id="@+id/editNote"
                     android:background="@drawable/shape_edittext"
                     android:hint="@string/edit_text_note" />
             </LinearLayout>

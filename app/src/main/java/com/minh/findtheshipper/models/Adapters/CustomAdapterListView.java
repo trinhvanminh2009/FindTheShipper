@@ -57,7 +57,6 @@ public class CustomAdapterListView extends ArrayAdapter<ListControl> {
         ListControl control = listControls.get(position);
         imageView.setImageResource(control.getIdIcon());
         editText.setText(control.getContent());
-
         return view;
 
     }

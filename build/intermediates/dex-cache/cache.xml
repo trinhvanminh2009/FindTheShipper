@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\trinh\.android\build-cache\4030762342ff79f01c4e795289c02449d354fe3e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="71e3378bc477f9f43528f7619dc9d8ad1a18c57d">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\classes_8bc90619be97e9cb6a6f89dc633075cf7cee81b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\trinh\.android\build-cache\848959570b11c8b090f325ef682059f0c883ee3e\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -155,6 +164,15 @@
         <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\classes_51c435ff3cbef0b2c36cd52bb8ad39d6b4fc1dd5.jar" />
     </item>
     <item
+        is-multidex="false"
+        jar="C:\Users\trinh\.android\build-cache\32fc63a5f053b9622414f928b80de73644c55782\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0c3529d9491be892952749d252ae1defa9b1f937">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\classes_cbd1b2b5fe8ef59d4601e6f9d9eb41e0ac132664.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="D:\My Project\FindTheShipper\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
@@ -245,15 +263,6 @@
         <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\classes_07a4ba9a782bcf6198cbb654fb419940c79ded7c.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\trinh\.android\build-cache\061ca05575032ac78167c0546f39e4868f0fac2d\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="57487745ce450899f9f250d5ae5c092a682cd041">
-        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_213761b2e97c835d47f0c486a045ee2caf0ade38\classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="C:\Users\trinh\.android\build-cache\92134a31c132b650bdbc3fa6874e694918843fdf\output\jars\classes.jar"
         jumboMode="false"
@@ -279,6 +288,15 @@
         revision="25.0.2"
         sha1="d5dd0afc50069b7fa0fc12ac85f91efa8df4db67">
         <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\annotations-4.0.0-RC0_be980b1bf07340f711eadba7fdb7b8f4f07bb9c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trinh\.android\build-cache\245f144bc6fbc2860ef055f8bb9b93bacd2d5984\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b64dd5f01bc37de289f90fd59299b0c76d119611">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\classes_ad3392273ed5f2c0ab9e467af4dbc012cf20b08b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -390,6 +408,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\trinh\.gradle\caches\modules-2\files-2.1\io.realm\realm-annotations\3.3.2\3e2543dc63f1a812c76c7986a6bd02287f38af91\realm-annotations-3.3.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e2543dc63f1a812c76c7986a6bd02287f38af91">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\realm-annotations-3.3.2_d8ed20efff96e97350130be4126e73fbccc43174.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\trinh\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
         jumboMode="false"
         optimize="true"
@@ -403,7 +430,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="449ff6fd89dc6197747a59084fa176584fef77c1">
+        sha1="c55b8b122b10b9b6999aba8c7b1cc90b871eb282">
         <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e89dbf5be326e077fe4395016b1290beff5dbc9d\classes.dex" />
     </item>
     <item
@@ -414,15 +441,6 @@
         revision="25.0.2"
         sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
         <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\classes_15abd79d1c8b6856ad71d8fc212a9fa352a2a6e2.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\trinh\.android\build-cache\32fc63a5f053b9622414f928b80de73644c55782\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0c3529d9491be892952749d252ae1defa9b1f937">
-        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cbd1b2b5fe8ef59d4601e6f9d9eb41e0ac132664\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -468,6 +486,15 @@
         revision="25.0.2"
         sha1="48efa6f14074e1a6b16e02ac05eba3fc5c7c7ec8">
         <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\butterknife-annotations-8.6.0_31bb4b6d37ca3b9e50f1066f92a4ecabb92cb911.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trinh\.android\build-cache\061ca05575032ac78167c0546f39e4868f0fac2d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="57487745ce450899f9f250d5ae5c092a682cd041">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\pre-dexed\debug\classes_213761b2e97c835d47f0c486a045ee2caf0ade38.jar" />
     </item>
     <item
         is-multidex="false"

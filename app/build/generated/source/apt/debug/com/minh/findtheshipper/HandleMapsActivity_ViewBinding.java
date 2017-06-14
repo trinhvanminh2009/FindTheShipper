@@ -21,15 +21,15 @@ import java.lang.Override;
 public class HandleMapsActivity_ViewBinding implements Unbinder {
   private HandleMapsActivity target;
 
-  private View view2131624108;
-
-  private View view2131624115;
+  private View view2131624109;
 
   private View view2131624116;
 
-  private View view2131624121;
+  private View view2131624117;
 
-  private View view2131624122;
+  private View view2131624124;
+
+  private View view2131624125;
 
   @UiThread
   public HandleMapsActivity_ViewBinding(HandleMapsActivity target) {
@@ -44,7 +44,7 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolBar, "field 'toolbar'", Toolbar.class);
     view = Utils.findRequiredView(source, R.id.listAction, "field 'listPlaces' and method 'listViewClicked'");
     target.listPlaces = Utils.castView(view, R.id.listAction, "field 'listPlaces'", ListView.class);
-    view2131624108 = view;
+    view2131624109 = view;
     ((AdapterView<?>) view).setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> p0, View p1, int p2, long p3) {
@@ -55,7 +55,7 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.txtTime = Utils.findRequiredViewAsType(source, R.id.txtTime, "field 'txtTime'", TextView.class);
     view = Utils.findRequiredView(source, R.id.btnOK, "field 'btnOk' and method 'getAddress'");
     target.btnOk = Utils.castView(view, R.id.btnOK, "field 'btnOk'", ImageButton.class);
-    view2131624115 = view;
+    view2131624116 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -67,7 +67,7 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.layoutItem = Utils.findRequiredViewAsType(source, R.id.layoutItem, "field 'layoutItem'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.btnCreateNewOrder, "field 'btnCreateNewOrder' and method 'createNewOrder'");
     target.btnCreateNewOrder = Utils.castView(view, R.id.btnCreateNewOrder, "field 'btnCreateNewOrder'", Button.class);
-    view2131624116 = view;
+    view2131624117 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -78,7 +78,7 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.layoutControl = Utils.findRequiredViewAsType(source, R.id.layoutControl, "field 'layoutControl'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.btnCancelOrder, "field 'btnCancelOrder' and method 'cancelOrder'");
     target.btnCancelOrder = Utils.castView(view, R.id.btnCancelOrder, "field 'btnCancelOrder'", Button.class);
-    view2131624121 = view;
+    view2131624124 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -90,13 +90,15 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.editPhoneNumber = Utils.findRequiredViewAsType(source, R.id.editNumber, "field 'editPhoneNumber'", EditText.class);
     view = Utils.findRequiredView(source, R.id.btnConfirmCreateOrder, "field 'btnConfirmCreateOrder' and method 'confirmCreateOrder'");
     target.btnConfirmCreateOrder = Utils.castView(view, R.id.btnConfirmCreateOrder, "field 'btnConfirmCreateOrder'", Button.class);
-    view2131624122 = view;
+    view2131624125 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
         target.confirmCreateOrder();
       }
     });
+    target.editAdvancedMoney = Utils.findRequiredViewAsType(source, R.id.editAdvancedMoney, "field 'editAdvancedMoney'", EditText.class);
+    target.editNote = Utils.findRequiredViewAsType(source, R.id.editNote, "field 'editNote'", EditText.class);
   }
 
   @Override
@@ -122,16 +124,18 @@ public class HandleMapsActivity_ViewBinding implements Unbinder {
     target.editShipMoney = null;
     target.editPhoneNumber = null;
     target.btnConfirmCreateOrder = null;
+    target.editAdvancedMoney = null;
+    target.editNote = null;
 
-    ((AdapterView<?>) view2131624108).setOnItemClickListener(null);
-    view2131624108 = null;
-    view2131624115.setOnClickListener(null);
-    view2131624115 = null;
+    ((AdapterView<?>) view2131624109).setOnItemClickListener(null);
+    view2131624109 = null;
     view2131624116.setOnClickListener(null);
     view2131624116 = null;
-    view2131624121.setOnClickListener(null);
-    view2131624121 = null;
-    view2131624122.setOnClickListener(null);
-    view2131624122 = null;
+    view2131624117.setOnClickListener(null);
+    view2131624117 = null;
+    view2131624124.setOnClickListener(null);
+    view2131624124 = null;
+    view2131624125.setOnClickListener(null);
+    view2131624125 = null;
   }
 }
