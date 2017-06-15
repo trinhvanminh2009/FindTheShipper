@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-public class CreatedOrderActivity extends FragmentActivity {
+public class CreatedOrderActivity extends BaseActivity {
 
     @BindView(R.id.toolBar) Toolbar toolbar;
     @BindView(R.id.listOrder) ListView listViewOrder;
@@ -29,9 +29,18 @@ public class CreatedOrderActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_created_order);
         ButterKnife.bind(this);
+        setSupportActionBar(toolbar);
         realm.init(CreatedOrderActivity.this);
         initRealm();
         loadAllList();
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationDrawer(toolbar);
+    }
+
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.activity_created_order;
     }
 
     public void initRealm()
@@ -52,4 +61,5 @@ public class CreatedOrderActivity extends FragmentActivity {
 
         listViewOrder.setAdapter(customAdapterListviewOrder);
     }
+
 }

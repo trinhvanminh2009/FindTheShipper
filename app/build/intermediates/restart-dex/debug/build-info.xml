@@ -6,22 +6,22 @@
     density="420dpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1497433201599"
+    timestamp="1497445500665"
     token="6640650149846725895"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="3361" />
+        duration="3067" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="34" />
+        duration="72" />
     <task
         name="verifier"
-        duration="7" />
+        duration="75" />
 
     <artifact
         location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -78,23 +78,21 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1497431204608"
+        timestamp="1497444263670"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
         <artifact
             location="D:\My Project\FindTheShipper\app\build\outputs\apk\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1497432492177"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1497433201599"
+        timestamp="1497445500665"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\My Project\FindTheShipper\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
