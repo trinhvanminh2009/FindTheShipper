@@ -8,10 +8,6 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_app.png"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     }
