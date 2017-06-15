@@ -4,6 +4,7 @@ import android.*;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Address;
@@ -248,7 +249,6 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
                     order.setStatus("Đang tìm kiếm shipper");
                     order.setStartPoint(editStartPlace.getText().toString());
                     order.setFinishPoint(listControls.get(1).getContent());
-                    order.setAdvancedMoney(editAdvancedMoney.getText().toString());
                     order.setDistance(txtDistance.getText().toString());
                     if(!editNote.getText().toString().equals(""))
                     {
@@ -260,15 +260,13 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
                     String date = df.format(Calendar.getInstance().getTime());
                     order.setDateTime(date);
                     realm.insertOrUpdate(order);
-                    TastyToast.makeText(HandleMapsActivity.this, "Success",TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
-                }
+                    Intent intent = new Intent(HandleMapsActivity.this, CreatedOrderActivity.class);
+                    startActivity(intent);
+                    }
             });
 
-        }finally {
-            if(realm != null)
-            {
-                realm.close();
-            }
+        }catch (Exception e){
+
         }
 
     }

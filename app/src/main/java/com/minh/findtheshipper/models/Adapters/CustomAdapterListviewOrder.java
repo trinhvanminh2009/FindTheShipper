@@ -59,7 +59,7 @@ public class CustomAdapterListviewOrder  extends ArrayAdapter<Order>{
         TextView txtFinishPlace = (TextView)view.findViewById(R.id.txtFinish);
         TextView txtAdvancedMoney = (TextView)view.findViewById(R.id.txtAdvancedMoney);
         TextView txtShipMoney = (TextView)view.findViewById(R.id.txtShipMoney);
-        TextView txtDistance = (TextView)view.findViewById(R.id.txtDistance);
+        TextView txtDistance = (TextView)view.findViewById(R.id.txtDistanceOrder);
         TextView txtNote = (TextView)view.findViewById(R.id.txtNote);
         TextView txtPhoneNumber = (TextView)view.findViewById(R.id.txtPhoneNumber);
         TextView txtDatetime = (TextView)view.findViewById(R.id.txtDatetime);
@@ -69,7 +69,7 @@ public class CustomAdapterListviewOrder  extends ArrayAdapter<Order>{
         txtFinishPlace.setText(order.getFinishPoint());
         txtAdvancedMoney.setText(order.getAdvancedMoney());
         txtShipMoney.setText(order.getShipMoney());
-       // txtDistance.setText(order.getDistance());
+        txtDistance.setText(order.getDistance());
         txtNote.setText(order.getNote());
         txtPhoneNumber.setText(order.getPhoneNumber());
         txtDatetime.setText(order.getDateTime());

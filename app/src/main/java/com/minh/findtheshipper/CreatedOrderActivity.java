@@ -57,6 +57,7 @@ public class CreatedOrderActivity extends BaseActivity {
         {
             orderList.add(orders.get(i));
         }
+        TastyToast.makeText(this, orderList.get(0).getFinishPoint(),TastyToast.LENGTH_SHORT,TastyToast.INFO);
         customAdapterListviewOrder = new CustomAdapterListviewOrder(CreatedOrderActivity.this, orderList);
 
         listViewOrder.setAdapter(customAdapterListviewOrder);
