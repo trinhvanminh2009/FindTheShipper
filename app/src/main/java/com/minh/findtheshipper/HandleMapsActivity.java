@@ -197,7 +197,6 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
 
     public void handleCreateNewOrder()
     {
-
         editStartPlace.setText(listControls.get(0).getContent());
     }
 
@@ -221,10 +220,6 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         }
         else {
            insertOrder();
-            Order order = realm.where(Order.class).equalTo("orderID","order0").findFirst();
-            TastyToast.makeText(HandleMapsActivity.this,order.getFinishPoint(),TastyToast.LENGTH_SHORT,TastyToast.INFO);
-
-
         }
 
     }
@@ -246,19 +241,21 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
                 @Override
                 public void execute(Realm realm) {
                     final Order order = realm.createObject(Order.class,"order"+countOrder());
-                    order.setStatus("Đang tìm kiếm shipper");
-                    order.setStartPoint(editStartPlace.getText().toString());
-                    order.setFinishPoint(listControls.get(1).getContent());
-                    order.setDistance(txtDistance.getText().toString());
+                    order.setStatus(getResources().getString(R.string.order_status));
+                    order.setStartPoint("- "+ editStartPlace.getText().toString());
+                    order.setFinishPoint("- "+ listControls.get(1).getContent());
+                    order.setAdvancedMoney(getResources().getString(R.string.order_advanced_money) + editAdvancedMoney.getText().toString()+"K VNĐ");
+                    order.setDistance(getResources().getString(R.string.order_distance)+ txtDistance.getText().toString());
+                    order.setShipMoney(getResources().getString(R.string.order_ship_money)+ editShipMoney.getText().toString()+ "K VNĐ");
                     if(!editNote.getText().toString().equals(""))
                     {
-                        order.setNote(editNote.getText().toString());
+                        order.setNote(getResources().getString(R.string.order_note)+ editNote.getText().toString());
                     }
-                    order.setDistance(txtDistance.getText().toString());
-                    order.setPhoneNumber(editPhoneNumber.getText().toString());
+                    order.setDistance(getResources().getString(R.string.order_distance)+ txtDistance.getText().toString());
+                    order.setPhoneNumber(getResources().getString(R.string.order_phone_number)+ editPhoneNumber.getText().toString());
                     DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
                     String date = df.format(Calendar.getInstance().getTime());
-                    order.setDateTime(date);
+                    order.setDateTime(getResources().getString(R.string.order_last_updated)+ date);
                     realm.insertOrUpdate(order);
                     Intent intent = new Intent(HandleMapsActivity.this, CreatedOrderActivity.class);
                     startActivity(intent);

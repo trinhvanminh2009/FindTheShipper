@@ -35,7 +35,9 @@ public class CreatedOrderActivity extends BaseActivity {
         loadAllList();
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Created order");
         NavigationDrawer(toolbar);
+       // deleteAll();
     }
 
     @Override
@@ -57,10 +59,23 @@ public class CreatedOrderActivity extends BaseActivity {
         {
             orderList.add(orders.get(i));
         }
-        TastyToast.makeText(this, orderList.get(0).getFinishPoint(),TastyToast.LENGTH_SHORT,TastyToast.INFO);
+        TastyToast.makeText(this, orderList.get(0).getShipMoney(),TastyToast.LENGTH_SHORT,TastyToast.INFO);
         customAdapterListviewOrder = new CustomAdapterListviewOrder(CreatedOrderActivity.this, orderList);
-
         listViewOrder.setAdapter(customAdapterListviewOrder);
+    }
+
+    public void deleteAll()
+    {
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                final RealmResults<Order> results = realm.where(Order.class).findAll();
+
+
+                results.deleteAllFromRealm();
+            }
+        });
+
     }
 
 }

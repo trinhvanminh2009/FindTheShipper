@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.minh.findtheshipper.R;
@@ -63,6 +64,8 @@ public class CustomAdapterListviewOrder  extends ArrayAdapter<Order>{
         TextView txtNote = (TextView)view.findViewById(R.id.txtNote);
         TextView txtPhoneNumber = (TextView)view.findViewById(R.id.txtPhoneNumber);
         TextView txtDatetime = (TextView)view.findViewById(R.id.txtDatetime);
+        LinearLayout nonStatus = (LinearLayout)view.findViewById(R.id.nonStatus);
+        LinearLayout haveStatus = (LinearLayout)view.findViewById(R.id.haveStatus);
         Order order = orderList.get(position);
         txtStatus.setText(order.getStatus());
         txtStartPlace.setText(order.getStartPoint());
@@ -77,6 +80,15 @@ public class CustomAdapterListviewOrder  extends ArrayAdapter<Order>{
         Button btnFindAgain = (Button)view.findViewById(R.id.btnFindAgain);
         Button btnOrderSucess = (Button)view.findViewById(R.id.btnOrderSuccess);
         Button btnCallAgain = (Button)view.findViewById(R.id.btnCallAgain);
+        if(txtStatus.getText() == "")
+        {
+            haveStatus.setVisibility(View.GONE);
+
+        }
+        if(txtStatus.getText() != "")
+        {
+            nonStatus.setVisibility(View.GONE);
+        }
         return view;
 
     }

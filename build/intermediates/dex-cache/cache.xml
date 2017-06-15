@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\84cd1e297ce01fdabe33e8b0fe798561c2e2a5d1\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_17d7854f52f408bb52cb974f9d2184caf1d2bffe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\2b10f666beeffe0be0ca6c0643137df3cf622fbd\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_96ed9c0e3020b787739d2638560c93d7a0c38687\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\My Project\FindTheShipper\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="23d0e6c69917dd0e8379aa0718b942ce4975e675">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e89dbf5be326e077fe4395016b1290beff5dbc9d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\ad72e4f86ca5c2b869e40d4a73e631d9d02307eb\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_006bafdfa49e476f6007c794189fa652168b4ae8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\274eae0115fb655c099e1f09a23ef269f8eb8959\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_725268123868b1d0e8dec2bbd9a6e82f556e26d7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\63bb8c88cb07fd2a61cf8e841700e79f8ba04dea\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_17acc9e06cdc491627efbaad88e80f80a2f3598e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\50904e5761bcdcbd2e0d467e4bfd7f163abb6e0f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0b400f91c438c6b9a5e78852c1b40b26899332eb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\My Project\FindTheShipper\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_e90b58af6c7e5b920c0dea5233326768aed4b4a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\0ddbecf82b861e1d69c5df8e6012ad0b50fb55c8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_23ccbb0ed3b1c49ee1a69e2243f809cf10fef0ac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\31f5d3bb407da9c56d12b6e2a55af342eae1fe7d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3547da674a2640517acc1a1b0fce46c39a84997a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\efe52ff4e26bc630ea8170cf8225aa5a2c3ad6f2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_487777fe413452dc852e3f7479b467432555cb5a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\a049e949da4a691166ab2f2b2dc6c319fc5ec6a3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fab16632d29b528ecb77909a5dcbf25468c66f25\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\209b53882971843951a665ccc926be94ebdb647f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2fa131cef2f5e93c750ca174714fb5108d2ccafd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\1a229d9ddbcef941075326f190838684d18fa4df\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f6a9e4bb8fde8f5e95f167928b83fab354776605\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\23063f3fe6f219cf9f7522770ffe263839dfc7aa\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_07d649757bb25aca9b54c07b64796bb575306f0c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\trinh\.android\build-cache\0b8707e41d8197a53209ee23008d2d33be39daf9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="D:\My Project\FindTheShipper\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e0cf05d314b19faf289b43a2150537dbbf2db75c\classes.dex" />
+    </item>
+
+</items>

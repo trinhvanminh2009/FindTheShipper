@@ -25,6 +25,20 @@
     <string name="edit_text_note">Descriptive more</string>
     <string name="text_view_phone_number">Phone number</string>
     <string name="edit_text_phone_number">Your phone number</string>
+    <string name="order_status">Status: The order canceled..</string>
+    <string name="order_starting_point">Starting point: </string>
+    <string name="order_finish_point">Finish point: </string>
+    <string name="order_advanced_money">Advanced money: </string>
+    <string name="order_ship_money">Ship money: </string>
+    <string name="order_note">Note:</string>
+    <string name="order_distance">Distance: </string>
+    <string name="order_phone_number">Phone number: </string>
+    <string name="order_edit">Edit</string>
+    <string name="order_find_again">Find again</string>
+    <string name="order_success">Order completed</string>
+    <string name="order_call">Call</string>
+    <string name="order_last_updated">Last updated:</string>
+    
 
 
 </resources>

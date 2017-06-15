@@ -4187,7 +4187,7 @@ public final class R2 {
 
   public static final class id {
     @IdRes
-    public static final int action0 = 0x7f0e0121;
+    public static final int action0 = 0x7f0e0123;
 
     @IdRes
     public static final int action_bar = 0x7f0e009b;
@@ -4211,16 +4211,16 @@ public final class R2 {
     public static final int action_bar_title = 0x7f0e0078;
 
     @IdRes
-    public static final int action_container = 0x7f0e011e;
+    public static final int action_container = 0x7f0e0120;
 
     @IdRes
     public static final int action_context_bar = 0x7f0e009c;
 
     @IdRes
-    public static final int action_divider = 0x7f0e0125;
+    public static final int action_divider = 0x7f0e0127;
 
     @IdRes
-    public static final int action_image = 0x7f0e011f;
+    public static final int action_image = 0x7f0e0121;
 
     @IdRes
     public static final int action_menu_divider = 0x7f0e0002;
@@ -4238,10 +4238,10 @@ public final class R2 {
     public static final int action_mode_close_button = 0x7f0e007a;
 
     @IdRes
-    public static final int action_text = 0x7f0e0120;
+    public static final int action_text = 0x7f0e0122;
 
     @IdRes
-    public static final int actions = 0x7f0e012d;
+    public static final int actions = 0x7f0e012f;
 
     @IdRes
     public static final int activity_chooser_view_content = 0x7f0e007b;
@@ -4292,7 +4292,7 @@ public final class R2 {
     public static final int btnAdd = 0x7f0e00b3;
 
     @IdRes
-    public static final int btnCallAgain = 0x7f0e0101;
+    public static final int btnCallAgain = 0x7f0e0103;
 
     @IdRes
     public static final int btnCancelOrder = 0x7f0e00bc;
@@ -4304,16 +4304,16 @@ public final class R2 {
     public static final int btnCreateNewOrder = 0x7f0e00b5;
 
     @IdRes
-    public static final int btnEdit = 0x7f0e00fe;
+    public static final int btnEdit = 0x7f0e00ff;
 
     @IdRes
-    public static final int btnFindAgain = 0x7f0e00ff;
+    public static final int btnFindAgain = 0x7f0e0100;
 
     @IdRes
     public static final int btnOK = 0x7f0e00b4;
 
     @IdRes
-    public static final int btnOrderSuccess = 0x7f0e0100;
+    public static final int btnOrderSuccess = 0x7f0e0102;
 
     @IdRes
     public static final int button = 0x7f0e0071;
@@ -4322,7 +4322,7 @@ public final class R2 {
     public static final int buttonPanel = 0x7f0e0082;
 
     @IdRes
-    public static final int cancel_action = 0x7f0e0122;
+    public static final int cancel_action = 0x7f0e0124;
 
     @IdRes
     public static final int cancel_button = 0x7f0e00cd;
@@ -4343,7 +4343,7 @@ public final class R2 {
     public static final int checkbox = 0x7f0e0092;
 
     @IdRes
-    public static final int chronometer = 0x7f0e012a;
+    public static final int chronometer = 0x7f0e012c;
 
     @IdRes
     public static final int clip_horizontal = 0x7f0e0052;
@@ -4397,7 +4397,7 @@ public final class R2 {
     public static final int contentPanel = 0x7f0e0085;
 
     @IdRes
-    public static final int content_layout = 0x7f0e011c;
+    public static final int content_layout = 0x7f0e011e;
 
     @IdRes
     public static final int content_text = 0x7f0e00cc;
@@ -4469,7 +4469,7 @@ public final class R2 {
     public static final int end = 0x7f0e004a;
 
     @IdRes
-    public static final int end_padder = 0x7f0e0134;
+    public static final int end_padder = 0x7f0e0136;
 
     @IdRes
     public static final int enterAlways = 0x7f0e0039;
@@ -4511,6 +4511,9 @@ public final class R2 {
     public static final int fixed = 0x7f0e006b;
 
     @IdRes
+    public static final int haveStatus = 0x7f0e00fe;
+
+    @IdRes
     public static final int home = 0x7f0e0005;
 
     @IdRes
@@ -4523,7 +4526,7 @@ public final class R2 {
     public static final int icon = 0x7f0e0080;
 
     @IdRes
-    public static final int icon_group = 0x7f0e012e;
+    public static final int icon_group = 0x7f0e0130;
 
     @IdRes
     public static final int icon_only = 0x7f0e0066;
@@ -4544,7 +4547,7 @@ public final class R2 {
     public static final int imgIcon = 0x7f0e00f4;
 
     @IdRes
-    public static final int info = 0x7f0e012b;
+    public static final int info = 0x7f0e012d;
 
     @IdRes
     public static final int infoView = 0x7f0e00f3;
@@ -4577,10 +4580,10 @@ public final class R2 {
     public static final int light = 0x7f0e006a;
 
     @IdRes
-    public static final int line1 = 0x7f0e0130;
+    public static final int line1 = 0x7f0e0132;
 
     @IdRes
-    public static final int line3 = 0x7f0e0132;
+    public static final int line3 = 0x7f0e0134;
 
     @IdRes
     public static final int linearLayout = 0x7f0e00df;
@@ -4613,67 +4616,67 @@ public final class R2 {
     public static final int mask_right = 0x7f0e00c5;
 
     @IdRes
-    public static final int masked = 0x7f0e0138;
+    public static final int masked = 0x7f0e013a;
 
     @IdRes
-    public static final int material_drawer_account_header = 0x7f0e0105;
+    public static final int material_drawer_account_header = 0x7f0e0107;
 
     @IdRes
-    public static final int material_drawer_account_header_background = 0x7f0e0104;
+    public static final int material_drawer_account_header_background = 0x7f0e0106;
 
     @IdRes
-    public static final int material_drawer_account_header_current = 0x7f0e0109;
+    public static final int material_drawer_account_header_current = 0x7f0e010b;
 
     @IdRes
-    public static final int material_drawer_account_header_email = 0x7f0e010c;
+    public static final int material_drawer_account_header_email = 0x7f0e010e;
 
     @IdRes
-    public static final int material_drawer_account_header_name = 0x7f0e010b;
+    public static final int material_drawer_account_header_name = 0x7f0e010d;
 
     @IdRes
-    public static final int material_drawer_account_header_small_first = 0x7f0e0106;
+    public static final int material_drawer_account_header_small_first = 0x7f0e0108;
 
     @IdRes
-    public static final int material_drawer_account_header_small_second = 0x7f0e0107;
+    public static final int material_drawer_account_header_small_second = 0x7f0e0109;
 
     @IdRes
-    public static final int material_drawer_account_header_small_third = 0x7f0e0108;
+    public static final int material_drawer_account_header_small_third = 0x7f0e010a;
 
     @IdRes
-    public static final int material_drawer_account_header_text_section = 0x7f0e010a;
+    public static final int material_drawer_account_header_text_section = 0x7f0e010c;
 
     @IdRes
-    public static final int material_drawer_account_header_text_switcher = 0x7f0e010d;
+    public static final int material_drawer_account_header_text_switcher = 0x7f0e010f;
 
     @IdRes
     public static final int material_drawer_animation = 0x7f0e0008;
 
     @IdRes
-    public static final int material_drawer_arrow = 0x7f0e0113;
+    public static final int material_drawer_arrow = 0x7f0e0115;
 
     @IdRes
-    public static final int material_drawer_arrow_container = 0x7f0e0112;
+    public static final int material_drawer_arrow_container = 0x7f0e0114;
 
     @IdRes
-    public static final int material_drawer_badge = 0x7f0e0115;
+    public static final int material_drawer_badge = 0x7f0e0117;
 
     @IdRes
-    public static final int material_drawer_badge_container = 0x7f0e0114;
+    public static final int material_drawer_badge_container = 0x7f0e0116;
 
     @IdRes
-    public static final int material_drawer_description = 0x7f0e0111;
+    public static final int material_drawer_description = 0x7f0e0113;
 
     @IdRes
-    public static final int material_drawer_divider = 0x7f0e010e;
+    public static final int material_drawer_divider = 0x7f0e0110;
 
     @IdRes
-    public static final int material_drawer_email = 0x7f0e0117;
+    public static final int material_drawer_email = 0x7f0e0119;
 
     @IdRes
-    public static final int material_drawer_icon = 0x7f0e010f;
+    public static final int material_drawer_icon = 0x7f0e0111;
 
     @IdRes
-    public static final int material_drawer_inner_shadow = 0x7f0e011b;
+    public static final int material_drawer_inner_shadow = 0x7f0e011d;
 
     @IdRes
     public static final int material_drawer_item_container = 0x7f0e0009;
@@ -4721,22 +4724,22 @@ public final class R2 {
     public static final int material_drawer_item_section = 0x7f0e0017;
 
     @IdRes
-    public static final int material_drawer_layout = 0x7f0e0103;
+    public static final int material_drawer_layout = 0x7f0e0105;
 
     @IdRes
     public static final int material_drawer_menu_default_group = 0x7f0e0018;
 
     @IdRes
-    public static final int material_drawer_name = 0x7f0e0110;
+    public static final int material_drawer_name = 0x7f0e0112;
 
     @IdRes
-    public static final int material_drawer_profileIcon = 0x7f0e0116;
+    public static final int material_drawer_profileIcon = 0x7f0e0118;
 
     @IdRes
     public static final int material_drawer_profile_header = 0x7f0e0019;
 
     @IdRes
-    public static final int material_drawer_recycler_view = 0x7f0e011a;
+    public static final int material_drawer_recycler_view = 0x7f0e011c;
 
     @IdRes
     public static final int material_drawer_slider_layout = 0x7f0e001a;
@@ -4748,19 +4751,19 @@ public final class R2 {
     public static final int material_drawer_sticky_header = 0x7f0e001c;
 
     @IdRes
-    public static final int material_drawer_switch = 0x7f0e0118;
+    public static final int material_drawer_switch = 0x7f0e011a;
 
     @IdRes
-    public static final int material_drawer_toggle = 0x7f0e0119;
+    public static final int material_drawer_toggle = 0x7f0e011b;
 
     @IdRes
     public static final int materialize_root = 0x7f0e001d;
 
     @IdRes
-    public static final int media_actions = 0x7f0e0124;
+    public static final int media_actions = 0x7f0e0126;
 
     @IdRes
-    public static final int messenger_send_button = 0x7f0e011d;
+    public static final int messenger_send_button = 0x7f0e011f;
 
     @IdRes
     public static final int middle = 0x7f0e0058;
@@ -4781,19 +4784,22 @@ public final class R2 {
     public static final int never_display = 0x7f0e0075;
 
     @IdRes
+    public static final int nonStatus = 0x7f0e0101;
+
+    @IdRes
     public static final int none = 0x7f0e002f;
 
     @IdRes
     public static final int normal = 0x7f0e0031;
 
     @IdRes
-    public static final int notification_background = 0x7f0e012c;
+    public static final int notification_background = 0x7f0e012e;
 
     @IdRes
-    public static final int notification_main_column = 0x7f0e0127;
+    public static final int notification_main_column = 0x7f0e0129;
 
     @IdRes
-    public static final int notification_main_column_container = 0x7f0e0126;
+    public static final int notification_main_column_container = 0x7f0e0128;
 
     @IdRes
     public static final int open_graph = 0x7f0e006d;
@@ -4838,10 +4844,10 @@ public final class R2 {
     public static final int right = 0x7f0e004d;
 
     @IdRes
-    public static final int right_icon = 0x7f0e012f;
+    public static final int right_icon = 0x7f0e0131;
 
     @IdRes
-    public static final int right_side = 0x7f0e0128;
+    public static final int right_side = 0x7f0e012a;
 
     @IdRes
     public static final int root_layout = 0x7f0e00dd;
@@ -4955,7 +4961,7 @@ public final class R2 {
     public static final int start = 0x7f0e004e;
 
     @IdRes
-    public static final int status_bar_latest_event_content = 0x7f0e0123;
+    public static final int status_bar_latest_event_content = 0x7f0e0125;
 
     @IdRes
     public static final int submenuarrow = 0x7f0e0095;
@@ -4964,7 +4970,7 @@ public final class R2 {
     public static final int submit_area = 0x7f0e00a6;
 
     @IdRes
-    public static final int successView = 0x7f0e0135;
+    public static final int successView = 0x7f0e0137;
 
     @IdRes
     public static final int success_frame = 0x7f0e00c4;
@@ -4979,10 +4985,10 @@ public final class R2 {
     public static final int terrain = 0x7f0e005d;
 
     @IdRes
-    public static final int text = 0x7f0e0133;
+    public static final int text = 0x7f0e0135;
 
     @IdRes
-    public static final int text2 = 0x7f0e0131;
+    public static final int text2 = 0x7f0e0133;
 
     @IdRes
     public static final int textSpacerNoButtons = 0x7f0e0089;
@@ -5003,7 +5009,7 @@ public final class R2 {
     public static final int textinput_error = 0x7f0e0022;
 
     @IdRes
-    public static final int time = 0x7f0e0129;
+    public static final int time = 0x7f0e012b;
 
     @IdRes
     public static final int title = 0x7f0e0081;
@@ -5048,7 +5054,7 @@ public final class R2 {
     public static final int txtControl = 0x7f0e00f5;
 
     @IdRes
-    public static final int txtDatetime = 0x7f0e0102;
+    public static final int txtDatetime = 0x7f0e0104;
 
     @IdRes
     public static final int txtDistance = 0x7f0e00af;
@@ -5090,10 +5096,10 @@ public final class R2 {
     public static final int view_offset_helper = 0x7f0e0026;
 
     @IdRes
-    public static final int visible = 0x7f0e0137;
+    public static final int visible = 0x7f0e0139;
 
     @IdRes
-    public static final int warningView = 0x7f0e0136;
+    public static final int warningView = 0x7f0e0138;
 
     @IdRes
     public static final int warning_frame = 0x7f0e00c8;
@@ -5152,10 +5158,13 @@ public final class R2 {
     public static final int hide_password_duration = 0x7f0c0007;
 
     @IntegerRes
-    public static final int show_password_duration = 0x7f0c0008;
+    public static final int order_button = 0x7f0c0008;
 
     @IntegerRes
-    public static final int status_bar_notification_info_maxnum = 0x7f0c0009;
+    public static final int show_password_duration = 0x7f0c0009;
+
+    @IntegerRes
+    public static final int status_bar_notification_info_maxnum = 0x7f0c000a;
   }
 
   public static final class string {
@@ -10509,19 +10518,58 @@ public final class R2 {
     public static final int ok = 0x7f08004d;
 
     @StringRes
-    public static final int password_toggle_content_description = 0x7f080703;
+    public static final int order_advanced_money = 0x7f080703;
 
     @StringRes
-    public static final int path_password_eye = 0x7f080704;
+    public static final int order_call = 0x7f080704;
 
     @StringRes
-    public static final int path_password_eye_mask_strike_through = 0x7f080705;
+    public static final int order_distance = 0x7f080705;
 
     @StringRes
-    public static final int path_password_eye_mask_visible = 0x7f080706;
+    public static final int order_edit = 0x7f080706;
 
     @StringRes
-    public static final int path_password_strike_through = 0x7f080707;
+    public static final int order_find_again = 0x7f080707;
+
+    @StringRes
+    public static final int order_finish_point = 0x7f080708;
+
+    @StringRes
+    public static final int order_last_updated = 0x7f080709;
+
+    @StringRes
+    public static final int order_note = 0x7f08070a;
+
+    @StringRes
+    public static final int order_phone_number = 0x7f08070b;
+
+    @StringRes
+    public static final int order_ship_money = 0x7f08070c;
+
+    @StringRes
+    public static final int order_starting_point = 0x7f08070d;
+
+    @StringRes
+    public static final int order_status = 0x7f08070e;
+
+    @StringRes
+    public static final int order_success = 0x7f08070f;
+
+    @StringRes
+    public static final int password_toggle_content_description = 0x7f080710;
+
+    @StringRes
+    public static final int path_password_eye = 0x7f080711;
+
+    @StringRes
+    public static final int path_password_eye_mask_strike_through = 0x7f080712;
+
+    @StringRes
+    public static final int path_password_eye_mask_visible = 0x7f080713;
+
+    @StringRes
+    public static final int path_password_strike_through = 0x7f080714;
 
     @StringRes
     public static final int permission_required_toast = 0x7f08004e;
@@ -10530,7 +10578,7 @@ public final class R2 {
     public static final int please_wait_facebooklogin = 0x7f08004f;
 
     @StringRes
-    public static final int project_id = 0x7f080708;
+    public static final int project_id = 0x7f080715;
 
     @StringRes
     public static final int required_permission_location = 0x7f080050;
