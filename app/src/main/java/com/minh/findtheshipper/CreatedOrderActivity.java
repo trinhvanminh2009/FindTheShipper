@@ -16,6 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 import io.realm.RealmResults;
+import io.realm.Sort;
 
 public class CreatedOrderActivity extends BaseActivity {
 
@@ -27,7 +28,6 @@ public class CreatedOrderActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_created_order);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         realm.init(CreatedOrderActivity.this);
@@ -54,12 +54,11 @@ public class CreatedOrderActivity extends BaseActivity {
     public void loadAllList()
     {
         orderList = new ArrayList<>();
-        RealmResults<Order> orders = realm.where(Order.class).findAll();
+        RealmResults<Order> orders = realm.where(Order.class).findAllSorted("dateTime", Sort.DESCENDING);
         for (int i = 0; i < orders.size(); i++)
         {
             orderList.add(orders.get(i));
         }
-        TastyToast.makeText(this, orderList.get(0).getShipMoney(),TastyToast.LENGTH_SHORT,TastyToast.INFO);
         customAdapterListviewOrder = new CustomAdapterListviewOrder(CreatedOrderActivity.this, orderList);
         listViewOrder.setAdapter(customAdapterListviewOrder);
     }

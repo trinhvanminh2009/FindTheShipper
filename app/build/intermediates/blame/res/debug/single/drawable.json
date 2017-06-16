@@ -228,6 +228,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\drawable\\abc_vector_test.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\action_item_badge.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\a32169a9eaf00836d7414fe1865684faa82424d9\\output\\res\\drawable\\action_item_badge.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\material_drawer_shadow_left.9.png",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\drawable\\material_drawer_shadow_left.9.png"
     },

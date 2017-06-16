@@ -23,6 +23,7 @@ import android.telephony.PhoneNumberUtils;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -86,7 +87,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 
-public class HandleMapsActivity extends AppCompatActivity  implements OnMapReadyCallback,
+public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback, DirectionFinderListeners{
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -122,7 +123,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_handle_maps);
+       // setContentView(R.layout.activity_handle_maps);
         ButterKnife.bind(this);
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -137,11 +138,16 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Create new order");
-        NavigationDrawer();
+        NavigationDrawer(toolbar);
         initRealm();
-
     }
 
+
+
+    @Override
+    protected int getLayoutResource() {
+       return R.layout.activity_handle_maps;
+    }
 
 
     private void sendRequest(){
@@ -166,6 +172,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         }
 
     }
+
 
     private boolean isPhoneNumberValid(String phoneNumber)
     {
@@ -390,7 +397,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
 
 
     }
-
+/*
     public void NavigationDrawer() {
         Uri myUri = Uri.parse(listProfile[3]);
         Log.d("myTags",myUri.toString());
@@ -467,7 +474,7 @@ public class HandleMapsActivity extends AppCompatActivity  implements OnMapReady
         result.closeDrawer();
         result.getDrawerLayout();
     }
-
+*/
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;

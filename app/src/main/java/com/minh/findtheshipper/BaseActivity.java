@@ -1,17 +1,24 @@
 package com.minh.findtheshipper;
 
-import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.net.Uri;
+import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
+import com.mikepenz.actionitembadge.library.ActionItemBadge;
+import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -21,16 +28,17 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.mikepenz.materialdrawer.model.interfaces.Nameable;
-import com.sdsmdg.tastytoast.TastyToast;
+import com.minh.findtheshipper.helpers.DialogHelpers;
+
+
 
 /**
  * Created by trinh on 6/14/2017.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-  //  private String[] listProfile = new String[4];
 
+    private int badgerCount = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +47,59 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected abstract int getLayoutResource();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_list,menu);
+        if(badgerCount >0)
+        {
+            ActionItemBadge.update(this,menu.findItem(R.id.item_notifycation),
+                    resizeImage(R.drawable.ic_notifycation,200,200), ActionItemBadge.BadgeStyles.RED, badgerCount);
+
+
+        }
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.item_notifycation:
+               badgerCount++;
+                ActionItemBadge.update(item, badgerCount);
+               return true;
+            default:  return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    private void showNotification()
+    {
+        final FragmentManager fragmentManager = getSupportFragmentManager();
+        DialogHelpers dialogHelpers = new DialogHelpers();
+        dialogHelpers.show(fragmentManager,"New fragment");
+
+    }
+
+    private Drawable resizeImage(int resId, int w, int h)
+    {
+        // load the origial Bitmap
+        Bitmap BitmapOrg = BitmapFactory.decodeResource(getResources(), resId);
+        int width = BitmapOrg.getWidth();
+        int height = BitmapOrg.getHeight();
+        int newWidth = w;
+        int newHeight = h;
+        // calculate the scale
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        // create a matrix for the manipulation
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+        Bitmap resizedBitmap = Bitmap.createBitmap(BitmapOrg, 0, 0,width, height, matrix, true);
+        return new BitmapDrawable(resizedBitmap);
+    }
     public void NavigationDrawer(Toolbar toolbar) {
 
      //   Uri myUri = Uri.parse(listProfile[3]);
@@ -47,7 +108,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         new DrawerBuilder().withActivity(this).build();
         final PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Create new order ");
-        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName("Created order");
+         final PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName("Created order");
         PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Tutorials");
         PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Your profile");
         PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("About us");
@@ -67,14 +128,19 @@ public abstract class BaseActivity extends AppCompatActivity {
                     }
                 })
                 .build();
-        Drawer result = new DrawerBuilder()
+        final Drawer result = new DrawerBuilder()
                 .withActivity(this)
                 .withAccountHeader(headerResult)
                 .withToolbar(toolbar)
                 .addDrawerItems(
                         item1,
                         item2,
-                        item3,item4,item5,item6,item7,item8
+                        item3,
+                        item4,
+                        item5,
+                        item6,
+                        item7,
+                        item8
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -100,18 +166,27 @@ public abstract class BaseActivity extends AppCompatActivity {
         item1.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
             @Override
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                if(drawerItem instanceof Nameable)
-                {
-                    TastyToast.makeText(getApplicationContext(),item1.getName().toString(),TastyToast.LENGTH_SHORT,TastyToast.INFO);
-                }
+
+                Intent intent = new Intent(getApplicationContext(), HandleMapsActivity.class);
+                getApplicationContext().startActivity(intent);
                 return false;
             }
         });
+
         item2.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
             @Override
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
-                return false;
+                //TastyToast.makeText(getApplicationContext(),getApplicationContext().get,TastyToast.LENGTH_SHORT, TastyToast.INFO);
+
+                if(drawerItem.getIdentifier() == 2)
+                {
+                    Intent intent = new Intent(getApplicationContext(), CreatedOrderActivity.class);
+                    getApplicationContext().startActivity(intent);
+                }
+
+
+                return true;
             }
         });
         result.openDrawer();
