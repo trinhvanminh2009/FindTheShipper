@@ -45,6 +45,8 @@ public class CustomAdapterListviewNotification extends ArrayAdapter<Notification
 
     public CustomAdapterListviewNotification(@NonNull Context context, @NonNull List<NotificationObject> objects) {
         super(context, 0, objects);
+        this.context = context;
+        this.notificationObjectList = objects;
     }
 
     @NonNull

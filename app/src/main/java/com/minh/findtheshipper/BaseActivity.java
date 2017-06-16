@@ -38,7 +38,7 @@ import com.minh.findtheshipper.helpers.DialogHelpers;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    private int badgerCount = 1;
+    private int badgerCount = 10;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,9 +53,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_list,menu);
         if(badgerCount >0)
         {
-            ActionItemBadge.update(this,menu.findItem(R.id.item_notifycation),
-                    resizeImage(R.drawable.ic_notifycation,200,200), ActionItemBadge.BadgeStyles.RED, badgerCount);
-
+            ActionItemBadge.update(this,menu.findItem(R.id.item_notifycation),resizeImage(R.drawable.ic_notifycation,200,200), ActionItemBadge.BadgeStyles.RED, badgerCount);
 
         }
 
@@ -67,8 +65,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.item_notifycation:
-               badgerCount++;
-                ActionItemBadge.update(item, badgerCount);
+                showNotification();
+                //badgerCount++;
+               // ActionItemBadge.update(item,badgerCount);
                return true;
             default:  return super.onOptionsItemSelected(item);
         }
@@ -78,7 +77,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private void showNotification()
     {
         final FragmentManager fragmentManager = getSupportFragmentManager();
-        DialogHelpers dialogHelpers = new DialogHelpers();
+        final DialogHelpers dialogHelpers = new DialogHelpers();
         dialogHelpers.show(fragmentManager,"New fragment");
 
     }

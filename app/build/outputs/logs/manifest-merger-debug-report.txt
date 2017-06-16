@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-78:12
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-81:12
 	package
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:4:5-38
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
@@ -52,7 +52,7 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:18:5-79
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:18:22-76
 application
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:20:5-76:19
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:20:5-79:19
 MERGED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-cache\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.1] C:\Users\trinh\.android\build-cache\847f7a117dec7306730194f41be07a6accc70956\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\trinh\.android\build-cache\40da3a2ba64f20294e49f8cf6bd72a2064c6f17f\output\AndroidManifest.xml:9:5-20
@@ -161,23 +161,27 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:65:9-58
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:65:19-55
 activity#com.minh.findtheshipper.HandleMapsActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:66:9-72:20
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:66:9-68:20
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:66:19-53
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:67:13-71:29
-action#android.intent.action.MAIN
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:68:17-69
-	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:68:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:70:17-77
-	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:70:27-74
 activity#com.minh.findtheshipper.CreatedOrderActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:73:9-75:20
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:69:9-75:20
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:73:19-55
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:69:19-55
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:70:13-74:29
+action#android.intent.action.MAIN
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:71:17-69
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:71:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:73:17-77
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:73:27-74
+activity#com.minh.findtheshipper.Test
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:76:9-78:20
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:76:19-39
 uses-sdk
 INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.mikepenz:materialdrawer:5.9.2] C:\Users\trinh\.android\build-cache\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\output\AndroidManifest.xml:8:5-10:41

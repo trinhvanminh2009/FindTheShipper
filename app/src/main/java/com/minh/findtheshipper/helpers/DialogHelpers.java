@@ -23,9 +23,10 @@ import io.realm.Realm;
  * Created by trinh on 6/16/2017.
  */
 
-public class DialogHelpers extends DialogFragment implements DialogInterface.OnClickListener {
+public class DialogHelpers extends DialogFragment {
 
-
+    private ArrayList<NotificationObject> notificationObjectArrayList;
+    private CustomAdapterListviewNotification customAdapterListviewNotification;
 
 
     @Nullable
@@ -33,17 +34,15 @@ public class DialogHelpers extends DialogFragment implements DialogInterface.OnC
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dialog_fragment,container,false);
         ListView listView = (ListView)view.findViewById(R.id.listNotification);
-        ArrayList<NotificationObject> notificationObjectList = new ArrayList<>();
-        notificationObjectList.add(new NotificationObject(R.mipmap.ic_launcher_app,getResources().getString( R.string.choosing_finish_point)) );
-        getDialog().setTitle("Notification");
-        CustomAdapterListviewNotification customAdapterListviewNotification = new CustomAdapterListviewNotification(getActivity(),notificationObjectList);
+        notificationObjectArrayList = new ArrayList<>();
+        notificationObjectArrayList = new ArrayList<>();
+        notificationObjectArrayList.add(new NotificationObject(R.mipmap.ic_launcher_app,"Check"));
+        customAdapterListviewNotification = new CustomAdapterListviewNotification(getActivity(),notificationObjectArrayList);
         listView.setAdapter(customAdapterListviewNotification);
         return view;
     }
 
-    @Override
-    public void onClick(DialogInterface dialog, int which) {
-    }
+
 
 
 }
