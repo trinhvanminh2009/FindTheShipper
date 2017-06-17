@@ -64,14 +64,14 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".DistanceMapsActivity" />
         <activity android:name=".HandleMapsActivity">
-
-        </activity>
-        <activity android:name=".CreatedOrderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".CreatedOrderActivity">
+
         </activity>
         <activity android:name=".Test">
 

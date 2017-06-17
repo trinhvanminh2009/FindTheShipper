@@ -252,6 +252,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\50904e5761bcdcbd2e0d467e4bfd7f163abb6e0f\\output\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\leak_canary_toast_background.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\4a0b8ff1557e5b34042105810bca43dcdfb6abbc\\output\\res\\drawable\\leak_canary_toast_background.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\error_center_x.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\drawable\\error_center_x.xml"
     },

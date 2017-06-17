@@ -142,9 +142,9 @@ public final class R {
         public static final int common_signin_button_text_long = 0x7f080039;
     }
     public static final class style {
-        public static final int amu_Bubble_TextAppearance_Dark = 0x7f0a01bf;
-        public static final int amu_Bubble_TextAppearance_Light = 0x7f0a01c0;
-        public static final int amu_ClusterIcon_TextAppearance = 0x7f0a01c1;
+        public static final int amu_Bubble_TextAppearance_Dark = 0x7f0a01c0;
+        public static final int amu_Bubble_TextAppearance_Light = 0x7f0a01c1;
+        public static final int amu_ClusterIcon_TextAppearance = 0x7f0a01c2;
     }
     public static final class styleable {
         public static final int[] LoadingImageView = { 0x7f010123, 0x7f010124, 0x7f010125 };

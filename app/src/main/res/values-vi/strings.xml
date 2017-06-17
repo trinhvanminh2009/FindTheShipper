@@ -24,4 +24,18 @@
     <string name="text_view_phone_number">SĐT</string>
     <string name="text_view_ship_money">Tiền ship</string>
     <string name="text_view_start_place">Nơi đón</string>
+    <string name="order_success">Đơn hàng đã hoàn thành</string>
+    <string name="order_status">Trạng thái: Đơn hàng đã bị hủy</string>
+    <string name="order_starting_point">Điểm bắt đầu:</string>
+    <string name="order_ship_money">Tiền ship:</string>
+    <string name="order_phone_number">Số điện thoại</string>
+    <string name="order_note">Ghi chú:</string>
+    <string name="order_last_updated">Cập nhật lần cuối:</string>
+    <string name="order_finish_point">Điểm kết thúc:</string>
+    <string name="order_find_again">Tìm lại</string>
+    <string name="order_edit">Chỉnh sửa đơn hàng</string>
+    <string name="order_distance">Khoảng cách:</string>
+    <string name="order_call">Gọi</string>
+    <string name="order_advanced_money">Số tiền ứng</string>
+    <string name="notification_title">Thông báo</string>
 </resources>

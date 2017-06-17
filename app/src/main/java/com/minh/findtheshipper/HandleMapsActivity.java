@@ -61,13 +61,13 @@ import com.minh.findtheshipper.helpers.MapDragHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
 import com.minh.findtheshipper.models.ListControl;
+import com.minh.findtheshipper.models.NotificationObject;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.Route;
 import com.minh.findtheshipper.realm.RealmController;
 import com.minh.findtheshipper.utils.MapDragUtils;
 import com.minh.findtheshipper.utils.PermissionUtils;
 import com.sdsmdg.tastytoast.TastyToast;
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.Time;
@@ -116,31 +116,32 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
     private List<Marker>finishMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
-    private ArrayList<ListControl> listControls;
+    private ArrayList<ListControl> listControls = new ArrayList<>();
     private CustomAdapterListView adapterListView;
     private int itemClicked = 0;
     private Realm realm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_handle_maps);
         ButterKnife.bind(this);
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         realm.init(HandleMapsActivity.this);
-        listProfile = getIntent().getStringArrayExtra("profile");
-        listControls = new ArrayList<>();
-        listControls.add(new ListControl(R.drawable.ic_starting_point, getResources().getString(R.string.start_place)));
-        listControls.add(new ListControl(R.drawable.ic_finish_point, getResources().getString(R.string.finish_place)));
-        adapterListView = new CustomAdapterListView(this, listControls);
-        listPlaces.setAdapter(adapterListView);
+       // listProfile = getIntent().getStringArrayExtra("profile");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Create new order");
         NavigationDrawer(toolbar);
         initRealm();
+        listControls.add(new ListControl(R.drawable.ic_starting_point, getResources().getString(R.string.start_place)));
+        listControls.add(new ListControl(R.drawable.ic_finish_point, getResources().getString(R.string.finish_place)));
+        adapterListView = new CustomAdapterListView(HandleMapsActivity.this, listControls);
+        listPlaces.setAdapter(adapterListView);
+       // insertNotification();
+
     }
+
 
 
 
@@ -172,7 +173,6 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
         }
 
     }
-
 
     private boolean isPhoneNumberValid(String phoneNumber)
     {
@@ -226,24 +226,39 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
             sweetAlertDialog.show();
         }
         else {
+
            insertOrder();
         }
 
     }
 
-    public void test()
+    public void insertNotification()
     {
-        RealmResults<Order> orders = realm.where(Order.class).findAll();
-        TastyToast.makeText(HandleMapsActivity.this,orders.get(0).getOrderID() + orders.get(0).getAdvancedMoney()
-                +orders.get(0).getPhoneNumber()
-                ,TastyToast.LENGTH_SHORT,TastyToast.INFO);
-
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                final NotificationObject notificationObject = realm.createObject(NotificationObject.class,"nf"+countNotification());
+                notificationObject.setIcon(R.mipmap.ic_launcher_app);
+                notificationObject.setContext(getResources().getString(R.string.start_place));
+                realm.insertOrUpdate(notificationObject);
+            }
+        });
     }
+
+    public long countNotification()
+    {
+        return realm.where(NotificationObject.class).count();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        realm.close();
+    }
+
     public void insertOrder()
     {
-
         try{
-
             realm.executeTransaction(new Realm.Transaction() {
                 @Override
                 public void execute(Realm realm) {
@@ -269,7 +284,8 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
                     }
             });
 
-        }catch (Exception e){
+        }catch (Exception e)
+        {
 
         }
 

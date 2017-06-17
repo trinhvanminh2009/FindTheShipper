@@ -22,7 +22,7 @@ import java.util.List;
 public class CustomAdapterListView extends ArrayAdapter<ListControl> {
     private Context context;
     private List<ListControl>listControls;
-    private LayoutInflater layoutInflater;
+
 
     @NonNull
     @Override
@@ -51,17 +51,15 @@ public class CustomAdapterListView extends ArrayAdapter<ListControl> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        if(convertView == null)
-        {
-            layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.list_notification,null);
-        }
-        ImageView imageView = (ImageView)convertView.findViewById(R.id.imgIcon);
-        EditText editText = (EditText)convertView.findViewById(R.id.txtControl);
+
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        View view = layoutInflater.inflate(R.layout.list_item, parent, false);
+        ImageView imageView = (ImageView)view.findViewById(R.id.imgIcon);
+        EditText editText = (EditText)view.findViewById(R.id.txtControl);
         ListControl control = listControls.get(position);
         imageView.setImageResource(control.getIdIcon());
         editText.setText(control.getContent());
-        return convertView;
+        return view;
 
     }
 }

@@ -37,7 +37,7 @@ public class CreatedOrderActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Created order");
         NavigationDrawer(toolbar);
-       // deleteAll();
+
     }
 
     @Override
@@ -53,14 +53,29 @@ public class CreatedOrderActivity extends BaseActivity {
 
     public void loadAllList()
     {
-        orderList = new ArrayList<>();
-        RealmResults<Order> orders = realm.where(Order.class).findAllSorted("dateTime", Sort.DESCENDING);
-        for (int i = 0; i < orders.size(); i++)
+        try
         {
-            orderList.add(orders.get(i));
+            orderList = new ArrayList<>();
+            RealmResults<Order> orders = realm.where(Order.class).findAllSorted("dateTime", Sort.DESCENDING);
+            for (int i = 0; i < orders.size(); i++)
+            {
+                orderList.add(orders.get(i));
+            }
+            customAdapterListviewOrder = new CustomAdapterListviewOrder(CreatedOrderActivity.this, orderList);
+            listViewOrder.setAdapter(customAdapterListviewOrder);
+        }finally {
+            if(realm != null)
+            {
+                realm.close();
+            }
         }
-        customAdapterListviewOrder = new CustomAdapterListviewOrder(CreatedOrderActivity.this, orderList);
-        listViewOrder.setAdapter(customAdapterListviewOrder);
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        realm.close();
     }
 
     public void deleteAll()

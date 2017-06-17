@@ -30,6 +30,8 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.minh.findtheshipper.helpers.DialogHelpers;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 
 /**
@@ -78,6 +80,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     {
         final FragmentManager fragmentManager = getSupportFragmentManager();
         final DialogHelpers dialogHelpers = new DialogHelpers();
+
         dialogHelpers.show(fragmentManager,"New fragment");
 
     }
@@ -145,14 +148,26 @@ public abstract class BaseActivity extends AppCompatActivity {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
+                        if(drawerItem.getIdentifier() ==1)
+                        {
+
+                            Intent intent = new Intent(getApplicationContext(), HandleMapsActivity.class);
+                            getApplicationContext().startActivity(intent);
+                            return true;
+                        }
+                        if(drawerItem.getIdentifier() == 2)
+                        {
+                            Intent intent = new Intent(getApplicationContext(), CreatedOrderActivity.class);
+                            getApplicationContext().startActivity(intent);
+                            return true;
+                        }
+
                         return false;
                     }
                 })
                 .build();
 
-        result.setSelection(1);
-        result.setSelection(item2);
-        result.setSelection(1, true);
+
         item1.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_create_new));
         item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_created));
         item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials));
@@ -162,7 +177,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
         item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
 
-        item1.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+       /* item1.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
             @Override
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
@@ -176,8 +191,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             @Override
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
-                //TastyToast.makeText(getApplicationContext(),getApplicationContext().get,TastyToast.LENGTH_SHORT, TastyToast.INFO);
-
                 if(drawerItem.getIdentifier() == 2)
                 {
                     Intent intent = new Intent(getApplicationContext(), CreatedOrderActivity.class);
@@ -187,7 +200,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
                 return true;
             }
-        });
+        });*/
         result.openDrawer();
         result.closeDrawer();
         result.getDrawerLayout();

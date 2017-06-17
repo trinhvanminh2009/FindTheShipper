@@ -13,8 +13,6 @@ import butterknife.ButterKnife;
 public class Test extends BaseActivity {
 
     @BindView(R.id.toolBar) Toolbar toolbar;
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

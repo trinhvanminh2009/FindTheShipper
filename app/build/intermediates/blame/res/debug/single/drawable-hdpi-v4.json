@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messenger_bubble_small_white.png",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\30162e923c3211c432942bf8773a694acca8aad2\\output\\res\\drawable-hdpi-v4\\messenger_bubble_small_white.png"
-    },
-    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_pressed.9.png",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\50904e5761bcdcbd2e0d467e4bfd7f163abb6e0f\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_pressed.9.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messenger_bubble_small_white.png",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\30162e923c3211c432942bf8773a694acca8aad2\\output\\res\\drawable-hdpi-v4\\messenger_bubble_small_white.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
@@ -318,6 +318,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\leak_canary_icon.png",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\4a0b8ff1557e5b34042105810bca43dcdfb6abbc\\output\\res\\drawable-hdpi-v4\\leak_canary_icon.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",

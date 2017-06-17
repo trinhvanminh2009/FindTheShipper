@@ -7,19 +7,21 @@ import io.realm.annotations.PrimaryKey;
  * Created by trinh on 6/16/2017.
  */
 
-public class NotificationObject  {
+public class NotificationObject extends RealmObject {
+
+
+    @PrimaryKey
+    private String notificationID;
     private int icon;
     private String context;
 
-
-
-    public NotificationObject( int icon, String context) {
-
-        this.icon = icon;
-        this.context = context;
+    public String getNotificationID() {
+        return notificationID;
     }
 
-
+    public void setNotificationID(String notificationID) {
+        this.notificationID = notificationID;
+    }
 
     public int getIcon() {
         return icon;

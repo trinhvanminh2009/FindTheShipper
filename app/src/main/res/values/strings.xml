@@ -38,7 +38,16 @@
     <string name="order_success">Order completed</string>
     <string name="order_call">Call</string>
     <string name="order_last_updated">Last updated:</string>
-    
-
+    <string name="notification_title">Notification</string>
+    <string name="list_order_shipper">List Order</string>
+    <string name="list_order_saved_shipper">Saved order</string>
+    <string name="pay_coin_shipper">Pay coin</string>
+    <string name="buy_package_shipper">Buy package</string>
+    <string name="profile">Profile</string>
+    <string name="setting">Settings</string>
+    <string name="tutorials">Tutorials</string>
+    <string name="version">Version</string>
+    <string name="about_us">About us</string>
+    <string name="log_out">Logout</string>
 
 </resources>
