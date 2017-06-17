@@ -7001,8 +7001,14 @@ containing a value of this type.
         public static final int CardView_Light=0x7f0a00f0;
         public static final int Material_DrawerArrowStyle=0x7f0a00f1;
         public static final int Material_Light_DrawerArrowStyle=0x7f0a00f2;
+        /**  Material specific values 
+         */
         public static final int MaterialBaseBaseTheme=0x7f0a00f3;
+        /**  Material specific values 
+         */
         public static final int MaterialBaseBaseTheme_Light=0x7f0a00f4;
+        /**  Material specific values 
+         */
         public static final int MaterialBaseBaseTheme_Light_DarkToolbar=0x7f0a00f5;
         /** 
         <item name="android:dialogTheme">@style/MaterialBaseTheme.Dialog</item>

@@ -60,10 +60,6 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_heap_dump_toast.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\4a0b8ff1557e5b34042105810bca43dcdfb6abbc\\output\\res\\layout\\leak_canary_heap_dump_toast.xml"
-    },
-    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_fragment.xml",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\dialog_fragment.xml"
     },
@@ -74,10 +70,6 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_navigation_item_header.xml"
-    },
-    {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_ref_top_row.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\4a0b8ff1557e5b34042105810bca43dcdfb6abbc\\output\\res\\layout\\leak_canary_ref_top_row.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\alert_dialog.xml",
@@ -160,16 +152,8 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\a32169a9eaf00836d7414fe1865684faa82424d9\\output\\res\\layout\\menu_action_item_badge.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_display_leak.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\4a0b8ff1557e5b34042105810bca43dcdfb6abbc\\output\\res\\layout\\leak_canary_display_leak.xml"
-    },
-    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_ref_row.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\4a0b8ff1557e5b34042105810bca43dcdfb6abbc\\output\\res\\layout\\leak_canary_ref_row.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
@@ -222,10 +206,6 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_mode_bar.xml"
-    },
-    {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\leak_canary_leak_row.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\4a0b8ff1557e5b34042105810bca43dcdfb6abbc\\output\\res\\layout\\leak_canary_leak_row.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\warning_toast_layout.xml",
@@ -328,12 +308,12 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_expandable.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_expandable.xml"
-    },
-    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_fits_not.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_fits_not.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_expandable.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_expandable.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_handle_maps.xml",
