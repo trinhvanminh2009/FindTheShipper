@@ -37,8 +37,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.minh.findtheshipper.MainActivity" >
-        </activity>
+        <activity android:name="com.minh.findtheshipper.MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -82,10 +81,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.minh.findtheshipper.CreatedOrderActivity" >
-        </activity>
-        <activity android:name="com.minh.findtheshipper.Test" >
-        </activity>
+        <activity android:name="com.minh.findtheshipper.CreatedOrderActivity" />
+        <activity android:name="com.minh.findtheshipper.Test" />
+        <activity android:name="com.minh.findtheshipper.ListOrderShipperActivity" />
+        <activity android:name="com.minh.findtheshipper.FragmentActivity" />
         <activity android:name="com.facebook.CustomTabMainActivity" />
         <!--
          The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically

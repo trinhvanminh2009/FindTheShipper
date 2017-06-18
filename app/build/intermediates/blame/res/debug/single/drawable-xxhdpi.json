@@ -20,6 +20,14 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_created.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_package.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_package.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_list_order_saved.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_list_order_saved.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_create_new.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_create_new.png"
     },
@@ -40,6 +48,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_your_profile.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_buy_coin.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_buy_coin.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_marker.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_marker.png"
     },
@@ -54,6 +66,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_version.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_version.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_list_order.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_list_order.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_distance.png",

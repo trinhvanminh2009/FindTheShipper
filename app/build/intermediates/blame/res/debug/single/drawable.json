@@ -16,12 +16,12 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\92134a31c132b650bdbc3fa6874e694918843fdf\\output\\res\\drawable\\error_toast.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\50904e5761bcdcbd2e0d467e4bfd7f163abb6e0f\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
-    },
-    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\blue_button_background.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\drawable\\blue_button_background.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\50904e5761bcdcbd2e0d467e4bfd7f163abb6e0f\\output\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_toast.xml",

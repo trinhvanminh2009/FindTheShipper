@@ -210,20 +210,19 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
     @OnClick(R.id.btnConfirmCreateOrder)
     public void confirmCreateOrder()
     {
-
+        SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(HandleMapsActivity.this, SweetAlertDialog.WARNING_TYPE);
         if(!isPhoneNumberValid(editPhoneNumber.getText().toString()))
         {
-            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(HandleMapsActivity.this, SweetAlertDialog.WARNING_TYPE);
+
             sweetAlertDialog.setTitleText("Phone number invalid");
             sweetAlertDialog.setContentText("Please check your phone number again");
             sweetAlertDialog.show();
-        }
-        if(editShipMoney.getText().length() == 0)
-        {
-            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(HandleMapsActivity.this, SweetAlertDialog.WARNING_TYPE);
-            sweetAlertDialog.setTitleText("Money ship invalid");
-            sweetAlertDialog.setContentText("You have to input money ship");
-            sweetAlertDialog.show();
+            if(editShipMoney.getText().length() == 0)
+            {
+                sweetAlertDialog.setTitleText("Money ship invalid");
+                sweetAlertDialog.setContentText("You have to input money ship");
+                sweetAlertDialog.show();
+            }
         }
         else {
 
@@ -286,7 +285,6 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
 
         }catch (Exception e)
         {
-
         }
 
     }

@@ -153,13 +153,13 @@ public abstract class BaseActivity extends AppCompatActivity {
 
                             Intent intent = new Intent(getApplicationContext(), HandleMapsActivity.class);
                             getApplicationContext().startActivity(intent);
-                            return true;
+                            return false;
                         }
                         if(drawerItem.getIdentifier() == 2)
                         {
                             Intent intent = new Intent(getApplicationContext(), CreatedOrderActivity.class);
                             getApplicationContext().startActivity(intent);
-                            return true;
+                            return false;
                         }
 
                         return false;
@@ -168,14 +168,22 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .build();
 
 
-        item1.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_create_new));
-        item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_created));
-        item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials));
-        item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile));
-        item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about));
-        item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version));
-        item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
-        item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
+        item1.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_create_new));
+        item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order));
+        item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials));
+        item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile));
+        item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about));
+        item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version));
+        item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
+        item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
 
        /* item1.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
             @Override

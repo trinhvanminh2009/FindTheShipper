@@ -102,14 +102,16 @@ public abstract class BaseActivityShipper extends AppCompatActivity {
 
 
         new DrawerBuilder().withActivity(this).build();
-        final PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Create new order ");
-        final PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName("Created order");
-        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Tutorials");
-        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Your profile");
-        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("About us");
-        PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(6).withName("Version");
-        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(7).withName("Settings");
-        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(8).withName("Logout");
+        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.list_order_shipper);
+        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.list_order_saved_shipper);
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.pay_coin_shipper);
+        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName(R.string.buy_package_shipper);
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName(R.string.tutorials);
+        PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(6).withName(R.string.profile);
+        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(7).withName(R.string.about_us);
+        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(8).withName(R.string.version);
+        PrimaryDrawerItem item9 = new PrimaryDrawerItem().withIdentifier(9).withName(R.string.setting);
+        PrimaryDrawerItem item10 = new PrimaryDrawerItem().withIdentifier(10).withName(R.string.log_out);
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.background_home)
@@ -135,7 +137,7 @@ public abstract class BaseActivityShipper extends AppCompatActivity {
                         item5,
                         item6,
                         item7,
-                        item8
+                        item8,item9,item10
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -144,56 +146,70 @@ public abstract class BaseActivityShipper extends AppCompatActivity {
                         if(drawerItem.getIdentifier() ==1)
                         {
 
-                            Intent intent = new Intent(getApplicationContext(), HandleMapsActivity.class);
-                            getApplicationContext().startActivity(intent);
-                            return true;
                         }
                         if(drawerItem.getIdentifier() == 2)
                         {
-                            Intent intent = new Intent(getApplicationContext(), CreatedOrderActivity.class);
-                            getApplicationContext().startActivity(intent);
-                            return true;
-                        }
 
+                        }
+                        if(drawerItem.getIdentifier() ==3)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() == 4)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() ==5)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() == 6)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() ==7)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() == 8)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() ==9)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() == 10)
+                        {
+
+                        }
                         return false;
                     }
                 })
                 .build();
 
 
-        item1.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_create_new));
-        item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_created));
-        item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials));
-        item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile));
-        item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about));
-        item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version));
-        item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
-        item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
+        item1.withBadge("1").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order));
+        item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order_saved));
+        item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_buy_coin));
+        item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_package));
+        item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials));
+        item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile));
+        item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about));
+        item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version));
+        item9.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
+        item10.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
 
-       /* item1.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-            @Override
-            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-
-                Intent intent = new Intent(getApplicationContext(), HandleMapsActivity.class);
-                getApplicationContext().startActivity(intent);
-                return false;
-            }
-        });
-
-        item2.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-            @Override
-            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-
-                if(drawerItem.getIdentifier() == 2)
-                {
-                    Intent intent = new Intent(getApplicationContext(), CreatedOrderActivity.class);
-                    getApplicationContext().startActivity(intent);
-                }
-
-
-                return true;
-            }
-        });*/
         result.openDrawer();
         result.closeDrawer();
         result.getDrawerLayout();

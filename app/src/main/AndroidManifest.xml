@@ -25,9 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -70,12 +68,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreatedOrderActivity">
-
-        </activity>
-        <activity android:name=".Test">
-
-        </activity>
+        <activity android:name=".CreatedOrderActivity" />
+        <activity android:name=".Test" />
+        <activity android:name=".ListOrderShipperActivity"></activity>
+        <activity android:name=".FragmentActivity"></activity>
     </application>
 
 </manifest>
