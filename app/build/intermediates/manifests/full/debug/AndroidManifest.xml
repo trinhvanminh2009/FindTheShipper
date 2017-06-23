@@ -21,6 +21,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <meta-data
         android:name="android.support.VERSION"
@@ -75,16 +76,18 @@
             android:label="@string/title_activity_maps" />
         <activity android:name="com.minh.findtheshipper.DistanceMapsActivity" />
         <activity android:name="com.minh.findtheshipper.HandleMapsActivity" >
+        </activity>
+        <activity android:name="com.minh.findtheshipper.CreatedOrderActivity" >
+        </activity>
+        <activity android:name="com.minh.findtheshipper.Test" />
+        <activity android:name="com.minh.findtheshipper.FragmentActivity" />
+        <activity android:name="com.minh.findtheshipper.FragmentContainer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.minh.findtheshipper.CreatedOrderActivity" />
-        <activity android:name="com.minh.findtheshipper.Test" />
-        <activity android:name="com.minh.findtheshipper.ListOrderShipperActivity" />
-        <activity android:name="com.minh.findtheshipper.FragmentActivity" />
         <activity android:name="com.facebook.CustomTabMainActivity" />
         <!--
          The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically

@@ -38,4 +38,14 @@
     <string name="order_call">Gọi</string>
     <string name="order_advanced_money">Số tiền ứng</string>
     <string name="notification_title">Thông báo</string>
+    <string name="buy_package_shipper">Mua gói</string>
+    <string name="about_us">Về chúng tôi</string>
+    <string name="pay_coin_shipper">Trả bằng coin</string>
+    <string name="profile">Cá nhân</string>
+    <string name="setting">Cài đặt</string>
+    <string name="tutorials">Hướng dẫn</string>
+    <string name="version">Phiên bản</string>
+    <string name="log_out">Đăng xuất</string>
+    <string name="list_order_shipper">Danh sách đơn hàng</string>
+    <string name="list_order_saved_shipper">Đơn hàng đã lưu</string>
 </resources>

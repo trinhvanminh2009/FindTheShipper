@@ -1,32 +1,25 @@
 package com.minh.findtheshipper.models;
 
+import java.util.ArrayList;
+
 import io.realm.Realm;
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by Minh on 6/1/2017.
  */
 
-public class User {
+public class User extends RealmObject {
+    @PrimaryKey
     private int userID;
     private String fullName;
     private String email;
     private String phoneNumber;
     private String avatar;
-    private RealmList<Order>orders;
+    private RealmList<Order> orderArrayList;
 
-
-
-    public User(int userID, String fullName, String email, String phoneNumber, String avatar, RealmList<Order> orders) {
-        this.userID = userID;
-        this.fullName = fullName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.avatar = avatar;
-        this.orders = orders;
-
-    }
 
     public int getUserID() {
         return userID;
@@ -68,11 +61,11 @@ public class User {
         this.avatar = avatar;
     }
 
-    public RealmList<Order> getOrders() {
-        return orders;
+    public RealmList<Order> getOrderArrayList() {
+        return orderArrayList;
     }
 
-    public void setOrders(RealmList<Order> orders) {
-        this.orders = orders;
+    public void setOrderArrayList(RealmList<Order> orderArrayList) {
+        this.orderArrayList = orderArrayList;
     }
 }

@@ -6,13 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.minh.findtheshipper.ListOrderShipperActivity">
+    tools:context="com.minh.findtheshipper.ListOrderShipperFragment">
+
     <include layout="@layout/toolbar"
         android:id="@+id/toolBar">
     </include>
+
     <ListView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listOrderShipper">
+
     </ListView>
 </LinearLayout>

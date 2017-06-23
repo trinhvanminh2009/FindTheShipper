@@ -49,5 +49,7 @@
     <string name="version">Version</string>
     <string name="about_us">About us</string>
     <string name="log_out">Logout</string>
-
+    <string name="comment">Comment</string>
+    <string name="call">Call</string>
+    <string name="save">Save</string>
 </resources>

@@ -1,9 +1,15 @@
 package com.minh.findtheshipper;
 
+import android.app.Fragment;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrder;
@@ -29,14 +35,16 @@ public class CreatedOrderActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+       // setContentView(R.layout.activity_created_order);
         setSupportActionBar(toolbar);
-        realm.init(CreatedOrderActivity.this);
-        initRealm();
-        loadAllList();
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Created order");
         NavigationDrawer(toolbar);
+        realm.init(CreatedOrderActivity.this);
+        initRealm();
+        loadAllList();
+
 
     }
 
@@ -44,6 +52,8 @@ public class CreatedOrderActivity extends BaseActivity {
     protected int getLayoutResource() {
         return R.layout.activity_created_order;
     }
+
+
 
     public void initRealm()
     {
@@ -63,19 +73,21 @@ public class CreatedOrderActivity extends BaseActivity {
             }
             customAdapterListviewOrder = new CustomAdapterListviewOrder(CreatedOrderActivity.this, orderList);
             listViewOrder.setAdapter(customAdapterListviewOrder);
-        }finally {
-            if(realm != null)
-            {
-                realm.close();
-            }
+        }catch (Exception e)
+        {
+
         }
 
     }
 
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        realm.close();
+        if(realm != null)
+        {
+            realm.close();
+        }
     }
 
     public void deleteAll()

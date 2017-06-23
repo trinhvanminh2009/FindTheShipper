@@ -2,6 +2,7 @@ package com.minh.findtheshipper.models;
 
 import java.util.Calendar;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -22,8 +23,9 @@ public class Order extends RealmObject{
     private String distance;
     private String phoneNumber;
     private String dateTime;
-    private int like;
-    private int dislike;
+    private RealmList<Like> likes;
+    private RealmList<Dislike>dislikes;
+    private RealmList<Comment> comments;
 
 
     public String getOrderID() {
@@ -106,19 +108,26 @@ public class Order extends RealmObject{
         this.dateTime = dateTime;
     }
 
-    public int getLike() {
-        return like;
+    public RealmList<Like> getLikes() {
+        return likes;
+    }
+    public void setLikes(RealmList<Like> likes) {
+        this.likes = likes;
     }
 
-    public void setLike(int like) {
-        this.like = like;
+    public RealmList<Dislike> getDislikes() {
+        return dislikes;
     }
 
-    public int getDislike() {
-        return dislike;
+    public void setDislikes(RealmList<Dislike> dislikes) {
+        this.dislikes = dislikes;
     }
 
-    public void setDislike(int dislike) {
-        this.dislike = dislike;
+    public RealmList<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(RealmList<Comment> comments) {
+        this.comments = comments;
     }
 }

@@ -1,7 +1,0 @@
-#Sun Jun 18 08:11:38 ICT 2017
-base.0=D\:\\My Project\\FindTheShipper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_e90b58af6c7e5b920c0dea5233326768aed4b4a1
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=D\:\\My Project\\FindTheShipper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_e89dbf5be326e077fe4395016b1290beff5dbc9d\\classes.dex
-base.1=D\:\\My Project\\FindTheShipper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_e89dbf5be326e077fe4395016b1290beff5dbc9d
-file.0=D\:\\My Project\\FindTheShipper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_e90b58af6c7e5b920c0dea5233326768aed4b4a1\\classes.dex

@@ -153,13 +153,13 @@ public abstract class BaseActivity extends AppCompatActivity {
 
                             Intent intent = new Intent(getApplicationContext(), HandleMapsActivity.class);
                             getApplicationContext().startActivity(intent);
-                            return false;
+
                         }
                         if(drawerItem.getIdentifier() == 2)
                         {
                             Intent intent = new Intent(getApplicationContext(), CreatedOrderActivity.class);
                             getApplicationContext().startActivity(intent);
-                            return false;
+
                         }
 
                         return false;
@@ -185,30 +185,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
 
-       /* item1.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-            @Override
-            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
-                Intent intent = new Intent(getApplicationContext(), HandleMapsActivity.class);
-                getApplicationContext().startActivity(intent);
-                return false;
-            }
-        });
-
-        item2.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-            @Override
-            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-
-                if(drawerItem.getIdentifier() == 2)
-                {
-                    Intent intent = new Intent(getApplicationContext(), CreatedOrderActivity.class);
-                    getApplicationContext().startActivity(intent);
-                }
-
-
-                return true;
-            }
-        });*/
         result.openDrawer();
         result.closeDrawer();
         result.getDrawerLayout();
