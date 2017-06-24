@@ -2,27 +2,21 @@ package com.minh.findtheshipper;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.Matrix;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.LinearLayout;
 
-import com.mikepenz.actionitembadge.library.ActionItemBadge;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -32,12 +26,10 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class FragmentContainer extends FragmentActivity {
 
@@ -53,6 +45,14 @@ public class FragmentContainer extends FragmentActivity {
         setContentView(R.layout.activity_fragment_container);
         ButterKnife.bind(this);
         NavigationDrawer(toolbar);
+        if(findViewById(R.id.fragmentShipperContainer) != null)
+        {
+            if(savedInstanceState != null)
+            {
+                return;
+            }
+
+        }
         /***
          * Have to request permissions right here . Because can't request permissions in ArrayAdapter.
          */
@@ -85,6 +85,7 @@ public class FragmentContainer extends FragmentActivity {
         return true;
     }
 
+    
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -146,15 +147,22 @@ public class FragmentContainer extends FragmentActivity {
                         item8,item9,item10
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                    LinearLayout listOrderLayout = (LinearLayout)findViewById(R.id.linearOrderFragment);
+                    LinearLayout listSavedOrderLayout = (LinearLayout)findViewById(R.id.linearSavedOrderFragment);
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
                         if(drawerItem.getIdentifier() ==1)
                         {
 
+                            listOrderLayout.setVisibility(View.VISIBLE);
+                            listSavedOrderLayout.setVisibility(View.GONE);
                         }
                         if(drawerItem.getIdentifier() == 2)
                         {
+                            TastyToast.makeText(FragmentContainer.this, "Item 2",TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
+                            listOrderLayout.setVisibility(View.GONE);
+                            listSavedOrderLayout.setVisibility(View.VISIBLE);
 
                         }
                         if(drawerItem.getIdentifier() ==3)

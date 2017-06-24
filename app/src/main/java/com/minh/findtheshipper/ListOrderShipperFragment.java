@@ -38,7 +38,6 @@ public class ListOrderShipperFragment extends Fragment {
     private int badgerCount = 10;
     private Realm realm;
     private ListView listView;
-
     private ArrayList<Order> orderList;
     private CustomAdapterListviewOrderShipper customAdapterListviewOrderShipper;
 

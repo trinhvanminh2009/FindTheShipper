@@ -63,7 +63,7 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
         private Button btnComment;
         private Button btnCall;
         private Button btnDelete;
-        private Button btnGetOrder;
+
 
 
         public ViewHolder(View itemView) {
@@ -77,9 +77,6 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
             btnComment = (Button)itemView.findViewById(R.id.btnComment);
             btnCall = (Button)itemView.findViewById(R.id.btnCall);
             btnDelete = (Button)itemView.findViewById(R.id.btnDelete);
-            btnGetOrder = (Button)itemView.findViewById(R.id.btnGetOrder);
-
-
         }
     }
 }

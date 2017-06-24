@@ -80,8 +80,6 @@
         <activity android:name="com.minh.findtheshipper.Test" />
         <activity android:name="com.minh.findtheshipper.FragmentActivity" />
         <activity android:name="com.minh.findtheshipper.FragmentContainer" >
-        </activity>
-        <activity android:name="com.minh.findtheshipper.Main2Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
