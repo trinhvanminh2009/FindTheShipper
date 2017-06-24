@@ -340,6 +340,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\30162e923c3211c432942bf8773a694acca8aad2\\output\\res\\drawable\\com_facebook_send_button_icon.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_item.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable\\shape_item.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },
@@ -354,5 +358,9 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\error_circle.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\drawable\\error_circle.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\item_selector.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable\\item_selector.xml"
     }
 ]

@@ -1283,6 +1283,7 @@
     <string name="define_font_fontawesome">com.mikepenz.fontawesome_typeface_library.FontAwesome</string>
     <string name="define_materialdrawer">year;owner</string>
     <string name="define_materialize">year;owner</string>
+    <string name="delete">Delete</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_default_title">Here\'s a message!</string>
     <string name="dialog_ok">OK</string>
@@ -1969,6 +1970,7 @@
     <string name="faw_youtube_square">faw_youtube_square</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb432808617097084</string>
     <string name="finish_place">Choose place to finish</string>
+    <string name="get_order">Get Order</string>
     <string name="gmd_3d_rotation">gmd_3d_rotation</string>
     <string name="gmd_ac_unit">gmd_ac_unit</string>
     <string name="gmd_access_alarm">gmd_access_alarm</string>

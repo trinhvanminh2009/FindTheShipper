@@ -48,4 +48,9 @@
     <string name="log_out">Đăng xuất</string>
     <string name="list_order_shipper">Danh sách đơn hàng</string>
     <string name="list_order_saved_shipper">Đơn hàng đã lưu</string>
+    <string name="call">Gọi</string>
+    <string name="comment">Bình luận</string>
+    <string name="get_order">Nhận đơn hàng</string>
+    <string name="save">Lưu lại</string>
+    <string name="delete">Xóa</string>
 </resources>

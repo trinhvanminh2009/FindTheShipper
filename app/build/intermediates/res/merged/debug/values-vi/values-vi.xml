@@ -22,6 +22,7 @@
     <string name="about_us">Về chúng tôi</string>
     <string name="app_name">Find The Shipper</string>
     <string name="buy_package_shipper">Mua gói</string>
+    <string name="call">Gọi</string>
     <string name="cancel">Hủy</string>
     <string name="choosing_finish_point">Kéo bản đồ đến điểm cần giao. Địa điểm ngay điểm đánh dấu.</string>
     <string name="choosing_places_success">Chọn địa điểm thành công. Tiếp tục tạo đơn hàng bên dưới.</string>
@@ -49,6 +50,7 @@
     <string name="com_facebook_smart_login_confirmation_cancel">Không phải bạn?</string>
     <string name="com_facebook_smart_login_confirmation_title">Xác nhận đăng nhập</string>
     <string name="com_facebook_tooltip_default">Bạn đang có quyền kiểm soát - hãy chọn thông tin bạn muốn chia sẻ với ứng dụng.</string>
+    <string name="comment">Bình luận</string>
     <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"Bật"</string>
     <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> sẽ không hoạt động nếu bạn không bật dịch vụ của Google Play."</string>
     <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"Bật dịch vụ của Google Play"</string>
@@ -67,12 +69,14 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"Đăng nhập"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Đăng nhập bằng Google"</string>
     <string name="create_order">Tạo đơn hàng</string>
+    <string name="delete">Xóa</string>
     <string name="edit_text_advance_money">Tính bằng k (100 hiển thị 100k)</string>
     <string name="edit_text_note">Mô tả thêm</string>
     <string name="edit_text_phone_number">Số điện thoại</string>
     <string name="edit_text_ship_money">Khoảng 25k</string>
     <string name="edit_text_start_place">Nơi shipper tới lấy hàng</string>
     <string name="finish_place">Chọn điểm bắt đầu</string>
+    <string name="get_order">Nhận đơn hàng</string>
     <string name="list_order_saved_shipper">Đơn hàng đã lưu</string>
     <string name="list_order_shipper">Danh sách đơn hàng</string>
     <string name="log_out">Đăng xuất</string>
@@ -97,6 +101,7 @@
     <string name="please_wait_facebooklogin">Chỉ một lát</string>
     <string name="profile">Cá nhân</string>
     <string name="required_permission_location">Để truy cập vị trí hiện tại cần mở vị trí</string>
+    <string name="save">Lưu lại</string>
     <string msgid="146198913615257606" name="search_menu_title">"Tìm kiếm"</string>
     <string name="setting">Cài đặt</string>
     <string name="start_place">Chọn điểm kết thúc</string>

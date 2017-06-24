@@ -75,13 +75,13 @@
             android:name="com.minh.findtheshipper.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name="com.minh.findtheshipper.DistanceMapsActivity" />
-        <activity android:name="com.minh.findtheshipper.HandleMapsActivity" >
-        </activity>
-        <activity android:name="com.minh.findtheshipper.CreatedOrderActivity" >
-        </activity>
+        <activity android:name="com.minh.findtheshipper.HandleMapsActivity" />
+        <activity android:name="com.minh.findtheshipper.CreatedOrderActivity" />
         <activity android:name="com.minh.findtheshipper.Test" />
         <activity android:name="com.minh.findtheshipper.FragmentActivity" />
         <activity android:name="com.minh.findtheshipper.FragmentContainer" >
+        </activity>
+        <activity android:name="com.minh.findtheshipper.Main2Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

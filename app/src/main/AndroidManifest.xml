@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -59,25 +59,23 @@
             </intent-filter>
         </activity>
         <activity
-    android:name=".MapsActivity"
-    android:label="@string/title_activity_maps" />
-<activity android:name=".DistanceMapsActivity" />
-<activity android:name=".HandleMapsActivity">
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".DistanceMapsActivity" />
+        <activity android:name=".HandleMapsActivity"></activity>
+        <activity android:name=".CreatedOrderActivity"></activity>
+        <activity android:name=".Test" />
+        <activity android:name=".FragmentActivity" />
+        <activity android:name=".FragmentContainer">
 
-</activity>
-<activity android:name=".CreatedOrderActivity">
+        </activity>
+        <activity android:name=".Main2Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-</activity>
-<activity android:name=".Test" />
-
-<activity android:name=".FragmentActivity" />
-<activity android:name=".FragmentContainer">
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
-</activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
-    </manifest>
+</manifest>

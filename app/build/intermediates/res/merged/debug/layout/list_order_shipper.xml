@@ -3,21 +3,38 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:layout_marginStart="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:text="@string/order_starting_point"
-            />
-        <TextView
-            android:textSize="17sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtStatingPointShipper"
-            android:text="@string/start_place"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_order"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:visibility="visible"
+                android:textSize="12sp"
+                android:textAlignment="viewStart"
+                android:drawableStart="@drawable/ic_bike"
+                android:id="@+id/btnGetOrder"
+                android:background="@null"
+                android:layout_alignBottom="@+id/textView2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="@string/order_starting_point"
+                android:id="@+id/textView2" />
+        </RelativeLayout>
 
+    <TextView
+        android:textSize="17sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtStatingPointShipper"
+        android:text="@string/start_place"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -76,47 +93,41 @@
             android:id="@+id/txtPhoneNumberShipper"
             android:text="@string/start_place"/>
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        >
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:layout_marginBottom="10dp"
             android:text="@string/comment"
             android:id="@+id/btnComment"
-            android:layout_gravity="left|center_vertical|"
+            android:layout_alignParentStart="true"
+            android:textAlignment="viewStart"
             android:background="@null"
-            android:drawableLeft="@drawable/ic_comment"/>
-
-
+            android:drawableStart="@drawable/ic_comment"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/call"
             android:textSize="12sp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="center|center_vertical"
-            android:drawableLeft="@drawable/ic_call"
+            android:layout_centerInParent="true"
+            android:textAlignment="viewStart"
+            android:drawableStart="@drawable/ic_call"
             android:id="@+id/btnCall"
             android:background="@null"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save"
-            android:layout_marginBottom="10dp"
             android:textSize="12sp"
-            android:layout_gravity="left|center_vertical"
-            android:layout_marginLeft="60dp"
-            android:drawableLeft="@drawable/ic_save"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="viewStart"
+            android:drawableStart="@drawable/ic_save"
             android:id="@+id/btnSave"
             android:background="@null"/>
-    </LinearLayout>
 
-
-
+    </RelativeLayout>
 
 </LinearLayout>

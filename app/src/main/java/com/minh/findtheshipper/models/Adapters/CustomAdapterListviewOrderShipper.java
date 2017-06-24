@@ -85,7 +85,6 @@ public class CustomAdapterListviewOrderShipper extends ArrayAdapter<Order> {
 
                 String tempPhone = order.getPhoneNumber().replaceAll("[^0-9]+", " ");
                 List<String> phoneNumber = Arrays.asList(tempPhone.trim().split(" "));
-                TastyToast.makeText(getContext(),phoneNumber.get(0),TastyToast.LENGTH_SHORT, TastyToast.SUCCESS);
                 Intent intentPhone = new Intent(Intent.ACTION_CALL);
                 intentPhone.setData(Uri.parse("tel:"+phoneNumber.get(0)));
                 if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {

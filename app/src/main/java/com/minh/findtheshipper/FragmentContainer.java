@@ -53,7 +53,7 @@ public class FragmentContainer extends FragmentActivity {
         setContentView(R.layout.activity_fragment_container);
         ButterKnife.bind(this);
         NavigationDrawer(toolbar);
-        /**
+        /***
          * Have to request permissions right here . Because can't request permissions in ArrayAdapter.
          */
         if(Build.VERSION.SDK_INT >= 23)

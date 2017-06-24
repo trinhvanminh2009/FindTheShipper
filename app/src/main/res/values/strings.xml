@@ -52,4 +52,6 @@
     <string name="comment">Comment</string>
     <string name="call">Call</string>
     <string name="save">Save</string>
+    <string name="get_order">Get Order</string>
+    <string name="delete">Delete</string>
 </resources>
