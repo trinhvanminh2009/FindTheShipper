@@ -54,4 +54,8 @@
     <string name="save">Save</string>
     <string name="get_order">Get Order</string>
     <string name="delete">Delete</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="type_comment">Type a comment...</string>
+    <string name="send">Send</string>
 </resources>

@@ -53,4 +53,8 @@
     <string name="get_order">Nhận đơn hàng</string>
     <string name="save">Lưu lại</string>
     <string name="delete">Xóa</string>
+    <string name="content">Nội dung</string>
+    <string name="title">Tiêu đề</string>
+    <string name="type_comment">Nhập vào một bình luận....</string>
+    <string name="send">Gửi</string>
 </resources>

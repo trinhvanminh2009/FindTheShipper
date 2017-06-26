@@ -1273,6 +1273,7 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="content">Content</string>
     <string name="create_order">Create Order</string>
     <string name="define_AndroidActionItemBadge">year;owner</string>
     <string name="define_AndroidIconics">year;owner</string>
@@ -3033,6 +3034,7 @@
     <string name="required_permission_location">Access to the location is required turn on location.</string>
     <string name="save">Save</string>
     <string name="search_menu_title">Search</string>
+    <string name="send">Send</string>
     <string name="setting">Settings</string>
     <string name="start_place">Choose place to start</string>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -3041,8 +3043,10 @@
     <string name="text_view_phone_number">Phone number</string>
     <string name="text_view_ship_money">Ship money</string>
     <string name="text_view_start_place">Start place</string>
+    <string name="title">Title</string>
     <string name="title_activity_maps">Map</string>
     <string name="tutorials">Tutorials</string>
+    <string name="type_comment">Type a comment...</string>
     <string name="version">Version</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

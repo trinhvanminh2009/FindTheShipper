@@ -1,0 +1,52 @@
+package com.minh.findtheshipper.models.Adapters;
+
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.models.Comment;
+
+import java.util.List;
+
+/**
+ * Created by trinh on 6/26/2017.
+ */
+
+public class AdapterListComment extends RecyclerView.Adapter<AdapterListComment.ViewHolder> {
+    private List<Comment> commentList;
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_comments,parent,false);
+        ViewHolder viewHolder = new ViewHolder(view);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private ImageView imgAvatar;
+        private TextView txtUserName;
+        private TextView txtContent;
+        public ViewHolder(View itemView) {
+            super(itemView);
+            imgAvatar = (ImageView)itemView.findViewById(R.id.imgAvatarComment);
+            txtUserName = (TextView)itemView.findViewById(R.id.txtUserNameComment);
+            txtContent = (TextView)itemView.findViewById(R.id.txtContentComment);
+
+
+        }
+    }
+}

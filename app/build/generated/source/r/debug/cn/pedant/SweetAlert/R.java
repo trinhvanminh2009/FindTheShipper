@@ -372,10 +372,10 @@ public final class R {
         public static final int gray_button_background = 0x7f020099;
         public static final int ic_launcher = 0x7f0200a7;
         public static final int red_button_background = 0x7f0200d2;
-        public static final int success_bow = 0x7f0200d6;
-        public static final int success_circle = 0x7f0200d7;
-        public static final int warning_circle = 0x7f0200d9;
-        public static final int warning_sigh = 0x7f0200da;
+        public static final int success_bow = 0x7f0200d7;
+        public static final int success_circle = 0x7f0200d8;
+        public static final int warning_circle = 0x7f0200da;
+        public static final int warning_sigh = 0x7f0200db;
     }
     public static final class id {
         public static final int action_bar = 0x7f0e009b;
@@ -483,10 +483,10 @@ public final class R {
         public static final int abc_search_dropdown_item_icons_2line = 0x7f040018;
         public static final int abc_search_view = 0x7f040019;
         public static final int alert_dialog = 0x7f040021;
-        public static final int support_simple_spinner_dropdown_item = 0x7f040075;
+        public static final int support_simple_spinner_dropdown_item = 0x7f040077;
     }
     public static final class string {
-        public static final int LOADING = 0x7f080075;
+        public static final int LOADING = 0x7f080079;
         public static final int abc_action_bar_home_description = 0x7f080000;
         public static final int abc_action_bar_home_description_format = 0x7f080001;
         public static final int abc_action_bar_home_subtitle_description_format = 0x7f080002;
@@ -503,9 +503,9 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f080010;
         public static final int abc_shareactionprovider_share_with_application = 0x7f080011;
         public static final int app_name = 0x7f080041;
-        public static final int dialog_cancel = 0x7f08008e;
-        public static final int dialog_default_title = 0x7f08008f;
-        public static final int dialog_ok = 0x7f080090;
+        public static final int dialog_cancel = 0x7f080092;
+        public static final int dialog_default_title = 0x7f080093;
+        public static final int dialog_ok = 0x7f080094;
     }
     public static final class style {
         public static final int Base_TextAppearance_AppCompat = 0x7f0a0052;

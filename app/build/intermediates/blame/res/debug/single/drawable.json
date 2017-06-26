@@ -12,6 +12,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\drawable\\design_snackbar_background.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_image.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable\\shape_image.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\error_toast.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\92134a31c132b650bdbc3fa6874e694918843fdf\\output\\res\\drawable\\error_toast.xml"
     },
