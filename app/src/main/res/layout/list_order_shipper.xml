@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.v7.widget.CardView
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginStart="10dp">
-
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    app:cardCornerRadius="10dp"
+    card_view:cardElevation="3dp"
+    android:layout_margin="5dp"
+    card_view:contentPadding = "4dp"
+    android:clickable="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:text="@string/get_order"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="10dp"
                 android:visibility="visible"
                 android:textSize="12sp"
-                android:textAlignment="viewStart"
                 android:drawableStart="@drawable/ic_bike"
                 android:id="@+id/btnGetOrder"
                 android:background="@null"
-                android:layout_alignBottom="@+id/textView2" />
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
+                android:layout_alignParentStart="true"
                 android:text="@string/order_starting_point"
-                android:id="@+id/textView2" />
+                />
         </RelativeLayout>
 
-    <TextView
-        android:textSize="17sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtStatingPointShipper"
-        android:text="@string/start_place"/>
+        <TextView
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtStatingPointShipper"
+            android:text="@string/start_place"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,85 +58,85 @@
             android:id="@+id/txtFinishPointShipper"
             android:text="@string/finish_place"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:textSize="17sp"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtAdvancedMoneyShipper"
-            android:text="@string/start_place"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:textSize="17sp"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtAdvancedMoneyShipper"
+                android:text="@string/start_place"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtShipMoneyShipper"
-            android:text="@string/start_place"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:textSize="17sp"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtShipMoneyShipper"
+                android:text="@string/start_place"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtNoteShipper"
-            android:text="@string/start_place"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:textSize="17sp"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtNoteShipper"
+                android:text="@string/start_place"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtPhoneNumberShipper"
-            android:text="@string/start_place"/>
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <Button
-            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtPhoneNumberShipper"
+                android:text="@string/start_place"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="@string/comment"
-            android:id="@+id/btnComment"
-            android:layout_alignParentStart="true"
-            android:textAlignment="viewStart"
-            android:background="@null"
-            android:drawableStart="@drawable/ic_comment"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/call"
-            android:textSize="12sp"
-            android:layout_centerInParent="true"
-            android:textAlignment="viewStart"
-            android:drawableStart="@drawable/ic_call"
-            android:id="@+id/btnCall"
-            android:background="@null"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/save"
-            android:textSize="12sp"
-            android:layout_alignParentEnd="true"
-            android:textAlignment="viewStart"
-            android:drawableStart="@drawable/ic_save"
-            android:id="@+id/btnSave"
-            android:background="@null"/>
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/comment"
+                android:id="@+id/btnComment"
+                android:layout_alignParentStart="true"
+                android:textAlignment="viewStart"
+                android:background="@null"
+                android:drawableStart="@drawable/ic_comment"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/call"
+                android:textSize="12sp"
+                android:layout_centerInParent="true"
+                android:textAlignment="viewStart"
+                android:drawableStart="@drawable/ic_call"
+                android:id="@+id/btnCall"
+                android:background="@null"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:textSize="12sp"
+                android:layout_alignParentEnd="true"
+                android:textAlignment="viewStart"
+                android:drawableStart="@drawable/ic_save"
+                android:id="@+id/btnSave"
+                android:background="@null"/>
+        </RelativeLayout>
 
-    </RelativeLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

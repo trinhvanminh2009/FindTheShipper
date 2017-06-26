@@ -76,10 +76,6 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_created_order.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_order_saved_shipper_fragment.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_order_saved_shipper_fragment.xml"
-    },
-    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_navigation_item_header.xml"
     },
@@ -312,8 +308,8 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_layout_snackbar.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_list_order_shipper.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_list_order_shipper.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_recycle_view.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_recycle_view.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_smart_device_dialog_fragment.xml",
@@ -394,10 +390,6 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_divider.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_divider.xml"
-    },
-    {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\recycle_view_test.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\recycle_view_test.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",

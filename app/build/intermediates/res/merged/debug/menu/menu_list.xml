@@ -5,7 +5,6 @@
     android:icon="@drawable/ic_notifycation"
     android:title="Notifycation"
     app:showAsAction="always"
-
     >
 </item>
 </menu>

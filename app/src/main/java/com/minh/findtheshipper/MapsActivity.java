@@ -56,10 +56,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String[] listProfile = new String[4];
     private LocationManager locationManager;
     private static final int MY_PERMISSION_REQUEST_FINE_LOCATION = 101;
-
     private boolean permissionIsGranted = false;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

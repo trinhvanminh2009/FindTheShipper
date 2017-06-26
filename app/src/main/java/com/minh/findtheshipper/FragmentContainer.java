@@ -5,7 +5,12 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -14,9 +19,12 @@ import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.mikepenz.actionitembadge.library.ActionItemBadge;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -26,6 +34,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import butterknife.BindView;
@@ -37,6 +46,7 @@ public class FragmentContainer extends FragmentActivity {
      * This Fragment display for the shipper
      */
     @BindView(R.id.toolBar) Toolbar toolbar;
+    private int badgerCount = 10;
     private static final int REQUEST= 112;
     private Context context = this;
     @Override
@@ -44,6 +54,9 @@ public class FragmentContainer extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_container);
         ButterKnife.bind(this);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.list_order_shipper);
         NavigationDrawer(toolbar);
         if(findViewById(R.id.fragmentShipperContainer) != null)
         {
@@ -70,7 +83,56 @@ public class FragmentContainer extends FragmentActivity {
             }
 
         }
+    }
 
+    private Drawable resizeImage(int resId, int w, int h)
+    {
+        // load the origial Bitmap
+        Bitmap BitmapOrg = BitmapFactory.decodeResource(getResources(), resId);
+        int width = BitmapOrg.getWidth();
+        int height = BitmapOrg.getHeight();
+        int newWidth = w;
+        int newHeight = h;
+        // calculate the scale
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        // create a matrix for the manipulation
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+        Bitmap resizedBitmap = Bitmap.createBitmap(BitmapOrg, 0, 0,width, height, matrix, true);
+        return new BitmapDrawable(resizedBitmap);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_list,menu);
+        if(badgerCount >0)
+        {
+            ActionItemBadge.update(this,menu.findItem(R.id.item_notifycation),resizeImage(R.drawable.ic_notifycation,200,200), ActionItemBadge.BadgeStyles.RED, badgerCount);
+
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.item_notifycation:
+                showNotification();
+                //badgerCount++;
+                // ActionItemBadge.update(item,badgerCount);
+                return true;
+            default:  return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void showNotification()
+    {
+        final FragmentManager fragmentManager = getSupportFragmentManager();
+        final DialogHelpers dialogHelpers = new DialogHelpers();
+
+        dialogHelpers.show(fragmentManager,"New fragment");
 
     }
 
@@ -85,7 +147,7 @@ public class FragmentContainer extends FragmentActivity {
         return true;
     }
 
-    
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -102,7 +164,7 @@ public class FragmentContainer extends FragmentActivity {
         }
     }
 
-    public void NavigationDrawer(Toolbar toolbar) {
+    public void NavigationDrawer(final Toolbar toolbar) {
 
         //   Uri myUri = Uri.parse(listProfile[3]);
         // Log.d("myTags",myUri.toString());
@@ -154,13 +216,13 @@ public class FragmentContainer extends FragmentActivity {
                         // do something with the clicked item :D
                         if(drawerItem.getIdentifier() ==1)
                         {
-
+                            getSupportActionBar().setTitle(R.string.list_order_shipper);
                             listOrderLayout.setVisibility(View.VISIBLE);
                             listSavedOrderLayout.setVisibility(View.GONE);
                         }
                         if(drawerItem.getIdentifier() == 2)
                         {
-                            TastyToast.makeText(FragmentContainer.this, "Item 2",TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
+                            getSupportActionBar().setTitle(R.string.list_order_saved_shipper);
                             listOrderLayout.setVisibility(View.GONE);
                             listSavedOrderLayout.setVisibility(View.VISIBLE);
 

@@ -62,7 +62,9 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".DistanceMapsActivity" />
-        <activity android:name=".HandleMapsActivity"></activity>
+        <activity android:name=".HandleMapsActivity">
+
+        </activity>
         <activity android:name=".CreatedOrderActivity"></activity>
         <activity android:name=".Test" />
         <activity android:name=".FragmentActivity" />

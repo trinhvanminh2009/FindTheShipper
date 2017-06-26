@@ -2,19 +2,15 @@ package com.minh.findtheshipper;
 
 import android.app.Fragment;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.minh.findtheshipper.models.Adapters.AdapterListviewOrderSaved;
 import com.minh.findtheshipper.models.Order;
-
 import java.util.ArrayList;
-
 import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;
@@ -25,12 +21,10 @@ public class ListOrderSavedShipperFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Order> orderList;
     private Realm realm;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.list_order_saved_shipper_fragment, container,false);
+        View view = inflater.inflate(R.layout.list_recycle_view, container,false);
         recyclerView =(RecyclerView)view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
@@ -59,10 +53,8 @@ public class ListOrderSavedShipperFragment extends Fragment {
             adapter = new AdapterListviewOrderSaved(orderList);
             recyclerView.setAdapter(adapter);
 
-
         }catch (Exception e)
         {
-
         }
     }
     public void initRealm()
