@@ -2,4 +2,6 @@
 <resources>
     <dimen name="dialog_width">350dp</dimen>
     <dimen name="dialog_height">500dp</dimen>
+    <dimen name="comment_width">400dp</dimen>
+    <dimen name="comment_height">600dp</dimen>
 </resources>

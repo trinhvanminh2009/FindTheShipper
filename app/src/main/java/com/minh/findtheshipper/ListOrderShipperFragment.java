@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderShipper;
 import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.User;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.ArrayList;
 
@@ -35,6 +37,8 @@ public class ListOrderShipperFragment extends Fragment {
         realm.init(getActivity());
         initRealm();
         loadAllList();
+       // addUser();
+      //  loadAllUser();
         return view;
 
     }
@@ -50,6 +54,44 @@ public class ListOrderShipperFragment extends Fragment {
         super.onDestroyView();
         realm.close();
     }
+
+    public void addUser()
+    {
+        try{
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    User user = realm.createObject(User.class,"trinhvanminh2009");
+                    user.setPhoneNumber("01647976713");
+                    user.setFullName("Trịnh Văn Minh");
+                    user.setAvatar(R.drawable.ic_your_profile);
+                    RealmResults<Order> orders = realm.where(Order.class).findAllSorted("dateTime", Sort.DESCENDING);
+                    for (int i = 0; i < orders.size(); i++)
+                    {
+                        user.getOrderArrayList().add(orders.get(i));
+                    }
+                    realm.insertOrUpdate(user);
+                }
+            });
+        }catch (Exception e)
+        {
+
+        }
+    }
+    public void loadAllUser()
+    {
+        try
+        {
+            RealmResults<User> users = realm.where(User.class).findAll();
+            for (int i = 0; i < users.size(); i++)
+            {
+              TastyToast.makeText(getActivity(), users.get(i).getOrderArrayList().toString(),TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
+            }
+
+        }catch (Exception e)
+        {
+        }
+    }
     public void loadAllList()
     {
         try
@@ -60,7 +102,7 @@ public class ListOrderShipperFragment extends Fragment {
             {
                 orderList.add(orders.get(i));
             }
-            adapter = new CustomAdapterListviewOrderShipper(orderList);
+            adapter = new CustomAdapterListviewOrderShipper(getActivity(),orderList);
             recyclerView.setAdapter(adapter);
         }catch (Exception e)
         {

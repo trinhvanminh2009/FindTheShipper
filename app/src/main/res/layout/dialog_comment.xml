@@ -15,24 +15,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <include layout="@layout/toolbar">
+
+        </include>
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_weight="10"
+            android:layout_weight="1"
             android:id="@+id/listComment"
             android:layout_height="match_parent">
         </android.support.v7.widget.RecyclerView>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
-
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
-            <TextView
+            <EditText
                 android:id="@+id/editComment"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_weight="8"
+                android:background="@drawable/shape_edittext"
                 android:hint="@string/type_comment" />
 
             <Button

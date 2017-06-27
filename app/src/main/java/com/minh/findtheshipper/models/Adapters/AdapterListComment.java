@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Comment;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,27 +29,41 @@ public class AdapterListComment extends RecyclerView.Adapter<AdapterListComment.
         return viewHolder;
     }
 
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-
+    public AdapterListComment(List<Comment> commentList) {
+        this.commentList = commentList;
     }
 
     @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        if(commentList.size() >0)
+        {
+            Comment comment = commentList.get(position);
+            holder.imgAvatar.setImageResource(comment.getUser().getAvatar());
+            holder.txtUserName.setText(comment.getUser().getFullName());
+            holder.txtContent.setText(comment.getContent());
+            holder.txtDateTime.setText(comment.getDateTime());
+        }
+
+    }
+
+
+
+    @Override
     public int getItemCount() {
-        return 0;
+        return commentList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgAvatar;
         private TextView txtUserName;
         private TextView txtContent;
+        private TextView txtDateTime;
         public ViewHolder(View itemView) {
             super(itemView);
             imgAvatar = (ImageView)itemView.findViewById(R.id.imgAvatarComment);
             txtUserName = (TextView)itemView.findViewById(R.id.txtUserNameComment);
             txtContent = (TextView)itemView.findViewById(R.id.txtContentComment);
-
-
+            txtDateTime = (TextView)itemView.findViewById(R.id.txtDatetimeComment);
         }
     }
 }

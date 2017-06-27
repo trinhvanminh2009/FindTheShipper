@@ -2,14 +2,19 @@ package com.minh.findtheshipper.models.Adapters;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentContainer;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,7 +24,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.minh.findtheshipper.ListOrderSavedShipperFragment;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.utils.AnimationUtils;
 import com.sdsmdg.tastytoast.TastyToast;
@@ -34,9 +41,13 @@ import java.util.List;
 
 public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<CustomAdapterListviewOrderShipper.ViewHolder>{
     private List<Order> orderList;
+    private Context context;
+
     private int previousPosition = -1;
-    public CustomAdapterListviewOrderShipper(List<Order> orderList) {
+    public CustomAdapterListviewOrderShipper(Context context ,List<Order> orderList) {
+        this.context = context;
         this.orderList = orderList;
+
     }
     @Override
     public CustomAdapterListviewOrderShipper.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -75,6 +86,19 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             }
         });
 
+        holder.btnComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("orderID",order.getOrderID());
+                FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
+                final CommentDialogHelpers dialogHelpers = new CommentDialogHelpers();
+                dialogHelpers.show(fragmentManager,"New fragment");
+                dialogHelpers.setArguments(bundle);
+
+            }
+        });
+
         AnimationUtils animationUtils = new AnimationUtils();
         if(position >previousPosition)
         {
@@ -84,7 +108,6 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
 
 
     }
-
 
 
     @Override
@@ -97,6 +120,8 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     public int getItemCount() {
         return orderList.size();
     }
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView startingPoint;
@@ -122,6 +147,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             btnCall = (Button) view.findViewById(R.id.btnCall);
             btnSave = (Button) view.findViewById(R.id.btnSave);
             btnGetOrder = (Button)view.findViewById(R.id.btnGetOrder);
+
 
         }
     }

@@ -886,9 +886,39 @@
             <enum name="screen" value="15"/>
         </attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <declare-styleable name="com_facebook_like_view"><attr format="color" name="com_facebook_foreground_color"/><attr format="string" name="com_facebook_object_id"/><attr name="com_facebook_object_type"><enum name="unknown" value="0"/><enum name="open_graph" value="1"/><enum name="page" value="2"/></attr><attr name="com_facebook_style"><enum name="standard" value="0"/><enum name="button" value="1"/><enum name="box_count" value="2"/></attr><attr name="com_facebook_auxiliary_view_position"><enum name="bottom" value="0"/><enum name="inline" value="1"/><enum name="top" value="2"/></attr><attr name="com_facebook_horizontal_alignment"><enum name="center" value="0"/><enum name="left" value="1"/><enum name="right" value="2"/></attr></declare-styleable>
-    <declare-styleable name="com_facebook_login_view"><attr format="boolean" name="com_facebook_confirm_logout"/><attr format="string" name="com_facebook_login_text"/><attr format="string" name="com_facebook_logout_text"/><attr name="com_facebook_tooltip_mode"><enum name="automatic" value="0"/><enum name="display_always" value="1"/><enum name="never_display" value="2"/></attr></declare-styleable>
-    <declare-styleable name="com_facebook_profile_picture_view"><attr name="com_facebook_preset_size"><enum name="small" value="-2"/><enum name="normal" value="-3"/><enum name="large" value="-4"/></attr><attr format="boolean" name="com_facebook_is_cropped"/></declare-styleable>
+    <declare-styleable name="com_facebook_like_view"><attr format="color" name="com_facebook_foreground_color"/><attr format="string" name="com_facebook_object_id"/><attr name="com_facebook_object_type">
+            
+            <enum name="unknown" value="0"/>
+            <enum name="open_graph" value="1"/>
+            <enum name="page" value="2"/>
+        </attr><attr name="com_facebook_style">
+            
+            <enum name="standard" value="0"/>
+            <enum name="button" value="1"/>
+            <enum name="box_count" value="2"/>
+        </attr><attr name="com_facebook_auxiliary_view_position">
+            
+            <enum name="bottom" value="0"/>
+            <enum name="inline" value="1"/>
+            <enum name="top" value="2"/>
+        </attr><attr name="com_facebook_horizontal_alignment">
+            
+            <enum name="center" value="0"/>
+            <enum name="left" value="1"/>
+            <enum name="right" value="2"/>
+        </attr></declare-styleable>
+    <declare-styleable name="com_facebook_login_view"><attr format="boolean" name="com_facebook_confirm_logout"/><attr format="string" name="com_facebook_login_text"/><attr format="string" name="com_facebook_logout_text"/><attr name="com_facebook_tooltip_mode">
+            
+            <enum name="automatic" value="0"/>
+            <enum name="display_always" value="1"/>
+            <enum name="never_display" value="2"/>
+        </attr></declare-styleable>
+    <declare-styleable name="com_facebook_profile_picture_view"><attr name="com_facebook_preset_size">
+            
+            <enum name="small" value="-2"/>
+            <enum name="normal" value="-3"/>
+            <enum name="large" value="-4"/>
+        </attr><attr format="boolean" name="com_facebook_is_cropped"/></declare-styleable>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -990,6 +1020,8 @@
     <dimen name="com_facebook_share_button_padding_top">12dp</dimen>
     <dimen name="com_facebook_share_button_text_size">16.0sp</dimen>
     <dimen name="com_facebook_tooltip_horizontal_padding">10dp</dimen>
+    <dimen name="comment_height">600dp</dimen>
+    <dimen name="comment_width">400dp</dimen>
     <dimen name="common_circle_width">3dp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
@@ -1245,14 +1277,14 @@
     <string name="com_facebook_loginview_log_in_button_long">Log in with Facebook</string>
     <string name="com_facebook_loginview_log_out_action">Log out</string>
     <string name="com_facebook_loginview_log_out_button">Log out</string>
-    <string name="com_facebook_loginview_logged_in_as">Logged in as: %1$s</string>
+    <string name="com_facebook_loginview_logged_in_as">Logged in as: <ns1:g id="user name">%1$s</ns1:g></string>
     <string name="com_facebook_loginview_logged_in_using_facebook">Logged in using Facebook</string>
     <string name="com_facebook_send_button_text">Send</string>
     <string name="com_facebook_share_button_text">Share</string>
     <string name="com_facebook_smart_device_instructions">To connect your account, open the Facebook app on your mobile device and check for notifications.</string>
     <string name="com_facebook_smart_device_instructions_or">- OR -</string>
     <string name="com_facebook_smart_login_confirmation_cancel">Not you?</string>
-    <string name="com_facebook_smart_login_confirmation_continue_as">Continue as %1$s</string>
+    <string name="com_facebook_smart_login_confirmation_continue_as">Continue as <ns1:g id="user name">%1$s</ns1:g></string>
     <string name="com_facebook_smart_login_confirmation_title">Confirm Login</string>
     <string name="com_facebook_tooltip_default">You\'re in control - choose what info you want to share with apps.</string>
     <string name="comment">Comment</string>

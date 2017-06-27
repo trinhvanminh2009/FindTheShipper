@@ -68,7 +68,7 @@
         <activity android:name=".CreatedOrderActivity"></activity>
         <activity android:name=".Test" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".FragmentContainer">
+        <activity android:name=".FragmentContainerShipper">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

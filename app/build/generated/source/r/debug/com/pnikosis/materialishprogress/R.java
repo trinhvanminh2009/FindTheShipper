@@ -285,8 +285,8 @@ public final class R {
         public static final int abc_text_size_subtitle_material_toolbar = 0x7f090003;
         public static final int abc_text_size_title_material = 0x7f090058;
         public static final int abc_text_size_title_material_toolbar = 0x7f090004;
-        public static final int disabled_alpha_material_dark = 0x7f090095;
-        public static final int disabled_alpha_material_light = 0x7f090096;
+        public static final int disabled_alpha_material_dark = 0x7f090097;
+        public static final int disabled_alpha_material_light = 0x7f090098;
     }
     public static final class drawable {
         public static final int abc_btn_check_material = 0x7f020003;
@@ -439,7 +439,7 @@ public final class R {
         public static final int abc_searchview_description_voice = 0x7f08000f;
         public static final int abc_shareactionprovider_share_with = 0x7f080010;
         public static final int abc_shareactionprovider_share_with_application = 0x7f080011;
-        public static final int app_name = 0x7f080041;
+        public static final int app_name = 0x7f080057;
     }
     public static final class style {
         public static final int Base_TextAppearance_AppCompat = 0x7f0a0052;

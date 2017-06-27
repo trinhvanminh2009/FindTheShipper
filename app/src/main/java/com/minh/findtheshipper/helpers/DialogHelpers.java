@@ -1,5 +1,6 @@
 package com.minh.findtheshipper.helpers;
 import android.app.Dialog;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -91,4 +92,6 @@ public class DialogHelpers extends DialogFragment {
         super.onDestroy();
        realm.close();
     }
+
+
 }

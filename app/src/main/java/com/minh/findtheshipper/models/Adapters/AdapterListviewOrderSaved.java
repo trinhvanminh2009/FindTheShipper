@@ -1,11 +1,15 @@
 package com.minh.findtheshipper.models.Adapters;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.utils.AnimationUtils;
 
@@ -29,6 +34,7 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
 
     private List<Order>orderList;
     private int previousPosition = 0;
+    private Context context;
 
     @Override
     public AdapterListviewOrderSaved.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -37,7 +43,8 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
         return viewHolder;
     }
 
-    public AdapterListviewOrderSaved(List<Order> orderList) {
+    public AdapterListviewOrderSaved(Context context, List<Order> orderList) {
+        this.context = context;
         this.orderList = orderList;
     }
 
@@ -68,6 +75,17 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
                     return;
                 }
                 v.getContext().startActivity(intentPhone);
+            }
+        });
+        holder.btnComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("orderID",order.getOrderID());
+                FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
+                CommentDialogHelpers commentDialogHelpers = new CommentDialogHelpers();
+                commentDialogHelpers.show(fragmentManager,"Show it");
+                commentDialogHelpers.setArguments(bundle);
             }
         });
         AnimationUtils animationUtils = new AnimationUtils();

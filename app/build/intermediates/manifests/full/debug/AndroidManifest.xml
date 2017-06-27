@@ -80,7 +80,7 @@
         <activity android:name="com.minh.findtheshipper.CreatedOrderActivity" />
         <activity android:name="com.minh.findtheshipper.Test" />
         <activity android:name="com.minh.findtheshipper.FragmentActivity" />
-        <activity android:name="com.minh.findtheshipper.FragmentContainer" >
+        <activity android:name="com.minh.findtheshipper.FragmentContainerShipper" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

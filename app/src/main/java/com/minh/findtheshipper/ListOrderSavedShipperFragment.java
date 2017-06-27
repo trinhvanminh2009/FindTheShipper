@@ -50,7 +50,7 @@ public class ListOrderSavedShipperFragment extends Fragment {
             {
                 orderList.add(orders.get(i));
             }
-            adapter = new AdapterListviewOrderSaved(orderList);
+            adapter = new AdapterListviewOrderSaved(getActivity(),orderList);
             recyclerView.setAdapter(adapter);
 
         }catch (Exception e)

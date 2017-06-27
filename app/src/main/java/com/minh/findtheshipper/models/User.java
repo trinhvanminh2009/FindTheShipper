@@ -14,21 +14,12 @@ import io.realm.annotations.Required;
 
 public class User extends RealmObject {
     @PrimaryKey
-    private int userID;
-    private String fullName;
     private String email;
+    private String fullName;
     private String phoneNumber;
-    private String avatar;
+    private int avatar;
     private RealmList<Order> orderArrayList;
 
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
 
     public String getFullName() {
         return fullName;
@@ -54,11 +45,11 @@ public class User extends RealmObject {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAvatar() {
+    public int getAvatar() {
         return avatar;
     }
 
-    public void setAvatar(String avatar) {
+    public void setAvatar(int avatar) {
         this.avatar = avatar;
     }
 
