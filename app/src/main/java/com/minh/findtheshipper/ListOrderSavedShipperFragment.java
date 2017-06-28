@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.minh.findtheshipper.models.Adapters.AdapterListviewOrderSaved;
 import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.User;
+import com.sdsmdg.tastytoast.TastyToast;
+
 import java.util.ArrayList;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -45,7 +48,9 @@ public class ListOrderSavedShipperFragment extends Fragment {
         try
         {
             orderList = new ArrayList<>();
-            RealmResults<Order> orders = realm.where(Order.class).findAllSorted("dateTime", Sort.DESCENDING);
+            User user = getCurrentUser();
+            RealmResults<Order> orders = user.getOrderListSave().where().equalTo("saveOrder",true).findAllSorted("dateTime",Sort.DESCENDING);
+            TastyToast.makeText(getActivity(), "size"+orders.size() , TastyToast.LENGTH_SHORT, TastyToast.INFO);
             for (int i = 0; i < orders.size(); i++)
             {
                 orderList.add(orders.get(i));
@@ -61,5 +66,11 @@ public class ListOrderSavedShipperFragment extends Fragment {
     {
         realm = null;
         realm = Realm.getDefaultInstance();
+    }
+
+    private User getCurrentUser()
+    {
+        User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
+        return user;
     }
 }

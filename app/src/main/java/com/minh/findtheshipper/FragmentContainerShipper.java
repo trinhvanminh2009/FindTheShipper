@@ -65,7 +65,6 @@ public class FragmentContainerShipper extends FragmentActivity {
             {
                 return;
             }
-
         }
 
         /***
@@ -83,7 +82,6 @@ public class FragmentContainerShipper extends FragmentActivity {
             else {
 
             }
-
         }
     }
 

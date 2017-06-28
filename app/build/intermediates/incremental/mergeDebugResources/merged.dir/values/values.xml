@@ -3065,6 +3065,8 @@
     <string name="profile">Profile</string>
     <string name="required_permission_location">Access to the location is required turn on location.</string>
     <string name="save">Save</string>
+    <string name="save_order">Save order success</string>
+    <string name="save_order_exists">This order already exists!</string>
     <string name="search_menu_title">Search</string>
     <string name="send">Send</string>
     <string name="setting">Settings</string>

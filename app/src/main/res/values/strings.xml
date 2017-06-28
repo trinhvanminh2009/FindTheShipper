@@ -58,4 +58,6 @@
     <string name="content">Content</string>
     <string name="type_comment">Type a comment...</string>
     <string name="send">Send</string>
+    <string name="save_order">Save order success</string>
+    <string name="save_order_exists">This order already exists!</string>
 </resources>

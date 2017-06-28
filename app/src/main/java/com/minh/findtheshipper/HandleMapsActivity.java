@@ -141,7 +141,8 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
         listControls.add(new ListControl(R.drawable.ic_finish_point, getResources().getString(R.string.finish_place)));
         adapterListView = new CustomAdapterListView(HandleMapsActivity.this, listControls);
         listPlaces.setAdapter(adapterListView);
-       // insertNotification();
+        insertNotification();
+        //addUser();
 
     }
 
@@ -280,7 +281,11 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
                     DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
                     String date = df.format(Calendar.getInstance().getTime());
                     order.setDateTime(getResources().getString(R.string.order_last_updated)+ date);
+                    order.setSaveOrder(false);
                     realm.insertOrUpdate(order);
+                    User user = getCurrentUser();
+                    user.getOrderArrayList().add(order);
+                    realm.insertOrUpdate(user);
                     Intent intent = new Intent(HandleMapsActivity.this, CreatedOrderActivity.class);
                     startActivity(intent);
                     }
@@ -291,8 +296,30 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
         }
 
     }
+    public void addUser()
+    {
+        try{
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    User user = realm.createObject(User.class,"trinhvanminh2009");
+                    user.setPhoneNumber("01647976713");
+                    user.setFullName("Văn Minh");
+                    user.setAvatar(R.drawable.ic_your_profile);
+                    realm.insertOrUpdate(user);
+                }
+            });
+        }catch (Exception e)
+        {
 
+        }
+    }
 
+    private User getCurrentUser()
+    {
+        User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
+        return user;
+    }
     public void initRealm()
     {
         realm = null;

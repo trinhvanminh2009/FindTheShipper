@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -28,12 +29,16 @@ import com.minh.findtheshipper.ListOrderSavedShipperFragment;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.utils.AnimationUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
+
+import io.realm.Realm;
+import io.realm.RealmList;
 
 /**
  * Created by trinh on 6/22/2017.
@@ -42,6 +47,7 @@ import java.util.List;
 public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<CustomAdapterListviewOrderShipper.ViewHolder>{
     private List<Order> orderList;
     private Context context;
+    private Realm realm;
 
     private int previousPosition = -1;
     public CustomAdapterListviewOrderShipper(Context context ,List<Order> orderList) {
@@ -52,12 +58,15 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     @Override
     public CustomAdapterListviewOrderShipper.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_order_shipper,parent,false);
-       ViewHolder viewHolder = new ViewHolder(view);
+        realm.init(view.getContext());
+        initRealm();
+        ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(final CustomAdapterListviewOrderShipper.ViewHolder holder,final int position) {
+    public void onBindViewHolder(final CustomAdapterListviewOrderShipper.ViewHolder holder, int position) {
+        final AnimationUtils animationUtils = new AnimationUtils();
         final Order order = orderList.get(position);
         holder.startingPoint.setText(order.getStartPoint());
         holder.finishPoint.setText(order.getFinishPoint());
@@ -99,7 +108,52 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             }
         });
 
-        AnimationUtils animationUtils = new AnimationUtils();
+        holder.btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                if(!order.getSaveOrder())
+                {
+                    animationUtils.animateItem(holder);
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+                            //Check order is already exists before add
+                            boolean checkAlready = false;
+                            User user = getCurrentUser();
+                            RealmList<Order> orders = user.getOrderListSave();
+                            for(int i = 0 ; i < orders.size(); i++)
+                            {
+                                if(orders.get(i).getOrderID().equals(order.getOrderID()))
+                                {
+                                    checkAlready = true;
+                                }
+                            }
+                            if (!checkAlready)
+                            {
+                                order.setSaveOrder(true);
+                                realm.insertOrUpdate(order);
+                                user.getOrderListSave().add(order);
+                                realm.insertOrUpdate(user);
+
+                            }
+                            if (checkAlready)
+                            {
+                                order.setSaveOrder(true);
+                                realm.insertOrUpdate(order);
+                            }
+                            TastyToast.makeText(v.getContext(),order.getOrderID(),TastyToast.LENGTH_SHORT,TastyToast.INFO);
+                        }
+                    });
+                }
+                else {
+                    animationUtils.animateItem(holder);
+                    TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order_exists) ,TastyToast.LENGTH_SHORT,TastyToast.WARNING);
+
+                }
+
+            }
+        });
+
         if(position >previousPosition)
         {
             animationUtils.animate(holder,true);
@@ -109,6 +163,16 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
 
     }
 
+    public void initRealm()
+    {
+        realm = null;
+        realm = Realm.getDefaultInstance();
+    }
+    private User getCurrentUser()
+    {
+        User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
+        return user;
+    }
 
     @Override
     public void onViewDetachedFromWindow(ViewHolder holder) {
@@ -147,8 +211,6 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             btnCall = (Button) view.findViewById(R.id.btnCall);
             btnSave = (Button) view.findViewById(R.id.btnSave);
             btnGetOrder = (Button)view.findViewById(R.id.btnGetOrder);
-
-
         }
     }
 

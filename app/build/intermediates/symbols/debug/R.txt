@@ -3780,6 +3780,8 @@ int string please_wait_facebooklogin 0x7f08007e
 int string profile 0x7f08007f
 int string required_permission_location 0x7f080080
 int string save 0x7f080081
+int string save_order 0x7f080744
+int string save_order_exists 0x7f080745
 int string search_menu_title 0x7f08003c
 int string send 0x7f080082
 int string setting 0x7f080083

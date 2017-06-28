@@ -37,7 +37,7 @@ public class ListOrderShipperFragment extends Fragment {
         realm.init(getActivity());
         initRealm();
         loadAllList();
-       // addUser();
+      //  addUser();
       //  loadAllUser();
         return view;
 
@@ -54,6 +54,7 @@ public class ListOrderShipperFragment extends Fragment {
         super.onDestroyView();
         realm.close();
     }
+
 
     public void addUser()
     {

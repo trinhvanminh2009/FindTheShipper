@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -65,6 +66,7 @@ public class MainActivity extends FragmentActivity {
                                 String name = response.getJSONObject().getString("name");
                                 String userID = loginResult.getAccessToken().getUserId();
                                 String imageURL = new String("https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200");
+                                Log.e("check",imageURL);
                                 listProfile[0] = email;
                                 listProfile[1] = gender;
                                 listProfile[2] = name;

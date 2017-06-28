@@ -19,6 +19,7 @@ public class User extends RealmObject {
     private String phoneNumber;
     private int avatar;
     private RealmList<Order> orderArrayList;
+    private RealmList<Order> orderListSave;
 
 
     public String getFullName() {
@@ -59,5 +60,13 @@ public class User extends RealmObject {
 
     public void setOrderArrayList(RealmList<Order> orderArrayList) {
         this.orderArrayList = orderArrayList;
+    }
+
+    public RealmList<Order> getOrderListSave() {
+        return orderListSave;
+    }
+
+    public void setOrderListSave(RealmList<Order> orderListSave) {
+        this.orderListSave = orderListSave;
     }
 }

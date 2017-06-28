@@ -6896,6 +6896,8 @@ containing a value of this type.
         public static final int profile=0x7f08007f;
         public static final int required_permission_location=0x7f080080;
         public static final int save=0x7f080081;
+        public static final int save_order=0x7f080744;
+        public static final int save_order_exists=0x7f080745;
         public static final int search_menu_title=0x7f08003c;
         public static final int send=0x7f080082;
         public static final int setting=0x7f080083;

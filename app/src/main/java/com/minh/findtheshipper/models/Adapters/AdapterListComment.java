@@ -1,5 +1,8 @@
 package com.minh.findtheshipper.models.Adapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +12,11 @@ import android.widget.TextView;
 
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Comment;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,6 +44,8 @@ public class AdapterListComment extends RecyclerView.Adapter<AdapterListComment.
     public void onBindViewHolder(ViewHolder holder, int position) {
         if(commentList.size() >0)
         {
+            //  URL imageURL = new URL("https://graph.facebook.com/211261632726746/picture?width=200&height=200");
+            //  Bitmap bitmap = BitmapFactory.decodeStream(imageURL.openConnection().getInputStream());
             Comment comment = commentList.get(position);
             holder.imgAvatar.setImageResource(comment.getUser().getAvatar());
             holder.txtUserName.setText(comment.getUser().getFullName());
@@ -64,6 +73,7 @@ public class AdapterListComment extends RecyclerView.Adapter<AdapterListComment.
             txtUserName = (TextView)itemView.findViewById(R.id.txtUserNameComment);
             txtContent = (TextView)itemView.findViewById(R.id.txtContentComment);
             txtDateTime = (TextView)itemView.findViewById(R.id.txtDatetimeComment);
+
         }
     }
 }

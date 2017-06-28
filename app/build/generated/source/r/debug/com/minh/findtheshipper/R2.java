@@ -10857,6 +10857,12 @@ public final class R2 {
     public static final int save = 0x7f080081;
 
     @StringRes
+    public static final int save_order = 0x7f080744;
+
+    @StringRes
+    public static final int save_order_exists = 0x7f080745;
+
+    @StringRes
     public static final int search_menu_title = 0x7f08003c;
 
     @StringRes

@@ -18,13 +18,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.minh.findtheshipper.ListOrderSavedShipperFragment;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.utils.AnimationUtils;
 
 import java.util.Arrays;
 import java.util.List;
+
+import io.realm.Realm;
 
 /**
  * Created by trinh on 6/24/2017.
@@ -35,10 +39,13 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
     private List<Order>orderList;
     private int previousPosition = 0;
     private Context context;
+    private Realm realm;
 
     @Override
     public AdapterListviewOrderSaved.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_order_shipper_saved,parent,false);
+        realm.init(view.getContext());
+        initRealm();
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -49,7 +56,7 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Order order = orderList.get(position);
         holder.txtStart.setText(order.getStartPoint());
         holder.txtfisnih.setText(order.getFinishPoint());
@@ -88,6 +95,22 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
                 commentDialogHelpers.setArguments(bundle);
             }
         });
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                realm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
+                        order.setSaveOrder(false);
+                        User user = getCurrentUser();
+                        user.getOrderListSave().remove(order);
+                        realm.insertOrUpdate(user);
+                        notifyItemRemoved(position);
+
+                    }
+                });
+            }
+        });
         AnimationUtils animationUtils = new AnimationUtils();
         if(position >previousPosition)
         {
@@ -96,6 +119,17 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
         }
     }
 
+
+    public void initRealm()
+    {
+        realm = null;
+        realm = Realm.getDefaultInstance();
+    }
+    private User getCurrentUser()
+    {
+        User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
+        return user;
+    }
     @Override
     public int getItemCount() {
         return orderList.size();

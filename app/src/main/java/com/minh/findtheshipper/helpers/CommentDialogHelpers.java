@@ -3,6 +3,7 @@ package com.minh.findtheshipper.helpers;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.util.TimeUtils;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -19,10 +20,13 @@ import com.minh.findtheshipper.models.Comment;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.User;
 import com.sdsmdg.tastytoast.TastyToast;
+import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -62,6 +66,7 @@ public class CommentDialogHelpers extends DialogFragment {
         btnComment = (Button)view.findViewById(R.id.btnSendComment);
         orderID = getArguments().getString("orderID");
         loadAllList();
+
         btnComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +112,8 @@ public class CommentDialogHelpers extends DialogFragment {
 
     public String getCurrentTime()
     {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd_HH/mm/ss");
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
         return simpleDateFormat.format(new Date());
     }
 
@@ -127,15 +133,11 @@ public class CommentDialogHelpers extends DialogFragment {
         {
             commentList = new ArrayList<>();
             Order order = realm.where(Order.class).equalTo("orderID",orderID).findFirst();
-            //TastyToast.makeText(getActivity(),order.getComments().get(0).getContent(),TastyToast.LENGTH_SHORT,TastyToast.WARNING);
-            RealmList<Comment> commentRealmList = order.getComments();
-           /* RealmResults<Comment> comments = null;
-            comments.addAll(commentRealmList);
-            TastyToast.makeText(getActivity(),comments.get(0).getContent(),TastyToast.LENGTH_SHORT,TastyToast.WARNING);*/
-
-            for (int i = 0; i < commentRealmList.size(); i++)
+            //Get RealmResults from object is RealmList
+            RealmResults<Comment>commentRealmResults = order.getComments().where().findAllSorted("dateTime",Sort.DESCENDING);
+            for (int i = 0; i <commentRealmResults.size(); i++)
             {
-                commentList.add(commentRealmList.get(i));
+                commentList.add(commentRealmResults.get(i));
             }
             adapter = new AdapterListComment(commentList);
             recyclerView.setAdapter(adapter);
@@ -162,6 +164,8 @@ public class CommentDialogHelpers extends DialogFragment {
         super.onDestroy();
         realm.close();
     }
+
+
 
 
 }

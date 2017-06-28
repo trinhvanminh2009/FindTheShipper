@@ -18,9 +18,17 @@ public class AnimationUtils  {
 
         ObjectAnimator animatorTranslateY = ObjectAnimator.ofFloat(holder.itemView,"translationY",-50,50,-30,30,-20,20,-5,5,0);
         animatorTranslateY.setDuration(1000);
-        //animatorSet.playTogether(animatorTranslateX, animatorTranslateY);
         animatorSet.playTogether(animatorTranslateY,animatorTranslateX);
         animatorSet.start();
 
+    }
+
+    public static void animateItem(RecyclerView.ViewHolder holder)
+    {
+        AnimatorSet animatorSet = new AnimatorSet();
+        ObjectAnimator animatorTranslateY = ObjectAnimator.ofFloat(holder.itemView,"translationY",-100,100,-70,70,-50,50,-20,20,-10,10,-5,5,0);
+        animatorTranslateY.setDuration(1000);
+        animatorSet.playTogether(animatorTranslateY);
+        animatorSet.start();
     }
 }

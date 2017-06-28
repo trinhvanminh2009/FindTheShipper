@@ -26,6 +26,7 @@ public class Order extends RealmObject{
     private RealmList<Like> likes;
     private RealmList<Dislike>dislikes;
     private RealmList<Comment> comments;
+    private Boolean saveOrder;
 
 
     public String getOrderID() {
@@ -129,5 +130,13 @@ public class Order extends RealmObject{
 
     public void setComments(RealmList<Comment> comments) {
         this.comments = comments;
+    }
+
+    public Boolean getSaveOrder() {
+        return saveOrder;
+    }
+
+    public void setSaveOrder(Boolean saveOrder) {
+        this.saveOrder = saveOrder;
     }
 }
