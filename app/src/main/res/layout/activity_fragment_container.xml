@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:id="@+id/fragmentShipperContainer"
         android:layout_height="match_parent">
-        <LinearLayout
+       <!-- <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/linearOrderFragment"
@@ -32,11 +32,13 @@
             android:visibility="gone"
             android:id="@+id/linearSavedOrderFragment"
             android:orientation="vertical">
-            <fragment
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:name="com.minh.findtheshipper.ListOrderSavedShipperFragment"
-                android:id="@+id/savedOrderFragment"/>
-        </LinearLayout>
+
+   <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.minh.findtheshipper.ListOrderSavedShipperFragment"
+            android:id="@+id/orderSavedFragment"/>
+        </LinearLayout>-->\
     </FrameLayout>
+
 </LinearLayout>

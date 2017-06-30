@@ -1,6 +1,5 @@
 package com.minh.findtheshipper;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderShipper;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.User;
@@ -20,7 +18,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;
 
-public class ListOrderShipperFragment extends Fragment {
+public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
     private Realm realm;
     private ArrayList<Order> orderList;
     private RecyclerView recyclerView;
@@ -34,7 +32,7 @@ public class ListOrderShipperFragment extends Fragment {
         recyclerView =(RecyclerView)view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        realm.init(getActivity());
+        Realm.init(getActivity());
         initRealm();
         loadAllList();
       //  addUser();

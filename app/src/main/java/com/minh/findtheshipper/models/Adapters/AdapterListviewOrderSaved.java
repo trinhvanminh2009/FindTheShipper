@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.minh.findtheshipper.ListOrderSavedShipperFragment;
@@ -59,11 +58,12 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Order order = orderList.get(position);
         holder.txtStart.setText(order.getStartPoint());
-        holder.txtfisnih.setText(order.getFinishPoint());
+        holder.txtFinish.setText(order.getFinishPoint());
         holder.txtAdvancedMoney.setText(order.getAdvancedMoney());
         holder.txtShipMoney.setText(order.getShipMoney());
         holder.txtNote.setText(order.getNote());
         holder.txtPhoneNumber.setText(order.getPhoneNumber());
+        final AnimationUtils animationUtils = new AnimationUtils();
         holder.btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,6 +98,7 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               // animationUtils.animateItem(holder);
                 realm.executeTransaction(new Realm.Transaction() {
                     @Override
                     public void execute(Realm realm) {
@@ -105,13 +106,14 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
                         User user = getCurrentUser();
                         user.getOrderListSave().remove(order);
                         realm.insertOrUpdate(user);
+                        orderList.remove(position);
                         notifyItemRemoved(position);
-
+                        notifyItemChanged(position,getItemCount());
                     }
                 });
             }
         });
-        AnimationUtils animationUtils = new AnimationUtils();
+
         if(position >previousPosition)
         {
             animationUtils.animate(holder,true);
@@ -140,7 +142,7 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView txtStart;
-        private TextView txtfisnih;
+        private TextView txtFinish;
         private TextView txtAdvancedMoney;
         private TextView txtShipMoney;
         private TextView txtNote;
@@ -154,7 +156,7 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
         public ViewHolder(View itemView) {
             super(itemView);
             txtStart = (TextView)itemView.findViewById(R.id.txtStatingPointShipper);
-            txtfisnih = (TextView)itemView.findViewById(R.id.txtFinishPointShipper);
+            txtFinish = (TextView)itemView.findViewById(R.id.txtFinishPointShipper);
             txtAdvancedMoney = (TextView)itemView.findViewById(R.id.txtAdvancedMoneyShipper);
             txtNote = (TextView)itemView.findViewById(R.id.txtNoteShipper);
             txtShipMoney = (TextView)itemView.findViewById(R.id.txtShipMoneyShipper);

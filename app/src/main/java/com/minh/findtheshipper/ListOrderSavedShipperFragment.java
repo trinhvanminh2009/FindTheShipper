@@ -1,6 +1,5 @@
 package com.minh.findtheshipper;
 
-import android.app.Fragment;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,7 +17,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;
 
-public class ListOrderSavedShipperFragment extends Fragment {
+public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -31,8 +30,7 @@ public class ListOrderSavedShipperFragment extends Fragment {
         recyclerView =(RecyclerView)view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        Realm.init(getActivity());
-        initRealm();
+
         loadAllList();
         return view;
     }
@@ -45,22 +43,17 @@ public class ListOrderSavedShipperFragment extends Fragment {
 
     public void loadAllList()
     {
-        try
-        {
+             Realm.init(getActivity());
+            initRealm();
             orderList = new ArrayList<>();
             User user = getCurrentUser();
             RealmResults<Order> orders = user.getOrderListSave().where().equalTo("saveOrder",true).findAllSorted("dateTime",Sort.DESCENDING);
-            TastyToast.makeText(getActivity(), "size"+orders.size() , TastyToast.LENGTH_SHORT, TastyToast.INFO);
             for (int i = 0; i < orders.size(); i++)
             {
                 orderList.add(orders.get(i));
             }
             adapter = new AdapterListviewOrderSaved(getActivity(),orderList);
             recyclerView.setAdapter(adapter);
-
-        }catch (Exception e)
-        {
-        }
     }
     public void initRealm()
     {

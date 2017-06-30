@@ -58,6 +58,7 @@ public class FragmentContainerShipper extends FragmentActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.list_order_shipper);
+        callFirstFragment();
         NavigationDrawer(toolbar);
         if(findViewById(R.id.fragmentShipperContainer) != null)
         {
@@ -87,7 +88,7 @@ public class FragmentContainerShipper extends FragmentActivity {
 
     private Drawable resizeImage(int resId, int w, int h)
     {
-        // load the origial Bitmap
+        // load the original Bitmap
         Bitmap BitmapOrg = BitmapFactory.decodeResource(getResources(), resId);
         int width = BitmapOrg.getWidth();
         int height = BitmapOrg.getHeight();
@@ -209,22 +210,25 @@ public class FragmentContainerShipper extends FragmentActivity {
                         item8,item9,item10
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                    LinearLayout listOrderLayout = (LinearLayout)findViewById(R.id.linearOrderFragment);
-                    LinearLayout listSavedOrderLayout = (LinearLayout)findViewById(R.id.linearSavedOrderFragment);
+                  //  LinearLayout listOrderLayout = (LinearLayout)findViewById(R.id.linearOrderFragment);
+                 //   LinearLayout listSavedOrderLayout = (LinearLayout)findViewById(R.id.linearSavedOrderFragment);
+                    android.support.v4.app.Fragment fragment = null;
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
                         if(drawerItem.getIdentifier() ==1)
                         {
                             getSupportActionBar().setTitle(R.string.list_order_shipper);
-                            listOrderLayout.setVisibility(View.VISIBLE);
-                            listSavedOrderLayout.setVisibility(View.GONE);
+                        //    listOrderLayout.setVisibility(View.VISIBLE);
+                          //  listSavedOrderLayout.setVisibility(View.GONE);
+                            fragment = new ListOrderShipperFragment();
                         }
                         if(drawerItem.getIdentifier() == 2)
                         {
                             getSupportActionBar().setTitle(R.string.list_order_saved_shipper);
-                            listOrderLayout.setVisibility(View.GONE);
-                            listSavedOrderLayout.setVisibility(View.VISIBLE);
+                           // listOrderLayout.setVisibility(View.GONE);
+                           // listSavedOrderLayout.setVisibility(View.VISIBLE);
+                            fragment = new ListOrderSavedShipperFragment();
 
                         }
                         if(drawerItem.getIdentifier() ==3)
@@ -259,10 +263,15 @@ public class FragmentContainerShipper extends FragmentActivity {
                         {
 
                         }
+                        FragmentManager manager = getSupportFragmentManager();
+                        FragmentTransaction transaction = manager.beginTransaction();
+                        transaction.replace(R.id.fragmentShipperContainer,fragment);
+                        transaction.commit();
                         return false;
                     }
                 })
                 .build();
+
 
 
         item1.withBadge("1").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
@@ -289,5 +298,15 @@ public class FragmentContainerShipper extends FragmentActivity {
         result.openDrawer();
         result.closeDrawer();
         result.getDrawerLayout();
+    }
+
+    private void callFirstFragment()
+    {
+        android.support.v4.app.Fragment fragment = null;
+        fragment = new ListOrderShipperFragment();
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.fragmentShipperContainer,fragment);
+        transaction.commit();
     }
 }

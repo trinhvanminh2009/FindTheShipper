@@ -89,6 +89,8 @@ public class CustomAdapterListviewOrder  extends ArrayAdapter<Order>{
         {
             nonStatus.setVisibility(View.GONE);
         }
+       // txtStatus.setVisibility(View.GONE);
+      //  haveStatus.setVisibility(View.GONE);
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
