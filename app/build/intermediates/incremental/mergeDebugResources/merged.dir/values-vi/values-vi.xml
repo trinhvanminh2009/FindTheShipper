@@ -20,10 +20,14 @@
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Chia sẻ với %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Thu gọn"</string>
     <string name="about_us">Về chúng tôi</string>
+    <string name="always_on_display">Màn hình luôn sáng</string>
     <string name="app_name">Find The Shipper</string>
     <string name="buy_package_shipper">Mua gói</string>
     <string name="call">Gọi</string>
     <string name="cancel">Hủy</string>
+    <string name="change_language">Đổi ngôn ngữ</string>
+    <string name="change_mode">Đổi chế độ</string>
+    <string name="change_phone_number">Đổi số điện thoại</string>
     <string name="choosing_finish_point">Kéo bản đồ đến điểm cần giao. Địa điểm ngay điểm đánh dấu.</string>
     <string name="choosing_places_success">Chọn địa điểm thành công. Tiếp tục tạo đơn hàng bên dưới.</string>
     <string name="choosing_starting_point">Kéo bản đồ đến điểm cần bắt đầu. Địa điểm sẽ ngay điểm đánh dấu</string>
@@ -71,6 +75,7 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Đăng nhập bằng Google"</string>
     <string name="content">Nội dung</string>
     <string name="create_order">Tạo đơn hàng</string>
+    <string name="current_phone_number">Số điện thoại hiện tại</string>
     <string name="delete">Xóa</string>
     <string name="edit_text_advance_money">Tính bằng k (100 hiển thị 100k)</string>
     <string name="edit_text_note">Mô tả thêm</string>
@@ -84,6 +89,7 @@
     <string name="log_out">Đăng xuất</string>
     <string name="messenger_send_button_text">Gửi</string>
     <string name="notification_title">Thông báo</string>
+    <string name="number_order_show">Số đơn hàng hiển thị</string>
     <string name="ok">Đồng ý</string>
     <string name="order_advanced_money">Số tiền ứng</string>
     <string name="order_call">Gọi</string>
@@ -104,11 +110,15 @@
     <string name="profile">Cá nhân</string>
     <string name="required_permission_location">Để truy cập vị trí hiện tại cần mở vị trí</string>
     <string name="save">Lưu lại</string>
+    <string name="save_order">Lưu đơn hàng thành công</string>
+    <string name="save_order_exists">Đơn hàng đã tồn tại</string>
     <string msgid="146198913615257606" name="search_menu_title">"Tìm kiếm"</string>
     <string name="send">Gửi</string>
     <string name="setting">Cài đặt</string>
     <string name="start_place">Chọn điểm kết thúc</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="summary_always_on_display">Màn hình điện thoại của bạn luôn sáng khi sử dụng ứng dụng này</string>
+    <string name="summary_change_mode">Bạn trở thành shop, bạn có thể tạo đơn hàng.</string>
     <string name="text_view_advance_money">Tiền ứng</string>
     <string name="text_view_note">Ghi chú</string>
     <string name="text_view_phone_number">SĐT</string>
@@ -116,6 +126,7 @@
     <string name="text_view_start_place">Nơi đón</string>
     <string name="title">Tiêu đề</string>
     <string name="title_activity_maps">Bản đồ</string>
+    <string name="title_activity_settings">Cài đặt</string>
     <string name="tutorials">Hướng dẫn</string>
     <string name="type_comment">Nhập vào một bình luận....</string>
     <string name="version">Phiên bản</string>

@@ -11,7 +11,6 @@ import com.minh.findtheshipper.models.Adapters.AdapterListviewOrderSaved;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.User;
 import com.sdsmdg.tastytoast.TastyToast;
-
 import java.util.ArrayList;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -43,7 +42,8 @@ public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragme
 
     public void loadAllList()
     {
-             Realm.init(getActivity());
+        try{
+            Realm.init(getActivity());
             initRealm();
             orderList = new ArrayList<>();
             User user = getCurrentUser();
@@ -54,6 +54,8 @@ public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragme
             }
             adapter = new AdapterListviewOrderSaved(getActivity(),orderList);
             recyclerView.setAdapter(adapter);
+        }catch (Exception e){}
+
     }
     public void initRealm()
     {

@@ -320,6 +320,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\916df7936617000d2798fe1818b712ae8e4d0570\\output\\res\\layout\\com_facebook_smart_device_dialog_fragment.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\setting_shipper_fragment.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\setting_shipper_fragment.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_layout_tab_text.xml"
     },

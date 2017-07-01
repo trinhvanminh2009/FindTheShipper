@@ -26,9 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -64,10 +62,8 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".DistanceMapsActivity" />
-        <activity android:name=".HandleMapsActivity">
-
-        </activity>
-        <activity android:name=".CreatedOrderActivity"></activity>
+        <activity android:name=".HandleMapsActivity" />
+        <activity android:name=".CreatedOrderActivity" />
         <activity android:name=".Test" />
         <activity android:name=".FragmentActivity" />
         <activity android:name=".FragmentContainerShipper">
@@ -77,6 +73,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".utils.SettingsActivity"
+            android:label="@string/title_activity_settings">
+        </activity>
+        <activity android:name=".SettingShipperPreferences"/>
     </application>
 
 </manifest>

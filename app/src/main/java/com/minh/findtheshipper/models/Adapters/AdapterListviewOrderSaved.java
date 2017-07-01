@@ -151,8 +151,6 @@ public class AdapterListviewOrderSaved extends RecyclerView.Adapter<AdapterListv
         private Button btnCall;
         private Button btnDelete;
 
-
-
         public ViewHolder(View itemView) {
             super(itemView);
             txtStart = (TextView)itemView.findViewById(R.id.txtStatingPointShipper);

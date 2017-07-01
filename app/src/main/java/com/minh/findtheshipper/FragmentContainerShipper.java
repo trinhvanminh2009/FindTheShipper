@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -36,6 +37,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.helpers.DialogHelpers;
+import com.minh.findtheshipper.utils.SettingsActivity;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import butterknife.BindView;
@@ -257,16 +259,23 @@ public class FragmentContainerShipper extends FragmentActivity {
                         }
                         if(drawerItem.getIdentifier() ==9)
                         {
+                            Intent intent = new Intent(FragmentContainerShipper.this, SettingShipperPreferences.class);
+                            startActivity(intent);
+                            return true;
 
                         }
                         if(drawerItem.getIdentifier() == 10)
                         {
 
                         }
-                        FragmentManager manager = getSupportFragmentManager();
-                        FragmentTransaction transaction = manager.beginTransaction();
-                        transaction.replace(R.id.fragmentShipperContainer,fragment);
-                        transaction.commit();
+                        try {
+                            FragmentManager manager = getSupportFragmentManager();
+                            FragmentTransaction transaction = manager.beginTransaction();
+                            transaction.replace(R.id.fragmentShipperContainer,fragment);
+                            transaction.commit();
+                        }catch (Exception e)
+                        {}
+
                         return false;
                     }
                 })

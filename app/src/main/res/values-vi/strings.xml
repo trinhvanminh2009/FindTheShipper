@@ -57,4 +57,15 @@
     <string name="title">Tiêu đề</string>
     <string name="type_comment">Nhập vào một bình luận....</string>
     <string name="send">Gửi</string>
+    <string name="change_phone_number">Đổi số điện thoại</string>
+    <string name="always_on_display">Màn hình luôn sáng</string>
+    <string name="current_phone_number">Số điện thoại hiện tại</string>
+    <string name="number_order_show">Số đơn hàng hiển thị</string>
+    <string name="title_activity_settings">Cài đặt</string>
+    <string name="save_order_exists">Đơn hàng đã tồn tại</string>
+    <string name="save_order">Lưu đơn hàng thành công</string>
+    <string name="change_language">Đổi ngôn ngữ</string>
+    <string name="summary_always_on_display">Màn hình điện thoại của bạn luôn sáng khi sử dụng ứng dụng này</string>
+    <string name="summary_change_mode">Bạn trở thành shop, bạn có thể tạo đơn hàng.</string>
+    <string name="change_mode">Đổi chế độ</string>
 </resources>
