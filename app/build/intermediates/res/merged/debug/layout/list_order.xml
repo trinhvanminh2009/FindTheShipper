@@ -1,139 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.v7.widget.CardView
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="5dp"
-    >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    app:cardCornerRadius="10dp"
+    card_view:cardElevation="3dp"
+    android:layout_margin="5dp"
+    card_view:contentPadding = "4dp"
+    android:clickable="true">
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_your_profile"/>
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_your_profile"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="Trịnh văn Minh"
+                />
+        </LinearLayout>
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Trịnh văn Minh"
+            android:id="@+id/txtStatus"
+            android:text="@string/order_status"
+            android:textSize="20sp"
+            android:textColor="@color/md_red_900"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="@string/order_starting_point"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/txtStart"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="@string/order_finish_point"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/txtFinish"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="@string/order_advanced_money"
+            android:id="@+id/txtAdvancedMoney"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_ship_money"
+            android:textSize="17sp"
+            android:id="@+id/txtShipMoney"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="@string/order_note"
+            android:id="@+id/txtNote"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="@string/order_distance"
+            android:id="@+id/txtDistanceOrder"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/txtPhoneNumber"
+            android:text="@string/order_phone_number"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/haveStatus"
+            android:gravity="center">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/order_edit"
+                android:id="@+id/btnEdit"
+                android:layout_marginRight="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_button"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/order_find_again"
+                android:layout_gravity="center"
+                android:textSize="10sp"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/btnFindAgain"
+                android:background="@drawable/shape_button"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nonStatus"
+            android:gravity="center">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/order_success"
+                android:id="@+id/btnOrderSuccess"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_button"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/order_call"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/btnCallAgain"
+                android:background="@drawable/shape_button"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtDatetime"
+            android:text="@string/order_last_updated"/>
     </LinearLayout>
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtStatus"
-        android:text="@string/order_status"
-        android:textSize="20sp"
-        android:textColor="@color/md_red_900"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="@string/order_starting_point"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:id="@+id/txtStart"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="@string/order_finish_point"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:id="@+id/txtFinish"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="@string/order_advanced_money"
-        android:id="@+id/txtAdvancedMoney"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/order_ship_money"
-        android:textSize="17sp"
-        android:id="@+id/txtShipMoney"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="@string/order_note"
-        android:id="@+id/txtNote"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="@string/order_distance"
-        android:id="@+id/txtDistanceOrder"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:id="@+id/txtPhoneNumber"
-        android:text="@string/order_phone_number"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/haveStatus"
-        android:gravity="center">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="@string/order_edit"
-            android:id="@+id/btnEdit"
-            android:layout_marginRight="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/shape_button"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="@string/order_find_again"
-            android:layout_gravity="center"
-            android:textSize="10sp"
-            android:layout_marginLeft="50dp"
-            android:id="@+id/btnFindAgain"
-            android:background="@drawable/shape_button"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nonStatus"
-        android:gravity="center">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="@string/order_success"
-            android:id="@+id/btnOrderSuccess"
-            android:layout_marginRight="20dp"
-            android:layout_gravity="center"
-            android:background="@drawable/shape_button"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="@string/order_call"
-            android:layout_gravity="center"
-            android:layout_marginLeft="50dp"
-            android:id="@+id/btnCallAgain"
-            android:background="@drawable/shape_button"/>
-
-    </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtDatetime"
-        android:text="@string/order_last_updated"/>
-</LinearLayout>
+</android.support.v7.widget.CardView>

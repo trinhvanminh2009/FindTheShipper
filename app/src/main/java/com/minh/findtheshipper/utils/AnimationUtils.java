@@ -31,4 +31,6 @@ public class AnimationUtils  {
         animatorSet.playTogether(animatorTranslateY);
         animatorSet.start();
     }
+
+
 }

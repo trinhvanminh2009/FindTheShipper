@@ -1413,8 +1413,27 @@
                     "startLine": 76,
                     "startColumn": 4,
                     "startOffset": 8148,
+                    "endColumn": 61,
+                    "endOffset": 8205
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 87,
+                        "startColumn": 4,
+                        "startOffset": 5478,
+                        "endColumn": 61,
+                        "endOffset": 5535
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 77,
+                    "startColumn": 4,
+                    "startOffset": 8210,
                     "endColumn": 53,
-                    "endOffset": 8197
+                    "endOffset": 8259
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1429,11 +1448,30 @@
             },
             {
                 "to": {
-                    "startLine": 77,
+                    "startLine": 78,
                     "startColumn": 4,
-                    "startOffset": 8202,
+                    "startOffset": 8264,
+                    "endColumn": 57,
+                    "endOffset": 8317
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 88,
+                        "startColumn": 4,
+                        "startOffset": 5541,
+                        "endColumn": 57,
+                        "endOffset": 5594
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 79,
+                    "startColumn": 4,
+                    "startOffset": 8322,
                     "endColumn": 71,
-                    "endOffset": 8269
+                    "endOffset": 8389
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1448,11 +1486,11 @@
             },
             {
                 "to": {
-                    "startLine": 78,
+                    "startLine": 80,
                     "startColumn": 4,
-                    "startOffset": 8274,
+                    "startOffset": 8394,
                     "endColumn": 38,
-                    "endOffset": 8308
+                    "endOffset": 8428
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1467,11 +1505,11 @@
             },
             {
                 "to": {
-                    "startLine": 79,
+                    "startLine": 81,
                     "startColumn": 4,
-                    "startOffset": 8313,
+                    "startOffset": 8433,
                     "endColumn": 83,
-                    "endOffset": 8392
+                    "endOffset": 8512
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1486,11 +1524,11 @@
             },
             {
                 "to": {
-                    "startLine": 80,
+                    "startLine": 82,
                     "startColumn": 4,
-                    "startOffset": 8397,
+                    "startOffset": 8517,
                     "endColumn": 53,
-                    "endOffset": 8446
+                    "endOffset": 8566
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1505,11 +1543,11 @@
             },
             {
                 "to": {
-                    "startLine": 81,
+                    "startLine": 83,
                     "startColumn": 4,
-                    "startOffset": 8451,
+                    "startOffset": 8571,
                     "endColumn": 64,
-                    "endOffset": 8511
+                    "endOffset": 8631
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1524,11 +1562,11 @@
             },
             {
                 "to": {
-                    "startLine": 82,
+                    "startLine": 84,
                     "startColumn": 4,
-                    "startOffset": 8516,
+                    "startOffset": 8636,
                     "endColumn": 59,
-                    "endOffset": 8571
+                    "endOffset": 8691
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1543,11 +1581,11 @@
             },
             {
                 "to": {
-                    "startLine": 83,
+                    "startLine": 85,
                     "startColumn": 4,
-                    "startOffset": 8576,
+                    "startOffset": 8696,
                     "endColumn": 74,
-                    "endOffset": 8646
+                    "endOffset": 8766
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1562,11 +1600,11 @@
             },
             {
                 "to": {
-                    "startLine": 84,
+                    "startLine": 86,
                     "startColumn": 4,
-                    "startOffset": 8651,
+                    "startOffset": 8771,
                     "endColumn": 58,
-                    "endOffset": 8705
+                    "endOffset": 8825
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1581,11 +1619,11 @@
             },
             {
                 "to": {
-                    "startLine": 85,
+                    "startLine": 87,
                     "startColumn": 4,
-                    "startOffset": 8710,
+                    "startOffset": 8830,
                     "endColumn": 51,
-                    "endOffset": 8757
+                    "endOffset": 8877
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1600,11 +1638,49 @@
             },
             {
                 "to": {
-                    "startLine": 86,
+                    "startLine": 88,
                     "startColumn": 4,
-                    "startOffset": 8762,
+                    "startOffset": 8882,
+                    "endColumn": 41,
+                    "endOffset": 8919
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 70,
+                        "startColumn": 4,
+                        "startOffset": 4297,
+                        "endColumn": 41,
+                        "endOffset": 4334
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 89,
+                    "startColumn": 4,
+                    "startOffset": 8924,
+                    "endColumn": 61,
+                    "endOffset": 8981
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 71,
+                        "startColumn": 4,
+                        "startOffset": 4340,
+                        "endColumn": 61,
+                        "endOffset": 4397
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 90,
+                    "startColumn": 4,
+                    "startOffset": 8986,
                     "endColumn": 68,
-                    "endOffset": 8826
+                    "endOffset": 9050
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1619,11 +1695,11 @@
             },
             {
                 "to": {
-                    "startLine": 87,
+                    "startLine": 91,
                     "startColumn": 4,
-                    "startOffset": 8831,
+                    "startOffset": 9055,
                     "endColumn": 65,
-                    "endOffset": 8892
+                    "endOffset": 9116
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1638,11 +1714,11 @@
             },
             {
                 "to": {
-                    "startLine": 88,
+                    "startLine": 92,
                     "startColumn": 4,
-                    "startOffset": 8897,
+                    "startOffset": 9121,
                     "endColumn": 45,
-                    "endOffset": 8938
+                    "endOffset": 9162
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1657,11 +1733,11 @@
             },
             {
                 "to": {
-                    "startLine": 89,
+                    "startLine": 93,
                     "startColumn": 4,
-                    "startOffset": 8943,
+                    "startOffset": 9167,
                     "endColumn": 58,
-                    "endOffset": 8997
+                    "endOffset": 9221
                 },
                 "from": {
                     "file": "C:\\Users\\trinh\\.android\\build-cache\\916df7936617000d2798fe1818b712ae8e4d0570\\output\\res\\values-vi\\values-vi.xml",
@@ -1676,11 +1752,49 @@
             },
             {
                 "to": {
-                    "startLine": 90,
+                    "startLine": 94,
                     "startColumn": 4,
-                    "startOffset": 9002,
+                    "startOffset": 9226,
+                    "endColumn": 82,
+                    "endOffset": 9304
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 89,
+                        "startColumn": 4,
+                        "startOffset": 5600,
+                        "endColumn": 82,
+                        "endOffset": 5678
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 95,
+                    "startColumn": 4,
+                    "startOffset": 9309,
+                    "endColumn": 75,
+                    "endOffset": 9380
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 90,
+                        "startColumn": 4,
+                        "startOffset": 5684,
+                        "endColumn": 75,
+                        "endOffset": 5755
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 96,
+                    "startColumn": 4,
+                    "startOffset": 9385,
                     "endColumn": 56,
-                    "endOffset": 9054
+                    "endOffset": 9437
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1695,11 +1809,11 @@
             },
             {
                 "to": {
-                    "startLine": 91,
+                    "startLine": 97,
                     "startColumn": 4,
-                    "startOffset": 9059,
+                    "startOffset": 9442,
                     "endColumn": 66,
-                    "endOffset": 9121
+                    "endOffset": 9504
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1714,11 +1828,11 @@
             },
             {
                 "to": {
-                    "startLine": 92,
+                    "startLine": 98,
                     "startColumn": 4,
-                    "startOffset": 9126,
+                    "startOffset": 9509,
                     "endColumn": 37,
-                    "endOffset": 9159
+                    "endOffset": 9542
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1733,11 +1847,11 @@
             },
             {
                 "to": {
-                    "startLine": 93,
+                    "startLine": 99,
                     "startColumn": 4,
-                    "startOffset": 9164,
+                    "startOffset": 9547,
                     "endColumn": 60,
-                    "endOffset": 9220
+                    "endOffset": 9603
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1752,11 +1866,11 @@
             },
             {
                 "to": {
-                    "startLine": 94,
+                    "startLine": 100,
                     "startColumn": 4,
-                    "startOffset": 9225,
+                    "startOffset": 9608,
                     "endColumn": 42,
-                    "endOffset": 9263
+                    "endOffset": 9646
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1771,11 +1885,11 @@
             },
             {
                 "to": {
-                    "startLine": 95,
+                    "startLine": 101,
                     "startColumn": 4,
-                    "startOffset": 9268,
+                    "startOffset": 9651,
                     "endColumn": 55,
-                    "endOffset": 9319
+                    "endOffset": 9702
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1790,11 +1904,11 @@
             },
             {
                 "to": {
-                    "startLine": 96,
+                    "startLine": 102,
                     "startColumn": 4,
-                    "startOffset": 9324,
+                    "startOffset": 9707,
                     "endColumn": 57,
-                    "endOffset": 9377
+                    "endOffset": 9760
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1809,11 +1923,11 @@
             },
             {
                 "to": {
-                    "startLine": 97,
+                    "startLine": 103,
                     "startColumn": 4,
-                    "startOffset": 9382,
+                    "startOffset": 9765,
                     "endColumn": 52,
-                    "endOffset": 9430
+                    "endOffset": 9813
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1828,11 +1942,11 @@
             },
             {
                 "to": {
-                    "startLine": 98,
+                    "startLine": 104,
                     "startColumn": 4,
-                    "startOffset": 9435,
+                    "startOffset": 9818,
                     "endColumn": 61,
-                    "endOffset": 9492
+                    "endOffset": 9875
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1847,11 +1961,11 @@
             },
             {
                 "to": {
-                    "startLine": 99,
+                    "startLine": 105,
                     "startColumn": 4,
-                    "startOffset": 9497,
+                    "startOffset": 9880,
                     "endColumn": 65,
-                    "endOffset": 9558
+                    "endOffset": 9941
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1866,11 +1980,11 @@
             },
             {
                 "to": {
-                    "startLine": 100,
+                    "startLine": 106,
                     "startColumn": 4,
-                    "startOffset": 9563,
+                    "startOffset": 9946,
                     "endColumn": 47,
-                    "endOffset": 9606
+                    "endOffset": 9989
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1885,11 +1999,11 @@
             },
             {
                 "to": {
-                    "startLine": 101,
+                    "startLine": 107,
                     "startColumn": 4,
-                    "startOffset": 9611,
+                    "startOffset": 9994,
                     "endColumn": 60,
-                    "endOffset": 9667
+                    "endOffset": 10050
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1904,11 +2018,11 @@
             },
             {
                 "to": {
-                    "startLine": 102,
+                    "startLine": 108,
                     "startColumn": 4,
-                    "startOffset": 9672,
+                    "startOffset": 10055,
                     "endColumn": 55,
-                    "endOffset": 9723
+                    "endOffset": 10106
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1923,11 +2037,11 @@
             },
             {
                 "to": {
-                    "startLine": 103,
+                    "startLine": 109,
                     "startColumn": 4,
-                    "startOffset": 9728,
+                    "startOffset": 10111,
                     "endColumn": 62,
-                    "endOffset": 9786
+                    "endOffset": 10169
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1942,11 +2056,11 @@
             },
             {
                 "to": {
-                    "startLine": 104,
+                    "startLine": 110,
                     "startColumn": 4,
-                    "startOffset": 9791,
+                    "startOffset": 10174,
                     "endColumn": 71,
-                    "endOffset": 9858
+                    "endOffset": 10241
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1961,11 +2075,11 @@
             },
             {
                 "to": {
-                    "startLine": 105,
+                    "startLine": 111,
                     "startColumn": 4,
-                    "startOffset": 9863,
+                    "startOffset": 10246,
                     "endColumn": 64,
-                    "endOffset": 9923
+                    "endOffset": 10306
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1980,11 +2094,11 @@
             },
             {
                 "to": {
-                    "startLine": 106,
+                    "startLine": 112,
                     "startColumn": 4,
-                    "startOffset": 9928,
+                    "startOffset": 10311,
                     "endColumn": 58,
-                    "endOffset": 9982
+                    "endOffset": 10365
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -1999,11 +2113,11 @@
             },
             {
                 "to": {
-                    "startLine": 107,
+                    "startLine": 113,
                     "startColumn": 4,
-                    "startOffset": 9987,
+                    "startOffset": 10370,
                     "endColumn": 97,
-                    "endOffset": 10080
+                    "endOffset": 10463
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2018,11 +2132,49 @@
             },
             {
                 "to": {
-                    "startLine": 108,
+                    "startLine": 114,
                     "startColumn": 4,
-                    "startOffset": 10085,
+                    "startOffset": 10468,
+                    "endColumn": 85,
+                    "endOffset": 10549
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 91,
+                        "startColumn": 4,
+                        "startOffset": 5761,
+                        "endColumn": 85,
+                        "endOffset": 5842
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 115,
+                    "startColumn": 4,
+                    "startOffset": 10554,
+                    "endColumn": 74,
+                    "endOffset": 10624
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 92,
+                        "startColumn": 4,
+                        "startOffset": 5848,
+                        "endColumn": 74,
+                        "endOffset": 5918
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 116,
+                    "startColumn": 4,
+                    "startOffset": 10629,
                     "endColumn": 65,
-                    "endOffset": 10146
+                    "endOffset": 10690
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2037,11 +2189,258 @@
             },
             {
                 "to": {
-                    "startLine": 109,
+                    "startLine": 117,
                     "startColumn": 4,
-                    "startOffset": 10151,
+                    "startOffset": 10695,
+                    "endColumn": 60,
+                    "endOffset": 10751
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 86,
+                        "startColumn": 4,
+                        "startOffset": 5408,
+                        "endColumn": 68,
+                        "endOffset": 5472
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 118,
+                    "startColumn": 4,
+                    "startOffset": 10756,
+                    "endColumn": 68,
+                    "endOffset": 10820
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 85,
+                        "startColumn": 4,
+                        "startOffset": 5338,
+                        "endColumn": 68,
+                        "endOffset": 5402
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 119,
+                    "startColumn": 4,
+                    "startOffset": 10825,
+                    "endColumn": 61,
+                    "endOffset": 10882
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 84,
+                        "startColumn": 4,
+                        "startOffset": 5275,
+                        "endColumn": 61,
+                        "endOffset": 5332
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 120,
+                    "startColumn": 4,
+                    "startOffset": 10887,
+                    "endColumn": 63,
+                    "endOffset": 10946
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 83,
+                        "startColumn": 4,
+                        "startOffset": 5210,
+                        "endColumn": 63,
+                        "endOffset": 5269
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 121,
+                    "startColumn": 4,
+                    "startOffset": 10951,
+                    "endColumn": 57,
+                    "endOffset": 11004
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 82,
+                        "startColumn": 4,
+                        "startOffset": 5151,
+                        "endColumn": 57,
+                        "endOffset": 5204
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 122,
+                    "startColumn": 4,
+                    "startOffset": 11009,
+                    "endColumn": 87,
+                    "endOffset": 11092
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 81,
+                        "startColumn": 4,
+                        "startOffset": 5062,
+                        "endColumn": 87,
+                        "endOffset": 5145
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 123,
+                    "startColumn": 4,
+                    "startOffset": 11097,
+                    "endColumn": 85,
+                    "endOffset": 11178
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 75,
+                        "startColumn": 4,
+                        "startOffset": 4599,
+                        "endColumn": 85,
+                        "endOffset": 4680
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 124,
+                    "startColumn": 4,
+                    "startOffset": 11183,
+                    "endColumn": 87,
+                    "endOffset": 11266
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 80,
+                        "startColumn": 4,
+                        "startOffset": 4973,
+                        "endColumn": 87,
+                        "endOffset": 5056
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 125,
+                    "startColumn": 4,
+                    "startOffset": 11271,
+                    "endColumn": 59,
+                    "endOffset": 11326
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 79,
+                        "startColumn": 4,
+                        "startOffset": 4912,
+                        "endColumn": 59,
+                        "endOffset": 4967
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 126,
+                    "startColumn": 4,
+                    "startOffset": 11331,
+                    "endColumn": 73,
+                    "endOffset": 11400
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 78,
+                        "startColumn": 4,
+                        "startOffset": 4837,
+                        "endColumn": 73,
+                        "endOffset": 4906
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 127,
+                    "startColumn": 4,
+                    "startOffset": 11405,
+                    "endColumn": 68,
+                    "endOffset": 11469
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 77,
+                        "startColumn": 4,
+                        "startOffset": 4767,
+                        "endColumn": 68,
+                        "endOffset": 4831
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 128,
+                    "startColumn": 4,
+                    "startOffset": 11474,
+                    "endColumn": 79,
+                    "endOffset": 11549
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 76,
+                        "startColumn": 4,
+                        "startOffset": 4686,
+                        "endColumn": 79,
+                        "endOffset": 4761
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 129,
+                    "startColumn": 4,
+                    "startOffset": 11554,
+                    "endColumn": 72,
+                    "endOffset": 11622
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 74,
+                        "startColumn": 4,
+                        "startOffset": 4525,
+                        "endColumn": 72,
+                        "endOffset": 4593
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 130,
+                    "startColumn": 4,
+                    "startOffset": 11627,
                     "endColumn": 43,
-                    "endOffset": 10190
+                    "endOffset": 11666
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2056,11 +2455,11 @@
             },
             {
                 "to": {
-                    "startLine": 110,
+                    "startLine": 131,
                     "startColumn": 4,
-                    "startOffset": 10195,
+                    "startOffset": 11671,
                     "endColumn": 98,
-                    "endOffset": 10289
+                    "endOffset": 11765
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2075,11 +2474,11 @@
             },
             {
                 "to": {
-                    "startLine": 111,
+                    "startLine": 132,
                     "startColumn": 4,
-                    "startOffset": 10294,
+                    "startOffset": 11770,
                     "endColumn": 40,
-                    "endOffset": 10330
+                    "endOffset": 11806
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2094,11 +2493,11 @@
             },
             {
                 "to": {
-                    "startLine": 112,
+                    "startLine": 133,
                     "startColumn": 4,
-                    "startOffset": 10335,
+                    "startOffset": 11811,
                     "endColumn": 62,
-                    "endOffset": 10393
+                    "endOffset": 11869
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2113,11 +2512,11 @@
             },
             {
                 "to": {
-                    "startLine": 113,
+                    "startLine": 134,
                     "startColumn": 4,
-                    "startOffset": 10398,
+                    "startOffset": 11874,
                     "endColumn": 65,
-                    "endOffset": 10459
+                    "endOffset": 11935
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2132,11 +2531,11 @@
             },
             {
                 "to": {
-                    "startLine": 114,
+                    "startLine": 135,
                     "startColumn": 4,
-                    "startOffset": 10464,
+                    "startOffset": 11940,
                     "endColumn": 83,
-                    "endOffset": 10543
+                    "endOffset": 12019
                 },
                 "from": {
                     "file": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\values-vi\\values-vi.xml",
@@ -2151,11 +2550,11 @@
             },
             {
                 "to": {
-                    "startLine": 115,
+                    "startLine": 136,
                     "startColumn": 4,
-                    "startOffset": 10548,
+                    "startOffset": 12024,
                     "endColumn": 36,
-                    "endOffset": 10580
+                    "endOffset": 12056
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2170,11 +2569,11 @@
             },
             {
                 "to": {
-                    "startLine": 116,
+                    "startLine": 137,
                     "startColumn": 4,
-                    "startOffset": 10585,
+                    "startOffset": 12061,
                     "endColumn": 43,
-                    "endOffset": 10624
+                    "endOffset": 12100
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2189,11 +2588,49 @@
             },
             {
                 "to": {
-                    "startLine": 117,
+                    "startLine": 138,
                     "startColumn": 4,
-                    "startOffset": 10629,
+                    "startOffset": 12105,
+                    "endColumn": 59,
+                    "endOffset": 12160
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 72,
+                        "startColumn": 4,
+                        "startOffset": 4403,
+                        "endColumn": 59,
+                        "endOffset": 4458
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 139,
+                    "startColumn": 4,
+                    "startOffset": 12165,
+                    "endColumn": 59,
+                    "endOffset": 12220
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 73,
+                        "startColumn": 4,
+                        "startOffset": 4464,
+                        "endColumn": 59,
+                        "endOffset": 4519
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 140,
+                    "startColumn": 4,
+                    "startOffset": 12225,
                     "endColumn": 58,
-                    "endOffset": 10683
+                    "endOffset": 12279
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2208,11 +2645,11 @@
             },
             {
                 "to": {
-                    "startLine": 118,
+                    "startLine": 141,
                     "startColumn": 4,
-                    "startOffset": 10688,
+                    "startOffset": 12284,
                     "endColumn": 100,
-                    "endOffset": 10784
+                    "endOffset": 12380
                 },
                 "from": {
                     "file": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\values-vi\\values-vi.xml",
@@ -2227,11 +2664,11 @@
             },
             {
                 "to": {
-                    "startLine": 119,
+                    "startLine": 142,
                     "startColumn": 4,
-                    "startOffset": 10789,
+                    "startOffset": 12385,
                     "endColumn": 116,
-                    "endOffset": 10901
+                    "endOffset": 12497
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2246,11 +2683,11 @@
             },
             {
                 "to": {
-                    "startLine": 120,
+                    "startLine": 143,
                     "startColumn": 4,
-                    "startOffset": 10906,
+                    "startOffset": 12502,
                     "endColumn": 92,
-                    "endOffset": 10994
+                    "endOffset": 12590
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2265,11 +2702,68 @@
             },
             {
                 "to": {
-                    "startLine": 121,
+                    "startLine": 144,
                     "startColumn": 4,
-                    "startOffset": 10999,
+                    "startOffset": 12595,
+                    "endColumn": 116,
+                    "endOffset": 12707
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 93,
+                        "startColumn": 4,
+                        "startOffset": 5924,
+                        "endColumn": 116,
+                        "endOffset": 6036
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 145,
+                    "startColumn": 4,
+                    "startOffset": 12712,
+                    "endColumn": 79,
+                    "endOffset": 12787
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 94,
+                        "startColumn": 4,
+                        "startOffset": 6042,
+                        "endColumn": 79,
+                        "endOffset": 6117
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 146,
+                    "startColumn": 4,
+                    "startOffset": 12792,
+                    "endColumn": 84,
+                    "endOffset": 12872
+                },
+                "from": {
+                    "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
+                    "position": {
+                        "startLine": 95,
+                        "startColumn": 4,
+                        "startOffset": 6123,
+                        "endColumn": 84,
+                        "endOffset": 6203
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 147,
+                    "startColumn": 4,
+                    "startOffset": 12877,
                     "endColumn": 60,
-                    "endOffset": 11055
+                    "endOffset": 12933
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2284,11 +2778,11 @@
             },
             {
                 "to": {
-                    "startLine": 122,
+                    "startLine": 148,
                     "startColumn": 4,
-                    "startOffset": 11060,
+                    "startOffset": 12938,
                     "endColumn": 50,
-                    "endOffset": 11106
+                    "endOffset": 12984
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2303,11 +2797,11 @@
             },
             {
                 "to": {
-                    "startLine": 123,
+                    "startLine": 149,
                     "startColumn": 4,
-                    "startOffset": 11111,
+                    "startOffset": 12989,
                     "endColumn": 54,
-                    "endOffset": 11161
+                    "endOffset": 13039
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2322,11 +2816,11 @@
             },
             {
                 "to": {
-                    "startLine": 124,
+                    "startLine": 150,
                     "startColumn": 4,
-                    "startOffset": 11166,
+                    "startOffset": 13044,
                     "endColumn": 58,
-                    "endOffset": 11220
+                    "endOffset": 13098
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2341,11 +2835,11 @@
             },
             {
                 "to": {
-                    "startLine": 125,
+                    "startLine": 151,
                     "startColumn": 4,
-                    "startOffset": 11225,
+                    "startOffset": 13103,
                     "endColumn": 57,
-                    "endOffset": 11278
+                    "endOffset": 13156
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2360,11 +2854,11 @@
             },
             {
                 "to": {
-                    "startLine": 126,
+                    "startLine": 152,
                     "startColumn": 4,
-                    "startOffset": 11283,
+                    "startOffset": 13161,
                     "endColumn": 41,
-                    "endOffset": 11320
+                    "endOffset": 13198
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2379,11 +2873,11 @@
             },
             {
                 "to": {
-                    "startLine": 127,
+                    "startLine": 153,
                     "startColumn": 4,
-                    "startOffset": 11325,
+                    "startOffset": 13203,
                     "endColumn": 54,
-                    "endOffset": 11375
+                    "endOffset": 13253
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2398,11 +2892,11 @@
             },
             {
                 "to": {
-                    "startLine": 128,
+                    "startLine": 154,
                     "startColumn": 4,
-                    "startOffset": 11380,
+                    "startOffset": 13258,
                     "endColumn": 59,
-                    "endOffset": 11435
+                    "endOffset": 13313
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2417,11 +2911,11 @@
             },
             {
                 "to": {
-                    "startLine": 129,
+                    "startLine": 155,
                     "startColumn": 4,
-                    "startOffset": 11440,
+                    "startOffset": 13318,
                     "endColumn": 47,
-                    "endOffset": 11483
+                    "endOffset": 13361
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2436,11 +2930,11 @@
             },
             {
                 "to": {
-                    "startLine": 130,
+                    "startLine": 156,
                     "startColumn": 4,
-                    "startOffset": 11488,
+                    "startOffset": 13366,
                     "endColumn": 67,
-                    "endOffset": 11551
+                    "endOffset": 13429
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",
@@ -2455,11 +2949,11 @@
             },
             {
                 "to": {
-                    "startLine": 131,
+                    "startLine": 157,
                     "startColumn": 4,
-                    "startOffset": 11556,
+                    "startOffset": 13434,
                     "endColumn": 45,
-                    "endOffset": 11597
+                    "endOffset": 13475
                 },
                 "from": {
                     "file": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\values-vi\\strings.xml",

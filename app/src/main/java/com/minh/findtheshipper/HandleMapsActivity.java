@@ -1,34 +1,29 @@
 package com.minh.findtheshipper;
 
-import android.*;
 import android.Manifest;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
-import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.DialogFragment;
+import android.support.v4.app.*;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DialogTitle;
 import android.support.v7.widget.Toolbar;
-import android.telephony.PhoneNumberUtils;
-import android.telephony.TelephonyManager;
-import android.util.Log;
-import android.util.Patterns;
 import android.view.Menu;
-import android.view.MotionEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -40,12 +35,12 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.mikepenz.actionitembadge.library.ActionItemBadge;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -55,9 +50,8 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.mikepenz.materialdrawer.model.interfaces.Nameable;
+import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
-import com.minh.findtheshipper.helpers.MapDragHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
 import com.minh.findtheshipper.models.ListControl;
@@ -65,13 +59,10 @@ import com.minh.findtheshipper.models.NotificationObject;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.Route;
 import com.minh.findtheshipper.models.User;
-import com.minh.findtheshipper.realm.RealmController;
-import com.minh.findtheshipper.utils.MapDragUtils;
 import com.minh.findtheshipper.utils.PermissionUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -85,15 +76,14 @@ import butterknife.OnClick;
 import butterknife.OnItemClick;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.realm.Realm;
-import io.realm.RealmResults;
-import io.realm.Sort;
 
 
-public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallback,
+public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback, DirectionFinderListeners{
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private GoogleMap mMap;
+    private int badgerCount = 10;
     @BindView(R.id.toolBar)Toolbar toolbar;
     @BindView(R.id.listAction) ListView listPlaces;
     @BindView(R.id.txtDistance)TextView txtDistance;
@@ -112,6 +102,8 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
     @BindView(R.id.btnConfirmCreateOrder) Button btnConfirmCreateOrder;
     @BindView(R.id.editAdvancedMoney) EditText editAdvancedMoney;
     @BindView(R.id.editNote) EditText editNote;
+    @BindView(R.id.fragmentMaps)LinearLayout fragmentMaps;
+    @BindView(R.id.fragmentShopContainer) FrameLayout fragmentShipper;
     private String[] listProfile = new String[4];
     private boolean showPermissionDeniedDialog = false;
     private List<Marker>startMarkers = new ArrayList<>();
@@ -122,16 +114,17 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
     private CustomAdapterListView adapterListView;
     private int itemClicked = 0;
     private Realm realm;
+    private android.support.v4.app.Fragment fragment = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_handle_maps);
+         setContentView(R.layout.activity_handle_maps);
         ButterKnife.bind(this);
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         realm.init(HandleMapsActivity.this);
-       // listProfile = getIntent().getStringArrayExtra("profile");
+        // listProfile = getIntent().getStringArrayExtra("profile");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Create new order");
@@ -141,19 +134,136 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
         listControls.add(new ListControl(R.drawable.ic_finish_point, getResources().getString(R.string.finish_place)));
         adapterListView = new CustomAdapterListView(HandleMapsActivity.this, listControls);
         listPlaces.setAdapter(adapterListView);
-        insertNotification();
+        //insertNotification();
+        if(findViewById(R.id.fragmentShopContainer) != null)
+        {
+            if(savedInstanceState != null)
+            {
+                return;
+            }
+        }
         //addUser();
 
     }
 
+    public void NavigationDrawer(Toolbar toolbar) {
+
+        //   Uri myUri = Uri.parse(listProfile[3]);
+        // Log.d("myTags",myUri.toString());
+        new DrawerBuilder().withActivity(this).build();
+        final PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.create_new_order);
+        final PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.created_order);
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.tutorials);
+        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName(R.string.profile);
+        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName(R.string.about_us);
+        PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(6).withName(R.string.version);
+        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(7).withName(R.string.setting);
+        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(8).withName(R.string.log_out);
+        AccountHeader headerResult = new AccountHeaderBuilder()
+                .withActivity(this)
+                .withHeaderBackground(R.drawable.background_home)
+                .addProfiles(
+                        new ProfileDrawerItem().withName("Minh").withEmail("Trịnh Văn Minh")//.withIcon(myUri)
+                )
+                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+                    @Override
+                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
+                        return false;
+                    }
+                })
+                .build();
+        final Drawer result = new DrawerBuilder()
+                .withActivity(this)
+                .withAccountHeader(headerResult)
+                .withToolbar(toolbar)
+                .addDrawerItems(
+                        item1,
+                        item2,
+                        item3,
+                        item4,
+                        item5,
+                        item6,
+                        item7,
+                        item8
+                )
+                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                    @Override
+                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                        // do something with the clicked item :D
+
+                        if(drawerItem.getIdentifier() ==1)
+                        {
+                            getSupportActionBar().setTitle(R.string.create_new_order);
+                            fragmentShipper.setVisibility(View.GONE);
+                            fragmentMaps.setVisibility(View.VISIBLE);
+
+                        }
+                        if(drawerItem.getIdentifier() == 2)
+                        {
+                            getSupportActionBar().setTitle(R.string.created_order);
+                            fragmentMaps.setVisibility(View.GONE);
+                            fragmentShipper.setVisibility(View.VISIBLE);
+                            fragment = new ListOrderCreatedFragment();
+                        }
+                        if(drawerItem.getIdentifier() == 3)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() == 4)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() == 5)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() == 6)
+                        {
+
+                        }
+                        if(drawerItem.getIdentifier() == 7)
+                        {
+                            Intent intent = new Intent(HandleMapsActivity.this, SettingsShopPreferences.class);
+                            startActivity(intent);
+                            return true;
+                        }
+                        if(drawerItem.getIdentifier() == 8)
+                        {
+
+                        }
+                        try {
+                            FragmentManager manager = getSupportFragmentManager();
+                            FragmentTransaction transaction = manager.beginTransaction();
+                            transaction.replace(R.id.fragmentShopContainer,fragment);
+                            transaction.commit();
+                        }catch (Exception e)
+                        {}
+                        return false;
+                    }
+                })
+                .build();
 
 
-
-    @Override
-    protected int getLayoutResource() {
-       return R.layout.activity_handle_maps;
+        item1.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_create_new));
+        item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order));
+        item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials));
+        item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile));
+        item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about));
+        item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version));
+        item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
+        item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
+        result.openDrawer();
+        result.closeDrawer();
+        result.getDrawerLayout();
     }
-
 
     private void sendRequest(){
         String start = listControls.get(0).getContent();
@@ -199,12 +309,14 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
                 {
                     return true;
                 }
-
             }
         }
         return false;
     }
 
+    /**
+     * Only set start place in order form
+     */
 
     public void handleCreateNewOrder()
     {
@@ -218,19 +330,18 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
         if(!isPhoneNumberValid(editPhoneNumber.getText().toString()))
         {
 
-            sweetAlertDialog.setTitleText("Phone number invalid");
-            sweetAlertDialog.setContentText("Please check your phone number again");
+            sweetAlertDialog.setTitleText(getResources().getString(R.string.phone_invalid_title));
+            sweetAlertDialog.setContentText(getResources().getString(R.string.phone_invalid_summary));
             sweetAlertDialog.show();
             if(editShipMoney.getText().length() == 0)
             {
-                sweetAlertDialog.setTitleText("Money ship invalid");
-                sweetAlertDialog.setContentText("You have to input money ship");
+                sweetAlertDialog.setTitleText(getResources().getString(R.string.money_ship_invalid_title));
+                sweetAlertDialog.setContentText(getResources().getString(R.string.money_ship_invalid_summary));
                 sweetAlertDialog.show();
             }
         }
         else {
-
-           insertOrder();
+            insertOrder();
         }
 
     }
@@ -286,9 +397,19 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
                     User user = getCurrentUser();
                     user.getOrderArrayList().add(order);
                     realm.insertOrUpdate(user);
-                    Intent intent = new Intent(HandleMapsActivity.this, CreatedOrderActivity.class);
-                    startActivity(intent);
-                    }
+                    //Handle change to created order
+                    getSupportActionBar().setTitle(R.string.created_order);
+                    fragmentMaps.setVisibility(View.GONE);
+                    fragmentShipper.setVisibility(View.VISIBLE);
+                    fragment = new ListOrderCreatedFragment();
+                        try {
+                    FragmentManager manager = getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    transaction.replace(R.id.fragmentShopContainer,fragment);
+                    transaction.commit();
+                }catch (Exception e)
+                {}
+                }
             });
 
         }catch (Exception e)
@@ -442,84 +563,7 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
 
 
     }
-/*
-    public void NavigationDrawer() {
-        Uri myUri = Uri.parse(listProfile[3]);
-        Log.d("myTags",myUri.toString());
-        new DrawerBuilder().withActivity(this).build();
-        PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Create new order ");
-        PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName("Created order");
-        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Tutorials");
-        PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Your profile");
-        PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("About us");
-        PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(6).withName("Version");
-        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(7).withName("Settings");
-        PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(8).withName("Logout");
-        AccountHeader headerResult = new AccountHeaderBuilder()
-                .withActivity(this)
-                .withHeaderBackground(R.drawable.background_home)
-                .addProfiles(
-                        new ProfileDrawerItem().withName(listProfile[2]).withEmail(listProfile[0]).withIcon(myUri)
-                )
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
-                        return false;
-                    }
-                })
-                .build();
-        Drawer result = new DrawerBuilder()
-                .withActivity(this)
-                .withAccountHeader(headerResult)
-                .withToolbar(toolbar)
-                .addDrawerItems(
-                        item1,
-                        item2,
-                        item3,item4,item5,item6,item7,item8
-                )
-                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                    @Override
-                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        // do something with the clicked item :D
-                        return false;
-                    }
-                })
-                .build();
 
-        result.setSelection(1);
-        result.setSelection(item2);
-        result.setSelection(1, true);
-        item1.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_create_new));
-        item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_created));
-        item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials));
-        item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile));
-        item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about));
-        item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version));
-        item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
-        item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
-
-        item1.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-            @Override
-            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                if(drawerItem instanceof Nameable)
-                {
-                    Toast.makeText(HandleMapsActivity.this, ((Nameable) drawerItem).getName().getText(HandleMapsActivity.this), Toast.LENGTH_SHORT).show();
-                }
-                return false;
-            }
-        });
-        item2.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-            @Override
-            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-
-                return false;
-            }
-        });
-        result.openDrawer();
-        result.closeDrawer();
-        result.getDrawerLayout();
-    }
-*/
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -625,7 +669,7 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
             int tempKilometers = parseStringToDouble(route.distance.text).intValue();
             txtCash.setText(tempKilometers*5+"K VNĐ");
             startMarkers.add(mMap.addMarker(new MarkerOptions().title(route.startAddress)
-            .position(route.startLocation).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))));
+                    .position(route.startLocation).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))));
             finishMarkers.add(mMap.addMarker(new MarkerOptions().title(route.endAddress)
                     .position(route.endLocation).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))));
 
@@ -678,6 +722,56 @@ public class HandleMapsActivity extends BaseActivity  implements OnMapReadyCallb
             return 1.0;
         }
         return result;
+    }
+
+    private Drawable resizeImage(int resId, int w, int h)
+    {
+        // load the original Bitmap
+        Bitmap BitmapOrg = BitmapFactory.decodeResource(getResources(), resId);
+        int width = BitmapOrg.getWidth();
+        int height = BitmapOrg.getHeight();
+        int newWidth = w;
+        int newHeight = h;
+        // calculate the scale
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        // create a matrix for the manipulation
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+        Bitmap resizedBitmap = Bitmap.createBitmap(BitmapOrg, 0, 0,width, height, matrix, true);
+        return new BitmapDrawable(resizedBitmap);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_list,menu);
+        if(badgerCount >0)
+        {
+            ActionItemBadge.update(this,menu.findItem(R.id.item_notifycation),resizeImage(R.drawable.ic_notifycation,200,200), ActionItemBadge.BadgeStyles.RED, badgerCount);
+
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.item_notifycation:
+                showNotification();
+                //badgerCount++;
+                // ActionItemBadge.update(item,badgerCount);
+                return true;
+            default:  return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void showNotification()
+    {
+        final FragmentManager fragmentManager = getSupportFragmentManager();
+        final DialogHelpers dialogHelpers = new DialogHelpers();
+        dialogHelpers.show(fragmentManager,"New fragment");
+
     }
 
 }

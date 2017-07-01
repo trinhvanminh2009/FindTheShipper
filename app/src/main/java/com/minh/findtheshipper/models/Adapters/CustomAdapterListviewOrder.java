@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,101 +22,84 @@ import java.util.List;
  * Created by trinh on 6/14/2017.
  */
 
-public class CustomAdapterListviewOrder  extends ArrayAdapter<Order>{
+public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdapterListviewOrder.ViewHolder>{
     private Context context;
     private List<Order> orderList;
 
-    public CustomAdapterListviewOrder(@NonNull Context context,  @NonNull List<Order> objects) {
-        super(context, 0, objects);
+
+    public CustomAdapterListviewOrder(Context context, List<Order> orderList) {
         this.context = context;
-        this.orderList = objects;
-    }
-
-
-    @NonNull
-    @Override
-    public Context getContext() {
-        return context;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
-    }
-
-    public List<Order> getOrderList() {
-        return orderList;
-    }
-
-    public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.list_order,parent,false);
-        TextView txtStatus = (TextView)view.findViewById(R.id.txtStatus);
-        TextView txtStartPlace = (TextView)view.findViewById(R.id.txtStart);
-        TextView txtFinishPlace = (TextView)view.findViewById(R.id.txtFinish);
-        TextView txtAdvancedMoney = (TextView)view.findViewById(R.id.txtAdvancedMoney);
-        TextView txtShipMoney = (TextView)view.findViewById(R.id.txtShipMoney);
-        TextView txtDistance = (TextView)view.findViewById(R.id.txtDistanceOrder);
-        TextView txtNote = (TextView)view.findViewById(R.id.txtNote);
-        TextView txtPhoneNumber = (TextView)view.findViewById(R.id.txtPhoneNumber);
-        TextView txtDatetime = (TextView)view.findViewById(R.id.txtDatetime);
-        LinearLayout nonStatus = (LinearLayout)view.findViewById(R.id.nonStatus);
-        LinearLayout haveStatus = (LinearLayout)view.findViewById(R.id.haveStatus);
-        Order order = orderList.get(position);
-        txtStatus.setText(order.getStatus());
-        txtStartPlace.setText(order.getStartPoint());
-        txtFinishPlace.setText(order.getFinishPoint());
-        txtAdvancedMoney.setText(order.getAdvancedMoney());
-        txtShipMoney.setText(order.getShipMoney());
-        txtDistance.setText(order.getDistance());
-        txtNote.setText(order.getNote());
-        txtPhoneNumber.setText(order.getPhoneNumber());
-        txtDatetime.setText(order.getDateTime());
-        Button btnEdit = (Button)view.findViewById(R.id.btnEdit);
-        Button btnFindAgain = (Button)view.findViewById(R.id.btnFindAgain);
-        Button btnOrderSucess = (Button)view.findViewById(R.id.btnOrderSuccess);
-        Button btnCallAgain = (Button)view.findViewById(R.id.btnCallAgain);
-        if(txtStatus.getText() == "")
+    public CustomAdapterListviewOrder.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_order,parent,false);
+        CustomAdapterListviewOrder.ViewHolder viewHolder = new CustomAdapterListviewOrder.ViewHolder(view);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(CustomAdapterListviewOrder.ViewHolder holder, int position) {
+        final Order order = orderList.get(position);
+        holder.txtStatus.setText(order.getStatus());
+        holder.txtStartPlace.setText(order.getStartPoint());
+        holder.txtFinishPlace.setText(order.getFinishPoint());
+        holder.txtAdvancedMoney.setText(order.getAdvancedMoney());
+        holder.txtShipMoney.setText(order.getShipMoney());
+        holder.txtDistance.setText(order.getDistance());
+        holder.txtNote.setText(order.getNote());
+        holder.txtPhoneNumber.setText(order.getPhoneNumber());
+        holder.txtDatetime.setText(order.getDateTime());
+        if(holder.txtStatus.getText() == "")
         {
-            haveStatus.setVisibility(View.GONE);
+            holder.haveStatus.setVisibility(View.GONE);
 
         }
-        if(txtStatus.getText() != "")
+        if(holder.txtStatus.getText() != "")
         {
-            nonStatus.setVisibility(View.GONE);
+            holder.nonStatus.setVisibility(View.GONE);
         }
-       // txtStatus.setVisibility(View.GONE);
-      //  haveStatus.setVisibility(View.GONE);
-        btnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
 
-            }
-        });
-        btnFindAgain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public int getItemCount() {
+        return orderList.size();
+    }
 
-            }
-        });
-        btnOrderSucess.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        btnCallAgain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        return view;
-
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView txtStatus;
+        private TextView txtStartPlace;
+        private TextView txtFinishPlace;
+        private TextView txtAdvancedMoney;
+        private TextView txtShipMoney;
+        private TextView txtDistance;
+        private TextView txtNote;
+        private TextView txtPhoneNumber;
+        private TextView txtDatetime;
+        private LinearLayout nonStatus;
+        private LinearLayout haveStatus;
+        private Button btnEdit;
+        private Button btnFindAgain;
+        private Button btnOrderSucess;
+        private Button btnCallAgain;
+        public ViewHolder(View view) {
+            super(view);
+            txtStatus = (TextView)view.findViewById(R.id.txtStatus);
+            txtStartPlace = (TextView)view.findViewById(R.id.txtStart);
+            txtFinishPlace = (TextView)view.findViewById(R.id.txtFinish);
+            txtAdvancedMoney = (TextView)view.findViewById(R.id.txtAdvancedMoney);
+            txtShipMoney = (TextView)view.findViewById(R.id.txtShipMoney);
+            txtDistance = (TextView)view.findViewById(R.id.txtDistanceOrder);
+            txtNote = (TextView)view.findViewById(R.id.txtNote);
+            txtPhoneNumber = (TextView)view.findViewById(R.id.txtPhoneNumber);
+            txtDatetime = (TextView)view.findViewById(R.id.txtDatetime);
+            nonStatus = (LinearLayout)view.findViewById(R.id.nonStatus);
+            haveStatus = (LinearLayout)view.findViewById(R.id.haveStatus);
+            btnEdit = (Button)view.findViewById(R.id.btnEdit);
+            btnFindAgain = (Button)view.findViewById(R.id.btnFindAgain);
+            btnOrderSucess = (Button)view.findViewById(R.id.btnOrderSuccess);
+            btnCallAgain = (Button)view.findViewById(R.id.btnCallAgain);
+        }
     }
 }

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\xml\\header_shop.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\xml\\header_shop.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_display.xml",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\xml\\pref_display.xml"
     },
@@ -22,5 +26,9 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_general.xml",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\xml\\pref_general.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_display_shop.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\xml\\pref_display_shop.xml"
     }
 ]

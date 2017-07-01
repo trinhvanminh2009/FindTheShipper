@@ -67,8 +67,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         ButterKnife.bind(this);
 
-        listProfile = getIntent().getStringArrayExtra("profile");
-        NavigationDrawer();
+       // listProfile = getIntent().getStringArrayExtra("profile");
+//        NavigationDrawer();
         listControls = new ArrayList<>();
         listControls.add(new ListControl(R.drawable.ic_starting_point, "Choose place to start"));
         listControls.add(new ListControl(R.drawable.ic_finish_point, "Choose place to finish"));

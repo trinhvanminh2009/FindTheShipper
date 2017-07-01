@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
     <string-array name="change_language_array">
-    <item>Vietnamese</item>
-    <item>English</item>
-</string-array>
+        <item>Vietnamese</item>
+        <item>English</item>
+    </string-array>
     <string-array name="change_language_values">
         <item>0</item>
         <item>1</item>
@@ -1355,7 +1355,9 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="content">Content</string>
+    <string name="create_new_order">Create New Order</string>
     <string name="create_order">Create Order</string>
+    <string name="created_order">Created Order</string>
     <string name="current_phone_number">Current phone number</string>
     <string name="define_AndroidActionItemBadge">year;owner</string>
     <string name="define_AndroidIconics">year;owner</string>
@@ -2989,6 +2991,8 @@
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
         AIzaSyADstDpRNOqlBF3Jr7FiriRJTgKHm5eglI
     </string>
+    <string name="ha_noi">Ha Noi</string>
+    <string name="ho_chi_minh">Ho Chi Minh city</string>
     <string name="library_AndroidActionItemBadge_author">Mike Penz</string>
     <string name="library_AndroidActionItemBadge_authorWebsite">http://mikepenz.com/</string>
     <string name="library_AndroidActionItemBadge_isOpenSource">true</string>
@@ -3089,6 +3093,8 @@
     <string name="material_drawer_close">Close</string>
     <string name="material_drawer_open">Open</string>
     <string name="messenger_send_button_text">Send</string>
+    <string name="money_ship_invalid_summary">You have to input money ship</string>
+    <string name="money_ship_invalid_title">Money ship invalid</string>
     <string name="notification_title">Notification</string>
     <string name="number_order_show">Number order show</string>
     <string name="ok">OK</string>
@@ -3112,23 +3118,25 @@
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="pay_coin_shipper">Pay coin</string>
     <string name="permission_required_toast"> Location permission is required for this function.</string>
+    <string name="phone_invalid_summary">Please check your phone number again</string>
+    <string name="phone_invalid_title">Phone number invalid</string>
     <string name="please_wait_facebooklogin">Just a moment</string>
     <string name="pref_default_display_name" translatable="false">John Smith</string>
     <string name="pref_description_social_recommendations" translatable="false">Recommendations for people to contact
         based on your message history
     </string>
-    <string name="pref_header_data_sync" translatable="false">Data &amp; sync</string>
-    <string name="pref_header_general" translatable="false">General</string>
-    <string name="pref_header_notifications" translatable="false">Notifications</string>
-    <string name="pref_ringtone_silent" translatable="false">Silent</string>
-    <string name="pref_title_add_friends_to_messages" translatable="false">Add friends to messages</string>
-    <string name="pref_title_display_name" translatable="false">Display name</string>
-    <string name="pref_title_new_message_notifications" translatable="false">New message notifications</string>
-    <string name="pref_title_ringtone" translatable="false">Ringtone</string>
-    <string name="pref_title_social_recommendations" translatable="false">Enable social recommendations</string>
-    <string name="pref_title_sync_frequency" translatable="false">Sync frequency</string>
-    <string name="pref_title_system_sync_settings" translatable="false">System sync settings</string>
-    <string name="pref_title_vibrate" translatable="false">Vibrate</string>
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_header_notifications">Notifications</string>
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+    <string name="pref_title_vibrate">Vibrate</string>
     <string name="profile">Profile</string>
     <string name="required_permission_location">Access to the location is required turn on location.</string>
     <string name="save">Save</string>
@@ -3137,10 +3145,15 @@
     <string name="search_menu_title">Search</string>
     <string name="send">Send</string>
     <string name="setting">Settings</string>
+    <string name="ship_mode">Ship click right here</string>
+    <string name="shop_mode">Shop click right here</string>
     <string name="start_place">Choose place to start</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="summary_always_on_display">Your phone will always on display while using this application </string>
     <string name="summary_change_mode">You being the shop, you can create the orders.</string>
+    <string name="summary_change_mode_to_shipper">You being the shipper. Let\'s start earned money</string>
+    <string name="summary_language">Select the another language</string>
+    <string name="summary_number_order_show">Maximum number orders will show</string>
     <string name="text_view_advance_money">Advance money</string>
     <string name="text_view_note">Note</string>
     <string name="text_view_phone_number">Phone number</string>

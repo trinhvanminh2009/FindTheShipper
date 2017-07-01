@@ -12,13 +12,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.mikepenz.actionitembadge.library.ActionItemBadge;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -29,9 +27,6 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.minh.findtheshipper.helpers.DialogHelpers;
-
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
 
 
 /**
@@ -157,7 +152,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                         }
                         if(drawerItem.getIdentifier() == 2)
                         {
-                            Intent intent = new Intent(getApplicationContext(), CreatedOrderActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), ListOrderCreatedFragment.class);
                             getApplicationContext().startActivity(intent);
 
                         }
@@ -184,8 +179,6 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
         item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
-
-
         result.openDrawer();
         result.closeDrawer();
         result.getDrawerLayout();

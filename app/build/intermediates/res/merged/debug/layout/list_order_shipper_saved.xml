@@ -124,6 +124,5 @@
                 android:background="@null"/>
 
         </RelativeLayout>
-
     </LinearLayout>
 </android.support.v7.widget.CardView>

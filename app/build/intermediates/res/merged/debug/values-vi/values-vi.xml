@@ -74,7 +74,9 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"Đăng nhập"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Đăng nhập bằng Google"</string>
     <string name="content">Nội dung</string>
+    <string name="create_new_order">Tạo đơn hàng mới</string>
     <string name="create_order">Tạo đơn hàng</string>
+    <string name="created_order">Đơn hàng đã tạo</string>
     <string name="current_phone_number">Số điện thoại hiện tại</string>
     <string name="delete">Xóa</string>
     <string name="edit_text_advance_money">Tính bằng k (100 hiển thị 100k)</string>
@@ -84,10 +86,14 @@
     <string name="edit_text_start_place">Nơi shipper tới lấy hàng</string>
     <string name="finish_place">Chọn điểm bắt đầu</string>
     <string name="get_order">Nhận đơn hàng</string>
+    <string name="ha_noi">Hà Nội</string>
+    <string name="ho_chi_minh">Thành Phố Hồ Chí Minh</string>
     <string name="list_order_saved_shipper">Đơn hàng đã lưu</string>
     <string name="list_order_shipper">Danh sách đơn hàng</string>
     <string name="log_out">Đăng xuất</string>
     <string name="messenger_send_button_text">Gửi</string>
+    <string name="money_ship_invalid_summary">Bạn phải nhập số tiền  ship</string>
+    <string name="money_ship_invalid_title">Tiền ship không hợp lệ</string>
     <string name="notification_title">Thông báo</string>
     <string name="number_order_show">Số đơn hàng hiển thị</string>
     <string name="ok">Đồng ý</string>
@@ -106,7 +112,22 @@
     <string name="order_success">Đơn hàng đã hoàn thành</string>
     <string name="pay_coin_shipper">Trả bằng coin</string>
     <string name="permission_required_toast">Chức năng này yêu cầu quyền truy cập vị trí</string>
+    <string name="phone_invalid_summary">Vui lòng kiểm tra số điện thoại lại</string>
+    <string name="phone_invalid_title">Số điện thoại không hợp lệ</string>
     <string name="please_wait_facebooklogin">Chỉ một lát</string>
+    <string name="pref_description_social_recommendations"/>
+    <string name="pref_header_data_sync">Dữ liệu và động bộ</string>
+    <string name="pref_header_general">Tác vụ cơ bản</string>
+    <string name="pref_header_notifications">Thông báo</string>
+    <string name="pref_ringtone_silent">Yên lặng</string>
+    <string name="pref_title_add_friends_to_messages">Thêm bạn bè vào tin nhắn</string>
+    <string name="pref_title_display_name" translatable="false">Tên hiển thị</string>
+    <string name="pref_title_new_message_notifications">Thông báo tin nhắn mới</string>
+    <string name="pref_title_ringtone">Nhạc chuông</string>
+    <string name="pref_title_social_recommendations">"Cho phép "</string>
+    <string name="pref_title_sync_frequency">Tần số đồng bộ</string>
+    <string name="pref_title_system_sync_settings">Đồng bộ hóa cài đặt</string>
+    <string name="pref_title_vibrate" translatable="false">Rung</string>
     <string name="profile">Cá nhân</string>
     <string name="required_permission_location">Để truy cập vị trí hiện tại cần mở vị trí</string>
     <string name="save">Lưu lại</string>
@@ -115,10 +136,15 @@
     <string msgid="146198913615257606" name="search_menu_title">"Tìm kiếm"</string>
     <string name="send">Gửi</string>
     <string name="setting">Cài đặt</string>
+    <string name="ship_mode">Ship thì nhấn vào đây</string>
+    <string name="shop_mode">Shop thì nhấn vào đây</string>
     <string name="start_place">Chọn điểm kết thúc</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="summary_always_on_display">Màn hình điện thoại của bạn luôn sáng khi sử dụng ứng dụng này</string>
     <string name="summary_change_mode">Bạn trở thành shop, bạn có thể tạo đơn hàng.</string>
+    <string name="summary_change_mode_to_shipper">Bạn trở thành người giao hàng. Hãy bắt đầu kiếm tiền nào.</string>
+    <string name="summary_language">Chọn một ngôn ngữ khác để hiển thị</string>
+    <string name="summary_number_order_show">Số đơn hàng tối đa sẽ hiển thị</string>
     <string name="text_view_advance_money">Tiền ứng</string>
     <string name="text_view_note">Ghi chú</string>
     <string name="text_view_phone_number">SĐT</string>

@@ -68,4 +68,30 @@
     <string name="summary_always_on_display">Màn hình điện thoại của bạn luôn sáng khi sử dụng ứng dụng này</string>
     <string name="summary_change_mode">Bạn trở thành shop, bạn có thể tạo đơn hàng.</string>
     <string name="change_mode">Đổi chế độ</string>
+    <string name="ha_noi">Hà Nội</string>
+    <string name="ho_chi_minh">Thành Phố Hồ Chí Minh</string>
+    <string name="ship_mode">Ship thì nhấn vào đây</string>
+    <string name="shop_mode">Shop thì nhấn vào đây</string>
+    <string name="pref_title_vibrate" translatable="false">Rung</string>
+    <string name="pref_title_display_name" translatable="false">Tên hiển thị</string>
+    <string name="pref_title_system_sync_settings">Đồng bộ hóa cài đặt</string>
+    <string name="pref_title_sync_frequency">Tần số đồng bộ</string>
+    <string name="pref_title_social_recommendations">"Cho phép "</string>
+    <string name="pref_title_ringtone">Nhạc chuông</string>
+    <string name="pref_title_new_message_notifications">Thông báo tin nhắn mới</string>
+    <string name="pref_title_add_friends_to_messages">Thêm bạn bè vào tin nhắn</string>
+    <string name="pref_ringtone_silent">Yên lặng</string>
+    <string name="pref_header_notifications">Thông báo</string>
+    <string name="pref_header_general">Tác vụ cơ bản</string>
+    <string name="pref_header_data_sync">Dữ liệu và động bộ</string>
+    <string name="pref_description_social_recommendations"></string>
+    <string name="create_new_order">Tạo đơn hàng mới</string>
+    <string name="created_order">Đơn hàng đã tạo</string>
+    <string name="money_ship_invalid_summary">Bạn phải nhập số tiền  ship</string>
+    <string name="money_ship_invalid_title">Tiền ship không hợp lệ</string>
+    <string name="phone_invalid_summary">Vui lòng kiểm tra số điện thoại lại</string>
+    <string name="phone_invalid_title">Số điện thoại không hợp lệ</string>
+    <string name="summary_change_mode_to_shipper">Bạn trở thành người giao hàng. Hãy bắt đầu kiếm tiền nào.</string>
+    <string name="summary_language">Chọn một ngôn ngữ khác để hiển thị</string>
+    <string name="summary_number_order_show">Số đơn hàng tối đa sẽ hiển thị</string>
 </resources>

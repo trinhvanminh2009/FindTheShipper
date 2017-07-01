@@ -14,12 +14,12 @@ public final class R {
         public static final int abc_slide_in_top = 0x7f050007;
         public static final int abc_slide_out_bottom = 0x7f050008;
         public static final int abc_slide_out_top = 0x7f050009;
-        public static final int error_frame_in = 0x7f050012;
-        public static final int error_x_in = 0x7f050013;
-        public static final int modal_in = 0x7f050014;
-        public static final int modal_out = 0x7f050015;
-        public static final int success_bow_roate = 0x7f050016;
-        public static final int success_mask_layout = 0x7f050017;
+        public static final int error_frame_in = 0x7f050014;
+        public static final int error_x_in = 0x7f050015;
+        public static final int modal_in = 0x7f050016;
+        public static final int modal_out = 0x7f050017;
+        public static final int success_bow_roate = 0x7f050018;
+        public static final int success_mask_layout = 0x7f050019;
     }
     public static final class attr {
         public static final int actionBarDivider = 0x7f010072;
@@ -365,17 +365,17 @@ public final class R {
         public static final int abc_textfield_search_activated_mtrl_alpha = 0x7f02004f;
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f020050;
         public static final int abc_textfield_search_material = 0x7f020051;
-        public static final int blue_button_background = 0x7f02005b;
-        public static final int dialog_background = 0x7f020095;
-        public static final int error_center_x = 0x7f020096;
-        public static final int error_circle = 0x7f020097;
-        public static final int gray_button_background = 0x7f020099;
-        public static final int ic_launcher = 0x7f0200a8;
-        public static final int red_button_background = 0x7f0200d6;
-        public static final int success_bow = 0x7f0200db;
-        public static final int success_circle = 0x7f0200dc;
-        public static final int warning_circle = 0x7f0200de;
-        public static final int warning_sigh = 0x7f0200df;
+        public static final int blue_button_background = 0x7f02005c;
+        public static final int dialog_background = 0x7f020096;
+        public static final int error_center_x = 0x7f020097;
+        public static final int error_circle = 0x7f020098;
+        public static final int gray_button_background = 0x7f02009a;
+        public static final int ic_launcher = 0x7f0200a9;
+        public static final int red_button_background = 0x7f0200d7;
+        public static final int success_bow = 0x7f0200dc;
+        public static final int success_circle = 0x7f0200dd;
+        public static final int warning_circle = 0x7f0200df;
+        public static final int warning_sigh = 0x7f0200e0;
     }
     public static final class id {
         public static final int action_bar = 0x7f10009b;
@@ -395,19 +395,19 @@ public final class R {
         public static final int always = 0x7f10005e;
         public static final int beginning = 0x7f100057;
         public static final int bottom = 0x7f100046;
-        public static final int cancel_button = 0x7f1000ce;
+        public static final int cancel_button = 0x7f1000d5;
         public static final int checkbox = 0x7f100092;
         public static final int collapseActionView = 0x7f10005f;
-        public static final int confirm_button = 0x7f1000cf;
-        public static final int content_text = 0x7f1000cd;
-        public static final int custom_image = 0x7f1000c2;
+        public static final int confirm_button = 0x7f1000d6;
+        public static final int content_text = 0x7f1000d4;
+        public static final int custom_image = 0x7f1000c9;
         public static final int decor_content_parent = 0x7f100099;
         public static final int default_activity_button = 0x7f10007e;
         public static final int disableHome = 0x7f100033;
         public static final int edit_query = 0x7f10009d;
         public static final int end = 0x7f10004a;
-        public static final int error_frame = 0x7f1000c3;
-        public static final int error_x = 0x7f1000c4;
+        public static final int error_frame = 0x7f1000ca;
+        public static final int error_x = 0x7f1000cb;
         public static final int expand_activities_button = 0x7f10007c;
         public static final int expanded_menu = 0x7f100091;
         public static final int home = 0x7f100005;
@@ -417,16 +417,16 @@ public final class R {
         public static final int image = 0x7f10007d;
         public static final int listMode = 0x7f100030;
         public static final int list_item = 0x7f10007f;
-        public static final int loading = 0x7f1000c1;
-        public static final int mask_left = 0x7f1000c7;
-        public static final int mask_right = 0x7f1000c6;
+        public static final int loading = 0x7f1000c8;
+        public static final int mask_left = 0x7f1000ce;
+        public static final int mask_right = 0x7f1000cd;
         public static final int middle = 0x7f100058;
         public static final int never = 0x7f100061;
         public static final int none = 0x7f10002f;
         public static final int normal = 0x7f100031;
-        public static final int progressWheel = 0x7f1000cb;
+        public static final int progressWheel = 0x7f1000d2;
         public static final int progress_circular = 0x7f10001e;
-        public static final int progress_dialog = 0x7f1000ca;
+        public static final int progress_dialog = 0x7f1000d1;
         public static final int progress_horizontal = 0x7f10001f;
         public static final int radio = 0x7f100094;
         public static final int search_badge = 0x7f10009f;
@@ -445,15 +445,15 @@ public final class R {
         public static final int showTitle = 0x7f100037;
         public static final int split_action_bar = 0x7f100020;
         public static final int submit_area = 0x7f1000a6;
-        public static final int success_frame = 0x7f1000c5;
-        public static final int success_tick = 0x7f1000c8;
+        public static final int success_frame = 0x7f1000cc;
+        public static final int success_tick = 0x7f1000cf;
         public static final int tabMode = 0x7f100032;
         public static final int title = 0x7f100081;
-        public static final int title_text = 0x7f1000cc;
+        public static final int title_text = 0x7f1000d3;
         public static final int top = 0x7f10004f;
         public static final int up = 0x7f100025;
         public static final int useLogo = 0x7f100038;
-        public static final int warning_frame = 0x7f1000c9;
+        public static final int warning_frame = 0x7f1000d0;
         public static final int withText = 0x7f100062;
         public static final int wrap_content = 0x7f100044;
         public static final int x = 0x7f100063;
@@ -483,10 +483,10 @@ public final class R {
         public static final int abc_search_dropdown_item_icons_2line = 0x7f040018;
         public static final int abc_search_view = 0x7f040019;
         public static final int alert_dialog = 0x7f040021;
-        public static final int support_simple_spinner_dropdown_item = 0x7f040078;
+        public static final int support_simple_spinner_dropdown_item = 0x7f04007a;
     }
     public static final class string {
-        public static final int LOADING = 0x7f09009a;
+        public static final int LOADING = 0x7f0900b4;
         public static final int abc_action_bar_home_description = 0x7f090000;
         public static final int abc_action_bar_home_description_format = 0x7f090001;
         public static final int abc_action_bar_home_subtitle_description_format = 0x7f090002;
@@ -503,9 +503,9 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f090010;
         public static final int abc_shareactionprovider_share_with_application = 0x7f090011;
         public static final int app_name = 0x7f090058;
-        public static final int dialog_cancel = 0x7f0900b3;
-        public static final int dialog_default_title = 0x7f0900b4;
-        public static final int dialog_ok = 0x7f0900b5;
+        public static final int dialog_cancel = 0x7f0900cd;
+        public static final int dialog_default_title = 0x7f0900ce;
+        public static final int dialog_ok = 0x7f0900cf;
     }
     public static final class style {
         public static final int Base_TextAppearance_AppCompat = 0x7f0b0052;
