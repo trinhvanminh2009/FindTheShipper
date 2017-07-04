@@ -141,8 +141,6 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                                 order.setSaveOrder(true);
                                 realm.insertOrUpdate(order);
                             }
-
-                            TastyToast.makeText(v.getContext(),order.getOrderID(),TastyToast.LENGTH_SHORT,TastyToast.INFO);
                         }
                     });
                 }
@@ -160,8 +158,6 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             animationUtils.animate(holder,true);
             previousPosition = position;
         }
-
-
     }
 
     public void initRealm()

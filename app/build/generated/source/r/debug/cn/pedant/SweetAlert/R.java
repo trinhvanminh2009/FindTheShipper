@@ -366,9 +366,9 @@ public final class R {
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f020050;
         public static final int abc_textfield_search_material = 0x7f020051;
         public static final int blue_button_background = 0x7f02005c;
-        public static final int dialog_background = 0x7f020096;
-        public static final int error_center_x = 0x7f020097;
-        public static final int error_circle = 0x7f020098;
+        public static final int dialog_background = 0x7f020094;
+        public static final int error_center_x = 0x7f020095;
+        public static final int error_circle = 0x7f020096;
         public static final int gray_button_background = 0x7f02009a;
         public static final int ic_launcher = 0x7f0200a9;
         public static final int red_button_background = 0x7f0200d7;
@@ -503,9 +503,9 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f090010;
         public static final int abc_shareactionprovider_share_with_application = 0x7f090011;
         public static final int app_name = 0x7f090058;
-        public static final int dialog_cancel = 0x7f0900cd;
-        public static final int dialog_default_title = 0x7f0900ce;
-        public static final int dialog_ok = 0x7f0900cf;
+        public static final int dialog_cancel = 0x7f0900ce;
+        public static final int dialog_default_title = 0x7f0900cf;
+        public static final int dialog_ok = 0x7f0900d0;
     }
     public static final class style {
         public static final int Base_TextAppearance_AppCompat = 0x7f0b0052;

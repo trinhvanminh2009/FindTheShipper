@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Adapters.AdapterListComment;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderShipper;
@@ -91,7 +93,8 @@ public class CommentDialogHelpers extends DialogFragment {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                comment[0] = realm.createObject(Comment.class,"cmt"+countOrder());
+                Order order = realm.where(Order.class).equalTo("orderID",orderID).findFirst();
+                comment[0] = realm.createObject(Comment.class,"cmt_"+getCurrentUser().getEmail()+"_"+order.getOrderID()+"_"+countOrder());
                 comment[0].setContent(editComment.getText().toString());
                 comment[0].setDateTime(getCurrentTime());
                 comment[0].setUser(getCurrentUser());
@@ -105,6 +108,12 @@ public class CommentDialogHelpers extends DialogFragment {
                 Order order = realm.where(Order.class).equalTo("orderID",orderID).findFirst();
                 order.getComments().add(comment[0]);
                 realm.insertOrUpdate(order);
+                //Add comment into server
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
+                mDatabase.child(order.getOrderID()).child("comment").child(comment[0].getIdComment()).child("user").setValue(comment[0].getUser().getEmail());
+                mDatabase.child(order.getOrderID()).child("comment").child(comment[0].getIdComment()).child("Content").setValue(comment[0].getContent());
+                mDatabase.child(order.getOrderID()).child("comment").child(comment[0].getIdComment()).child("Time").setValue(comment[0].getDateTime());
+
             }
         });
 
@@ -117,9 +126,13 @@ public class CommentDialogHelpers extends DialogFragment {
         return simpleDateFormat.format(new Date());
     }
 
-    public long countOrder()
+    public int countOrder()
     {
-        return realm.where(Comment.class).count();
+        int size;
+        Order order = realm.where(Order.class).equalTo("orderID",orderID).findFirst();
+        RealmList<Comment>comments = order.getComments();
+        size= comments.size();
+        return size;
     }
 
     public void initRealm()

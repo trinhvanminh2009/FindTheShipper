@@ -17,6 +17,7 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import java.util.List;
@@ -115,8 +116,15 @@ public class SettingsShopPreferences extends PreferenceActivity {
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) LayoutInflater.from(this).inflate(R.layout.setting_shipper_fragment,root,false);
         toolbar.setTitle(R.string.setting);
         root.addView(toolbar,0); //Add to top
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
     }
+
 
     @Override
     public boolean onIsMultiPane() {

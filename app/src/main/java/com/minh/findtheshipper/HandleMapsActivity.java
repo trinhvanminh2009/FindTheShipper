@@ -17,6 +17,7 @@ import android.support.v4.app.*;
 import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,6 +41,12 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mikepenz.actionitembadge.library.ActionItemBadge;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -54,6 +61,7 @@ import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
+import com.minh.findtheshipper.models.Comment;
 import com.minh.findtheshipper.models.ListControl;
 import com.minh.findtheshipper.models.NotificationObject;
 import com.minh.findtheshipper.models.Order;
@@ -76,6 +84,9 @@ import butterknife.OnClick;
 import butterknife.OnItemClick;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmList;
+import io.realm.RealmResults;
 
 
 public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCallback,
@@ -115,6 +126,8 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     private int itemClicked = 0;
     private Realm realm;
     private android.support.v4.app.Fragment fragment = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -134,7 +147,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         listControls.add(new ListControl(R.drawable.ic_finish_point, getResources().getString(R.string.finish_place)));
         adapterListView = new CustomAdapterListView(HandleMapsActivity.this, listControls);
         listPlaces.setAdapter(adapterListView);
-        //insertNotification();
+        insertNotification();
         if(findViewById(R.id.fragmentShopContainer) != null)
         {
             if(savedInstanceState != null)
@@ -142,9 +155,12 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 return;
             }
         }
-        //addUser();
-
+       // addUser();
     }
+
+
+
+
 
     public void NavigationDrawer(Toolbar toolbar) {
 
@@ -191,6 +207,10 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
 
+                        /**I have to visible the layout before replace fragment
+                         * Because I did layout before I know how to using Fragment.
+                         * But I can change this activity into fragment, this is perfect way
+                         * */
                         if(drawerItem.getIdentifier() ==1)
                         {
                             getSupportActionBar().setTitle(R.string.create_new_order);
@@ -223,6 +243,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                         }
                         if(drawerItem.getIdentifier() == 7)
                         {
+                            //Only for settings using intent
                             Intent intent = new Intent(HandleMapsActivity.this, SettingsShopPreferences.class);
                             startActivity(intent);
                             return true;
@@ -376,7 +397,9 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             realm.executeTransaction(new Realm.Transaction() {
                 @Override
                 public void execute(Realm realm) {
-                    final Order order = realm.createObject(Order.class,"order"+countOrder());
+                    User user = getCurrentUser();
+                    TastyToast.makeText(HandleMapsActivity.this, "Total:" + countOrder()+ ".", TastyToast.LENGTH_SHORT,TastyToast.INFO);
+                    final Order order = realm.createObject(Order.class,"order_"+user.getEmail()+"_"+countOrder());
                     order.setStatus(getResources().getString(R.string.order_status));
                     order.setStartPoint("- "+ editStartPlace.getText().toString());
                     order.setFinishPoint("- "+ listControls.get(1).getContent());
@@ -394,9 +417,21 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                     order.setDateTime(getResources().getString(R.string.order_last_updated)+ date);
                     order.setSaveOrder(false);
                     realm.insertOrUpdate(order);
-                    User user = getCurrentUser();
+
                     user.getOrderArrayList().add(order);
                     realm.insertOrUpdate(user);
+                    //Post data into server after add
+                    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
+                    mDatabase.child(order.getOrderID()).child("Status").setValue(order.getStatus());
+                    mDatabase.child(order.getOrderID()).child("Start place").setValue(order.getStartPoint());
+                    mDatabase.child(order.getOrderID()).child("Finish place").setValue(order.getFinishPoint());
+                    mDatabase.child(order.getOrderID()).child("Advanced money").setValue(order.getAdvancedMoney());
+                    mDatabase.child(order.getOrderID()).child("Phone number").setValue(order.getPhoneNumber());
+                    mDatabase.child(order.getOrderID()).child("Ship Money").setValue(order.getShipMoney());
+                    mDatabase.child(order.getOrderID()).child("Note").setValue(order.getNote());
+                    mDatabase.child(order.getOrderID()).child("Distance").setValue(order.getDistance());
+                    mDatabase.child(order.getOrderID()).child("Datetime").setValue(order.getDateTime());
+                    mDatabase.child(order.getOrderID()).child("Save Order").setValue(order.getSaveOrder());
                     //Handle change to created order
                     getSupportActionBar().setTitle(R.string.created_order);
                     fragmentMaps.setVisibility(View.GONE);
@@ -432,7 +467,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             });
         }catch (Exception e)
         {
-
         }
     }
 
@@ -446,9 +480,13 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         realm = null;
         realm = Realm.getDefaultInstance();
     }
-    public long countOrder()
+    public int countOrder()
     {
-        return realm.where(Order.class).count();
+        int size;
+        User user = getCurrentUser();
+        RealmList<Order>orders = user.getOrderArrayList();
+        size= orders.size();
+        return size;
     }
 
 

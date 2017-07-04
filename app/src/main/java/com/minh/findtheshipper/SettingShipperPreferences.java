@@ -122,6 +122,12 @@ public class SettingShipperPreferences extends PreferenceActivity {
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) LayoutInflater.from(this).inflate(R.layout.setting_shipper_fragment,root,false);
         toolbar.setTitle(R.string.setting);
         root.addView(toolbar,0); //Add to top
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
     }
 

@@ -170,8 +170,8 @@
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#388E3C</color>
+    <color name="colorPrimaryDark">#388E3C</color>
     <color name="colorPrimaryLight">#BBDEFB</color>
     <color name="com_facebook_blue">#3B5998</color>
     <color name="com_facebook_button_background_color">#415dae</color>
@@ -1260,7 +1260,7 @@
     <integer name="bottom_sheet_slide_duration">150</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="design_snackbar_text_max_lines">2</integer>
-    <integer name="google_play_services_version">10084000</integer>
+    <integer name="google_play_services_version">11020000</integer>
     <integer name="hide_password_duration">320</integer>
     <integer name="order_button">30</integer>
     <integer name="show_password_duration">200</integer>
@@ -1359,6 +1359,7 @@
     <string name="create_order">Create Order</string>
     <string name="created_order">Created Order</string>
     <string name="current_phone_number">Current phone number</string>
+    <string name="default_web_client_id" translatable="false">260595537255-sfotcr2nh9tl6rftcbrphhicuttgn7qd.apps.googleusercontent.com</string>
     <string name="define_AndroidActionItemBadge">year;owner</string>
     <string name="define_AndroidIconics">year;owner</string>
     <string name="define_FontAwesome">year;author;libraryName;libraryWebsite</string>
@@ -2055,6 +2056,8 @@
     <string name="faw_youtube_square">faw_youtube_square</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb432808617097084</string>
     <string name="finish_place">Choose place to finish</string>
+    <string name="firebase_database_url" translatable="false">https://find-the-shipper.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">260595537255</string>
     <string name="get_order">Get Order</string>
     <string name="gmd_3d_rotation">gmd_3d_rotation</string>
     <string name="gmd_ac_unit">gmd_ac_unit</string>
@@ -2988,9 +2991,13 @@
     <string name="gmd_zoom_in">gmd_zoom_in</string>
     <string name="gmd_zoom_out">gmd_zoom_out</string>
     <string name="gmd_zoom_out_map">gmd_zoom_out_map</string>
+    <string name="google_api_key" translatable="false">AIzaSyAC5a8NBcqkEhZoAWY1-dVJ1AbMM8LMTao</string>
+    <string name="google_app_id" translatable="false">1:260595537255:android:df8bd89ae58ee54a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAC5a8NBcqkEhZoAWY1-dVJ1AbMM8LMTao</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
         AIzaSyADstDpRNOqlBF3Jr7FiriRJTgKHm5eglI
     </string>
+    <string name="google_storage_bucket" translatable="false">find-the-shipper.appspot.com</string>
     <string name="ha_noi">Ha Noi</string>
     <string name="ho_chi_minh">Ho Chi Minh city</string>
     <string name="library_AndroidActionItemBadge_author">Mike Penz</string>
@@ -3138,6 +3145,7 @@
     <string name="pref_title_system_sync_settings">System sync settings</string>
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="profile">Profile</string>
+    <string name="project_id" translatable="false">find-the-shipper</string>
     <string name="required_permission_location">Access to the location is required turn on location.</string>
     <string name="save">Save</string>
     <string name="save_order">Save order success</string>
@@ -3177,7 +3185,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/md_green_700</item>
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
