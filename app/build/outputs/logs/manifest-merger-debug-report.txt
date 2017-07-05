@@ -172,23 +172,23 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:70:9-54
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:70:19-51
 activity#com.minh.findtheshipper.FragmentContainerShipper
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:71:9-73:20
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:71:9-77:20
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:71:19-59
-activity#com.minh.findtheshipper.HandleMapsActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:74:9-80:20
-	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:74:19-53
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:75:13-79:29
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:72:13-76:29
 action#android.intent.action.MAIN
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:76:17-69
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:73:17-69
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:76:25-66
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:73:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:78:17-77
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:75:17-77
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:78:27-74
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:75:27-74
+activity#com.minh.findtheshipper.HandleMapsActivity
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:78:9-80:20
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:78:19-53
 activity#com.minh.findtheshipper.utils.SettingsActivity
 ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:81:9-83:63
 	android:label

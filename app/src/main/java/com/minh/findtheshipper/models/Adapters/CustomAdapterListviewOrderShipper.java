@@ -29,6 +29,7 @@ import com.minh.findtheshipper.ListOrderSavedShipperFragment;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.utils.AnimationUtils;
 import com.sdsmdg.tastytoast.TastyToast;
@@ -45,12 +46,12 @@ import io.realm.RealmList;
  */
 
 public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<CustomAdapterListviewOrderShipper.ViewHolder>{
-    private List<Order> orderList;
+    private List<OrderTemp> orderList;
     private Context context;
     private Realm realm;
 
     private int previousPosition = -1;
-    public CustomAdapterListviewOrderShipper(Context context ,List<Order> orderList) {
+    public CustomAdapterListviewOrderShipper(Context context ,List<OrderTemp> orderList) {
         this.context = context;
         this.orderList = orderList;
 
@@ -67,7 +68,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     @Override
     public void onBindViewHolder(final CustomAdapterListviewOrderShipper.ViewHolder holder, int position) {
         final AnimationUtils animationUtils = new AnimationUtils();
-        final Order order = orderList.get(position);
+        final OrderTemp order = orderList.get(position);
         holder.startingPoint.setText(order.getStartPoint());
         holder.finishPoint.setText(order.getFinishPoint());
         holder.advancedMoney.setText(order.getAdvancedMoney());
@@ -95,6 +96,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             }
         });
 
+
         holder.btnComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,17 +109,17 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
 
             }
         });
-
+/*
         holder.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                if(!order.getSaveOrder())
+                if(!order.getSaveOrder()) //Check order is false exists before handle
                 {
                     animationUtils.animateItem(holder);
                     realm.executeTransaction(new Realm.Transaction() {
                         @Override
                         public void execute(Realm realm) {
-                            //Check order is already exists before add
+                           //Check it already exists in list order save of user
                             boolean checkAlready = false;
                             User user = getCurrentUser();
                             RealmList<Order> orders = user.getOrderListSave();
@@ -134,6 +136,8 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                                 realm.insertOrUpdate(order);
                                 user.getOrderListSave().add(order);
                                 realm.insertOrUpdate(user);
+                                animationUtils.animateItem(holder);
+                                TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
 
                             }
                             if (checkAlready)
@@ -146,18 +150,13 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                 }
                 else {
                     animationUtils.animateItem(holder);
-                    TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order_exists) ,TastyToast.LENGTH_SHORT,TastyToast.WARNING);
+                    TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
 
-                }
+                }*/
 
-            }
-        });
+          //  }
+        //});
 
-        if(position >previousPosition)
-        {
-            animationUtils.animate(holder,true);
-            previousPosition = position;
-        }
     }
 
     public void initRealm()

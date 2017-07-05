@@ -89,13 +89,13 @@
         </activity>
         <activity android:name="com.minh.findtheshipper.FragmentActivity" />
         <activity android:name="com.minh.findtheshipper.FragmentContainerShipper" >
-        </activity>
-        <activity android:name="com.minh.findtheshipper.HandleMapsActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.minh.findtheshipper.HandleMapsActivity" >
         </activity>
         <activity
             android:name="com.minh.findtheshipper.utils.SettingsActivity"

@@ -155,7 +155,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 return;
             }
         }
-       // addUser();
+        //addUser();
     }
 
 
@@ -342,6 +342,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     public void handleCreateNewOrder()
     {
         editStartPlace.setText(listControls.get(0).getContent());
+        editPhoneNumber.setText(getCurrentUser().getPhoneNumber());
     }
 
     @OnClick(R.id.btnConfirmCreateOrder)
@@ -398,8 +399,8 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 @Override
                 public void execute(Realm realm) {
                     User user = getCurrentUser();
-                    TastyToast.makeText(HandleMapsActivity.this, "Total:" + countOrder()+ ".", TastyToast.LENGTH_SHORT,TastyToast.INFO);
                     final Order order = realm.createObject(Order.class,"order_"+user.getEmail()+"_"+countOrder());
+
                     order.setStatus(getResources().getString(R.string.order_status));
                     order.setStartPoint("- "+ editStartPlace.getText().toString());
                     order.setFinishPoint("- "+ listControls.get(1).getContent());
@@ -420,24 +421,25 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
                     user.getOrderArrayList().add(order);
                     realm.insertOrUpdate(user);
-                    //Post data into server after add
-                    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-                    mDatabase.child(order.getOrderID()).child("Status").setValue(order.getStatus());
-                    mDatabase.child(order.getOrderID()).child("Start place").setValue(order.getStartPoint());
-                    mDatabase.child(order.getOrderID()).child("Finish place").setValue(order.getFinishPoint());
-                    mDatabase.child(order.getOrderID()).child("Advanced money").setValue(order.getAdvancedMoney());
-                    mDatabase.child(order.getOrderID()).child("Phone number").setValue(order.getPhoneNumber());
-                    mDatabase.child(order.getOrderID()).child("Ship Money").setValue(order.getShipMoney());
-                    mDatabase.child(order.getOrderID()).child("Note").setValue(order.getNote());
-                    mDatabase.child(order.getOrderID()).child("Distance").setValue(order.getDistance());
-                    mDatabase.child(order.getOrderID()).child("Datetime").setValue(order.getDateTime());
-                    mDatabase.child(order.getOrderID()).child("Save Order").setValue(order.getSaveOrder());
+
                     //Handle change to created order
                     getSupportActionBar().setTitle(R.string.created_order);
                     fragmentMaps.setVisibility(View.GONE);
                     fragmentShipper.setVisibility(View.VISIBLE);
                     fragment = new ListOrderCreatedFragment();
-                        try {
+                    try {
+                        //Post data into server after add
+                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
+                        mDatabase.child(order.getOrderID()).child("Status").setValue(order.getStatus());
+                        mDatabase.child(order.getOrderID()).child("Start place").setValue(order.getStartPoint());
+                        mDatabase.child(order.getOrderID()).child("Finish place").setValue(order.getFinishPoint());
+                        mDatabase.child(order.getOrderID()).child("Advanced money").setValue(order.getAdvancedMoney());
+                        mDatabase.child(order.getOrderID()).child("Phone number").setValue(order.getPhoneNumber());
+                        mDatabase.child(order.getOrderID()).child("Ship Money").setValue(order.getShipMoney());
+                        mDatabase.child(order.getOrderID()).child("Note").setValue(order.getNote());
+                        mDatabase.child(order.getOrderID()).child("Distance").setValue(order.getDistance());
+                        mDatabase.child(order.getOrderID()).child("Datetime").setValue(order.getDateTime());
+                        mDatabase.child(order.getOrderID()).child("Save Order").setValue(order.getSaveOrder());
                     FragmentManager manager = getSupportFragmentManager();
                     FragmentTransaction transaction = manager.beginTransaction();
                     transaction.replace(R.id.fragmentShopContainer,fragment);
@@ -459,7 +461,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 @Override
                 public void execute(Realm realm) {
                     User user = realm.createObject(User.class,"trinhvanminh2009");
-                    user.setPhoneNumber("01647976713");
+                    user.setPhoneNumber("01655713623");
                     user.setFullName("Văn Minh");
                     user.setAvatar(R.drawable.ic_your_profile);
                     realm.insertOrUpdate(user);

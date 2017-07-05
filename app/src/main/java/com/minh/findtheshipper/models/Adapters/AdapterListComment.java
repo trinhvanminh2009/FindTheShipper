@@ -1,5 +1,6 @@
 package com.minh.findtheshipper.models.Adapters;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -27,8 +28,8 @@ import java.util.List;
  */
 
 public class AdapterListComment extends RecyclerView.Adapter<AdapterListComment.ViewHolder> {
-    private List<Comment> commentList;
-
+    private List<CommentTemp> commentList;
+    private Context context;
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_comments,parent,false);
@@ -36,7 +37,8 @@ public class AdapterListComment extends RecyclerView.Adapter<AdapterListComment.
         return viewHolder;
     }
 
-    public AdapterListComment(List<Comment> commentList) {
+    public AdapterListComment(Context context, List<CommentTemp> commentList) {
+        this.context = context;
         this.commentList = commentList;
     }
 
@@ -46,11 +48,16 @@ public class AdapterListComment extends RecyclerView.Adapter<AdapterListComment.
         {
             //  URL imageURL = new URL("https://graph.facebook.com/211261632726746/picture?width=200&height=200");
             //  Bitmap bitmap = BitmapFactory.decodeStream(imageURL.openConnection().getInputStream());
-            Comment comment = commentList.get(position);
-            holder.imgAvatar.setImageResource(comment.getUser().getAvatar());
-            holder.txtUserName.setText(comment.getUser().getFullName());
+            CommentTemp comment = commentList.get(position);
+            holder.imgAvatar.setImageResource(R.drawable.ic_about);
+            holder.txtUserName.setText(comment.getUserName());
             holder.txtContent.setText(comment.getContent());
             holder.txtDateTime.setText(comment.getDateTime());
+
+         /*   holder.imgAvatar.setImageResource(comment.getUser().getAvatar());
+            holder.txtUserName.setText(comment.getUser().getFullName());
+            holder.txtContent.setText(comment.getContent());
+            holder.txtDateTime.setText(comment.getDateTime());*/
         }
 
     }

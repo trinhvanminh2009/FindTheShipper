@@ -12,11 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Adapters.AdapterListComment;
+import com.minh.findtheshipper.models.Adapters.CommentTemp;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderShipper;
 import com.minh.findtheshipper.models.Comment;
 import com.minh.findtheshipper.models.Order;
@@ -27,6 +32,7 @@ import com.squareup.picasso.Picasso;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -44,13 +50,14 @@ import io.realm.Sort;
 
 public class CommentDialogHelpers extends DialogFragment {
     private Realm realm;
-    private ArrayList<Comment>commentList;
+    private ArrayList<CommentTemp>commentList;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private String orderID;
     private  EditText editComment;
     private  Button btnComment;
+    private long countComment[] = new long[2];
 
     @Nullable
     @Override
@@ -68,7 +75,20 @@ public class CommentDialogHelpers extends DialogFragment {
         btnComment = (Button)view.findViewById(R.id.btnSendComment);
         orderID = getArguments().getString("orderID");
         loadAllList();
+        DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order/"+orderID+"/comment");
 
+        mDatabaseComment.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                countComment[0] = dataSnapshot.getChildrenCount();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         btnComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +97,7 @@ public class CommentDialogHelpers extends DialogFragment {
                 {
                     insertComment();
                     editComment.setText("");
-                    loadAllList();
+                   // loadAllList();
                 }
                 else {
                     TastyToast.makeText(getActivity(),"Please type a comment",TastyToast.LENGTH_SHORT,TastyToast.WARNING);
@@ -89,7 +109,12 @@ public class CommentDialogHelpers extends DialogFragment {
 
     private void insertComment()
     {
-        final Comment[] comment = new Comment[1];
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
+        String idComment = "cmt_"+getCurrentUser().getEmail()+"_"+orderID+"_"+countComment[0];
+        mDatabase.child(orderID).child("comment").child(idComment).child("user").setValue(getCurrentUser().getEmail());
+        mDatabase.child(orderID).child("comment").child(idComment).child("Content").setValue(editComment.getText().toString());
+        mDatabase.child(orderID).child("comment").child(idComment).child("Time").setValue(getCurrentTime());
+       /* final Comment[] comment = new Comment[1];
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -116,7 +141,7 @@ public class CommentDialogHelpers extends DialogFragment {
 
             }
         });
-
+*/
     }
 
     public String getCurrentTime()
@@ -126,13 +151,11 @@ public class CommentDialogHelpers extends DialogFragment {
         return simpleDateFormat.format(new Date());
     }
 
-    public int countOrder()
+    public long countOrder()
     {
-        int size;
-        Order order = realm.where(Order.class).equalTo("orderID",orderID).findFirst();
-        RealmList<Comment>comments = order.getComments();
-        size= comments.size();
-        return size;
+
+
+        return countComment[0];
     }
 
     public void initRealm()
@@ -144,16 +167,41 @@ public class CommentDialogHelpers extends DialogFragment {
     {
         try
         {
-            commentList = new ArrayList<>();
-            Order order = realm.where(Order.class).equalTo("orderID",orderID).findFirst();
-            //Get RealmResults from object is RealmList
-            RealmResults<Comment>commentRealmResults = order.getComments().where().findAllSorted("dateTime",Sort.DESCENDING);
-            for (int i = 0; i <commentRealmResults.size(); i++)
-            {
-                commentList.add(commentRealmResults.get(i));
-            }
-            adapter = new AdapterListComment(commentList);
-            recyclerView.setAdapter(adapter);
+            DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order/"+orderID+"/comment");
+            mDatabaseComment.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    commentList = new ArrayList<>();
+                    for(DataSnapshot child: dataSnapshot.getChildren())
+                    {
+                        final String key = child.getKey();
+                        String content = dataSnapshot.child(key).child("Content").getValue(String.class);
+                        String time = dataSnapshot.child(key).child("Time").getValue(String.class);
+                        String user = dataSnapshot.child(key).child("user").getValue(String.class);
+                        CommentTemp commentTemp = new CommentTemp();
+                        commentTemp.setIdComment(key);
+                        commentTemp.setDateTime(time);
+                        commentTemp.setContent(content);
+                        commentTemp.setContent(user);
+                        commentList.add(commentTemp);
+
+                    }
+                    try {
+                        Collections.sort(commentList, new SortCommentTempHelpers());
+                        adapter = new AdapterListComment(getActivity(),commentList);
+                        recyclerView.setAdapter(adapter);
+                    }catch (Exception e){}
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+
+
         }catch (Exception e)
         {
         }

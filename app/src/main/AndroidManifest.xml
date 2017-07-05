@@ -69,14 +69,14 @@
         </activity>
         <activity android:name=".FragmentActivity" />
         <activity android:name=".FragmentContainerShipper">
-
-        </activity>
-        <activity android:name=".HandleMapsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".HandleMapsActivity">
+
         </activity>
         <activity
             android:name=".utils.SettingsActivity"
