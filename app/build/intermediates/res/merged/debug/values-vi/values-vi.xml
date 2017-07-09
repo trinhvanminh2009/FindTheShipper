@@ -114,6 +114,7 @@
     <string name="permission_required_toast">Chức năng này yêu cầu quyền truy cập vị trí</string>
     <string name="phone_invalid_summary">Vui lòng kiểm tra số điện thoại lại</string>
     <string name="phone_invalid_title">Số điện thoại không hợp lệ</string>
+    <string name="please_wait">Vui lòng đợi...</string>
     <string name="please_wait_facebooklogin">Chỉ một lát</string>
     <string name="pref_description_social_recommendations"/>
     <string name="pref_header_data_sync">Dữ liệu và động bộ</string>
@@ -156,4 +157,6 @@
     <string name="tutorials">Hướng dẫn</string>
     <string name="type_comment">Nhập vào một bình luận....</string>
     <string name="version">Phiên bản</string>
+    <string name="wait_find_direction">Chỉ một lát. Đang tìm kiếm đường đi.</string>
+    <string name="wait_server">Chỉ một lát. Đang tải dữ liệu từ server</string>
 </resources>

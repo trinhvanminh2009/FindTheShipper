@@ -1,6 +1,6 @@
 package com.minh.findtheshipper.helpers;
 
-import com.minh.findtheshipper.models.Adapters.CommentTemp;
+import com.minh.findtheshipper.models.CommentTemp;
 
 import java.util.Comparator;
 

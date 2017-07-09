@@ -171,7 +171,7 @@
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#388E3C</color>
-    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorPrimaryDark">#468148</color>
     <color name="colorPrimaryLight">#BBDEFB</color>
     <color name="com_facebook_blue">#3B5998</color>
     <color name="com_facebook_button_background_color">#415dae</color>
@@ -3127,6 +3127,7 @@
     <string name="permission_required_toast"> Location permission is required for this function.</string>
     <string name="phone_invalid_summary">Please check your phone number again</string>
     <string name="phone_invalid_title">Phone number invalid</string>
+    <string name="please_wait">Please wait</string>
     <string name="please_wait_facebooklogin">Just a moment</string>
     <string name="pref_default_display_name" translatable="false">John Smith</string>
     <string name="pref_description_social_recommendations" translatable="false">Recommendations for people to contact
@@ -3173,6 +3174,8 @@
     <string name="tutorials">Tutorials</string>
     <string name="type_comment">Type a comment...</string>
     <string name="version">Version</string>
+    <string name="wait_find_direction">Just a moment. Finding directions</string>
+    <string name="wait_server">Just a moment. Loading data from server</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

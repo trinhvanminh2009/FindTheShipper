@@ -69,6 +69,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     public void onBindViewHolder(final CustomAdapterListviewOrderShipper.ViewHolder holder, int position) {
         final AnimationUtils animationUtils = new AnimationUtils();
         final OrderTemp order = orderList.get(position);
+
         holder.startingPoint.setText(order.getStartPoint());
         holder.finishPoint.setText(order.getFinishPoint());
         holder.advancedMoney.setText(order.getAdvancedMoney());
@@ -109,54 +110,122 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
 
             }
         });
-/*
+
         holder.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                if(!order.getSaveOrder()) //Check order is false exists before handle
+                final Order orderRealm = realm.where(Order.class).equalTo("orderID",order.getOrderID()).findFirst();
+                if(orderRealm == null)//Check it available in database
                 {
-                    animationUtils.animateItem(holder);
                     realm.executeTransaction(new Realm.Transaction() {
                         @Override
                         public void execute(Realm realm) {
-                           //Check it already exists in list order save of user
-                            boolean checkAlready = false;
-                            User user = getCurrentUser();
-                            RealmList<Order> orders = user.getOrderListSave();
-                            for(int i = 0 ; i < orders.size(); i++)
+                            final Order orderToRealm = realm.createObject(Order.class,order.getOrderID());
+                            orderToRealm.setStatus(order.getStatus());
+                            orderToRealm.setStartPoint(order.getStartPoint());
+                            orderToRealm.setFinishPoint(order.getFinishPoint());
+                            orderToRealm.setAdvancedMoney(order.getAdvancedMoney());
+                            orderToRealm.setShipMoney(order.getShipMoney());
+                            orderToRealm.setNote(order.getNote());
+                            orderToRealm.setSaveOrder(order.getSavedOrder());
+                            orderToRealm.setPhoneNumber(order.getPhoneNumber());
+                            realm.insertOrUpdate(orderToRealm);
+                            getCurrentUser().getOrderListSave().add(orderToRealm);
+                            realm.insertOrUpdate(getCurrentUser());
+                            if(!orderToRealm.getSaveOrder()) //Check order is false exists before handle
                             {
-                                if(orders.get(i).getOrderID().equals(order.getOrderID()))
+                                animationUtils.animateItem(holder);
+
+                                //Check it already exists in list order save of user
+                                boolean checkAlready = false;
+                                User user = getCurrentUser();
+                                RealmList<Order> orders = user.getOrderListSave();
+                                for(int i = 0 ; i < orders.size(); i++)
                                 {
-                                    checkAlready = true;
+                                    if(orders.get(i).getOrderID().equals(orderToRealm.getOrderID()))
+                                    {
+                                        checkAlready = true;
+                                    }
+                                }
+                                if (!checkAlready)
+                                {
+                                    orderToRealm.setSaveOrder(true);
+                                    realm.insertOrUpdate(orderToRealm);
+                                    user.getOrderListSave().add(orderToRealm);
+                                    realm.insertOrUpdate(user);
+                                    animationUtils.animateItem(holder);
+                                    TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
+
+                                }
+                                if (checkAlready)
+                                {
+                                    orderToRealm.setSaveOrder(true);
+                                    realm.insertOrUpdate(orderToRealm);
+                                    TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
+
                                 }
                             }
-                            if (!checkAlready)
-                            {
-                                order.setSaveOrder(true);
-                                realm.insertOrUpdate(order);
-                                user.getOrderListSave().add(order);
-                                realm.insertOrUpdate(user);
+                            else {
                                 animationUtils.animateItem(holder);
-                                TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
-
-                            }
-                            if (checkAlready)
-                            {
-                                order.setSaveOrder(true);
-                                realm.insertOrUpdate(order);
+                                TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order_exists) ,TastyToast.LENGTH_SHORT,TastyToast.WARNING);
                             }
                         }
                     });
+
                 }
-                else {
-                    animationUtils.animateItem(holder);
-                    TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
+                else if(orderRealm != null)
+                {
+                    if(!orderRealm.getSaveOrder()) //Check order is false exists before handle
+                    {
+                        animationUtils.animateItem(holder);
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+                                //Check it already exists in list order save of user
+                                boolean checkAlready = false;
+                                User user = getCurrentUser();
+                                RealmList<Order> orders = user.getOrderListSave();
+                                for(int i = 0 ; i < orders.size(); i++)
+                                {
+                                    if(orders.get(i).getOrderID().equals(order.getOrderID()))
+                                    {
+                                        checkAlready = true;
+                                    }
+                                }
+                                if (!checkAlready)
+                                {
+                                    orderRealm.setSaveOrder(true);
+                                    realm.insertOrUpdate(orderRealm);
+                                    user.getOrderListSave().add(orderRealm);
+                                    realm.insertOrUpdate(user);
+                                    animationUtils.animateItem(holder);
+                                    TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
 
-                }*/
+                                }
+                                if (checkAlready)
+                                {
+                                    orderRealm.setSaveOrder(true);
+                                    realm.insertOrUpdate(orderRealm);
+                                    TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
 
-          //  }
-        //});
+                                }
+                            }
+                        });
+                    }
+                    else {
+                        animationUtils.animateItem(holder);
+                        TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order_exists) ,TastyToast.LENGTH_SHORT,TastyToast.WARNING);
+                    }
+                }
+            }
+        });
 
+        holder.btnGetOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     public void initRealm()

@@ -3,16 +3,14 @@ package com.minh.findtheshipper.helpers;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.util.TimeUtils;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,28 +19,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Adapters.AdapterListComment;
-import com.minh.findtheshipper.models.Adapters.CommentTemp;
-import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderShipper;
-import com.minh.findtheshipper.models.Comment;
-import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.CommentTemp;
 import com.minh.findtheshipper.models.User;
 import com.sdsmdg.tastytoast.TastyToast;
-import com.squareup.picasso.Picasso;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import io.realm.Realm;
-import io.realm.RealmList;
-import io.realm.RealmResults;
-import io.realm.Sort;
 
 /**
  * Created by trinh on 6/27/2017.
@@ -56,12 +43,13 @@ public class CommentDialogHelpers extends DialogFragment {
     private RecyclerView.LayoutManager layoutManager;
     private String orderID;
     private  EditText editComment;
-    private  Button btnComment;
+    private ImageButton btnComment;
     private long countComment[] = new long[2];
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.MyDialogAnimation;
         View view = inflater.inflate(R.layout.dialog_comment, container,false);
         ButterKnife.bind(getActivity());
         recyclerView = (RecyclerView)view.findViewById(R.id.listComment);
@@ -72,7 +60,7 @@ public class CommentDialogHelpers extends DialogFragment {
         Toolbar toolbar = (Toolbar)view.findViewById(R.id.toolBar);
         toolbar.setTitle(getResources().getString(R.string.comment));
         editComment = (EditText)view.findViewById(R.id.editComment);
-        btnComment = (Button)view.findViewById(R.id.btnSendComment);
+        btnComment = (ImageButton) view.findViewById(R.id.btnSendComment);
         orderID = getArguments().getString("orderID");
         loadAllList();
         DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order/"+orderID+"/comment");
@@ -181,10 +169,9 @@ public class CommentDialogHelpers extends DialogFragment {
                         CommentTemp commentTemp = new CommentTemp();
                         commentTemp.setIdComment(key);
                         commentTemp.setDateTime(time);
+                        commentTemp.setUserName(user);
                         commentTemp.setContent(content);
-                        commentTemp.setContent(user);
                         commentList.add(commentTemp);
-
                     }
                     try {
                         Collections.sort(commentList, new SortCommentTempHelpers());

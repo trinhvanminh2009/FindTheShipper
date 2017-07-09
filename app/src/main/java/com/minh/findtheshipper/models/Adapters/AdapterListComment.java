@@ -1,9 +1,6 @@
 package com.minh.findtheshipper.models.Adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,15 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.minh.findtheshipper.R;
-import com.minh.findtheshipper.models.Comment;
-import com.squareup.picasso.Picasso;
+import com.minh.findtheshipper.models.CommentTemp;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**

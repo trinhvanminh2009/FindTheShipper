@@ -17,6 +17,10 @@ import com.facebook.GraphResponse;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.minh.findtheshipper.models.User;
+import com.minh.findtheshipper.models.UserTemp;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import org.json.JSONException;
@@ -50,7 +54,7 @@ public class MainActivity extends FragmentActivity {
         final LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
       //  if(checkLoginFacebook() == false)
-      //  {
+       // {
             loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override
                 public void onSuccess(final LoginResult loginResult) {
@@ -66,7 +70,16 @@ public class MainActivity extends FragmentActivity {
                                 String name = response.getJSONObject().getString("name");
                                 String userID = loginResult.getAccessToken().getUserId();
                                 String imageURL = new String("https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200");
-                                Log.e("check",imageURL);
+                                UserTemp userTemp = new UserTemp();
+                                userTemp.setAvatar(imageURL);
+                                userTemp.setEmail(email);
+                                userTemp.setName(name);
+                                userTemp.setGender(gender);
+                                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
+                                mDatabase.child(encodeString(email)).child("Name").setValue(encodeString(name));
+                                mDatabase.child(encodeString(email)).child("Gender").setValue(gender);
+                                mDatabase.child(encodeString(email)).child("Avatar").setValue(encodeString(imageURL));
+
                                 listProfile[0] = email;
                                 listProfile[1] = gender;
                                 listProfile[2] = name;
@@ -95,14 +108,22 @@ public class MainActivity extends FragmentActivity {
 
                 } });
 
-     /*  }
-        else {
-            Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+      // }
+      /*  else {
+            Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
             startActivity(intent);
-        }*/
+        }
+*/
 
 
+    }
 
+    public static String encodeString(String string) {
+        return string.replace(".", ",");
+    }
+
+    public static String decodeString(String string) {
+        return string.replace(",", ".");
     }
 
     @Override

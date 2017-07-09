@@ -94,4 +94,7 @@
     <string name="summary_change_mode_to_shipper">Bạn trở thành người giao hàng. Hãy bắt đầu kiếm tiền nào.</string>
     <string name="summary_language">Chọn một ngôn ngữ khác để hiển thị</string>
     <string name="summary_number_order_show">Số đơn hàng tối đa sẽ hiển thị</string>
+    <string name="please_wait">Vui lòng đợi...</string>
+    <string name="wait_find_direction">Chỉ một lát. Đang tìm kiếm đường đi.</string>
+    <string name="wait_server">Chỉ một lát. Đang tải dữ liệu từ server</string>
 </resources>

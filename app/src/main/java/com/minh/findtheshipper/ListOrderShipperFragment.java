@@ -1,5 +1,6 @@
 package com.minh.findtheshipper;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,10 +36,12 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    private ProgressDialog progressDialog;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        handleProgressDialog();
         View view = inflater.inflate(R.layout.list_recycle_view, container,false);
         recyclerView =(RecyclerView)view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
@@ -63,7 +67,15 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
         realm.close();
     }
 
+public void handleProgressDialog()
+{
+    progressDialog = new ProgressDialog(getActivity());
+    progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+    progressDialog.setTitle(R.string.please_wait);
+    progressDialog.setMessage(getResources().getString(R.string.wait_server));
 
+    progressDialog.show();
+}
     public void addUser()
     {
         try{
@@ -124,6 +136,7 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
                         String note = dataSnapshot.child(key).child("Note").getValue(String.class);
                         String distance = dataSnapshot.child(key).child("Distance").getValue(String.class);
                         String dateTime = dataSnapshot.child(key).child("Datetime").getValue(String.class);
+                        Boolean saveOrder = dataSnapshot.child(key).child("Save Order").getValue(Boolean.class);
                         OrderTemp orderTemp = new OrderTemp();
                         orderTemp.setOrderID(key);
                         orderTemp.setStatus(status);
@@ -135,13 +148,14 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
                         orderTemp.setNote(note);
                         orderTemp.setDistance(distance);
                         orderTemp.setDateTime(dateTime);
-                        // orderTemp.setSaveOrder(false);
+                        orderTemp.setSavedOrder(saveOrder);
                         orderList.add(orderTemp);
                     }
                     try {
                         Collections.sort(orderList,new SortOrderTempHelpers());
                         adapter = new CustomAdapterListviewOrderShipper(getActivity(),orderList);
                         recyclerView.setAdapter(adapter);
+                        progressDialog.dismiss();
                     }catch (Exception e)
                     {
 

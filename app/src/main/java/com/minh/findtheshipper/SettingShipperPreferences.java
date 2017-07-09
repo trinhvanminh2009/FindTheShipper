@@ -1,6 +1,7 @@
 package com.minh.findtheshipper;
 
 import android.app.ActionBar;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -20,6 +21,7 @@ import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -29,7 +31,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toolbar;
 
+import com.sdsmdg.tastytoast.TastyToast;
+
 import java.util.List;
+import java.util.Locale;
 
 public class SettingShipperPreferences extends PreferenceActivity {
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
@@ -109,6 +114,7 @@ public class SettingShipperPreferences extends PreferenceActivity {
         super.onCreate(savedInstanceState);
     }
 
+
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -168,6 +174,44 @@ public class SettingShipperPreferences extends PreferenceActivity {
             // guidelines.
             bindPreferencesSummaryToValue(findPreference(getResources().getString(R.string.number_order_show)));
             bindPreferencesSummaryToValue(findPreference(getResources().getString(R.string.change_language)));
+             final ListPreference listLanguage = (ListPreference)this.findPreference(this.getString(R.string.change_language));
+
+            listLanguage.setSummary(listLanguage.getEntry().toString());
+
+            listLanguage.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    listLanguage.setValue(newValue.toString());
+                    preference.setSummary(listLanguage.getEntry());
+                    if(listLanguage.getValue().equals("1"))
+                    {
+                        setLanguage("en-US");
+                        listLanguage.setDefaultValue(newValue);
+                    }
+                    if(listLanguage.getValue().equals("0"))
+                    {
+                        setLanguage("vi");
+                        listLanguage.setDefaultValue(newValue);
+                    }
+                    return true;
+                }
+            });
+
+
+        }
+
+        public void setLanguage(String language)
+        {
+            Locale locale = new Locale(language);
+            Resources resources = getResources();
+            DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+            Configuration configuration = resources.getConfiguration();
+            configuration.setLocale(locale);
+            resources.updateConfiguration(configuration,displayMetrics);
+            startActivity(new Intent(getActivity(),SettingShipperPreferences.class));
+
+
+
         }
 
         @Override

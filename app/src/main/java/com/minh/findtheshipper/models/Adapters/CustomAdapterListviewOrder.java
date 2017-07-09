@@ -50,7 +50,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         holder.txtDistance.setText(order.getDistance());
         holder.txtNote.setText(order.getNote());
         holder.txtPhoneNumber.setText(order.getPhoneNumber());
-        holder.txtDatetime.setText(order.getDateTime());
+        holder.txtDatetime.setText(R.string.order_last_updated+order.getDateTime());
         if(holder.txtStatus.getText() == "")
         {
             holder.haveStatus.setVisibility(View.GONE);

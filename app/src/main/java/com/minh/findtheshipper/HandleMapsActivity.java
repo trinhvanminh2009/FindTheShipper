@@ -75,6 +75,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -126,6 +127,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     private int itemClicked = 0;
     private Realm realm;
     private android.support.v4.app.Fragment fragment = null;
+    private long countOrder[] = new long[1];
 
 
     @Override
@@ -140,7 +142,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         // listProfile = getIntent().getStringArrayExtra("profile");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Create new order");
+        getSupportActionBar().setTitle(R.string.created_order);
         NavigationDrawer(toolbar);
         initRealm();
         listControls.add(new ListControl(R.drawable.ic_starting_point, getResources().getString(R.string.start_place)));
@@ -155,7 +157,21 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 return;
             }
         }
-        //addUser();
+        //Count order on server before create orders. Because server is thread slow.
+        DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order");
+        mDatabaseComment.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                countOrder[0] = dataSnapshot.getChildrenCount();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+       // addUser();
     }
 
 
@@ -399,8 +415,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 @Override
                 public void execute(Realm realm) {
                     User user = getCurrentUser();
-                    final Order order = realm.createObject(Order.class,"order_"+user.getEmail()+"_"+countOrder());
-
+                    final Order order = realm.createObject(Order.class,"order_"+user.getEmail()+"_"+countOrder[0]);
                     order.setStatus(getResources().getString(R.string.order_status));
                     order.setStartPoint("- "+ editStartPlace.getText().toString());
                     order.setFinishPoint("- "+ listControls.get(1).getContent());
@@ -413,9 +428,9 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                     }
                     order.setDistance(getResources().getString(R.string.order_distance)+ txtDistance.getText().toString());
                     order.setPhoneNumber(getResources().getString(R.string.order_phone_number)+ editPhoneNumber.getText().toString());
-                    DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
+                    DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
                     String date = df.format(Calendar.getInstance().getTime());
-                    order.setDateTime(getResources().getString(R.string.order_last_updated)+ date);
+                    order.setDateTime(date);
                     order.setSaveOrder(false);
                     realm.insertOrUpdate(order);
 
@@ -472,6 +487,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         }
     }
 
+
     private User getCurrentUser()
     {
         User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
@@ -481,14 +497,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     {
         realm = null;
         realm = Realm.getDefaultInstance();
-    }
-    public int countOrder()
-    {
-        int size;
-        User user = getCurrentUser();
-        RealmList<Order>orders = user.getOrderArrayList();
-        size= orders.size();
-        return size;
     }
 
 
@@ -671,7 +679,8 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     @Override
     public void onDirectionFinderStart() {
-        progressDialog = ProgressDialog.show(this ,"Please wait...","Finding direction...",true);
+        progressDialog = ProgressDialog.show(this ,getResources().getString(R.string.please_wait),
+                getResources().getString(R.string.wait_find_direction),true);
         if(startMarkers != null)
         {
             for(Marker marker: startMarkers)

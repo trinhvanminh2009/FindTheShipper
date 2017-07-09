@@ -15,6 +15,8 @@ public class OrderTemp {
     private String distance;
     private String phoneNumber;
     private String dateTime;
+    private Boolean savedOrder;
+    private String userGetOrder;
 
     public OrderTemp() {
     }
@@ -97,5 +99,13 @@ public class OrderTemp {
 
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
+    }
+
+    public Boolean getSavedOrder() {
+        return savedOrder;
+    }
+
+    public void setSavedOrder(Boolean savedOrder) {
+        this.savedOrder = savedOrder;
     }
 }

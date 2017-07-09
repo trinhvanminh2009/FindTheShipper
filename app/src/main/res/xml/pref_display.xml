@@ -19,12 +19,12 @@
 
     <ListPreference android:key="@string/change_language"
         android:title="@string/change_language"
-        android:defaultValue="1"
+        android:entries="@array/change_language_array"
+        android:entryValues="@array/change_language_values"
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
         android:summary="@string/summary_language"
-        android:entries="@array/change_language_array"
-        android:entryValues="@array/change_language_values">
+       >
     </ListPreference>
 <Preference android:title="@string/change_mode"
     android:summary="@string/summary_change_mode">

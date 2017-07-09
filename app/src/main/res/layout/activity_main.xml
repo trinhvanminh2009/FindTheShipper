@@ -17,14 +17,16 @@
         <ImageView
             android:id="@+id/imgBackground"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/background_home" />
+            android:layout_height="500dp"
+            android:src="@drawable/background_home">
+
+        </ImageView>
         <com.facebook.login.widget.LoginButton
             android:id="@+id/login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-           />
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 
 </FrameLayout>

@@ -129,8 +129,6 @@
                         android:visibility="gone"
                         android:background="@null"
                         android:id="@+id/btnAdd"/>
-
-
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"

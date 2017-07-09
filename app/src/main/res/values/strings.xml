@@ -82,7 +82,9 @@
     <string name="phone_invalid_summary">Please check your phone number again</string>
     <string name="money_ship_invalid_title">Money ship invalid</string>
     <string name="money_ship_invalid_summary">You have to input money ship</string>
-
+    <string name="please_wait">Please wait</string>
+    <string name="wait_server">Just a moment. Loading data from server</string>
+    <string name="wait_find_direction">Just a moment. Finding directions</string>
     <string-array name="change_language_array">
         <item>Vietnamese</item>
         <item>English</item>
