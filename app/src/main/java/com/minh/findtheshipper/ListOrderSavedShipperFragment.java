@@ -7,10 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.minh.findtheshipper.models.Adapters.AdapterListviewOrderSaved;
+import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderSaved;
+import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.User;
-import com.sdsmdg.tastytoast.TastyToast;
+
 import java.util.ArrayList;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -29,7 +30,6 @@ public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragme
         recyclerView =(RecyclerView)view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-
         loadAllList();
         return view;
     }
@@ -52,7 +52,7 @@ public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragme
             {
                 orderList.add(orders.get(i));
             }
-            adapter = new AdapterListviewOrderSaved(getActivity(),orderList);
+            adapter = new CustomAdapterListviewOrderSaved(getActivity(),orderList);
             recyclerView.setAdapter(adapter);
         }catch (Exception e){}
 
@@ -65,7 +65,8 @@ public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragme
 
     private User getCurrentUser()
     {
-        User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        User user = realm.where(User.class).beginGroup().equalTo("email",currentUser.getEmail()).endGroup().findFirst();
         return user;
     }
 }

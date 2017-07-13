@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/imgBackground"
-            android:layout_width="wrap_content"
-            android:layout_height="500dp"
+            android:layout_width="match_parent"
+            android:layout_height="527dp"
             android:src="@drawable/background_home">
 
         </ImageView>

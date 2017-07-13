@@ -1,25 +1,20 @@
 package com.minh.findtheshipper;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
-import com.minh.findtheshipper.models.Adapters.AdapterListviewOrderSaved;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrder;
+import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.User;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;
@@ -31,8 +26,6 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -78,7 +71,8 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
     private User getCurrentUser()
     {
-        User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        User user = realm.where(User.class).beginGroup().equalTo("email",currentUser.getEmail()).endGroup().findFirst();
         return user;
     }
 
@@ -88,8 +82,6 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
             @Override
             public void execute(Realm realm) {
                 final RealmResults<Order> results = realm.where(Order.class).findAll();
-
-
                 results.deleteAllFromRealm();
             }
         });

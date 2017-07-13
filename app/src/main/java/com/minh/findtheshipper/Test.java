@@ -37,7 +37,6 @@ import io.realm.RealmResults;
 public class Test extends BaseActivity {
 
     @BindView(R.id.toolBar) Toolbar toolbar;
-    private TextView textView;
     private Realm realm;
 
 
@@ -45,7 +44,6 @@ public class Test extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        textView = (TextView)findViewById(R.id.testFireBase);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Test");

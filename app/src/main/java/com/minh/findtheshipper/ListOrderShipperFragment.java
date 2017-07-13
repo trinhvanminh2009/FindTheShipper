@@ -49,8 +49,6 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
         Realm.init(getActivity());
         initRealm();
         loadAllList();
-      //  addUser();
-      //  loadAllUser();
         return view;
 
     }
@@ -67,57 +65,19 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
         realm.close();
     }
 
-public void handleProgressDialog()
-{
-    progressDialog = new ProgressDialog(getActivity());
-    progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-    progressDialog.setTitle(R.string.please_wait);
-    progressDialog.setMessage(getResources().getString(R.string.wait_server));
-
-    progressDialog.show();
-}
-    public void addUser()
+    public void handleProgressDialog()
     {
-        try{
-            realm.executeTransaction(new Realm.Transaction() {
-                @Override
-                public void execute(Realm realm) {
-                    User user = realm.createObject(User.class,"trinhvanminh2009");
-                    user.setPhoneNumber("01647976713");
-                    user.setFullName("Trịnh Văn Minh");
-                    user.setAvatar(R.drawable.ic_your_profile);
-                    RealmResults<Order> orders = realm.where(Order.class).findAllSorted("dateTime", Sort.DESCENDING);
-                    for (int i = 0; i < orders.size(); i++)
-                    {
-                        user.getOrderArrayList().add(orders.get(i));
-                    }
-                    realm.insertOrUpdate(user);
-                }
-            });
-        }catch (Exception e)
-        {
-
-        }
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setTitle(R.string.please_wait);
+        progressDialog.setMessage(getResources().getString(R.string.wait_server));
+        progressDialog.show();
     }
-    public void loadAllUser()
-    {
-        try
-        {
-            RealmResults<User> users = realm.where(User.class).findAll();
-            for (int i = 0; i < users.size(); i++)
-            {
-              TastyToast.makeText(getActivity(), users.get(i).getOrderArrayList().toString(),TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
-            }
 
-        }catch (Exception e)
-        {
-        }
-    }
     public void loadAllList()
     {
         try
         {
-
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
             Query query = mDatabase.orderByChild("Datetime");
             query.addValueEventListener(new ValueEventListener() {
@@ -158,21 +118,15 @@ public void handleProgressDialog()
                         progressDialog.dismiss();
                     }catch (Exception e)
                     {
-
                     }
-
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-
                 }
             });
-
-
         }catch (Exception e)
         {
         }
     }
-
 }

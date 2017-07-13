@@ -28,6 +28,7 @@ import android.widget.TextView;
 import com.minh.findtheshipper.ListOrderSavedShipperFragment;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
+import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.User;
@@ -69,7 +70,6 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     public void onBindViewHolder(final CustomAdapterListviewOrderShipper.ViewHolder holder, int position) {
         final AnimationUtils animationUtils = new AnimationUtils();
         final OrderTemp order = orderList.get(position);
-
         holder.startingPoint.setText(order.getStartPoint());
         holder.finishPoint.setText(order.getFinishPoint());
         holder.advancedMoney.setText(order.getAdvancedMoney());
@@ -108,6 +108,13 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                 dialogHelpers.show(fragmentManager,"New fragment");
                 dialogHelpers.setArguments(bundle);
 
+            }
+        });
+
+        holder.btnGetOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("test", "Check1");
             }
         });
 
@@ -235,7 +242,8 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     }
     private User getCurrentUser()
     {
-        User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        User user = realm.where(User.class).beginGroup().equalTo("email",currentUser.getEmail()).endGroup().findFirst();
         return user;
     }
 

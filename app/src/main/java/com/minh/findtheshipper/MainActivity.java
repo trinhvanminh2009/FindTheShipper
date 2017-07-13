@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -19,6 +20,7 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.models.UserTemp;
 import com.sdsmdg.tastytoast.TastyToast;
@@ -30,6 +32,7 @@ import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.realm.Realm;
 
 public class MainActivity extends FragmentActivity {
 
@@ -38,12 +41,14 @@ public class MainActivity extends FragmentActivity {
     ProgressDialog progress;
     @BindView(R.id.toolBar) Toolbar toolbar;
     String []listProfile = new String[4];
-
+    private Realm realm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        Realm.init(this);
+        initRealm();
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         progress=new ProgressDialog(MainActivity.this);
@@ -53,48 +58,56 @@ public class MainActivity extends FragmentActivity {
         callbackManager = CallbackManager.Factory.create();
         final LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
-      //  if(checkLoginFacebook() == false)
-       // {
+        if(checkLoginFacebook() == false)
+        {
             loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override
                 public void onSuccess(final LoginResult loginResult) {
 
-                    final GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-                        @Override
-                        public void onCompleted(JSONObject object, GraphResponse response) {
+                        final GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response) {
 
-                            try {
-                                Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
-                                String email = response.getJSONObject().getString("email");
-                                String gender = response.getJSONObject().getString("gender");
-                                String name = response.getJSONObject().getString("name");
-                                String userID = loginResult.getAccessToken().getUserId();
-                                String imageURL = new String("https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200");
-                                UserTemp userTemp = new UserTemp();
-                                userTemp.setAvatar(imageURL);
-                                userTemp.setEmail(email);
-                                userTemp.setName(name);
-                                userTemp.setGender(gender);
-                                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
-                                mDatabase.child(encodeString(email)).child("Name").setValue(encodeString(name));
-                                mDatabase.child(encodeString(email)).child("Gender").setValue(gender);
-                                mDatabase.child(encodeString(email)).child("Avatar").setValue(encodeString(imageURL));
+                                try {
+                                    EncodingFirebase encodingFirebase = new EncodingFirebase();
+                                    Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
+                                    final String email = response.getJSONObject().getString("email");
+                                    final String gender = response.getJSONObject().getString("gender");
+                                    final String name = response.getJSONObject().getString("name");
+                                    String userID = loginResult.getAccessToken().getUserId();
+                                    final String imageURL = new String("https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200");
+                                    UserTemp userTemp = new UserTemp();
+                                    userTemp.setAvatar(imageURL);
+                                    userTemp.setEmail(email);
+                                    userTemp.setName(name);
+                                    userTemp.setGender(gender);
+                                    /**Have to save current user into database for all class can access to current user login Facebook.
+                                     * */
+                                    realm.executeTransaction(new Realm.Transaction() {
+                                        @Override
+                                        public void execute(Realm realm) {
+                                            CurrentUser currentUser = realm.createObject(CurrentUser.class,email);
+                                            currentUser.setGender(gender);
+                                            currentUser.setName(name);
+                                            currentUser.setAvatar(imageURL);
+                                            realm.insertOrUpdate(currentUser);
+                                        }
+                                    });
+                                    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
+                                    mDatabase.child(encodingFirebase.encodeString(email)).child("Name").setValue(encodingFirebase.encodeString(name));
+                                    mDatabase.child(encodingFirebase.encodeString(email)).child("Gender").setValue(gender);
+                                    mDatabase.child(encodingFirebase.encodeString(email)).child("Avatar").setValue(encodingFirebase.encodeString(imageURL));
 
-                                listProfile[0] = email;
-                                listProfile[1] = gender;
-                                listProfile[2] = name;
-                                listProfile[3] = imageURL;
-                                intent.putExtra("profile",listProfile);
-                                startActivity(intent);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                                    startActivity(intent);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        }
-                    });
-                    Bundle parameters = new Bundle();
-                    parameters.putString("fields", "id,name,email,gender,birthday");
-                    request.setParameters(parameters);
-                    request.executeAsync();
+                        });
+                        Bundle parameters = new Bundle();
+                        parameters.putString("fields", "id,name,email,gender,birthday");
+                        request.setParameters(parameters);
+                        request.executeAsync();
                 }
 
                 @Override
@@ -108,29 +121,24 @@ public class MainActivity extends FragmentActivity {
 
                 } });
 
-      // }
-      /*  else {
+        }
+       else {
+
             Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
             startActivity(intent);
         }
-*/
-
-
     }
 
-    public static String encodeString(String string) {
-        return string.replace(".", ",");
-    }
-
-    public static String decodeString(String string) {
-        return string.replace(",", ".");
+    public void initRealm()
+    {
+        realm = null;
+        realm = Realm.getDefaultInstance();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
-
     }
 
     public boolean checkLoginFacebook()
@@ -142,8 +150,5 @@ public class MainActivity extends FragmentActivity {
         else {
             return false;
         }
-
     }
-
-
 }

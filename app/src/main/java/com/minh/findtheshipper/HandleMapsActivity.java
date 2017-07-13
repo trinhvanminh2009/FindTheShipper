@@ -2,6 +2,7 @@ package com.minh.findtheshipper;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -12,6 +13,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.*;
 import android.support.v4.content.ContextCompat;
@@ -26,10 +28,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -48,6 +53,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mikepenz.actionitembadge.library.ActionItemBadge;
+import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -57,11 +63,15 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
+import com.mikepenz.materialdrawer.util.DrawerImageLoader;
+import com.mikepenz.materialdrawer.util.DrawerUIUtils;
 import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
 import com.minh.findtheshipper.models.Comment;
+import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.ListControl;
 import com.minh.findtheshipper.models.NotificationObject;
 import com.minh.findtheshipper.models.Order;
@@ -71,6 +81,8 @@ import com.minh.findtheshipper.utils.PermissionUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -85,9 +97,8 @@ import butterknife.OnClick;
 import butterknife.OnItemClick;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
-import io.realm.RealmList;
 import io.realm.RealmResults;
+import io.realm.Sort;
 
 
 public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCallback,
@@ -116,7 +127,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     @BindView(R.id.editNote) EditText editNote;
     @BindView(R.id.fragmentMaps)LinearLayout fragmentMaps;
     @BindView(R.id.fragmentShopContainer) FrameLayout fragmentShipper;
-    private String[] listProfile = new String[4];
     private boolean showPermissionDeniedDialog = false;
     private List<Marker>startMarkers = new ArrayList<>();
     private List<Marker>finishMarkers = new ArrayList<>();
@@ -139,12 +149,11 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         realm.init(HandleMapsActivity.this);
-        // listProfile = getIntent().getStringArrayExtra("profile");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.created_order);
-        NavigationDrawer(toolbar);
         initRealm();
+        NavigationDrawer(toolbar);
         listControls.add(new ListControl(R.drawable.ic_starting_point, getResources().getString(R.string.start_place)));
         listControls.add(new ListControl(R.drawable.ic_finish_point, getResources().getString(R.string.finish_place)));
         adapterListView = new CustomAdapterListView(HandleMapsActivity.this, listControls);
@@ -171,17 +180,11 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
             }
         });
-       // addUser();
+
     }
 
-
-
-
-
     public void NavigationDrawer(Toolbar toolbar) {
-
-        //   Uri myUri = Uri.parse(listProfile[3]);
-        // Log.d("myTags",myUri.toString());
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
         new DrawerBuilder().withActivity(this).build();
         final PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.create_new_order);
         final PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.created_order);
@@ -191,19 +194,24 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(6).withName(R.string.version);
         PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(7).withName(R.string.setting);
         PrimaryDrawerItem item8 = new PrimaryDrawerItem().withIdentifier(8).withName(R.string.log_out);
-        AccountHeader headerResult = new AccountHeaderBuilder()
-                .withActivity(this)
-                .withHeaderBackground(R.drawable.background_home)
-                .addProfiles(
-                        new ProfileDrawerItem().withName("Minh").withEmail("Trịnh Văn Minh")//.withIcon(myUri)
-                )
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
-                        return false;
-                    }
-                })
-                .build();
+        AccountHeader headerResult = null;
+
+            headerResult = new AccountHeaderBuilder()
+                    .withActivity(this)
+                    .withHeaderBackground(R.drawable.image_drawer)
+                    .addProfiles(
+                            new ProfileDrawerItem().withName(currentUser.getName()).withEmail(currentUser.getEmail())
+                                    .withIcon(getResources().getDrawable(R.drawable.ic_your_profile))
+                    )
+                    .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+                        @Override
+                        public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
+                            return false;
+                        }
+                    })
+                    .build();
+
+
         final Drawer result = new DrawerBuilder()
                 .withActivity(this)
                 .withAccountHeader(headerResult)
@@ -227,6 +235,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                          * Because I did layout before I know how to using Fragment.
                          * But I can change this activity into fragment, this is perfect way
                          * */
+
                         if(drawerItem.getIdentifier() ==1)
                         {
                             getSupportActionBar().setTitle(R.string.create_new_order);
@@ -325,6 +334,12 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     }
 
+    private Bitmap getFacebookProfilePicture(String url) throws IOException {
+        URL imageURL = new URL(url);
+        Bitmap bitmap = BitmapFactory.decodeStream(imageURL.openConnection().getInputStream());
+        return bitmap;
+    }
+
     private boolean isPhoneNumberValid(String phoneNumber)
     {
 
@@ -359,6 +374,8 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     {
         editStartPlace.setText(listControls.get(0).getContent());
         editPhoneNumber.setText(getCurrentUser().getPhoneNumber());
+
+
     }
 
     @OnClick(R.id.btnConfirmCreateOrder)
@@ -410,24 +427,23 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     public void insertOrder()
     {
-        try{
             realm.executeTransaction(new Realm.Transaction() {
                 @Override
                 public void execute(Realm realm) {
+                    EncodingFirebase encodingFirebase = new EncodingFirebase();
                     User user = getCurrentUser();
-                    final Order order = realm.createObject(Order.class,"order_"+user.getEmail()+"_"+countOrder[0]);
+                    final Order order = realm.createObject(Order.class, "order_" + user.getEmail() + "_" + countOrder[0]);
                     order.setStatus(getResources().getString(R.string.order_status));
-                    order.setStartPoint("- "+ editStartPlace.getText().toString());
-                    order.setFinishPoint("- "+ listControls.get(1).getContent());
-                    order.setAdvancedMoney(getResources().getString(R.string.order_advanced_money) + editAdvancedMoney.getText().toString()+"K VNĐ");
-                    order.setDistance(getResources().getString(R.string.order_distance)+ txtDistance.getText().toString());
-                    order.setShipMoney(getResources().getString(R.string.order_ship_money)+ editShipMoney.getText().toString()+ "K VNĐ");
-                    if(!editNote.getText().toString().equals(""))
-                    {
-                        order.setNote(getResources().getString(R.string.order_note)+ editNote.getText().toString());
+                    order.setStartPoint("- " + editStartPlace.getText().toString());
+                    order.setFinishPoint("- " + listControls.get(1).getContent());
+                    order.setAdvancedMoney(getResources().getString(R.string.order_advanced_money) + editAdvancedMoney.getText().toString() + "K VNĐ");
+                    order.setDistance(getResources().getString(R.string.order_distance) + txtDistance.getText().toString());
+                    order.setShipMoney(getResources().getString(R.string.order_ship_money) + editShipMoney.getText().toString() + "K VNĐ");
+                    if (!editNote.getText().toString().equals("")) {
+                        order.setNote(getResources().getString(R.string.order_note) + editNote.getText().toString());
                     }
-                    order.setDistance(getResources().getString(R.string.order_distance)+ txtDistance.getText().toString());
-                    order.setPhoneNumber(getResources().getString(R.string.order_phone_number)+ editPhoneNumber.getText().toString());
+                    order.setDistance(getResources().getString(R.string.order_distance) + txtDistance.getText().toString());
+                    order.setPhoneNumber(getResources().getString(R.string.order_phone_number) + editPhoneNumber.getText().toString());
                     DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
                     String date = df.format(Calendar.getInstance().getTime());
                     order.setDateTime(date);
@@ -436,61 +452,63 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
                     user.getOrderArrayList().add(order);
                     realm.insertOrUpdate(user);
-
+                    //Post data into server after added to database, have to encoding before post into firebase server
+                    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Status").setValue(order.getStatus());
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Start place").setValue(order.getStartPoint());
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Finish place").setValue(order.getFinishPoint());
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Advanced money").setValue(order.getAdvancedMoney());
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Phone number").setValue(order.getPhoneNumber());
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Ship Money").setValue(order.getShipMoney());
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Note").setValue(order.getNote());
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Distance").setValue(order.getDistance());
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Datetime").setValue(order.getDateTime());
+                    mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Save Order").setValue(order.getSaveOrder());
                     //Handle change to created order
                     getSupportActionBar().setTitle(R.string.created_order);
                     fragmentMaps.setVisibility(View.GONE);
                     fragmentShipper.setVisibility(View.VISIBLE);
                     fragment = new ListOrderCreatedFragment();
-                    try {
-                        //Post data into server after add
-                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-                        mDatabase.child(order.getOrderID()).child("Status").setValue(order.getStatus());
-                        mDatabase.child(order.getOrderID()).child("Start place").setValue(order.getStartPoint());
-                        mDatabase.child(order.getOrderID()).child("Finish place").setValue(order.getFinishPoint());
-                        mDatabase.child(order.getOrderID()).child("Advanced money").setValue(order.getAdvancedMoney());
-                        mDatabase.child(order.getOrderID()).child("Phone number").setValue(order.getPhoneNumber());
-                        mDatabase.child(order.getOrderID()).child("Ship Money").setValue(order.getShipMoney());
-                        mDatabase.child(order.getOrderID()).child("Note").setValue(order.getNote());
-                        mDatabase.child(order.getOrderID()).child("Distance").setValue(order.getDistance());
-                        mDatabase.child(order.getOrderID()).child("Datetime").setValue(order.getDateTime());
-                        mDatabase.child(order.getOrderID()).child("Save Order").setValue(order.getSaveOrder());
                     FragmentManager manager = getSupportFragmentManager();
                     FragmentTransaction transaction = manager.beginTransaction();
-                    transaction.replace(R.id.fragmentShopContainer,fragment);
+                    transaction.replace(R.id.fragmentShopContainer, fragment);
                     transaction.commit();
-                }catch (Exception e)
-                {}
+
                 }
+
             });
 
-        }catch (Exception e)
-        {
-        }
+
+
 
     }
     public void addUser()
     {
-        try{
+        final CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
             realm.executeTransaction(new Realm.Transaction() {
                 @Override
                 public void execute(Realm realm) {
-                    User user = realm.createObject(User.class,"trinhvanminh2009");
+                    User user = realm.createObject(User.class,currentUser.getEmail());
                     user.setPhoneNumber("01655713623");
-                    user.setFullName("Văn Minh");
+                    user.setFullName(currentUser.getName());
                     user.setAvatar(R.drawable.ic_your_profile);
                     realm.insertOrUpdate(user);
                 }
             });
-        }catch (Exception e)
-        {
-        }
     }
 
 
     private User getCurrentUser()
     {
-        User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        RealmResults<User> checkUser = realm.where(User.class).equalTo("email",currentUser.getEmail()).findAll();
+        if(checkUser.size() == 0)
+        {
+            addUser();
+
+        }
+
+        User user = realm.where(User.class).equalTo("email",currentUser.getEmail()).findFirst();
         return user;
     }
     public void initRealm()

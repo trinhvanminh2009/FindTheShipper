@@ -33,10 +33,12 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.minh.findtheshipper.helpers.DialogHelpers;
+import com.minh.findtheshipper.models.CurrentUser;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.realm.Realm;
 
 public class FragmentContainerShipper extends FragmentActivity {
 
@@ -47,11 +49,14 @@ public class FragmentContainerShipper extends FragmentActivity {
     private int badgerCount = 10;
     private static final int REQUEST= 112;
     private Context context = this;
+    private Realm realm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_container_shipper);
         ButterKnife.bind(this);
+        realm.init(FragmentContainerShipper.this);
+        initRealm();
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.list_order_shipper);
@@ -81,6 +86,12 @@ public class FragmentContainerShipper extends FragmentActivity {
 
             }
         }
+    }
+
+    public void initRealm()
+    {
+        realm = null;
+        realm = Realm.getDefaultInstance();
     }
 
     private Drawable resizeImage(int resId, int w, int h)
@@ -163,11 +174,7 @@ public class FragmentContainerShipper extends FragmentActivity {
     }
 
     public void NavigationDrawer(final Toolbar toolbar) {
-
-        //   Uri myUri = Uri.parse(listProfile[3]);
-        // Log.d("myTags",myUri.toString());
-
-
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
         new DrawerBuilder().withActivity(this).build();
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.list_order_shipper);
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.list_order_saved_shipper);
@@ -181,9 +188,9 @@ public class FragmentContainerShipper extends FragmentActivity {
         PrimaryDrawerItem item10 = new PrimaryDrawerItem().withIdentifier(10).withName(R.string.log_out);
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.background_home)
+                .withHeaderBackground(R.drawable.image_drawer)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Minh").withEmail("Trịnh Văn Minh")//.withIcon(myUri)
+                        new ProfileDrawerItem().withName(currentUser.getName()).withEmail(currentUser.getEmail())//.withIcon(myUri)
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override

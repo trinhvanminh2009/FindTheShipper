@@ -17,9 +17,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.minh.findtheshipper.EncodingFirebase;
 import com.minh.findtheshipper.R;
-import com.minh.findtheshipper.models.Adapters.AdapterListComment;
+import com.minh.findtheshipper.models.Adapters.CustomAdapterListComment;
 import com.minh.findtheshipper.models.CommentTemp;
+import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.User;
 import com.sdsmdg.tastytoast.TastyToast;
 
@@ -98,7 +100,8 @@ public class CommentDialogHelpers extends DialogFragment {
     private void insertComment()
     {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-        String idComment = "cmt_"+getCurrentUser().getEmail()+"_"+orderID+"_"+countComment[0];
+        EncodingFirebase encodingFirebase = new EncodingFirebase();
+        String idComment = "cmt_"+encodingFirebase.encodeString(getCurrentUser().getEmail())+"_"+orderID+"_"+countComment[0];
         mDatabase.child(orderID).child("comment").child(idComment).child("user").setValue(getCurrentUser().getEmail());
         mDatabase.child(orderID).child("comment").child(idComment).child("Content").setValue(editComment.getText().toString());
         mDatabase.child(orderID).child("comment").child(idComment).child("Time").setValue(getCurrentTime());
@@ -175,7 +178,7 @@ public class CommentDialogHelpers extends DialogFragment {
                     }
                     try {
                         Collections.sort(commentList, new SortCommentTempHelpers());
-                        adapter = new AdapterListComment(getActivity(),commentList);
+                        adapter = new CustomAdapterListComment(getActivity(),commentList);
                         recyclerView.setAdapter(adapter);
                     }catch (Exception e){}
 
@@ -195,7 +198,8 @@ public class CommentDialogHelpers extends DialogFragment {
     }
     private User getCurrentUser()
     {
-        User user = realm.where(User.class).beginGroup().equalTo("email","trinhvanminh2009").endGroup().findFirst();
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        User user = realm.where(User.class).beginGroup().equalTo("email",currentUser.getEmail()).endGroup().findFirst();
         return user;
     }
 

@@ -224,6 +224,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\916df7936617000d2798fe1818b712ae8e4d0570\\output\\res\\drawable-xxhdpi-v4\\com_facebook_button_like_icon_selected.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\image_drawer.jpg",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\image_drawer.jpg"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\40eba9bb221d3a87abbae2cf3d330768820d50ff\\output\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
     },
