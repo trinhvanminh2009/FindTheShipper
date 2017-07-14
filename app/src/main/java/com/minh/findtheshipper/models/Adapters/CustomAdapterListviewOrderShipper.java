@@ -25,6 +25,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.minh.findtheshipper.EncodingFirebase;
 import com.minh.findtheshipper.ListOrderSavedShipperFragment;
 import com.minh.findtheshipper.R;
@@ -38,6 +40,7 @@ import com.sdsmdg.tastytoast.TastyToast;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import io.realm.Realm;
@@ -226,6 +229,9 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             public void onClick(View v) {
                 EncodingFirebase encodingFirebase = new EncodingFirebase();
                 Log.e("Order of user",encodingFirebase.getEmailFromUserID(order.getOrderID()));
+                HashMap<String,String> params = new HashMap<String, String>();
+                params.put("id", FirebaseInstanceId.getInstance().getToken());
+
             }
         });
     }

@@ -181,6 +181,8 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             }
         });
 
+
+
     }
 
     public void NavigationDrawer(Toolbar toolbar) {
