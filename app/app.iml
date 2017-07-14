@@ -119,6 +119,7 @@
     <orderEntry type="library" exported="" name="firebase-core-11.0.2" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.4.0" level="project" />
     <orderEntry type="library" exported="" name="actionitembadge-3.3.1" level="project" />
+    <orderEntry type="library" exported="" name="firebase-messaging-11.0.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-location-11.0.2" level="project" />
     <orderEntry type="library" exported="" name="firebase-database-11.0.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="exposed-instrumentation-api-publish-0.5" level="project" />

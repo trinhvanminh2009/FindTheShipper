@@ -90,9 +90,9 @@ public final class R {
         public static final int satellite = 0x7f10005c;
         public static final int standard = 0x7f100067;
         public static final int terrain = 0x7f10005d;
-        public static final int text = 0x7f10015a;
-        public static final int text2 = 0x7f100158;
-        public static final int toolbar = 0x7f10015c;
+        public static final int text = 0x7f10015b;
+        public static final int text2 = 0x7f100159;
+        public static final int toolbar = 0x7f10015d;
         public static final int wide = 0x7f100068;
         public static final int wrap_content = 0x7f100044;
     }
@@ -117,6 +117,7 @@ public final class R {
         public static final int common_open_on_phone = 0x7f090038;
         public static final int common_signin_button_text = 0x7f090039;
         public static final int common_signin_button_text_long = 0x7f09003a;
+        public static final int fcm_fallback_notification_channel_label = 0x7f090379;
     }
     public static final class styleable {
         public static final int[] LoadingImageView = { 0x7f010123, 0x7f010124, 0x7f010125 };

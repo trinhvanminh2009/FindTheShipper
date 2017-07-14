@@ -13,8 +13,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.minh.findtheshipper.EncodingFirebase;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.OrderTemp;
 
 import java.util.List;
 
@@ -24,10 +26,10 @@ import java.util.List;
 
 public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdapterListviewOrder.ViewHolder>{
     private Context context;
-    private List<Order> orderList;
+    private List<OrderTemp> orderList;
 
 
-    public CustomAdapterListviewOrder(Context context, List<Order> orderList) {
+    public CustomAdapterListviewOrder(Context context, List<OrderTemp> orderList) {
         this.context = context;
         this.orderList = orderList;
     }
@@ -41,7 +43,13 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
 
     @Override
     public void onBindViewHolder(CustomAdapterListviewOrder.ViewHolder holder, int position) {
-        final Order order = orderList.get(position);
+        final OrderTemp order = orderList.get(position);
+        EncodingFirebase encodingFirebase = new EncodingFirebase();
+        /**Get email from server have character '_' inside
+         * First: Get email
+         * Second: Decode to remove '_' in email
+         * Third: Show it*/
+        holder.txtUserName.setText(encodingFirebase.decodeString(encodingFirebase.getEmailFromUserID(order.getOrderID())) );
         holder.txtStatus.setText(order.getStatus());
         holder.txtStartPlace.setText(order.getStartPoint());
         holder.txtFinishPlace.setText(order.getFinishPoint());
@@ -54,7 +62,6 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         if(holder.txtStatus.getText() == "")
         {
             holder.haveStatus.setVisibility(View.GONE);
-
         }
         if(holder.txtStatus.getText() != "")
         {
@@ -77,6 +84,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         private TextView txtNote;
         private TextView txtPhoneNumber;
         private TextView txtDatetime;
+        private TextView txtUserName;
         private LinearLayout nonStatus;
         private LinearLayout haveStatus;
         private Button btnEdit;
@@ -100,6 +108,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
             btnFindAgain = (Button)view.findViewById(R.id.btnFindAgain);
             btnOrderSucess = (Button)view.findViewById(R.id.btnOrderSuccess);
             btnCallAgain = (Button)view.findViewById(R.id.btnCallAgain);
+            txtUserName = (TextView)view.findViewById(R.id.txtUserName);
         }
     }
 }

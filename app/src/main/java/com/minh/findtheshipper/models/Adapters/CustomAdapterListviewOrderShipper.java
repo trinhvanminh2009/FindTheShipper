@@ -25,6 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.minh.findtheshipper.EncodingFirebase;
 import com.minh.findtheshipper.ListOrderSavedShipperFragment;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
@@ -108,13 +109,6 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                 dialogHelpers.show(fragmentManager,"New fragment");
                 dialogHelpers.setArguments(bundle);
 
-            }
-        });
-
-        holder.btnGetOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("test", "Check1");
             }
         });
 
@@ -230,7 +224,8 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
         holder.btnGetOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                EncodingFirebase encodingFirebase = new EncodingFirebase();
+                Log.e("Order of user",encodingFirebase.getEmailFromUserID(order.getOrderID()));
             }
         });
     }
@@ -250,15 +245,12 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     @Override
     public void onViewDetachedFromWindow(ViewHolder holder) {
         super.onViewDetachedFromWindow(holder);
-
     }
 
     @Override
     public int getItemCount() {
         return orderList.size();
     }
-
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView startingPoint;

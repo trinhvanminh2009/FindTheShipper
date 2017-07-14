@@ -16,4 +16,10 @@ public class EncodingFirebase {
     public String decodeString(String string) {
         return string.replace(",", ".");
     }
+
+    public String getEmailFromUserID(String result)
+    {
+        String[] split = result.split("_");
+        return split[1];
+    }
 }

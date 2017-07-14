@@ -8,12 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrder;
+import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderShipper;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.User;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -22,7 +34,7 @@ import io.realm.Sort;
 public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
     private Realm realm;
-    private ArrayList<Order> orderList;
+    private ArrayList<OrderTemp> orderList;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -53,20 +65,85 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
     public void loadAllList()
     {
-        try{
-            Realm.init(getActivity());
-            initRealm();
-            orderList = new ArrayList<>();
-            User user = getCurrentUser();
-            RealmResults<Order> orders = user.getOrderArrayList().where().findAllSorted("dateTime",Sort.ASCENDING);
-            for (int i = 0; i < orders.size(); i++)
-            {
-                orderList.add(orders.get(i));
-            }
-            adapter = new CustomAdapterListviewOrder(getActivity(),orderList);
-            recyclerView.setAdapter(adapter);
-        }catch (Exception e){}
+        try
+        {
+            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
+            Query query = mDatabase.orderByChild("Datetime");
+            final List<String>listKeyFromFireBase = new ArrayList<>();
+            query.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    //Add keys into list template
+                    orderList = new ArrayList<>();
+                    for(DataSnapshot child: dataSnapshot.getChildren())
+                    {
+                        final String key = child.getKey();
+                        listKeyFromFireBase.add(key);
 
+                    }
+                    //Check key and then get keys are created by current user
+                    String key = null ;
+                    for(int j = 0; j < checkKey(listKeyFromFireBase).size(); j++)
+                    {
+                        key = checkKey(listKeyFromFireBase).get(j);
+                        String status = dataSnapshot.child(key).child("Status").getValue(String.class);
+                        String startPlace = dataSnapshot.child(key).child("Start place").getValue(String.class);
+                        String finishPlace = dataSnapshot.child(key).child("Finish place").getValue(String.class);
+                        String advancedMoney = dataSnapshot.child(key).child("Advanced money").getValue(String.class);
+                        String phoneNumber = dataSnapshot.child(key).child("Phone number").getValue(String.class);
+                        String shipMoney = dataSnapshot.child(key).child("Ship Money").getValue(String.class);
+                        String note = dataSnapshot.child(key).child("Note").getValue(String.class);
+                        String distance = dataSnapshot.child(key).child("Distance").getValue(String.class);
+                        String dateTime = dataSnapshot.child(key).child("Datetime").getValue(String.class);
+                        Boolean saveOrder = dataSnapshot.child(key).child("Save Order").getValue(Boolean.class);
+                        OrderTemp orderTemp = new OrderTemp();
+                        orderTemp.setOrderID(key);
+                        orderTemp.setStatus(status);
+                        orderTemp.setStartPoint(startPlace);
+                        orderTemp.setFinishPoint(finishPlace);
+                        orderTemp.setAdvancedMoney(advancedMoney);
+                        orderTemp.setPhoneNumber(phoneNumber);
+                        orderTemp.setShipMoney(shipMoney);
+                        orderTemp.setNote(note);
+                        orderTemp.setDistance(distance);
+                        orderTemp.setDateTime(dateTime);
+                        orderTemp.setSavedOrder(saveOrder);
+                        orderList.add(orderTemp);
+                    }
+                    try {
+                        Collections.sort(orderList,new SortOrderTempHelpers());
+                        adapter = new CustomAdapterListviewOrder(getActivity(),orderList);
+                        recyclerView.setAdapter(adapter);
+
+                    }catch (Exception e)
+                    {
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
+        }catch (Exception e)
+        {
+        }
+    }
+
+    /**Check key from server created by current user
+     * */
+    private List<String>checkKey(List<String>keyServer)
+    {
+        List<String>result = new ArrayList<>();
+        EncodingFirebase encodingFirebase = new EncodingFirebase();
+        for(int i = 0; i< keyServer.size(); i++)
+        {
+            if(keyServer.get(i).contains(encodingFirebase.encodeString(getCurrentUser().getEmail())))
+            {
+                result.add(keyServer.get(i));
+            }
+
+        }
+        return result;
     }
 
     private User getCurrentUser()

@@ -26,8 +26,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/txtUserName"
                 android:textSize="25sp"
-                android:text="Trịnh văn Minh"
+                android:text="@string/about_us"
                 />
         </LinearLayout>
 
