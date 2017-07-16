@@ -16,12 +16,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.minh.findtheshipper.EncodingFirebase;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
+import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.utils.AnimationUtils;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -56,12 +64,48 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Order order = orderList.get(position);
+        /**Query name from FireBase using id in orders*/
+
+        final EncodingFirebase encodingFirebase = new EncodingFirebase();
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String key = encodingFirebase.getEmailFromUserID(order.getOrderID()) ;
+                String nameCreator = dataSnapshot.child(key).child("Name").getValue(String.class);
+                holder.nameCreator.setText(nameCreator);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        DatabaseReference orderDatabase = FirebaseDatabase.getInstance().getReference("order");
+        orderDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String key = order.getOrderID();
+                String timeCreated = dataSnapshot.child(key).child("Datetime").getValue(String.class);
+                TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
+                String timeAgo = timeAgoHelpers.getTimeAgo(timeCreated,context);
+                holder.txtTimeAgo.setText(timeAgo);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         holder.txtStart.setText(order.getStartPoint());
         holder.txtFinish.setText(order.getFinishPoint());
         holder.txtAdvancedMoney.setText(order.getAdvancedMoney());
         holder.txtShipMoney.setText(order.getShipMoney());
         holder.txtNote.setText(order.getNote());
         holder.txtPhoneNumber.setText(order.getPhoneNumber());
+
         final AnimationUtils animationUtils = new AnimationUtils();
         holder.btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,6 +194,8 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
         private Button btnComment;
         private Button btnCall;
         private Button btnDelete;
+        private TextView txtTimeAgo;
+        private TextView nameCreator;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -162,6 +208,8 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
             btnComment = (Button)itemView.findViewById(R.id.btnComment);
             btnCall = (Button)itemView.findViewById(R.id.btnCall);
             btnDelete = (Button)itemView.findViewById(R.id.btnDelete);
+            txtTimeAgo = (TextView)itemView.findViewById(R.id.txtTimeAgo);
+            nameCreator = (TextView)itemView.findViewById(R.id.nameCreator);
         }
     }
 }

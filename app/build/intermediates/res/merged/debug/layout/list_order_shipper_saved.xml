@@ -21,6 +21,32 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/about_us"
+            android:textSize="23sp"
+            android:id="@+id/nameCreator"
+            android:textColor="@color/md_green_800"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="2dp"
+                android:src="@drawable/ic_time_create"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/about_us"
+                android:id="@+id/txtTimeAgo"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textSize="17sp"
             android:text="@string/order_starting_point"
             android:id="@+id/textView2" />

@@ -151,6 +151,12 @@
     <string name="text_view_phone_number">SĐT</string>
     <string name="text_view_ship_money">Tiền ship</string>
     <string name="text_view_start_place">Nơi đón</string>
+    <string name="time_ago_a_minutes_ago">Một phút trước</string>
+    <string name="time_ago_days_ago">ngày trước</string>
+    <string name="time_ago_hours_ago">giờ trước</string>
+    <string name="time_ago_just_now">Vừa xong</string>
+    <string name="time_ago_minutes_ago">phút trước</string>
+    <string name="time_ago_yesterday">Hôm qua</string>
     <string name="title">Tiêu đề</string>
     <string name="title_activity_maps">Bản đồ</string>
     <string name="title_activity_settings">Cài đặt</string>

@@ -20,14 +20,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/userImage"
                 android:src="@drawable/ic_your_profile"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtUserName"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:text="@string/about_us"
                 />
         </LinearLayout>

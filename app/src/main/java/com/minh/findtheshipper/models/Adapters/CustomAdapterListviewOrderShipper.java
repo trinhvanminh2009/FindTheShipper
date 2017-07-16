@@ -25,12 +25,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.minh.findtheshipper.EncodingFirebase;
 import com.minh.findtheshipper.ListOrderSavedShipperFragment;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
+import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.OrderTemp;
@@ -74,12 +79,32 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     public void onBindViewHolder(final CustomAdapterListviewOrderShipper.ViewHolder holder, int position) {
         final AnimationUtils animationUtils = new AnimationUtils();
         final OrderTemp order = orderList.get(position);
+        /**Query name from FireBase using id in orders*/
+        final EncodingFirebase encodingFirebase = new EncodingFirebase();
+        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
+        final DatabaseReference orderDatabase = FirebaseDatabase.getInstance().getReference("order");
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String key = encodingFirebase.getEmailFromUserID(order.getOrderID());
+                String nameCreator = dataSnapshot.child(key).child("Name").getValue(String.class);
+                holder.nameCreator.setText(nameCreator);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
+        String timeAgo = timeAgoHelpers.getTimeAgo(order.getDateTime(),context);
         holder.startingPoint.setText(order.getStartPoint());
         holder.finishPoint.setText(order.getFinishPoint());
         holder.advancedMoney.setText(order.getAdvancedMoney());
         holder.shipMoney.setText(order.getShipMoney());
         holder.note.setText(order.getNote());
         holder.phoneNumber.setText(order.getPhoneNumber());
+        holder.txtTimeAgo.setText(timeAgo);
         holder.btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -211,7 +236,6 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                                     orderRealm.setSaveOrder(true);
                                     realm.insertOrUpdate(orderRealm);
                                     TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
-
                                 }
                             }
                         });
@@ -227,10 +251,8 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
         holder.btnGetOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EncodingFirebase encodingFirebase = new EncodingFirebase();
-                Log.e("Order of user",encodingFirebase.getEmailFromUserID(order.getOrderID()));
-                HashMap<String,String> params = new HashMap<String, String>();
-                params.put("id", FirebaseInstanceId.getInstance().getToken());
+
+                orderDatabase.child(order.getOrderID()).child("User Get Order").setValue(encodingFirebase.encodeString(getCurrentUser().getEmail()));
 
             }
         });
@@ -259,6 +281,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView nameCreator;
         private TextView startingPoint;
         private TextView finishPoint;
         private TextView advancedMoney;
@@ -269,6 +292,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
         private Button btnCall;
         private Button btnSave;
         private Button btnGetOrder;
+        private TextView txtTimeAgo;
 
         public ViewHolder(final View view) {
             super(view);
@@ -282,6 +306,9 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             btnCall = (Button) view.findViewById(R.id.btnCall);
             btnSave = (Button) view.findViewById(R.id.btnSave);
             btnGetOrder = (Button)view.findViewById(R.id.btnGetOrder);
+            nameCreator = (TextView)view.findViewById(R.id.nameCreator);
+            txtTimeAgo = (TextView)view.findViewById(R.id.txtTimeAgo);
+
         }
     }
 

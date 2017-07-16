@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -21,7 +22,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.mikepenz.actionitembadge.library.ActionItemBadge;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -32,6 +36,8 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
+import com.mikepenz.materialdrawer.util.DrawerImageLoader;
 import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.sdsmdg.tastytoast.TastyToast;
@@ -86,6 +92,24 @@ public class FragmentContainerShipper extends FragmentActivity {
 
             }
         }
+
+        //Download for set icon in header drawer
+        DrawerImageLoader.init(new AbstractDrawerImageLoader() {
+            @Override
+            public void set(ImageView imageView, Uri uri, Drawable placeholder, String tag) {
+                super.set(imageView, uri, placeholder, tag);
+                Glide.with(imageView.getContext()).load(uri).into(imageView);
+            }
+
+            @Override
+            public void cancel(ImageView imageView) {
+                super.cancel(imageView);
+
+            }
+
+        });
+
+
     }
 
     public void initRealm()
@@ -190,8 +214,8 @@ public class FragmentContainerShipper extends FragmentActivity {
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.image_drawer)
                 .addProfiles(
-                        new ProfileDrawerItem().withName(currentUser.getName()).withEmail(currentUser.getEmail())//.withIcon(myUri)
-                )
+                        new ProfileDrawerItem().withName(currentUser.getName())
+                                .withEmail(currentUser.getEmail()).withIcon(currentUser.getAvatar()))
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
                     public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {

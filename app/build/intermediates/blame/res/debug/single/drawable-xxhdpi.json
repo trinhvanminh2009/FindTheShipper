@@ -16,6 +16,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_comment.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_launcher_app.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher_app.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_package.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_package.png"
     },
@@ -26,6 +30,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_create_new.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_create_new.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_time_watch.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_time_watch.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_notifycation.png",
@@ -60,6 +68,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_placehoder.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_speaker_notes_black_24dp.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_speaker_notes_black_24dp.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_about.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_about.png"
     },
@@ -70,6 +82,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_created.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_created.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_speaker_notes_off_black_24dp.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_speaker_notes_off_black_24dp.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_duration.png",
@@ -98,6 +114,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_distance.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_distance.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_time_create.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_time_create.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_call.png",

@@ -32,12 +32,37 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:layout_alignParentStart="true"
-                android:text="@string/order_starting_point"
-                />
-        </RelativeLayout>
+                android:text="@string/about_us"
+                android:textSize="23sp"
+                android:id="@+id/nameCreator"
+                android:textColor="@color/md_green_800"/>
 
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="2dp"
+                android:src="@drawable/ic_time_create"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/about_us"
+                android:id="@+id/txtTimeAgo"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_alignParentStart="true"
+            android:text="@string/order_starting_point"
+            />
         <TextView
             android:textSize="17sp"
             android:layout_width="wrap_content"
@@ -51,12 +76,13 @@
             android:text="@string/order_finish_point"
             android:textSize="17sp"
             />
+
         <TextView
-            android:textSize="17sp"
+            android:id="@+id/txtFinishPointShipper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtFinishPointShipper"
-            android:text="@string/finish_place"/>
+            android:text="@string/finish_place"
+            android:textSize="17sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"

@@ -85,6 +85,12 @@
     <string name="please_wait">Please wait</string>
     <string name="wait_server">Just a moment. Loading data from server</string>
     <string name="wait_find_direction">Just a moment. Finding directions</string>
+    <string name="time_ago_just_now">Just now</string>
+    <string name="time_ago_minutes_ago"> minutes ago</string>
+    <string name="time_ago_hours_ago"> hours ago</string>
+    <string name="time_ago_days_ago"> days ago</string>
+    <string name="time_ago_yesterday">Yesterday</string>
+    <string name="time_ago_a_minutes_ago">a minute ago</string>
     <string-array name="change_language_array">
         <item>Vietnamese</item>
         <item>English</item>

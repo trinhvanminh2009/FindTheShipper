@@ -108,4 +108,12 @@ public class OrderTemp {
     public void setSavedOrder(Boolean savedOrder) {
         this.savedOrder = savedOrder;
     }
+
+    public String getUserGetOrder() {
+        return userGetOrder;
+    }
+
+    public void setUserGetOrder(String userGetOrder) {
+        this.userGetOrder = userGetOrder;
+    }
 }

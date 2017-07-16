@@ -97,4 +97,10 @@
     <string name="please_wait">Vui lòng đợi...</string>
     <string name="wait_find_direction">Chỉ một lát. Đang tìm kiếm đường đi.</string>
     <string name="wait_server">Chỉ một lát. Đang tải dữ liệu từ server</string>
+    <string name="time_ago_a_minutes_ago">Một phút trước</string>
+    <string name="time_ago_days_ago">ngày trước</string>
+    <string name="time_ago_hours_ago">giờ trước</string>
+    <string name="time_ago_just_now">Vừa xong</string>
+    <string name="time_ago_minutes_ago">phút trước</string>
+    <string name="time_ago_yesterday">Hôm qua</string>
 </resources>
