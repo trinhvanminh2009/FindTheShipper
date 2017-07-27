@@ -71,32 +71,6 @@ public class FragmentContainerShipper extends FragmentActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.list_order_shipper);
         callFirstFragment();
-        NavigationDrawer(toolbar);
-        if(findViewById(R.id.fragmentShipperContainer) != null)
-        {
-            if(savedInstanceState != null)
-            {
-                return;
-            }
-        }
-
-        /***
-         * Have to request permissions right here . Because can't request permissions in ArrayAdapter.
-         */
-        if(Build.VERSION.SDK_INT >= 23)
-        {
-            String[] PERMISSIONS = {
-                    Manifest.permission.CALL_PHONE
-            };
-            if(!hasPermissions(context,PERMISSIONS))
-            {
-                ActivityCompat.requestPermissions((Activity) context, PERMISSIONS, REQUEST );
-            }
-            else {
-
-            }
-        }
-
         //Download for set icon in header drawer
         DrawerImageLoader.init(new AbstractDrawerImageLoader() {
             @Override
@@ -135,6 +109,33 @@ public class FragmentContainerShipper extends FragmentActivity {
                 return super.placeholder(ctx, tag);
             }
         });
+
+        NavigationDrawer(toolbar);
+        if(findViewById(R.id.fragmentShipperContainer) != null)
+        {
+            if(savedInstanceState != null)
+            {
+                return;
+            }
+        }
+
+        /***
+         * Have to request permissions right here . Because can't request permissions in ArrayAdapter.
+         */
+        if(Build.VERSION.SDK_INT >= 23)
+        {
+            String[] PERMISSIONS = {
+                    Manifest.permission.CALL_PHONE
+            };
+            if(!hasPermissions(context,PERMISSIONS))
+            {
+                ActivityCompat.requestPermissions((Activity) context, PERMISSIONS, REQUEST );
+            }
+            else {
+
+            }
+        }
+
 
 
     }
