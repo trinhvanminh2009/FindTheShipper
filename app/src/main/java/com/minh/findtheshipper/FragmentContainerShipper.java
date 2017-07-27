@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -25,8 +26,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.request.RequestOptions;
 import com.mikepenz.actionitembadge.library.ActionItemBadge;
+import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -38,10 +41,11 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerImageLoader;
+import com.mikepenz.materialdrawer.util.DrawerUIUtils;
 import com.minh.findtheshipper.helpers.DialogHelpers;
+import com.minh.findtheshipper.helpers.GlideApp;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.sdsmdg.tastytoast.TastyToast;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
@@ -98,15 +102,38 @@ public class FragmentContainerShipper extends FragmentActivity {
             @Override
             public void set(ImageView imageView, Uri uri, Drawable placeholder, String tag) {
                 super.set(imageView, uri, placeholder, tag);
-                Glide.with(imageView.getContext()).load(uri).into(imageView);
+                GlideApp.with(imageView.getContext()).load(uri).placeholder(placeholder).
+                        error(new ColorDrawable(Color.RED)).into(imageView);
+
+
             }
 
             @Override
             public void cancel(ImageView imageView) {
                 super.cancel(imageView);
+                GlideApp.with(imageView.getContext()).clear(imageView);
+
 
             }
 
+            @Override
+            public Drawable placeholder(Context ctx, String tag) {
+                //define different placeholders for different imageView targets
+                //default tags are accessible via the DrawerImageLoader.Tags
+                //custom ones can be checked via string. see the CustomUrlBasePrimaryDrawerItem LINE 111
+                if (DrawerImageLoader.Tags.PROFILE.name().equals(tag)) {
+                    return DrawerUIUtils.getPlaceHolder(ctx);
+                } else if (DrawerImageLoader.Tags.ACCOUNT_HEADER.name().equals(tag)) {
+                    return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(com.mikepenz.materialdrawer.R.color.primary).sizeDp(56);
+                } else if ("customUrlItem".equals(tag)) {
+                    return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(R.color.md_red_500).sizeDp(56);
+                }
+
+                //we use the default one for
+                //DrawerImageLoader.Tags.PROFILE_DRAWER_ITEM.name()
+
+                return super.placeholder(ctx, tag);
+            }
         });
 
 
@@ -117,6 +144,7 @@ public class FragmentContainerShipper extends FragmentActivity {
         realm = null;
         realm = Realm.getDefaultInstance();
     }
+
 
     private Drawable resizeImage(int resId, int w, int h)
     {
@@ -200,6 +228,7 @@ public class FragmentContainerShipper extends FragmentActivity {
     public void NavigationDrawer(final Toolbar toolbar) {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
         new DrawerBuilder().withActivity(this).build();
+        String url = currentUser.getAvatar();
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.list_order_shipper);
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.list_order_saved_shipper);
         PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.pay_coin_shipper);
@@ -215,7 +244,7 @@ public class FragmentContainerShipper extends FragmentActivity {
                 .withHeaderBackground(R.drawable.image_drawer)
                 .addProfiles(
                         new ProfileDrawerItem().withName(currentUser.getName())
-                                .withEmail(currentUser.getEmail()).withIcon(currentUser.getAvatar()))
+                                .withEmail(currentUser.getEmail()).withIcon(url))
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
                     public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
@@ -344,4 +373,5 @@ public class FragmentContainerShipper extends FragmentActivity {
         transaction.replace(R.id.fragmentShipperContainer,fragment);
         transaction.commit();
     }
+
 }
