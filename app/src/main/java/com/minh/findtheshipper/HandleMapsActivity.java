@@ -187,6 +187,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     public void NavigationDrawer(Toolbar toolbar) {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        String url = currentUser.getAvatar();
         new DrawerBuilder().withActivity(this).build();
         final PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.create_new_order);
         final PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.created_order);
@@ -203,7 +204,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                     .withHeaderBackground(R.drawable.image_drawer)
                     .addProfiles(
                             new ProfileDrawerItem().withName(currentUser.getName()).withEmail(currentUser.getEmail())
-                                    .withIcon(getResources().getDrawable(R.drawable.ic_your_profile))
+                                    .withIcon(url)
                     )
                     .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                         @Override

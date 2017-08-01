@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.internal.ti;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -82,6 +83,7 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
             }
         });
 
+        //Depending on server. How fast is it.
         DatabaseReference orderDatabase = FirebaseDatabase.getInstance().getReference("order");
         orderDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -99,12 +101,15 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
             }
         });
 
+
         holder.txtStart.setText(order.getStartPoint());
         holder.txtFinish.setText(order.getFinishPoint());
         holder.txtAdvancedMoney.setText(order.getAdvancedMoney());
         holder.txtShipMoney.setText(order.getShipMoney());
         holder.txtNote.setText(order.getNote());
         holder.txtPhoneNumber.setText(order.getPhoneNumber());
+
+
 
         final AnimationUtils animationUtils = new AnimationUtils();
         holder.btnCall.setOnClickListener(new View.OnClickListener() {

@@ -97,6 +97,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                         String distance = dataSnapshot.child(key).child("Distance").getValue(String.class);
                         String dateTime = dataSnapshot.child(key).child("Datetime").getValue(String.class);
                         Boolean saveOrder = dataSnapshot.child(key).child("Save Order").getValue(Boolean.class);
+                        String userGetOrder = dataSnapshot.child(key).child("User Get Order").getValue(String.class);
                         OrderTemp orderTemp = new OrderTemp();
                         orderTemp.setOrderID(key);
                         orderTemp.setStatus(status);
@@ -109,6 +110,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                         orderTemp.setDistance(distance);
                         orderTemp.setDateTime(dateTime);
                         orderTemp.setSavedOrder(saveOrder);
+                        orderTemp.setUserGetOrder(userGetOrder);
                         orderList.add(orderTemp);
                     }
                     try {

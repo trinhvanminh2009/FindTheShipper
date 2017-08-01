@@ -61,7 +61,7 @@ MERGED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-ca
 MERGED from [com.android.support:transition:25.3.1] C:\Users\trinh\.android\build-cache\847f7a117dec7306730194f41be07a6accc70956\output\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\trinh\.android\build-cache\40da3a2ba64f20294e49f8cf6bd72a2064c6f17f\output\AndroidManifest.xml:9:5-20
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.0.original] C:\Users\trinh\.android\build-cache\c535f725c3721f3ff676d3706a6805a2ed08fc5b\output\AndroidManifest.xml:27:5-20
-MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:28:5-48:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:28:5-48:19
 MERGED from [com.android.support:customtabs:25.3.1] C:\Users\trinh\.android\build-cache\4c94fa0e59b6313d1bf4b62d1775b7bd4eda48dd\output\AndroidManifest.xml:26:5-20
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] C:\Users\trinh\.android\build-cache\92134a31c132b650bdbc3fa6874e694918843fdf\output\AndroidManifest.xml:11:5-12:19
 MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\trinh\.android\build-cache\c6969410238280f883f7d9ba4a45a7d5b11b4636\output\AndroidManifest.xml:24:5-19
@@ -141,13 +141,13 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:55:9-57
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:56:13-58
 activity#com.facebook.FacebookActivity
 ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:59:9-62:48
-MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:29:9-32:66
+MERGED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:29:9-32:66
 	android:label
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:62:13-45
 	android:configChanges
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:61:13-96
 	android:theme
-		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:32:13-63
+		ADDED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:32:13-63
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:60:13-57
 activity#com.facebook.CustomTabActivity
@@ -245,7 +245,7 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\tr
 MERGED from [com.jakewharton:butterknife:8.6.0] C:\Users\trinh\.android\build-cache\302a706348691c9d11f7a2f56d0ef794692725d1\output\AndroidManifest.xml:5:5-43
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.0.original] C:\Users\trinh\.android\build-cache\c535f725c3721f3ff676d3706a6805a2ed08fc5b\output\AndroidManifest.xml:23:5-25:41
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.0] C:\Users\trinh\.android\build-cache\f5a1162db8ca50b74416141ca2e8006c6a7921a6\output\AndroidManifest.xml:8:5-10:41
-MERGED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:24:5-26:41
 MERGED from [com.android.support:customtabs:25.3.1] C:\Users\trinh\.android\build-cache\4c94fa0e59b6313d1bf4b62d1775b7bd4eda48dd\output\AndroidManifest.xml:20:5-44
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] C:\Users\trinh\.android\build-cache\92134a31c132b650bdbc3fa6874e694918843fdf\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\trinh\.android\build-cache\c6969410238280f883f7d9ba4a45a7d5b11b4636\output\AndroidManifest.xml:23:5-43
@@ -305,17 +305,17 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\trinh\.android\
 	android:name
 		ADDED from [com.android.support:design:25.3.1] C:\Users\trinh\.android\build-cache\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\output\AndroidManifest.xml:26:9-47
 activity#com.facebook.CustomTabMainActivity
-ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:33:9-71
+ADDED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:33:9-71
 	android:name
-		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:33:19-68
+		ADDED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:33:19-68
 provider#com.facebook.internal.FacebookInitProvider
-ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:44:9-47:40
+ADDED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:44:9-47:40
 	android:authorities
-		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:46:13-72
+		ADDED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:46:13-72
 	android:exported
-		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:47:13-37
+		ADDED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:47:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-android-sdk:4.24.0] C:\Users\trinh\.android\build-cache\916df7936617000d2798fe1818b712ae8e4d0570\output\AndroidManifest.xml:45:13-70
+		ADDED from [com.facebook.android:facebook-android-sdk:4.25.0] C:\Users\trinh\.android\build-cache\5b4ac2c7f180fa4f25feddb0b67c7a722ccd89f5\output\AndroidManifest.xml:45:13-70
 uses-feature#0x00020000
 ADDED from [com.google.android.gms:play-services-maps:11.0.2] C:\Users\trinh\.android\build-cache\c6969410238280f883f7d9ba4a45a7d5b11b4636\output\AndroidManifest.xml:21:5-77
 	android:glEsVersion

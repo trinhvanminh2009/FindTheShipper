@@ -19,11 +19,18 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.EncodingFirebase;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.OrderTemp;
+import com.sdsmdg.tastytoast.TastyToast;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -57,17 +64,41 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
     }
 
     @Override
-    public void onBindViewHolder(CustomAdapterListviewOrder.ViewHolder holder, int position) {
+    public void onBindViewHolder(final CustomAdapterListviewOrder.ViewHolder holder, int position) {
+        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         final OrderTemp order = orderList.get(position);
         final CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
         Glide.with(context).load(currentUser.getAvatar()).apply(RequestOptions.circleCropTransform()).thumbnail(0.5f).into(holder.userImage);
-        EncodingFirebase encodingFirebase = new EncodingFirebase();
         /**Get email from server have character '_' inside
          * First: Get email
-         * Second: Decode to remove '_' in email
+         * Second: Get the username of this user, not email
          * Third: Show it*/
-        holder.txtUserName.setText(encodingFirebase.decodeString(encodingFirebase.getEmailFromUserID(order.getOrderID())) );
-        holder.txtStatus.setText(order.getStatus());
+        if(order.getUserGetOrder() != null)
+        {
+            holder.layoutNameAndAvatar.setVisibility(View.VISIBLE);
+            mDatabase.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String key = order.getUserGetOrder();
+                    String nameCreator = dataSnapshot.child(key).child("Name").getValue(String.class);
+                    holder.txtUserName.setText(nameCreator);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+            holder.txtStatus.setText(context.getResources().getText(R.string.order_status_getting_started));
+        }
+        else
+        {
+            holder.layoutNameAndAvatar.setVisibility(View.GONE);
+            holder.txtStatus.setText(context.getResources().getText(R.string.order_status_waiting_shipper));
+        }
+
+
         holder.txtStartPlace.setText(order.getStartPoint());
         holder.txtFinishPlace.setText(order.getFinishPoint());
         holder.txtAdvancedMoney.setText(order.getAdvancedMoney());
@@ -75,7 +106,8 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         holder.txtDistance.setText(order.getDistance());
         holder.txtNote.setText(order.getNote());
         holder.txtPhoneNumber.setText(order.getPhoneNumber());
-        holder.txtDatetime.setText(R.string.order_last_updated+order.getDateTime());
+        TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
+        holder.txtDatetime.setText( context.getResources().getText(R.string.order_last_updated)+ timeAgoHelpers.getTimeAgo(order.getDateTime(),context));
         if(holder.txtStatus.getText() == "")
         {
             holder.haveStatus.setVisibility(View.GONE);
@@ -112,6 +144,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         private ImageView userImage;
         private LinearLayout nonStatus;
         private LinearLayout haveStatus;
+        private LinearLayout layoutNameAndAvatar;
         private Button btnEdit;
         private Button btnFindAgain;
         private Button btnOrderSucess;
@@ -136,6 +169,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
             btnCallAgain = (Button)view.findViewById(R.id.btnCallAgain);
             txtUserName = (TextView)view.findViewById(R.id.txtUserName);
             userImage = (ImageView)view.findViewById(R.id.userImage);
+            layoutNameAndAvatar = (LinearLayout)view.findViewById(R.id.layoutNameAndAvatar);
         }
     }
 }

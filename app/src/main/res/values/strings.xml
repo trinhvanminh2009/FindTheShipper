@@ -28,6 +28,9 @@
     <string name="text_view_phone_number">Phone number</string>
     <string name="edit_text_phone_number">Your phone number</string>
     <string name="order_status">Status: The order canceled..</string>
+    <string name="order_status_getting_started">Status: The shipper is coming soon</string>
+    <string name="order_status_waiting_shipper">Status: Finding the shipper</string>
+    <string name="order_status_completed">Status: The order is completed</string>
     <string name="order_starting_point">Starting point: </string>
     <string name="order_finish_point">Finish point: </string>
     <string name="order_advanced_money">Advanced money: </string>
