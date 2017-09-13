@@ -26,6 +26,8 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+import com.minh.findtheshipper.Shop.HandleMapsActivity;
+import com.minh.findtheshipper.Shop.ListOrderCreatedFragment;
 import com.minh.findtheshipper.helpers.DialogHelpers;
 
 

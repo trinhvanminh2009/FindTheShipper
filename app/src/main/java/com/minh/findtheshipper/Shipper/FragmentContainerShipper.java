@@ -1,4 +1,4 @@
-package com.minh.findtheshipper;
+package com.minh.findtheshipper.Shipper;
 
 import android.Manifest;
 import android.app.Activity;
@@ -25,9 +25,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.module.AppGlideModule;
-import com.bumptech.glide.request.RequestOptions;
 import com.mikepenz.actionitembadge.library.ActionItemBadge;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -42,10 +39,13 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerUIUtils;
+import com.minh.findtheshipper.FragmentActivity;
+import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.helpers.GlideApp;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.sdsmdg.tastytoast.TastyToast;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
@@ -55,11 +55,13 @@ public class FragmentContainerShipper extends FragmentActivity {
     /***
      * This Fragment display for the shipper
      */
-    @BindView(R.id.toolBar) Toolbar toolbar;
+    @BindView(R.id.toolBar)
+    Toolbar toolbar;
     private int badgerCount = 10;
-    private static final int REQUEST= 112;
+    private static final int REQUEST = 112;
     private Context context = this;
     private Realm realm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,10 +113,8 @@ public class FragmentContainerShipper extends FragmentActivity {
         });
 
         NavigationDrawer(toolbar);
-        if(findViewById(R.id.fragmentShipperContainer) != null)
-        {
-            if(savedInstanceState != null)
-            {
+        if (findViewById(R.id.fragmentShipperContainer) != null) {
+            if (savedInstanceState != null) {
                 return;
             }
         }
@@ -122,33 +122,28 @@ public class FragmentContainerShipper extends FragmentActivity {
         /***
          * Have to request permissions right here . Because can't request permissions in ArrayAdapter.
          */
-        if(Build.VERSION.SDK_INT >= 23)
-        {
+        if (Build.VERSION.SDK_INT >= 23) {
             String[] PERMISSIONS = {
                     Manifest.permission.CALL_PHONE
             };
-            if(!hasPermissions(context,PERMISSIONS))
-            {
-                ActivityCompat.requestPermissions((Activity) context, PERMISSIONS, REQUEST );
-            }
-            else {
+            if (!hasPermissions(context, PERMISSIONS)) {
+                ActivityCompat.requestPermissions((Activity) context, PERMISSIONS, REQUEST);
+            } else {
 
             }
         }
 
 
-
     }
 
-    public void initRealm()
-    {
+
+    public void initRealm() {
         realm = null;
         realm = Realm.getDefaultInstance();
     }
 
 
-    private Drawable resizeImage(int resId, int w, int h)
-    {
+    private Drawable resizeImage(int resId, int w, int h) {
         // load the original Bitmap
         Bitmap BitmapOrg = BitmapFactory.decodeResource(getResources(), resId);
         int width = BitmapOrg.getWidth();
@@ -161,16 +156,15 @@ public class FragmentContainerShipper extends FragmentActivity {
         // create a matrix for the manipulation
         Matrix matrix = new Matrix();
         matrix.postScale(scaleWidth, scaleHeight);
-        Bitmap resizedBitmap = Bitmap.createBitmap(BitmapOrg, 0, 0,width, height, matrix, true);
+        Bitmap resizedBitmap = Bitmap.createBitmap(BitmapOrg, 0, 0, width, height, matrix, true);
         return new BitmapDrawable(resizedBitmap);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_list,menu);
-        if(badgerCount >0)
-        {
-            ActionItemBadge.update(this,menu.findItem(R.id.item_notifycation),resizeImage(R.drawable.ic_notifycation,200,200), ActionItemBadge.BadgeStyles.RED, badgerCount);
+        getMenuInflater().inflate(R.menu.menu_list, menu);
+        if (badgerCount > 0) {
+            ActionItemBadge.update(this, menu.findItem(R.id.item_notifycation), resizeImage(R.drawable.ic_notifycation, 200, 200), ActionItemBadge.BadgeStyles.RED, badgerCount);
 
         }
         return true;
@@ -178,22 +172,21 @@ public class FragmentContainerShipper extends FragmentActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.item_notifycation:
                 showNotification();
                 //badgerCount++;
                 // ActionItemBadge.update(item,badgerCount);
                 return true;
-            default:  return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
-    private void showNotification()
-    {
+    private void showNotification() {
         final FragmentManager fragmentManager = getSupportFragmentManager();
         final DialogHelpers dialogHelpers = new DialogHelpers();
-        dialogHelpers.show(fragmentManager,"New fragment");
+        dialogHelpers.show(fragmentManager, "New fragment");
 
     }
 
@@ -213,15 +206,14 @@ public class FragmentContainerShipper extends FragmentActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode)
-        {
+        switch (requestCode) {
             case REQUEST:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
 
                 } else {
 
-                  TastyToast.makeText(context, "Permission denied", TastyToast.LENGTH_SHORT, TastyToast.ERROR);
+                    TastyToast.makeText(context, "Permission denied", TastyToast.LENGTH_SHORT, TastyToast.ERROR);
                 }
         }
     }
@@ -265,78 +257,68 @@ public class FragmentContainerShipper extends FragmentActivity {
                         item5,
                         item6,
                         item7,
-                        item8,item9,item10
+                        item8, item9, item10
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                  //  LinearLayout listOrderLayout = (LinearLayout)findViewById(R.id.linearOrderFragment);
-                 //   LinearLayout listSavedOrderLayout = (LinearLayout)findViewById(R.id.linearSavedOrderFragment);
+                    //  LinearLayout listOrderLayout = (LinearLayout)findViewById(R.id.linearOrderFragment);
+                    //   LinearLayout listSavedOrderLayout = (LinearLayout)findViewById(R.id.linearSavedOrderFragment);
                     android.support.v4.app.Fragment fragment = null;
+
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
-                        if(drawerItem.getIdentifier() ==1)
-                        {
+                        if (drawerItem.getIdentifier() == 1) {
                             getSupportActionBar().setTitle(R.string.list_order_shipper);
-                        //    listOrderLayout.setVisibility(View.VISIBLE);
-                          //  listSavedOrderLayout.setVisibility(View.GONE);
-                            fragment = new ListOrderShipperFragment();
+                            //    listOrderLayout.setVisibility(View.VISIBLE);
+                            //  listSavedOrderLayout.setVisibility(View.GONE);
+                            fragment = new ListOrderShipperFragmentCommon();
                         }
-                        if(drawerItem.getIdentifier() == 2)
-                        {
+                        if (drawerItem.getIdentifier() == 2) {
                             getSupportActionBar().setTitle(R.string.list_order_saved_shipper);
-                           // listOrderLayout.setVisibility(View.GONE);
-                           // listSavedOrderLayout.setVisibility(View.VISIBLE);
+                            // listOrderLayout.setVisibility(View.GONE);
+                            // listSavedOrderLayout.setVisibility(View.VISIBLE);
                             fragment = new ListOrderSavedShipperFragment();
 
                         }
-                        if(drawerItem.getIdentifier() ==3)
-                        {
+                        if (drawerItem.getIdentifier() == 3) {
 
                         }
-                        if(drawerItem.getIdentifier() == 4)
-                        {
+                        if (drawerItem.getIdentifier() == 4) {
 
                         }
-                        if(drawerItem.getIdentifier() ==5)
-                        {
+                        if (drawerItem.getIdentifier() == 5) {
 
                         }
-                        if(drawerItem.getIdentifier() == 6)
-                        {
+                        if (drawerItem.getIdentifier() == 6) {
 
                         }
-                        if(drawerItem.getIdentifier() ==7)
-                        {
+                        if (drawerItem.getIdentifier() == 7) {
 
                         }
-                        if(drawerItem.getIdentifier() == 8)
-                        {
-                            
+                        if (drawerItem.getIdentifier() == 8) {
+
                         }
-                        if(drawerItem.getIdentifier() ==9)
-                        {
+                        if (drawerItem.getIdentifier() == 9) {
                             Intent intent = new Intent(FragmentContainerShipper.this, SettingShipperPreferences.class);
                             startActivity(intent);
                             return true;
 
                         }
-                        if(drawerItem.getIdentifier() == 10)
-                        {
+                        if (drawerItem.getIdentifier() == 10) {
 
                         }
                         try {
                             FragmentManager manager = getSupportFragmentManager();
                             FragmentTransaction transaction = manager.beginTransaction();
-                            transaction.replace(R.id.fragmentShipperContainer,fragment);
+                            transaction.replace(R.id.fragmentShipperContainer, fragment);
                             transaction.commit();
-                        }catch (Exception e)
-                        {}
+                        } catch (Exception e) {
+                        }
 
                         return false;
                     }
                 })
                 .build();
-
 
 
         item1.withBadge("1").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
@@ -365,13 +347,12 @@ public class FragmentContainerShipper extends FragmentActivity {
         result.getDrawerLayout();
     }
 
-    private void callFirstFragment()
-    {
+    private void callFirstFragment() {
         android.support.v4.app.Fragment fragment = null;
-        fragment = new ListOrderShipperFragment();
+        fragment = new ListOrderShipperFragmentCommon();
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragmentShipperContainer,fragment);
+        transaction.replace(R.id.fragmentShipperContainer, fragment);
         transaction.commit();
     }
 

@@ -324,6 +324,44 @@
                         "endOffset": 2703
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 2793,
+                    "endColumn": 108,
+                    "endOffset": 2897
+                },
+                "from": {
+                    "file": "C:\\Users\\trinh\\.android\\build-cache\\cc68d91812b011af753b1cf07123b083899af560\\output\\res\\values-ne\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 233,
+                        "endColumn": 104,
+                        "endOffset": 337
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 2902,
+                    "endColumn": 92,
+                    "endOffset": 2990
+                },
+                "from": {
+                    "file": "C:\\Users\\trinh\\.android\\build-cache\\cc68d91812b011af753b1cf07123b083899af560\\output\\res\\values-ne\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 0,
+                        "startOffset": 338,
+                        "endColumn": 88,
+                        "endOffset": 426
+                    }
+                }
             }
         ]
     }

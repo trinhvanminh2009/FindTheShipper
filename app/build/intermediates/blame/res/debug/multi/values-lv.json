@@ -691,8 +691,46 @@
                     "startLine": 38,
                     "startColumn": 4,
                     "startOffset": 4743,
+                    "endColumn": 118,
+                    "endOffset": 4857
+                },
+                "from": {
+                    "file": "C:\\Users\\trinh\\.android\\build-cache\\cc68d91812b011af753b1cf07123b083899af560\\output\\res\\values-lv\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 233,
+                        "endColumn": 114,
+                        "endOffset": 347
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 4862,
+                    "endColumn": 95,
+                    "endOffset": 4953
+                },
+                "from": {
+                    "file": "C:\\Users\\trinh\\.android\\build-cache\\cc68d91812b011af753b1cf07123b083899af560\\output\\res\\values-lv\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 0,
+                        "startOffset": 348,
+                        "endColumn": 91,
+                        "endOffset": 439
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 4958,
                     "endColumn": 81,
-                    "endOffset": 4820
+                    "endOffset": 5035
                 },
                 "from": {
                     "file": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\values-lv\\values-lv.xml",
@@ -707,11 +745,11 @@
             },
             {
                 "to": {
-                    "startLine": 39,
+                    "startLine": 41,
                     "startColumn": 4,
-                    "startOffset": 4825,
+                    "startOffset": 5040,
                     "endColumn": 100,
-                    "endOffset": 4921
+                    "endOffset": 5136
                 },
                 "from": {
                     "file": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\values-lv\\values-lv.xml",

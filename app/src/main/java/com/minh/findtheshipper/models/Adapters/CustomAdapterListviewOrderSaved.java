@@ -16,13 +16,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.gms.internal.ti;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.minh.findtheshipper.EncodingFirebase;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
@@ -30,7 +29,6 @@ import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.utils.AnimationUtils;
-import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.Arrays;
 import java.util.List;

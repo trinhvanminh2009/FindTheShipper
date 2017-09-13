@@ -17,7 +17,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.minh.findtheshipper.EncodingFirebase;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListComment;
 import com.minh.findtheshipper.models.CommentTemp;

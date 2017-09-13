@@ -103,11 +103,6 @@ public class FragmentContainer extends FragmentActivity {
         return new BitmapDrawable(resizedBitmap);
     }
     public void NavigationDrawer(Toolbar toolbar) {
-
-        //   Uri myUri = Uri.parse(listProfile[3]);
-        // Log.d("myTags",myUri.toString());
-
-
         new DrawerBuilder().withActivity(this).build();
         final PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.create_new_order);
         final PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.created_order);

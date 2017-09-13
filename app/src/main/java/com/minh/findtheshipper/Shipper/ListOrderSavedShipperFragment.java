@@ -1,4 +1,4 @@
-package com.minh.findtheshipper;
+package com.minh.findtheshipper.Shipper;
 
 import android.support.annotation.Nullable;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderSaved;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.Order;

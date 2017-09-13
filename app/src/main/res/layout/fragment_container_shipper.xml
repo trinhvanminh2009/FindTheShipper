@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.minh.findtheshipper.FragmentContainerShipper">
+    tools:context="com.minh.findtheshipper.Shipper.FragmentContainerShipper">
 
     <include layout="@layout/toolbar"
         android:id="@+id/toolBar">

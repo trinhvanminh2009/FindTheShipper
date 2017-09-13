@@ -550,6 +550,12 @@
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <color name="notification_material_background_media_default_color">#ff424242</color>
+    <color name="place_autocomplete_prediction_primary_text">#212121</color>
+    <color name="place_autocomplete_prediction_primary_text_highlight">#757575</color>
+    <color name="place_autocomplete_prediction_secondary_text">#757575</color>
+    <color name="place_autocomplete_search_hint">#BDBDBD</color>
+    <color name="place_autocomplete_search_text">#212121</color>
+    <color name="place_autocomplete_separator">#1F000000</color>
     <color name="primary">@color/colorPrimary</color>
     <color name="primary_dark">@color/colorPrimaryDark</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
@@ -1211,6 +1217,16 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="place_autocomplete_button_padding">16dp</dimen>
+    <dimen name="place_autocomplete_powered_by_google_height">40dp</dimen>
+    <dimen name="place_autocomplete_powered_by_google_start">16dp</dimen>
+    <dimen name="place_autocomplete_prediction_height">72dp</dimen>
+    <dimen name="place_autocomplete_prediction_horizontal_margin">16dp</dimen>
+    <dimen name="place_autocomplete_prediction_primary_text">16sp</dimen>
+    <dimen name="place_autocomplete_prediction_secondary_text">14sp</dimen>
+    <dimen name="place_autocomplete_progress_horizontal_margin">16dp</dimen>
+    <dimen name="place_autocomplete_progress_size">24dp</dimen>
+    <dimen name="place_autocomplete_separator_start">72dp</dimen>
     <dimen name="progress_circle_radius">34dp</dimen>
     <dimen name="tool_bar_top_padding">0dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
@@ -1370,6 +1386,7 @@
     <string name="define_materialdrawer">year;owner</string>
     <string name="define_materialize">year;owner</string>
     <string name="delete">Delete</string>
+    <string name="destination">Destination:  </string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_default_title">Here\'s a message!</string>
     <string name="dialog_ok">OK</string>
@@ -3131,6 +3148,8 @@
     <string name="permission_required_toast"> Location permission is required for this function.</string>
     <string name="phone_invalid_summary">Please check your phone number again</string>
     <string name="phone_invalid_title">Phone number invalid</string>
+    <string name="place_autocomplete_clear_button">Clear search</string>
+    <string name="place_autocomplete_search_hint">Search</string>
     <string name="please_wait">Please wait</string>
     <string name="please_wait_facebooklogin">Just a moment</string>
     <string name="pref_default_display_name" translatable="false">John Smith</string>
@@ -3171,7 +3190,7 @@
     <string name="text_view_note">Note</string>
     <string name="text_view_phone_number">Phone number</string>
     <string name="text_view_ship_money">Ship money</string>
-    <string name="text_view_start_place">Start place</string>
+    <string name="text_view_start_place">Start place:  </string>
     <string name="time_ago_a_minutes_ago">a minute ago</string>
     <string name="time_ago_days_ago"> days ago</string>
     <string name="time_ago_hours_ago"> hours ago</string>
@@ -4779,6 +4798,10 @@
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
     <style name="Platform.Widget.AppCompat.Spinner" parent="android:Widget.Spinner"/>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/md_red_800</item>
+        <item name="colorControlActivated">@color/md_grey_400</item>
+    </style>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">
@@ -5192,6 +5215,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">roboto</item>
         <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">12dp</item>
         <item name="android:singleLine">false</item>
         <item name="android:textColor">@color/com_facebook_device_auth_text</item>
         <item name="android:textSize">16sp</item>
@@ -5232,6 +5256,8 @@
         <item name="android:background">@drawable/com_facebook_button_login_silver_background</item>
         <item name="android:drawableLeft">@null</item>
         <item name="android:textColor">#4b5164</item>
+    </style>
+    <style name="customRatingBar" parent="android:style/Widget.Material.RatingBar.Small">
     </style>
     <style name="dialog_blue_button" parent="android:Widget.Button">
         <item name="android:layout_width">wrap_content</item>

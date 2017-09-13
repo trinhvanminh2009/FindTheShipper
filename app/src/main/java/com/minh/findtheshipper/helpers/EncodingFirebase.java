@@ -1,4 +1,4 @@
-package com.minh.findtheshipper;
+package com.minh.findtheshipper.helpers;
 
 /**
  * Created by trinh on 7/11/2017.
@@ -17,6 +17,19 @@ public class EncodingFirebase {
         return string.replace(",", ".");
     }
 
+    public static String getShortAddress(String string){
+        String result;
+        String []arrayString = string.split(",");
+        if(arrayString.length >2)
+        {
+            result = arrayString[0] + ", "+ arrayString[1] +  ", "+ arrayString[2] +".";
+        }
+        else
+        {
+            result = string;
+        }
+        return result;
+    }
     public String getEmailFromUserID(String result)
     {
         String[] split = result.split("_");

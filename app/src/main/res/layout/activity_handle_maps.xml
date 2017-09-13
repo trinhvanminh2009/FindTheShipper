@@ -3,175 +3,200 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <include android:id="@+id/toolBar" layout="@layout/toolbar">
-    </include>
+
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar"></include>
+
     <FrameLayout
+        android:id="@+id/fragmentShopContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        android:id="@+id/fragmentShopContainer">
-
-    </FrameLayout>
+        android:visibility="gone"></FrameLayout>
 
     <LinearLayout
+        android:id="@+id/fragmentMaps"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="visible"
-        android:id="@+id/fragmentMaps">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/layoutControl"
-            android:orientation="vertical">
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:divider="@null"
-                android:id="@+id/listAction">
-            </ListView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/layoutItem"
-                android:visibility="gone"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_distance"
-                        android:background="@null"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:layout_marginLeft="5dp"
-                        android:text="0 km"
-                        android:id="@+id/txtDistance"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_duration"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="5dp"
-                        android:text="0 mins"
-                        android:textSize="20sp"
-                        android:id="@+id/txtTime"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_cash"
-                        android:background="@null"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="5dp"
-                        android:text="0 VNĐ"
-                        android:textSize="20sp"
-                        android:id="@+id/txtCash"/>
-                </LinearLayout>
-
-            </LinearLayout>
-        </LinearLayout>
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <fragment
                 android:id="@+id/map"
+                class="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                class="com.google.android.gms.maps.SupportMapFragment">
+                android:layout_weight="1">
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+
+                    android:id="@+id/layoutControl"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@null"
-                    android:layout_gravity="center">
-                    <ImageButton
-                        android:layout_width="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_marker"
-                        android:visibility="gone"
-                        android:background="@null"
-                        android:id="@+id/btnAdd"/>
+                        android:orientation="vertical"
+                        android:id="@+id/layoutPlaces">
+                        <fragment
+                            android:id="@+id/place_autocomplete_fragment_start"
+                            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <fragment
+                            android:id="@+id/place_autocomplete_fragment_finish"
+                            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/layoutItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/md_white_1000"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:background="@null"
+                                android:src="@drawable/ic_distance" />
+
+                            <TextView
+                                android:id="@+id/txtDistance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="0 km"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:background="@null"
+                                android:src="@drawable/ic_duration" />
+
+                            <TextView
+                                android:id="@+id/txtTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:text="0 mins"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:background="@null"
+                                android:src="@drawable/ic_cash" />
+
+                            <TextView
+                                android:id="@+id/txtCash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:text="0 VNĐ"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_gravity="center"
                     android:background="@null"
-                    android:layout_gravity="bottom|center">
+                    android:orientation="vertical">
+
                     <ImageButton
+                        android:id="@+id/btnAdd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_ok"
-                        android:visibility="gone"
+                        android:background="@null"
+                        android:src="@drawable/ic_marker"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:background="@null"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnOK"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:background="@null"
-                        android:id="@+id/btnOK"/>
+                        android:src="@drawable/ic_ok"
+                        android:visibility="gone" />
 
                     <Button
+                        android:id="@+id/btnCreateNewOrder"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="15dp"
-                        android:textColor="@color/md_white_1000"
                         android:layout_marginBottom="10dp"
-                        android:visibility="gone"
                         android:background="@drawable/shape_button"
+                        android:padding="15dp"
                         android:text="@string/create_order"
-                        android:id="@+id/btnCreateNewOrder"
-                        />
+                        android:textColor="@color/md_white_1000"
+                        android:visibility="gone" />
                 </LinearLayout>
             </fragment>
+
             <LinearLayout
+                android:id="@+id/layoutCreateNewOrder"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:orientation="vertical"
                 android:layout_gravity="bottom"
-                android:visibility="gone"
-                android:layout_weight="1"
                 android:layout_marginLeft="5dp"
-                android:id="@+id/layoutCreateNewOrder">
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -179,18 +204,20 @@
                         android:text="@string/text_view_start_place" />
 
                     <EditText
+                        android:id="@+id/editStartPlace"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:id="@+id/editStartPlace"
                         android:background="@drawable/shape_edittext"
                         android:hint="@string/edit_text_start_place" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -198,19 +225,21 @@
                         android:text="@string/text_view_advance_money" />
 
                     <EditText
+                        android:id="@+id/editAdvancedMoney"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:inputType="number"
-                        android:id="@+id/editAdvancedMoney"
                         android:background="@drawable/shape_edittext"
-                        android:hint="@string/edit_text_advance_money" />
+                        android:hint="@string/edit_text_advance_money"
+                        android:inputType="number" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -218,19 +247,21 @@
                         android:text="@string/text_view_ship_money" />
 
                     <EditText
+                        android:id="@+id/editShipMoney"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:id="@+id/editShipMoney"
                         android:background="@drawable/shape_edittext"
-                        android:inputType="number"
-                        android:hint="@string/edit_text_ship_money" />
+                        android:hint="@string/edit_text_ship_money"
+                        android:inputType="number" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -238,18 +269,20 @@
                         android:text="@string/text_view_note" />
 
                     <EditText
+                        android:id="@+id/editNote"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:id="@+id/editNote"
                         android:background="@drawable/shape_edittext"
                         android:hint="@string/edit_text_note" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -257,39 +290,41 @@
                         android:text="@string/text_view_phone_number" />
 
                     <EditText
+                        android:id="@+id/editNumber"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
-                        android:id="@+id/editNumber"
                         android:background="@drawable/shape_edittext"
                         android:hint="@string/edit_text_phone_number"
                         android:inputType="number" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
-                    <Button
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/md_red_800"
-                        android:text="@string/cancel"
-                        android:id="@+id/btnCancelOrder"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/shape_button"/>
 
                     <Button
+                        android:id="@+id/btnCancelOrder"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:text="@string/create_order"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_button"
+                        android:backgroundTint="@color/md_red_800"
+                        android:text="@string/cancel" />
+
+                    <Button
                         android:id="@+id/btnConfirmCreateOrder"
-                        android:background="@drawable/shape_button"/>
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_button"
+                        android:text="@string/create_order" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

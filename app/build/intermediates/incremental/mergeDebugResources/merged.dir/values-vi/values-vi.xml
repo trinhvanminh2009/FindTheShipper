@@ -114,6 +114,8 @@
     <string name="permission_required_toast">Chức năng này yêu cầu quyền truy cập vị trí</string>
     <string name="phone_invalid_summary">Vui lòng kiểm tra số điện thoại lại</string>
     <string name="phone_invalid_title">Số điện thoại không hợp lệ</string>
+    <string msgid="1303870564366209730" name="place_autocomplete_clear_button">"Xóa tìm kiếm"</string>
+    <string msgid="2809095107724486040" name="place_autocomplete_search_hint">"Tìm kiếm"</string>
     <string name="please_wait">Vui lòng đợi...</string>
     <string name="please_wait_facebooklogin">Chỉ một lát</string>
     <string name="pref_description_social_recommendations"/>

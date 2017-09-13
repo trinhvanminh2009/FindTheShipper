@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:descendantFocusability="blocksDescendants"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="horizontal">
 
     <ImageView
 
+        android:id="@+id/imgIcon"
         android:layout_width="0dp"
         android:layout_height="24dp"
-        android:src="@drawable/ic_starting_point"
-        android:id="@+id/imgIcon"
         android:layout_weight="1"
-        />
+        android:src="@drawable/ic_starting_point" />
 
     <EditText
-        android:text= "Where to going"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:id="@+id/txtControl"
+        android:id="@+id/txtControl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:hint="@string/about_us"
         android:background="@android:color/transparent"
-    android:layout_weight="5" />
+        android:text="Where to going" />
 
 </LinearLayout>

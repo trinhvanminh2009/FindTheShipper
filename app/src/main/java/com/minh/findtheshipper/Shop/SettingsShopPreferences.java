@@ -1,4 +1,4 @@
-package com.minh.findtheshipper;
+package com.minh.findtheshipper.Shop;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +19,9 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.Shipper.SettingShipperPreferences;
 
 import java.util.List;
 

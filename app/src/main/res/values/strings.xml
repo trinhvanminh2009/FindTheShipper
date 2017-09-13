@@ -17,7 +17,8 @@
     <string name="create_order">Create Order</string>
     <string name="create_new_order">Create New Order</string>
     <string name="created_order">Created Order</string>
-    <string name="text_view_start_place">Start place</string>
+    <string name="destination">Destination: &#160;</string>
+    <string name="text_view_start_place">Start place: &#160;</string>
     <string name="edit_text_start_place">Place for shipper get products</string>
     <string name="text_view_advance_money">Advance money</string>
     <string name="edit_text_advance_money">Count by k (100 display 100k)</string>

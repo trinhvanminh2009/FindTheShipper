@@ -100,23 +100,23 @@
         <activity android:name="com.minh.findtheshipper.Test" >
         </activity>
         <activity android:name="com.minh.findtheshipper.FragmentActivity" />
-        <activity android:name="com.minh.findtheshipper.FragmentContainerShipper" >
+        <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.minh.findtheshipper.HandleMapsActivity" >
+        <activity android:name="com.minh.findtheshipper.Shop.HandleMapsActivity" >
         </activity>
         <activity
             android:name="com.minh.findtheshipper.utils.SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name="com.minh.findtheshipper.SettingShipperPreferences" />
+        <activity android:name="com.minh.findtheshipper.Shipper.SettingShipperPreferences" />
         <activity android:name="com.minh.findtheshipper.ChoosePlace" />
         <activity android:name="com.minh.findtheshipper.FragmentContainer" >
         </activity>
-        <activity android:name="com.minh.findtheshipper.SettingsShopPreferences" />
+        <activity android:name="com.minh.findtheshipper.Shop.SettingsShopPreferences" />
         <activity android:name="com.facebook.CustomTabMainActivity" />
         <!--
          The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically

@@ -28,8 +28,7 @@ public class TimeAgoHelpers {
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
         try {
             Date date = df.parse(stringTime);
-            long milliseconds = date.getTime();
-            return milliseconds;
+            return  date.getTime();
         } catch (ParseException e) {
             e.printStackTrace();
         }

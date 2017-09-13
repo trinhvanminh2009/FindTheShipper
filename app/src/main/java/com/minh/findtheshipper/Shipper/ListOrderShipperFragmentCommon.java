@@ -1,4 +1,4 @@
-package com.minh.findtheshipper;
+package com.minh.findtheshipper.Shipper;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,21 +15,22 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
+import com.minh.findtheshipper.models.Adapters.CustomAdapterListViewOrderItem;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderShipper;
-import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.OrderTemp;
-import com.minh.findtheshipper.models.User;
-import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 import io.realm.Realm;
-import io.realm.RealmResults;
-import io.realm.Sort;
 
-public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
+/**
+ * Created by trinh on 9/13/2017.
+ */
+
+public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragment {
     private Realm realm;
     private ArrayList<OrderTemp> orderList;
     private RecyclerView recyclerView;
@@ -40,29 +40,16 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         handleProgressDialog();
-        View view = inflater.inflate(R.layout.list_recycle_view, container,false);
-        recyclerView =(RecyclerView)view.findViewById(R.id.recycle_view);
+        View view = inflater.inflate(R.layout.list_recycle_view, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         Realm.init(getActivity());
         initRealm();
         loadAllList();
         return view;
-
-    }
-
-    public void initRealm()
-    {
-        realm = null;
-        realm = Realm.getDefaultInstance();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        realm.close();
     }
 
     public void handleProgressDialog()
@@ -74,18 +61,26 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
         progressDialog.show();
     }
 
-    public void loadAllList()
-    {
-        try
-        {
+    public void initRealm() {
+        realm = null;
+        realm = Realm.getDefaultInstance();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        realm.close();
+    }
+
+    public void loadAllList() {
+        try {
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
             Query query = mDatabase.orderByChild("Datetime");
             query.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     orderList = new ArrayList<>();
-                    for(DataSnapshot child: dataSnapshot.getChildren())
-                    {
+                    for (DataSnapshot child : dataSnapshot.getChildren()) {
                         final String key = child.getKey();
                         String status = dataSnapshot.child(key).child("Status").getValue(String.class);
                         String startPlace = dataSnapshot.child(key).child("Start place").getValue(String.class);
@@ -112,12 +107,11 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
                         orderList.add(orderTemp);
                     }
                     try {
-                        Collections.sort(orderList,new SortOrderTempHelpers());
-                        adapter = new CustomAdapterListviewOrderShipper(getActivity(),orderList);
+                        Collections.sort(orderList, new SortOrderTempHelpers());
+                        adapter = new CustomAdapterListViewOrderItem(orderList, getContext());
                         recyclerView.setAdapter(adapter);
                         progressDialog.dismiss();
-                    }catch (Exception e)
-                    {
+                    } catch (Exception e) {
                     }
                 }
 
@@ -125,8 +119,8 @@ public class ListOrderShipperFragment extends android.support.v4.app.Fragment {
                 public void onCancelled(DatabaseError databaseError) {
                 }
             });
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
         }
     }
+
 }

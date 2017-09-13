@@ -81,26 +81,26 @@
 
         </activity>
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".FragmentContainerShipper">
+        <activity android:name=".Shipper.FragmentContainerShipper">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HandleMapsActivity">
+        <activity android:name=".Shop.HandleMapsActivity">
 
         </activity>
         <activity
             android:name=".utils.SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".SettingShipperPreferences"
+        <activity android:name=".Shipper.SettingShipperPreferences"
             />
         <activity android:name=".ChoosePlace" />
         <activity android:name=".FragmentContainer">
 
         </activity>
-        <activity android:name=".SettingsShopPreferences"/>
+        <activity android:name=".Shop.SettingsShopPreferences"/>
     </application>
 
 </manifest>

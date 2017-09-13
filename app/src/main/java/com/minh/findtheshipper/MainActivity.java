@@ -5,10 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -20,8 +18,9 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.minh.findtheshipper.Shop.HandleMapsActivity;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.models.CurrentUser;
-import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.models.UserTemp;
 import com.sdsmdg.tastytoast.TastyToast;
 
@@ -58,7 +57,7 @@ public class MainActivity extends FragmentActivity {
         callbackManager = CallbackManager.Factory.create();
         final LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
-        if(checkLoginFacebook() == false)
+        if(!checkLoginFacebook())
         {
             loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override

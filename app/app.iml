@@ -109,8 +109,10 @@
     <orderEntry type="library" exported="" scope="TEST" name="runner-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-library-1.3" level="project" />
+    <orderEntry type="library" exported="" name="facebook-android-sdk-4.26.0" level="project" />
     <orderEntry type="library" exported="" name="relinker-1.2.2" level="project" />
     <orderEntry type="library" exported="" name="transition-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="core-3.3.0" level="project" />
     <orderEntry type="library" exported="" name="materialize-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="disklrucache-4.0.0-RC1" level="project" />
     <orderEntry type="library" exported="" name="rebound-0.3.8" level="project" />
@@ -133,6 +135,7 @@
     <orderEntry type="library" exported="" name="support-v4-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="support-media-compat-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="bolts-applinks-1.4.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-places-11.0.2" level="project" />
     <orderEntry type="library" exported="" name="butterknife-8.6.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-common-11.0.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-tasks-11.0.2" level="project" />
@@ -142,7 +145,6 @@
     <orderEntry type="library" exported="" name="support-compat-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="play-services-basement-11.0.2" level="project" />
     <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
-    <orderEntry type="library" exported="" name="facebook-android-sdk-4.25.0" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="firebase-iid-11.0.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-integration-1.3" level="project" />

@@ -9,6 +9,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.minh.findtheshipper.Shipper.FragmentContainerShipper;
+import com.minh.findtheshipper.Shop.HandleMapsActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

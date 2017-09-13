@@ -1,7 +1,5 @@
-package com.minh.findtheshipper;
+package com.minh.findtheshipper.Shipper;
 
-import android.app.ActionBar;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -9,29 +7,22 @@ import android.content.res.Resources;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Build;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.Toolbar;
 
-import com.sdsmdg.tastytoast.TastyToast;
+import com.minh.findtheshipper.R;
 
 import java.util.List;
 import java.util.Locale;
