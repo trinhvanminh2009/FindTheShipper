@@ -67,10 +67,14 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
 
             }
         });
-        String phoneNumber = "- " + order.getPhoneNumber();
+        String phoneNumber = ""+order.getPhoneNumber();
+        String startPlace = " "+EncodingFirebase.getShortAddress(order.getStartPoint());
+        String finishPlace = " "+EncodingFirebase.getShortAddress(order.getFinishPoint());
+        String distance = " "+order.getDistance();
+        holder.txtDistance.setText(distance);
         holder.txtPhoneNumber.setText(phoneNumber);
-        holder.txtStartPlace.setText(EncodingFirebase.getShortAddress(order.getStartPoint()));
-        holder.txtFinishPlace.setText(EncodingFirebase.getShortAddress(order.getFinishPoint()));
+        holder.txtStartPlace.setText(startPlace);
+        holder.txtFinishPlace.setText(finishPlace);
         holder.txtPrice.setText(order.getShipMoney());
         holder.txtTimeAgo.setText(timeAgoHelpers.getTimeAgo(order.getDateTime(), context));
         holder.itemView.setClickable(true);
@@ -96,6 +100,7 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
         private TextView txtPrice;
         private RatingBar ratingBarOrder;
         private TextView txtTimeAgo;
+        private TextView txtDistance;
 
         public ViewHolder(View view) {
             super(view);
@@ -107,6 +112,7 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
             ratingBarOrder = (RatingBar) view.findViewById(R.id.ratingOrder);
             txtPrice = (TextView) view.findViewById(R.id.txtPrice);
             txtTimeAgo = (TextView) view.findViewById(R.id.txtTimeAgo);
+            txtDistance = (TextView) view.findViewById(R.id.txtDistance);
         }
     }
 }

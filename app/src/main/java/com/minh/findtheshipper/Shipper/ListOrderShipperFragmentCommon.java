@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,12 +17,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListViewOrderItem;
-import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderShipper;
 import com.minh.findtheshipper.models.OrderTemp;
-
 import java.util.ArrayList;
 import java.util.Collections;
-
 import io.realm.Realm;
 
 /**

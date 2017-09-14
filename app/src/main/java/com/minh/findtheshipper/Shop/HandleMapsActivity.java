@@ -518,11 +518,11 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 User user = getCurrentUser();
                 final Order order = realm.createObject(Order.class, "order_" + user.getEmail() + "_" + countOrder[0]);
                 order.setStatus(getResources().getString(R.string.order_status));
-                order.setStartPoint("- " + editStartPlace.getText().toString());
-                order.setFinishPoint("- " + listControls.get(1).getContent());
-                order.setAdvancedMoney(getResources().getString(R.string.order_advanced_money) + editAdvancedMoney.getText().toString() + "K VNĐ");
-                order.setDistance(getResources().getString(R.string.order_distance) + txtDistance.getText().toString());
-                order.setShipMoney(getResources().getString(R.string.order_ship_money) + editShipMoney.getText().toString() + "K VNĐ");
+                order.setStartPoint(editStartPlace.getText().toString());
+                order.setFinishPoint(listControls.get(1).getContent());
+                order.setAdvancedMoney(editAdvancedMoney.getText().toString() + ",000 VNĐ");
+                order.setDistance(txtDistance.getText().toString());
+                order.setShipMoney(editShipMoney.getText().toString() + ",000 VNĐ");
                 if (!editNote.getText().toString().equals("")) {
                     order.setNote(getResources().getString(R.string.order_note) + editNote.getText().toString());
                 }

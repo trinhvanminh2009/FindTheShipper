@@ -50,15 +50,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fragment_detail_order.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fragment_detail_order.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_order.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+            <state relative-caret-position="2036">
+              <caret line="230" column="15" selection-start-line="230" selection-start-column="15" selection-end-line="230" selection-end-column="15" />
               <folding>
-                <element signature="e#1068#1086#0" expanded="true" />
-                <element signature="e#1423#1441#0" expanded="true" />
-                <element signature="e#1828#1849#0" expanded="true" />
+                <element signature="e#1797#1815#0" expanded="true" />
+                <element signature="e#2248#2266#0" expanded="true" />
+                <element signature="e#2610#2637#0" expanded="true" />
+                <element signature="e#3044#3058#0" expanded="true" />
+                <element signature="e#3956#3977#0" expanded="true" />
+                <element signature="e#4725#4746#0" expanded="true" />
+                <element signature="e#5682#5703#0" expanded="true" />
+                <element signature="e#6490#6508#0" expanded="true" />
+                <element signature="e#7263#7281#0" expanded="true" />
+                <element signature="e#8043#8061#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,16 +74,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_order_item.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_order_item.xml">
+      <file leaf-file-name="CustomAdapterListViewOrderItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListViewOrderItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="55" column="23" selection-start-line="22" selection-start-column="6" selection-end-line="55" selection-end-column="23" />
+            <state relative-caret-position="266">
+              <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="CustomAdapterListComment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListComment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="54" column="65" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomAdapterListviewNotification.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListviewNotification.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-213">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListOrderShipperFragmentCommon.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/ListOrderShipperFragmentCommon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="40" column="63" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetailOrderShipperFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/DetailOrderShipperFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -88,8 +134,8 @@
         <option value="Interface" />
         <option value="valueResourceFile" />
         <option value="resourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -2359,8 +2405,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/helpers/SortOrderTempHelpers.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/CommentTemp.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/UserTemp.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/CurrentUser.java" />
@@ -2401,15 +2445,17 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MyFireBaseMessagingService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/FragmentContainerShipper.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/ListOrderShipperFragmentCommon.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/helpers/EncodingFirebase.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/HandleMapsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_order_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListViewOrderItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/FragmentDetailOrder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/HandleMapsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListViewOrderItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/ListOrderShipperFragmentCommon.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/DetailOrderShipperFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_order_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_order.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListviewNotification.java" />
       </list>
     </option>
   </component>
@@ -2460,6 +2506,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane />
       </pane>
@@ -2521,7 +2570,43 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="mipmap" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FindTheShipper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FindTheShipper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2548,10 +2633,6 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="findtheshipper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2587,6 +2668,10 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="findtheshipper" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2621,17 +2706,45 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="findtheshipper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FindTheShipper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="findtheshipper" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="Scratches">
-        <subPane />
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
       </pane>
       <pane id="Scope">
         <subPane subId="Production">
@@ -2642,6 +2755,9 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="Scratches">
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -2659,11 +2775,9 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_save.png" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\My Project\FindTheShipper\app\src\main\res\drawable-xxhdpi" />
-      <recent name="D:\My Project\FindTheShipper\app\src\main\res\drawable" />
-      <recent name="C:\Users\Minh\AndroidStudioProjects\FindTheShipper\app\src\main\res\drawable-xxhdpi" />
-      <recent name="C:\Users\Minh\AndroidStudioProjects\FindTheShipper" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My Project\FindTheShipper\app\src\main\assets" />
+      <recent name="C:\Users\Minh\AndroidStudioProjects\FindTheShipper\app" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.minh.findtheshipper.helpers" />
@@ -2675,9 +2789,11 @@
     <key name="android.template.parentActivityClass">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\My Project\FindTheShipper\app\src\main\assets" />
-      <recent name="C:\Users\Minh\AndroidStudioProjects\FindTheShipper\app" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My Project\FindTheShipper\app\src\main\res\drawable-xxhdpi" />
+      <recent name="D:\My Project\FindTheShipper\app\src\main\res\drawable" />
+      <recent name="C:\Users\Minh\AndroidStudioProjects\FindTheShipper\app\src\main\res\drawable-xxhdpi" />
+      <recent name="C:\Users\Minh\AndroidStudioProjects\FindTheShipper" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -3071,7 +3187,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32423207" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -3079,22 +3195,21 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.89419794" sideWeight="0.5121029" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0784983" sideWeight="0.48789713" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18456884" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.081911266" sideWeight="0.48789713" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27760968" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.77303755" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2980333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.03924915" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2980333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.040955633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.040955633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3102,6 +3217,7 @@
       <window_info id="Assistant" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22306526" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.03924915" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -3183,22 +3299,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/helpers/TimeAgoHelpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/ListOrderCreatedFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/SettingsShopPreferences.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -3207,19 +3307,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MyApplication.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/SettingShipperPreferences.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3227,15 +3319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/ChoosePlace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3243,18 +3326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="84" column="61" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
-          <folding>
-            <element signature="e#4084#4731#0" expanded="false" />
-            <element signature="e#4730#4731#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3266,27 +3337,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MapsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3174">
-          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MyFirebaseInstanceIDService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MyFireBaseMessagingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="74" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3332,14 +3386,6 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListviewOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-927">
-          <caret line="53" column="93" selection-start-line="53" selection-start-column="89" selection-end-line="53" selection-end-column="93" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Order.java">
@@ -3412,24 +3458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListviewNotification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/ListOrderShipperFragmentCommon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="95" column="33" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-vi/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -3468,7 +3496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="173" column="39" selection-start-line="173" selection-start-column="39" selection-end-line="173" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3477,8 +3504,8 @@
         <state relative-caret-position="257">
           <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
           <folding>
-            <element signature="e#1390#1396#0" expanded="true" />
-            <element signature="e#1460#1466#0" expanded="true" />
+            <element signature="e#1390#1396#0" expanded="false" />
+            <element signature="e#1460#1466#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3487,7 +3514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3495,7 +3521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3503,29 +3528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListComment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="54" column="65" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/HandleMapsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="525" column="64" selection-start-line="525" selection-start-column="64" selection-end-line="525" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1505296579619" expanded="false" signature="28299:28357" ph="&quot;Drag the maps into place you want to start. Your place ...&quot;" />
-            <marker date="1505296579619" expanded="false" signature="28444:28586" ph="(cameraPosition) → {" />
-            <marker date="1505296579619" expanded="false" signature="28923:28942" ph="}" />
-            <marker date="1505296579619" expanded="false" signature="29342:29398" ph="&quot;Drag the maps into place you want to finish.Your place ...&quot;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3542,18 +3544,6 @@
         <state relative-caret-position="-34">
           <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListViewOrderItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3395#3621#0" expanded="true" />
-            <element signature="e#3620#3621#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3577,7 +3567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3614,11 +3603,93 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="84" column="61" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
+          <folding>
+            <element signature="e#4084#4731#0" expanded="false" />
+            <element signature="e#4730#4731#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/ChoosePlace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MyFireBaseMessagingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListviewOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="53" column="93" selection-start-line="53" selection-start-column="89" selection-end-line="53" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/HandleMapsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="523" column="34" selection-start-line="523" selection-start-column="34" selection-end-line="523" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1505376027413" expanded="false" signature="28127:28185" ph="&quot;Drag the maps into place you want to start. Your place ...&quot;" />
+            <marker date="1505376027413" expanded="false" signature="28272:28414" ph="(cameraPosition) → {" />
+            <marker date="1505376027413" expanded="false" signature="28751:28770" ph="}" />
+            <marker date="1505376027413" expanded="false" signature="29170:29226" ph="&quot;Drag the maps into place you want to finish.Your place ...&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/MapsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1381">
+          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/DetailOrderShipperFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/ListOrderShipperFragmentCommon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="40" column="63" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_cell_phone.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_order_item.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="55" column="23" selection-start-line="22" selection-start-column="6" selection-end-line="55" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="319">
+          <caret line="137" column="51" selection-start-line="128" selection-start-column="9" selection-end-line="137" selection-end-column="51" />
+          <folding>
+            <element signature="e#2785#2806#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3627,17 +3698,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_order.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+        <state relative-caret-position="2036">
+          <caret line="230" column="15" selection-start-line="230" selection-start-column="15" selection-end-line="230" selection-end-column="15" />
           <folding>
-            <element signature="e#1068#1086#0" expanded="true" />
-            <element signature="e#1423#1441#0" expanded="true" />
-            <element signature="e#1828#1849#0" expanded="true" />
+            <element signature="e#1797#1815#0" expanded="true" />
+            <element signature="e#2248#2266#0" expanded="true" />
+            <element signature="e#2610#2637#0" expanded="true" />
+            <element signature="e#3044#3058#0" expanded="true" />
+            <element signature="e#3956#3977#0" expanded="true" />
+            <element signature="e#4725#4746#0" expanded="true" />
+            <element signature="e#5682#5703#0" expanded="true" />
+            <element signature="e#6490#6508#0" expanded="true" />
+            <element signature="e#7263#7281#0" expanded="true" />
+            <element signature="e#8043#8061#0" expanded="true" />
           </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListViewOrderItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="54" column="65" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/CustomAdapterListviewNotification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-213">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

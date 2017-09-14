@@ -32,6 +32,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_create_new.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_note_2.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_note_2.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_time_watch.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_time_watch.png"
     },
@@ -76,6 +80,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_placehoder.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_call_2.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_call_2.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_speaker_notes_black_24dp.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_speaker_notes_black_24dp.png"
     },
@@ -112,6 +120,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_your_profile.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_distance_2.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_distance_2.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_marker.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_marker.png"
     },
@@ -134,6 +146,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_call.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_call.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_advanced_money.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_advanced_money.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_delete.png",

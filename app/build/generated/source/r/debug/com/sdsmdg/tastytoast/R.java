@@ -492,10 +492,10 @@ public final class R {
         public static final int confusing_toast = 0x7f02008c;
         public static final int default_toast = 0x7f02008d;
         public static final int error_toast = 0x7f020097;
-        public static final int info_toast = 0x7f0200c5;
-        public static final int notification_template_icon_bg = 0x7f0200f1;
-        public static final int success_toast = 0x7f0200ed;
-        public static final int warning_toast = 0x7f0200f0;
+        public static final int info_toast = 0x7f0200c9;
+        public static final int notification_template_icon_bg = 0x7f0200f5;
+        public static final int success_toast = 0x7f0200f1;
+        public static final int warning_toast = 0x7f0200f4;
     }
     public static final class id {
         public static final int action0 = 0x7f100155;
@@ -547,7 +547,7 @@ public final class R {
         public static final int ifRoom = 0x7f100060;
         public static final int image = 0x7f10007d;
         public static final int info = 0x7f10015f;
-        public static final int infoView = 0x7f100108;
+        public static final int infoView = 0x7f10010f;
         public static final int line1 = 0x7f100164;
         public static final int line3 = 0x7f100166;
         public static final int linearLayout = 0x7f1000ea;

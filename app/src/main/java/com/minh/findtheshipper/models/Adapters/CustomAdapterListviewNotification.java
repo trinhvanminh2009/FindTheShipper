@@ -21,7 +21,8 @@ import java.util.List;
  * Created by trinh on 6/16/2017.
  */
 
-public class CustomAdapterListviewNotification extends ArrayAdapter<NotificationObject> {
+public class
+CustomAdapterListviewNotification extends ArrayAdapter<NotificationObject> {
     private Context context;
     private List<NotificationObject> notificationObjectList;
 

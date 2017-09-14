@@ -34,7 +34,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
+                android:layout_marginStart="7dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -62,8 +62,9 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="7dp"
                 android:src="@drawable/ic_start_place" />
 
             <TextView
@@ -82,8 +83,9 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
                 android:src="@drawable/ic_destination" />
 
             <TextView
@@ -96,16 +98,17 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="7dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_cell_phone" />
 
             <TextView
@@ -128,10 +131,31 @@
                 style="@style/customRatingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:isIndicator="true"
                 android:numStars="5"
-                android:theme="@style/RatingBar"
-                android:stepSize="1" />
+                android:stepSize="1"
+                android:theme="@style/RatingBar" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/ic_distance_2" />
+
+                <TextView
+                    android:id="@+id/txtDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_us"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/txtPrice"
