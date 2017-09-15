@@ -1,6 +1,10 @@
 package com.minh.findtheshipper.models.Adapters;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -16,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.Shipper.DetailOrderShipperFragment;
+import com.minh.findtheshipper.Shipper.FragmentContainerShipper;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.OrderTemp;
@@ -52,12 +59,13 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
         TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
         final EncodingFirebase encodingFirebase = new EncodingFirebase();
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
+        final String[] key = {""};
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String key = encodingFirebase.getEmailFromUserID(order.getOrderID());
-                String nameCreator = dataSnapshot.child(key).child("Name").getValue(String.class);
-                String url = dataSnapshot.child(key).child("Avatar").getValue(String.class);
+                key[0] = encodingFirebase.getEmailFromUserID(order.getOrderID());
+                String nameCreator = dataSnapshot.child(key[0]).child("Name").getValue(String.class);
+                String url = dataSnapshot.child(key[0]).child("Avatar").getValue(String.class);
                 holder.txtUserName.setText(nameCreator);
                 Glide.with(context).load(encodingFirebase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(holder.imgAvatar);
             }
@@ -67,10 +75,10 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
 
             }
         });
-        String phoneNumber = ""+order.getPhoneNumber();
-        String startPlace = " "+EncodingFirebase.getShortAddress(order.getStartPoint());
-        String finishPlace = " "+EncodingFirebase.getShortAddress(order.getFinishPoint());
-        String distance = " "+order.getDistance();
+        String phoneNumber = "" + order.getPhoneNumber();
+        String startPlace = " " + EncodingFirebase.getShortAddress(order.getStartPoint());
+        String finishPlace = " " + EncodingFirebase.getShortAddress(order.getFinishPoint());
+        String distance = " " + order.getDistance();
         holder.txtDistance.setText(distance);
         holder.txtPhoneNumber.setText(phoneNumber);
         holder.txtStartPlace.setText(startPlace);
@@ -81,15 +89,37 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TastyToast.makeText(context,"Clicked on "+position , TastyToast.LENGTH_LONG,TastyToast.INFO);
+                Fragment detailOrderFragment = new DetailOrderShipperFragment();
+                Bundle bundle = new Bundle();
+                String []arrayValue = new String[2];
+
+                arrayValue[0] = key[0];
+                arrayValue[1] = order.getOrderID();
+                bundle.putStringArray("orderKey", arrayValue);
+                detailOrderFragment.setArguments(bundle);
+                switchContent(R.id.fragmentShipperContainer, detailOrderFragment);
             }
         });
     }
+
+    private void switchContent(int id, Fragment fragment) {
+        if (context == null) {
+            return;
+        }
+        if (context instanceof FragmentContainerShipper) {
+            FragmentContainerShipper fragmentContainerShipper = (FragmentContainerShipper) context;
+            Fragment frag = fragment;
+            fragmentContainerShipper.switchContent(id, frag);
+
+        }
+    }
+
 
     @Override
     public int getItemCount() {
         return orderList.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgAvatar;

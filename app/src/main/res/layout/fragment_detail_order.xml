@@ -34,6 +34,7 @@
                         android:id="@+id/imgUserImage"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:contentDescription="@string/about_us"
                         android:src="@drawable/ic_your_profile" />
 
                     <LinearLayout
@@ -218,14 +219,20 @@
         </LinearLayout>
 
     </LinearLayout>
-    <RatingBar
-        android:id="@+id/ratingOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:isIndicator="true"
-        android:numStars="5"
-        android:clickable="true"
-        android:stepSize="1"
-        android:soundEffectsEnabled="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RatingBar
+            android:id="@+id/ratingOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:stepSize="1"
+            android:soundEffectsEnabled="true" />
+    </RelativeLayout>
+
 </LinearLayout>

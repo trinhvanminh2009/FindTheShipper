@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -354,6 +355,13 @@ public class FragmentContainerShipper extends FragmentActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.fragmentShipperContainer, fragment);
         transaction.commit();
+    }
+
+    public void switchContent(int id, Fragment fragment) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(id, fragment, fragment.toString());
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
 }
