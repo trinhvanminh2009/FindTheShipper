@@ -19,7 +19,7 @@ import com.facebook.login.widget.LoginButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.minh.findtheshipper.Shop.HandleMapsActivity;
-import com.minh.findtheshipper.helpers.EncodingFirebase;
+import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.UserTemp;
 import com.sdsmdg.tastytoast.TastyToast;
@@ -68,7 +68,7 @@ public class MainActivity extends FragmentActivity {
                             public void onCompleted(JSONObject object, GraphResponse response) {
 
                                 try {
-                                    EncodingFirebase encodingFirebase = new EncodingFirebase();
+                                    EncodingFireBase encodingFireBase = new EncodingFireBase();
                                     Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
                                     final String email = response.getJSONObject().getString("email");
                                     final String gender = response.getJSONObject().getString("gender");
@@ -93,9 +93,9 @@ public class MainActivity extends FragmentActivity {
                                         }
                                     });
                                     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
-                                    mDatabase.child(encodingFirebase.encodeString(email)).child("Name").setValue(encodingFirebase.encodeString(name));
-                                    mDatabase.child(encodingFirebase.encodeString(email)).child("Gender").setValue(gender);
-                                    mDatabase.child(encodingFirebase.encodeString(email)).child("Avatar").setValue(encodingFirebase.encodeString(imageURL));
+                                    mDatabase.child(encodingFireBase.encodeString(email)).child("Name").setValue(encodingFireBase.encodeString(name));
+                                    mDatabase.child(encodingFireBase.encodeString(email)).child("Gender").setValue(gender);
+                                    mDatabase.child(encodingFireBase.encodeString(email)).child("Avatar").setValue(encodingFireBase.encodeString(imageURL));
 
                                     startActivity(intent);
                                 } catch (JSONException e) {

@@ -69,7 +69,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerUIUtils;
-import com.minh.findtheshipper.helpers.EncodingFirebase;
+import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.FragmentActivity;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.DialogHelpers;
@@ -514,7 +514,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                EncodingFirebase encodingFirebase = new EncodingFirebase();
+                EncodingFireBase encodingFireBase = new EncodingFireBase();
                 User user = getCurrentUser();
                 final Order order = realm.createObject(Order.class, "order_" + user.getEmail() + "_" + countOrder[0]);
                 order.setStatus(getResources().getString(R.string.order_status));
@@ -538,16 +538,16 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 realm.insertOrUpdate(user);
                 //Post data into server after added to database, have to encoding before post into FireBase server
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Status").setValue(order.getStatus());
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Start place").setValue(order.getStartPoint());
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Finish place").setValue(order.getFinishPoint());
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Advanced money").setValue(order.getAdvancedMoney());
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Phone number").setValue(order.getPhoneNumber());
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Ship Money").setValue(order.getShipMoney());
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Note").setValue(order.getNote());
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Distance").setValue(order.getDistance());
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Datetime").setValue(order.getDateTime());
-                mDatabase.child(encodingFirebase.encodeString(order.getOrderID())).child("Save Order").setValue(order.getSaveOrder());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Status").setValue(order.getStatus());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Start place").setValue(order.getStartPoint());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Finish place").setValue(order.getFinishPoint());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Advanced money").setValue(order.getAdvancedMoney());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Phone number").setValue(order.getPhoneNumber());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Ship Money").setValue(order.getShipMoney());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Note").setValue(order.getNote());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Distance").setValue(order.getDistance());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Datetime").setValue(order.getDateTime());
+                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Save Order").setValue(order.getSaveOrder());
                 //Handle change to created order
                 getSupportActionBar().setTitle(R.string.created_order);
                 fragmentMaps.setVisibility(View.GONE);
@@ -613,53 +613,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         layoutControl.setVisibility(View.GONE);
         handleCreateNewOrder();
     }
-/*
-    @OnItemClick(R.id.listAction)
-    public void listViewClicked(AdapterView<?> parent, View view, int position, long id) {
-        final ListControl listControl = listControls.get(position);
-        if (listControl.getIdIcon() == R.drawable.ic_starting_point) {
-            btnOk.setVisibility(View.VISIBLE);
-            btnPlace.setVisibility(View.VISIBLE);
-            layoutItem.setVisibility(View.GONE);
-            layoutCreateNewOrder.setVisibility(View.GONE);
-            btnCreateNewOrder.setVisibility(View.GONE);
 
-
-            TastyToast.makeText(HandleMapsActivity.this, getResources().getString(R.string.choosing_starting_point), TastyToast.LENGTH_LONG, TastyToast.INFO);
-            mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
-                @Override
-                public void onCameraChange(CameraPosition cameraPosition) {
-
-                    LatLng center = mMap.getCameraPosition().target;
-                    //TastyToast.makeText(HandleMapsActivity.this,,TastyToast.LENGTH_LONG,TastyToast.CONFUSING);
-                    String tempAddress = getCompleteAddressString(center.latitude, center.longitude);
-
-                    itemClicked = 1;
-
-                }
-            });
-        }
-        if (listControl.getIdIcon() == R.drawable.ic_finish_point) {
-            btnCreateNewOrder.setVisibility(View.GONE);
-            layoutItem.setVisibility(View.GONE);
-            btnOk.setVisibility(View.VISIBLE);
-            btnPlace.setVisibility(View.VISIBLE);
-            layoutCreateNewOrder.setVisibility(View.GONE);
-            TastyToast.makeText(HandleMapsActivity.this, getResources().getString(R.string.choosing_finish_point), TastyToast.LENGTH_LONG, TastyToast.INFO);
-            mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
-                @Override
-                public void onCameraChange(CameraPosition cameraPosition) {
-                    LatLng center = mMap.getCameraPosition().target;
-                    String tempAddress = getCompleteAddressString(center.latitude, center.longitude);
-                    listControls.set(1, new ListControl(R.drawable.ic_finish_point, tempAddress));
-
-                    itemClicked = 2;
-                }
-            });
-
-        }
-    }
-*/
 
     @OnClick(R.id.btnOK)
     public void getAddress() {

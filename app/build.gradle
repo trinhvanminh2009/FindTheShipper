@@ -46,6 +46,7 @@ dependencies {
     compile 'com.google.firebase:firebase-core:11.0.2'
     compile 'com.google.firebase:firebase-database:11.0.2'
     compile 'com.google.firebase:firebase-messaging:11.0.2'
+    compile 'com.github.markushi:circlebutton:1.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'

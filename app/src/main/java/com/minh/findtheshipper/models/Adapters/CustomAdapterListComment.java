@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.minh.findtheshipper.helpers.EncodingFirebase;
+import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.CommentTemp;
@@ -51,17 +51,17 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
              */
 
             final CommentTemp comment = commentList.get(position);
-            final EncodingFirebase encodingFirebase = new EncodingFirebase();
+            final EncodingFireBase encodingFireBase = new EncodingFireBase();
             TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    String key = encodingFirebase.getEmailFromUserID(comment.getIdComment());
+                    String key = encodingFireBase.getEmailFromUserID(comment.getIdComment());
                     String url = dataSnapshot.child(key).child("Avatar").getValue(String.class);
                     String name = dataSnapshot.child(key).child("Name").getValue(String.class);
                     holder.txtUserName.setText(name);
-                    Glide.with(context).load(encodingFirebase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.5f).into(holder.imgAvatar);
+                    Glide.with(context).load(encodingFireBase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.5f).into(holder.imgAvatar);
                 }
 
                 @Override

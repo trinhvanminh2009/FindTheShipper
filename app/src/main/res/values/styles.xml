@@ -18,4 +18,7 @@
         <item name="colorControlNormal">@color/md_red_800</item>
         <item name="colorControlActivated">@color/md_grey_400</item>
     </style>
+    <style name="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/abc_btn_borderless_material</item>
+    </style>
 </resources>

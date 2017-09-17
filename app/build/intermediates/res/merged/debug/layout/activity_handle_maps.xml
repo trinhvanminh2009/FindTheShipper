@@ -6,13 +6,17 @@
 
     <include
         android:id="@+id/toolBar"
-        layout="@layout/toolbar"></include>
+        layout="@layout/toolbar">
+
+    </include>
 
     <FrameLayout
         android:id="@+id/fragmentShopContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"></FrameLayout>
+        android:visibility="gone">
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/fragmentMaps"

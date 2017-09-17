@@ -3,6 +3,7 @@ package com.minh.findtheshipper.utils;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.animation.AnimationSet;
 
 /**
@@ -27,6 +28,14 @@ public class AnimationUtils  {
     {
         AnimatorSet animatorSet = new AnimatorSet();
         ObjectAnimator animatorTranslateY = ObjectAnimator.ofFloat(holder.itemView,"translationY",-100,100,-70,70,-50,50,-20,20,-10,10,-5,5,0);
+        animatorTranslateY.setDuration(1000);
+        animatorSet.playTogether(animatorTranslateY);
+        animatorSet.start();
+    }
+    public static void animateItemView(View view)
+    {
+        AnimatorSet animatorSet = new AnimatorSet();
+        ObjectAnimator animatorTranslateY = ObjectAnimator.ofFloat(view,"translationY",-100,100,-70,70,-50,50,-20,20,-10,10,-5,5,0);
         animatorTranslateY.setDuration(1000);
         animatorSet.playTogether(animatorTranslateY);
         animatorSet.start();

@@ -17,6 +17,7 @@
         android:orientation="vertical"
         android:paddingBottom="5dp"
         android:paddingLeft="5dp"
+        android:background="@drawable/custom_click"
         android:paddingRight="5dp"
         android:paddingTop="5dp">
 

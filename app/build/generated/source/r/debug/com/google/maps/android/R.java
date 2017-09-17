@@ -8,47 +8,47 @@ package com.google.maps.android;
 
 public final class R {
     public static final class attr {
-        public static final int ambientEnabled = 0x7f010136;
-        public static final int buttonSize = 0x7f01017b;
-        public static final int cameraBearing = 0x7f010127;
-        public static final int cameraMaxZoomPreference = 0x7f010138;
-        public static final int cameraMinZoomPreference = 0x7f010137;
-        public static final int cameraTargetLat = 0x7f010128;
-        public static final int cameraTargetLng = 0x7f010129;
-        public static final int cameraTilt = 0x7f01012a;
-        public static final int cameraZoom = 0x7f01012b;
-        public static final int circleCrop = 0x7f010125;
-        public static final int colorScheme = 0x7f01017c;
-        public static final int imageAspectRatio = 0x7f010124;
-        public static final int imageAspectRatioAdjust = 0x7f010123;
-        public static final int latLngBoundsNorthEastLatitude = 0x7f01013b;
-        public static final int latLngBoundsNorthEastLongitude = 0x7f01013c;
-        public static final int latLngBoundsSouthWestLatitude = 0x7f010139;
-        public static final int latLngBoundsSouthWestLongitude = 0x7f01013a;
-        public static final int liteMode = 0x7f01012c;
-        public static final int mapType = 0x7f010126;
-        public static final int scopeUris = 0x7f01017d;
-        public static final int uiCompass = 0x7f01012d;
-        public static final int uiMapToolbar = 0x7f010135;
-        public static final int uiRotateGestures = 0x7f01012e;
-        public static final int uiScrollGestures = 0x7f01012f;
-        public static final int uiTiltGestures = 0x7f010130;
-        public static final int uiZoomControls = 0x7f010131;
-        public static final int uiZoomGestures = 0x7f010132;
-        public static final int useViewLifecycle = 0x7f010133;
-        public static final int zOrderOnTop = 0x7f010134;
+        public static final int ambientEnabled = 0x7f010138;
+        public static final int buttonSize = 0x7f01017d;
+        public static final int cameraBearing = 0x7f010129;
+        public static final int cameraMaxZoomPreference = 0x7f01013a;
+        public static final int cameraMinZoomPreference = 0x7f010139;
+        public static final int cameraTargetLat = 0x7f01012a;
+        public static final int cameraTargetLng = 0x7f01012b;
+        public static final int cameraTilt = 0x7f01012c;
+        public static final int cameraZoom = 0x7f01012d;
+        public static final int circleCrop = 0x7f010127;
+        public static final int colorScheme = 0x7f01017e;
+        public static final int imageAspectRatio = 0x7f010126;
+        public static final int imageAspectRatioAdjust = 0x7f010125;
+        public static final int latLngBoundsNorthEastLatitude = 0x7f01013d;
+        public static final int latLngBoundsNorthEastLongitude = 0x7f01013e;
+        public static final int latLngBoundsSouthWestLatitude = 0x7f01013b;
+        public static final int latLngBoundsSouthWestLongitude = 0x7f01013c;
+        public static final int liteMode = 0x7f01012e;
+        public static final int mapType = 0x7f010128;
+        public static final int scopeUris = 0x7f01017f;
+        public static final int uiCompass = 0x7f01012f;
+        public static final int uiMapToolbar = 0x7f010137;
+        public static final int uiRotateGestures = 0x7f010130;
+        public static final int uiScrollGestures = 0x7f010131;
+        public static final int uiTiltGestures = 0x7f010132;
+        public static final int uiZoomControls = 0x7f010133;
+        public static final int uiZoomGestures = 0x7f010134;
+        public static final int useViewLifecycle = 0x7f010135;
+        public static final int zOrderOnTop = 0x7f010136;
     }
     public static final class color {
-        public static final int common_google_signin_btn_text_dark = 0x7f0e01d1;
-        public static final int common_google_signin_btn_text_dark_default = 0x7f0e0033;
-        public static final int common_google_signin_btn_text_dark_disabled = 0x7f0e0034;
-        public static final int common_google_signin_btn_text_dark_focused = 0x7f0e0035;
-        public static final int common_google_signin_btn_text_dark_pressed = 0x7f0e0036;
-        public static final int common_google_signin_btn_text_light = 0x7f0e01d2;
-        public static final int common_google_signin_btn_text_light_default = 0x7f0e0037;
-        public static final int common_google_signin_btn_text_light_disabled = 0x7f0e0038;
-        public static final int common_google_signin_btn_text_light_focused = 0x7f0e0039;
-        public static final int common_google_signin_btn_text_light_pressed = 0x7f0e003a;
+        public static final int common_google_signin_btn_text_dark = 0x7f0e01d2;
+        public static final int common_google_signin_btn_text_dark_default = 0x7f0e0034;
+        public static final int common_google_signin_btn_text_dark_disabled = 0x7f0e0035;
+        public static final int common_google_signin_btn_text_dark_focused = 0x7f0e0036;
+        public static final int common_google_signin_btn_text_dark_pressed = 0x7f0e0037;
+        public static final int common_google_signin_btn_text_light = 0x7f0e01d3;
+        public static final int common_google_signin_btn_text_light_default = 0x7f0e0038;
+        public static final int common_google_signin_btn_text_light_disabled = 0x7f0e0039;
+        public static final int common_google_signin_btn_text_light_focused = 0x7f0e003a;
+        public static final int common_google_signin_btn_text_light_pressed = 0x7f0e003b;
     }
     public static final class drawable {
         public static final int amu_bubble_mask = 0x7f020054;
@@ -81,17 +81,17 @@ public final class R {
         public static final int satellite = 0x7f10005c;
         public static final int standard = 0x7f100067;
         public static final int terrain = 0x7f10005d;
-        public static final int webview = 0x7f1000db;
+        public static final int webview = 0x7f1000e9;
         public static final int wide = 0x7f100068;
-        public static final int window = 0x7f1000da;
+        public static final int window = 0x7f1000e8;
     }
     public static final class integer {
         public static final int google_play_services_version = 0x7f0d0006;
     }
     public static final class layout {
-        public static final int amu_info_window = 0x7f040022;
-        public static final int amu_text_bubble = 0x7f040023;
-        public static final int amu_webview = 0x7f040024;
+        public static final int amu_info_window = 0x7f040023;
+        public static final int amu_text_bubble = 0x7f040024;
+        public static final int amu_webview = 0x7f040025;
     }
     public static final class raw {
         public static final int amu_ballon_gx_prefix = 0x7f080000;
@@ -139,11 +139,11 @@ public final class R {
         public static final int amu_ClusterIcon_TextAppearance = 0x7f0b01c3;
     }
     public static final class styleable {
-        public static final int[] LoadingImageView = { 0x7f010123, 0x7f010124, 0x7f010125 };
+        public static final int[] LoadingImageView = { 0x7f010125, 0x7f010126, 0x7f010127 };
         public static final int LoadingImageView_circleCrop = 2;
         public static final int LoadingImageView_imageAspectRatio = 1;
         public static final int LoadingImageView_imageAspectRatioAdjust = 0;
-        public static final int[] MapAttrs = { 0x7f010126, 0x7f010127, 0x7f010128, 0x7f010129, 0x7f01012a, 0x7f01012b, 0x7f01012c, 0x7f01012d, 0x7f01012e, 0x7f01012f, 0x7f010130, 0x7f010131, 0x7f010132, 0x7f010133, 0x7f010134, 0x7f010135, 0x7f010136, 0x7f010137, 0x7f010138, 0x7f010139, 0x7f01013a, 0x7f01013b, 0x7f01013c };
+        public static final int[] MapAttrs = { 0x7f010128, 0x7f010129, 0x7f01012a, 0x7f01012b, 0x7f01012c, 0x7f01012d, 0x7f01012e, 0x7f01012f, 0x7f010130, 0x7f010131, 0x7f010132, 0x7f010133, 0x7f010134, 0x7f010135, 0x7f010136, 0x7f010137, 0x7f010138, 0x7f010139, 0x7f01013a, 0x7f01013b, 0x7f01013c, 0x7f01013d, 0x7f01013e };
         public static final int MapAttrs_ambientEnabled = 16;
         public static final int MapAttrs_cameraBearing = 1;
         public static final int MapAttrs_cameraMaxZoomPreference = 18;
@@ -167,7 +167,7 @@ public final class R {
         public static final int MapAttrs_uiZoomGestures = 12;
         public static final int MapAttrs_useViewLifecycle = 13;
         public static final int MapAttrs_zOrderOnTop = 14;
-        public static final int[] SignInButton = { 0x7f01017b, 0x7f01017c, 0x7f01017d };
+        public static final int[] SignInButton = { 0x7f01017d, 0x7f01017e, 0x7f01017f };
         public static final int SignInButton_buttonSize = 0;
         public static final int SignInButton_colorScheme = 1;
         public static final int SignInButton_scopeUris = 2;

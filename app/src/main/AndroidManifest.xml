@@ -26,21 +26,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
         <service android:name=".MyFirebaseInstanceIDService">
-        <intent-filter>
-            <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-        </intent-filter>
-    </service>
-
-        <service android:name=".MyFireBaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <activity android:name=".MainActivity">
+        <service android:name=".MyFireBaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -65,6 +62,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -73,13 +71,9 @@
         </activity>
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
-
-        </activity>
+            android:label="@string/title_activity_maps"></activity>
         <activity android:name=".DistanceMapsActivity" />
-        <activity android:name=".Test">
-
-        </activity>
+        <activity android:name=".Test"></activity>
         <activity android:name=".FragmentActivity" />
         <activity android:name=".Shipper.FragmentContainerShipper">
             <intent-filter>
@@ -88,19 +82,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Shop.HandleMapsActivity">
-
-        </activity>
+        <activity android:name=".Shop.HandleMapsActivity"></activity>
         <activity
             android:name=".utils.SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".Shipper.SettingShipperPreferences"
-            />
+        <activity android:name=".Shipper.SettingShipperPreferences" />
         <activity android:name=".ChoosePlace" />
-        <activity android:name=".FragmentContainer">
-
-        </activity>
-        <activity android:name=".Shop.SettingsShopPreferences"/>
+        <activity android:name=".FragmentContainer"></activity>
+        <activity android:name=".Shop.SettingsShopPreferences" />
+        <activity
+            android:name=".Shipper.DetailOrderShipperActivity"
+            android:label="@string/title_activity_detail_order_shipper"></activity>
     </application>
 
 </manifest>

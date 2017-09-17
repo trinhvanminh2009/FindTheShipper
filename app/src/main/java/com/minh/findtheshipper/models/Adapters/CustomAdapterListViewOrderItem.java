@@ -1,10 +1,8 @@
 package com.minh.findtheshipper.models.Adapters;
 
 import android.content.Context;
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,12 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
-import com.minh.findtheshipper.Shipper.DetailOrderShipperFragment;
+import com.minh.findtheshipper.Shipper.DetailOrderShipperActivity;
 import com.minh.findtheshipper.Shipper.FragmentContainerShipper;
-import com.minh.findtheshipper.helpers.EncodingFirebase;
+import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.OrderTemp;
-import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.List;
 
@@ -57,17 +54,17 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final OrderTemp order = orderList.get(position);
         TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
-        final EncodingFirebase encodingFirebase = new EncodingFirebase();
+        final EncodingFireBase encodingFireBase = new EncodingFireBase();
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         final String[] key = {""};
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                key[0] = encodingFirebase.getEmailFromUserID(order.getOrderID());
+                key[0] = encodingFireBase.getEmailFromUserID(order.getOrderID());
                 String nameCreator = dataSnapshot.child(key[0]).child("Name").getValue(String.class);
                 String url = dataSnapshot.child(key[0]).child("Avatar").getValue(String.class);
                 holder.txtUserName.setText(nameCreator);
-                Glide.with(context).load(encodingFirebase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(holder.imgAvatar);
+                Glide.with(context).load(encodingFireBase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(holder.imgAvatar);
             }
 
             @Override
@@ -76,8 +73,8 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
             }
         });
         String phoneNumber = "" + order.getPhoneNumber();
-        String startPlace = " " + EncodingFirebase.getShortAddress(order.getStartPoint());
-        String finishPlace = " " + EncodingFirebase.getShortAddress(order.getFinishPoint());
+        String startPlace = " " + EncodingFireBase.getShortAddress(order.getStartPoint());
+        String finishPlace = " " + EncodingFireBase.getShortAddress(order.getFinishPoint());
         String distance = " " + order.getDistance();
         holder.txtDistance.setText(distance);
         holder.txtPhoneNumber.setText(phoneNumber);
@@ -89,15 +86,9 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment detailOrderFragment = new DetailOrderShipperFragment();
-                Bundle bundle = new Bundle();
-                String []arrayValue = new String[2];
-
-                arrayValue[0] = key[0];
-                arrayValue[1] = order.getOrderID();
-                bundle.putStringArray("orderKey", arrayValue);
-                detailOrderFragment.setArguments(bundle);
-                switchContent(R.id.fragmentShipperContainer, detailOrderFragment);
+                Intent intent = new Intent(v.getContext(), DetailOrderShipperActivity.class);
+                intent.putExtra("orderKey",order.getOrderID());
+                v.getContext().startActivity(intent);
             }
         });
     }

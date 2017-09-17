@@ -21,7 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.minh.findtheshipper.helpers.EncodingFirebase;
+import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
@@ -67,13 +67,13 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
         final AnimationUtils animationUtils = new AnimationUtils();
         final OrderTemp order = orderList.get(position);
         /**Query name from FireBase using id in orders*/
-        final EncodingFirebase encodingFirebase = new EncodingFirebase();
+        final EncodingFireBase encodingFireBase = new EncodingFireBase();
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         final DatabaseReference orderDatabase = FirebaseDatabase.getInstance().getReference("order");
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String key = encodingFirebase.getEmailFromUserID(order.getOrderID());
+                String key = encodingFireBase.getEmailFromUserID(order.getOrderID());
                 String nameCreator = dataSnapshot.child(key).child("Name").getValue(String.class);
                 holder.nameCreator.setText(nameCreator);
             }
@@ -239,7 +239,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             @Override
             public void onClick(View v) {
 
-                orderDatabase.child(order.getOrderID()).child("User Get Order").setValue(encodingFirebase.encodeString(getCurrentUser().getEmail()));
+                orderDatabase.child(order.getOrderID()).child("User Get Order").setValue(encodingFireBase.encodeString(getCurrentUser().getEmail()));
 
             }
         });
