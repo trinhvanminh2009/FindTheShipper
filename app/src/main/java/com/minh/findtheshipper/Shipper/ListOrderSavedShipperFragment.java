@@ -1,7 +1,7 @@
 package com.minh.findtheshipper.Shipper;
 
-import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,6 +15,7 @@ import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.User;
 
 import java.util.ArrayList;
+
 import io.realm.Realm;
 import io.realm.RealmResults;
 import io.realm.Sort;

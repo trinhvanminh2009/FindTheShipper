@@ -93,17 +93,6 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
         });
     }
 
-    private void switchContent(int id, Fragment fragment) {
-        if (context == null) {
-            return;
-        }
-        if (context instanceof FragmentContainerShipper) {
-            FragmentContainerShipper fragmentContainerShipper = (FragmentContainerShipper) context;
-            Fragment frag = fragment;
-            fragmentContainerShipper.switchContent(id, frag);
-
-        }
-    }
 
 
     @Override

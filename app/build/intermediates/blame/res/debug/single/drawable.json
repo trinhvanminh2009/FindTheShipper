@@ -196,6 +196,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\54a6f28af05c842a9c421c0d150aa09332021b79\\output\\res\\drawable\\com_facebook_send_button_icon.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_maps.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable\\shape_maps.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },

@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@drawable/custom_click"
     android:layout_height="match_parent"
+    android:background="@drawable/custom_click"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -13,7 +13,6 @@
         android:background="@color/md_green_700"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
     </android.support.v7.widget.Toolbar>
 
     <android.support.v4.widget.NestedScrollView
@@ -27,49 +26,66 @@
             android:orientation="vertical"
             android:padding="15dp">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imgUserImage"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:contentDescription="@string/about_us"
-                        android:src="@drawable/ic_your_profile" />
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/txtUserName"
+                        <ImageView
+                            android:id="@+id/imgUserImage"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:contentDescription="@string/about_us"
+                            android:src="@drawable/ic_your_profile" />
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/about_us"
-                            android:textSize="25sp"
-                            android:textStyle="bold" />
+                            android:layout_marginStart="10dp"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/txtTimeAgo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:text="@string/about_us" />
+                            <TextView
+                                android:id="@+id/txtUserName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/about_us"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtTimeAgo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/about_us" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:text="@string/about_us"
+                    android:textColor="@color/md_red_800"
+                    android:textSize="17sp"
 
-            </LinearLayout>
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -78,8 +94,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
                     android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -92,27 +108,39 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/about_us"
+                        android:layout_marginTop="5dp"
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/txtPrice"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
                     android:layout_centerInParent="true"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:text="@string/about_us"
-                    android:textColor="@color/md_red_800" />
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_car" />
+
+                    <TextView
+                        android:id="@+id/txtTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="5 mins"
+                        android:textSize="16sp" />
+                </LinearLayout>
 
                 <Button
+                    android:id="@+id/btnGetOrder"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
                     android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
                     android:background="@color/md_green_700"
                     android:text="@string/get_order"
-                    android:id="@+id/btnGetOrder"
-                    style="@style/Base.Widget.AppCompat.Button.Borderless"
                     android:textColor="@color/white" />
             </RelativeLayout>
 
@@ -128,61 +156,64 @@
                 android:layout_height="wrap_content">
 
                 <at.markushi.ui.CircleButton
+                    android:id="@+id/btnComment"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/ic_comment"
-                    android:id="@+id/btnComment"
                     app:cb_color="@color/md_green_700"
                     app:cb_pressedRingWidth="8dp">
                 </at.markushi.ui.CircleButton>
 
 
-
-
                 <at.markushi.ui.CircleButton
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_call"
-                    android:layout_centerInParent="true"
                     android:id="@+id/btnCall"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_call"
                     app:cb_color="@color/md_green_700"
                     app:cb_pressedRingWidth="8dp">
 
                 </at.markushi.ui.CircleButton>
 
                 <at.markushi.ui.CircleButton
+                    android:id="@+id/btnSave"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/ic_save"
                     android:layout_alignParentEnd="true"
-                    android:id="@+id/btnSave"
+                    android:src="@drawable/ic_save"
                     app:cb_color="@color/md_green_700"
                     app:cb_pressedRingWidth="8dp">
+
                 </at.markushi.ui.CircleButton>
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/md_black_1000"
                     android:layout_marginStart="10dp"
-                    android:text="@string/comment"/>
+                    android:text="@string/comment"
+                    android:textColor="@color/md_black_1000" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:textColor="@color/md_black_1000"
-                    android:text="@string/call"/>
+                    android:text="@string/call"
+                    android:textColor="@color/md_black_1000" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:textColor="@color/md_black_1000"
                     android:layout_marginEnd="25dp"
-                    android:text="@string/save"/>
+                    android:text="@string/save"
+                    android:textColor="@color/md_black_1000" />
             </RelativeLayout>
 
             <View
@@ -238,13 +269,13 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
+
                 <fragment
                     android:id="@+id/map"
                     android:name="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_marginTop="5dp" />
-
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -334,6 +365,4 @@
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
-
-
 </LinearLayout>

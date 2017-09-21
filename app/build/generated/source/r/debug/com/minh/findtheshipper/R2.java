@@ -3903,25 +3903,25 @@ public final class R2 {
     public static final int avd_hide_password = 0x7f020056;
 
     @DrawableRes
-    public static final int avd_hide_password_1 = 0x7f0200f8;
+    public static final int avd_hide_password_1 = 0x7f0200fb;
 
     @DrawableRes
-    public static final int avd_hide_password_2 = 0x7f0200f9;
+    public static final int avd_hide_password_2 = 0x7f0200fc;
 
     @DrawableRes
-    public static final int avd_hide_password_3 = 0x7f0200fa;
+    public static final int avd_hide_password_3 = 0x7f0200fd;
 
     @DrawableRes
     public static final int avd_show_password = 0x7f020057;
 
     @DrawableRes
-    public static final int avd_show_password_1 = 0x7f0200fb;
+    public static final int avd_show_password_1 = 0x7f0200fe;
 
     @DrawableRes
-    public static final int avd_show_password_2 = 0x7f0200fc;
+    public static final int avd_show_password_2 = 0x7f0200ff;
 
     @DrawableRes
-    public static final int avd_show_password_3 = 0x7f0200fd;
+    public static final int avd_show_password_3 = 0x7f020100;
 
     @DrawableRes
     public static final int background_city = 0x7f020058;
@@ -4149,259 +4149,268 @@ public final class R2 {
     public static final int ic_call_2 = 0x7f0200a2;
 
     @DrawableRes
-    public static final int ic_cash = 0x7f0200a3;
+    public static final int ic_car = 0x7f0200a3;
 
     @DrawableRes
-    public static final int ic_cell_phone = 0x7f0200a4;
+    public static final int ic_cash = 0x7f0200a4;
 
     @DrawableRes
-    public static final int ic_comment = 0x7f0200a5;
+    public static final int ic_cell_phone = 0x7f0200a5;
 
     @DrawableRes
-    public static final int ic_create_new = 0x7f0200a6;
+    public static final int ic_comment = 0x7f0200a6;
 
     @DrawableRes
-    public static final int ic_created = 0x7f0200a7;
+    public static final int ic_create_new = 0x7f0200a7;
 
     @DrawableRes
-    public static final int ic_delete = 0x7f0200a8;
+    public static final int ic_created = 0x7f0200a8;
 
     @DrawableRes
-    public static final int ic_destination = 0x7f0200a9;
+    public static final int ic_delete = 0x7f0200a9;
 
     @DrawableRes
-    public static final int ic_distance = 0x7f0200aa;
+    public static final int ic_destination = 0x7f0200aa;
 
     @DrawableRes
-    public static final int ic_distance_2 = 0x7f0200ab;
+    public static final int ic_distance = 0x7f0200ab;
 
     @DrawableRes
-    public static final int ic_duration = 0x7f0200ac;
+    public static final int ic_distance_2 = 0x7f0200ac;
 
     @DrawableRes
-    public static final int ic_finish_point = 0x7f0200ad;
+    public static final int ic_duration = 0x7f0200ad;
 
     @DrawableRes
-    public static final int ic_info_black_24dp = 0x7f0200ae;
+    public static final int ic_finish_point = 0x7f0200ae;
 
     @DrawableRes
-    public static final int ic_launcher = 0x7f0200af;
+    public static final int ic_info_black_24dp = 0x7f0200af;
 
     @DrawableRes
-    public static final int ic_launcher_app = 0x7f0200b0;
+    public static final int ic_launcher = 0x7f0200b0;
 
     @DrawableRes
-    public static final int ic_list_order = 0x7f0200b1;
+    public static final int ic_launcher_app = 0x7f0200b1;
 
     @DrawableRes
-    public static final int ic_list_order_saved = 0x7f0200b2;
+    public static final int ic_list_order = 0x7f0200b2;
 
     @DrawableRes
-    public static final int ic_logout = 0x7f0200b3;
+    public static final int ic_list_order_saved = 0x7f0200b3;
 
     @DrawableRes
-    public static final int ic_marker = 0x7f0200b4;
+    public static final int ic_logout = 0x7f0200b4;
 
     @DrawableRes
-    public static final int ic_note_2 = 0x7f0200b5;
+    public static final int ic_marker = 0x7f0200b5;
 
     @DrawableRes
-    public static final int ic_notifications_black_24dp = 0x7f0200b6;
+    public static final int ic_motorcycle = 0x7f0200b6;
 
     @DrawableRes
-    public static final int ic_notifycation = 0x7f0200b7;
+    public static final int ic_note_2 = 0x7f0200b7;
 
     @DrawableRes
-    public static final int ic_number_pad = 0x7f0200b8;
+    public static final int ic_notifications_black_24dp = 0x7f0200b8;
 
     @DrawableRes
-    public static final int ic_ok = 0x7f0200b9;
+    public static final int ic_notifycation = 0x7f0200b9;
 
     @DrawableRes
-    public static final int ic_package = 0x7f0200ba;
+    public static final int ic_number_pad = 0x7f0200ba;
 
     @DrawableRes
-    public static final int ic_placehoder = 0x7f0200bb;
+    public static final int ic_ok = 0x7f0200bb;
 
     @DrawableRes
-    public static final int ic_save = 0x7f0200bc;
+    public static final int ic_package = 0x7f0200bc;
 
     @DrawableRes
-    public static final int ic_send = 0x7f0200bd;
+    public static final int ic_placehoder = 0x7f0200bd;
 
     @DrawableRes
-    public static final int ic_settings = 0x7f0200be;
+    public static final int ic_save = 0x7f0200be;
 
     @DrawableRes
-    public static final int ic_speaker_notes_black_24dp = 0x7f0200bf;
+    public static final int ic_send = 0x7f0200bf;
 
     @DrawableRes
-    public static final int ic_speaker_notes_off_black_24dp = 0x7f0200c0;
+    public static final int ic_settings = 0x7f0200c0;
 
     @DrawableRes
-    public static final int ic_start_place = 0x7f0200c1;
+    public static final int ic_speaker_notes_black_24dp = 0x7f0200c1;
 
     @DrawableRes
-    public static final int ic_starting_point = 0x7f0200c2;
+    public static final int ic_speaker_notes_off_black_24dp = 0x7f0200c2;
 
     @DrawableRes
-    public static final int ic_sync_black_24dp = 0x7f0200c3;
+    public static final int ic_start_place = 0x7f0200c3;
 
     @DrawableRes
-    public static final int ic_time_create = 0x7f0200c4;
+    public static final int ic_starting_point = 0x7f0200c4;
 
     @DrawableRes
-    public static final int ic_time_watch = 0x7f0200c5;
+    public static final int ic_sync_black_24dp = 0x7f0200c5;
 
     @DrawableRes
-    public static final int ic_tutorials = 0x7f0200c6;
+    public static final int ic_time_create = 0x7f0200c6;
 
     @DrawableRes
-    public static final int ic_version = 0x7f0200c7;
+    public static final int ic_time_watch = 0x7f0200c7;
 
     @DrawableRes
-    public static final int ic_your_profile = 0x7f0200c8;
+    public static final int ic_tutorials = 0x7f0200c8;
 
     @DrawableRes
-    public static final int image_drawer = 0x7f0200c9;
+    public static final int ic_version = 0x7f0200c9;
 
     @DrawableRes
-    public static final int info_toast = 0x7f0200ca;
+    public static final int ic_your_profile = 0x7f0200ca;
 
     @DrawableRes
-    public static final int item_selector = 0x7f0200cb;
+    public static final int image_drawer = 0x7f0200cb;
 
     @DrawableRes
-    public static final int loading = 0x7f0200cc;
+    public static final int info_toast = 0x7f0200cc;
 
     @DrawableRes
-    public static final int material_drawer_badge = 0x7f0200cd;
+    public static final int item_selector = 0x7f0200cd;
 
     @DrawableRes
-    public static final int material_drawer_circle_mask = 0x7f0200ce;
+    public static final int loading = 0x7f0200ce;
 
     @DrawableRes
-    public static final int material_drawer_shadow_bottom = 0x7f0200cf;
+    public static final int material_drawer_badge = 0x7f0200cf;
 
     @DrawableRes
-    public static final int material_drawer_shadow_left = 0x7f0200d0;
+    public static final int material_drawer_circle_mask = 0x7f0200d0;
 
     @DrawableRes
-    public static final int material_drawer_shadow_right = 0x7f0200d1;
+    public static final int material_drawer_shadow_bottom = 0x7f0200d1;
 
     @DrawableRes
-    public static final int material_drawer_shadow_top = 0x7f0200d2;
+    public static final int material_drawer_shadow_left = 0x7f0200d2;
 
     @DrawableRes
-    public static final int messenger_bubble_large_blue = 0x7f0200d3;
+    public static final int material_drawer_shadow_right = 0x7f0200d3;
 
     @DrawableRes
-    public static final int messenger_bubble_large_white = 0x7f0200d4;
+    public static final int material_drawer_shadow_top = 0x7f0200d4;
 
     @DrawableRes
-    public static final int messenger_bubble_small_blue = 0x7f0200d5;
+    public static final int messenger_bubble_large_blue = 0x7f0200d5;
 
     @DrawableRes
-    public static final int messenger_bubble_small_white = 0x7f0200d6;
+    public static final int messenger_bubble_large_white = 0x7f0200d6;
 
     @DrawableRes
-    public static final int messenger_button_blue_bg_round = 0x7f0200d7;
+    public static final int messenger_bubble_small_blue = 0x7f0200d7;
 
     @DrawableRes
-    public static final int messenger_button_blue_bg_selector = 0x7f0200d8;
+    public static final int messenger_bubble_small_white = 0x7f0200d8;
 
     @DrawableRes
-    public static final int messenger_button_send_round_shadow = 0x7f0200d9;
+    public static final int messenger_button_blue_bg_round = 0x7f0200d9;
 
     @DrawableRes
-    public static final int messenger_button_white_bg_round = 0x7f0200da;
+    public static final int messenger_button_blue_bg_selector = 0x7f0200da;
 
     @DrawableRes
-    public static final int messenger_button_white_bg_selector = 0x7f0200db;
+    public static final int messenger_button_send_round_shadow = 0x7f0200db;
 
     @DrawableRes
-    public static final int navigation_empty_icon = 0x7f0200dc;
+    public static final int messenger_button_white_bg_round = 0x7f0200dc;
 
     @DrawableRes
-    public static final int notification_action_background = 0x7f0200dd;
+    public static final int messenger_button_white_bg_selector = 0x7f0200dd;
 
     @DrawableRes
-    public static final int notification_bg = 0x7f0200de;
+    public static final int navigation_empty_icon = 0x7f0200de;
 
     @DrawableRes
-    public static final int notification_bg_low = 0x7f0200df;
+    public static final int notification_action_background = 0x7f0200df;
 
     @DrawableRes
-    public static final int notification_bg_low_normal = 0x7f0200e0;
+    public static final int notification_bg = 0x7f0200e0;
 
     @DrawableRes
-    public static final int notification_bg_low_pressed = 0x7f0200e1;
+    public static final int notification_bg_low = 0x7f0200e1;
 
     @DrawableRes
-    public static final int notification_bg_normal = 0x7f0200e2;
+    public static final int notification_bg_low_normal = 0x7f0200e2;
 
     @DrawableRes
-    public static final int notification_bg_normal_pressed = 0x7f0200e3;
+    public static final int notification_bg_low_pressed = 0x7f0200e3;
 
     @DrawableRes
-    public static final int notification_icon_background = 0x7f0200e4;
+    public static final int notification_bg_normal = 0x7f0200e4;
 
     @DrawableRes
-    public static final int notification_template_icon_bg = 0x7f0200f6;
+    public static final int notification_bg_normal_pressed = 0x7f0200e5;
 
     @DrawableRes
-    public static final int notification_template_icon_low_bg = 0x7f0200f7;
+    public static final int notification_icon_background = 0x7f0200e6;
 
     @DrawableRes
-    public static final int notification_tile_bg = 0x7f0200e5;
+    public static final int notification_template_icon_bg = 0x7f0200f9;
 
     @DrawableRes
-    public static final int notify_panel_notification_icon_bg = 0x7f0200e6;
+    public static final int notification_template_icon_low_bg = 0x7f0200fa;
 
     @DrawableRes
-    public static final int places_ic_clear = 0x7f0200e7;
+    public static final int notification_tile_bg = 0x7f0200e7;
 
     @DrawableRes
-    public static final int places_ic_search = 0x7f0200e8;
+    public static final int notify_panel_notification_icon_bg = 0x7f0200e8;
 
     @DrawableRes
-    public static final int powered_by_google_dark = 0x7f0200e9;
+    public static final int places_ic_clear = 0x7f0200e9;
 
     @DrawableRes
-    public static final int powered_by_google_light = 0x7f0200ea;
+    public static final int places_ic_search = 0x7f0200ea;
 
     @DrawableRes
-    public static final int red_button_background = 0x7f0200eb;
+    public static final int powered_by_google_dark = 0x7f0200eb;
 
     @DrawableRes
-    public static final int shape_button = 0x7f0200ec;
+    public static final int powered_by_google_light = 0x7f0200ec;
 
     @DrawableRes
-    public static final int shape_edittext = 0x7f0200ed;
+    public static final int red_button_background = 0x7f0200ed;
 
     @DrawableRes
-    public static final int shape_image = 0x7f0200ee;
+    public static final int shape_button = 0x7f0200ee;
 
     @DrawableRes
-    public static final int shape_item = 0x7f0200ef;
+    public static final int shape_edittext = 0x7f0200ef;
 
     @DrawableRes
-    public static final int success_bow = 0x7f0200f0;
+    public static final int shape_image = 0x7f0200f0;
 
     @DrawableRes
-    public static final int success_circle = 0x7f0200f1;
+    public static final int shape_item = 0x7f0200f1;
 
     @DrawableRes
-    public static final int success_toast = 0x7f0200f2;
+    public static final int shape_maps = 0x7f0200f2;
 
     @DrawableRes
-    public static final int warning_circle = 0x7f0200f3;
+    public static final int success_bow = 0x7f0200f3;
 
     @DrawableRes
-    public static final int warning_sigh = 0x7f0200f4;
+    public static final int success_circle = 0x7f0200f4;
 
     @DrawableRes
-    public static final int warning_toast = 0x7f0200f5;
+    public static final int success_toast = 0x7f0200f5;
+
+    @DrawableRes
+    public static final int warning_circle = 0x7f0200f6;
+
+    @DrawableRes
+    public static final int warning_sigh = 0x7f0200f7;
+
+    @DrawableRes
+    public static final int warning_toast = 0x7f0200f8;
   }
 
   public static final class id {
@@ -4511,7 +4520,7 @@ public final class R2 {
     public static final int btnAdd = 0x7f1000cb;
 
     @IdRes
-    public static final int btnCall = 0x7f1000b9;
+    public static final int btnCall = 0x7f1000ba;
 
     @IdRes
     public static final int btnCallAgain = 0x7f100129;
@@ -4520,7 +4529,7 @@ public final class R2 {
     public static final int btnCancelOrder = 0x7f1000d4;
 
     @IdRes
-    public static final int btnComment = 0x7f1000b8;
+    public static final int btnComment = 0x7f1000b9;
 
     @IdRes
     public static final int btnConfirmCreateOrder = 0x7f1000d5;
@@ -4538,7 +4547,7 @@ public final class R2 {
     public static final int btnFindAgain = 0x7f100126;
 
     @IdRes
-    public static final int btnGetOrder = 0x7f1000b7;
+    public static final int btnGetOrder = 0x7f1000b8;
 
     @IdRes
     public static final int btnHaNoi = 0x7f1000ab;
@@ -4553,7 +4562,7 @@ public final class R2 {
     public static final int btnOrderSuccess = 0x7f100128;
 
     @IdRes
-    public static final int btnSave = 0x7f1000ba;
+    public static final int btnSave = 0x7f1000bb;
 
     @IdRes
     public static final int btnSendComment = 0x7f10010c;
@@ -4778,13 +4787,13 @@ public final class R2 {
     public static final int fragmentContainer = 0x7f100111;
 
     @IdRes
-    public static final int fragmentMaps = 0x7f1000c3;
+    public static final int fragmentMaps = 0x7f1000c4;
 
     @IdRes
     public static final int fragmentShipperContainer = 0x7f100112;
 
     @IdRes
-    public static final int fragmentShopContainer = 0x7f1000c2;
+    public static final int fragmentShopContainer = 0x7f1000c3;
 
     @IdRes
     public static final int haveStatus = 0x7f100124;
@@ -4853,19 +4862,19 @@ public final class R2 {
     public static final int largeLabel = 0x7f1000fe;
 
     @IdRes
-    public static final int layoutControl = 0x7f1000c4;
+    public static final int layoutControl = 0x7f1000c5;
 
     @IdRes
     public static final int layoutCreateNewOrder = 0x7f1000ce;
 
     @IdRes
-    public static final int layoutItem = 0x7f1000c8;
+    public static final int layoutItem = 0x7f1000c9;
 
     @IdRes
     public static final int layoutNameAndAvatar = 0x7f10011d;
 
     @IdRes
-    public static final int layoutPlaces = 0x7f1000c5;
+    public static final int layoutPlaces = 0x7f1000c6;
 
     @IdRes
     public static final int left = 0x7f10004c;
@@ -4907,7 +4916,7 @@ public final class R2 {
     public static final int login_button = 0x7f1000d7;
 
     @IdRes
-    public static final int map = 0x7f1000bd;
+    public static final int map = 0x7f1000be;
 
     @IdRes
     public static final int mask_left = 0x7f1000df;
@@ -5135,10 +5144,10 @@ public final class R2 {
     public static final int place_autocomplete_clear_button = 0x7f10016b;
 
     @IdRes
-    public static final int place_autocomplete_fragment_finish = 0x7f1000c7;
+    public static final int place_autocomplete_fragment_finish = 0x7f1000c8;
 
     @IdRes
-    public static final int place_autocomplete_fragment_start = 0x7f1000c6;
+    public static final int place_autocomplete_fragment_start = 0x7f1000c7;
 
     @IdRes
     public static final int place_autocomplete_powered_by_google = 0x7f10016d;
@@ -5180,7 +5189,7 @@ public final class R2 {
     public static final int radio = 0x7f100094;
 
     @IdRes
-    public static final int ratingOrder = 0x7f1000c1;
+    public static final int ratingOrder = 0x7f1000c2;
 
     @IdRes
     public static final int recycle_view = 0x7f100134;
@@ -5396,7 +5405,7 @@ public final class R2 {
     public static final int transition_scene_layoutid_cache = 0x7f100024;
 
     @IdRes
-    public static final int txtAdvancedMoney = 0x7f1000c0;
+    public static final int txtAdvancedMoney = 0x7f1000c1;
 
     @IdRes
     public static final int txtAdvancedMoneyShipper = 0x7f10012e;
@@ -5417,7 +5426,7 @@ public final class R2 {
     public static final int txtDatetimeComment = 0x7f100116;
 
     @IdRes
-    public static final int txtDistance = 0x7f1000b5;
+    public static final int txtDistance = 0x7f1000b6;
 
     @IdRes
     public static final int txtDistanceOrder = 0x7f100123;
@@ -5426,13 +5435,13 @@ public final class R2 {
     public static final int txtFinish = 0x7f100121;
 
     @IdRes
-    public static final int txtFinishPlace = 0x7f1000bc;
+    public static final int txtFinishPlace = 0x7f1000bd;
 
     @IdRes
     public static final int txtFinishPointShipper = 0x7f10012d;
 
     @IdRes
-    public static final int txtNote = 0x7f1000bf;
+    public static final int txtNote = 0x7f1000c0;
 
     @IdRes
     public static final int txtNoteShipper = 0x7f100130;
@@ -5441,13 +5450,13 @@ public final class R2 {
     public static final int txtNotification = 0x7f10011b;
 
     @IdRes
-    public static final int txtPhoneNumber = 0x7f1000be;
+    public static final int txtPhoneNumber = 0x7f1000bf;
 
     @IdRes
     public static final int txtPhoneNumberShipper = 0x7f100131;
 
     @IdRes
-    public static final int txtPrice = 0x7f1000b6;
+    public static final int txtPrice = 0x7f1000b5;
 
     @IdRes
     public static final int txtShipMoney = 0x7f100122;
@@ -5459,7 +5468,7 @@ public final class R2 {
     public static final int txtStart = 0x7f100120;
 
     @IdRes
-    public static final int txtStartPlace = 0x7f1000bb;
+    public static final int txtStartPlace = 0x7f1000bc;
 
     @IdRes
     public static final int txtStatingPointShipper = 0x7f10012c;
@@ -5468,7 +5477,7 @@ public final class R2 {
     public static final int txtStatus = 0x7f10011f;
 
     @IdRes
-    public static final int txtTime = 0x7f1000c9;
+    public static final int txtTime = 0x7f1000b7;
 
     @IdRes
     public static final int txtTimeAgo = 0x7f1000b4;

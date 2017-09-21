@@ -332,7 +332,7 @@ public final class R {
         public static final int abc_textfield_search_activated_mtrl_alpha = 0x7f02004f;
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f020050;
         public static final int abc_textfield_search_material = 0x7f020051;
-        public static final int ic_launcher = 0x7f0200af;
+        public static final int ic_launcher = 0x7f0200b0;
     }
     public static final class id {
         public static final int action_bar = 0x7f10009b;

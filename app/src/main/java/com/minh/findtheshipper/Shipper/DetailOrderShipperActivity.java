@@ -92,6 +92,8 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
     at.markushi.ui.CircleButton btnCall;
     @BindView(R.id.btnComment)
     at.markushi.ui.CircleButton btnComment;
+    @BindView(R.id.txtTime)
+    TextView txtTime;
     @BindView(R.id.btnSave)
     at.markushi.ui.CircleButton btnSave;
     private Unbinder unbinder;
@@ -408,6 +410,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
             mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 10));
             //End Zoom path fit with maps
             txtDistance.setText(route.distance.text);
+            txtTime.setText(route.duration.text);
             startMarkers.add(mMap.addMarker(new MarkerOptions().title(route.startAddress)
                     .position(route.startLocation).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_start_place))));
             finishMarkers.add(mMap.addMarker(new MarkerOptions().title(route.endAddress)
