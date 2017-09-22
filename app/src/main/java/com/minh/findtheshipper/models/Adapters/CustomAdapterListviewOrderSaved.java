@@ -23,6 +23,7 @@ import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.utils.AnimationUtils;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.List;
 
@@ -56,6 +57,7 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
     public void onBindViewHolder(final ViewHolder holder,  int position) {
         final Order order = orderList.get(position);
         /**Query name from FireBase using id in orders*/
+        TastyToast.makeText(context,order.getFinishPoint() + order.getStartPoint() ,TastyToast.LENGTH_SHORT,TastyToast.INFO);
 
         final EncodingFireBase encodingFireBase = new EncodingFireBase();
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
@@ -108,10 +110,14 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), DetailOrderShipperActivity.class);
-                intent.putExtra("orderKey",order.getOrderID());
+                String[] orderKey = new String[2];
+                orderKey[0] = order.getOrderID();
+                orderKey[1] = "History";
+                intent.putExtra("orderKey",orderKey);
                 v.getContext().startActivity(intent);
             }
         });
+
 
     }
 

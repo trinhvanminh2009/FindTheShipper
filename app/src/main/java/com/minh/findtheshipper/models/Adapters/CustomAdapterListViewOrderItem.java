@@ -87,7 +87,10 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), DetailOrderShipperActivity.class);
-                intent.putExtra("orderKey",order.getOrderID());
+                String[] orderKey = new String[2];
+                orderKey[0] = order.getOrderID();
+                orderKey[1] = "Present";
+                intent.putExtra("orderKey",orderKey);
                 v.getContext().startActivity(intent);
             }
         });

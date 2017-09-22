@@ -7,7 +7,9 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -59,6 +61,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.realm.Realm;
 import io.realm.RealmList;
 
@@ -96,6 +99,10 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
     TextView txtTime;
     @BindView(R.id.btnSave)
     at.markushi.ui.CircleButton btnSave;
+    @BindView(R.id.btnDelete)
+    at.markushi.ui.CircleButton btnDelete;
+    @BindView(R.id.tvSaveOrDelete)
+    TextView tvSaveOrDelete;
     private Unbinder unbinder;
     private String key = "";
     private List<Marker> startMarkers = new ArrayList<>();
@@ -104,6 +111,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
     private OrderTemp order;
     private Realm realm;
     private GoogleMap mMap;
+    private String[] orderKey = new String[2];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +125,24 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         changeColorStatusBar();
         initRealm();
         loadDataFromServer();
+        showSaveOrDeleteButton();
 
+
+    }
+
+    private void showSaveOrDeleteButton(){
+        if(orderKey[1].equals("History"))
+        {
+            btnDelete.setVisibility(View.VISIBLE);
+            btnSave.setVisibility(View.GONE);
+            tvSaveOrDelete.setText(getString(R.string.delete));
+        }
+        if(orderKey[1].equals("Present"))
+        {
+            btnDelete.setVisibility(View.GONE);
+            btnSave.setVisibility(View.VISIBLE);
+            tvSaveOrDelete.setText(getString(R.string.save));
+        }
 
     }
 
@@ -127,14 +152,13 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         realm = Realm.getDefaultInstance();
     }
 
-    @OnClick({R.id.btnGetOrder, R.id.btnCall, R.id.btnComment, R.id.btnSave})
+    @OnClick({R.id.btnGetOrder, R.id.btnCall, R.id.btnComment, R.id.btnSave,R.id.btnDelete})
     public void eventClick(final View v) {
         switch (v.getId()) {
             case R.id.btnGetOrder:
                 TastyToast.makeText(v.getContext(), "AA", TastyToast.LENGTH_LONG, TastyToast.INFO);
                 break;
             case R.id.btnSave:
-
                 final Order orderRealm = realm.where(Order.class).equalTo("orderID", order.getOrderID()).findFirst();
                 if (orderRealm == null)//Check it available in database
                 {
@@ -252,10 +276,51 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 dialogHelpers.show(fragmentManager, "New fragment");
                 dialogHelpers.setArguments(bundle);
                 break;
+            case R.id.btnDelete:
+                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this ,SweetAlertDialog.WARNING_TYPE);
+                sweetAlertDialog.setTitleText(getString(R.string.are_you_sure_title));
+                sweetAlertDialog.setContentText(getString(R.string.are_you_sure_content));
+                sweetAlertDialog.setConfirmText(getString(R.string.ok));
+                sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        sweetAlertDialog.dismissWithAnimation();
+                    }
+                });
 
+                sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+                                final Order orderRealm = realm.where(Order.class).equalTo("orderID", order.getOrderID()).findFirst();
+                                orderRealm.setSaveOrder(false);
+                                User user = getCurrentUser();
+                                user.getOrderListSave().remove(orderRealm);
+                                realm.insertOrUpdate(user);
+                                Fragment orderSaved = new  ListOrderSavedShipperFragment();
+                                try {
+                                    FragmentManager manager = getSupportFragmentManager();
+                                    FragmentTransaction transaction = manager.beginTransaction();
+                                    transaction.replace(R.id.fragmentShipperContainer, orderSaved);
+                                    transaction.commit();
+                                } catch (Exception e) {
+                                }
+
+                            }
+                        });
+                    }
+                });
+                sweetAlertDialog.show();
+
+                break;
         }
 
     }
+
+
 
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
@@ -285,7 +350,8 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
 
     private void loadDataFromServer() {
         order = new OrderTemp();
-        key = getIntent().getStringExtra("orderKey");
+        orderKey = getIntent().getStringArrayExtra("orderKey");
+        key = orderKey[0];
         final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
         final DatabaseReference userDatabase = FirebaseDatabase.getInstance().getReference("user");
         final EncodingFireBase encodingFireBase = new EncodingFireBase();

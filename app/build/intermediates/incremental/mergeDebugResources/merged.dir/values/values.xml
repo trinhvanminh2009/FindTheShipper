@@ -1319,6 +1319,8 @@
     <string name="always_on_display">Always on display</string>
     <string name="app_name">Find The Shipper</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="are_you_sure_content">This order will be deleted!</string>
+    <string name="are_you_sure_title">Are you sure?</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="buy_package_shipper">Buy package</string>
     <string name="call">Call</string>
@@ -3204,7 +3206,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_settings">Settings</string>
     <string name="tutorials">Tutorials</string>
-    <string name="type_comment">Type a comment...</string>
+    <string name="type_comment">Type a comment…</string>
     <string name="version">Version</string>
     <string name="wait_find_direction">Just a moment. Finding directions</string>
     <string name="wait_server">Just a moment. Loading data from server</string>

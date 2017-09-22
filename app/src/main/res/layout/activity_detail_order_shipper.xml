@@ -177,11 +177,22 @@
                 </at.markushi.ui.CircleButton>
 
                 <at.markushi.ui.CircleButton
-                    android:id="@+id/btnSave"
+                android:id="@+id/btnSave"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_save"
+                app:cb_color="@color/md_green_700"
+                app:cb_pressedRingWidth="8dp">
+
+            </at.markushi.ui.CircleButton>
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/btnDelete"
                     android:layout_width="80dp"
+                    android:visibility="gone"
                     android:layout_height="80dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_save"
+                    android:src="@drawable/ic_delete_2"
                     app:cb_color="@color/md_green_700"
                     app:cb_pressedRingWidth="8dp">
 
@@ -213,6 +224,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="25dp"
                     android:text="@string/save"
+                    android:id="@+id/tvSaveOrDelete"
                     android:textColor="@color/md_black_1000" />
             </RelativeLayout>
 

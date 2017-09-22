@@ -57,6 +57,7 @@ public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragme
             }
             adapter = new CustomAdapterListviewOrderSaved(getActivity(),orderList);
             recyclerView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
         }catch (Exception e){}
 
     }

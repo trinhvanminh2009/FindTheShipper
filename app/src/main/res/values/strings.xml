@@ -62,7 +62,7 @@
     <string name="delete">Delete</string>
     <string name="title">Title</string>
     <string name="content">Content</string>
-    <string name="type_comment">Type a comment...</string>
+    <string name="type_comment">Type a comment&#8230;</string>
     <string name="send">Send</string>
     <string name="save_order">Save order success</string>
     <string name="save_order_exists">This order already exists!</string>
@@ -95,6 +95,9 @@
     <string name="time_ago_days_ago"> days ago</string>
     <string name="time_ago_yesterday">Yesterday</string>
     <string name="time_ago_a_minutes_ago">a minute ago</string>
+    <string name="are_you_sure_title">Are you sure?</string>
+    <string name="are_you_sure_content">This order will be deleted!</string>
+
     <string-array name="change_language_array">
         <item>Vietnamese</item>
         <item>English</item>
