@@ -74,13 +74,14 @@ public class MainActivity extends FragmentActivity {
                                     final String gender = response.getJSONObject().getString("gender");
                                     final String name = response.getJSONObject().getString("name");
                                     String userID = loginResult.getAccessToken().getUserId();
-                                    final String imageURL = new String("https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200");
+                                    final String imageURL = "https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200";
                                     UserTemp userTemp = new UserTemp();
                                     userTemp.setAvatar(imageURL);
                                     userTemp.setEmail(email);
                                     userTemp.setName(name);
                                     userTemp.setGender(gender);
-                                    /**Have to save current user into database for all class can access to current user login Facebook.
+                                    /*
+                                     * Have to save current user into database for all class can access to current user login Facebook.
                                      * */
                                     realm.executeTransaction(new Realm.Transaction() {
                                         @Override

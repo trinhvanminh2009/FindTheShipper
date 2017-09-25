@@ -15,8 +15,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.CommentTemp;
 
@@ -32,8 +32,7 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_comments,parent,false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+        return new ViewHolder(view);
     }
 
     public CustomAdapterListComment(Context context, List<CommentTemp> commentList) {

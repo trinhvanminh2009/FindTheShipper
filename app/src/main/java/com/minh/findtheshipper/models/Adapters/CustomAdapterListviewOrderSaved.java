@@ -22,8 +22,6 @@ import com.minh.findtheshipper.Shipper.DetailOrderShipperActivity;
 import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.Order;
-import com.minh.findtheshipper.utils.AnimationUtils;
-import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.List;
 
@@ -35,17 +33,16 @@ import io.realm.Realm;
 
 public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<CustomAdapterListviewOrderSaved.ViewHolder> {
 
-    private List<Order>orderList;
+    private List<Order> orderList;
     private Context context;
     private Realm realm;
 
     @Override
     public CustomAdapterListviewOrderSaved.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_order_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_order_item, parent, false);
         Realm.init(view.getContext());
         initRealm();
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+        return new ViewHolder(view);
     }
 
     public CustomAdapterListviewOrderSaved(Context context, List<Order> orderList) {
@@ -54,17 +51,18 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder,  int position) {
-        final Order order = orderList.get(position);
-        /**Query name from FireBase using id in orders*/
-        TastyToast.makeText(context,order.getFinishPoint() + order.getStartPoint() ,TastyToast.LENGTH_SHORT,TastyToast.INFO);
+    public void onBindViewHolder(final ViewHolder holder, int position) {
 
+        final Order order = orderList.get(position);
+        /**
+         * Query name from FireBase using id in orders
+         * */
         final EncodingFireBase encodingFireBase = new EncodingFireBase();
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String key = encodingFireBase.getEmailFromUserID(order.getOrderID()) ;
+                String key = encodingFireBase.getEmailFromUserID(order.getOrderID());
                 String nameCreator = dataSnapshot.child(key).child("Name").getValue(String.class);
                 holder.txtUserName.setText(nameCreator);
                 String url = dataSnapshot.child(key).child("Avatar").getValue(String.class);
@@ -86,7 +84,7 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
                 String key = order.getOrderID();
                 String timeCreated = dataSnapshot.child(key).child("Datetime").getValue(String.class);
                 TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
-                String timeAgo = timeAgoHelpers.getTimeAgo(timeCreated,context);
+                String timeAgo = timeAgoHelpers.getTimeAgo(timeCreated, context);
                 holder.txtTimeAgo.setText(timeAgo);
 
             }
@@ -113,17 +111,14 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
                 String[] orderKey = new String[2];
                 orderKey[0] = order.getOrderID();
                 orderKey[1] = "History";
-                intent.putExtra("orderKey",orderKey);
+                intent.putExtra("orderKey", orderKey);
                 v.getContext().startActivity(intent);
             }
         });
-
-
     }
 
 
-    public void initRealm()
-    {
+    public void initRealm() {
         realm = null;
         realm = Realm.getDefaultInstance();
     }
@@ -134,8 +129,7 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
     }
 
 
-
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgAvatar;
         private TextView txtUserName;
         private TextView txtStartPlace;
@@ -146,7 +140,7 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
         private TextView txtTimeAgo;
         private TextView txtDistance;
 
-        public ViewHolder(View view) {
+        private ViewHolder(View view) {
             super(view);
             imgAvatar = (ImageView) view.findViewById(R.id.imgUserImage);
             txtUserName = (TextView) view.findViewById(R.id.txtUserName);

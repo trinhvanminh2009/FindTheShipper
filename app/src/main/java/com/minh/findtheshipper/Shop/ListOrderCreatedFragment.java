@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +15,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.helpers.EncodingFireBase;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrder;
 import com.minh.findtheshipper.models.CurrentUser;
-import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.User;
 
@@ -28,7 +28,6 @@ import java.util.Collections;
 import java.util.List;
 
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
@@ -36,16 +35,17 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
     private ArrayList<OrderTemp> orderList;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        RecyclerView.LayoutManager layoutManager;
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         Realm.init(getActivity());
         initRealm();
-        loadAllList();
+
     }
 
     @Nullable
@@ -60,6 +60,12 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
     public void initRealm() {
         realm = null;
         realm = Realm.getDefaultInstance();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadAllList();
     }
 
     @Override
@@ -84,7 +90,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
                     }
                     //Check key and then get keys are created by current user
-                    String key = null;
+                    String key;
                     for (int j = 0; j < checkKey(listKeyFromFireBase).size(); j++) {
                         key = checkKey(listKeyFromFireBase).get(j);
                         String status = dataSnapshot.child(key).child("Status").getValue(String.class);
@@ -119,6 +125,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                         recyclerView.setAdapter(adapter);
 
                     } catch (Exception e) {
+                        Log.e("Error","In loadAllList in ListOrderCreatedFragment");
                     }
                 }
 
@@ -127,6 +134,8 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                 }
             });
         } catch (Exception e) {
+            Log.e("Error","In loadAllList in ListOrderCreatedFragment");
+
         }
     }
 
@@ -148,10 +157,9 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
-        User user = realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
-        return user;
+        return realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
     }
-
+/*
     public void deleteAll() {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
@@ -162,5 +170,5 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         });
 
     }
-
+*/
 }

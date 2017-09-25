@@ -200,8 +200,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 super.set(imageView, uri, placeholder, tag);
                 GlideApp.with(imageView.getContext()).load(uri).placeholder(placeholder).
                         error(new ColorDrawable(Color.RED)).into(imageView);
-
-
             }
 
             @Override
@@ -250,8 +248,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 listControls.get(0).setContent(place.getAddress().toString());
-                if(!listControls.get(0).getContent().equals("") && !listControls.get(1).getContent().equals(""))
-                {
+                if (!listControls.get(0).getContent().equals("") && !listControls.get(1).getContent().equals("")) {
                     sendRequest();
                     layoutItem.setVisibility(View.VISIBLE);
                     btnCreateNewOrder.setVisibility(View.VISIBLE);
@@ -271,8 +268,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 listControls.get(1).setContent(place.getAddress().toString());
-                if(!listControls.get(0).getContent().equals("") && !listControls.get(1).getContent().equals(""))
-                {
+                if (!listControls.get(0).getContent().equals("") && !listControls.get(1).getContent().equals("")) {
                     sendRequest();
                     layoutItem.setVisibility(View.VISIBLE);
                     btnCreateNewOrder.setVisibility(View.VISIBLE);
@@ -428,7 +424,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         }
 
         try {
-            new DirectionHelpers((DirectionFinderListeners) this, start, finish).execute();
+            new DirectionHelpers(this, start, finish).execute();
 
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -526,13 +522,13 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 if (!editNote.getText().toString().equals("")) {
                     order.setNote(getResources().getString(R.string.order_note) + editNote.getText().toString());
                 }
-                order.setDistance(getResources().getString(R.string.order_distance) + txtDistance.getText().toString());
                 order.setPhoneNumber(editPhoneNumber.getText().toString());
                 DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
                 String date = df.format(Calendar.getInstance().getTime());
                 order.setDateTime(date);
                 order.setSaveOrder(false);
                 realm.insertOrUpdate(order);
+                TastyToast.makeText(getApplicationContext(), order.getShipMoney(), TastyToast.LENGTH_SHORT, TastyToast.INFO);
 
                 user.getOrderArrayList().add(order);
                 realm.insertOrUpdate(user);
@@ -789,11 +785,17 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         return fullAddress;
     }
 
+    //Make sure the distance more than 1,000
+    private String removeComma(String inputString) {
+        inputString = inputString.replaceAll(",", "");
+        return inputString;
+    }
+
 
     private Double parseStringToDouble(String tempString) {
-        double result = 0;
+        double result;
         String[] string1 = tempString.split("km");
-        result = Double.parseDouble(string1[0]);
+        result = Double.parseDouble(removeComma(string1[0]));
         if (result <= 1.0) {
             return 1.0;
         }

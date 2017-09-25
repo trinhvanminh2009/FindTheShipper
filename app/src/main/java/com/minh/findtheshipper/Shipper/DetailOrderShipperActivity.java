@@ -7,10 +7,9 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -130,33 +129,30 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
 
     }
 
-    private void showSaveOrDeleteButton(){
-        if(orderKey[1].equals("History"))
-        {
+    private void showSaveOrDeleteButton() {
+        if (orderKey[1].equals("History")) {
             btnDelete.setVisibility(View.VISIBLE);
             btnSave.setVisibility(View.GONE);
             tvSaveOrDelete.setText(getString(R.string.delete));
         }
-        if(orderKey[1].equals("Present"))
-        {
+        if (orderKey[1].equals("Present")) {
             btnDelete.setVisibility(View.GONE);
             btnSave.setVisibility(View.VISIBLE);
             tvSaveOrDelete.setText(getString(R.string.save));
         }
-
     }
 
     public void initRealm() {
-        realm.init(this);
+        Realm.init(this);
         realm = null;
         realm = Realm.getDefaultInstance();
     }
 
-    @OnClick({R.id.btnGetOrder, R.id.btnCall, R.id.btnComment, R.id.btnSave,R.id.btnDelete})
+    @OnClick({R.id.btnGetOrder, R.id.btnCall, R.id.btnComment, R.id.btnSave, R.id.btnDelete})
     public void eventClick(final View v) {
         switch (v.getId()) {
             case R.id.btnGetOrder:
-                TastyToast.makeText(v.getContext(), "AA", TastyToast.LENGTH_LONG, TastyToast.INFO);
+                TastyToast.makeText(v.getContext(), "Clicked here!", TastyToast.LENGTH_LONG, TastyToast.INFO);
                 break;
             case R.id.btnSave:
                 final Order orderRealm = realm.where(Order.class).equalTo("orderID", order.getOrderID()).findFirst();
@@ -211,7 +207,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                         }
                     });
 
-                } else if (orderRealm != null) {
+                } else {
                     if (!orderRealm.getSaveOrder()) //Check order is false exists before handle
                     {
                         AnimationUtils.animateItemView(v);
@@ -228,7 +224,10 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                                     }
                                 }
                                 if (!checkAlready) {
+                                    //Set it again, to make sure it not null
                                     orderRealm.setSaveOrder(true);
+                                    orderRealm.setShipMoney(order.getShipMoney());
+                                    orderRealm.setDistance(order.getDistance());
                                     realm.insertOrUpdate(orderRealm);
                                     user.getOrderListSave().add(orderRealm);
                                     realm.insertOrUpdate(user);
@@ -237,7 +236,10 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
 
                                 }
                                 if (checkAlready) {
+                                    //Set it again, to make sure it not null
                                     orderRealm.setSaveOrder(true);
+                                    orderRealm.setShipMoney(order.getShipMoney());
+                                    orderRealm.setDistance(order.getDistance());
                                     realm.insertOrUpdate(orderRealm);
                                     TastyToast.makeText(v.getContext(), v.getResources().getString(R.string.save_order), TastyToast.LENGTH_SHORT, TastyToast.SUCCESS);
                                 }
@@ -249,6 +251,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                     }
                 }
 
+
                 break;
 
             case R.id.btnCall:
@@ -257,7 +260,6 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 Intent intentPhone = new Intent(Intent.ACTION_CALL);
                 intentPhone.setData(Uri.parse("tel:" + phoneNumber.get(0)));
                 if (ActivityCompat.checkSelfPermission(v.getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
                     // here to request the missing permissions, and then overriding
                     //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
@@ -277,7 +279,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 dialogHelpers.setArguments(bundle);
                 break;
             case R.id.btnDelete:
-                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this ,SweetAlertDialog.WARNING_TYPE);
+                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
                 sweetAlertDialog.setTitleText(getString(R.string.are_you_sure_title));
                 sweetAlertDialog.setContentText(getString(R.string.are_you_sure_content));
                 sweetAlertDialog.setConfirmText(getString(R.string.ok));
@@ -300,14 +302,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                                 User user = getCurrentUser();
                                 user.getOrderListSave().remove(orderRealm);
                                 realm.insertOrUpdate(user);
-                                Fragment orderSaved = new  ListOrderSavedShipperFragment();
-                                try {
-                                    FragmentManager manager = getSupportFragmentManager();
-                                    FragmentTransaction transaction = manager.beginTransaction();
-                                    transaction.replace(R.id.fragmentShipperContainer, orderSaved);
-                                    transaction.commit();
-                                } catch (Exception e) {
-                                }
+                                onBackPressed();
 
                             }
                         });
@@ -321,16 +316,16 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
     }
 
 
-
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
-        User user = realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
-        return user;
+        return realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
     }
 
     private void showToolBar() {
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -379,6 +374,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 order.setStartPoint(startPlace);
                 order.setFinishPoint(finishPlace);
                 order.setAdvancedMoney(advancedMoney);
+                order.setShipMoney(shipMoney);
                 order.setPhoneNumber(phoneNumber);
                 order.setDistance(distance);
                 order.setDateTime(dateTime);
@@ -488,6 +484,5 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
             polylinePaths.add(mMap.addPolyline(polylineOptions));
         }
     }
-
 
 }
