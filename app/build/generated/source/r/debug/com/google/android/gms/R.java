@@ -153,7 +153,7 @@ public final class R {
         public static final int common_open_on_phone = 0x7f090038;
         public static final int common_signin_button_text = 0x7f090039;
         public static final int common_signin_button_text_long = 0x7f09003a;
-        public static final int fcm_fallback_notification_channel_label = 0x7f09036e;
+        public static final int fcm_fallback_notification_channel_label = 0x7f090370;
         public static final int place_autocomplete_clear_button = 0x7f09003c;
         public static final int place_autocomplete_search_hint = 0x7f09003d;
     }

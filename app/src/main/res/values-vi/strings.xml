@@ -72,8 +72,6 @@
     <string name="ho_chi_minh">Thành Phố Hồ Chí Minh</string>
     <string name="ship_mode">Ship thì nhấn vào đây</string>
     <string name="shop_mode">Shop thì nhấn vào đây</string>
-    <string name="pref_title_vibrate" translatable="false">Rung</string>
-    <string name="pref_title_display_name" translatable="false">Tên hiển thị</string>
     <string name="pref_title_system_sync_settings">Đồng bộ hóa cài đặt</string>
     <string name="pref_title_sync_frequency">Tần số đồng bộ</string>
     <string name="pref_title_social_recommendations">"Cho phép "</string>
@@ -84,7 +82,6 @@
     <string name="pref_header_notifications">Thông báo</string>
     <string name="pref_header_general">Tác vụ cơ bản</string>
     <string name="pref_header_data_sync">Dữ liệu và động bộ</string>
-    <string name="pref_description_social_recommendations"></string>
     <string name="create_new_order">Tạo đơn hàng mới</string>
     <string name="created_order">Đơn hàng đã tạo</string>
     <string name="money_ship_invalid_summary">Bạn phải nhập số tiền  ship</string>
@@ -103,4 +100,16 @@
     <string name="time_ago_just_now">Vừa xong</string>
     <string name="time_ago_minutes_ago">phút trước</string>
     <string name="time_ago_yesterday">Hôm qua</string>
+    <string name="are_you_sure_content">Đơn đặt hàng này sẽ không hiển thị nữa!</string>
+    <string name="are_you_sure_title">Bạn có chắc muốn?</string>
+    <string name="order_status_completed">Trạng thái: Đơn hàng đã hoàn tất</string>
+    <string name="order_status_getting_started">Trạng thái: Người giao hàng đang đến</string>
+    <string name="order_status_waiting_shipper">Trang thái: Đang tìm kiếm người giao hàng</string>
+    <string name="status_take_your_order_content">Bạn không thể nhận đơn hàng này!</string>
+    <string name="status_take_your_order_title">Cảnh báo!</string>
+    <string-array name="change_language_array">
+        <item>Tiếng Việt</item>
+        <item>Tiếng Anh</item>
+    </string-array>
+
 </resources>

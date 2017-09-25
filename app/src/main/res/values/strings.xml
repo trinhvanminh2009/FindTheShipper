@@ -17,7 +17,7 @@
     <string name="create_order">Create Order</string>
     <string name="create_new_order">Create New Order</string>
     <string name="created_order">Created Order</string>
-    <string name="destination">Destination: &#160;</string>
+    <string name="destination" translatable="false">Destination: &#160;</string>
     <string name="text_view_start_place">Start place: &#160;</string>
     <string name="edit_text_start_place">Place for shipper get products</string>
     <string name="text_view_advance_money">Advance money</string>
@@ -96,14 +96,16 @@
     <string name="time_ago_yesterday">Yesterday</string>
     <string name="time_ago_a_minutes_ago">a minute ago</string>
     <string name="are_you_sure_title">Are you sure?</string>
-    <string name="are_you_sure_content">This order will be deleted!</string>
+    <string name="are_you_sure_content">This order won\'t be shown in history anymore!</string>
+    <string name="status_take_your_order_title">Warning!</string>
+    <string name="status_take_your_order_content">You can\'t get your order!</string>
 
     <string-array name="change_language_array">
         <item>Vietnamese</item>
         <item>English</item>
     </string-array>
 
-    <string-array name="change_language_values">
+    <string-array name="change_language_values" translatable="false">
         <item>0</item>
         <item>1</item>
     </string-array>
@@ -117,16 +119,16 @@
         based on your message history
     </string>
 
-    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_title_display_name" translatable="false">Display name</string>
     <string name="pref_default_display_name" translatable="false">John Smith</string>
 
     <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string-array name="pref_example_list_titles">
+    <string-array name="pref_example_list_titles" translatable="false">
         <item>Always</item>
         <item>When possible</item>
         <item>Never</item>
     </string-array>
-    <string-array name="pref_example_list_values">
+    <string-array name="pref_example_list_values" translatable="false">
         <item>1</item>
         <item>0</item>
         <item>-1</item>
@@ -136,7 +138,7 @@
     <string name="pref_header_data_sync">Data &amp; sync</string>
 
     <string name="pref_title_sync_frequency">Sync frequency</string>
-    <string-array name="pref_sync_frequency_titles">
+    <string-array name="pref_sync_frequency_titles" translatable="false">
         <item>15 minutes</item>
         <item>30 minutes</item>
         <item>1 hour</item>
@@ -144,7 +146,7 @@
         <item>6 hours</item>
         <item>Never</item>
     </string-array>
-    <string-array name="pref_sync_frequency_values">
+    <string-array name="pref_sync_frequency_values" translatable="false">
         <item>15</item>
         <item>30</item>
         <item>60</item>
@@ -153,13 +155,13 @@
         <item>-1</item>
     </string-array>
 
-    <string-array name="list_preference_entries">
+    <string-array name="list_preference_entries" translatable="false">
         <item>Entry 1</item>
         <item>Entry 2</item>
         <item>Entry 3</item>
     </string-array>
 
-    <string-array name="list_preference_entry_values">
+    <string-array name="list_preference_entry_values" translatable="false">
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -177,6 +179,6 @@
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="pref_ringtone_silent">Silent</string>
 
-    <string name="pref_title_vibrate">Vibrate</string>
-    <string name="title_activity_detail_order_shipper">DetailOrderShipperActivity</string>
+    <string name="pref_title_vibrate" translatable="false">Vibrate</string>
+    <string name="title_activity_detail_order_shipper" translatable="false">DetailOrderShipperActivity</string>
 </resources>

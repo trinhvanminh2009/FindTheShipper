@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="change_language_array">
+        <item>Tiếng Việt</item>
+        <item>Tiếng Anh</item>
+    </string-array>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Điều hướng về trang chủ"</string>
     <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s, %2$s"</string>
     <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s, %2$s, %3$s"</string>
@@ -22,6 +26,8 @@
     <string name="about_us">Về chúng tôi</string>
     <string name="always_on_display">Màn hình luôn sáng</string>
     <string name="app_name">Find The Shipper</string>
+    <string name="are_you_sure_content">Đơn đặt hàng này sẽ không hiển thị nữa!</string>
+    <string name="are_you_sure_title">Bạn có chắc muốn?</string>
     <string name="buy_package_shipper">Mua gói</string>
     <string name="call">Gọi</string>
     <string name="cancel">Hủy</string>
@@ -109,6 +115,9 @@
     <string name="order_ship_money">Tiền ship:</string>
     <string name="order_starting_point">Điểm bắt đầu:</string>
     <string name="order_status">Trạng thái: Đơn hàng đã bị hủy</string>
+    <string name="order_status_completed">Trạng thái: Đơn hàng đã hoàn tất</string>
+    <string name="order_status_getting_started">Trạng thái: Người giao hàng đang đến</string>
+    <string name="order_status_waiting_shipper">Trang thái: Đang tìm kiếm người giao hàng</string>
     <string name="order_success">Đơn hàng đã hoàn thành</string>
     <string name="pay_coin_shipper">Trả bằng coin</string>
     <string name="permission_required_toast">Chức năng này yêu cầu quyền truy cập vị trí</string>
@@ -118,19 +127,16 @@
     <string msgid="2809095107724486040" name="place_autocomplete_search_hint">"Tìm kiếm"</string>
     <string name="please_wait">Vui lòng đợi...</string>
     <string name="please_wait_facebooklogin">Chỉ một lát</string>
-    <string name="pref_description_social_recommendations"/>
     <string name="pref_header_data_sync">Dữ liệu và động bộ</string>
     <string name="pref_header_general">Tác vụ cơ bản</string>
     <string name="pref_header_notifications">Thông báo</string>
     <string name="pref_ringtone_silent">Yên lặng</string>
     <string name="pref_title_add_friends_to_messages">Thêm bạn bè vào tin nhắn</string>
-    <string name="pref_title_display_name" translatable="false">Tên hiển thị</string>
     <string name="pref_title_new_message_notifications">Thông báo tin nhắn mới</string>
     <string name="pref_title_ringtone">Nhạc chuông</string>
     <string name="pref_title_social_recommendations">"Cho phép "</string>
     <string name="pref_title_sync_frequency">Tần số đồng bộ</string>
     <string name="pref_title_system_sync_settings">Đồng bộ hóa cài đặt</string>
-    <string name="pref_title_vibrate" translatable="false">Rung</string>
     <string name="profile">Cá nhân</string>
     <string name="required_permission_location">Để truy cập vị trí hiện tại cần mở vị trí</string>
     <string name="save">Lưu lại</string>
@@ -143,6 +149,8 @@
     <string name="shop_mode">Shop thì nhấn vào đây</string>
     <string name="start_place">Chọn điểm kết thúc</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="status_take_your_order_content">Bạn không thể nhận đơn hàng này!</string>
+    <string name="status_take_your_order_title">Cảnh báo!</string>
     <string name="summary_always_on_display">Màn hình điện thoại của bạn luôn sáng khi sử dụng ứng dụng này</string>
     <string name="summary_change_mode">Bạn trở thành shop, bạn có thể tạo đơn hàng.</string>
     <string name="summary_change_mode_to_shipper">Bạn trở thành người giao hàng. Hãy bắt đầu kiếm tiền nào.</string>

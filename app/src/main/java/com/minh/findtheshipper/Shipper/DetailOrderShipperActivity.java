@@ -104,6 +104,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
     TextView tvSaveOrDelete;
     private Unbinder unbinder;
     private String key = "";
+    private String userEmailFromServer = "";
     private List<Marker> startMarkers = new ArrayList<>();
     private List<Marker> finishMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
@@ -150,9 +151,39 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
 
     @OnClick({R.id.btnGetOrder, R.id.btnCall, R.id.btnComment, R.id.btnSave, R.id.btnDelete})
     public void eventClick(final View v) {
+        SweetAlertDialog sweetAlertDialog;
         switch (v.getId()) {
             case R.id.btnGetOrder:
-                TastyToast.makeText(v.getContext(), "Clicked here!", TastyToast.LENGTH_LONG, TastyToast.INFO);
+                //Not allow take their own order
+                if (userEmailFromServer.equals(getCurrentUser().getEmail())) {
+                    sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+                    sweetAlertDialog.setTitleText(getString(R.string.status_take_your_order_title));
+                    sweetAlertDialog.setContentText(getString(R.string.status_take_your_order_content ));
+                    sweetAlertDialog.setConfirmText(getString(R.string.ok));
+                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                           sweetAlertDialog.dismissWithAnimation();
+                        }
+                    });
+                    sweetAlertDialog.show();
+                }
+                else {
+                    TastyToast.makeText(this,"Get it",TastyToast.LENGTH_SHORT,TastyToast.INFO);
+                    final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
+                    orderDataBase.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            orderDataBase.child(key).child("Shipper").setValue(EncodingFireBase.encodeString(getCurrentUser().getEmail()));
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
                 break;
             case R.id.btnSave:
                 final Order orderRealm = realm.where(Order.class).equalTo("orderID", order.getOrderID()).findFirst();
@@ -170,6 +201,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                             orderToRealm.setNote(order.getNote());
                             orderToRealm.setSaveOrder(order.getSavedOrder());
                             orderToRealm.setPhoneNumber(order.getPhoneNumber());
+                            orderToRealm.setDistance(order.getDistance());
                             realm.insertOrUpdate(orderToRealm);
                             getCurrentUser().getOrderListSave().add(orderToRealm);
                             realm.insertOrUpdate(getCurrentUser());
@@ -250,8 +282,6 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                         TastyToast.makeText(v.getContext(), v.getResources().getString(R.string.save_order_exists), TastyToast.LENGTH_SHORT, TastyToast.WARNING);
                     }
                 }
-
-
                 break;
 
             case R.id.btnCall:
@@ -279,7 +309,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 dialogHelpers.setArguments(bundle);
                 break;
             case R.id.btnDelete:
-                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+                sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
                 sweetAlertDialog.setTitleText(getString(R.string.are_you_sure_title));
                 sweetAlertDialog.setContentText(getString(R.string.are_you_sure_content));
                 sweetAlertDialog.setConfirmText(getString(R.string.ok));
@@ -355,6 +385,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 final String orderKey = key;
+                userEmailFromServer = EncodingFireBase.convertToRightEmail(key);
                 TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
                 String status = dataSnapshot.child(orderKey).child("Status").getValue(String.class);
                 String startPlace = dataSnapshot.child(orderKey).child("Start place").getValue(String.class);
@@ -400,11 +431,11 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         userDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String userKey = encodingFireBase.getEmailFromUserID(key);
+                String userKey = EncodingFireBase.getEmailFromUserID(key);
                 String nameCreator = dataSnapshot.child(userKey).child("Name").getValue(String.class);
                 String url = dataSnapshot.child(userKey).child("Avatar").getValue(String.class);
                 txtUserName.setText(nameCreator);
-                Glide.with(DetailOrderShipperActivity.this).load(encodingFireBase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(imgUserImage);
+                Glide.with(DetailOrderShipperActivity.this).load(EncodingFireBase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(imgUserImage);
             }
 
             @Override

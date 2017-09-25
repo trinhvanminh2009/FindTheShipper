@@ -486,7 +486,7 @@ public final class R {
         public static final int support_simple_spinner_dropdown_item = 0x7f040080;
     }
     public static final class string {
-        public static final int LOADING = 0x7f0900a9;
+        public static final int LOADING = 0x7f0900ad;
         public static final int abc_action_bar_home_description = 0x7f090000;
         public static final int abc_action_bar_home_description_format = 0x7f090001;
         public static final int abc_action_bar_home_subtitle_description_format = 0x7f090002;
@@ -503,9 +503,9 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f090010;
         public static final int abc_shareactionprovider_share_with_application = 0x7f090011;
         public static final int app_name = 0x7f090044;
-        public static final int dialog_cancel = 0x7f0900c6;
-        public static final int dialog_default_title = 0x7f0900c7;
-        public static final int dialog_ok = 0x7f0900c8;
+        public static final int dialog_cancel = 0x7f0900c8;
+        public static final int dialog_default_title = 0x7f0900c9;
+        public static final int dialog_ok = 0x7f0900ca;
     }
     public static final class style {
         public static final int Base_TextAppearance_AppCompat = 0x7f0b0052;

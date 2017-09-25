@@ -534,16 +534,16 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 realm.insertOrUpdate(user);
                 //Post data into server after added to database, have to encoding before post into FireBase server
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Status").setValue(order.getStatus());
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Start place").setValue(order.getStartPoint());
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Finish place").setValue(order.getFinishPoint());
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Advanced money").setValue(order.getAdvancedMoney());
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Phone number").setValue(order.getPhoneNumber());
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Ship Money").setValue(order.getShipMoney());
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Note").setValue(order.getNote());
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Distance").setValue(order.getDistance());
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Datetime").setValue(order.getDateTime());
-                mDatabase.child(encodingFireBase.encodeString(order.getOrderID())).child("Save Order").setValue(order.getSaveOrder());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Status").setValue(order.getStatus());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Start place").setValue(order.getStartPoint());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Finish place").setValue(order.getFinishPoint());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Advanced money").setValue(order.getAdvancedMoney());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Phone number").setValue(order.getPhoneNumber());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Ship Money").setValue(order.getShipMoney());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Note").setValue(order.getNote());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Distance").setValue(order.getDistance());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Datetime").setValue(order.getDateTime());
+                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Save Order").setValue(order.getSaveOrder());
                 //Handle change to created order
                 getSupportActionBar().setTitle(R.string.created_order);
                 fragmentMaps.setVisibility(View.GONE);

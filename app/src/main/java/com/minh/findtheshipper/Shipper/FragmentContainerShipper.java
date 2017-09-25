@@ -68,7 +68,7 @@ public class FragmentContainerShipper extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_container_shipper);
         ButterKnife.bind(this);
-        realm.init(FragmentContainerShipper.this);
+        Realm.init(FragmentContainerShipper.this);
         initRealm();
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -147,11 +147,9 @@ public class FragmentContainerShipper extends FragmentActivity {
         Bitmap BitmapOrg = BitmapFactory.decodeResource(getResources(), resId);
         int width = BitmapOrg.getWidth();
         int height = BitmapOrg.getHeight();
-        int newWidth = w;
-        int newHeight = h;
         // calculate the scale
-        float scaleWidth = ((float) newWidth) / width;
-        float scaleHeight = ((float) newHeight) / height;
+        float scaleWidth = ((float) w) / width;
+        float scaleHeight = ((float) h) / height;
         // create a matrix for the manipulation
         Matrix matrix = new Matrix();
         matrix.postScale(scaleWidth, scaleHeight);

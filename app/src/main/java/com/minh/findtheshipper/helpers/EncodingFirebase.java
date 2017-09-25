@@ -1,6 +1,7 @@
 package com.minh.findtheshipper.helpers;
 
 /**
+ * To decode from server
  * Created by trinh on 7/11/2017.
  */
 
@@ -9,11 +10,11 @@ public class EncodingFireBase {
     public EncodingFireBase() {
     }
 
-    public String encodeString(String string) {
+    public static String encodeString(String string) {
         return string.replace(".", ",");
     }
 
-    public String decodeString(String string) {
+    public static String decodeString(String string) {
         return string.replace(",", ".");
     }
 
@@ -28,8 +29,13 @@ public class EncodingFireBase {
         return result;
     }
 
-    public String getEmailFromUserID(String result) {
+    public static String getEmailFromUserID(String result) {
         String[] split = result.split("_");
         return split[1];
+    }
+
+    public static String convertToRightEmail(String email){
+        email = getEmailFromUserID(email);
+        return email.replaceAll(",",".");
     }
 }
