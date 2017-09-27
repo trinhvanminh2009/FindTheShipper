@@ -10,6 +10,7 @@ public class UserTemp {
     private String phoneNumber;
     private String avatar;
     private String gender;
+    private String currentAddress;
 
     public UserTemp() {
     }
@@ -52,5 +53,13 @@ public class UserTemp {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getCurrentAddress() {
+        return currentAddress;
+    }
+
+    public void setCurrentAddress(String currentAddress) {
+        this.currentAddress = currentAddress;
     }
 }

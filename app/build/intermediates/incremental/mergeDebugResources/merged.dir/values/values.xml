@@ -192,7 +192,6 @@
     <color name="com_facebook_likeboxcountview_text_color">#6a7180</color>
     <color name="com_facebook_likeview_text_color">#6a7180</color>
     <color name="com_facebook_messenger_blue">#0084ff</color>
-    <color name="com_facebook_share_button_text_color">#FFFFFF</color>
     <color name="com_smart_login_code">#3C6499</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
@@ -1066,13 +1065,6 @@
     <dimen name="com_facebook_profilepictureview_preset_size_large">180dp</dimen>
     <dimen name="com_facebook_profilepictureview_preset_size_normal">100dp</dimen>
     <dimen name="com_facebook_profilepictureview_preset_size_small">50dp</dimen>
-    <dimen name="com_facebook_share_button_compound_drawable_padding">12dp</dimen>
-    <dimen name="com_facebook_share_button_padding_bottom">12dp</dimen>
-    <dimen name="com_facebook_share_button_padding_left">12dp</dimen>
-    <dimen name="com_facebook_share_button_padding_right">16dp</dimen>
-    <dimen name="com_facebook_share_button_padding_top">12dp</dimen>
-    <dimen name="com_facebook_share_button_text_size">16.0sp</dimen>
-    <dimen name="com_facebook_tooltip_horizontal_padding">10dp</dimen>
     <dimen name="comment_height">600dp</dimen>
     <dimen name="comment_width">400dp</dimen>
     <dimen name="common_circle_width">3dp</dimen>
@@ -5207,9 +5199,9 @@
         <item name="android:textStyle">bold</item>
     </style>
     <style name="com_facebook_activity_theme" parent="@style/Theme.AppCompat.NoActionBar">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowNoTitle">true</item>
+      <item name="android:windowIsTranslucent">true</item>
+      <item name="android:windowBackground">@android:color/transparent</item>
+      <item name="android:windowNoTitle">true</item>
     </style>
     <style name="com_facebook_auth_dialog" parent="@style/Theme.AppCompat.Dialog">
         <item name="android:windowIsTranslucent">true</item>

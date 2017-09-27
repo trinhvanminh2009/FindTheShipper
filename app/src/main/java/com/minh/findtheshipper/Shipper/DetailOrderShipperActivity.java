@@ -1,9 +1,12 @@
 package com.minh.findtheshipper.Shipper;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -38,6 +41,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.Shop.HandleMapsActivity;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFireBase;
@@ -126,6 +130,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         initRealm();
         loadDataFromServer();
         showSaveOrDeleteButton();
+        TastyToast.makeText(this, getCurrentUser().getEmail(), TastyToast.LENGTH_SHORT, TastyToast.INFO);
 
 
     }
@@ -143,6 +148,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         }
     }
 
+
     public void initRealm() {
         Realm.init(this);
         realm = null;
@@ -158,18 +164,17 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 if (userEmailFromServer.equals(getCurrentUser().getEmail())) {
                     sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
                     sweetAlertDialog.setTitleText(getString(R.string.status_take_your_order_title));
-                    sweetAlertDialog.setContentText(getString(R.string.status_take_your_order_content ));
+                    sweetAlertDialog.setContentText(getString(R.string.status_take_your_order_content));
                     sweetAlertDialog.setConfirmText(getString(R.string.ok));
                     sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                         @Override
                         public void onClick(SweetAlertDialog sweetAlertDialog) {
-                           sweetAlertDialog.dismissWithAnimation();
+                            sweetAlertDialog.dismissWithAnimation();
                         }
                     });
                     sweetAlertDialog.show();
-                }
-                else {
-                    TastyToast.makeText(this,"Get it",TastyToast.LENGTH_SHORT,TastyToast.INFO);
+                } else {
+                    TastyToast.makeText(this, "Get it", TastyToast.LENGTH_SHORT, TastyToast.INFO);
                     final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
                     orderDataBase.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -183,6 +188,11 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
 
                         }
                     });
+
+                    //Start navigation by google maps
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" +
+                            order.getStartPoint() + ""));
+                    startActivity(intent);
                 }
                 break;
             case R.id.btnSave:
@@ -345,6 +355,10 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
@@ -379,7 +393,6 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         key = orderKey[0];
         final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
         final DatabaseReference userDatabase = FirebaseDatabase.getInstance().getReference("user");
-        final EncodingFireBase encodingFireBase = new EncodingFireBase();
 
         orderDataBase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -410,16 +423,19 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 order.setDistance(distance);
                 order.setDateTime(dateTime);
                 order.setSavedOrder(saveOrder);
+                if (txtStartPlace != null && txtFinishPlace != null && txtAdvancedMoney != null
+                        && txtPrice != null && txtNote != null && txtDistance != null && txtTimeAgo != null) {
+                    txtStartPlace.setText(shortStartPlace);
+                    txtFinishPlace.setText(shortFinishPlace);
+                    txtAdvancedMoney.setText(advancedMoney);
+                    txtPhoneNumber.setText(phoneNumber);
+                    txtPrice.setText(shipMoney);
+                    txtNote.setText(note);
+                    txtDistance.setText(distance);
+                    txtTimeAgo.setText(timeAgoHelpers.getTimeAgo(dateTime, DetailOrderShipperActivity.this));
+                    showPathOnMap(startPlace, finishPlace);
+                }
 
-                txtStartPlace.setText(shortStartPlace);
-                txtFinishPlace.setText(shortFinishPlace);
-                txtAdvancedMoney.setText(advancedMoney);
-                txtPhoneNumber.setText(phoneNumber);
-                txtPrice.setText(shipMoney);
-                txtNote.setText(note);
-                txtDistance.setText(distance);
-                txtTimeAgo.setText(timeAgoHelpers.getTimeAgo(dateTime, DetailOrderShipperActivity.this));
-                showPathOnMap(startPlace, finishPlace);
 
             }
 
@@ -466,9 +482,59 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         mMap = googleMap;
         LatLng HCMCity = new LatLng(10.766333, 106.694036);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(HCMCity, 18));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
+        if (mMap.isMyLocationEnabled()) {
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (location != null) {
+                final double[] longitude = {location.getLongitude()};
+                final double[] latitude = {location.getLatitude()};
+                android.location.LocationListener locationListener = new android.location.LocationListener() {
+                    @Override
+                    public void onLocationChanged(Location location) {
+                        longitude[0] = location.getLongitude();
+                        latitude[0] = location.getLatitude();
+                        String currentAddress = EncodingFireBase.getCompleteAddressString(
+                                DetailOrderShipperActivity.this, latitude[0], longitude[0]);
+
+
+                    }
+
+                    @Override
+                    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                    }
+
+                    @Override
+                    public void onProviderEnabled(String provider) {
+
+
+                    }
+
+                    @Override
+                    public void onProviderDisabled(String provider) {
+
+                    }
+                };
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, (long) 2000, (float) 10, locationListener);
+            }
+
+
+        }
 
 
     }
+
 
     @Override
     public void onDirectionFinderStart() {
@@ -514,6 +580,8 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
             }
             polylinePaths.add(mMap.addPolyline(polylineOptions));
         }
+
+
     }
 
 }

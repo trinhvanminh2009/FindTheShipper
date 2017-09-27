@@ -622,7 +622,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 public void onCameraChange(CameraPosition cameraPosition) {
 
                     LatLng center = mMap.getCameraPosition().target;
-                    String tempAddress = getCompleteAddressString(center.latitude, center.longitude);
+                    String tempAddress = EncodingFireBase.getCompleteAddressString(HandleMapsActivity.this,center.latitude, center.longitude);
 
                     itemClicked = 2;
 
@@ -764,26 +764,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     }
 
 
-    private String getCompleteAddressString(double latitude, double longitude) {
-        String fullAddress = "";
-        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-        try {
-            List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
-            TastyToast.makeText(HandleMapsActivity.this, "Size:" + addresses.size(), TastyToast.LENGTH_LONG, TastyToast.INFO);
-            Address address = addresses.get(0);
-            StringBuilder stringBuilder = new StringBuilder("");
-            for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
-                stringBuilder.append(address.getAddressLine(i)).append(",");
-            }
-            stringBuilder.append(address.getAddressLine(address.getMaxAddressLineIndex())).append(".");
-            fullAddress = stringBuilder.toString();
 
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return fullAddress;
-    }
 
     //Make sure the distance more than 1,000
     private String removeComma(String inputString) {

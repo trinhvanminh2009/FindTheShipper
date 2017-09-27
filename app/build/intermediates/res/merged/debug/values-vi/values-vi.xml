@@ -97,7 +97,6 @@
     <string name="list_order_saved_shipper">Đơn hàng đã lưu</string>
     <string name="list_order_shipper">Danh sách đơn hàng</string>
     <string name="log_out">Đăng xuất</string>
-    <string name="messenger_send_button_text">Gửi</string>
     <string name="money_ship_invalid_summary">Bạn phải nhập số tiền  ship</string>
     <string name="money_ship_invalid_title">Tiền ship không hợp lệ</string>
     <string name="notification_title">Thông báo</string>
