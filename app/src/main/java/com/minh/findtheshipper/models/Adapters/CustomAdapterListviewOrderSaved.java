@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.Shipper.DetailOrderShipperActivity;
-import com.minh.findtheshipper.helpers.EncodingFireBase;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.Order;
 
@@ -57,7 +57,7 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
         /**
          * Query name from FireBase using id in orders
          * */
-        final EncodingFireBase encodingFireBase = new EncodingFireBase();
+        final EncodingFirebase encodingFireBase = new EncodingFirebase();
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -95,8 +95,8 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
             }
         });
 
-        String startPlace = " " + EncodingFireBase.getShortAddress(order.getStartPoint());
-        String finishPlace = " " + EncodingFireBase.getShortAddress(order.getFinishPoint());
+        String startPlace = " " + EncodingFirebase.getShortAddress(order.getStartPoint());
+        String finishPlace = " " + EncodingFirebase.getShortAddress(order.getFinishPoint());
         String distance = " " + order.getDistance();
         holder.txtStartPlace.setText(startPlace);
         holder.txtFinishPlace.setText(finishPlace);

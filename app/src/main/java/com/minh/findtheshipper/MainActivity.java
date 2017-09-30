@@ -23,7 +23,7 @@ import com.facebook.login.widget.LoginButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.minh.findtheshipper.Shop.HandleMapsActivity;
-import com.minh.findtheshipper.helpers.EncodingFireBase;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.UserTemp;
 import com.sdsmdg.tastytoast.TastyToast;
@@ -114,9 +114,9 @@ public class MainActivity extends FragmentActivity {
                                     }
                                 });
                                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
-                                mDatabase.child(EncodingFireBase.encodeString(email)).child("Name").setValue(EncodingFireBase.encodeString(name));
-                                mDatabase.child(EncodingFireBase.encodeString(email)).child("Gender").setValue(gender);
-                                mDatabase.child(EncodingFireBase.encodeString(email)).child("Avatar").setValue(EncodingFireBase.encodeString(imageURL));
+                                mDatabase.child(EncodingFirebase.encodeString(email)).child("Name").setValue(EncodingFirebase.encodeString(name));
+                                mDatabase.child(EncodingFirebase.encodeString(email)).child("Gender").setValue(gender);
+                                mDatabase.child(EncodingFirebase.encodeString(email)).child("Avatar").setValue(EncodingFirebase.encodeString(imageURL));
 
                                 startActivity(intent);
                             } catch (JSONException e) {

@@ -16,10 +16,10 @@ import java.util.Locale;
  * Created by trinh on 7/11/2017.
  */
 
-public class EncodingFireBase {
+public class EncodingFirebase {
 
 
-    public EncodingFireBase() {
+    public EncodingFirebase() {
     }
 
     public static String encodeString(String string) {

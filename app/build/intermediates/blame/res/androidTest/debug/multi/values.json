@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "C:\\Users\\trinh\\.android\\build-cache\\e07d235a065ce69fe9cbb69f27733bd1540229a5\\output\\res\\values\\values.xml",
+                    "file": "/home/nlplab/.android/build-cache/8ccec1fdeadb1bd9f15304f03b9e8a390a4bc8d3/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

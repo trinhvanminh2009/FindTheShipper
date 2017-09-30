@@ -41,10 +41,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
-import com.minh.findtheshipper.Shop.HandleMapsActivity;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
-import com.minh.findtheshipper.helpers.EncodingFireBase;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.CurrentUser;
@@ -130,7 +129,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         initRealm();
         loadDataFromServer();
         showSaveOrDeleteButton();
-        TastyToast.makeText(this, getCurrentUser().getEmail(), TastyToast.LENGTH_SHORT, TastyToast.INFO);
+        //TastyToast.makeText(this, getCurrentUser().getEmail(), TastyToast.LENGTH_SHORT, TastyToast.INFO);
 
 
     }
@@ -161,38 +160,40 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         switch (v.getId()) {
             case R.id.btnGetOrder:
                 //Not allow take their own order
-                if (userEmailFromServer.equals(getCurrentUser().getEmail())) {
-                    sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
-                    sweetAlertDialog.setTitleText(getString(R.string.status_take_your_order_title));
-                    sweetAlertDialog.setContentText(getString(R.string.status_take_your_order_content));
-                    sweetAlertDialog.setConfirmText(getString(R.string.ok));
-                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sweetAlertDialog) {
-                            sweetAlertDialog.dismissWithAnimation();
-                        }
-                    });
-                    sweetAlertDialog.show();
-                } else {
-                    TastyToast.makeText(this, "Get it", TastyToast.LENGTH_SHORT, TastyToast.INFO);
-                    final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
-                    orderDataBase.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            orderDataBase.child(key).child("Shipper").setValue(EncodingFireBase.encodeString(getCurrentUser().getEmail()));
+                if(userEmailFromServer != null && getCurrentUser().getEmail() != null){
+                    if (userEmailFromServer.equals(getCurrentUser().getEmail())) {
+                        sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+                        sweetAlertDialog.setTitleText(getString(R.string.status_take_your_order_title));
+                        sweetAlertDialog.setContentText(getString(R.string.status_take_your_order_content));
+                        sweetAlertDialog.setConfirmText(getString(R.string.ok));
+                        sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                            }
+                        });
+                        sweetAlertDialog.show();
+                    } else {
+                        TastyToast.makeText(this, "Get it", TastyToast.LENGTH_SHORT, TastyToast.INFO);
+                        final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
+                        orderDataBase.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                orderDataBase.child(key).child("Shipper").setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
 
-                        }
+                            }
 
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
 
-                        }
-                    });
+                            }
+                        });
 
-                    //Start navigation by google maps
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" +
-                            order.getStartPoint() + ""));
-                    startActivity(intent);
+                        //Start navigation by google maps
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" +
+                                order.getStartPoint() + ""));
+                        startActivity(intent);
+                    }
                 }
                 break;
             case R.id.btnSave:
@@ -398,7 +399,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 final String orderKey = key;
-                userEmailFromServer = EncodingFireBase.convertToRightEmail(key);
+                userEmailFromServer = EncodingFirebase.convertToRightEmail(key);
                 TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
                 String status = dataSnapshot.child(orderKey).child("Status").getValue(String.class);
                 String startPlace = dataSnapshot.child(orderKey).child("Start place").getValue(String.class);
@@ -410,8 +411,8 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 String distance = dataSnapshot.child(orderKey).child("Distance").getValue(String.class);
                 String dateTime = dataSnapshot.child(orderKey).child("Datetime").getValue(String.class);
                 Boolean saveOrder = dataSnapshot.child(orderKey).child("Save Order").getValue(Boolean.class);
-                String shortStartPlace = EncodingFireBase.getShortAddress(startPlace);
-                String shortFinishPlace = EncodingFireBase.getShortAddress(finishPlace);
+                String shortStartPlace = EncodingFirebase.getShortAddress(startPlace);
+                String shortFinishPlace = EncodingFirebase.getShortAddress(finishPlace);
 
                 order.setOrderID(orderKey);
                 order.setStatus(status);
@@ -447,11 +448,11 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         userDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String userKey = EncodingFireBase.getEmailFromUserID(key);
+                String userKey = EncodingFirebase.getEmailFromUserID(key);
                 String nameCreator = dataSnapshot.child(userKey).child("Name").getValue(String.class);
                 String url = dataSnapshot.child(userKey).child("Avatar").getValue(String.class);
                 txtUserName.setText(nameCreator);
-                Glide.with(DetailOrderShipperActivity.this).load(EncodingFireBase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(imgUserImage);
+                Glide.with(DetailOrderShipperActivity.this).load(EncodingFirebase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(imgUserImage);
             }
 
             @Override
@@ -504,7 +505,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                     public void onLocationChanged(Location location) {
                         longitude[0] = location.getLongitude();
                         latitude[0] = location.getLatitude();
-                        String currentAddress = EncodingFireBase.getCompleteAddressString(
+                        String currentAddress = EncodingFirebase.getCompleteAddressString(
                                 DetailOrderShipperActivity.this, latitude[0], longitude[0]);
 
 

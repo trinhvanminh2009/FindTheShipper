@@ -2,7 +2,6 @@ package com.minh.findtheshipper.models.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.Shipper.DetailOrderShipperActivity;
-import com.minh.findtheshipper.Shipper.FragmentContainerShipper;
-import com.minh.findtheshipper.helpers.EncodingFireBase;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.OrderTemp;
 
@@ -54,7 +52,7 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final OrderTemp order = orderList.get(position);
         TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
-        final EncodingFireBase encodingFireBase = new EncodingFireBase();
+        final EncodingFirebase encodingFireBase = new EncodingFirebase();
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         final String[] key = {""};
         mDatabase.addValueEventListener(new ValueEventListener() {
@@ -73,8 +71,8 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
             }
         });
         String phoneNumber = "" + order.getPhoneNumber();
-        String startPlace = " " + EncodingFireBase.getShortAddress(order.getStartPoint());
-        String finishPlace = " " + EncodingFireBase.getShortAddress(order.getFinishPoint());
+        String startPlace = " " + EncodingFirebase.getShortAddress(order.getStartPoint());
+        String finishPlace = " " + EncodingFirebase.getShortAddress(order.getFinishPoint());
         String distance = " " + order.getDistance();
         holder.txtDistance.setText(distance);
         holder.txtPhoneNumber.setText(phoneNumber);

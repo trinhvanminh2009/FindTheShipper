@@ -12,8 +12,6 @@ import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.location.Address;
-import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -69,7 +67,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerUIUtils;
-import com.minh.findtheshipper.helpers.EncodingFireBase;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.FragmentActivity;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.DialogHelpers;
@@ -86,14 +84,12 @@ import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.utils.PermissionUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -510,7 +506,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                EncodingFireBase encodingFireBase = new EncodingFireBase();
+                EncodingFirebase encodingFireBase = new EncodingFirebase();
                 User user = getCurrentUser();
                 final Order order = realm.createObject(Order.class, "order_" + user.getEmail() + "_" + countOrder[0]);
                 order.setStatus(getResources().getString(R.string.order_status));
@@ -534,16 +530,16 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 realm.insertOrUpdate(user);
                 //Post data into server after added to database, have to encoding before post into FireBase server
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Status").setValue(order.getStatus());
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Start place").setValue(order.getStartPoint());
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Finish place").setValue(order.getFinishPoint());
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Advanced money").setValue(order.getAdvancedMoney());
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Phone number").setValue(order.getPhoneNumber());
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Ship Money").setValue(order.getShipMoney());
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Note").setValue(order.getNote());
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Distance").setValue(order.getDistance());
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Datetime").setValue(order.getDateTime());
-                mDatabase.child(EncodingFireBase.encodeString(order.getOrderID())).child("Save Order").setValue(order.getSaveOrder());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Status").setValue(order.getStatus());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Start place").setValue(order.getStartPoint());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Finish place").setValue(order.getFinishPoint());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Advanced money").setValue(order.getAdvancedMoney());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Phone number").setValue(order.getPhoneNumber());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Ship Money").setValue(order.getShipMoney());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Note").setValue(order.getNote());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Distance").setValue(order.getDistance());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Datetime").setValue(order.getDateTime());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Save Order").setValue(order.getSaveOrder());
                 //Handle change to created order
                 getSupportActionBar().setTitle(R.string.created_order);
                 fragmentMaps.setVisibility(View.GONE);
@@ -622,7 +618,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 public void onCameraChange(CameraPosition cameraPosition) {
 
                     LatLng center = mMap.getCameraPosition().target;
-                    String tempAddress = EncodingFireBase.getCompleteAddressString(HandleMapsActivity.this,center.latitude, center.longitude);
+                    String tempAddress = EncodingFirebase.getCompleteAddressString(HandleMapsActivity.this,center.latitude, center.longitude);
 
                     itemClicked = 2;
 

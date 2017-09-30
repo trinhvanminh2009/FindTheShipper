@@ -21,7 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.minh.findtheshipper.helpers.EncodingFireBase;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
@@ -67,7 +67,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
         final AnimationUtils animationUtils = new AnimationUtils();
         final OrderTemp order = orderList.get(position);
         /**Query name from FireBase using id in orders*/
-        final EncodingFireBase encodingFireBase = new EncodingFireBase();
+        final EncodingFirebase encodingFireBase = new EncodingFirebase();
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         final DatabaseReference orderDatabase = FirebaseDatabase.getInstance().getReference("order");
         mDatabase.addValueEventListener(new ValueEventListener() {

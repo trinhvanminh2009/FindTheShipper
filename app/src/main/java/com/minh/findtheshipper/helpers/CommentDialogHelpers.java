@@ -99,7 +99,7 @@ public class CommentDialogHelpers extends DialogFragment {
     private void insertComment()
     {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-        EncodingFireBase encodingFireBase = new EncodingFireBase();
+        EncodingFirebase encodingFireBase = new EncodingFirebase();
         String idComment = "cmt_"+ encodingFireBase.encodeString(getCurrentUser().getEmail())+"_"+orderID+"_"+countComment[0];
         mDatabase.child(orderID).child("comment").child(idComment).child("user").setValue(getCurrentUser().getEmail());
         mDatabase.child(orderID).child("comment").child(idComment).child("Content").setValue(editComment.getText().toString());

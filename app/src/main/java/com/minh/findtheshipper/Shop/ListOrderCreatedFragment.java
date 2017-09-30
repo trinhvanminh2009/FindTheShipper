@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
-import com.minh.findtheshipper.helpers.EncodingFireBase;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrder;
 import com.minh.findtheshipper.models.CurrentUser;
@@ -144,7 +144,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
      */
     private List<String> checkKey(List<String> keyServer) {
         List<String> result = new ArrayList<>();
-        EncodingFireBase encodingFireBase = new EncodingFireBase();
+        EncodingFirebase encodingFireBase = new EncodingFirebase();
         for (int i = 0; i < keyServer.size(); i++) {
 
             if (keyServer.get(i).contains(encodingFireBase.encodeString(getCurrentUser().getEmail()))) {

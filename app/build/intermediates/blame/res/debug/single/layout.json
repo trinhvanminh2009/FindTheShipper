@@ -1,486 +1,486 @@
 [
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_dialog_title_material.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_slider.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_slider.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_order_shipper_saved.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_order_shipper_saved.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_fits_not.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_fits_not.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_mini.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_mini.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\default_toast_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\92134a31c132b650bdbc3fa6874e694918843fdf\\output\\res\\layout\\default_toast_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/alert_dialog.xml",
+        "source": "/home/nlplab/.android/build-cache/9a24634d389d554ed4682ef0e8a2c64e19d6a09f/output/res/layout/alert_dialog.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/amu_info_window.xml",
+        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/layout/amu_info_window.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\info_toast_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\92134a31c132b650bdbc3fa6874e694918843fdf\\output\\res\\layout\\info_toast_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_screen_toolbar.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/notification_template_media.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\notification_template_media.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/info_toast_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/375a0a146a50a7aa115c37623ad8084eb56bbae6/output/res/layout/info_toast_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\notification_template_lines_media.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/confusing_toast_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/375a0a146a50a7aa115c37623ad8084eb56bbae6/output/res/layout/confusing_toast_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_container_shipper.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\fragment_container_shipper.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/dialog_comment.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/dialog_comment.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_order.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_order.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_action_item_badge_large.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\a32169a9eaf00836d7414fe1865684faa82424d9\\output\\res\\layout\\menu_action_item_badge_large.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_navigation_menu_item.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_bottom_navigation_item.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/com_facebook_device_auth_dialog_fragment.xml",
+        "source": "/home/nlplab/.android/build-cache/fa6d291b1d0deaa9c7ba4b23c44bcd2f09c725cd/output/res/layout/com_facebook_device_auth_dialog_fragment.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_select_dialog_material.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_profile.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_profile.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_screen_content_include.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_fragment.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_fragment.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_navigation_item.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/test.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/test.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/success_toast_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/375a0a146a50a7aa115c37623ad8084eb56bbae6/output/res/layout/success_toast_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_fragment.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\dialog_fragment.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_mini_profile.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_mini_profile.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_created_order.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_created_order.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_navigation_item_header.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/fragment_container_shipper.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/fragment_container_shipper.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\alert_dialog.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\layout\\alert_dialog.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_screen_simple.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_profile_setting.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_profile_setting.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/menu_action_item_badge_large.xml",
+        "source": "/home/nlplab/.android/build-cache/7aeac568986102ceb17fa0d6a57fa9f5d5e0fa8e/output/res/layout/menu_action_item_badge_large.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_comment.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\dialog_comment.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_layout_snackbar.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_profile.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_profile.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_container.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_container.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_bottom_sheet_dialog.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_menu_item_action_area.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_progress.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\cc68d91812b011af753b1cf07123b083899af560\\output\\res\\layout\\place_autocomplete_progress.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_recycler_view.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_recycler_view.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\notification_template_part_chronometer.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/messenger_button_send_white_large.xml",
+        "source": "/home/nlplab/.android/build-cache/b6cca5bbad1683937344faf1dfa7bc9d277657d1/output/res/layout/messenger_button_send_white_large.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_device_auth_dialog_fragment.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\59d19541e116eb17b3e196ea6636f7ca0fde5d4a\\output\\res\\layout\\com_facebook_device_auth_dialog_fragment.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/com_facebook_tooltip_bubble.xml",
+        "source": "/home/nlplab/.android/build-cache/969f57df5253aebee55e541d65e3e027dbe14e0a/output/res/layout/com_facebook_tooltip_bubble.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_navigation_item_separator.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/materialize.xml",
+        "source": "/home/nlplab/.android/build-cache/083772d030ea901c4f93c134363c093bb8ff40c3/output/res/layout/materialize.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\confusing_toast_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\92134a31c132b650bdbc3fa6874e694918843fdf\\output\\res\\layout\\confusing_toast_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_navigation_item_separator.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_section.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_section.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_slider.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_slider.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/warning_toast_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/375a0a146a50a7aa115c37623ad8084eb56bbae6/output/res/layout/warning_toast_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_large.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\100a8456b88abe28c21ebf27d0f041647499a874\\output\\res\\layout\\messenger_button_send_blue_large.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/messenger_button_send_white_small.xml",
+        "source": "/home/nlplab/.android/build-cache/b6cca5bbad1683937344faf1dfa7bc9d277657d1/output/res/layout/messenger_button_send_white_small.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\test.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_navigation_item.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_activity_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\59d19541e116eb17b3e196ea6636f7ca0fde5d4a\\output\\res\\layout\\com_facebook_activity_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/list_order_item.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/list_order_item.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_bar_title_item.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/activity_choose_place.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/activity_choose_place.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_text_input_password_icon.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_divider.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_divider.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_primary.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_primary.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml",
+        "source": "/home/nlplab/.android/build-cache/7e41bfedf54004014f96e38911b4543a768f49de/output/res/layout/place_autocomplete_progress.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_small.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\100a8456b88abe28c21ebf27d0f041647499a874\\output\\res\\layout\\messenger_button_send_white_small.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_profile_setting.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_profile_setting.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_action_item_badge.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\a32169a9eaf00836d7414fe1865684faa82424d9\\output\\res\\layout\\menu_action_item_badge.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/amu_webview.xml",
+        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/layout/amu_webview.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_bar_up_container.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/notification_template_media_custom.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_item_powered_by_google.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\cc68d91812b011af753b1cf07123b083899af560\\output\\res\\layout\\place_autocomplete_item_powered_by_google.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/activity_detail_order_shipper.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/activity_detail_order_shipper.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\error_toast_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\92134a31c132b650bdbc3fa6874e694918843fdf\\output\\res\\layout\\error_toast_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_order_item.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_order_item.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_header.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_header.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/list_notification.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/list_notification.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toolbar.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\toolbar.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_item.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_navigation_item_subheader.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_alert_dialog_material.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_select_dialog_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_text_input_password_icon.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_header.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_header.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_round.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\100a8456b88abe28c21ebf27d0f041647499a874\\output\\res\\layout\\messenger_button_send_white_round.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/menu_action_item_badge.xml",
+        "source": "/home/nlplab/.android/build-cache/7aeac568986102ceb17fa0d6a57fa9f5d5e0fa8e/output/res/layout/menu_action_item_badge.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/messenger_button_send_white_round.xml",
+        "source": "/home/nlplab/.android/build-cache/b6cca5bbad1683937344faf1dfa7bc9d277657d1/output/res/layout/messenger_button_send_white_round.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_mini_profile.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_mini_profile.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/list_order.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/list_order.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_action_bar_up_container.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\warning_toast_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\92134a31c132b650bdbc3fa6874e694918843fdf\\output\\res\\layout\\warning_toast_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_secondary_toggle.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_secondary_toggle.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_container.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\fragment_container.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\amu_webview.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\layout\\amu_webview.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/activity_handle_maps.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/activity_handle_maps.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\amu_text_bubble.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\layout\\amu_text_bubble.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/error_toast_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/375a0a146a50a7aa115c37623ad8084eb56bbae6/output/res/layout/error_toast_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\materialize.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\8bc2704e91a53111f0f1ab71d5fd36bd68dbae7f\\output\\res\\layout\\materialize.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_layout_snackbar_include.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\distance_maps.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\distance_maps.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_navigation_item_subheader.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_section.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_section.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_expandable_badge.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_expandable_badge.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/com_facebook_smart_device_dialog_fragment.xml",
+        "source": "/home/nlplab/.android/build-cache/fa6d291b1d0deaa9c7ba4b23c44bcd2f09c725cd/output/res/layout/com_facebook_smart_device_dialog_fragment.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary_switch.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_secondary_switch.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_round.xml",
+        "source": "/home/nlplab/.android/build-cache/b6cca5bbad1683937344faf1dfa7bc9d277657d1/output/res/layout/messenger_button_send_blue_round.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_mini.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_mini.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_activity_chooser_view.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/notification_template_part_time.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_round.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\100a8456b88abe28c21ebf27d0f041647499a874\\output\\res\\layout\\messenger_button_send_blue_round.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/notification_template_part_chronometer.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\notification_template_part_time.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/distance_maps.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/distance_maps.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_toggle.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_toggle.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/toolbar.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/toolbar.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\success_toast_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\92134a31c132b650bdbc3fa6874e694918843fdf\\output\\res\\layout\\success_toast_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/dialog_fragment.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/dialog_fragment.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\place_autocomplete_item_prediction.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\cc68d91812b011af753b1cf07123b083899af560\\output\\res\\layout\\place_autocomplete_item_prediction.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/notification_template_lines_media.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\select_dialog_item_material.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_switch.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_switch.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_search_view.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_large.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\100a8456b88abe28c21ebf27d0f041647499a874\\output\\res\\layout\\messenger_button_send_white_large.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/setting_shipper_fragment.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/setting_shipper_fragment.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_choose_place.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_choose_place.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/list_comments.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/list_comments.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_order_shipper.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_order_shipper.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/fragment_container.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/fragment_container.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_tooltip_bubble.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\9966f29f5c502deeb501093335175ffff4026e58\\output\\res\\layout\\com_facebook_tooltip_bubble.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_switch.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_switch.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maps.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_maps.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/select_dialog_item_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_layout_snackbar.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_small.xml",
+        "source": "/home/nlplab/.android/build-cache/b6cca5bbad1683937344faf1dfa7bc9d277657d1/output/res/layout/messenger_button_send_blue_small.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_recycle_view.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_recycle_view.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_smart_device_dialog_fragment.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\59d19541e116eb17b3e196ea6636f7ca0fde5d4a\\output\\res\\layout\\com_facebook_smart_device_dialog_fragment.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_layout_tab_text.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\setting_shipper_fragment.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\setting_shipper_fragment.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_layout_tab_text.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_large.xml",
+        "source": "/home/nlplab/.android/build-cache/b6cca5bbad1683937344faf1dfa7bc9d277657d1/output/res/layout/messenger_button_send_blue_large.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\notification_template_media_custom.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/list_recycle_view.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/list_recycle_view.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_prediction.xml",
+        "source": "/home/nlplab/.android/build-cache/7e41bfedf54004014f96e38911b4543a768f49de/output/res/layout/place_autocomplete_item_prediction.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_expandable.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_expandable.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_primary.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_primary.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_fits_not.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_fits_not.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_handle_maps.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_handle_maps.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_expandable_badge.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_expandable_badge.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/activity_created_order.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/activity_created_order.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\amu_info_window.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\layout\\amu_info_window.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/list_order_shipper.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/list_order_shipper.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_comments.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_comments.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_dialog_title_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml",
+        "source": "/home/nlplab/.android/build-cache/7e41bfedf54004014f96e38911b4543a768f49de/output/res/layout/place_autocomplete_item_powered_by_google.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_recycler_view.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_recycler_view.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/default_toast_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/375a0a146a50a7aa115c37623ad8084eb56bbae6/output/res/layout/default_toast_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_secondary.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_navigation_item_header.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_login_fragment.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\59d19541e116eb17b3e196ea6636f7ca0fde5d4a\\output\\res\\layout\\com_facebook_login_fragment.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/com_facebook_activity_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/fa6d291b1d0deaa9c7ba4b23c44bcd2f09c725cd/output/res/layout/com_facebook_activity_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_screen_simple.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_navigation_menu.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary_toggle.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_secondary_toggle.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_toggle.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_toggle.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_compact_header.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_compact_header.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_navigation_menu.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_container.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_container.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/activity_fragment.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/activity_fragment.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_divider.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\139ebbfc04b32efd787ce6d3e66bd109585f2b7e\\output\\res\\layout\\material_drawer_item_divider.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/list_order_shipper_saved.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/list_order_shipper_saved.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_menu_item_action_area.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_alert_dialog_title_material.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_secondary.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_secondary.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_detail_order_shipper.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_detail_order_shipper.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/amu_text_bubble.xml",
+        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/layout/amu_text_bubble.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_layout_snackbar_include.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_compact_header.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_compact_header.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_small.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\100a8456b88abe28c21ebf27d0f041647499a874\\output\\res\\layout\\messenger_button_send_blue_small.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/com_facebook_login_fragment.xml",
+        "source": "/home/nlplab/.android/build-cache/fa6d291b1d0deaa9c7ba4b23c44bcd2f09c725cd/output/res/layout/com_facebook_login_fragment.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_bottom_navigation_item.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_bottom_navigation_item.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_layout_tab_icon.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_action_mode_bar.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_notification.xml",
-        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_notification.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_secondary_switch.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_secondary_switch.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/material_drawer_item_expandable.xml",
+        "source": "/home/nlplab/.android/build-cache/1cf0d6c6fcbd6e9b6a857c14a5a35b765a711869/output/res/layout/material_drawer_item_expandable.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_search_view.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/list_item.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/list_item.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/activity_maps.xml",
+        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/layout/activity_maps.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
+        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/layout/abc_action_menu_layout.xml"
     },
     {
-        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
-        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\layout\\design_navigation_menu_item.xml"
+        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
+        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/layout/design_layout_tab_icon.xml"
     }
 ]
