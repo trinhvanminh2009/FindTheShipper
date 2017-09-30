@@ -165,7 +165,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        realm.init(HandleMapsActivity.this);
+        Realm.init(HandleMapsActivity.this);
         setSupportActionBar(toolbar);
         listControls.add(new ListControl(R.drawable.ic_starting_point, ""));
         listControls.add(new ListControl(R.drawable.ic_finish_point, ""));
