@@ -1,82 +1,82 @@
 [
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_unsupported.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_unsupported.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_draw_order_ground_overlay.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_draw_order_ground_overlay.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_poly_style_boolean_alpha.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_poly_style_boolean_alpha.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_multigeometry_placemarks.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_multigeometry_placemarks.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_nested_multigeometry.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_nested_multigeometry.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_nested_multigeometry.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_nested_multigeometry.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_draw_order_ground_overlay.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_draw_order_ground_overlay.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_ground_overlay.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_ground_overlay.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_poly_style_boolean_numeric.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_poly_style_boolean_numeric.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_visibility_ground_overlay.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_visibility_ground_overlay.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_document_nest.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_document_nest.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_multiple_placemarks.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_multiple_placemarks.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_ballon_gx_prefix.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_ballon_gx_prefix.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_ground_overlay_color.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_ground_overlay_color.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_cdata.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_cdata.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_poly_style_boolean_numeric.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_poly_style_boolean_numeric.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_basic_folder.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_basic_folder.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_unknwown_folder.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_unknwown_folder.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_nested_folders.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_nested_folders.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_nested_folders.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_nested_folders.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_extended_data.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_extended_data.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_basic_folder.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_basic_folder.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_multigeometry_placemarks.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_multigeometry_placemarks.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_inline_style.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_inline_style.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_ground_overlay_color.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_ground_overlay_color.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_document_nest.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_document_nest.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_default_balloon.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_default_balloon.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_cdata.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_cdata.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_inline_style.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_inline_style.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_unsupported.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_unsupported.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_multiple_placemarks.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_multiple_placemarks.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_basic_placemark.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_basic_placemark.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_basic_placemark.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_basic_placemark.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_ballon_gx_prefix.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_ballon_gx_prefix.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_ground_overlay.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_ground_overlay.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_extended_data.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_extended_data.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_unknwown_folder.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_unknwown_folder.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_default_balloon.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_default_balloon.kml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/raw/amu_visibility_ground_overlay.kml",
-        "source": "/home/nlplab/.android/build-cache/5fa63461ee523b562012e56f6ea2310cd14aace5/output/res/raw/amu_visibility_ground_overlay.kml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_poly_style_boolean_alpha.kml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_poly_style_boolean_alpha.kml"
     }
 ]

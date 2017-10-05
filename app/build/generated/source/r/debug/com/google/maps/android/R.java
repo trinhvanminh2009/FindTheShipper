@@ -39,16 +39,16 @@ public final class R {
         public static final int zOrderOnTop = 0x7f010136;
     }
     public static final class color {
-        public static final int common_google_signin_btn_text_dark = 0x7f0e01d1;
-        public static final int common_google_signin_btn_text_dark_default = 0x7f0e0033;
-        public static final int common_google_signin_btn_text_dark_disabled = 0x7f0e0034;
-        public static final int common_google_signin_btn_text_dark_focused = 0x7f0e0035;
-        public static final int common_google_signin_btn_text_dark_pressed = 0x7f0e0036;
-        public static final int common_google_signin_btn_text_light = 0x7f0e01d2;
-        public static final int common_google_signin_btn_text_light_default = 0x7f0e0037;
-        public static final int common_google_signin_btn_text_light_disabled = 0x7f0e0038;
-        public static final int common_google_signin_btn_text_light_focused = 0x7f0e0039;
-        public static final int common_google_signin_btn_text_light_pressed = 0x7f0e003a;
+        public static final int common_google_signin_btn_text_dark = 0x7f0e01d5;
+        public static final int common_google_signin_btn_text_dark_default = 0x7f0e0035;
+        public static final int common_google_signin_btn_text_dark_disabled = 0x7f0e0036;
+        public static final int common_google_signin_btn_text_dark_focused = 0x7f0e0037;
+        public static final int common_google_signin_btn_text_dark_pressed = 0x7f0e0038;
+        public static final int common_google_signin_btn_text_light = 0x7f0e01d6;
+        public static final int common_google_signin_btn_text_light_default = 0x7f0e0039;
+        public static final int common_google_signin_btn_text_light_disabled = 0x7f0e003a;
+        public static final int common_google_signin_btn_text_light_focused = 0x7f0e003b;
+        public static final int common_google_signin_btn_text_light_pressed = 0x7f0e003c;
     }
     public static final class drawable {
         public static final int amu_bubble_mask = 0x7f020054;
@@ -81,17 +81,17 @@ public final class R {
         public static final int satellite = 0x7f10005c;
         public static final int standard = 0x7f100067;
         public static final int terrain = 0x7f10005d;
-        public static final int webview = 0x7f1000eb;
+        public static final int webview = 0x7f1000f1;
         public static final int wide = 0x7f100068;
-        public static final int window = 0x7f1000ea;
+        public static final int window = 0x7f1000f0;
     }
     public static final class integer {
         public static final int google_play_services_version = 0x7f0d0006;
     }
     public static final class layout {
-        public static final int amu_info_window = 0x7f040023;
-        public static final int amu_text_bubble = 0x7f040024;
-        public static final int amu_webview = 0x7f040025;
+        public static final int amu_info_window = 0x7f040024;
+        public static final int amu_text_bubble = 0x7f040025;
+        public static final int amu_webview = 0x7f040026;
     }
     public static final class raw {
         public static final int amu_ballon_gx_prefix = 0x7f080000;

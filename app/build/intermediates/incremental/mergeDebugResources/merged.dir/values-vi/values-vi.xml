@@ -82,6 +82,7 @@
     <string name="content">Nội dung</string>
     <string name="create_new_order">Tạo đơn hàng mới</string>
     <string name="create_order">Tạo đơn hàng</string>
+    <string name="created">Đã tạo: </string>
     <string name="created_order">Đơn hàng đã tạo</string>
     <string name="current_phone_number">Số điện thoại hiện tại</string>
     <string name="delete">Xóa</string>

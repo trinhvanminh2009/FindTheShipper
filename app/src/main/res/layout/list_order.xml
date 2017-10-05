@@ -1,154 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:clickable="true"
     app:cardCornerRadius="10dp"
     card_view:cardElevation="3dp"
-    android:layout_margin="5dp"
-    card_view:contentPadding = "4dp"
-    android:clickable="true">
+    card_view:contentPadding="4dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:background="@drawable/custom_click"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/layoutNameAndAvatar"
+            android:visibility="gone"
             android:orientation="horizontal">
+
             <ImageView
+                android:id="@+id/imgUserImage"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:id="@+id/userImage"
-                android:src="@drawable/ic_your_profile"/>
-            <TextView
+                android:src="@drawable/ic_your_profile" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtUserName"
-                android:textSize="22sp"
-                android:text="@string/about_us"
-                />
+                android:layout_marginStart="7dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_us"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/about_us" />
+            </LinearLayout>
+
         </LinearLayout>
+        <com.kofigyan.stateprogressbar.StateProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stateProgressBar"
+            app:spb_currentStateNumber="three"
+            app:spb_maxStateNumber="four"
+            app:spb_stateBackgroundColor="#BDBDBD"
+            app:spb_stateForegroundColor="#009688"
+            app:spb_stateNumberBackgroundColor="#808080"
+            app:spb_stateNumberForegroundColor="#eeeeee"
+            app:spb_currentStateDescriptionColor="#009688"
+            app:spb_stateDescriptionColor="#808080"
+            app:spb_checkStateCompleted="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtStatus"
-            android:text="@string/order_status"
-            android:textSize="20sp"
-            android:textColor="@color/md_red_900"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:text="@string/order_starting_point"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:id="@+id/txtStart"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:text="@string/order_finish_point"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:id="@+id/txtFinish"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:text="@string/order_advanced_money"
-            android:id="@+id/txtAdvancedMoney"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/order_ship_money"
-            android:textSize="17sp"
-            android:id="@+id/txtShipMoney"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:text="@string/order_note"
-            android:id="@+id/txtNote"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:text="@string/order_distance"
-            android:id="@+id/txtDistanceOrder"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/ic_start_place" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:id="@+id/txtPhoneNumber"
-            android:text="@string/order_phone_number"/>
+            <TextView
+                android:id="@+id/txtStartPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/start_place"
+                android:textSize="16sp" />
+        </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/haveStatus"
-            android:gravity="center">
-            <Button
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_destination" />
+
+            <TextView
+                android:id="@+id/txtFinishPlace"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="@string/order_edit"
-                android:id="@+id/btnEdit"
-                android:layout_marginRight="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/shape_button"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="@string/order_find_again"
-                android:layout_gravity="center"
-                android:textSize="10sp"
-                android:layout_marginLeft="50dp"
-                android:id="@+id/btnFindAgain"
-                android:background="@drawable/shape_button"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/start_place"
+                android:textSize="16sp" />
 
         </LinearLayout>
+
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/nonStatus"
-            android:gravity="center">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="@string/order_success"
-                android:id="@+id/btnOrderSuccess"
-                android:layout_marginRight="20dp"
-                android:layout_gravity="center"
-                android:background="@drawable/shape_button"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="@string/order_call"
-                android:layout_gravity="center"
-                android:layout_marginLeft="50dp"
-                android:id="@+id/btnCallAgain"
-                android:background="@drawable/shape_button"/>
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
 
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_cell_phone" />
+
+            <TextView
+                android:id="@+id/txtPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="@string/start_place"
+                android:textSize="16sp" />
         </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <RatingBar
+                android:id="@+id/ratingOrder"
+                style="@style/customRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:stepSize="1"
+                android:theme="@style/RatingBar" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/ic_distance_2" />
+
+                <TextView
+                    android:id="@+id/txtDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_us"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/always_on_display"
+                android:textColor="@color/md_red_800" />
+        </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtDatetime"
-            android:text="@string/order_last_updated"/>
+            android:text="@string/created"
+            android:id="@+id/txtTimeAgo"/>
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

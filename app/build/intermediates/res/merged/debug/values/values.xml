@@ -150,10 +150,12 @@
     <color name="accent">@color/colorAccent</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
+    <color name="background_color">#F2000000</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="background_text_color">#808080</color>
     <color name="blue_btn_bg_color">#AEDEF4</color>
     <color name="blue_btn_bg_pressed_color">#96BFD2</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
@@ -218,8 +220,10 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="error_stroke_color">#F27474</color>
     <color name="float_transparent">#00000000</color>
+    <color name="foreground_color">#b42379</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
+    <color name="foreground_text_color">#eeeeee</color>
     <color name="gray_btn_bg_color">#D0D0D0</color>
     <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
     <color name="green">#09cc40</color>
@@ -870,6 +874,7 @@
 </attr><attr format="reference|string" name="scopeUris"/></declare-styleable>
     <declare-styleable name="SnackbarLayout"><attr name="android:maxWidth"/><attr name="elevation"/><attr format="dimension" name="maxActionInlineWidth"/></declare-styleable>
     <declare-styleable name="Spinner"><attr name="android:prompt"/><attr name="popupTheme"/><attr name="android:popupBackground"/><attr name="android:dropDownWidth"/><attr name="android:entries"/></declare-styleable>
+    <declare-styleable name="StateProgressBar"><attr format="color" name="spb_stateBackgroundColor"/><attr format="color" name="spb_stateForegroundColor"/><attr format="color" name="spb_stateNumberBackgroundColor"/><attr format="color" name="spb_stateNumberForegroundColor"/><attr format="color" name="spb_currentStateDescriptionColor"/><attr format="color" name="spb_stateDescriptionColor"/><attr format="dimension" name="spb_stateSize"/><attr format="dimension" name="spb_stateTextSize"/><attr format="dimension" name="spb_stateDescriptionSize"/><attr format="dimension" name="spb_stateLineThickness"/><attr format="boolean" name="spb_checkStateCompleted"/><attr format="boolean" name="spb_animateToCurrentProgressState"/><attr format="boolean" name="spb_enableAllStatesCompleted"/><attr format="dimension" name="spb_descriptionTopSpaceDecrementer"/><attr format="dimension" name="spb_descriptionTopSpaceIncrementer"/><attr format="integer" name="spb_animationDuration"/><attr format="integer" name="spb_animationStartDelay"/><attr format="enum" name="spb_currentStateNumber"><enum name="one" value="1"/><enum name="two" value="2"/><enum name="three" value="3"/><enum name="four" value="4"/><enum name="five" value="5"/></attr><attr format="enum" name="spb_maxStateNumber"><enum name="one" value="1"/><enum name="two" value="2"/><enum name="three" value="3"/><enum name="four" value="4"/><enum name="five" value="5"/></attr></declare-styleable>
     <declare-styleable name="SwitchCompat"><attr name="android:thumb"/><attr format="color" name="thumbTint"/><attr name="thumbTintMode">
             
             <enum name="src_over" value="3"/>
@@ -1316,11 +1321,13 @@
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="buy_package_shipper">Buy package</string>
     <string name="call">Call</string>
+    <string name="call_shipper">Call Shipper</string>
     <string name="cancel">Cancel</string>
     <string name="change_language">Change language</string>
     <string name="change_mode">Change Mode</string>
     <string name="change_phone_number">Change phone number</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="check_icon"></string>
     <string name="choosing_finish_point">Drag the maps into place you want to finish.Your place right marker.</string>
     <string name="choosing_places_success">Choose places success. Move on create new order.</string>
     <string name="choosing_starting_point">Drag the maps into place you want to start. Your place right marker.</string>
@@ -1369,6 +1376,7 @@
     <string name="content">Content</string>
     <string name="create_new_order">Create New Order</string>
     <string name="create_order">Create Order</string>
+    <string name="created">Created:  </string>
     <string name="created_order">Created Order</string>
     <string name="current_phone_number">Current phone number</string>
     <string name="default_web_client_id" translatable="false">260595537255-sfotcr2nh9tl6rftcbrphhicuttgn7qd.apps.googleusercontent.com</string>
@@ -1386,6 +1394,7 @@
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_default_title">Here\'s a message!</string>
     <string name="dialog_ok">OK</string>
+    <string name="edit">Edit</string>
     <string name="edit_text_advance_money">Count by k (100 display 100k)</string>
     <string name="edit_text_note">Descriptive more</string>
     <string name="edit_text_phone_number">Your phone number</string>
@@ -3125,7 +3134,7 @@
     <string name="order_edit">Edit</string>
     <string name="order_find_again">Find again</string>
     <string name="order_finish_point">Finish point: </string>
-    <string name="order_last_updated">Last updated:</string>
+    <string name="order_last_updated">Last updated: </string>
     <string name="order_note">Note:</string>
     <string name="order_phone_number">Phone number: </string>
     <string name="order_ship_money">Ship money: </string>

@@ -1,102 +1,102 @@
 [
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_popup_exit.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\success_bow_roate.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\anim\\success_bow_roate.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/button_left.xml",
-        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/anim/button_left.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\error_frame_in.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\anim\\error_frame_in.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/success_mask_layout.xml",
-        "source": "/home/nlplab/.android/build-cache/9a24634d389d554ed4682ef0e8a2c64e19d6a09f/output/res/anim/success_mask_layout.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/modal_out.xml",
-        "source": "/home/nlplab/.android/build-cache/9a24634d389d554ed4682ef0e8a2c64e19d6a09f/output/res/anim/modal_out.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\change_layout.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\change_layout.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_fade_out.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/error_x_in.xml",
-        "source": "/home/nlplab/.android/build-cache/9a24634d389d554ed4682ef0e8a2c64e19d6a09f/output/res/anim/error_x_in.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\button_left.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\button_left.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/anim_out.xml",
-        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/anim/anim_out.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/change_layout.xml",
-        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/anim/change_layout.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\button_right.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\button_right.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
-        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/anim/design_snackbar_out.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_fade_in.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
-        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/anim/design_fab_out.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\error_x_in.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\anim\\error_x_in.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/error_frame_in.xml",
-        "source": "/home/nlplab/.android/build-cache/9a24634d389d554ed4682ef0e8a2c64e19d6a09f/output/res/anim/error_frame_in.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
-        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/anim/design_snackbar_in.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\modal_in.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\anim\\modal_in.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_slide_out_top.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_slide_in_bottom.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\anim_out.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\anim_out.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/success_bow_roate.xml",
-        "source": "/home/nlplab/.android/build-cache/9a24634d389d554ed4682ef0e8a2c64e19d6a09f/output/res/anim/success_bow_roate.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_popup_enter.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
-        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/anim/design_fab_in.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\modal_out.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\anim\\modal_out.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/anim_in.xml",
-        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/anim/anim_in.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_slide_in_top.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/anim/abc_slide_out_bottom.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\anim_in.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\anim_in.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/modal_in.xml",
-        "source": "/home/nlplab/.android/build-cache/9a24634d389d554ed4682ef0e8a2c64e19d6a09f/output/res/anim/modal_in.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\success_mask_layout.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\anim\\success_mask_layout.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/anim/button_right.xml",
-        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/anim/button_right.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     }
 ]

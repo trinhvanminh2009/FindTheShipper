@@ -17,6 +17,7 @@
     <string name="create_order">Create Order</string>
     <string name="create_new_order">Create New Order</string>
     <string name="created_order">Created Order</string>
+    <string name="created">Created: &#160;</string>
     <string name="destination" translatable="false">Destination: &#160;</string>
     <string name="text_view_start_place">Start place: &#160;</string>
     <string name="edit_text_start_place">Place for shipper get products</string>
@@ -43,7 +44,7 @@
     <string name="order_find_again">Find again</string>
     <string name="order_success">Order completed</string>
     <string name="order_call">Call</string>
-    <string name="order_last_updated">Last updated:</string>
+    <string name="order_last_updated">Last updated:&#160;</string>
     <string name="notification_title">Notification</string>
     <string name="list_order_shipper">List Order</string>
     <string name="list_order_saved_shipper">Saved order</string>
@@ -57,6 +58,8 @@
     <string name="log_out">Logout</string>
     <string name="comment">Comment</string>
     <string name="call">Call</string>
+    <string name="call_shipper">Call Shipper</string>
+    <string name="edit">Edit</string>
     <string name="save">Save</string>
     <string name="get_order">Get Order</string>
     <string name="delete">Delete</string>

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -17,10 +18,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.kofigyan.stateprogressbar.StateProgressBar;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.OrderTemp;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.List;
 
@@ -61,12 +65,12 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
          * Third: Show it*/
         if(order.getUserGetOrder() != null)
         {
-            holder.layoutNameAndAvatar.setVisibility(View.VISIBLE);
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String key = order.getUserGetOrder();
                     String nameCreator = dataSnapshot.child(key).child("Name").getValue(String.class);
+                    TastyToast.makeText(context,nameCreator,TastyToast.LENGTH_SHORT,TastyToast.INFO);
                     holder.txtUserName.setText(nameCreator);
                 }
 
@@ -76,32 +80,19 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
                 }
             });
 
-            holder.txtStatus.setText(context.getResources().getText(R.string.order_status_getting_started));
-        }
-        else
-        {
-            holder.layoutNameAndAvatar.setVisibility(View.GONE);
-            holder.txtStatus.setText(context.getResources().getText(R.string.order_status_waiting_shipper));
-        }
 
-
-        holder.txtStartPlace.setText(order.getStartPoint());
-        holder.txtFinishPlace.setText(order.getFinishPoint());
-        holder.txtAdvancedMoney.setText(order.getAdvancedMoney());
+        }
+        TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
+        String timeAgo = context.getString(R.string.order_last_updated) + timeAgoHelpers.getTimeAgo(order.getDateTime(), context);
+        String startPlace = " " + EncodingFirebase.getShortAddress(order.getStartPoint());
+        String finishPlace = " " + EncodingFirebase.getShortAddress(order.getFinishPoint());
+        holder.txtStartPlace.setText(startPlace);
+        holder.txtFinishPlace.setText(finishPlace);
         holder.txtShipMoney.setText(order.getShipMoney());
         holder.txtDistance.setText(order.getDistance());
-        holder.txtNote.setText(order.getNote());
         holder.txtPhoneNumber.setText(order.getPhoneNumber());
-        TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
-        holder.txtDatetime.setText( context.getResources().getText(R.string.order_last_updated)+ timeAgoHelpers.getTimeAgo(order.getDateTime(),context));
-        if(holder.txtStatus.getText() == "")
-        {
-            holder.haveStatus.setVisibility(View.GONE);
-        }
-        if(holder.txtStatus.getText() != "")
-        {
-            holder.nonStatus.setVisibility(View.GONE);
-        }
+        holder.txtDatetime.setText(timeAgo);
+
     }
 
 
@@ -117,45 +108,33 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView txtStatus;
         private TextView txtStartPlace;
         private TextView txtFinishPlace;
-        private TextView txtAdvancedMoney;
         private TextView txtShipMoney;
         private TextView txtDistance;
-        private TextView txtNote;
         private TextView txtPhoneNumber;
         private TextView txtDatetime;
         private TextView txtUserName;
         private ImageView userImage;
-        private LinearLayout nonStatus;
-        private LinearLayout haveStatus;
-        private LinearLayout layoutNameAndAvatar;
-        private Button btnEdit;
-        private Button btnFindAgain;
-        private Button btnOrderSucess;
-        private Button btnCallAgain;
+        private RatingBar ratingBarOrder;
+        private StateProgressBar stateProgressBar;
+        String[] descriptionData = {"Find", "Confirm", "Delivery", "Done"};
+
+
 
         public ViewHolder(View view) {
             super(view);
-            txtStatus = (TextView)view.findViewById(R.id.txtStatus);
-            txtStartPlace = (TextView)view.findViewById(R.id.txtStart);
-            txtFinishPlace = (TextView)view.findViewById(R.id.txtFinish);
-            txtAdvancedMoney = (TextView)view.findViewById(R.id.txtAdvancedMoney);
-            txtShipMoney = (TextView)view.findViewById(R.id.txtShipMoney);
-            txtDistance = (TextView)view.findViewById(R.id.txtDistanceOrder);
-            txtNote = (TextView)view.findViewById(R.id.txtNote);
+            txtStartPlace = (TextView)view.findViewById(R.id.txtStartPlace);
+            txtFinishPlace = (TextView)view.findViewById(R.id.txtFinishPlace);
+            txtShipMoney = (TextView)view.findViewById(R.id.txtPrice);
+            txtDistance = (TextView)view.findViewById(R.id.txtDistance);
             txtPhoneNumber = (TextView)view.findViewById(R.id.txtPhoneNumber);
-            txtDatetime = (TextView)view.findViewById(R.id.txtDatetime);
-            nonStatus = (LinearLayout)view.findViewById(R.id.nonStatus);
-            haveStatus = (LinearLayout)view.findViewById(R.id.haveStatus);
-            btnEdit = (Button)view.findViewById(R.id.btnEdit);
-            btnFindAgain = (Button)view.findViewById(R.id.btnFindAgain);
-            btnOrderSucess = (Button)view.findViewById(R.id.btnOrderSuccess);
-            btnCallAgain = (Button)view.findViewById(R.id.btnCallAgain);
+            txtDatetime = (TextView)view.findViewById(R.id.txtTimeAgo);
             txtUserName = (TextView)view.findViewById(R.id.txtUserName);
-            userImage = (ImageView)view.findViewById(R.id.userImage);
-            layoutNameAndAvatar = (LinearLayout)view.findViewById(R.id.layoutNameAndAvatar);
+            userImage = (ImageView)view.findViewById(R.id.imgUserImage);
+            ratingBarOrder = (RatingBar) view.findViewById(R.id.ratingOrder);
+            stateProgressBar = (StateProgressBar)view.findViewById(R.id.stateProgressBar);
+            stateProgressBar.setStateDescriptionData(descriptionData);
         }
     }
 }

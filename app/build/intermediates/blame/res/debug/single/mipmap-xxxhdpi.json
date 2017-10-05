@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_app.png",
-        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/mipmap-xxxhdpi/ic_launcher_app.png"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
-        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_avatar.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_avatar.png"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_avatar.png",
-        "source": "/home/nlplab/StudioProjects/FindTheShipper/app/src/main/res/mipmap-xxxhdpi/ic_avatar.png"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_app.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_app.png"
     }
 ]

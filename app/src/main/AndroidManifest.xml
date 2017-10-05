@@ -38,7 +38,11 @@
         </service>
 
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -73,30 +77,23 @@
         </activity>
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
         <activity android:name=".DistanceMapsActivity" />
-        <activity android:name=".Test"></activity>
+        <activity android:name=".Test" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".Shipper.FragmentContainerShipper">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Shop.HandleMapsActivity">
-
-        </activity>
+        <activity android:name=".Shipper.FragmentContainerShipper"></activity>
+        <activity android:name=".Shop.HandleMapsActivity"></activity>
         <activity
             android:name=".utils.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity android:name=".Shipper.SettingShipperPreferences" />
         <activity android:name=".ChoosePlace" />
-        <activity android:name=".FragmentContainer"></activity>
+        <activity android:name=".FragmentContainer" />
         <activity android:name=".Shop.SettingsShopPreferences" />
         <activity
             android:name=".Shipper.DetailOrderShipperActivity"
-            android:label="@string/title_activity_detail_order_shipper"></activity>
+            android:label="@string/title_activity_detail_order_shipper" />
+        <activity android:name=".Shop.DetailOrderShopActivity"></activity>
     </application>
 
 </manifest>

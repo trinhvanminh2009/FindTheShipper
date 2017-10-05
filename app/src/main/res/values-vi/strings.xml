@@ -111,5 +111,6 @@
         <item>Tiếng Việt</item>
         <item>Tiếng Anh</item>
     </string-array>
+    <string name="created">Đã tạo:&#160;</string>
 
 </resources>

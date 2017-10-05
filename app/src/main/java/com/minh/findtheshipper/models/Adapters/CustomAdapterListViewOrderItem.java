@@ -79,7 +79,7 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
         holder.txtStartPlace.setText(startPlace);
         holder.txtFinishPlace.setText(finishPlace);
         holder.txtPrice.setText(order.getShipMoney());
-        holder.txtTimeAgo.setText(timeAgoHelpers.getTimeAgo(order.getDateTime(), context));
+        holder.txtTimeAgo.setText( timeAgoHelpers.getTimeAgo(order.getDateTime(), context));
         holder.itemView.setClickable(true);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +87,7 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
                 Intent intent = new Intent(v.getContext(), DetailOrderShipperActivity.class);
                 String[] orderKey = new String[2];
                 orderKey[0] = order.getOrderID();
-                orderKey[1] = "Present";
+                orderKey[1] = "Present";//this key to know order saved or order from server
                 intent.putExtra("orderKey",orderKey);
                 v.getContext().startActivity(intent);
             }

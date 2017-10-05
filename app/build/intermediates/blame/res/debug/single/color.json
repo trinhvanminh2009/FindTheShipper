@@ -1,110 +1,110 @@
 [
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_tint_default.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\96c4b1b1f08a2c9ac4b0aae997a5930cf6d9e755\\output\\res\\color\\com_facebook_send_button_text_color.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_hint_foreground_material_light.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_tint.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\40eba9bb221d3a87abbae2cf3d330768820d50ff\\output\\res\\color\\common_google_signin_btn_tint.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_secondary_text_material_dark.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_tint_seek_thumb.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_tint_edittext.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml",
-        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/color/design_tint_password_toggle.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_tint_btn_checkable.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\color\\design_error.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/switch_thumb_material_light.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\59d19541e116eb17b3e196ea6636f7ca0fde5d4a\\output\\res\\color\\com_facebook_button_text_color.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/com_facebook_button_text_color.xml",
-        "source": "/home/nlplab/.android/build-cache/fa6d291b1d0deaa9c7ba4b23c44bcd2f09c725cd/output/res/color/com_facebook_button_text_color.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_primary_text_disable_only_material_light.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_hint_foreground_material_dark.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_tint_edittext.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/com_facebook_send_button_text_color.xml",
-        "source": "/home/nlplab/.android/build-cache/b300738c84bc8169f0ccd0012006dcaea3476b9e/output/res/color/com_facebook_send_button_text_color.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_tint_spinner.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_secondary_text_material_light.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
-        "source": "/home/nlplab/.android/build-cache/c644b59dd1e0a6acb66331654ef2043a55a7f8c0/output/res/color/common_google_signin_btn_text_light.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_primary_text_material_dark.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_btn_colored_text_material.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_tint_spinner.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
-        "source": "/home/nlplab/.android/build-cache/c644b59dd1e0a6acb66331654ef2043a55a7f8c0/output/res/color/common_google_signin_btn_text_dark.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_primary_text_material_light.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\40eba9bb221d3a87abbae2cf3d330768820d50ff\\output\\res\\color\\common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/design_error.xml",
-        "source": "/home/nlplab/.android/build-cache/4a229647c143959ab8b9f670b1fa932361f295b7/output/res/color/design_error.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_tint_switch_thumb.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_tint_switch_track.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\40eba9bb221d3a87abbae2cf3d330768820d50ff\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/switch_thumb_material_dark.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_search_url_text.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\1934cd5ebb0d5faa36f85f6e7d853811bc28d5b3\\output\\res\\color\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
-        "source": "/home/nlplab/.android/build-cache/c644b59dd1e0a6acb66331654ef2043a55a7f8c0/output/res/color/common_google_signin_btn_tint.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "/home/nlplab/StudioProjects/FindTheShipper/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
-        "source": "/home/nlplab/.android/build-cache/33ade5684025472aab51ffbaac9186ba972132e1/output/res/color/abc_btn_colored_borderless_text_material.xml"
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\color\\abc_primary_text_material_light.xml"
     }
 ]

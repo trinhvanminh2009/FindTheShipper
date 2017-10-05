@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,12 +20,15 @@ import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListViewOrderItem;
 import com.minh.findtheshipper.models.OrderTemp;
+
 import java.util.ArrayList;
 import java.util.Collections;
+
 import io.realm.Realm;
 
 /**
  * Created by trinh on 9/13/2017.
+ * This is fragment common of shipper.
  */
 
 public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragment {
@@ -31,7 +36,7 @@ public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragm
     private ArrayList<OrderTemp> orderList;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+    RecyclerView.LayoutManager layoutManager;
     private ProgressDialog progressDialog;
 
     @Nullable
@@ -48,8 +53,7 @@ public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragm
         return view;
     }
 
-    public void handleProgressDialog()
-    {
+    public void handleProgressDialog() {
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.setTitle(R.string.please_wait);
@@ -108,6 +112,7 @@ public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragm
                         recyclerView.setAdapter(adapter);
                         progressDialog.dismiss();
                     } catch (Exception e) {
+                        Log.e("Error", "Error in loadAllList of ListOrderShipperFragmentCommon");
                     }
                 }
 
@@ -116,6 +121,7 @@ public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragm
                 }
             });
         } catch (Exception e) {
+            Log.e("Error", "Error in loadAllList of ListOrderShipperFragmentCommon");
         }
     }
 

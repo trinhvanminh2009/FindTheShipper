@@ -53,7 +53,6 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_recycle_view, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
-
         return view;
     }
 
@@ -125,7 +124,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                         recyclerView.setAdapter(adapter);
 
                     } catch (Exception e) {
-                        Log.e("Error","In loadAllList in ListOrderCreatedFragment");
+                        Log.e("Error", "In loadAllList in ListOrderCreatedFragment");
                     }
                 }
 
@@ -134,7 +133,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                 }
             });
         } catch (Exception e) {
-            Log.e("Error","In loadAllList in ListOrderCreatedFragment");
+            Log.e("Error", "In loadAllList in ListOrderCreatedFragment");
 
         }
     }

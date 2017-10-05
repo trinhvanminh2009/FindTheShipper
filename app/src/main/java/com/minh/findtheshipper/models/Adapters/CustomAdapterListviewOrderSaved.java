@@ -110,7 +110,7 @@ public class CustomAdapterListviewOrderSaved extends RecyclerView.Adapter<Custom
                 Intent intent = new Intent(v.getContext(), DetailOrderShipperActivity.class);
                 String[] orderKey = new String[2];
                 orderKey[0] = order.getOrderID();
-                orderKey[1] = "History";
+                orderKey[1] = "History";//this key to know order saved or order from server
                 intent.putExtra("orderKey", orderKey);
                 v.getContext().startActivity(intent);
             }
