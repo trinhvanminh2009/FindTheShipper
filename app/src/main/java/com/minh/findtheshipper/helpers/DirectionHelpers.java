@@ -26,11 +26,12 @@ import java.util.List;
 
 /**
  * Created by trinh on 6/8/2017.
+ * To support about Direction
  */
 
 public class DirectionHelpers {
-    private static final String DIRECTION_URL_API ="https://maps.googleapis.com/maps/api/directions/json?";
-    public static final String GOOGLE_API_SERVER_KEY = "AIzaSyC1Ze50Q_hdWX2sIREwvAClrroISETmq-s";
+    private static final String DIRECTION_URL_API = "https://maps.googleapis.com/maps/api/directions/json?";
+    private static final String GOOGLE_API_SERVER_KEY = "AIzaSyC1Ze50Q_hdWX2sIREwvAClrroISETmq-s";
     private DirectionFinderListeners directionFinderListeners;
     private String origin;
     private String destination;
@@ -48,26 +49,22 @@ public class DirectionHelpers {
 
     }
 
-    public String createURL() throws UnsupportedEncodingException {
-        String urlOrigin = URLEncoder.encode(origin,"utf-8");
-        String urlDestination = URLEncoder.encode(destination,"utf-8");
-        return DIRECTION_URL_API +"origin=" + urlOrigin+"&destination=" + urlDestination+"&key=" + GOOGLE_API_SERVER_KEY;
+    private String createURL() throws UnsupportedEncodingException {
+        String urlOrigin = URLEncoder.encode(origin, "utf-8");
+        String urlDestination = URLEncoder.encode(destination, "utf-8");
+        return DIRECTION_URL_API + "origin=" + urlOrigin + "&destination=" + urlDestination + "&key=" + GOOGLE_API_SERVER_KEY;
 
     }
 
 
-
     private void parseJson(String data) throws JSONException {
-        if(data == null)
-        {
+        if (data == null) {
             return;
-        }
-        else {
-            List<Route> routes = new ArrayList<Route>();
+        } else {
+            List<Route> routes = new ArrayList<>();
             JSONObject jsonData = new JSONObject(data);
             JSONArray jsonRoutes = jsonData.getJSONArray("routes");
-            for(int i = 0; i < jsonRoutes.length(); i++)
-            {
+            for (int i = 0; i < jsonRoutes.length(); i++) {
                 JSONObject jsonRoute = jsonRoutes.getJSONObject(i);
                 Route route = new Route();
 
@@ -80,12 +77,12 @@ public class DirectionHelpers {
                 JSONObject jsonEndLocation = jsonLeg.getJSONObject("end_location");
 
 
-                route.distance = new Distance(jsonDistance.getString("text"),jsonDistance.getInt("value"));
-                route.duration = new Duration(jsonDuration.getString("text"),jsonDuration.getInt("value"));
+                route.distance = new Distance(jsonDistance.getString("text"), jsonDistance.getInt("value"));
+                route.duration = new Duration(jsonDuration.getString("text"), jsonDuration.getInt("value"));
                 route.startAddress = jsonLeg.getString("start_address");
                 route.endAddress = jsonLeg.getString("end_address");
-                route.startLocation = new LatLng(jsonStartLocation.getDouble("lat"),jsonStartLocation.getDouble("lng"));
-                route.endLocation = new LatLng(jsonEndLocation.getDouble("lat"),jsonEndLocation.getDouble("lng"));
+                route.startLocation = new LatLng(jsonStartLocation.getDouble("lat"), jsonStartLocation.getDouble("lng"));
+                route.endLocation = new LatLng(jsonEndLocation.getDouble("lat"), jsonEndLocation.getDouble("lng"));
                 route.points = PolyUtil.decode(overviewPolyline.getString("points"));
                 routes.add(route);
             }
@@ -93,7 +90,8 @@ public class DirectionHelpers {
         }
 
     }
-    private class DownloadRawDataHelpers extends AsyncTask<String,Void,String> {
+
+    private class DownloadRawDataHelpers extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             String link = params[0];
@@ -103,9 +101,8 @@ public class DirectionHelpers {
                 StringBuffer buffer = new StringBuffer();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 String line;
-                while ((line = bufferedReader.readLine()) != null)
-                {
-                    buffer.append(line +"\n");
+                while ((line = bufferedReader.readLine()) != null) {
+                    buffer.append(line + "\n");
                 }
                 return buffer.toString();
             } catch (MalformedURLException e) {

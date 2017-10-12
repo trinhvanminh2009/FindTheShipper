@@ -36,6 +36,11 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <service android:name=".Services.LocationServices"
+            android:exported="false"
+            >
+
+        </service>
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -81,7 +86,9 @@
         <activity android:name=".DistanceMapsActivity" />
         <activity android:name=".Test" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".Shipper.FragmentContainerShipper"></activity>
+        <activity android:name=".Shipper.FragmentContainerShipper">
+
+        </activity>
         <activity android:name=".Shop.HandleMapsActivity"></activity>
         <activity
             android:name=".utils.SettingsActivity"

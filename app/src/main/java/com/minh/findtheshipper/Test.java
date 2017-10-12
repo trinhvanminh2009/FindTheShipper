@@ -36,7 +36,8 @@ import io.realm.RealmResults;
 
 public class Test extends BaseActivity {
 
-    @BindView(R.id.toolBar) Toolbar toolbar;
+    @BindView(R.id.toolBar)
+    Toolbar toolbar;
     private Realm realm;
 
 
@@ -58,6 +59,7 @@ public class Test extends BaseActivity {
     protected int getLayoutResource() {
         return R.layout.dialog_fragment;
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -67,8 +69,7 @@ public class Test extends BaseActivity {
             public void execute(Realm realm) {
                 RealmResults<Order> orders = realm.where(Order.class).findAll();
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-                for(int i = 0 ; i < orders.size(); i++)
-                {
+                for (int i = 0; i < orders.size(); i++) {
                     mDatabase.child(orders.get(i).getOrderID()).child("Status").setValue(orders.get(i).getStatus());
                     mDatabase.child(orders.get(i).getOrderID()).child("Start place").setValue(orders.get(i).getStartPoint());
                     mDatabase.child(orders.get(i).getOrderID()).child("Finish place").setValue(orders.get(i).getFinishPoint());
@@ -79,11 +80,9 @@ public class Test extends BaseActivity {
                     mDatabase.child(orders.get(i).getOrderID()).child("Distance").setValue(orders.get(i).getDistance());
                     mDatabase.child(orders.get(i).getOrderID()).child("Datetime").setValue(orders.get(i).getDateTime());
                     mDatabase.child(orders.get(i).getOrderID()).child("Save Order").setValue(orders.get(i).getSaveOrder());
-                    RealmList<Comment>comments = orders.get(i).getComments();
-                    if(comments.size() > 0)
-                    {
-                        for(int j = 0; j< comments.size(); j++)
-                        {
+                    RealmList<Comment> comments = orders.get(i).getComments();
+                    if (comments.size() > 0) {
+                        for (int j = 0; j < comments.size(); j++) {
                             mDatabase.child(orders.get(i).getOrderID()).child("comment").child(comments.get(j).getIdComment()).child("user").setValue(comments.get(j).getUser().getEmail());
                             mDatabase.child(orders.get(i).getOrderID()).child("comment").child(comments.get(j).getIdComment()).child("Content").setValue(comments.get(j).getContent());
                             mDatabase.child(orders.get(i).getOrderID()).child("comment").child(comments.get(j).getIdComment()).child("Time").setValue(comments.get(j).getDateTime());
@@ -97,12 +96,10 @@ public class Test extends BaseActivity {
 
     }
 
-    public void initRealm()
-    {
+    public void initRealm() {
         realm = null;
         realm = Realm.getDefaultInstance();
     }
-
 
 
     @Override
@@ -111,21 +108,19 @@ public class Test extends BaseActivity {
         realm.close();
     }
 
-    public void RetrievingData()
-    {
+    public void RetrievingData() {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
                 RealmResults<Order> orders = realm.where(Order.class).findAll();
-                for(int i =0; i< orders.size(); i++)
-                {
-                    final DatabaseReference ref = database.getReference("order/"+orders.get(i).getOrderID());
+                for (int i = 0; i < orders.size(); i++) {
+                    final DatabaseReference ref = database.getReference("order/" + orders.get(i).getOrderID());
                     ref.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             String text = dataSnapshot.child("Start place").getValue(String.class);
-                            TastyToast.makeText(Test.this, text, TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
+                            TastyToast.makeText(Test.this, text, TastyToast.LENGTH_SHORT, TastyToast.SUCCESS);
                         }
 
                         @Override
@@ -137,7 +132,6 @@ public class Test extends BaseActivity {
 
             }
         });
-
 
 
     }

@@ -57,6 +57,10 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <service
+            android:name="com.minh.findtheshipper.Services.LocationServices"
+            android:exported="false" >
+        </service>
 
         <activity android:name="com.minh.findtheshipper.MainActivity" >
             <intent-filter>
@@ -103,7 +107,8 @@
         <activity android:name="com.minh.findtheshipper.DistanceMapsActivity" />
         <activity android:name="com.minh.findtheshipper.Test" />
         <activity android:name="com.minh.findtheshipper.FragmentActivity" />
-        <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" />
+        <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" >
+        </activity>
         <activity android:name="com.minh.findtheshipper.Shop.HandleMapsActivity" />
         <activity
             android:name="com.minh.findtheshipper.utils.SettingsActivity"
