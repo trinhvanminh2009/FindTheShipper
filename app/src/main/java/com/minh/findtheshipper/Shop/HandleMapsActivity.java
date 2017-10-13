@@ -15,6 +15,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -24,6 +25,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -146,6 +148,8 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     FrameLayout fragmentShipper;
     @BindView(R.id.layoutPlaces)
     LinearLayout layoutPlaces;
+    @BindView(R.id.btnFloatingAddOrder)
+    FloatingActionButton btnFloatingAddOrder;
     private boolean showPermissionDeniedDialog = false;
     private List<Marker> startMarkers = new ArrayList<>();
     private List<Marker> finishMarkers = new ArrayList<>();
@@ -158,6 +162,8 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     private android.support.v4.app.Fragment fragment = null;
     private long countOrder[] = new long[1];
     private String TAG = "Error";
+    private Animation fabOpen, fabClose;
+    private boolean isFabOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,6 +181,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         getSupportActionBar().setTitle(R.string.created_order);
         initRealm();
         startService(new Intent(this, LocationService.class));
+        handleAutoCompleteButton();
         //Count order on server before create orders. Because server is thread slow.
         DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order");
         mDatabaseComment.addValueEventListener(new ValueEventListener() {
@@ -233,50 +240,8 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 return;
             }
         }
-        final PlaceAutocompleteFragment autocompleteFragmentStart = (PlaceAutocompleteFragment)
-                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_start);
 
-        PlaceAutocompleteFragment autocompleteFragmentFinish = (PlaceAutocompleteFragment)
-                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_finish);
-        autocompleteFragmentStart.setHint(getText(R.string.start_place));
-        autocompleteFragmentFinish.setHint(getText(R.string.finish_place));
-        autocompleteFragmentStart.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-            @Override
-            public void onPlaceSelected(Place place) {
-                // TODO: Get info about the selected place.
-                listControls.get(0).setContent(place.getAddress().toString());
-                if (!listControls.get(0).getContent().equals("") && !listControls.get(1).getContent().equals("")) {
-                    sendRequest();
-                    layoutItem.setVisibility(View.VISIBLE);
-                    btnCreateNewOrder.setVisibility(View.VISIBLE);
 
-                }
-
-            }
-
-            @Override
-            public void onError(Status status) {
-                Log.e(TAG, "An error occurred: " + status);
-            }
-        });
-
-        autocompleteFragmentFinish.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-            @Override
-            public void onPlaceSelected(Place place) {
-                // TODO: Get info about the selected place.
-                listControls.get(1).setContent(place.getAddress().toString());
-                if (!listControls.get(0).getContent().equals("") && !listControls.get(1).getContent().equals("")) {
-                    sendRequest();
-                    layoutItem.setVisibility(View.VISIBLE);
-                    btnCreateNewOrder.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onError(Status status) {
-                Log.e(TAG, "An error occurred: " + status);
-            }
-        });
     }
 
 
@@ -408,6 +373,56 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    private void handleAutoCompleteButton() {
+        final PlaceAutocompleteFragment autocompleteFragmentStart = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_start);
+        PlaceAutocompleteFragment autocompleteFragmentFinish = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_finish);
+        ImageView startIcon = (ImageView) ((LinearLayout) autocompleteFragmentStart.getView()).getChildAt(0);
+        ImageView finishIcon = (ImageView) ((LinearLayout) autocompleteFragmentFinish.getView()).getChildAt(0);
+        startIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_start_place, getTheme()));
+        finishIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_destination, getTheme()));
+        autocompleteFragmentStart.setHint(getText(R.string.start_place));
+        autocompleteFragmentFinish.setHint(getText(R.string.finish_place));
+        autocompleteFragmentStart.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: Get info about the selected place.
+                listControls.get(0).setContent(place.getAddress().toString());
+                if (!listControls.get(0).getContent().equals("") && !listControls.get(1).getContent().equals("")) {
+                    sendRequest();
+                    layoutItem.setVisibility(View.VISIBLE);
+                    btnCreateNewOrder.setVisibility(View.VISIBLE);
+
+                }
+
+            }
+
+            @Override
+            public void onError(Status status) {
+                Log.e(TAG, "An error occurred: " + status);
+            }
+        });
+
+        autocompleteFragmentFinish.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: Get info about the selected place.
+                listControls.get(1).setContent(place.getAddress().toString());
+                if (!listControls.get(0).getContent().equals("") && !listControls.get(1).getContent().equals("")) {
+                    sendRequest();
+                    layoutItem.setVisibility(View.VISIBLE);
+                    btnCreateNewOrder.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onError(Status status) {
+                Log.e(TAG, "An error occurred: " + status);
+            }
+        });
+    }
+
     private void sendRequest() {
         String start = listControls.get(0).getContent();
         String finish = listControls.get(1).getContent();
@@ -459,6 +474,27 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         editPhoneNumber.setText(getCurrentUser().getPhoneNumber());
 
 
+    }
+
+    @OnClick(R.id.btnFloatingAddOrder)
+    public void eventClick(final View view) {
+        switch (view.getId()) {
+            case R.id.btnFloatingAddOrder:
+                fabOpen = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_open);
+                fabClose = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_close);
+
+                if (isFabOpen) {
+                    isFabOpen = false;
+                    btnFloatingAddOrder.startAnimation(fabClose);
+                    layoutPlaces.setVisibility(View.VISIBLE);
+
+                } else {
+                    btnFloatingAddOrder.startAnimation(fabOpen);
+                    layoutPlaces.setVisibility(View.GONE);
+                    isFabOpen = true;
+                }
+                break;
+        }
     }
 
     @OnClick(R.id.btnConfirmCreateOrder)
@@ -652,6 +688,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         mMap = googleMap;
         LatLng HCMCity = new LatLng(10.766333, 106.694036);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(HCMCity, 18));
+
         updateMyLocation();
 
     }

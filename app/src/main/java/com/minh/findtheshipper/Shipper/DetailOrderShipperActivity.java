@@ -160,7 +160,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         switch (v.getId()) {
             case R.id.btnGetOrder:
                 //Not allow take their own order
-                if(userEmailFromServer != null && getCurrentUser().getEmail() != null){
+                if (userEmailFromServer != null && getCurrentUser().getEmail() != null) {
                     if (userEmailFromServer.equals(getCurrentUser().getEmail())) {
                         sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
                         sweetAlertDialog.setTitleText(getString(R.string.status_take_your_order_title));

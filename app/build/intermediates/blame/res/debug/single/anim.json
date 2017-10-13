@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fab_close.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\fab_close.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\success_bow_roate.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\anim\\success_bow_roate.xml"
     },
@@ -98,5 +102,9 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fab_open.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\fab_open.xml"
     }
 ]

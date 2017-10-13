@@ -2,5 +2,9 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_edit.png",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xhdpi\\ic_edit.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_floating_button.png",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xhdpi\\ic_floating_button.png"
     }
 ]
