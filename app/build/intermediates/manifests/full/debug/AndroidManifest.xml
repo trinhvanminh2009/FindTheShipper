@@ -57,10 +57,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service
-            android:name="com.minh.findtheshipper.Services.LocationServices"
-            android:exported="false" >
-        </service>
 
         <activity android:name="com.minh.findtheshipper.MainActivity" >
             <intent-filter>
@@ -107,8 +103,7 @@
         <activity android:name="com.minh.findtheshipper.DistanceMapsActivity" />
         <activity android:name="com.minh.findtheshipper.Test" />
         <activity android:name="com.minh.findtheshipper.FragmentActivity" />
-        <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" >
-        </activity>
+        <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" />
         <activity android:name="com.minh.findtheshipper.Shop.HandleMapsActivity" />
         <activity
             android:name="com.minh.findtheshipper.utils.SettingsActivity"
@@ -121,6 +116,13 @@
             android:name="com.minh.findtheshipper.Shipper.DetailOrderShipperActivity"
             android:label="@string/title_activity_detail_order_shipper" />
         <activity android:name="com.minh.findtheshipper.Shop.DetailOrderShopActivity" />
+
+        <service
+            android:name="com.minh.findtheshipper.Services.LocationService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
         <activity android:name="com.facebook.CustomTabMainActivity" />
         <!--
          The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically

@@ -4,9 +4,6 @@ import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 
-import com.minh.findtheshipper.Shop.HandleMapsActivity;
-import com.sdsmdg.tastytoast.TastyToast;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;

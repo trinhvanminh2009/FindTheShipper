@@ -56,6 +56,7 @@ public class MainActivity extends FragmentActivity {
         ButterKnife.bind(this);
         Realm.init(this);
         initRealm();
+
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         progress = new ProgressDialog(MainActivity.this);

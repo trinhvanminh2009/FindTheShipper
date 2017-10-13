@@ -12,12 +12,9 @@ import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.location.Location;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -36,11 +33,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
@@ -74,11 +67,12 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerImageLoader;
 import com.mikepenz.materialdrawer.util.DrawerUIUtils;
-import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.FragmentActivity;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.Services.LocationService;
 import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.GlideApp;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
@@ -107,9 +101,7 @@ import io.realm.RealmResults;
 
 
 public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCallback,
-        ActivityCompat.OnRequestPermissionsResultCallback, DirectionFinderListeners,
-        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
-        com.google.android.gms.location.LocationListener{
+        ActivityCompat.OnRequestPermissionsResultCallback, DirectionFinderListeners {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private GoogleMap mMap;
@@ -165,10 +157,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     private Realm realm;
     private android.support.v4.app.Fragment fragment = null;
     private long countOrder[] = new long[1];
-    private GoogleApiClient googleApiClient;
-    private Location location;
-    private LocationManager locationManager;
-    private LocationRequest locationRequest;
     private String TAG = "Error";
 
     @Override
@@ -186,12 +174,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.created_order);
         initRealm();
-        googleApiClient = new GoogleApiClient.Builder(this).addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this).addApi(LocationServices.API).build();
-        locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-
-
-        // insertNotification();
+        startService(new Intent(this, LocationService.class));
         //Count order on server before create orders. Because server is thread slow.
         DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order");
         mDatabaseComment.addValueEventListener(new ValueEventListener() {
@@ -287,7 +270,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                     layoutItem.setVisibility(View.VISIBLE);
                     btnCreateNewOrder.setVisibility(View.VISIBLE);
                 }
-
             }
 
             @Override
@@ -296,8 +278,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             }
         });
     }
-
-
 
 
     public void NavigationDrawer(Toolbar toolbar) {
@@ -393,6 +373,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                             transaction.replace(R.id.fragmentShopContainer, fragment);
                             transaction.commit();
                         } catch (Exception e) {
+                            //Exception
                         }
                         return false;
                     }
@@ -639,7 +620,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 public void onCameraChange(CameraPosition cameraPosition) {
 
                     LatLng center = mMap.getCameraPosition().target;
-                    String tempAddress = EncodingFirebase.getCompleteAddressString(HandleMapsActivity.this,center.latitude, center.longitude);
+                    String tempAddress = EncodingFirebase.getCompleteAddressString(HandleMapsActivity.this, center.latitude, center.longitude);
 
                     itemClicked = 2;
 
@@ -661,8 +642,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             });
             TastyToast.makeText(HandleMapsActivity.this, getResources().getString(R.string.choosing_places_success), TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
             btnCreateNewOrder.setVisibility(View.VISIBLE);
-        } else {
-
         }
 
 
@@ -782,8 +761,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     }
 
 
-
-
     //Make sure the distance more than 1,000
     private String removeComma(String inputString) {
         inputString = inputString.replaceAll(",", "");
@@ -843,113 +820,5 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         final FragmentManager fragmentManager = getSupportFragmentManager();
         final DialogHelpers dialogHelpers = new DialogHelpers();
         dialogHelpers.show(fragmentManager, "New fragment");
-
     }
-
-    /***
-     *
-     * Begin to handle get current location
-     * Using GPS tracking of device user is using
-     */
-
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        startLocationUpdates();
-        location = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
-        if(location == null){
-            startLocationUpdates();
-        }
-        if(location != null){
-            double latitude = location.getLatitude();
-            double longitude = location.getLongitude();
-            String currentAddress = EncodingFirebase.getCompleteAddressString(this, latitude, longitude);
-            TastyToast.makeText(this, currentAddress,TastyToast.LENGTH_SHORT,TastyToast.INFO);
-
-        }else {
-            TastyToast.makeText(this, "Location not Detected",TastyToast.LENGTH_SHORT,TastyToast.INFO);
-
-        }
-
-    }
-
-    private void startLocationUpdates() {
-        //Create location request
-        locationRequest = LocationRequest.create().setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-                .setInterval(1).setFastestInterval(1);//Check Interval and FastestInterval
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient,locationRequest,this);
-        Log.d(TAG,"Request -------->");
-
-
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-        Log.e(TAG, "Connection Suspended");
-        googleApiClient.connect();
-
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.e("Connected failed","Connected failed"+connectionResult.getErrorMessage());
-    }
-
-    @Override
-    public void onLocationChanged(Location location) {
-        double latitude = location.getLatitude();
-        double longitude = location.getLongitude();
-        String currentAddress = EncodingFirebase.getCompleteAddressString(this, latitude, longitude);
-        TastyToast.makeText(this,"Location updated:"+ currentAddress,TastyToast.LENGTH_SHORT,TastyToast.INFO);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        googleApiClient.connect();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        googleApiClient.connect();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if(googleApiClient.isConnected()){
-            googleApiClient.disconnect();
-        }
-    }
-
-    /**
-     *
-     * End of request GPS.
-     * The last location detected saved on server
-     *
-     */
 }

@@ -10,6 +10,8 @@ import io.realm.annotations.Required;
 
 /**
  * Created by Minh on 6/1/2017.
+ * This user is in database Realm
+ * This user including List orders and list orders saved
  */
 
 public class User extends RealmObject {

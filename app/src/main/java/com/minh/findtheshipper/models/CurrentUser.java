@@ -5,6 +5,7 @@ import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by trinh on 7/13/2017.
+ * This user not including list orders and list order saved
  */
 
 public class CurrentUser extends RealmObject {
