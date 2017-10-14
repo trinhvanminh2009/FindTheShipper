@@ -16,10 +16,10 @@ public final class R {
         public static final int abc_slide_out_top = 0x7f050009;
         public static final int error_frame_in = 0x7f050015;
         public static final int error_x_in = 0x7f050016;
-        public static final int modal_in = 0x7f050019;
-        public static final int modal_out = 0x7f05001a;
-        public static final int success_bow_roate = 0x7f05001b;
-        public static final int success_mask_layout = 0x7f05001c;
+        public static final int modal_in = 0x7f05001b;
+        public static final int modal_out = 0x7f05001c;
+        public static final int success_bow_roate = 0x7f05001d;
+        public static final int success_mask_layout = 0x7f05001e;
     }
     public static final class attr {
         public static final int actionBarDivider = 0x7f010072;

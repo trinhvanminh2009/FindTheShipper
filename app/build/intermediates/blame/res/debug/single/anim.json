@@ -8,6 +8,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\anim\\success_bow_roate.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fab_rotate.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\fab_rotate.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\error_frame_in.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\32fc63a5f053b9622414f928b80de73644c55782\\output\\res\\anim\\error_frame_in.xml"
     },
@@ -42,6 +46,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\e7e9c6ae7afd7a2c193795a03996b915b83645a4\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fab_return_rotation.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\fab_return_rotation.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",

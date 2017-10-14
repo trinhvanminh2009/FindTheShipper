@@ -34,10 +34,12 @@ public final class R {
         public static final int error_x_in=0x7f050016;
         public static final int fab_close=0x7f050017;
         public static final int fab_open=0x7f050018;
-        public static final int modal_in=0x7f050019;
-        public static final int modal_out=0x7f05001a;
-        public static final int success_bow_roate=0x7f05001b;
-        public static final int success_mask_layout=0x7f05001c;
+        public static final int fab_return_rotation=0x7f050019;
+        public static final int fab_rotate=0x7f05001a;
+        public static final int modal_in=0x7f05001b;
+        public static final int modal_out=0x7f05001c;
+        public static final int success_bow_roate=0x7f05001d;
+        public static final int success_mask_layout=0x7f05001e;
     }
     public static final class animator {
         public static final int design_appbar_state_list_animator=0x7f060000;

@@ -23,10 +23,12 @@ int anim error_frame_in 0x7f050015
 int anim error_x_in 0x7f050016
 int anim fab_close 0x7f050017
 int anim fab_open 0x7f050018
-int anim modal_in 0x7f050019
-int anim modal_out 0x7f05001a
-int anim success_bow_roate 0x7f05001b
-int anim success_mask_layout 0x7f05001c
+int anim fab_return_rotation 0x7f050019
+int anim fab_rotate 0x7f05001a
+int anim modal_in 0x7f05001b
+int anim modal_out 0x7f05001c
+int anim success_bow_roate 0x7f05001d
+int anim success_mask_layout 0x7f05001e
 int animator design_appbar_state_list_animator 0x7f060000
 int array change_language_array 0x7f0f0000
 int array change_language_values 0x7f0f0001

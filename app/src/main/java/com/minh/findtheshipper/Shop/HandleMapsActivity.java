@@ -9,11 +9,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -26,6 +29,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -42,6 +47,7 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -77,7 +83,6 @@ import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.GlideApp;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
-import com.minh.findtheshipper.models.Adapters.CustomAdapterListView;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.ListControl;
 import com.minh.findtheshipper.models.NotificationObject;
@@ -107,7 +112,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private GoogleMap mMap;
-    private int badgerCount = 10;
+    int badgerCount = 10;
     @BindView(R.id.toolBar)
     Toolbar toolbar;
     @BindView(R.id.txtDistance)
@@ -156,13 +161,11 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
     private ArrayList<ListControl> listControls = new ArrayList<>();
-    private CustomAdapterListView adapterListView;
     private int itemClicked = 0;
     private Realm realm;
     private android.support.v4.app.Fragment fragment = null;
     private long countOrder[] = new long[1];
     private String TAG = "Error";
-    private Animation fabOpen, fabClose;
     private boolean isFabOpen = false;
 
     @Override
@@ -240,8 +243,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 return;
             }
         }
-
-
     }
 
 
@@ -347,21 +348,21 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
 
         item1.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
-                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_create_new));
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_create_new, getTheme()));
         item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
-                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order));
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order, getTheme()));
         item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
-                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials));
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials, getTheme()));
         item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
-                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile));
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile, getTheme()));
         item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
-                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about));
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about, getTheme()));
         item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
-                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version));
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version, getTheme()));
         item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
-                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings, getTheme()));
         item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
-                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
+                .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout, getTheme()));
         result.openDrawer();
         result.closeDrawer();
         result.getDrawerLayout();
@@ -478,18 +479,19 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     @OnClick(R.id.btnFloatingAddOrder)
     public void eventClick(final View view) {
+        Animation fabRotation, fabReturnRotation;
         switch (view.getId()) {
             case R.id.btnFloatingAddOrder:
-                fabOpen = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_open);
-                fabClose = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_close);
+                fabRotation = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_rotate);
+                fabReturnRotation = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_return_rotation);
 
                 if (isFabOpen) {
                     isFabOpen = false;
-                    btnFloatingAddOrder.startAnimation(fabClose);
+                    btnFloatingAddOrder.startAnimation(fabReturnRotation);
                     layoutPlaces.setVisibility(View.VISIBLE);
 
                 } else {
-                    btnFloatingAddOrder.startAnimation(fabOpen);
+                    btnFloatingAddOrder.startAnimation(fabRotation);
                     layoutPlaces.setVisibility(View.GONE);
                     isFabOpen = true;
                 }
@@ -544,7 +546,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                EncodingFirebase encodingFireBase = new EncodingFirebase();
                 User user = getCurrentUser();
                 final Order order = realm.createObject(Order.class, "order_" + user.getEmail() + "_" + countOrder[0]);
                 order.setStatus(getResources().getString(R.string.order_status));
@@ -690,15 +691,88 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(HCMCity, 18));
 
         updateMyLocation();
+        updateUsersOnlineFromServer();
 
     }
 
     private boolean checkReady() {
         if (mMap == null) {
-            Toast.makeText(this, "Map is not ready yet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Map is not ready yet!", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
+    }
+
+    private void updateUsersOnlineFromServer() {
+
+        DatabaseReference userDatabase = FirebaseDatabase.getInstance().getReference();
+        userDatabase.child("user").orderByChild("Online").equalTo(true).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Marker []markers;
+                for(int i = 0; i < (int)dataSnapshot.getChildrenCount(); i++){
+                    markers = new Marker[(int)dataSnapshot.getChildrenCount()];
+                    for (DataSnapshot child : dataSnapshot.getChildren()) {
+                        String key = child.getKey();
+                        String userName = dataSnapshot.child(key).child("Name").getValue(String.class);
+                        double latitude = dataSnapshot.child(key).child("Last Latitude").getValue(Double.class);
+                        double longitude = dataSnapshot.child(key).child("Last Longitude").getValue(Double.class);
+
+                        MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(latitude,longitude))
+                                .title(userName).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car_location));
+
+                        markers[i] = mMap.addMarker(markerOptions);
+
+                        animateMarker(markers[i], new LatLng(latitude,longitude), false);
+
+                    }
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void animateMarker(final Marker marker, final LatLng toPosition,
+                              final boolean hideMarker) {
+        final Handler handler = new Handler();
+        final long start = SystemClock.uptimeMillis();
+        Projection proj = mMap.getProjection();
+        Point startPoint = proj.toScreenLocation(marker.getPosition());
+        final LatLng startLatLng = proj.fromScreenLocation(startPoint);
+        final long duration = 500;
+
+        final Interpolator interpolator = new LinearInterpolator();
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                long elapsed = SystemClock.uptimeMillis() - start;
+                float t = interpolator.getInterpolation((float) elapsed
+                        / duration);
+                double lng = t * toPosition.longitude + (1 - t)
+                        * startLatLng.longitude;
+                double lat = t * toPosition.latitude + (1 - t)
+                        * startLatLng.latitude;
+                marker.setPosition(new LatLng(lat, lng));
+
+                if (t < 1.0) {
+                    // Post again 16ms later.
+                    handler.postDelayed(this, 16);
+                } else {
+                    if (hideMarker) {
+                        marker.setVisible(false);
+                    } else {
+                        marker.setVisible(true);
+                    }
+                }
+            }
+        });
     }
 
     private void updateMyLocation() {
