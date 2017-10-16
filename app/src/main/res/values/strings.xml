@@ -100,9 +100,14 @@
     <string name="time_ago_a_minutes_ago">a minute ago</string>
     <string name="are_you_sure_title">Are you sure?</string>
     <string name="are_you_sure_content">This order won\'t be shown in history anymore!</string>
-    <string name="status_take_your_order_title">Warning!</string>
-    <string name="status_take_your_order_content">You can\'t get your order!</string>
-
+    <string name="warning">Warning!</string>
+    <string name="status_take_your_order_content">You can\'t get your orders!</string>
+    <string name="status_take_order_already_ordered">Another delivery man took this orders!</string>
+    <string name="status_want_to_take_order">Are you sure want to take orders</string>
+    <string name="status_want_to_take_order_title">You can take orders</string>
+    <string name="success">Success!</string>
+    <string name="status_took_order">You took orders! Please waiting for notification or you can contact shop!  </string>
+    <string name="status_already_took_orders">You took orders! Please check in list orders taken!</string>
     <string-array name="change_language_array">
         <item>Vietnamese</item>
         <item>English</item>

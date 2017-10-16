@@ -91,10 +91,10 @@ public final class R {
         public static final int common_google_signin_btn_text_light_normal_background = 0x7f02008b;
         public static final int googleg_disabled_color_18 = 0x7f020099;
         public static final int googleg_standard_color_18 = 0x7f02009a;
-        public static final int places_ic_clear = 0x7f0200ed;
-        public static final int places_ic_search = 0x7f0200ee;
-        public static final int powered_by_google_dark = 0x7f0200ef;
-        public static final int powered_by_google_light = 0x7f0200f0;
+        public static final int places_ic_clear = 0x7f0200ee;
+        public static final int places_ic_search = 0x7f0200ef;
+        public static final int powered_by_google_dark = 0x7f0200f0;
+        public static final int powered_by_google_light = 0x7f0200f1;
     }
     public static final class id {
         public static final int adjust_height = 0x7f100059;

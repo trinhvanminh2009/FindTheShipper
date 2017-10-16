@@ -23,8 +23,12 @@ import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.User;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import io.realm.Realm;
@@ -118,14 +122,24 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                         orderTemp.setUserGetOrder(userGetOrder);
                         orderList.add(orderTemp);
                     }
-                    try {
+
+                       /* Collections.sort(orderList, new Comparator<OrderTemp>() {
+                            DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
+                            @Override
+                            public int compare(OrderTemp o1, OrderTemp o2) {
+                                try {
+                                    return df.parse(o2.getDateTime()).compareTo(df.parse(o1.getDateTime()));
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+                                return 0;
+                            }
+                        });*/
                         Collections.sort(orderList, new SortOrderTempHelpers());
                         adapter = new CustomAdapterListviewOrder(getActivity(), orderList);
                         recyclerView.setAdapter(adapter);
 
-                    } catch (Exception e) {
-                        Log.e("Error", "In loadAllList in ListOrderCreatedFragment");
-                    }
+
                 }
 
                 @Override
@@ -143,10 +157,9 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
      */
     private List<String> checkKey(List<String> keyServer) {
         List<String> result = new ArrayList<>();
-        EncodingFirebase encodingFireBase = new EncodingFirebase();
         for (int i = 0; i < keyServer.size(); i++) {
 
-            if (keyServer.get(i).contains(encodingFireBase.encodeString(getCurrentUser().getEmail()))) {
+            if (keyServer.get(i).contains(EncodingFirebase.encodeString(getCurrentUser().getEmail()))) {
                 result.add(keyServer.get(i));
             }
 

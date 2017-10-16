@@ -166,7 +166,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     private android.support.v4.app.Fragment fragment = null;
     private long countOrder[] = new long[1];
     private String TAG = "Error";
-    private boolean isFabOpen = false;
+    private boolean isFabOpen = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -709,21 +709,19 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         userDatabase.child("user").orderByChild("Online").equalTo(true).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Marker []markers;
-                for(int i = 0; i < (int)dataSnapshot.getChildrenCount(); i++){
-                    markers = new Marker[(int)dataSnapshot.getChildrenCount()];
-                    for (DataSnapshot child : dataSnapshot.getChildren()) {
+                Marker[] markers;
+                mMap.clear(); // Clear old markers
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    markers = new Marker[(int) dataSnapshot.getChildrenCount()];
+                    for (int i = 0; i < (int) dataSnapshot.getChildrenCount(); i++) {
                         String key = child.getKey();
                         String userName = dataSnapshot.child(key).child("Name").getValue(String.class);
                         double latitude = dataSnapshot.child(key).child("Last Latitude").getValue(Double.class);
                         double longitude = dataSnapshot.child(key).child("Last Longitude").getValue(Double.class);
-
-                        MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(latitude,longitude))
-                                .title(userName).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car_location));
-
+                        MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(latitude, longitude))
+                                .title(userName).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_delivery_man));
                         markers[i] = mMap.addMarker(markerOptions);
-
-                        animateMarker(markers[i], new LatLng(latitude,longitude), false);
+                        animateMarker(markers[i], new LatLng(latitude, longitude), false);
 
                     }
                 }

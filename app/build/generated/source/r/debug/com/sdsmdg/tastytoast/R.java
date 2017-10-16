@@ -492,10 +492,10 @@ public final class R {
         public static final int confusing_toast = 0x7f02008c;
         public static final int default_toast = 0x7f02008e;
         public static final int error_toast = 0x7f020098;
-        public static final int info_toast = 0x7f0200d0;
-        public static final int notification_template_icon_bg = 0x7f0200fd;
-        public static final int success_toast = 0x7f0200f9;
-        public static final int warning_toast = 0x7f0200fc;
+        public static final int info_toast = 0x7f0200d1;
+        public static final int notification_template_icon_bg = 0x7f0200fe;
+        public static final int success_toast = 0x7f0200fa;
+        public static final int warning_toast = 0x7f0200fd;
     }
     public static final class id {
         public static final int action0 = 0x7f10014f;

@@ -1,6 +1,7 @@
 package com.minh.findtheshipper.Shipper;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -115,6 +116,9 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
     private Realm realm;
     private GoogleMap mMap;
     private String[] orderKey = new String[2];
+    private boolean dataAddedOrDidNotAdd = false;  // This variable to know data added on server or didn't
+    //Because we check on data change, after add delivery man
+    //Data also change. We have to check that!
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,9 +133,6 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         initRealm();
         loadDataFromServer();
         showSaveOrDeleteButton();
-        //TastyToast.makeText(this, getCurrentUser().getEmail(), TastyToast.LENGTH_SHORT, TastyToast.INFO);
-
-
     }
 
     private void showSaveOrDeleteButton() {
@@ -162,25 +163,85 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 //Not allow take their own order
                 if (userEmailFromServer != null && getCurrentUser().getEmail() != null) {
                     if (userEmailFromServer.equals(getCurrentUser().getEmail())) {
-                        sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
-                        sweetAlertDialog.setTitleText(getString(R.string.status_take_your_order_title));
-                        sweetAlertDialog.setContentText(getString(R.string.status_take_your_order_content));
-                        sweetAlertDialog.setConfirmText(getString(R.string.ok));
-                        sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                            @Override
-                            public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                sweetAlertDialog.dismissWithAnimation();
-                            }
-                        });
-                        sweetAlertDialog.show();
+                        if (!(DetailOrderShipperActivity.this).isFinishing()) { //Make sure activity is running
+                            sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+                            sweetAlertDialog.setTitleText(getString(R.string.warning));
+                            sweetAlertDialog.setContentText(getString(R.string.status_take_your_order_content));
+                            sweetAlertDialog.setConfirmText(getString(R.string.ok));
+                            sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    sweetAlertDialog.dismissWithAnimation();
+                                }
+                            });
+                            sweetAlertDialog.show();
+                        }
+
                     } else {
-                        TastyToast.makeText(this, "Get it", TastyToast.LENGTH_SHORT, TastyToast.INFO);
                         final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
+
                         orderDataBase.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
-                                orderDataBase.child(key).child("Shipper").setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
+                                String currentShipper = dataSnapshot.child(key).child("Shipper").getValue(String.class);
+                                if (currentShipper != null) {
+                                    if (!dataAddedOrDidNotAdd) {
+                                        if (!(DetailOrderShipperActivity.this).isFinishing()) {
+                                            SweetAlertDialog sweetAlertDialog;
+                                            sweetAlertDialog = new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                            sweetAlertDialog.setTitleText(getString(R.string.warning));
+                                            if (currentShipper.equals(EncodingFirebase.encodeString(getCurrentUser().getEmail()))) {
+                                                sweetAlertDialog.setContentText(getString(R.string.status_already_took_orders));
+                                            } else {
+                                                sweetAlertDialog.setContentText(getString(R.string.status_take_order_already_ordered));
+                                            }
 
+
+                                            sweetAlertDialog.setConfirmText(getString(R.string.ok));
+                                            sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                                @Override
+                                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                    sweetAlertDialog.dismissWithAnimation();
+                                                }
+                                            });
+                                            sweetAlertDialog.show();
+                                        }
+                                    }
+                                    dataAddedOrDidNotAdd = false;
+
+                                }
+                                if (currentShipper == null) {
+
+                                    if (!(DetailOrderShipperActivity.this).isFinishing()) {
+                                        SweetAlertDialog sweetAlertDialog;
+                                        sweetAlertDialog = new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                        sweetAlertDialog.setTitleText(getString(R.string.status_want_to_take_order_title));
+                                        sweetAlertDialog.setContentText(getString(R.string.status_want_to_take_order));
+                                        sweetAlertDialog.setConfirmText(getString(R.string.ok));
+                                        sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                                        sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                            @Override
+                                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                sweetAlertDialog.dismissWithAnimation();
+                                            }
+                                        });
+                                        sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                            @Override
+                                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                sweetAlertDialog.dismissWithAnimation();
+                                                new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                                                        .setTitleText(getString(R.string.success))
+                                                        .setContentText(getString(R.string.status_took_order))
+                                                        .show();
+                                                orderDataBase.child(key).child("Shipper").setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
+
+                                            }
+                                        });
+                                        sweetAlertDialog.show();
+                                        dataAddedOrDidNotAdd = true;
+                                    }
+
+                                }
                             }
 
                             @Override
@@ -189,10 +250,10 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                             }
                         });
 
-                        //Start navigation by google maps
+                        /*//Start navigation by google maps
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" +
                                 order.getStartPoint() + ""));
-                        startActivity(intent);
+                        startActivity(intent);*/
                     }
                 }
                 break;
@@ -400,7 +461,6 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
             public void onDataChange(DataSnapshot dataSnapshot) {
                 final String orderKey = key;
                 userEmailFromServer = EncodingFirebase.convertToRightEmail(key);
-                TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
                 String status = dataSnapshot.child(orderKey).child("Status").getValue(String.class);
                 String startPlace = dataSnapshot.child(orderKey).child("Start place").getValue(String.class);
                 String finishPlace = dataSnapshot.child(orderKey).child("Finish place").getValue(String.class);
@@ -433,7 +493,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                     txtPrice.setText(shipMoney);
                     txtNote.setText(note);
                     txtDistance.setText(distance);
-                    txtTimeAgo.setText(timeAgoHelpers.getTimeAgo(dateTime, DetailOrderShipperActivity.this));
+                    txtTimeAgo.setText(TimeAgoHelpers.getTimeAgo(dateTime, DetailOrderShipperActivity.this));
                     showPathOnMap(startPlace, finishPlace);
                 }
 
@@ -451,8 +511,13 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                 String userKey = EncodingFirebase.getEmailFromUserID(key);
                 String nameCreator = dataSnapshot.child(userKey).child("Name").getValue(String.class);
                 String url = dataSnapshot.child(userKey).child("Avatar").getValue(String.class);
-                txtUserName.setText(nameCreator);
-                Glide.with(DetailOrderShipperActivity.this).load(EncodingFirebase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(imgUserImage);
+                if (nameCreator != null && url != null && txtUserName != null && imgUserImage != null) {
+                    txtUserName.setText(nameCreator);
+                    Glide.with(DetailOrderShipperActivity.this).load(EncodingFirebase.decodeString(url))
+                            .apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(imgUserImage);
+
+                }
+
             }
 
             @Override
@@ -569,17 +634,20 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
             LatLngBounds bounds = builder.build();
             mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 10));
             //End Zoom path fit with maps
-            txtDistance.setText(route.distance.text);
-            txtTime.setText(route.duration.text);
-            startMarkers.add(mMap.addMarker(new MarkerOptions().title(route.startAddress)
-                    .position(route.startLocation).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_start_place))));
-            finishMarkers.add(mMap.addMarker(new MarkerOptions().title(route.endAddress)
-                    .position(route.endLocation).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_destination))));
-            PolylineOptions polylineOptions = new PolylineOptions().geodesic(true).color(Color.GREEN).width(12);
-            for (int i = 0; i < route.points.size(); i++) {
-                polylineOptions.add(route.points.get(i));
+            if (txtDistance != null && txtTime != null) {
+                txtDistance.setText(route.distance.text);
+                txtTime.setText(route.duration.text);
+                startMarkers.add(mMap.addMarker(new MarkerOptions().title(route.startAddress)
+                        .position(route.startLocation).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_start_place))));
+                finishMarkers.add(mMap.addMarker(new MarkerOptions().title(route.endAddress)
+                        .position(route.endLocation).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_destination))));
+                PolylineOptions polylineOptions = new PolylineOptions().geodesic(true).color(Color.GREEN).width(12);
+                for (int i = 0; i < route.points.size(); i++) {
+                    polylineOptions.add(route.points.get(i));
+                }
+                polylinePaths.add(mMap.addPolyline(polylineOptions));
             }
-            polylinePaths.add(mMap.addPolyline(polylineOptions));
+
         }
 
 

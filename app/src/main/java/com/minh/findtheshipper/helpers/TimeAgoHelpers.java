@@ -35,7 +35,7 @@ public class TimeAgoHelpers {
         return 0;
     }
 
-    public String getTimeAgo(String stringTime, Context context)
+    public static String getTimeAgo(String stringTime, Context context)
     {
         long time = convertStringToLong(stringTime);
         if (time < 1000000000000L) {

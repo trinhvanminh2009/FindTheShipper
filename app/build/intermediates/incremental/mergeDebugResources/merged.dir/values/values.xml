@@ -3185,9 +3185,14 @@
     <string name="ship_mode">Ship click right here</string>
     <string name="shop_mode">Shop click right here</string>
     <string name="start_place">Choose place to start</string>
+    <string name="status_already_took_orders">You took orders! Please check in list orders taken!</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="status_take_your_order_content">You can\'t get your order!</string>
-    <string name="status_take_your_order_title">Warning!</string>
+    <string name="status_take_order_already_ordered">Another delivery man took this orders!</string>
+    <string name="status_take_your_order_content">You can\'t get your orders!</string>
+    <string name="status_took_order">You took orders! Please waiting for notification or you can contact shop!  </string>
+    <string name="status_want_to_take_order">Are you sure want to take orders</string>
+    <string name="status_want_to_take_order_title">You can take orders</string>
+    <string name="success">Success!</string>
     <string name="summary_always_on_display">Your phone will always on display while using this application </string>
     <string name="summary_change_mode">You being the shop, you can create the orders.</string>
     <string name="summary_change_mode_to_shipper">You being the shipper. Let\'s start earned money</string>
@@ -3213,6 +3218,7 @@
     <string name="version">Version</string>
     <string name="wait_find_direction">Just a moment. Finding directions</string>
     <string name="wait_server">Just a moment. Loading data from server</string>
+    <string name="warning">Warning!</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

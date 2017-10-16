@@ -38,11 +38,7 @@
         </service>
 
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -81,7 +77,13 @@
         <activity android:name=".DistanceMapsActivity" />
         <activity android:name=".Test" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".Shipper.FragmentContainerShipper" />
+        <activity android:name=".Shipper.FragmentContainerShipper">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Shop.HandleMapsActivity" />
         <activity
             android:name=".utils.SettingsActivity"

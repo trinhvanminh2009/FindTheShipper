@@ -50,7 +50,6 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
              */
 
             final CommentTemp comment = commentList.get(position);
-            TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -58,8 +57,12 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
                     String key = EncodingFirebase.getEmailFromUserID(comment.getIdComment());
                     String url = dataSnapshot.child(key).child("Avatar").getValue(String.class);
                     String name = dataSnapshot.child(key).child("Name").getValue(String.class);
-                    holder.txtUserName.setText(name);
-                    Glide.with(context).load(EncodingFirebase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.5f).into(holder.imgAvatar);
+                    if(url != null && name != null && holder.txtUserName != null && holder.imgAvatar != null){
+                        holder.txtUserName.setText(name);
+                        Glide.with(context).load(EncodingFirebase.decodeString(url))
+                                .apply(RequestOptions.circleCropTransform()).thumbnail(0.5f).into(holder.imgAvatar);
+                    }
+
                 }
 
                 @Override
@@ -69,7 +72,7 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
             });
 
             holder.txtContent.setText(comment.getContent());
-            holder.txtDateTime.setText(timeAgoHelpers.getTimeAgo(comment.getDateTime(), context) );
+            holder.txtDateTime.setText(TimeAgoHelpers.getTimeAgo(comment.getDateTime(), context) );
 
         }
 

@@ -82,8 +82,8 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
 
 
         }
-        TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
-        String timeAgo = context.getString(R.string.order_last_updated) + timeAgoHelpers.getTimeAgo(order.getDateTime(), context);
+        String timeAgo = context.getString(R.string.order_last_updated) +
+                TimeAgoHelpers.getTimeAgo(order.getDateTime(), context);
         String startPlace = " " + EncodingFirebase.getShortAddress(order.getStartPoint());
         String finishPlace = " " + EncodingFirebase.getShortAddress(order.getFinishPoint());
         holder.txtStartPlace.setText(startPlace);

@@ -611,18 +611,18 @@ public final class R {
         public static final int com_facebook_tooltip_blue_bottomnub = 0x7f020076;
         public static final int com_facebook_tooltip_blue_topnub = 0x7f020077;
         public static final int com_facebook_tooltip_blue_xout = 0x7f020078;
-        public static final int notification_action_background = 0x7f0200e3;
-        public static final int notification_bg = 0x7f0200e4;
-        public static final int notification_bg_low = 0x7f0200e5;
-        public static final int notification_bg_low_normal = 0x7f0200e6;
-        public static final int notification_bg_low_pressed = 0x7f0200e7;
-        public static final int notification_bg_normal = 0x7f0200e8;
-        public static final int notification_bg_normal_pressed = 0x7f0200e9;
-        public static final int notification_icon_background = 0x7f0200ea;
-        public static final int notification_template_icon_bg = 0x7f0200fd;
-        public static final int notification_template_icon_low_bg = 0x7f0200fe;
-        public static final int notification_tile_bg = 0x7f0200eb;
-        public static final int notify_panel_notification_icon_bg = 0x7f0200ec;
+        public static final int notification_action_background = 0x7f0200e4;
+        public static final int notification_bg = 0x7f0200e5;
+        public static final int notification_bg_low = 0x7f0200e6;
+        public static final int notification_bg_low_normal = 0x7f0200e7;
+        public static final int notification_bg_low_pressed = 0x7f0200e8;
+        public static final int notification_bg_normal = 0x7f0200e9;
+        public static final int notification_bg_normal_pressed = 0x7f0200ea;
+        public static final int notification_icon_background = 0x7f0200eb;
+        public static final int notification_template_icon_bg = 0x7f0200fe;
+        public static final int notification_template_icon_low_bg = 0x7f0200ff;
+        public static final int notification_tile_bg = 0x7f0200ec;
+        public static final int notify_panel_notification_icon_bg = 0x7f0200ed;
     }
     public static final class id {
         public static final int action0 = 0x7f10014f;

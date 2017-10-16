@@ -56,7 +56,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
     @Override
     public CustomAdapterListviewOrderShipper.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_order_shipper,parent,false);
-        realm.init(view.getContext());
+        Realm.init(view.getContext());
         initRealm();
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
@@ -67,15 +67,16 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
         final AnimationUtils animationUtils = new AnimationUtils();
         final OrderTemp order = orderList.get(position);
         /**Query name from FireBase using id in orders*/
-        final EncodingFirebase encodingFireBase = new EncodingFirebase();
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         final DatabaseReference orderDatabase = FirebaseDatabase.getInstance().getReference("order");
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String key = encodingFireBase.getEmailFromUserID(order.getOrderID());
+                String key = EncodingFirebase.getEmailFromUserID(order.getOrderID());
                 String nameCreator = dataSnapshot.child(key).child("Name").getValue(String.class);
-                holder.nameCreator.setText(nameCreator);
+                if(nameCreator != null && holder.nameCreator != null){
+                    holder.nameCreator.setText(nameCreator);
+                }
             }
 
             @Override
@@ -83,8 +84,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
 
             }
         });
-        TimeAgoHelpers timeAgoHelpers = new TimeAgoHelpers();
-        String timeAgo = timeAgoHelpers.getTimeAgo(order.getDateTime(),context);
+        String timeAgo = TimeAgoHelpers.getTimeAgo(order.getDateTime(),context);
         holder.startingPoint.setText(order.getStartPoint());
         holder.finishPoint.setText(order.getFinishPoint());
         holder.advancedMoney.setText(order.getAdvancedMoney());
@@ -150,7 +150,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                             realm.insertOrUpdate(getCurrentUser());
                             if(!orderToRealm.getSaveOrder()) //Check order is false exists before handle
                             {
-                                animationUtils.animateItem(holder);
+                                AnimationUtils.animateItem(holder);
 
                                 //Check it already exists in list order save of user
                                 boolean checkAlready = false;
@@ -169,7 +169,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                                     realm.insertOrUpdate(orderToRealm);
                                     user.getOrderListSave().add(orderToRealm);
                                     realm.insertOrUpdate(user);
-                                    animationUtils.animateItem(holder);
+                                    AnimationUtils.animateItem(holder);
                                     TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
 
                                 }
@@ -182,7 +182,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                                 }
                             }
                             else {
-                                animationUtils.animateItem(holder);
+                                AnimationUtils.animateItem(holder);
                                 TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order_exists) ,TastyToast.LENGTH_SHORT,TastyToast.WARNING);
                             }
                         }
@@ -193,7 +193,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                 {
                     if(!orderRealm.getSaveOrder()) //Check order is false exists before handle
                     {
-                        animationUtils.animateItem(holder);
+                        AnimationUtils.animateItem(holder);
                         realm.executeTransaction(new Realm.Transaction() {
                             @Override
                             public void execute(Realm realm) {
@@ -214,7 +214,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                                     realm.insertOrUpdate(orderRealm);
                                     user.getOrderListSave().add(orderRealm);
                                     realm.insertOrUpdate(user);
-                                    animationUtils.animateItem(holder);
+                                    AnimationUtils.animateItem(holder);
                                     TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order) ,TastyToast.LENGTH_SHORT,TastyToast.SUCCESS);
 
                                 }
@@ -228,7 +228,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
                         });
                     }
                     else {
-                        animationUtils.animateItem(holder);
+                        AnimationUtils.animateItem(holder);
                         TastyToast.makeText(v.getContext(),v.getResources().getString(R.string.save_order_exists) ,TastyToast.LENGTH_SHORT,TastyToast.WARNING);
                     }
                 }
@@ -239,7 +239,7 @@ public class CustomAdapterListviewOrderShipper extends RecyclerView.Adapter<Cust
             @Override
             public void onClick(View v) {
 
-                orderDatabase.child(order.getOrderID()).child("User Get Order").setValue(encodingFireBase.encodeString(getCurrentUser().getEmail()));
+                orderDatabase.child(order.getOrderID()).child("User Get Order").setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
 
             }
         });
