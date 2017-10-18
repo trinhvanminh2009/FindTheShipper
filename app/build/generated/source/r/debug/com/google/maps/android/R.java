@@ -39,12 +39,12 @@ public final class R {
         public static final int zOrderOnTop = 0x7f010136;
     }
     public static final class color {
-        public static final int common_google_signin_btn_text_dark = 0x7f0e01d5;
+        public static final int common_google_signin_btn_text_dark = 0x7f0e01d7;
         public static final int common_google_signin_btn_text_dark_default = 0x7f0e0035;
         public static final int common_google_signin_btn_text_dark_disabled = 0x7f0e0036;
         public static final int common_google_signin_btn_text_dark_focused = 0x7f0e0037;
         public static final int common_google_signin_btn_text_dark_pressed = 0x7f0e0038;
-        public static final int common_google_signin_btn_text_light = 0x7f0e01d6;
+        public static final int common_google_signin_btn_text_light = 0x7f0e01d8;
         public static final int common_google_signin_btn_text_light_default = 0x7f0e0039;
         public static final int common_google_signin_btn_text_light_disabled = 0x7f0e003a;
         public static final int common_google_signin_btn_text_light_focused = 0x7f0e003b;
@@ -53,19 +53,19 @@ public final class R {
     public static final class drawable {
         public static final int amu_bubble_mask = 0x7f020054;
         public static final int amu_bubble_shadow = 0x7f020055;
-        public static final int common_full_open_on_phone = 0x7f020079;
-        public static final int common_google_signin_btn_icon_dark = 0x7f02007a;
-        public static final int common_google_signin_btn_icon_dark_focused = 0x7f02007b;
-        public static final int common_google_signin_btn_icon_dark_normal = 0x7f02007c;
-        public static final int common_google_signin_btn_icon_light = 0x7f02007f;
-        public static final int common_google_signin_btn_icon_light_focused = 0x7f020080;
-        public static final int common_google_signin_btn_icon_light_normal = 0x7f020081;
-        public static final int common_google_signin_btn_text_dark = 0x7f020083;
-        public static final int common_google_signin_btn_text_dark_focused = 0x7f020084;
-        public static final int common_google_signin_btn_text_dark_normal = 0x7f020085;
-        public static final int common_google_signin_btn_text_light = 0x7f020088;
-        public static final int common_google_signin_btn_text_light_focused = 0x7f020089;
-        public static final int common_google_signin_btn_text_light_normal = 0x7f02008a;
+        public static final int common_full_open_on_phone = 0x7f02007a;
+        public static final int common_google_signin_btn_icon_dark = 0x7f02007b;
+        public static final int common_google_signin_btn_icon_dark_focused = 0x7f02007c;
+        public static final int common_google_signin_btn_icon_dark_normal = 0x7f02007d;
+        public static final int common_google_signin_btn_icon_light = 0x7f020080;
+        public static final int common_google_signin_btn_icon_light_focused = 0x7f020081;
+        public static final int common_google_signin_btn_icon_light_normal = 0x7f020082;
+        public static final int common_google_signin_btn_text_dark = 0x7f020084;
+        public static final int common_google_signin_btn_text_dark_focused = 0x7f020085;
+        public static final int common_google_signin_btn_text_dark_normal = 0x7f020086;
+        public static final int common_google_signin_btn_text_light = 0x7f020089;
+        public static final int common_google_signin_btn_text_light_focused = 0x7f02008a;
+        public static final int common_google_signin_btn_text_light_normal = 0x7f02008b;
     }
     public static final class id {
         public static final int adjust_height = 0x7f100059;
@@ -134,9 +134,9 @@ public final class R {
         public static final int common_signin_button_text_long = 0x7f09003a;
     }
     public static final class style {
-        public static final int amu_Bubble_TextAppearance_Dark = 0x7f0b01c1;
-        public static final int amu_Bubble_TextAppearance_Light = 0x7f0b01c2;
-        public static final int amu_ClusterIcon_TextAppearance = 0x7f0b01c3;
+        public static final int amu_Bubble_TextAppearance_Dark = 0x7f0b01c8;
+        public static final int amu_Bubble_TextAppearance_Light = 0x7f0b01c9;
+        public static final int amu_ClusterIcon_TextAppearance = 0x7f0b01ca;
     }
     public static final class styleable {
         public static final int[] LoadingImageView = { 0x7f010125, 0x7f010126, 0x7f010127 };

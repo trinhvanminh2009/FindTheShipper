@@ -20,6 +20,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\xml\\pref_headers_shipper.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\xml\\config.xml",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\xml\\config.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_headers.xml",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\xml\\pref_headers.xml"
     },

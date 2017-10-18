@@ -25,7 +25,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.minh.findtheshipper.Shop.HandleMapsActivity;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.models.CurrentUser;
+import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.models.UserTemp;
+import com.onesignal.OneSignal;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import org.json.JSONException;
@@ -38,6 +40,7 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class MainActivity extends FragmentActivity {
 
@@ -48,6 +51,7 @@ public class MainActivity extends FragmentActivity {
     Toolbar toolbar;
     String[] listProfile = new String[4];
     private Realm realm;
+    public static String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +60,10 @@ public class MainActivity extends FragmentActivity {
         ButterKnife.bind(this);
         Realm.init(this);
         initRealm();
-
+        OneSignal.startInit(this)
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                .unsubscribeWhenNotificationsAreDisabled(true)
+                .init();
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         progress = new ProgressDialog(MainActivity.this);
@@ -68,8 +75,7 @@ public class MainActivity extends FragmentActivity {
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
         try {
             PackageInfo info = getPackageManager().getPackageInfo(
-                    "com.minh.findtheshipper",
-                    PackageManager.GET_SIGNATURES);
+                    "com.minh.findtheshipper", PackageManager.GET_SIGNATURES);
             for (android.content.pm.Signature signature : info.signatures) {
                 MessageDigest md = MessageDigest.getInstance("SHA");
                 md.update(signature.toByteArray());
@@ -91,35 +97,38 @@ public class MainActivity extends FragmentActivity {
 
                             try {
                                 Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
-                                final String email = response.getJSONObject().getString("email");
-                                final String gender = response.getJSONObject().getString("gender");
-                                final String name = response.getJSONObject().getString("name");
-                                String userID = loginResult.getAccessToken().getUserId();
-                                final String imageURL = "https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200";
-                                UserTemp userTemp = new UserTemp();
-                                userTemp.setAvatar(imageURL);
-                                userTemp.setEmail(email);
-                                userTemp.setName(name);
-                                userTemp.setGender(gender);
+                                email = response.getJSONObject().getString("email");
+                                if (email != null) {
+                                    final String gender = response.getJSONObject().getString("gender");
+                                    final String name = response.getJSONObject().getString("name");
+                                    String userID = loginResult.getAccessToken().getUserId();
+                                    final String imageURL = "https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200";
+                                    UserTemp userTemp = new UserTemp();
+                                    userTemp.setAvatar(imageURL);
+                                    userTemp.setEmail(email);
+                                    userTemp.setName(name);
+                                    userTemp.setGender(gender);
                                     /*
                                      * Have to save current user into database for all class can access to current user login Facebook.
                                      * */
-                                realm.executeTransaction(new Realm.Transaction() {
-                                    @Override
-                                    public void execute(Realm realm) {
-                                        CurrentUser currentUser = realm.createObject(CurrentUser.class, email);
-                                        currentUser.setGender(gender);
-                                        currentUser.setName(name);
-                                        currentUser.setAvatar(imageURL);
-                                        realm.insertOrUpdate(currentUser);
-                                    }
-                                });
-                                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
-                                mDatabase.child(EncodingFirebase.encodeString(email)).child("Name").setValue(EncodingFirebase.encodeString(name));
-                                mDatabase.child(EncodingFirebase.encodeString(email)).child("Gender").setValue(gender);
-                                mDatabase.child(EncodingFirebase.encodeString(email)).child("Avatar").setValue(EncodingFirebase.encodeString(imageURL));
+                                    realm.executeTransaction(new Realm.Transaction() {
+                                        @Override
+                                        public void execute(Realm realm) {
+                                            CurrentUser currentUser = realm.createObject(CurrentUser.class, email);
+                                            currentUser.setGender(gender);
+                                            currentUser.setName(name);
+                                            currentUser.setAvatar(imageURL);
+                                            realm.insertOrUpdate(currentUser);
+                                        }
+                                    });
+                                    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
+                                    mDatabase.child(EncodingFirebase.encodeString(email)).child("Name").setValue(EncodingFirebase.encodeString(name));
+                                    mDatabase.child(EncodingFirebase.encodeString(email)).child("Gender").setValue(gender);
+                                    mDatabase.child(EncodingFirebase.encodeString(email)).child("Avatar").setValue(EncodingFirebase.encodeString(imageURL));
+                                    OneSignal.sendTag("email", email);
+                                    startActivity(intent);
+                                }
 
-                                startActivity(intent);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -144,9 +153,13 @@ public class MainActivity extends FragmentActivity {
             });
 
         } else {
+            if (getCurrentUser().getEmail() != null) {
+                email = getCurrentUser().getEmail();
+                OneSignal.sendTag("email", email);
+                Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
+                startActivity(intent);
+            }
 
-            Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
-            startActivity(intent);
         }
     }
 
@@ -167,5 +180,10 @@ public class MainActivity extends FragmentActivity {
         } else {
             return false;
         }
+    }
+
+    private User getCurrentUser() {
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        return realm.where(User.class).equalTo("email", currentUser.getEmail()).findFirst();
     }
 }

@@ -68,6 +68,7 @@ public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragme
             adapter.notifyDataSetChanged();
         } catch (Exception e) {
             Log.d("Error", "In loadAllList ListOrderSavedShipperFragment");
+
         }
 
     }

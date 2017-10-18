@@ -30,9 +30,12 @@ import com.minh.findtheshipper.Shop.HandleMapsActivity;
 import com.minh.findtheshipper.Shop.ListOrderCreatedFragment;
 import com.minh.findtheshipper.helpers.DialogHelpers;
 
+import zemin.notification.NotificationDelegater;
+
 
 /**
  * Created by trinh on 6/14/2017.
+ * This is baseActivity for all others activities use same components
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -75,10 +78,11 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private void showNotification()
     {
-        final FragmentManager fragmentManager = getSupportFragmentManager();
+        NotificationDelegater.initialize(this,NotificationDelegater.GLOBAL);
+       /* final FragmentManager fragmentManager = getSupportFragmentManager();
         final DialogHelpers dialogHelpers = new DialogHelpers();
 
-        dialogHelpers.show(fragmentManager,"New fragment");
+        dialogHelpers.show(fragmentManager,"New fragment");*/
 
     }
 

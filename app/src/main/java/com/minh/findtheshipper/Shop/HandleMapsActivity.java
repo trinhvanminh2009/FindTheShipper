@@ -22,6 +22,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -82,6 +83,7 @@ import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.GlideApp;
+import com.minh.findtheshipper.helpers.OneSignalHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.ListControl;
@@ -98,6 +100,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -105,6 +108,10 @@ import butterknife.OnClick;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.realm.Realm;
 import io.realm.RealmResults;
+import zemin.notification.NotificationBoard;
+import zemin.notification.NotificationBuilder;
+import zemin.notification.NotificationDelegater;
+import zemin.notification.NotificationGlobal;
 
 
 public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCallback,
@@ -155,6 +162,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     LinearLayout layoutPlaces;
     @BindView(R.id.btnFloatingAddOrder)
     FloatingActionButton btnFloatingAddOrder;
+    boolean doubleBackToExitPressedOnce = false;
     private boolean showPermissionDeniedDialog = false;
     private List<Marker> startMarkers = new ArrayList<>();
     private List<Marker> finishMarkers = new ArrayList<>();
@@ -183,6 +191,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.created_order);
         initRealm();
+        NotificationDelegater.initialize(this, NotificationDelegater.GLOBAL);
         startService(new Intent(this, LocationService.class));
         handleAutoCompleteButton();
         //Count order on server before create orders. Because server is thread slow.
@@ -245,6 +254,28 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent startMain = new Intent(Intent.ACTION_MAIN);
+            startMain.addCategory(Intent.CATEGORY_HOME);
+            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(startMain);
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+
+            }
+        }, 2000);
+    }
 
     public void NavigationDrawer(Toolbar toolbar) {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
@@ -558,7 +589,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                     order.setNote(getResources().getString(R.string.order_note) + editNote.getText().toString());
                 }
                 order.setPhoneNumber(editPhoneNumber.getText().toString());
-                DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
+                DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm", Locale.getDefault());
                 String date = df.format(Calendar.getInstance().getTime());
                 order.setDateTime(date);
                 order.setSaveOrder(false);
@@ -589,6 +620,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 transaction.replace(R.id.fragmentShopContainer, fragment);
                 transaction.commit();
 
+
             }
 
         });
@@ -609,6 +641,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             }
         });
     }
+
 
 
     private User getCurrentUser() {
@@ -926,8 +959,23 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     }
 
     private void showNotification() {
-        final FragmentManager fragmentManager = getSupportFragmentManager();
+
+
+
+        NotificationBuilder.V2 builder = NotificationBuilder.remote()
+                .setSmallIconResource(R.mipmap.ic_launcher_app)
+                .setTicker("dasdas")
+                .setTitle("How is it going")
+                .setText("Can you check this order");
+
+        NotificationDelegater delegater = NotificationDelegater.getInstance();
+        delegater.send(builder.getNotification());
+
+
+
+
+       /* final FragmentManager fragmentManager = getSupportFragmentManager();
         final DialogHelpers dialogHelpers = new DialogHelpers();
-        dialogHelpers.show(fragmentManager, "New fragment");
+        dialogHelpers.show(fragmentManager, "New fragment");*/
     }
 }

@@ -1,22 +1,14 @@
 package com.minh.findtheshipper.helpers;
-import android.app.Dialog;
-import android.app.FragmentManager;
-import android.content.DialogInterface;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.Toolbar;
-import android.view.Display;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ListView;
 import com.minh.findtheshipper.R;
-import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewNotification;
+import com.minh.findtheshipper.models.Adapters.CustomAdapterListViewNotification;
 import com.minh.findtheshipper.models.NotificationObject;
 import java.util.ArrayList;
 import io.realm.Realm;
@@ -27,7 +19,7 @@ public class DialogHelpers extends DialogFragment {
 
     private  ListView listNotification;
     private ArrayList<NotificationObject> notificationObjectArrayList;
-    private CustomAdapterListviewNotification customAdapterListviewNotification;
+    private CustomAdapterListViewNotification customAdapterListviewNotification;
     private Realm realm;
 
     @Override
@@ -64,8 +56,8 @@ public class DialogHelpers extends DialogFragment {
         {
             notificationObjectArrayList.add(notificationObjectRealmResults.get(i));
         }
-        customAdapterListviewNotification = new CustomAdapterListviewNotification(getContext(), notificationObjectArrayList);
-        listNotification.setAdapter(customAdapterListviewNotification);
+      //  customAdapterListviewNotification = new CustomAdapterListViewNotification(getContext(), notificationObjectArrayList);
+     //   listNotification.setAdapter(customAdapterListviewNotification);
     }
 
     @Override

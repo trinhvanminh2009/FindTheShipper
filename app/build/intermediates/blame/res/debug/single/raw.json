@@ -24,6 +24,10 @@
         "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_multiple_placemarks.kml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\consumer_onesignal_keep.xml",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\a3c1c688afaa4d4c28a81d9da0585e0c79d21475\\output\\res\\raw\\consumer_onesignal_keep.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_ground_overlay_color.kml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_ground_overlay_color.kml"
     },
@@ -50,6 +54,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_document_nest.kml",
         "source": "C:\\Users\\trinh\\.android\\build-cache\\c6e75bbbf14986c423fd66a1b1e56f36040e1e06\\output\\res\\raw\\amu_document_nest.kml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\fallbackring.ogg",
+        "source": "C:\\Users\\trinh\\.android\\build-cache\\60e38c70c8c049262fc711e0d47181cba7811116\\output\\res\\raw\\fallbackring.ogg"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw\\amu_cdata.kml",

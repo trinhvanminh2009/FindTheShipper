@@ -91,7 +91,9 @@
     <string name="edit_text_phone_number">Số điện thoại</string>
     <string name="edit_text_ship_money">Khoảng 25k</string>
     <string name="edit_text_start_place">Nơi shipper tới lấy hàng</string>
+    <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Khác"</string>
     <string name="finish_place">Chọn điểm bắt đầu</string>
+    <string msgid="9521340570209730" name="gcm_fallback_notification_channel_label">"Khác"</string>
     <string name="get_order">Nhận đơn hàng</string>
     <string name="ha_noi">Hà Nội</string>
     <string name="ho_chi_minh">Thành Phố Hồ Chí Minh</string>

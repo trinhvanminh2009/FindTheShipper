@@ -14,6 +14,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -25,6 +26,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.mikepenz.actionitembadge.library.ActionItemBadge;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -62,6 +64,7 @@ public class FragmentContainerShipper extends FragmentActivity {
     private static final int REQUEST = 112;
     private Context context = this;
     private Realm realm;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,6 +190,28 @@ public class FragmentContainerShipper extends FragmentActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Intent startMain = new Intent(Intent.ACTION_MAIN);
+            startMain.addCategory(Intent.CATEGORY_HOME);
+            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(startMain);
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+
+            }
+        }, 2000);
+    }
 
     private static boolean hasPermissions(Context context, String... permissions) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
@@ -221,7 +246,7 @@ public class FragmentContainerShipper extends FragmentActivity {
         String url = currentUser.getAvatar();
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.list_order_shipper);
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.list_order_saved_shipper);
-        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.pay_coin_shipper);
+        PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.history);
         PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName(R.string.buy_package_shipper);
         PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName(R.string.tutorials);
         PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(6).withName(R.string.profile);
@@ -278,7 +303,8 @@ public class FragmentContainerShipper extends FragmentActivity {
 
                         }
                         if (drawerItem.getIdentifier() == 3) {
-
+                            getSupportActionBar().setTitle(R.string.history);
+                            fragment = new ListOrderHistoryFragment();
                         }
                         if (drawerItem.getIdentifier() == 4) {
 
@@ -323,7 +349,7 @@ public class FragmentContainerShipper extends FragmentActivity {
         item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order_saved));
         item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
-                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_buy_coin));
+                withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_order_history));
         item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_package));
         item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).

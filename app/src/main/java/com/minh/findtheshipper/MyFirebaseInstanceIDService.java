@@ -11,9 +11,10 @@ import com.google.firebase.messaging.RemoteMessage;
 
 /**
  * Created by trinh on 7/14/2017.
+ * This is service from FireBase
  */
 
-public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
+public class MyFireBaseInstanceIDService extends FirebaseInstanceIdService {
     private static final String TAG = "My Notifications";
 
 

@@ -1,7 +1,6 @@
 package com.minh.findtheshipper.Shipper;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -45,6 +44,7 @@ import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
+import com.minh.findtheshipper.helpers.OneSignalHelpers;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.CurrentUser;
@@ -56,9 +56,13 @@ import com.minh.findtheshipper.utils.AnimationUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import java.io.UnsupportedEncodingException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -116,7 +120,9 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
     private Realm realm;
     private GoogleMap mMap;
     private String[] orderKey = new String[2];
-    private boolean dataAddedOrDidNotAdd = false;  // This variable to know data added on server or didn't
+    private boolean dataAddedOrDidNotAdd = false;
+    private boolean isClickGetOrder = false;
+    // This variable to know data added on server or didn't
     //Because we check on data change, after add delivery man
     //Data also change. We have to check that!
 
@@ -161,6 +167,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         switch (v.getId()) {
             case R.id.btnGetOrder:
                 //Not allow take their own order
+                isClickGetOrder = true;
                 if (userEmailFromServer != null && getCurrentUser().getEmail() != null) {
                     if (userEmailFromServer.equals(getCurrentUser().getEmail())) {
                         if (!(DetailOrderShipperActivity.this).isFinishing()) { //Make sure activity is running
@@ -182,65 +189,75 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
 
                         orderDataBase.addValueEventListener(new ValueEventListener() {
                             @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
+                            public void onDataChange(final DataSnapshot dataSnapshot) {
                                 String currentShipper = dataSnapshot.child(key).child("Shipper").getValue(String.class);
-                                if (currentShipper != null) {
-                                    if (!dataAddedOrDidNotAdd) {
+                                if (isClickGetOrder) {
+                                    if (currentShipper != null) {
+                                        if (!dataAddedOrDidNotAdd) {
+                                            if (!(DetailOrderShipperActivity.this).isFinishing()) {
+                                                SweetAlertDialog sweetAlertDialog;
+                                                sweetAlertDialog = new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                                sweetAlertDialog.setTitleText(getString(R.string.warning));
+                                                if (currentShipper.equals(EncodingFirebase.encodeString(getCurrentUser().getEmail()))) {
+                                                    sweetAlertDialog.setContentText(getString(R.string.status_already_took_orders));
+                                                } else {
+                                                    sweetAlertDialog.setContentText(getString(R.string.status_take_order_already_ordered));
+                                                }
+                                                sweetAlertDialog.setConfirmText(getString(R.string.ok));
+                                                sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                                    @Override
+                                                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                        sweetAlertDialog.dismissWithAnimation();
+                                                    }
+                                                });
+                                                sweetAlertDialog.show();
+                                            }
+                                        }
+                                        dataAddedOrDidNotAdd = false;
+
+                                    }
+                                    if (currentShipper == null) {
+
                                         if (!(DetailOrderShipperActivity.this).isFinishing()) {
                                             SweetAlertDialog sweetAlertDialog;
                                             sweetAlertDialog = new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.WARNING_TYPE);
-                                            sweetAlertDialog.setTitleText(getString(R.string.warning));
-                                            if (currentShipper.equals(EncodingFirebase.encodeString(getCurrentUser().getEmail()))) {
-                                                sweetAlertDialog.setContentText(getString(R.string.status_already_took_orders));
-                                            } else {
-                                                sweetAlertDialog.setContentText(getString(R.string.status_take_order_already_ordered));
-                                            }
-
-
+                                            sweetAlertDialog.setTitleText(getString(R.string.status_want_to_take_order_title));
+                                            sweetAlertDialog.setContentText(getString(R.string.status_want_to_take_order));
                                             sweetAlertDialog.setConfirmText(getString(R.string.ok));
-                                            sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                            sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                                            sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                                 @Override
                                                 public void onClick(SweetAlertDialog sweetAlertDialog) {
                                                     sweetAlertDialog.dismissWithAnimation();
                                                 }
                                             });
+                                            sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                                @Override
+                                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                    sweetAlertDialog.dismissWithAnimation();
+                                                    new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                                                            .setTitleText(getString(R.string.success))
+                                                            .setContentText(getString(R.string.status_took_order))
+                                                            .show();
+
+                                                    orderDataBase.child(key).child("Shipper").setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
+                                                    String message = getCurrentUser().getFullName() + " " + getString(R.string.notification_state_2);
+                                                    OneSignalHelpers.sendNotification(EncodingFirebase.decodeString(EncodingFirebase.getEmailFromUserID(key)),
+                                                            getCurrentUser().getEmail(), message);
+                                                    orderDataBase.child(key).child("Notifications").child("From")
+                                                            .setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
+                                                    DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm", Locale.getDefault());
+                                                    String date = df.format(Calendar.getInstance().getTime());
+                                                    orderDataBase.child(key).child("Notifications").child("Datetime").setValue(date);
+                                                    orderDataBase.child(key).child("Notifications").child("Message").setValue(message);
+
+                                                }
+                                            });
                                             sweetAlertDialog.show();
+                                            dataAddedOrDidNotAdd = true;
+                                            isClickGetOrder = false;
                                         }
                                     }
-                                    dataAddedOrDidNotAdd = false;
-
-                                }
-                                if (currentShipper == null) {
-
-                                    if (!(DetailOrderShipperActivity.this).isFinishing()) {
-                                        SweetAlertDialog sweetAlertDialog;
-                                        sweetAlertDialog = new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.WARNING_TYPE);
-                                        sweetAlertDialog.setTitleText(getString(R.string.status_want_to_take_order_title));
-                                        sweetAlertDialog.setContentText(getString(R.string.status_want_to_take_order));
-                                        sweetAlertDialog.setConfirmText(getString(R.string.ok));
-                                        sweetAlertDialog.setCancelText(getString(R.string.cancel));
-                                        sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                            @Override
-                                            public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                                sweetAlertDialog.dismissWithAnimation();
-                                            }
-                                        });
-                                        sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                            @Override
-                                            public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                                sweetAlertDialog.dismissWithAnimation();
-                                                new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                                                        .setTitleText(getString(R.string.success))
-                                                        .setContentText(getString(R.string.status_took_order))
-                                                        .show();
-                                                orderDataBase.child(key).child("Shipper").setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
-
-                                            }
-                                        });
-                                        sweetAlertDialog.show();
-                                        dataAddedOrDidNotAdd = true;
-                                    }
-
                                 }
                             }
 
@@ -249,11 +266,6 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
 
                             }
                         });
-
-                        /*//Start navigation by google maps
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" +
-                                order.getStartPoint() + ""));
-                        startActivity(intent);*/
                     }
                 }
                 break;
