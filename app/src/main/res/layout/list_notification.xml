@@ -9,25 +9,47 @@
     android:clickable="true"
     app:cardCornerRadius="10dp"
     card_view:cardElevation="3dp"
-    card_view:contentPadding="4dp">
+    card_view:contentPadding="5dp">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:gravity="center"
-        android:layout_height="match_parent">
+        android:layout_marginStart="10dp"
+        android:background="@color/md_grey_600"
+        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:contentDescription="@string/always_on_display"
             android:id="@+id/imgNotification"
-            android:src="@mipmap/ic_launcher_app"
-            />
-        <TextView
-            android:layout_width="wrap_content"
+            android:src="@mipmap/ic_launcher_app" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="6"
             android:layout_height="wrap_content"
-            android:id="@+id/txtNotification"
-            android:text="@string/choosing_starting_point"
-            />
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtNotificationTitle"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:text="@string/about_us" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtNotificationContent"
+                android:text="@string/start_place" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/txtDateTime"
+            android:text="@string/about_us" />
 
     </LinearLayout>
 </android.support.v7.widget.CardView>

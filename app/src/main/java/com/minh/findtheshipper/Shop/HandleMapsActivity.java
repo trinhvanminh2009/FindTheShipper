@@ -22,7 +22,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -83,11 +82,9 @@ import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.GlideApp;
-import com.minh.findtheshipper.helpers.OneSignalHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.ListControl;
-import com.minh.findtheshipper.models.NotificationObject;
 import com.minh.findtheshipper.models.Order;
 import com.minh.findtheshipper.models.Route;
 import com.minh.findtheshipper.models.User;
@@ -108,10 +105,6 @@ import butterknife.OnClick;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.realm.Realm;
 import io.realm.RealmResults;
-import zemin.notification.NotificationBoard;
-import zemin.notification.NotificationBuilder;
-import zemin.notification.NotificationDelegater;
-import zemin.notification.NotificationGlobal;
 
 
 public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCallback,
@@ -119,7 +112,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private GoogleMap mMap;
-    int badgerCount = 10;
+    int badgerCount = 0;
     @BindView(R.id.toolBar)
     Toolbar toolbar;
     @BindView(R.id.txtDistance)
@@ -191,7 +184,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.created_order);
         initRealm();
-        NotificationDelegater.initialize(this, NotificationDelegater.GLOBAL);
         startService(new Intent(this, LocationService.class));
         handleAutoCompleteButton();
         //Count order on server before create orders. Because server is thread slow.
@@ -271,7 +263,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
 
             }
         }, 2000);
@@ -551,21 +543,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     }
 
-    public void insertNotification() {
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                final NotificationObject notificationObject = realm.createObject(NotificationObject.class, "nf" + countNotification());
-                notificationObject.setIcon(R.mipmap.ic_launcher_app);
-                notificationObject.setContext(getResources().getString(R.string.start_place));
-                realm.insertOrUpdate(notificationObject);
-            }
-        });
-    }
-
-    public long countNotification() {
-        return realm.where(NotificationObject.class).count();
-    }
 
     @Override
     protected void onDestroy() {
@@ -641,7 +618,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             }
         });
     }
-
 
 
     private User getCurrentUser() {
@@ -852,6 +828,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                     .newInstance(false).show(getSupportFragmentManager(), "dialog");
             showPermissionDeniedDialog = false;
         }
+
     }
 
     @Override
@@ -938,20 +915,21 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_list, menu);
-        if (badgerCount > 0) {
-            ActionItemBadge.update(this, menu.findItem(R.id.item_notifycation), resizeImage(R.drawable.ic_notifycation, 200, 200), ActionItemBadge.BadgeStyles.RED, badgerCount);
 
-        }
+        ActionItemBadge.update(this, menu.findItem(R.id.item_notifycation),
+                resizeImage(R.drawable.ic_notifycation, 200, 200), ActionItemBadge.BadgeStyles.RED, badgerCount);
+
+
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_notifycation:
                 showNotification();
-                //badgerCount++;
-                // ActionItemBadge.update(item,badgerCount);
+                ActionItemBadge.update(item, badgerCount);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -961,21 +939,23 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     private void showNotification() {
 
 
-
-        NotificationBuilder.V2 builder = NotificationBuilder.remote()
-                .setSmallIconResource(R.mipmap.ic_launcher_app)
-                .setTicker("dasdas")
-                .setTitle("How is it going")
-                .setText("Can you check this order");
-
-        NotificationDelegater delegater = NotificationDelegater.getInstance();
-        delegater.send(builder.getNotification());
-
-
-
-
-       /* final FragmentManager fragmentManager = getSupportFragmentManager();
+        final FragmentManager fragmentManager = getSupportFragmentManager();
         final DialogHelpers dialogHelpers = new DialogHelpers();
-        dialogHelpers.show(fragmentManager, "New fragment");*/
+        dialogHelpers.show(fragmentManager, "New fragment");
     }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+    }
+
+
 }

@@ -23,12 +23,8 @@ import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.User;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import io.realm.Realm;
@@ -56,7 +52,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_recycle_view, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
+        recyclerView = view.findViewById(R.id.recycle_view);
         return view;
     }
 
@@ -158,10 +154,14 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
     private List<String> checkKey(List<String> keyServer) {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < keyServer.size(); i++) {
-
-            if (keyServer.get(i).contains(EncodingFirebase.encodeString(getCurrentUser().getEmail()))) {
-                result.add(keyServer.get(i));
+            if(getCurrentUser().getEmail() != null){
+                if (keyServer.get(i).contains(EncodingFirebase.encodeString(getCurrentUser().getEmail()))) {
+                    result.add(keyServer.get(i));
+                }
+            }else{
+                Log.e("Error","Email of current user is null");
             }
+
 
         }
         return result;

@@ -58,11 +58,11 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                key[0] = encodingFireBase.getEmailFromUserID(order.getOrderID());
+                key[0] = EncodingFirebase.getEmailFromUserID(order.getOrderID());
                 String nameCreator = dataSnapshot.child(key[0]).child("Name").getValue(String.class);
                 String url = dataSnapshot.child(key[0]).child("Avatar").getValue(String.class);
                 holder.txtUserName.setText(nameCreator);
-                Glide.with(context).load(encodingFireBase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(holder.imgAvatar);
+                Glide.with(context).load(EncodingFirebase.decodeString(url)).apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(holder.imgAvatar);
             }
 
             @Override
@@ -79,7 +79,7 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
         holder.txtStartPlace.setText(startPlace);
         holder.txtFinishPlace.setText(finishPlace);
         holder.txtPrice.setText(order.getShipMoney());
-        holder.txtTimeAgo.setText( timeAgoHelpers.getTimeAgo(order.getDateTime(), context));
+        holder.txtTimeAgo.setText( TimeAgoHelpers.getTimeAgo(order.getDateTime(), context));
         holder.itemView.setClickable(true);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +90,7 @@ public class CustomAdapterListViewOrderItem extends RecyclerView.Adapter<CustomA
                 orderKey[1] = "Present";//this key to know order saved or order from server
                 intent.putExtra("orderKey",orderKey);
                 v.getContext().startActivity(intent);
+
             }
         });
     }

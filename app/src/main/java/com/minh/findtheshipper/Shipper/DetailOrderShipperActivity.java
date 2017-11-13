@@ -15,13 +15,13 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -54,7 +54,6 @@ import com.minh.findtheshipper.models.Route;
 import com.minh.findtheshipper.models.User;
 import com.minh.findtheshipper.utils.AnimationUtils;
 import com.sdsmdg.tastytoast.TastyToast;
-
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -190,6 +189,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                         orderDataBase.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(final DataSnapshot dataSnapshot) {
+                                //Available shipper took this orders
                                 String currentShipper = dataSnapshot.child(key).child("Shipper").getValue(String.class);
                                 if (isClickGetOrder) {
                                     if (currentShipper != null) {
@@ -241,15 +241,21 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                                                             .show();
 
                                                     orderDataBase.child(key).child("Shipper").setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
+                                                    orderDataBase.child(key).child("State Order").setValue("1");
                                                     String message = getCurrentUser().getFullName() + " " + getString(R.string.notification_state_2);
                                                     OneSignalHelpers.sendNotification(EncodingFirebase.decodeString(EncodingFirebase.getEmailFromUserID(key)),
                                                             getCurrentUser().getEmail(), message);
-                                                    orderDataBase.child(key).child("Notifications").child("From")
+                                                    String title = "Get order";
+                                                    String keyNotification = key + "_notification_" + getCoutnNotification(key);
+                                                    orderDataBase.child(key).child("Notifications").child(keyNotification).child("From")
                                                             .setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
-                                                    DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm", Locale.getDefault());
-                                                    String date = df.format(Calendar.getInstance().getTime());
-                                                    orderDataBase.child(key).child("Notifications").child("Datetime").setValue(date);
-                                                    orderDataBase.child(key).child("Notifications").child("Message").setValue(message);
+                                                    DateFormat datetimeFormat = new SimpleDateFormat("dd/MM/yyyy-HH:mm", Locale.getDefault());
+                                                    String date = datetimeFormat.format(Calendar.getInstance().getTime());
+                                                    orderDataBase.child(key).child("Notifications").child(keyNotification).child("Datetime").setValue(date);
+                                                    orderDataBase.child(key).child("Notifications").child(keyNotification).child("Message").setValue(message);
+                                                    orderDataBase.child(key).child("Notifications").child(keyNotification).child("Title").setValue(title);
+                                                    orderDataBase.child(key).child("Notifications").child(keyNotification).child("Show Again").setValue(true);
+
 
                                                 }
                                             });
@@ -423,10 +429,28 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                     }
                 });
                 sweetAlertDialog.show();
-
+                finish();
                 break;
         }
 
+    }
+
+    private long getCoutnNotification(final String key) {
+        final long[] result = {0};
+        final DatabaseReference databaseNotification = FirebaseDatabase.getInstance().getReference("order/" + key + "/Notifications");
+        databaseNotification.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                result[0] = dataSnapshot.getChildrenCount();
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return result[0];
     }
 
     @Override
@@ -584,6 +608,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                         latitude[0] = location.getLatitude();
                         String currentAddress = EncodingFirebase.getCompleteAddressString(
                                 DetailOrderShipperActivity.this, latitude[0], longitude[0]);
+                        Log.d("Current Address", currentAddress);
 
 
                     }

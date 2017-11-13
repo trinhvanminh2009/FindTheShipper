@@ -6,6 +6,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,43 +29,45 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Locale;
 
 import butterknife.ButterKnife;
 import io.realm.Realm;
 
 /**
  * Created by trinh on 6/27/2017.
+ * Handle comment
  */
 
 public class CommentDialogHelpers extends DialogFragment {
     private Realm realm;
-    private ArrayList<CommentTemp>commentList;
+    private ArrayList<CommentTemp> commentList;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
     private String orderID;
-    private  EditText editComment;
-    private ImageButton btnComment;
+    private EditText editComment;
+    ImageButton btnComment;
+    RecyclerView.LayoutManager layoutManager;
     private long countComment[] = new long[2];
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getDialog().getWindow().getAttributes().windowAnimations = R.style.MyDialogAnimation;
-        View view = inflater.inflate(R.layout.dialog_comment, container,false);
+        View view = inflater.inflate(R.layout.dialog_comment, container, false);
         ButterKnife.bind(getActivity());
-        recyclerView = (RecyclerView)view.findViewById(R.id.listComment);
+        recyclerView = view.findViewById(R.id.listComment);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        realm.init(getActivity());
+        Realm.init(getActivity());
         initRealm();
-        Toolbar toolbar = (Toolbar)view.findViewById(R.id.toolBar);
+        Toolbar toolbar = view.findViewById(R.id.toolBar);
         toolbar.setTitle(getResources().getString(R.string.comment));
-        editComment = (EditText)view.findViewById(R.id.editComment);
-        btnComment = (ImageButton) view.findViewById(R.id.btnSendComment);
-        orderID = getArguments().getString("orderID");
+        editComment = view.findViewById(R.id.editComment);
+        btnComment = view.findViewById(R.id.btnSendComment);
+        orderID = getArguments().getString("orderID");//From button send comment in DetailOrderShipperActivity
         loadAllList();
-        DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order/"+orderID+"/comment");
+        DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order/" + orderID + "/comment");
 
         mDatabaseComment.addValueEventListener(new ValueEventListener() {
             @Override
@@ -82,25 +85,21 @@ public class CommentDialogHelpers extends DialogFragment {
             @Override
             public void onClick(View v) {
 
-                if(!editComment.getText().toString().trim().matches(""))
-                {
+                if (!editComment.getText().toString().trim().matches("")) {
                     insertComment();
                     editComment.setText("");
-                   // loadAllList();
-                }
-                else {
-                    TastyToast.makeText(getActivity(),"Please type a comment",TastyToast.LENGTH_SHORT,TastyToast.WARNING);
+                    // loadAllList();
+                } else {
+                    TastyToast.makeText(getActivity(), "Please type a comment", TastyToast.LENGTH_SHORT, TastyToast.WARNING);
                 }
             }
         });
         return view;
     }
 
-    private void insertComment()
-    {
+    private void insertComment() {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-        EncodingFirebase encodingFireBase = new EncodingFirebase();
-        String idComment = "cmt_"+ encodingFireBase.encodeString(getCurrentUser().getEmail())+"_"+orderID+"_"+countComment[0];
+        String idComment = "cmt_" + EncodingFirebase.encodeString(getCurrentUser().getEmail()) + "_" + orderID + "_" + countComment[0];
         mDatabase.child(orderID).child("comment").child(idComment).child("user").setValue(getCurrentUser().getEmail());
         mDatabase.child(orderID).child("comment").child(idComment).child("Content").setValue(editComment.getText().toString());
         mDatabase.child(orderID).child("comment").child(idComment).child("Time").setValue(getCurrentTime());
@@ -134,36 +133,26 @@ public class CommentDialogHelpers extends DialogFragment {
 */
     }
 
-    public String getCurrentTime()
-    {
+    public String getCurrentTime() {
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy-HH:mm", Locale.getDefault());
         return simpleDateFormat.format(new Date());
     }
 
-    public long countOrder()
-    {
 
-
-        return countComment[0];
-    }
-
-    public void initRealm()
-    {
+    public void initRealm() {
         realm = null;
         realm = Realm.getDefaultInstance();
     }
-    public void loadAllList()
-    {
-        try
-        {
-            DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order/"+orderID+"/comment");
+
+    public void loadAllList() {
+        try {
+            DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order/" + orderID + "/comment");
             mDatabaseComment.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     commentList = new ArrayList<>();
-                    for(DataSnapshot child: dataSnapshot.getChildren())
-                    {
+                    for (DataSnapshot child : dataSnapshot.getChildren()) {
                         final String key = child.getKey();
                         String content = dataSnapshot.child(key).child("Content").getValue(String.class);
                         String time = dataSnapshot.child(key).child("Time").getValue(String.class);
@@ -177,9 +166,11 @@ public class CommentDialogHelpers extends DialogFragment {
                     }
                     try {
                         Collections.sort(commentList, new SortCommentTempHelpers());
-                        adapter = new CustomAdapterListComment(getActivity(),commentList);
+                        adapter = new CustomAdapterListComment(getActivity(), commentList);
                         recyclerView.setAdapter(adapter);
-                    }catch (Exception e){}
+                    } catch (Exception e) {
+                        Log.e("Error", "Error in loadAllList");
+                    }
 
                 }
 
@@ -190,16 +181,14 @@ public class CommentDialogHelpers extends DialogFragment {
             });
 
 
-
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
+            Log.e("Error", "Error in loadAllList");
         }
     }
-    private User getCurrentUser()
-    {
+
+    private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
-        User user = realm.where(User.class).beginGroup().equalTo("email",currentUser.getEmail()).endGroup().findFirst();
-        return user;
+        return  realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
     }
 
     @Override
@@ -207,7 +196,7 @@ public class CommentDialogHelpers extends DialogFragment {
         super.onResume();
         int width = getResources().getDimensionPixelSize(R.dimen.comment_width);
         int height = getResources().getDimensionPixelSize(R.dimen.comment_height);
-        getDialog().getWindow().setLayout(width,height);
+        getDialog().getWindow().setLayout(width, height);
     }
 
     @Override
@@ -215,8 +204,6 @@ public class CommentDialogHelpers extends DialogFragment {
         super.onDestroy();
         realm.close();
     }
-
-
 
 
 }

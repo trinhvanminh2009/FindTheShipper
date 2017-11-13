@@ -1,9 +1,8 @@
 package com.minh.findtheshipper.models;
 
-import com.minh.findtheshipper.models.User;
-
 /**
  * Created by trinh on 7/5/2017.
+ *
  */
 
 public class CommentTemp {

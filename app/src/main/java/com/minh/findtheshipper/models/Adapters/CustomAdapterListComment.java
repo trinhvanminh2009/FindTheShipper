@@ -29,9 +29,10 @@ import java.util.List;
 public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapterListComment.ViewHolder> {
     private List<CommentTemp> commentList;
     private Context context;
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_comments,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_comments, parent, false);
         return new ViewHolder(view);
     }
 
@@ -42,8 +43,7 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        if(commentList.size() >0)
-        {
+        if (commentList.size() > 0) {
             /**
              * Get avatar and name of user from id comment in server.
              * Using library Glide to get image from url after decode url from server.
@@ -57,7 +57,7 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
                     String key = EncodingFirebase.getEmailFromUserID(comment.getIdComment());
                     String url = dataSnapshot.child(key).child("Avatar").getValue(String.class);
                     String name = dataSnapshot.child(key).child("Name").getValue(String.class);
-                    if(url != null && name != null && holder.txtUserName != null && holder.imgAvatar != null){
+                    if (url != null && name != null && holder.txtUserName != null && holder.imgAvatar != null) {
                         holder.txtUserName.setText(name);
                         Glide.with(context).load(EncodingFirebase.decodeString(url))
                                 .apply(RequestOptions.circleCropTransform()).thumbnail(0.5f).into(holder.imgAvatar);
@@ -72,12 +72,11 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
             });
 
             holder.txtContent.setText(comment.getContent());
-            holder.txtDateTime.setText(TimeAgoHelpers.getTimeAgo(comment.getDateTime(), context) );
+            holder.txtDateTime.setText(TimeAgoHelpers.getTimeAgo(comment.getDateTime(), context));
 
         }
 
     }
-
 
 
     @Override
@@ -90,12 +89,13 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
         private TextView txtUserName;
         private TextView txtContent;
         private TextView txtDateTime;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            imgAvatar = (ImageView)itemView.findViewById(R.id.imgAvatarComment);
-            txtUserName = (TextView)itemView.findViewById(R.id.txtUserNameComment);
-            txtContent = (TextView)itemView.findViewById(R.id.txtContentComment);
-            txtDateTime = (TextView)itemView.findViewById(R.id.txtDatetimeComment);
+            imgAvatar = (ImageView) itemView.findViewById(R.id.imgAvatarComment);
+            txtUserName = (TextView) itemView.findViewById(R.id.txtUserNameComment);
+            txtContent = (TextView) itemView.findViewById(R.id.txtContentComment);
+            txtDateTime = (TextView) itemView.findViewById(R.id.txtDatetimeComment);
 
         }
     }

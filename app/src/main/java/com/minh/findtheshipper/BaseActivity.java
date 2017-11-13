@@ -30,8 +30,6 @@ import com.minh.findtheshipper.Shop.HandleMapsActivity;
 import com.minh.findtheshipper.Shop.ListOrderCreatedFragment;
 import com.minh.findtheshipper.helpers.DialogHelpers;
 
-import zemin.notification.NotificationDelegater;
-
 
 /**
  * Created by trinh on 6/14/2017.
@@ -78,17 +76,17 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private void showNotification()
     {
-        NotificationDelegater.initialize(this,NotificationDelegater.GLOBAL);
-       /* final FragmentManager fragmentManager = getSupportFragmentManager();
+       // NotificationDelegater.initialize(this,NotificationDelegater.GLOBAL);
+        final FragmentManager fragmentManager = getSupportFragmentManager();
         final DialogHelpers dialogHelpers = new DialogHelpers();
 
-        dialogHelpers.show(fragmentManager,"New fragment");*/
+        dialogHelpers.show(fragmentManager,"New fragment");
 
     }
 
     private Drawable resizeImage(int resId, int w, int h)
     {
-        // load the origial Bitmap
+        // load the main Bitmap
         Bitmap BitmapOrg = BitmapFactory.decodeResource(getResources(), resId);
         int width = BitmapOrg.getWidth();
         int height = BitmapOrg.getHeight();

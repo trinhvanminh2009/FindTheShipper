@@ -1,138 +1,95 @@
 package com.minh.findtheshipper;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.TextView;
+import android.view.View;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-import com.minh.findtheshipper.models.Comment;
-import com.minh.findtheshipper.models.Order;
-import com.minh.findtheshipper.models.User;
-import com.sdsmdg.tastytoast.TastyToast;
+import com.minh.findtheshipper.Shipper.ListOrderHistoryFragment;
+import com.minh.findtheshipper.Shipper.ListOrderSavedShipperFragment;
+import com.minh.findtheshipper.Shipper.ListOrderShipperFragmentCommon;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Map;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import io.realm.Realm;
-import io.realm.RealmList;
-import io.realm.RealmResults;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by trinh on 6/16/2017.
  */
 
-public class Test extends BaseActivity {
-
-    @BindView(R.id.toolBar)
-    Toolbar toolbar;
-    private Realm realm;
-
+public class Test extends AppCompatActivity {
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
+        setContentView(R.layout.test);
+
+        toolbar =  findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Test");
-        NavigationDrawer(toolbar);
-        realm.init(this);
-        initRealm();
-        RetrievingData();
+        showToolBar();
 
+        viewPager = findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+
+        tabLayout =  findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
-    @Override
-    protected int getLayoutResource() {
-        return R.layout.dialog_fragment;
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        realm.executeTransaction(new Realm.Transaction() {
+    private void showToolBar() {
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle(R.string.are_you_sure_title);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void execute(Realm realm) {
-                RealmResults<Order> orders = realm.where(Order.class).findAll();
-                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-                for (int i = 0; i < orders.size(); i++) {
-                    mDatabase.child(orders.get(i).getOrderID()).child("Status").setValue(orders.get(i).getStatus());
-                    mDatabase.child(orders.get(i).getOrderID()).child("Start place").setValue(orders.get(i).getStartPoint());
-                    mDatabase.child(orders.get(i).getOrderID()).child("Finish place").setValue(orders.get(i).getFinishPoint());
-                    mDatabase.child(orders.get(i).getOrderID()).child("Advanced money").setValue(orders.get(i).getAdvancedMoney());
-                    mDatabase.child(orders.get(i).getOrderID()).child("Phone number").setValue(orders.get(i).getPhoneNumber());
-                    mDatabase.child(orders.get(i).getOrderID()).child("Ship Money").setValue(orders.get(i).getShipMoney());
-                    mDatabase.child(orders.get(i).getOrderID()).child("Note").setValue(orders.get(i).getNote());
-                    mDatabase.child(orders.get(i).getOrderID()).child("Distance").setValue(orders.get(i).getDistance());
-                    mDatabase.child(orders.get(i).getOrderID()).child("Datetime").setValue(orders.get(i).getDateTime());
-                    mDatabase.child(orders.get(i).getOrderID()).child("Save Order").setValue(orders.get(i).getSaveOrder());
-                    RealmList<Comment> comments = orders.get(i).getComments();
-                    if (comments.size() > 0) {
-                        for (int j = 0; j < comments.size(); j++) {
-                            mDatabase.child(orders.get(i).getOrderID()).child("comment").child(comments.get(j).getIdComment()).child("user").setValue(comments.get(j).getUser().getEmail());
-                            mDatabase.child(orders.get(i).getOrderID()).child("comment").child(comments.get(j).getIdComment()).child("Content").setValue(comments.get(j).getContent());
-                            mDatabase.child(orders.get(i).getOrderID()).child("comment").child(comments.get(j).getIdComment()).child("Time").setValue(comments.get(j).getDateTime());
-
-                        }
-                    }
-
-                }
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
-
+    }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new ListOrderSavedShipperFragment(), "ONE");
+        adapter.addFragment(new ListOrderShipperFragmentCommon(), "THREE");
+        viewPager.setAdapter(adapter);
     }
 
-    public void initRealm() {
-        realm = null;
-        realm = Realm.getDefaultInstance();
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        private void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
     }
 
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        realm.close();
-    }
-
-    public void RetrievingData() {
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                RealmResults<Order> orders = realm.where(Order.class).findAll();
-                for (int i = 0; i < orders.size(); i++) {
-                    final DatabaseReference ref = database.getReference("order/" + orders.get(i).getOrderID());
-                    ref.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            String text = dataSnapshot.child("Start place").getValue(String.class);
-                            TastyToast.makeText(Test.this, text, TastyToast.LENGTH_SHORT, TastyToast.SUCCESS);
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
-                }
-
-            }
-        });
-
-
-    }
 }

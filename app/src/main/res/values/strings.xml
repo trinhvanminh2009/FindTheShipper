@@ -63,6 +63,7 @@
     <string name="edit">Edit</string>
     <string name="save">Save</string>
     <string name="get_order">Get Order</string>
+    <string name="cancel_order">Cancel order</string>
     <string name="delete">Delete</string>
     <string name="title">Title</string>
     <string name="content">Content</string>
@@ -106,6 +107,7 @@
     <string name="status_take_order_already_ordered">Another delivery man took this orders!</string>
     <string name="status_want_to_take_order">Are you sure want to take orders</string>
     <string name="status_want_to_take_order_title">You can take orders</string>
+    <string name="status_want_to_cancel_order">This action cannot be undone.</string>
     <string name="success">Success!</string>
     <string name="status_took_order">You took orders! Please waiting for notification or you can contact shop!  </string>
     <string name="status_already_took_orders">You took orders! Please check in list orders taken!</string>
@@ -194,4 +196,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_main3">Main3Activity</string>
 </resources>

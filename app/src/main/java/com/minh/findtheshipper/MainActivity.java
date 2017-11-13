@@ -159,6 +159,11 @@ public class MainActivity extends FragmentActivity {
                 Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
                 startActivity(intent);
             }
+            else{
+                finish();
+                startActivity(getIntent());
+                Log.e("Null","Email of current user is null");
+            }
 
         }
     }

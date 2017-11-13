@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
+import com.minh.findtheshipper.models.Adapters.CustomAdapterListViewHistoryOrderItem;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListViewOrderItem;
 import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.OrderTemp;
@@ -32,14 +33,15 @@ public class ListOrderHistoryFragment extends Fragment {
     private RecyclerView recyclerView;
     private Realm realm;
     private RecyclerView.Adapter adapter;
-    RecyclerView.LayoutManager layoutManager;
     private ArrayList<OrderTemp> orderList;
+    RecyclerView.LayoutManager layoutManager;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_recycle_view, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
+        recyclerView = view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         Realm.init(getActivity());
@@ -99,15 +101,16 @@ public class ListOrderHistoryFragment extends Fragment {
                                 orderTemp.setSavedOrder(saveOrder);
                                 orderList.add(orderTemp);
                             }
-                            try {
-                                Collections.sort(orderList, new SortOrderTempHelpers());
-                                adapter = new CustomAdapterListViewOrderItem(orderList, getContext());
-                                recyclerView.setAdapter(adapter);
-                            } catch (Exception e) {
-                                Log.e("Error", "Error in loadAllList of ListOrderShipperFragmentCommon");
-                            }
+
                         }
 
+                    }
+                    try {
+                        Collections.sort(orderList, new SortOrderTempHelpers());
+                        adapter = new CustomAdapterListViewHistoryOrderItem(orderList, getContext());
+                        recyclerView.setAdapter(adapter);
+                    } catch (Exception e) {
+                        Log.e("Error", "Error in loadAllList of ListOrderShipperFragmentCommon");
                     }
                 }
 
