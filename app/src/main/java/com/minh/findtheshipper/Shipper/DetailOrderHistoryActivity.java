@@ -61,6 +61,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import at.markushi.ui.CircleButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -94,7 +95,9 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
     @BindView(R.id.txtDistance)
     TextView txtDistance;
     @BindView(R.id.btnCancelOrder)
-    Button btnCancelOrder;
+    at.markushi.ui.CircleButton btnCancelOrder;
+    @BindView(R.id.btnDirection)
+    at.markushi.ui.CircleButton btnDirection;
     @BindView(R.id.btnCall)
     at.markushi.ui.CircleButton btnCall;
     @BindView(R.id.btnComment)
@@ -119,6 +122,7 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
     private Realm realm;
     private GoogleMap mMap;
     private String[] orderKey = new String[2];
+    private String[] placeToGetOrder = new String[2];
 
     // This variable to know data added on server or didn't
     //Because we check on data change, after add delivery man
@@ -212,7 +216,7 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
         realm = Realm.getDefaultInstance();
     }
 
-    @OnClick({R.id.btnCancelOrder, R.id.btnCall, R.id.btnComment, R.id.btnSave, R.id.btnDelete})
+    @OnClick({R.id.btnCancelOrder, R.id.btnCall, R.id.btnComment, R.id.btnSave, R.id.btnDelete, R.id.btnDirection})
     public void eventClick(final View v) {
         SweetAlertDialog sweetAlertDialog;
         switch (v.getId()) {
@@ -401,6 +405,12 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
                 sweetAlertDialog.show();
                 finish();
                 break;
+            case R.id.btnDirection:
+                Intent intent = new Intent(DetailOrderHistoryActivity.this, DirectionShipper.class);
+                intent.putExtra("place",placeToGetOrder);
+                startActivity(intent);
+                break;
+
         }
 
     }
@@ -468,8 +478,8 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
                 final String orderKey = key;
                 userEmailFromServer = EncodingFirebase.convertToRightEmail(key);
                 String status = dataSnapshot.child(orderKey).child("Status").getValue(String.class);
-                String startPlace = dataSnapshot.child(orderKey).child("Start place").getValue(String.class);
-                String finishPlace = dataSnapshot.child(orderKey).child("Finish place").getValue(String.class);
+                placeToGetOrder[0] = dataSnapshot.child(orderKey).child("Start place").getValue(String.class);
+                placeToGetOrder[1] = dataSnapshot.child(orderKey).child("Finish place").getValue(String.class);
                 String advancedMoney = dataSnapshot.child(orderKey).child("Advanced money").getValue(String.class);
                 String phoneNumber = dataSnapshot.child(orderKey).child("Phone number").getValue(String.class);
                 String shipMoney = dataSnapshot.child(orderKey).child("Ship Money").getValue(String.class);
@@ -477,13 +487,13 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
                 String distance = dataSnapshot.child(orderKey).child("Distance").getValue(String.class);
                 String dateTime = dataSnapshot.child(orderKey).child("Datetime").getValue(String.class);
                 Boolean saveOrder = dataSnapshot.child(orderKey).child("Save Order").getValue(Boolean.class);
-                String shortStartPlace = EncodingFirebase.getShortAddress(startPlace);
-                String shortFinishPlace = EncodingFirebase.getShortAddress(finishPlace);
+                String shortStartPlace = EncodingFirebase.getShortAddress( placeToGetOrder[0]);
+                String shortFinishPlace = EncodingFirebase.getShortAddress(placeToGetOrder[1]);
 
                 order.setOrderID(orderKey);
                 order.setStatus(status);
-                order.setStartPoint(startPlace);
-                order.setFinishPoint(finishPlace);
+                order.setStartPoint( placeToGetOrder[0]);
+                order.setFinishPoint(placeToGetOrder[1]);
                 order.setAdvancedMoney(advancedMoney);
                 order.setShipMoney(shipMoney);
                 order.setPhoneNumber(phoneNumber);
@@ -500,7 +510,7 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
                     txtNote.setText(note);
                     txtDistance.setText(distance);
                     txtTimeAgo.setText(TimeAgoHelpers.getTimeAgo(dateTime, DetailOrderHistoryActivity.this));
-                    showPathOnMap(startPlace, finishPlace);
+                    showPathOnMap(placeToGetOrder[0], placeToGetOrder[1]);
                 }
 
 
@@ -650,7 +660,7 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
                     polylineOptions.add(route.points.get(i));
                 }
                 polylinePaths.add(mMap.addPolyline(polylineOptions));
-        }
+            }
 
         }
     }

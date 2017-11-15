@@ -79,16 +79,14 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".DistanceMapsActivity" />
-        <activity android:name=".Test">
+        <activity android:name=".Test"></activity>
+        <activity android:name=".FragmentActivity" />
+        <activity android:name=".Shipper.FragmentContainerShipper">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".FragmentActivity" />
-        <activity android:name=".Shipper.FragmentContainerShipper">
-
         </activity>
         <activity android:name=".Shop.HandleMapsActivity" />
         <activity
@@ -110,7 +108,9 @@
         <service android:name=".helpers.listeners.NotificationExtenderHelper" />
 
         <activity android:name=".Shipper.DetailOrderHistoryActivity" />
-
+        <activity
+            android:name=".Shipper.DirectionShipper"
+            android:label="@string/title_activity_direction_shipper"></activity>
     </application>
 
 </manifest>

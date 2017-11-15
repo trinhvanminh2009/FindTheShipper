@@ -123,15 +123,14 @@
             android:name="com.minh.findtheshipper.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name="com.minh.findtheshipper.DistanceMapsActivity" />
-        <activity android:name="com.minh.findtheshipper.Test" >
+        <activity android:name="com.minh.findtheshipper.Test" />
+        <activity android:name="com.minh.findtheshipper.FragmentActivity" />
+        <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.minh.findtheshipper.FragmentActivity" />
-        <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" >
         </activity>
         <activity android:name="com.minh.findtheshipper.Shop.HandleMapsActivity" />
         <activity
@@ -153,6 +152,9 @@
         <service android:name="com.minh.findtheshipper.helpers.listeners.NotificationExtenderHelper" />
 
         <activity android:name="com.minh.findtheshipper.Shipper.DetailOrderHistoryActivity" />
+        <activity
+            android:name="com.minh.findtheshipper.Shipper.DirectionShipper"
+            android:label="@string/title_activity_direction_shipper" />
 
         <meta-data
             android:name="android.support.VERSION"

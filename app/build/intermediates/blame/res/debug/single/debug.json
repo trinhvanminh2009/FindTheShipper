@@ -184,6 +184,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\anim\\fab_return_rotation.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_cancel.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xhdpi\\ic_cancel.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_messenger_bubble_large_white.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-messenger-4.27.0.aar\\7eb4a191b642941bde36b30be520dd0a\\res\\drawable-mdpi-v4\\messenger_bubble_large_white.png"
     },
@@ -514,6 +518,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw_amu_default_balloon.kml.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\android-maps-utils-0.5.aar\\282f66f175368ec9e1e7f251bf84304d\\res\\raw\\amu_default_balloon.kml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_cancel.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_cancel.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_com_facebook_tooltip_black_bottomnub.png.flat",
@@ -1272,6 +1280,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_motorcycle.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_cancel.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-mdpi\\ic_cancel.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\e5c15c865bf85240ca2407d47d6a7f62\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1510,6 +1522,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\raw_amu_unsupported.kml.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\android-maps-utils-0.5.aar\\282f66f175368ec9e1e7f251bf84304d\\res\\raw\\amu_unsupported.kml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_direction.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-hdpi\\ic_direction.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -1932,6 +1948,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\e5c15c865bf85240ca2407d47d6a7f62\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_direction.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xhdpi\\ic_direction.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.0.2.aar\\527bef1d40ae43667c070627c2026b5c\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
@@ -2050,6 +2070,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_singlechoice_material.xml.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\e5c15c865bf85240ca2407d47d6a7f62\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_cancel.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-hdpi\\ic_cancel.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action_tombstone.xml.flat",
@@ -2408,6 +2432,10 @@
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-mdpi\\ic_avatar.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_direction.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_direction.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\e5c15c865bf85240ca2407d47d6a7f62\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
@@ -2448,6 +2476,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.5.1.aar\\cbe671b63942a4e1122ca2966371e2bb\\res\\anim\\success_bow_roate.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_direction.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-mdpi\\ic_direction.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_choose_place.xml.flat",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_choose_place.xml"
     },
@@ -2478,6 +2510,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_comments.xml.flat",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\list_comments.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_direction_shipper.xml.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_direction_shipper.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_floating_button.png.flat",

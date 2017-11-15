@@ -112,6 +112,7 @@
     <string name="status_took_order">You took orders! Please waiting for notification or you can contact shop!  </string>
     <string name="status_already_took_orders">You took orders! Please check in list orders taken!</string>
     <string name="notification_state_2">want to get this order. Please confirm to continue!</string>
+    <string name="direction">Direction</string>
     <string-array name="change_language_array">
         <item>Vietnamese</item>
         <item>English</item>
@@ -203,4 +204,5 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_main3">Main3Activity</string>
+    <string name="title_activity_direction_shipper">Map</string>
 </resources>

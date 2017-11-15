@@ -627,9 +627,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
             addUser();
 
         }
-
-        User user = realm.where(User.class).equalTo("email", currentUser.getEmail()).findFirst();
-        return user;
+        return realm.where(User.class).equalTo("email", currentUser.getEmail()).findFirst();
     }
 
     public void initRealm() {
@@ -702,6 +700,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         updateMyLocation();
         updateUsersOnlineFromServer();
 
+
     }
 
     private boolean checkReady() {
@@ -716,6 +715,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
         DatabaseReference userDatabase = FirebaseDatabase.getInstance().getReference();
         userDatabase.child("user").orderByChild("Online").equalTo(true).addValueEventListener(new ValueEventListener() {
+            @SuppressWarnings("ConstantConditions")
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Marker[] markers;

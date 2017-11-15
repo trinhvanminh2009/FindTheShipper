@@ -91,49 +91,49 @@ public final class R {
         public static final int common_google_signin_btn_text_light_normal_background = 0x7f080091;
         public static final int googleg_disabled_color_18 = 0x7f0800a0;
         public static final int googleg_standard_color_18 = 0x7f0800a1;
-        public static final int places_ic_clear = 0x7f0800fa;
-        public static final int places_ic_search = 0x7f0800fb;
-        public static final int powered_by_google_dark = 0x7f0800fc;
-        public static final int powered_by_google_light = 0x7f0800fd;
+        public static final int places_ic_clear = 0x7f0800fc;
+        public static final int places_ic_search = 0x7f0800fd;
+        public static final int powered_by_google_dark = 0x7f0800fe;
+        public static final int powered_by_google_light = 0x7f0800ff;
     }
     public static final class id {
         public static final int adjust_height = 0x7f09001c;
         public static final int adjust_width = 0x7f09001d;
         public static final int auto = 0x7f090023;
-        public static final int button = 0x7f09003b;
-        public static final int center = 0x7f090041;
-        public static final int dark = 0x7f090063;
-        public static final int hybrid = 0x7f09008f;
-        public static final int icon_only = 0x7f090092;
-        public static final int light = 0x7f0900a8;
-        public static final int none = 0x7f0900f4;
-        public static final int normal = 0x7f0900f5;
-        public static final int place_autocomplete_clear_button = 0x7f090107;
-        public static final int place_autocomplete_powered_by_google = 0x7f09010a;
-        public static final int place_autocomplete_prediction_primary_text = 0x7f09010b;
-        public static final int place_autocomplete_prediction_secondary_text = 0x7f09010c;
-        public static final int place_autocomplete_progress = 0x7f09010d;
-        public static final int place_autocomplete_search_button = 0x7f09010e;
-        public static final int place_autocomplete_search_input = 0x7f09010f;
-        public static final int place_autocomplete_separator = 0x7f090110;
-        public static final int radio = 0x7f090116;
-        public static final int satellite = 0x7f09011d;
-        public static final int standard = 0x7f090143;
-        public static final int terrain = 0x7f09014f;
-        public static final int text = 0x7f090150;
-        public static final int text2 = 0x7f090151;
-        public static final int toolbar = 0x7f090161;
-        public static final int wide = 0x7f09018e;
-        public static final int wrap_content = 0x7f090192;
+        public static final int button = 0x7f09003c;
+        public static final int center = 0x7f090042;
+        public static final int dark = 0x7f090064;
+        public static final int hybrid = 0x7f090090;
+        public static final int icon_only = 0x7f090093;
+        public static final int light = 0x7f0900a9;
+        public static final int none = 0x7f0900f5;
+        public static final int normal = 0x7f0900f6;
+        public static final int place_autocomplete_clear_button = 0x7f090108;
+        public static final int place_autocomplete_powered_by_google = 0x7f09010b;
+        public static final int place_autocomplete_prediction_primary_text = 0x7f09010c;
+        public static final int place_autocomplete_prediction_secondary_text = 0x7f09010d;
+        public static final int place_autocomplete_progress = 0x7f09010e;
+        public static final int place_autocomplete_search_button = 0x7f09010f;
+        public static final int place_autocomplete_search_input = 0x7f090110;
+        public static final int place_autocomplete_separator = 0x7f090111;
+        public static final int radio = 0x7f090117;
+        public static final int satellite = 0x7f09011e;
+        public static final int standard = 0x7f090144;
+        public static final int terrain = 0x7f090150;
+        public static final int text = 0x7f090151;
+        public static final int text2 = 0x7f090152;
+        public static final int toolbar = 0x7f090162;
+        public static final int wide = 0x7f09018f;
+        public static final int wrap_content = 0x7f090193;
     }
     public static final class integer {
         public static final int google_play_services_version = 0x7f0a0007;
     }
     public static final class layout {
-        public static final int place_autocomplete_fragment = 0x7f0b007b;
-        public static final int place_autocomplete_item_powered_by_google = 0x7f0b007c;
-        public static final int place_autocomplete_item_prediction = 0x7f0b007d;
-        public static final int place_autocomplete_progress = 0x7f0b007e;
+        public static final int place_autocomplete_fragment = 0x7f0b007c;
+        public static final int place_autocomplete_item_powered_by_google = 0x7f0b007d;
+        public static final int place_autocomplete_item_prediction = 0x7f0b007e;
+        public static final int place_autocomplete_progress = 0x7f0b007f;
     }
     public static final class string {
         public static final int common_google_play_services_enable_button = 0x7f0f004e;
@@ -153,10 +153,10 @@ public final class R {
         public static final int common_open_on_phone = 0x7f0f005c;
         public static final int common_signin_button_text = 0x7f0f005d;
         public static final int common_signin_button_text_long = 0x7f0f005e;
-        public static final int fcm_fallback_notification_channel_label = 0x7f0f031f;
-        public static final int gcm_fallback_notification_channel_label = 0x7f0f0323;
-        public static final int place_autocomplete_clear_button = 0x7f0f0741;
-        public static final int place_autocomplete_search_hint = 0x7f0f0742;
+        public static final int fcm_fallback_notification_channel_label = 0x7f0f0320;
+        public static final int gcm_fallback_notification_channel_label = 0x7f0f0324;
+        public static final int place_autocomplete_clear_button = 0x7f0f0742;
+        public static final int place_autocomplete_search_hint = 0x7f0f0743;
     }
     public static final class styleable {
         public static final int[] LoadingImageView = { 0x7f040064, 0x7f0400e7, 0x7f0400e8 };

@@ -36,11 +36,19 @@ public class DirectionHelpers {
     private DirectionFinderListeners directionFinderListeners;
     private String origin;
     private String destination;
+    private String stopPlace;
 
     public DirectionHelpers(DirectionFinderListeners directionFinderListeners, String origin, String destination) {
         this.directionFinderListeners = directionFinderListeners;
         this.origin = origin;
         this.destination = destination;
+    }
+
+    public DirectionHelpers(DirectionFinderListeners directionFinderListeners, String origin, String destination, String stopPlace) {
+        this.directionFinderListeners = directionFinderListeners;
+        this.origin = origin;
+        this.destination = destination;
+        this.stopPlace = stopPlace;
     }
 
     public void execute() throws UnsupportedEncodingException {
@@ -53,7 +61,7 @@ public class DirectionHelpers {
     private String createURL() throws UnsupportedEncodingException {
         String urlOrigin = URLEncoder.encode(origin, "utf-8");
         String urlDestination = URLEncoder.encode(destination, "utf-8");
-        Log.e("AAAA",DIRECTION_URL_API + "origin=" + urlOrigin + "&destination=" + urlDestination + "&key=" + GOOGLE_API_SERVER_KEY);
+        Log.e("Direction Helpers", DIRECTION_URL_API + "origin=" + urlOrigin + "&destination=" + urlDestination + "&key=" + GOOGLE_API_SERVER_KEY);
         return DIRECTION_URL_API + "origin=" + urlOrigin + "&destination=" + urlDestination + "&key=" + GOOGLE_API_SERVER_KEY;
 
     }

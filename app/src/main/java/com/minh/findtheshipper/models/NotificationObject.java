@@ -19,6 +19,15 @@ public class NotificationObject {
     public NotificationObject() {
     }
 
+
+    public NotificationObject( int icon, String content, String title, String dateTime, boolean showAgain) {
+        this.icon = icon;
+        this.content = content;
+        this.title = title;
+        this.dateTime = dateTime;
+        this.showAgain = showAgain;
+    }
+
     public String getNotificationID() {
         return notificationID;
     }

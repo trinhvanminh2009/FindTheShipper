@@ -5,10 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/custom_click"
     android:orientation="vertical">
-<android.support.design.widget.AppBarLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:theme="@style/MaterialBaseTheme.Light.DarkToolbar">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
@@ -16,25 +13,16 @@
         android:background="@color/md_green_700"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-    </android.support.v7.widget.Toolbar>
-    <android.support.design.widget.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabMode="fixed"
-        app:tabGravity="fill">
 
-        <android.support.v4.view.ViewPager
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </android.support.v4.view.ViewPager>
-    </android.support.design.widget.TabLayout>
+    </android.support.v7.widget.Toolbar>
+
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/tabContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tabContent"
-        app:tabMode="fixed"
+        android:fillViewport="false"
         app:tabGravity="fill"
-        android:fillViewport="false">
+        app:tabMode="fixed">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,17 +77,7 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/txtPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true"
-                    android:text="@string/about_us"
-                    android:textColor="@color/md_red_800"
-                    android:textSize="17sp"
 
-                    android:textStyle="bold" />
             </RelativeLayout>
 
 
@@ -123,8 +101,8 @@
                         android:id="@+id/txtDistance"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/about_us"
                         android:layout_marginTop="5dp"
+                        android:text="@string/about_us"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -149,30 +127,83 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/btnCancelOrder"
-                    style="@style/Base.Widget.AppCompat.Button.Borderless"
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
+                <TextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:background="@color/md_green_700"
-                    android:text="@string/cancel_order"
-                    android:textColor="@color/white" />
+                    android:layout_centerInParent="true"
+                    android:text="@string/about_us"
+                    android:textColor="@color/md_red_800"
+                    android:textSize="17sp"
+
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#bb767373" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/btnDirection"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/ic_direction"
+                    app:cb_color="@color/md_green_700"
+                    app:cb_pressedRingWidth="8dp">
+
+                </at.markushi.ui.CircleButton>
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/btnCancelOrder"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_cancel"
+                    app:cb_color="@color/md_green_700"
+                    app:cb_pressedRingWidth="8dp">
+
+                </at.markushi.ui.CircleButton>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/direction"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:text="@string/cancel"/>
             </RelativeLayout>
 
             <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/stateProgressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/stateProgressBar"
                 android:layout_marginTop="20dp"
+                app:spb_checkStateCompleted="true"
+                app:spb_currentStateDescriptionColor="#009688"
                 app:spb_maxStateNumber="four"
                 app:spb_stateBackgroundColor="#BDBDBD"
+                app:spb_stateDescriptionColor="#808080"
                 app:spb_stateForegroundColor="#009688"
                 app:spb_stateNumberBackgroundColor="#808080"
-                app:spb_stateNumberForegroundColor="#eeeeee"
-                app:spb_currentStateDescriptionColor="#009688"
-                app:spb_stateDescriptionColor="#808080"
-                app:spb_checkStateCompleted="true"/>
+                app:spb_stateNumberForegroundColor="#eeeeee" />
+
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
@@ -190,6 +221,7 @@
                     android:src="@drawable/ic_comment"
                     app:cb_color="@color/md_green_700"
                     app:cb_pressedRingWidth="8dp">
+
                 </at.markushi.ui.CircleButton>
 
 
@@ -214,13 +246,14 @@
                     app:cb_pressedRingWidth="8dp">
 
                 </at.markushi.ui.CircleButton>
+
                 <at.markushi.ui.CircleButton
                     android:id="@+id/btnDelete"
                     android:layout_width="80dp"
-                    android:visibility="gone"
                     android:layout_height="80dp"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/ic_delete_2"
+                    android:visibility="gone"
                     app:cb_color="@color/md_green_700"
                     app:cb_pressedRingWidth="8dp">
 
@@ -247,12 +280,12 @@
                     android:textColor="@color/md_black_1000" />
 
                 <TextView
+                    android:id="@+id/tvSaveOrDelete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="25dp"
                     android:text="@string/save"
-                    android:id="@+id/tvSaveOrDelete"
                     android:textColor="@color/md_black_1000" />
             </RelativeLayout>
 
@@ -408,10 +441,6 @@
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
-</android.support.design.widget.AppBarLayout>
-
-
-
 
 
 </LinearLayout>
