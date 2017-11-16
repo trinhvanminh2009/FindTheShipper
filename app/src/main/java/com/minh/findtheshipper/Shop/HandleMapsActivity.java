@@ -83,11 +83,12 @@ import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.GlideApp;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
-import com.minh.findtheshipper.models.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
 import com.minh.findtheshipper.models.ListControl;
-import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.RealmObject.NotificationData;
+import com.minh.findtheshipper.models.RealmObject.Order;
 import com.minh.findtheshipper.models.Route;
-import com.minh.findtheshipper.models.User;
+import com.minh.findtheshipper.models.RealmObject.User;
 import com.minh.findtheshipper.utils.PermissionUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 
@@ -178,12 +179,12 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         Realm.init(HandleMapsActivity.this);
+        initRealm();
         setSupportActionBar(toolbar);
         listControls.add(new ListControl(R.drawable.ic_starting_point, ""));
         listControls.add(new ListControl(R.drawable.ic_finish_point, ""));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.created_order);
-        initRealm();
         startService(new Intent(this, LocationService.class));
         handleAutoCompleteButton();
         //Count order on server before create orders. Because server is thread slow.
@@ -496,8 +497,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     public void handleCreateNewOrder() {
         editStartPlace.setText(listControls.get(0).getContent());
         editPhoneNumber.setText(getCurrentUser().getPhoneNumber());
-
-
     }
 
     @OnClick(R.id.btnFloatingAddOrder)
@@ -915,13 +914,18 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_list, menu);
-
+        badgerCount = getNotificationData().getNumberUnread();
         ActionItemBadge.update(this, menu.findItem(R.id.item_notifycation),
                 resizeImage(R.drawable.ic_notifycation, 200, 200), ActionItemBadge.BadgeStyles.RED, badgerCount);
 
 
         return true;
     }
+
+    private NotificationData getNotificationData(){
+        return realm.where(NotificationData.class).findFirst();
+    }
+
 
 
     @Override

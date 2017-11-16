@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrderSaved;
-import com.minh.findtheshipper.models.CurrentUser;
-import com.minh.findtheshipper.models.Order;
-import com.minh.findtheshipper.models.User;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.Order;
+import com.minh.findtheshipper.models.RealmObject.User;
 
 import java.util.ArrayList;
 

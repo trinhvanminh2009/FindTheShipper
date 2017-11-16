@@ -16,9 +16,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListViewNotification;
-import com.minh.findtheshipper.models.CurrentUser;
 import com.minh.findtheshipper.models.NotificationObject;
-import com.minh.findtheshipper.models.User;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.User;
 
 import java.util.ArrayList;
 
@@ -48,6 +48,7 @@ public class DialogHelpers extends DialogFragment {
         recyclerView = view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
+        notificationObjectArrayList = new ArrayList<>();
         loadNotification();
         return view;
     }
@@ -71,7 +72,7 @@ public class DialogHelpers extends DialogFragment {
         dataNotification.child("order").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                notificationObjectArrayList = new ArrayList<>();
+
                 for (DataSnapshot order : dataSnapshot.getChildren()) {
                     String key = order.getKey();
                     //Get key from Realm- object and compare with key from server
@@ -103,6 +104,7 @@ public class DialogHelpers extends DialogFragment {
                                     }
                                     adapter = new CustomAdapterListViewNotification(getContext(), notificationObjectArrayList);
                                     recyclerView.setAdapter(adapter);
+
                                 }
 
                                 @Override
@@ -110,6 +112,7 @@ public class DialogHelpers extends DialogFragment {
 
                                 }
                             });
+
                         }
                     }
 
@@ -121,12 +124,15 @@ public class DialogHelpers extends DialogFragment {
 
             }
         });
+
     }
 
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
         return realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
     }
+
+
 
     @SuppressWarnings("ConstantConditions")
     @Override
@@ -137,6 +143,7 @@ public class DialogHelpers extends DialogFragment {
         getDialog().getWindow().setLayout(width, height);
 
     }
+
 
     @Override
     public void onDestroy() {

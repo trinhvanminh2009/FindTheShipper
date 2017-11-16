@@ -21,7 +21,7 @@ import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.Shipper.DetailOrderShipperActivity;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
-import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.RealmObject.Order;
 
 import java.util.List;
 

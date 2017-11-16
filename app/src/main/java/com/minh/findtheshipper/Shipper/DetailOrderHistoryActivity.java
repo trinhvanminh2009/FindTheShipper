@@ -19,7 +19,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,11 +47,11 @@ import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
-import com.minh.findtheshipper.models.CurrentUser;
-import com.minh.findtheshipper.models.Order;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.Order;
 import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.Route;
-import com.minh.findtheshipper.models.User;
+import com.minh.findtheshipper.models.RealmObject.User;
 import com.minh.findtheshipper.utils.AnimationUtils;
 import com.sdsmdg.tastytoast.TastyToast;
 
@@ -61,7 +60,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import at.markushi.ui.CircleButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

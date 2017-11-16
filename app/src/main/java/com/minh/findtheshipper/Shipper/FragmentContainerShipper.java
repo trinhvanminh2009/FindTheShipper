@@ -46,7 +46,9 @@ import com.minh.findtheshipper.FragmentActivity;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.helpers.GlideApp;
-import com.minh.findtheshipper.models.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.NotificationData;
+import com.minh.findtheshipper.models.RealmObject.User;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import butterknife.BindView;
@@ -60,7 +62,7 @@ public class FragmentContainerShipper extends FragmentActivity {
      */
     @BindView(R.id.toolBar)
     Toolbar toolbar;
-    private int badgerCount = 10;
+    private int badgerCount = 0;
     private static final int REQUEST = 112;
     private Context context = this;
     private Realm realm;
@@ -138,7 +140,6 @@ public class FragmentContainerShipper extends FragmentActivity {
         }
     }
 
-
     public void initRealm() {
         realm = null;
         realm = Realm.getDefaultInstance();
@@ -163,7 +164,7 @@ public class FragmentContainerShipper extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_list, menu);
-        if (badgerCount > 0) {
+        if (badgerCount >= 0) {
             ActionItemBadge.update(this, menu.findItem(R.id.item_notifycation), resizeImage(R.drawable.ic_notifycation, 200, 200), ActionItemBadge.BadgeStyles.RED, badgerCount);
 
         }
@@ -175,19 +176,22 @@ public class FragmentContainerShipper extends FragmentActivity {
         switch (item.getItemId()) {
             case R.id.item_notifycation:
                 showNotification();
-                //badgerCount++;
-                // ActionItemBadge.update(item,badgerCount);
+                badgerCount =  getNotificationData().getNumberUnread();
+                 ActionItemBadge.update(item,badgerCount);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    private NotificationData getNotificationData(){
+        return realm.where(NotificationData.class).findFirst();
+    }
+
     private void showNotification() {
         final FragmentManager fragmentManager = getSupportFragmentManager();
         final DialogHelpers dialogHelpers = new DialogHelpers();
         dialogHelpers.show(fragmentManager, "New fragment");
-
     }
 
     @Override
@@ -207,7 +211,7 @@ public class FragmentContainerShipper extends FragmentActivity {
 
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
 
             }
         }, 2000);

@@ -21,8 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.models.Adapters.CustomAdapterListComment;
 import com.minh.findtheshipper.models.CommentTemp;
-import com.minh.findtheshipper.models.CurrentUser;
-import com.minh.findtheshipper.models.User;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.User;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import java.text.SimpleDateFormat;

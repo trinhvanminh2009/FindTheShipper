@@ -5,9 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -22,7 +20,7 @@ import com.kofigyan.stateprogressbar.StateProgressBar;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
-import com.minh.findtheshipper.models.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
 import com.minh.findtheshipper.models.OrderTemp;
 import com.sdsmdg.tastytoast.TastyToast;
 

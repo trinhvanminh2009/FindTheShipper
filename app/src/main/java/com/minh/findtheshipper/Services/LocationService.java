@@ -11,8 +11,8 @@ import android.util.Log;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
-import com.minh.findtheshipper.models.CurrentUser;
-import com.minh.findtheshipper.models.User;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.User;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import io.realm.Realm;

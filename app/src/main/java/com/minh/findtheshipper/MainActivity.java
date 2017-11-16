@@ -24,8 +24,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.minh.findtheshipper.Shop.HandleMapsActivity;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
-import com.minh.findtheshipper.models.CurrentUser;
-import com.minh.findtheshipper.models.User;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.NotificationData;
+import com.minh.findtheshipper.models.RealmObject.User;
 import com.minh.findtheshipper.models.UserTemp;
 import com.onesignal.OneSignal;
 import com.sdsmdg.tastytoast.TastyToast;
@@ -40,7 +41,6 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 public class MainActivity extends FragmentActivity {
 
@@ -64,6 +64,7 @@ public class MainActivity extends FragmentActivity {
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                 .unsubscribeWhenNotificationsAreDisabled(true)
                 .init();
+        createNotificationRealm();
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         progress = new ProgressDialog(MainActivity.this);
@@ -153,6 +154,7 @@ public class MainActivity extends FragmentActivity {
             });
 
         } else {
+            realm = Realm.getDefaultInstance();
             if (getCurrentUser().getEmail() != null) {
                 email = getCurrentUser().getEmail();
                 OneSignal.sendTag("email", email);
@@ -190,5 +192,17 @@ public class MainActivity extends FragmentActivity {
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
         return realm.where(User.class).equalTo("email", currentUser.getEmail()).findFirst();
+    }
+
+    private void createNotificationRealm(){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                NotificationData notificationData = realm.createObject(NotificationData.class,"nt0");
+                notificationData.setTotalNotification(0);
+                notificationData.setNumberUnread(0);
+                realm.insertOrUpdate(notificationData);
+            }
+        });
     }
 }
