@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.sdsmdg.tastytoast:tastytoast-0.1.1">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tastytoast-0.1.1.aar/19815e89922ef4eff6492970202905fe/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tastytoast-0.1.1.aar/19815e89922ef4eff6492970202905fe/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tastytoast-0.1.1.aar/b6376e222702aa60b0412ea12c17ca4a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tastytoast-0.1.1.aar/b6376e222702aa60b0412ea12c17ca4a/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

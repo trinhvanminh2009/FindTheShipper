@@ -18,7 +18,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
-import com.minh.findtheshipper.models.Adapters.CustomAdapterListViewOrderItem;
+import com.minh.findtheshipper.models.Adapters.ShipperAdapters.CustomAdapterListViewOrderItem;
 import com.minh.findtheshipper.models.OrderTemp;
 
 import java.util.ArrayList;

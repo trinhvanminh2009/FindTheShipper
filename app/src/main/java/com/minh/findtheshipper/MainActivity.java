@@ -53,6 +53,8 @@ public class MainActivity extends FragmentActivity {
     private Realm realm;
     public static String email;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,11 @@ public class MainActivity extends FragmentActivity {
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                 .unsubscribeWhenNotificationsAreDisabled(true)
                 .init();
-        createNotificationRealm();
+        if (getNotificationData()!= null) {
+            Log.e("notification", "Notification created");
+        } else {
+            createNotificationRealm();
+        }
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         progress = new ProgressDialog(MainActivity.this);
@@ -72,7 +78,7 @@ public class MainActivity extends FragmentActivity {
         progress.setIndeterminate(false);
         progress.setCancelable(false);
         callbackManager = CallbackManager.Factory.create();
-        final LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+        final LoginButton loginButton = findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
         try {
             PackageInfo info = getPackageManager().getPackageInfo(
@@ -160,11 +166,10 @@ public class MainActivity extends FragmentActivity {
                 OneSignal.sendTag("email", email);
                 Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
                 startActivity(intent);
-            }
-            else{
+            } else {
                 finish();
                 startActivity(getIntent());
-                Log.e("Null","Email of current user is null");
+                Log.e("Null", "Email of current user is null");
             }
 
         }
@@ -194,15 +199,19 @@ public class MainActivity extends FragmentActivity {
         return realm.where(User.class).equalTo("email", currentUser.getEmail()).findFirst();
     }
 
-    private void createNotificationRealm(){
+    private void createNotificationRealm() {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                NotificationData notificationData = realm.createObject(NotificationData.class,"nt0");
+                NotificationData notificationData = realm.createObject(NotificationData.class, "nt0");
                 notificationData.setTotalNotification(0);
                 notificationData.setNumberUnread(0);
                 realm.insertOrUpdate(notificationData);
             }
         });
+    }
+
+    private NotificationData getNotificationData() {
+        return realm.where(NotificationData.class).findFirst();
     }
 }

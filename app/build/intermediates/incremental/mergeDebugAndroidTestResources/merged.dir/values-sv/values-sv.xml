@@ -61,6 +61,17 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Logga in med Google"</string>
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Diverse"</string>
     <string msgid="9521340570209730" name="gcm_fallback_notification_channel_label">"Diverse"</string>
+    <string name="mapbox_attributionTelemetryMessage">Du hjälper till att göra OpenStreetMap och Mapbox karttjänster bättre genom att bidra med anonymiserad användningsdata.</string>
+    <string name="mapbox_attributionTelemetryNegative">Avböj</string>
+    <string name="mapbox_attributionTelemetryNeutral">Visa mer information</string>
+    <string name="mapbox_attributionTelemetryPositive">Godkänn</string>
+    <string name="mapbox_attributionTelemetryTitle">Gör Mapbox kartor bättre</string>
+    <string name="mapbox_attributionsDialogTitle">Mapbox Android SDK</string>
+    <string name="mapbox_attributionsIconContentDescription">Tillskrivningsikon. Aktivera för att visa tillskrivningsdialog.</string>
+    <string name="mapbox_compassContentDescription">Kompass. Aktivera för att nollställa kartans rotation mot norr.</string>
+    <string name="mapbox_mapActionDescription">Visar en karta skapad med Mapbox. Scrolla genom att dra med två fingrar. Zooma genom att nypa med två fingrar.</string>
+    <string name="mapbox_myLocationViewContentDescription">Positionsvy. Denna visar din position på kartan.</string>
+    <string name="mapbox_offline_error_region_definition_invalid">Försedd OfflineRegionDefinition passar inte världens gränser: %s</string>
     <string msgid="1303870564366209730" name="place_autocomplete_clear_button">"Rensa sökning"</string>
     <string msgid="2809095107724486040" name="place_autocomplete_search_hint">"Söka"</string>
     <string msgid="146198913615257606" name="search_menu_title">"Sök"</string>

@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -54,6 +55,7 @@ import com.minh.findtheshipper.models.Route;
 import com.minh.findtheshipper.models.RealmObject.User;
 import com.minh.findtheshipper.utils.AnimationUtils;
 import com.sdsmdg.tastytoast.TastyToast;
+
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -166,6 +168,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         switch (v.getId()) {
             case R.id.btnGetOrder:
                 //Not allow take their own order
+
                 isClickGetOrder = true;
                 if (userEmailFromServer != null && getCurrentUser().getEmail() != null) {
                     if (userEmailFromServer.equals(getCurrentUser().getEmail())) {
@@ -219,12 +222,14 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                                     if (currentShipper == null) {
 
                                         if (!(DetailOrderShipperActivity.this).isFinishing()) {
+
                                             SweetAlertDialog sweetAlertDialog;
                                             sweetAlertDialog = new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.WARNING_TYPE);
                                             sweetAlertDialog.setTitleText(getString(R.string.status_want_to_take_order_title));
                                             sweetAlertDialog.setContentText(getString(R.string.status_want_to_take_order));
                                             sweetAlertDialog.setConfirmText(getString(R.string.ok));
                                             sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                                            sweetAlertDialog.show();
                                             sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                                 @Override
                                                 public void onClick(SweetAlertDialog sweetAlertDialog) {
@@ -235,11 +240,6 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                                                 @Override
                                                 public void onClick(SweetAlertDialog sweetAlertDialog) {
                                                     sweetAlertDialog.dismissWithAnimation();
-                                                    new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                                                            .setTitleText(getString(R.string.success))
-                                                            .setContentText(getString(R.string.status_took_order))
-                                                            .show();
-
                                                     orderDataBase.child(key).child("Shipper").setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
                                                     orderDataBase.child(key).child("State Order").setValue("1");
                                                     String message = getCurrentUser().getFullName() + " " + getString(R.string.notification_state_2);
@@ -257,11 +257,17 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                                                     orderDataBase.child(key).child("Notifications").child(keyNotification).child("Show Again").setValue(true);
 
 
+                                                        SweetAlertDialog dialogSuccess = new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.SUCCESS_TYPE);
+                                                        dialogSuccess.setTitleText(getString(R.string.success));
+                                                        dialogSuccess.setContentText(getString(R.string.status_took_order));
+                                                        dialogSuccess.show();
+
                                                 }
                                             });
-                                            sweetAlertDialog.show();
+
                                             dataAddedOrDidNotAdd = true;
                                             isClickGetOrder = false;
+
                                         }
                                     }
                                 }
@@ -274,6 +280,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                         });
                     }
                 }
+
                 break;
             case R.id.btnSave:
                 final Order orderRealm = realm.where(Order.class).equalTo("orderID", order.getOrderID()).findFirst();
@@ -597,6 +604,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         mMap.setMyLocationEnabled(true);
         if (mMap.isMyLocationEnabled()) {
             LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            assert locationManager != null;
             Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (location != null) {
                 final double[] longitude = {location.getLongitude()};

@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
-import com.minh.findtheshipper.models.Adapters.CustomAdapterListViewHistoryOrderItem;
+import com.minh.findtheshipper.models.Adapters.ShipperAdapters.CustomAdapterListViewHistoryOrderItem;
 import com.minh.findtheshipper.models.RealmObject.CurrentUser;
 import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.RealmObject.User;

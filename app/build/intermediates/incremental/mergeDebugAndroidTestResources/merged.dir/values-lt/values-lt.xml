@@ -38,6 +38,17 @@
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Prisijungti naudojant „Google“"</string>
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Įvairūs"</string>
     <string msgid="9521340570209730" name="gcm_fallback_notification_channel_label">"Įvairūs"</string>
+    <string name="mapbox_attributionTelemetryMessage">Jūs padedate padaryti OpenStreetMap ir Mapbox žemėlapius geresniais dalindamiesi anoniminiais naudojimosi duomenimis.</string>
+    <string name="mapbox_attributionTelemetryNegative">Nesutikti</string>
+    <string name="mapbox_attributionTelemetryNeutral">Daugiau informacijos</string>
+    <string name="mapbox_attributionTelemetryPositive">Sutikti</string>
+    <string name="mapbox_attributionTelemetryTitle">Prisidėk prie Mapbox žemėlapių tobulinimo</string>
+    <string name="mapbox_attributionsDialogTitle">Mapbox Android SDK</string>
+    <string name="mapbox_attributionsIconContentDescription">Įnašo ikona. Paspausk norėdamas pamatyti dialogą su detalėmis</string>
+    <string name="mapbox_compassContentDescription">Žemėlapio kompasas. Spustelk, kad atstatytum žemėlapio pasukimą į šiaurę.</string>
+    <string name="mapbox_mapActionDescription">Rodomas Mapbox kurtas žemėlapis. Naviguok tempdamas du pirštus. Valdyk žemėlapio pritraukimą suimdamas/atitolindamas du pirštus.</string>
+    <string name="mapbox_myLocationViewContentDescription">Vartotojo vietos vaizdas. Nurodo tavo poziciją žemėlapyje</string>
+    <string name="mapbox_offline_error_region_definition_invalid">Pasirinktas OfflineRegionDefinition netalpa į rėžius:  %s</string>
     <string msgid="1303870564366209730" name="place_autocomplete_clear_button">"Išvalyti paiešką"</string>
     <string msgid="2809095107724486040" name="place_autocomplete_search_hint">"Paieška"</string>
     <string msgid="146198913615257606" name="search_menu_title">"Paieška"</string>

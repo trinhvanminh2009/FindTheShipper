@@ -4,7 +4,7 @@
             "outputFile": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\e5c15c865bf85240ca2407d47d6a7f62\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\422e5b545dbe3bc3682efb64c5338ab9\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.0.2.aar\\527bef1d40ae43667c070627c2026b5c\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.0.2.aar\\c890017e90fd4d46412498e6d205a643\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

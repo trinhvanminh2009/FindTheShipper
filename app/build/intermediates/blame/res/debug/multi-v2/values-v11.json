@@ -4,7 +4,7 @@
             "outputFile": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\e5c15c865bf85240ca2407d47d6a7f62\\res\\values-v11\\values-v11.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\422e5b545dbe3bc3682efb64c5338ab9\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.2.aar\\2d4ffd05e8aa2bd290fb7567bd09d3c6\\res\\values-v11\\values-v11.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.2.aar\\8b5cd24d86e8b50360e213de55c7333f\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,8,12,17,23,27,36,41,45,49",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

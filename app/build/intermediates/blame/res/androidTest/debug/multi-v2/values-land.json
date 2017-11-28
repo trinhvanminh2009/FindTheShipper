@@ -4,7 +4,7 @@
             "outputFile": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.0.2.aar\\fdf500e0b8f28d97066677fd571ec9d7\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.0.2.aar\\d5a39c4c4bff19d603b7cfefe91778d8\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\e5c15c865bf85240ca2407d47d6a7f62\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\422e5b545dbe3bc3682efb64c5338ab9\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

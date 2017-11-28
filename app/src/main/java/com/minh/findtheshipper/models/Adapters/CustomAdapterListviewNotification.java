@@ -2,7 +2,6 @@ package com.minh.findtheshipper.models.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.NotificationObject;
 import com.minh.findtheshipper.models.RealmObject.NotificationData;
-import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.List;
 
@@ -21,7 +19,7 @@ import io.realm.Realm;
 
 /**
  * Created by trinh on 6/16/2017.
- *
+ * Notification for Shipper and Shop
  */
 
 public class CustomAdapterListViewNotification extends RecyclerView.Adapter<CustomAdapterListViewNotification.ViewHolder> {
@@ -67,8 +65,16 @@ public class CustomAdapterListViewNotification extends RecyclerView.Adapter<Cust
             }
 
         }
+        holder.itemView.setClickable(true);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
+
 
     private NotificationData getNotificationData(){
         return realm.where(NotificationData.class).findFirst();

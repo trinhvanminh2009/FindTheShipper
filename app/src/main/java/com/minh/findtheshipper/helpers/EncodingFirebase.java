@@ -4,6 +4,8 @@ import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
@@ -43,12 +45,12 @@ public class EncodingFirebase {
         return split[1];
     }
 
-    public static String convertToRightEmail(String email){
+    public static String convertToRightEmail(String email) {
         email = getEmailFromUserID(email);
-        return email.replaceAll(",",".");
+        return email.replaceAll(",", ".");
     }
 
-    public static String getCompleteAddressString(Context context,double latitude, double longitude) {
+    public static String getCompleteAddressString(Context context, double latitude, double longitude) {
         String fullAddress = "";
         Geocoder geocoder = new Geocoder(context, Locale.getDefault());
         try {
@@ -61,10 +63,34 @@ public class EncodingFirebase {
             stringBuilder.append(address.getAddressLine(address.getMaxAddressLineIndex())).append(".");
             fullAddress = stringBuilder.toString();
 
-
         } catch (IOException e) {
             e.printStackTrace();
         }
         return fullAddress;
     }
+
+    public static LatLng getLocationFromAddress(Context context, String strAddress) {
+
+        Geocoder coder = new Geocoder(context);
+        List<Address> address;
+        LatLng p1 = null;
+        try {
+            address = coder.getFromLocationName(strAddress, 3);
+            if (address == null) {
+                return null;
+            }
+            Address location = address.get(0);
+            location.getLatitude();
+            location.getLongitude();
+
+            p1 = new LatLng((location.getLatitude()), (location.getLongitude()));
+
+            return p1;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return p1;
+    }
+
 }

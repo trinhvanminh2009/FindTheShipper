@@ -216,14 +216,14 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
 
     @OnClick({R.id.btnCancelOrder, R.id.btnCall, R.id.btnComment, R.id.btnSave, R.id.btnDelete, R.id.btnDirection})
     public void eventClick(final View v) {
-        SweetAlertDialog sweetAlertDialog;
+
         switch (v.getId()) {
             case R.id.btnCancelOrder:
                 //Not allow take their own order
                 if (userEmailFromServer != null && getCurrentUser().getEmail() != null) {
 
                     if (!(DetailOrderHistoryActivity.this).isFinishing()) { //Make sure activity is running
-                        sweetAlertDialog = new SweetAlertDialog(DetailOrderHistoryActivity.this, SweetAlertDialog.WARNING_TYPE);
+                        SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderHistoryActivity.this, SweetAlertDialog.WARNING_TYPE);
                         sweetAlertDialog.setTitle(getString(R.string.are_you_sure_title));
                         sweetAlertDialog.setContentText(getString(R.string.status_want_to_cancel_order));
                         sweetAlertDialog.setConfirmText(getString(R.string.ok));
@@ -371,7 +371,7 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
                 dialogHelpers.setArguments(bundle);
                 break;
             case R.id.btnDelete:
-                sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
                 sweetAlertDialog.setTitleText(getString(R.string.are_you_sure_title));
                 sweetAlertDialog.setContentText(getString(R.string.are_you_sure_content));
                 sweetAlertDialog.setConfirmText(getString(R.string.ok));
@@ -404,13 +404,45 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
                 finish();
                 break;
             case R.id.btnDirection:
-                Intent intent = new Intent(DetailOrderHistoryActivity.this, DirectionShipper.class);
-                intent.putExtra("place",placeToGetOrder);
-                startActivity(intent);
+
+              /*  Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" + order.getStartPoint() + ""));
+                startActivity(intent);*/
+            /*  updateUsersOnlineFromServer();
+              LatLng temp = EncodingFirebase.getLocationFromAddress(DetailOrderHistoryActivity.this, order.getStartPoint());
+              TastyToast.makeText(DetailOrderHistoryActivity.this , temp.latitude + "," + temp.longitude, TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);*/
+            startActivity(new Intent(DetailOrderHistoryActivity.this, DirectionShipper.class));
                 break;
 
         }
 
+    }
+
+    private void updateUsersOnlineFromServer() {
+
+        DatabaseReference userDatabase = FirebaseDatabase.getInstance().getReference();
+        userDatabase.child("user").orderByChild("Online").equalTo(true).addValueEventListener(new ValueEventListener() {
+            @SuppressWarnings("ConstantConditions")
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                mMap.clear(); // Clear old markers
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    for (int i = 0; i < (int) dataSnapshot.getChildrenCount(); i++) {
+                        String key = child.getKey();
+                        String userName = dataSnapshot.child(key).child("Name").getValue(String.class);
+                        double latitude = dataSnapshot.child(key).child("Last Latitude").getValue(Double.class);
+                        double longitude = dataSnapshot.child(key).child("Last Longitude").getValue(Double.class);
+
+                    }
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private long getCoutnNotification(final String key) {

@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
-import com.minh.findtheshipper.models.Adapters.CustomAdapterListviewOrder;
+import com.minh.findtheshipper.models.Adapters.ShopAdapters.CustomAdapterListviewOrder;
 import com.minh.findtheshipper.models.RealmObject.CurrentUser;
 import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.RealmObject.User;
@@ -167,20 +167,10 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         return result;
     }
 
+
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
         return realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
     }
-/*
-    public void deleteAll() {
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                final RealmResults<Order> results = realm.where(Order.class).findAll();
-                results.deleteAllFromRealm();
-            }
-        });
 
-    }
-*/
 }
