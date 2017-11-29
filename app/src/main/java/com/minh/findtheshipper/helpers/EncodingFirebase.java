@@ -7,6 +7,11 @@ import android.location.Geocoder;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -91,6 +96,14 @@ public class EncodingFirebase {
         }
 
         return p1;
+    }
+
+    public static Calendar convertDateToCalendar(String inputDate) throws ParseException {
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm", Locale.getDefault());
+        Date date = df.parse(inputDate);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(date.getTime());
+        return calendar;
     }
 
 }

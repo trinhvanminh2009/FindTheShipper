@@ -159,6 +159,11 @@
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
     <color name="background_text_color">#808080</color>
+    <color name="blueGray200">#B0BEC5</color>
+    <color name="blueGray300">#90A4AE</color>
+    <color name="blueGray400">#78909C</color>
+    <color name="blueGray50">#ECEFF1</color>
+    <color name="blueGray500">#607D8B</color>
     <color name="blue_btn_bg_color">#AEDEF4</color>
     <color name="blue_btn_bg_pressed_color">#96BFD2</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
@@ -207,6 +212,9 @@
     <color name="common_google_signin_btn_text_light_focused">#90000000</color>
     <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
     <color name="custom_float_bg">#F27474</color>
+    <color name="cyan900">#006064</color>
+    <color name="default_left_bubble_color">@color/button_material_light</color>
+    <color name="default_right_bubble_color">@color/green500</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
     <color name="design_fab_shadow_mid_color">#14000000</color>
@@ -227,11 +235,15 @@
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
     <color name="foreground_text_color">#eeeeee</color>
+    <color name="gray200">#EEEEEE</color>
+    <color name="gray300">#E0E0E0</color>
     <color name="gray_btn_bg_color">#D0D0D0</color>
     <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
     <color name="green">#09cc40</color>
+    <color name="green500">#4CAF50</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
+    <color name="lightBlue500">#03A9F4</color>
     <color name="main_blue_color">#2469df</color>
     <color name="main_blue_stroke_color">#205ec7</color>
     <color name="main_cyan_color">#05d9f7</color>
@@ -603,6 +615,7 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
+    <color name="red500">#F44336</color>
     <color name="red_btn_bg_color">#DD6B55</color>
     <color name="red_btn_bg_pressed_color">#CD5B55</color>
     <color name="ripple_material_dark">#33ffffff</color>
@@ -618,6 +631,8 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <color name="teal100">#B2DFDB</color>
+    <color name="teal500">#009688</color>
     <color name="text_color">#575757</color>
     <color name="title_color">#575757</color>
     <color name="title_color_dark">#fff</color>
@@ -711,6 +726,7 @@
     <declare-styleable name="ButtonBarLayout"><attr format="boolean" name="allowStacking"/></declare-styleable>
     <declare-styleable name="CardView"><attr format="color" name="cardBackgroundColor"/><attr format="dimension" name="cardCornerRadius"/><attr format="dimension" name="cardElevation"/><attr format="dimension" name="cardMaxElevation"/><attr format="boolean" name="cardUseCompatPadding"/><attr format="boolean" name="cardPreventCornerOverlap"/><attr format="dimension" name="contentPadding"/><attr format="dimension" name="contentPaddingLeft"/><attr format="dimension" name="contentPaddingRight"/><attr format="dimension" name="contentPaddingTop"/><attr format="dimension" name="contentPaddingBottom"/><attr name="android:minWidth"/><attr name="android:minHeight"/></declare-styleable>
     <declare-styleable name="CircleButton"><attr format="color" name="cb_color"/><attr format="dimension" name="cb_pressedRingWidth"/></declare-styleable>
+    <declare-styleable name="CircleImageView"><attr format="dimension" name="civ_border_width"/><attr format="color" name="civ_border_color"/><attr format="boolean" name="civ_border_overlay"/><attr format="color" name="civ_fill_color"/></declare-styleable>
     <declare-styleable name="CollapsingToolbarLayout"><attr format="dimension" name="expandedTitleMargin"/><attr format="dimension" name="expandedTitleMarginStart"/><attr format="dimension" name="expandedTitleMarginTop"/><attr format="dimension" name="expandedTitleMarginEnd"/><attr format="dimension" name="expandedTitleMarginBottom"/><attr format="reference" name="expandedTitleTextAppearance"/><attr format="reference" name="collapsedTitleTextAppearance"/><attr format="color" name="contentScrim"/><attr format="color" name="statusBarScrim"/><attr format="reference" name="toolbarId"/><attr format="dimension" name="scrimVisibleHeightTrigger"/><attr format="integer" name="scrimAnimationDuration"/><attr name="collapsedTitleGravity">
             
             <flag name="top" value="0x30"/>
@@ -939,6 +955,7 @@
             <enum name="add" value="16"/>
         </attr></declare-styleable>
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/><attr format="reference" name="subMenuArrow"/></declare-styleable>
+    <declare-styleable name="MessageView"><attr format="dimension" name="message_font_size"/><attr format="dimension" name="username_font_size"/><attr format="dimension" name="time_label_font_size"/><attr format="dimension" name="message_max_width"/><attr format="dimension" name="date_separator_font_size"/></declare-styleable>
     <declare-styleable name="NavigationMapRoute"><attr format="color" name="routeColor"/><attr format="color" name="routeModerateCongestionColor"/><attr format="color" name="routeSevereCongestionColor"/><attr format="color" name="routeShieldColor"/><attr format="float" name="routeScale"/></declare-styleable>
     <declare-styleable name="NavigationView"><attr name="android:background"/><attr name="android:fitsSystemWindows"/><attr name="android:maxWidth"/><attr name="elevation"/><attr format="reference" name="menu"/><attr format="color" name="itemIconTint"/><attr format="color" name="itemTextColor"/><attr format="reference" name="itemBackground"/><attr format="reference" name="itemTextAppearance"/><attr format="reference" name="headerLayout"/><attr format="color" name="navigationViewPrimary"/><attr format="color" name="navigationViewSecondary"/><attr format="color" name="navigationViewAccent"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/><attr name="android:popupAnimationStyle"/></declare-styleable>
@@ -1278,6 +1295,9 @@
     <dimen name="fastscroll_default_thickness">8dp</dimen>
     <dimen name="fastscroll_margin">0dp</dimen>
     <dimen name="fastscroll_minimum_range">50dp</dimen>
+    <dimen name="font_large">25sp</dimen>
+    <dimen name="font_normal">20sp</dimen>
+    <dimen name="font_small">15sp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
@@ -1285,9 +1305,12 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
+    <dimen name="icon_normal">50dp</dimen>
+    <dimen name="icon_small">20dp</dimen>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="line_height">1dp</dimen>
     <dimen name="mapbox_eight_dp">8dp</dimen>
     <dimen name="mapbox_four_dp">4dp</dimen>
     <dimen name="mapbox_infowindow_margin">8dp</dimen>
@@ -1396,6 +1419,13 @@
     <dimen name="place_autocomplete_progress_size">24dp</dimen>
     <dimen name="place_autocomplete_separator_start">72dp</dimen>
     <dimen name="progress_circle_radius">34dp</dimen>
+    <dimen name="spacing_huge">100dp</dimen>
+    <dimen name="spacing_large">50dp</dimen>
+    <dimen name="spacing_line">2dp</dimen>
+    <dimen name="spacing_micro">10dp</dimen>
+    <dimen name="spacing_normal">20dp</dimen>
+    <dimen name="spacing_small">16dp</dimen>
+    <dimen name="spacing_tiny">12dp</dimen>
     <dimen name="tool_bar_top_padding">0dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
@@ -1405,6 +1435,9 @@
     <dimen name="tooltip_vertical_padding">6.5dp</dimen>
     <dimen name="tooltip_y_offset_non_touch">0dp</dimen>
     <dimen name="tooltip_y_offset_touch">16dp</dimen>
+    <dimen name="view_radius_normal">16dp</dimen>
+    <dimen name="width_normal">200dp</dimen>
+    <dimen name="width_small">100dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -1510,6 +1543,7 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="are_you_sure_content">This order won\'t be shown in history anymore!</string>
     <string name="are_you_sure_title">Are you sure?</string>
+    <string name="attach">Add attachment</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="buy_package_shipper">Buy package</string>
     <string name="call">Call</string>
@@ -1573,6 +1607,15 @@
     <string name="created">Created:  </string>
     <string name="created_order">Created Order</string>
     <string name="current_phone_number">Current phone number</string>
+    <string name="default_date_cell_text">2016/08/08</string>
+    <string name="default_text_long">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </string>
+    <string name="default_text_short">Hello!!</string>
+    <string name="default_time_text">10:30 AM</string>
+    <string name="default_user_name_1">Michael</string>
+    <string name="default_user_name_2">Alice</string>
     <string name="default_web_client_id" translatable="false">260595537255-sfotcr2nh9tl6rftcbrphhicuttgn7qd.apps.googleusercontent.com</string>
     <string name="define_AndroidActionItemBadge">year;owner</string>
     <string name="define_AndroidIconics">year;owner</string>
@@ -1598,6 +1641,7 @@
     <string name="edit_text_ship_money">About 25k</string>
     <string name="edit_text_start_place">Place for shipper get products</string>
     <string name="end_navigation">End Navigation</string>
+    <string name="error">Error</string>
     <string name="facebook_app_id" translatable="false">432808617097084</string>
     <string name="faw_500px">faw_500px</string>
     <string name="faw_address_book">faw_address_book</string>
@@ -3224,6 +3268,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="history">History</string>
     <string name="ho_chi_minh">Ho Chi Minh city</string>
+    <string name="input_hint">Message..</string>
     <string name="library_AndroidActionItemBadge_author">Mike Penz</string>
     <string name="library_AndroidActionItemBadge_authorWebsite">http://mikepenz.com/</string>
     <string name="library_AndroidActionItemBadge_isOpenSource">true</string>
@@ -3411,7 +3456,10 @@
     <string name="save_order_exists">This order already exists!</string>
     <string name="search_menu_title">Search</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="seen">Seen</string>
     <string name="send">Send</string>
+    <string name="sending">Sending</string>
+    <string name="sent">Sent</string>
     <string name="setting">Settings</string>
     <string name="settings_alert_title">For best results let your device turn on location using
   Mapzen\'s location service.\n\nClicking \"OK\" will bring you to the device\'s location settings
@@ -3456,6 +3504,7 @@
     <string name="title_activity_settings">Settings</string>
     <string name="tutorials">Tutorials</string>
     <string name="type_comment">Type a comment…</string>
+    <string name="unknown">Unknown</string>
     <string name="unmuted">Unmuted</string>
     <string name="version">Version</string>
     <string name="wait_find_direction">Just a moment. Finding directions</string>

@@ -42,6 +42,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kofigyan.stateprogressbar.StateProgressBar;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.common.ChatActivity;
 import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
@@ -363,12 +364,13 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
                 v.getContext().startActivity(intentPhone);
                 break;
             case R.id.btnComment:
-                Bundle bundle = new Bundle();
+              /*  Bundle bundle = new Bundle();
                 bundle.putString("orderID", order.getOrderID());
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 final CommentDialogHelpers dialogHelpers = new CommentDialogHelpers();
                 dialogHelpers.show(fragmentManager, "New fragment");
-                dialogHelpers.setArguments(bundle);
+                dialogHelpers.setArguments(bundle);*/
+                startActivity(new Intent(DetailOrderHistoryActivity.this, ChatActivity.class));
                 break;
             case R.id.btnDelete:
                 SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
