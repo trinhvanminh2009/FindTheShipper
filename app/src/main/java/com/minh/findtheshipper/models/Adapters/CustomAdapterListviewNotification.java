@@ -17,6 +17,8 @@ import java.util.List;
 
 import io.realm.Realm;
 
+
+
 /**
  * Created by trinh on 6/16/2017.
  * Notification for Shipper and Shop

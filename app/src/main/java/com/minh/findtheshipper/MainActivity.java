@@ -128,6 +128,8 @@ public class MainActivity extends FragmentActivity {
                                             realm.insertOrUpdate(currentUser);
                                         }
                                     });
+                                    addUser();
+
                                     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
                                     mDatabase.child(EncodingFirebase.encodeString(email)).child("Name").setValue(EncodingFirebase.encodeString(name));
                                     mDatabase.child(EncodingFirebase.encodeString(email)).child("Gender").setValue(gender);
@@ -213,5 +215,19 @@ public class MainActivity extends FragmentActivity {
 
     private NotificationData getNotificationData() {
         return realm.where(NotificationData.class).findFirst();
+    }
+
+    public void addUser() {
+        final CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                User user = realm.createObject(User.class, currentUser.getEmail());
+                user.setPhoneNumber("01655713623");
+                user.setFullName(currentUser.getName());
+                user.setAvatar(R.drawable.ic_your_profile);
+                realm.insertOrUpdate(user);
+            }
+        });
     }
 }
