@@ -364,13 +364,16 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
                 v.getContext().startActivity(intentPhone);
                 break;
             case R.id.btnComment:
+                Intent chatAcIntent = new Intent(DetailOrderHistoryActivity.this, ChatActivity.class);
+                chatAcIntent.putExtra("orderID", order.getOrderID());
+               // TastyToast.makeText(getApplicationContext(), order.getOrderID(), TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
+                startActivity(chatAcIntent);
               /*  Bundle bundle = new Bundle();
                 bundle.putString("orderID", order.getOrderID());
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 final CommentDialogHelpers dialogHelpers = new CommentDialogHelpers();
                 dialogHelpers.show(fragmentManager, "New fragment");
                 dialogHelpers.setArguments(bundle);*/
-                startActivity(new Intent(DetailOrderHistoryActivity.this, ChatActivity.class));
                 break;
             case R.id.btnDelete:
                 SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);

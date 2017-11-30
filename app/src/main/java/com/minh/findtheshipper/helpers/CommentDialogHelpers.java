@@ -50,6 +50,7 @@ public class CommentDialogHelpers extends DialogFragment {
     RecyclerView.LayoutManager layoutManager;
     private long countComment[] = new long[2];
 
+    @SuppressWarnings("ConstantConditions")
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -191,6 +192,7 @@ public class CommentDialogHelpers extends DialogFragment {
         return  realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onResume() {
         super.onResume();

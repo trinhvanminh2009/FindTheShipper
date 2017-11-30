@@ -30,7 +30,7 @@ public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragme
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_recycle_view, container, false);
         RecyclerView.LayoutManager layoutManager;
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
+        recyclerView =  view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         return view;
@@ -60,9 +60,7 @@ public class ListOrderSavedShipperFragment extends android.support.v4.app.Fragme
             orderList = new ArrayList<>();
             User user = getCurrentUser();
             RealmResults<Order> orders = user.getOrderListSave().where().equalTo("saveOrder", true).findAllSorted("dateTime", Sort.DESCENDING);
-            for (int i = 0; i < orders.size(); i++) {
-                orderList.add(orders.get(i));
-            }
+            orderList.addAll(orders);
             adapter = new CustomAdapterListviewOrderSaved(getActivity(), orderList);
             recyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();

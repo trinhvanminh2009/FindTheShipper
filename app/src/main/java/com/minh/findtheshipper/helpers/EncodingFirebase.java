@@ -5,6 +5,11 @@ import android.location.Address;
 import android.location.Geocoder;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -104,6 +109,24 @@ public class EncodingFirebase {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(date.getTime());
         return calendar;
+    }
+
+    public static String getNameOfUser(final String emailAddress){
+        final String[] username = {""};
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("user/" + emailAddress);
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                username[0] = dataSnapshot.child("user").child(emailAddress).child("Name").getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return username[0];
     }
 
 }
