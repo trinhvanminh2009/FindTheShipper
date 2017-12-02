@@ -92,6 +92,11 @@
         </service>
 
         <activity android:name="com.minh.findtheshipper.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -138,11 +143,6 @@
         <activity android:name="com.minh.findtheshipper.Test" />
         <activity android:name="com.minh.findtheshipper.FragmentActivity" />
         <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.minh.findtheshipper.Shop.HandleMapsActivity" />
         <activity

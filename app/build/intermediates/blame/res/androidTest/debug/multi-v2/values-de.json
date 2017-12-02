@@ -4,41 +4,7 @@
             "outputFile": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\74610841579be8db8741a0f257060304\\res\\values-de\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "283,390,586,712,822,1059,1188,1332,1571,1681,1881,2010,2231,2433,2530,2619",
-                        "endColumns": "106,195,125,109,236,128,143,238,109,199,128,220,201,96,88,104",
-                        "endOffsets": "389,585,711,821,1058,1187,1331,1570,1680,1880,2009,2230,2432,2529,2618,2723"
-                    },
-                    "to": {
-                        "startLines": "44,45,46,47,48,49,50,52,53,54,55,56,57,58,59,60",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "4625,4736,4932,5062,5176,5413,5546,5898,6137,6251,6451,6584,6805,7011,7112,7205",
-                        "endColumns": "110,195,129,113,236,132,147,238,113,199,132,220,205,100,92,108",
-                        "endOffsets": "4731,4927,5057,5171,5408,5541,5689,6132,6246,6446,6579,6800,7006,7107,7200,7309"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.6.0.aar\\d7156b7bbc14c4c2933018c70ee586df\\res\\values-de\\values.xml",
-                    "from": {
-                        "startLines": "4,5",
-                        "startColumns": "0,0",
-                        "startOffsets": "233,338",
-                        "endColumns": "104,90",
-                        "endOffsets": "337,428"
-                    },
-                    "to": {
-                        "startLines": "63,64",
-                        "startColumns": "4,4",
-                        "startOffsets": "7527,7636",
-                        "endColumns": "108,94",
-                        "endOffsets": "7631,7726"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.0.aar\\8fe7cfdae62f5bac1ccab87fda625870\\res\\values-de\\values.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\9a67488f323b862c9498f67e1952203b\\res\\values-de\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -72,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.6.2.aar\\79795d0751678a7ad1a5ea440b6b9a6b\\res\\values-de\\values.xml",
+                    "from": {
+                        "startLines": "4,5",
+                        "startColumns": "0,0",
+                        "startOffsets": "233,338",
+                        "endColumns": "104,90",
+                        "endOffsets": "337,428"
+                    },
+                    "to": {
+                        "startLines": "63,64",
+                        "startColumns": "4,4",
+                        "startOffsets": "7527,7636",
+                        "endColumns": "108,94",
+                        "endOffsets": "7631,7726"
+                    }
+                },
+                {
                     "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-gcm-11.2.2.aar\\08697b54fc625088dc238cd8196529e6\\res\\values-de\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -89,7 +72,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.6.0.aar\\db227084fec58db30c279a7acaf4bd37\\res\\values-de\\values.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.6.2.aar\\24949e063e38edf798b1954f0110557b\\res\\values-de\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -103,6 +86,23 @@
                         "startOffsets": "7314",
                         "endColumns": "107",
                         "endOffsets": "7417"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\0781776cadf25beb01fb267ba8509f8e\\res\\values-de\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "283,390,586,712,822,1059,1188,1332,1571,1681,1881,2010,2231,2433,2530,2619",
+                        "endColumns": "106,195,125,109,236,128,143,238,109,199,128,220,201,96,88,104",
+                        "endOffsets": "389,585,711,821,1058,1187,1331,1570,1680,1880,2009,2230,2432,2529,2618,2723"
+                    },
+                    "to": {
+                        "startLines": "44,45,46,47,48,49,50,52,53,54,55,56,57,58,59,60",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "4625,4736,4932,5062,5176,5413,5546,5898,6137,6251,6451,6584,6805,7011,7112,7205",
+                        "endColumns": "110,195,129,113,236,132,147,238,113,199,132,220,205,100,92,108",
+                        "endOffsets": "4731,4927,5057,5171,5408,5541,5689,6132,6246,6446,6579,6800,7006,7107,7200,7309"
                     }
                 },
                 {

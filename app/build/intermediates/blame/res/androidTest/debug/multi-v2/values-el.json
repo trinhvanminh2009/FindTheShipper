@@ -21,24 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.6.0.aar\\db227084fec58db30c279a7acaf4bd37\\res\\values-el\\values.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.6.2.aar\\79795d0751678a7ad1a5ea440b6b9a6b\\res\\values-el\\values.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "243",
-                        "endColumns": "101",
-                        "endOffsets": "344"
+                        "startLines": "4,5",
+                        "startColumns": "0,0",
+                        "startOffsets": "233,340",
+                        "endColumns": "106,94",
+                        "endOffsets": "339,434"
                     },
                     "to": {
-                        "startLines": "61",
-                        "startColumns": "4",
-                        "startOffsets": "7469",
-                        "endColumns": "105",
-                        "endOffsets": "7570"
+                        "startLines": "63,64",
+                        "startColumns": "4,4",
+                        "startOffsets": "7678,7789",
+                        "endColumns": "110,98",
+                        "endOffsets": "7784,7883"
                     }
                 },
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.0.aar\\74610841579be8db8741a0f257060304\\res\\values-el\\values.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\0781776cadf25beb01fb267ba8509f8e\\res\\values-el\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,6 +52,23 @@
                         "startOffsets": "4762,4875,5093,5227,5340,5580,5707,6064,6312,6422,6623,6754,6991,7166,7265,7357",
                         "endColumns": "112,217,133,112,239,126,133,247,109,200,130,236,174,98,91,111",
                         "endOffsets": "4870,5088,5222,5335,5575,5702,5836,6307,6417,6618,6749,6986,7161,7260,7352,7464"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\9a67488f323b862c9498f67e1952203b\\res\\values-el\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "285",
+                        "endColumns": "222",
+                        "endOffsets": "507"
+                    },
+                    "to": {
+                        "startLines": "51",
+                        "startColumns": "4",
+                        "startOffsets": "5841",
+                        "endColumns": "222",
+                        "endOffsets": "6059"
                     }
                 },
                 {
@@ -89,37 +106,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.0.aar\\8fe7cfdae62f5bac1ccab87fda625870\\res\\values-el\\values.xml",
+                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.6.2.aar\\24949e063e38edf798b1954f0110557b\\res\\values-el\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
-                        "startOffsets": "285",
-                        "endColumns": "222",
-                        "endOffsets": "507"
+                        "startOffsets": "243",
+                        "endColumns": "101",
+                        "endOffsets": "344"
                     },
                     "to": {
-                        "startLines": "51",
+                        "startLines": "61",
                         "startColumns": "4",
-                        "startOffsets": "5841",
-                        "endColumns": "222",
-                        "endOffsets": "6059"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.6.0.aar\\d7156b7bbc14c4c2933018c70ee586df\\res\\values-el\\values.xml",
-                    "from": {
-                        "startLines": "4,5",
-                        "startColumns": "0,0",
-                        "startOffsets": "233,340",
-                        "endColumns": "106,94",
-                        "endOffsets": "339,434"
-                    },
-                    "to": {
-                        "startLines": "63,64",
-                        "startColumns": "4,4",
-                        "startOffsets": "7678,7789",
-                        "endColumns": "110,98",
-                        "endOffsets": "7784,7883"
+                        "startOffsets": "7469",
+                        "endColumns": "105",
+                        "endOffsets": "7570"
                     }
                 }
             ]

@@ -833,21 +833,21 @@ public final class R {
         public static final int abc_toolbar_collapse_description = 0x7f0f001f;
         public static final int app_name = 0x7f0f0023;
         public static final int attach = 0x7f0f0027;
-        public static final int default_date_cell_text = 0x7f0f0067;
-        public static final int default_text_long = 0x7f0f0068;
-        public static final int default_text_short = 0x7f0f0069;
-        public static final int default_time_text = 0x7f0f006a;
-        public static final int default_user_name_1 = 0x7f0f006b;
-        public static final int default_user_name_2 = 0x7f0f006c;
-        public static final int error = 0x7f0f0086;
-        public static final int input_hint = 0x7f0f06df;
-        public static final int search_menu_title = 0x7f0f0783;
-        public static final int seen = 0x7f0f0785;
-        public static final int send = 0x7f0f0786;
-        public static final int sending = 0x7f0f0787;
-        public static final int sent = 0x7f0f0788;
-        public static final int status_bar_notification_info_overflow = 0x7f0f078f;
-        public static final int unknown = 0x7f0f07b4;
+        public static final int default_date_cell_text = 0x7f0f0068;
+        public static final int default_text_long = 0x7f0f0069;
+        public static final int default_text_short = 0x7f0f006a;
+        public static final int default_time_text = 0x7f0f006b;
+        public static final int default_user_name_1 = 0x7f0f006c;
+        public static final int default_user_name_2 = 0x7f0f006d;
+        public static final int error = 0x7f0f0087;
+        public static final int input_hint = 0x7f0f06e0;
+        public static final int search_menu_title = 0x7f0f0785;
+        public static final int seen = 0x7f0f0787;
+        public static final int send = 0x7f0f0788;
+        public static final int sending = 0x7f0f0789;
+        public static final int sent = 0x7f0f078a;
+        public static final int status_bar_notification_info_overflow = 0x7f0f0791;
+        public static final int unknown = 0x7f0f07b6;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100000;

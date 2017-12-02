@@ -103,6 +103,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                         String dateTime = dataSnapshot.child(key).child("Datetime").getValue(String.class);
                         Boolean saveOrder = dataSnapshot.child(key).child("Save Order").getValue(Boolean.class);
                         String userGetOrder = dataSnapshot.child(key).child("User Get Order").getValue(String.class);
+                        Boolean showAgain = dataSnapshot.child(key).child("Show Again").getValue(Boolean.class);
                         OrderTemp orderTemp = new OrderTemp();
                         orderTemp.setOrderID(key);
                         orderTemp.setStatus(status);
@@ -116,25 +117,15 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                         orderTemp.setDateTime(dateTime);
                         orderTemp.setSavedOrder(saveOrder);
                         orderTemp.setUserGetOrder(userGetOrder);
-                        orderList.add(orderTemp);
+                        if (showAgain == null || showAgain) {
+                            orderList.add(orderTemp);
+
+                        }
                     }
 
-                       /* Collections.sort(orderList, new Comparator<OrderTemp>() {
-                            DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
-                            @Override
-                            public int compare(OrderTemp o1, OrderTemp o2) {
-                                try {
-                                    return df.parse(o2.getDateTime()).compareTo(df.parse(o1.getDateTime()));
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
-                                return 0;
-                            }
-                        });*/
-                        Collections.sort(orderList, new SortOrderTempHelpers());
-                        adapter = new CustomAdapterListviewOrder(getActivity(), orderList);
-                        recyclerView.setAdapter(adapter);
-
+                    Collections.sort(orderList, new SortOrderTempHelpers());
+                    adapter = new CustomAdapterListviewOrder(getActivity(), orderList);
+                    recyclerView.setAdapter(adapter);
 
                 }
 
@@ -154,12 +145,12 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
     private List<String> checkKey(List<String> keyServer) {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < keyServer.size(); i++) {
-            if(getCurrentUser().getEmail() != null){
+            if (getCurrentUser().getEmail() != null) {
                 if (keyServer.get(i).contains(EncodingFirebase.encodeString(getCurrentUser().getEmail()))) {
                     result.add(keyServer.get(i));
                 }
-            }else{
-                Log.e("Error","Email of current user is null");
+            } else {
+                Log.e("Error", "Email of current user is null");
             }
 
 

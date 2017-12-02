@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.github.bassaer:chatmessageview-1.6.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/chatmessageview-1.6.1.aar/7acc8cfaa50dc860f0fba2d2075d5917/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/chatmessageview-1.6.1.aar/7acc8cfaa50dc860f0fba2d2075d5917/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bassaer/chatmessageview/1.6.1/e5d1627e81fa73de33aeaaf17655804c47b6b112/chatmessageview-1.6.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

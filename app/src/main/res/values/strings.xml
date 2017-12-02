@@ -114,7 +114,12 @@
     <string name="status_already_took_orders">You took orders! Please check in list orders taken!</string>
     <string name="notification_state_2">want to get this order. Please confirm to continue!</string>
     <string name="direction">Direction</string>
+    <string name="notification_shop_canceled_order">Sorry! I have to cancel this order.</string>
     <string name="detail">Detail</string>
+    <string name="content_cancel_order">This order will be canceled!</string>
+    <string name="warning_state_order_3">The delivery man is working. This order cannot be canceled</string>
+    <string name="warning_state_order_4">Completed order! If you want to remove this order please click detail order.</string>
+
     <string-array name="change_language_array">
         <item>Vietnamese</item>
         <item>English</item>

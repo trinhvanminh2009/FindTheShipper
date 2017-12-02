@@ -4,14 +4,17 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.github.bassaer.chatmessageview.model.User;
 import com.github.bassaer.chatmessageview.models.Message;
 import com.github.bassaer.chatmessageview.views.ChatView;
+import com.github.bassaer.chatmessageview.views.MessageView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,7 +29,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Locale;
 
@@ -36,23 +38,30 @@ public class ChatActivity extends AppCompatActivity {
 
     private ChatView mChatView;
     private String orderKey;
-    ArrayList<Message> commentListSend;
-    ArrayList<Message> commentListReceive;
+    private ArrayList<Message> commentListSend;
+    private ArrayList<Message> commentListReceive;
+    private ArrayList<Message> currentCommentListSend;
+    private ArrayList<Message> currentCommentListReceive;
+
     private Realm realm;
     private User me;
     private User you;
     private long countComment[] = new long[2];
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        Realm.init(ChatActivity.this);
+
         initRealm();
         //noinspection ConstantConditions
         orderKey = (String) getIntent().getExtras().get("orderID");//From activities using comment
         commentListSend = new ArrayList<>();
         commentListReceive = new ArrayList<>();
+        currentCommentListReceive = new ArrayList<>();
+        currentCommentListSend = new ArrayList<>();
         DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order/" + orderKey + "/comment");
         mDatabaseComment.addValueEventListener(new ValueEventListener() {
             @Override
@@ -96,6 +105,9 @@ public class ChatActivity extends AppCompatActivity {
         mChatView.setInputTextHint("New comment...");
         mChatView.setMessageMarginTop(5);
         mChatView.setMessageMarginBottom(5);
+        mChatView.setAutoScroll(true);
+        mChatView.setAutoHidingKeyboard(true);
+
 
         //Click Send Button
         mChatView.setOnClickSendButtonListener(new View.OnClickListener() {
@@ -103,9 +115,33 @@ public class ChatActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Add new comment into server
                 insertComment();
+                mChatView.setInputText("");
+                mChatView.setInputTextHint("New comment...");
+                //mChatView.setAutoScroll(true);
             }
 
         });
+
+        final MessageView messageView = mChatView.getMessageView();
+        messageView.setOnKeyboardAppearListener(new MessageView.OnKeyboardAppearListener(){
+            @Override
+            public void onKeyboardAppeared(boolean hasChanged) {
+                //Appeared keyboard
+                if (hasChanged) {
+                    new Handler().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            //Scroll to end
+                            //messageView.scrollToEnd();
+                            Toast.makeText(ChatActivity.this, "kappears", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                } else {
+                    Toast.makeText(ChatActivity.this, "no change", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 
     private void initRealm() {
@@ -164,10 +200,10 @@ public class ChatActivity extends AppCompatActivity {
                             } else {
                                 try {
                                     //Those messages not of this user using this device
-                                    you.setName(EncodingFirebase.getNameOfUser(user));
+                                    you.setName(EncodingFirebase.getNameOfUser(EncodingFirebase.encodeString(user)));
                                     messageReceive = new Message.Builder().setUser(you)
                                             .setCreatedAt(EncodingFirebase.convertDateToCalendar(time))
-                                            .setRightMessage(true).setMessageText(content).build();
+                                            .setRightMessage(false).setMessageText(content).build();
                                 } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
@@ -178,9 +214,11 @@ public class ChatActivity extends AppCompatActivity {
                         }
 
                     }
-                    //Remove duplicated element
+
                     commentListSend = new ArrayList<>(new LinkedHashSet<>(commentListSend));
                     commentListReceive = new ArrayList<>(new LinkedHashSet<>(commentListReceive));
+                    TastyToast.makeText(getApplicationContext() , "size:"+ commentListSend.size(), TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
+
                     for (int i = 0; i < commentListSend.size(); i++) {
                         mChatView.send(commentListSend.get(i));
                     }
@@ -200,6 +238,8 @@ public class ChatActivity extends AppCompatActivity {
         } catch (Exception e) {
             Log.e("Error", "Error in loadAllList");
         }
+        //Remove duplicated element
+
 
     }
 

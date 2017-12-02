@@ -202,7 +202,7 @@
                 android:layout_height="wrap_content">
 
                 <at.markushi.ui.CircleButton
-                    android:id="@+id/btnInfo"
+                    android:id="@+id/btnDetail"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/ic_info"

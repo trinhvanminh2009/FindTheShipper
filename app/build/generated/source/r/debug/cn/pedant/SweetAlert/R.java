@@ -530,9 +530,9 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f0f001d;
         public static final int abc_shareactionprovider_share_with_application = 0x7f0f001e;
         public static final int app_name = 0x7f0f0023;
-        public static final int dialog_cancel = 0x7f0f007a;
-        public static final int dialog_default_title = 0x7f0f007b;
-        public static final int dialog_ok = 0x7f0f007c;
+        public static final int dialog_cancel = 0x7f0f007b;
+        public static final int dialog_default_title = 0x7f0f007c;
+        public static final int dialog_ok = 0x7f0f007d;
     }
     public static final class style {
         public static final int Base_TextAppearance_AppCompat = 0x7f10000f;

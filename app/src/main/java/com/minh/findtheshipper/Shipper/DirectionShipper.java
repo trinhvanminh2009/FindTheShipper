@@ -1,6 +1,7 @@
 package com.minh.findtheshipper.Shipper;
 
 
+/*
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -293,3 +294,4 @@ public class DirectionShipper extends AppCompatActivity implements OnMapReadyCal
         mapView.onSaveInstanceState(outState);
     }
 }
+*/

@@ -10,7 +10,10 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -69,7 +72,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.realm.Realm;
 import io.realm.RealmList;
 
-public class DetailOrderHistoryActivity extends AppCompatActivity implements OnMapReadyCallback,
+public class DetailOrderHistoryActivity extends com.minh.findtheshipper.FragmentActivity implements OnMapReadyCallback,
         DirectionFinderListeners {
     @BindView(R.id.toolBar)
     Toolbar toolbar;
@@ -366,14 +369,9 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
             case R.id.btnComment:
                 Intent chatAcIntent = new Intent(DetailOrderHistoryActivity.this, ChatActivity.class);
                 chatAcIntent.putExtra("orderID", order.getOrderID());
-               // TastyToast.makeText(getApplicationContext(), order.getOrderID(), TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
                 startActivity(chatAcIntent);
-              /*  Bundle bundle = new Bundle();
-                bundle.putString("orderID", order.getOrderID());
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                final CommentDialogHelpers dialogHelpers = new CommentDialogHelpers();
-                dialogHelpers.show(fragmentManager, "New fragment");
-                dialogHelpers.setArguments(bundle);*/
+
+
                 break;
             case R.id.btnDelete:
                 SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
@@ -415,7 +413,7 @@ public class DetailOrderHistoryActivity extends AppCompatActivity implements OnM
             /*  updateUsersOnlineFromServer();
               LatLng temp = EncodingFirebase.getLocationFromAddress(DetailOrderHistoryActivity.this, order.getStartPoint());
               TastyToast.makeText(DetailOrderHistoryActivity.this , temp.latitude + "," + temp.longitude, TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);*/
-            startActivity(new Intent(DetailOrderHistoryActivity.this, DirectionShipper.class));
+          //  startActivity(new Intent(DetailOrderHistoryActivity.this, DirectionShipper.class));
                 break;
 
         }

@@ -1499,7 +1499,7 @@
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="config_tooltipAnimTime">150</integer>
     <integer name="design_snackbar_text_max_lines">2</integer>
-    <integer name="google_play_services_version">11717000</integer>
+    <integer name="google_play_services_version">11720000</integer>
     <integer name="hide_password_duration">320</integer>
     <integer name="order_button">30</integer>
     <integer name="show_password_duration">200</integer>
@@ -1602,6 +1602,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="content">Content</string>
+    <string name="content_cancel_order">This order will be canceled!</string>
     <string name="create_new_order">Create New Order</string>
     <string name="create_order">Create Order</string>
     <string name="created">Created:  </string>
@@ -3397,6 +3398,7 @@
     <string name="muted">Muted</string>
     <string name="navigation_guidance_day_v2" translatable="false">mapbox://styles/mapbox/navigation-guidance-day-v2</string>
     <string name="notification_arrival_time_format">Arrive at %s</string>
+    <string name="notification_shop_canceled_order">Sorry! I have to cancel this order.</string>
     <string name="notification_state_2">want to get this order. Please confirm to continue!</string>
     <string name="notification_title">Notification</string>
     <string name="number_order_show">Number order show</string>
@@ -3510,6 +3512,8 @@
     <string name="wait_find_direction">Just a moment. Finding directions</string>
     <string name="wait_server">Just a moment. Loading data from server</string>
     <string name="warning">Warning!</string>
+    <string name="warning_state_order_3">The delivery man is working. This order cannot be canceled</string>
+    <string name="warning_state_order_4">Completed order! If you want to remove this order please click detail order.</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

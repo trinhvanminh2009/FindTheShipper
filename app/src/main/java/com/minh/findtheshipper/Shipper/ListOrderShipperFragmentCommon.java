@@ -92,6 +92,7 @@ public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragm
                         String distance = dataSnapshot.child(key).child("Distance").getValue(String.class);
                         String dateTime = dataSnapshot.child(key).child("Datetime").getValue(String.class);
                         Boolean saveOrder = dataSnapshot.child(key).child("Save Order").getValue(Boolean.class);
+                        Boolean showAgain = dataSnapshot.child(key).child("Show Again").getValue(Boolean.class);
                         OrderTemp orderTemp = new OrderTemp();
                         orderTemp.setOrderID(key);
                         orderTemp.setStatus(status);
@@ -104,7 +105,10 @@ public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragm
                         orderTemp.setDistance(distance);
                         orderTemp.setDateTime(dateTime);
                         orderTemp.setSavedOrder(saveOrder);
-                        orderList.add(orderTemp);
+                        if (showAgain == null || showAgain) {
+                            orderList.add(orderTemp);
+
+                        }
                     }
                     try {
                         Collections.sort(orderList, new SortOrderTempHelpers());

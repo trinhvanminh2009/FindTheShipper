@@ -1057,20 +1057,20 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f0f001d;
         public static final int abc_shareactionprovider_share_with_application = 0x7f0f001e;
         public static final int abc_toolbar_collapse_description = 0x7f0f001f;
-        public static final int define_materialize = 0x7f0f0076;
-        public static final int library_materialize_author = 0x7f0f071f;
-        public static final int library_materialize_authorWebsite = 0x7f0f0720;
-        public static final int library_materialize_isOpenSource = 0x7f0f0721;
-        public static final int library_materialize_libraryDescription = 0x7f0f0722;
-        public static final int library_materialize_libraryName = 0x7f0f0723;
-        public static final int library_materialize_libraryVersion = 0x7f0f0724;
-        public static final int library_materialize_libraryWebsite = 0x7f0f0725;
-        public static final int library_materialize_licenseId = 0x7f0f0726;
-        public static final int library_materialize_owner = 0x7f0f0727;
-        public static final int library_materialize_repositoryLink = 0x7f0f0728;
-        public static final int library_materialize_year = 0x7f0f0729;
-        public static final int search_menu_title = 0x7f0f0783;
-        public static final int status_bar_notification_info_overflow = 0x7f0f078f;
+        public static final int define_materialize = 0x7f0f0077;
+        public static final int library_materialize_author = 0x7f0f0720;
+        public static final int library_materialize_authorWebsite = 0x7f0f0721;
+        public static final int library_materialize_isOpenSource = 0x7f0f0722;
+        public static final int library_materialize_libraryDescription = 0x7f0f0723;
+        public static final int library_materialize_libraryName = 0x7f0f0724;
+        public static final int library_materialize_libraryVersion = 0x7f0f0725;
+        public static final int library_materialize_libraryWebsite = 0x7f0f0726;
+        public static final int library_materialize_licenseId = 0x7f0f0727;
+        public static final int library_materialize_owner = 0x7f0f0728;
+        public static final int library_materialize_repositoryLink = 0x7f0f0729;
+        public static final int library_materialize_year = 0x7f0f072a;
+        public static final int search_menu_title = 0x7f0f0785;
+        public static final int status_bar_notification_info_overflow = 0x7f0f0791;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100000;

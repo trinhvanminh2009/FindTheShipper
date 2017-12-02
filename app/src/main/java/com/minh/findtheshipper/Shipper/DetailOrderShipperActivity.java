@@ -246,7 +246,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                                                     OneSignalHelpers.sendNotification(EncodingFirebase.decodeString(EncodingFirebase.getEmailFromUserID(key)),
                                                             getCurrentUser().getEmail(), message);
                                                     String title = "Get order";
-                                                    String keyNotification = key + "_notification_" + getCoutnNotification(key);
+                                                    String keyNotification = key + "_notification_" + getCountNotification(key);
                                                     orderDataBase.child(key).child("Notifications").child(keyNotification).child("From")
                                                             .setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
                                                     DateFormat datetimeFormat = new SimpleDateFormat("dd/MM/yyyy-HH:mm", Locale.getDefault());
@@ -442,7 +442,7 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
 
     }
 
-    private long getCoutnNotification(final String key) {
+    private long getCountNotification(final String key) {
         final long[] result = {0};
         final DatabaseReference databaseNotification = FirebaseDatabase.getInstance().getReference("order/" + key + "/Notifications");
         databaseNotification.addValueEventListener(new ValueEventListener() {
@@ -498,7 +498,6 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
         key = orderKey[0];
         final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
         final DatabaseReference userDatabase = FirebaseDatabase.getInstance().getReference("user");
-
         orderDataBase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

@@ -17,6 +17,7 @@ public class OrderTemp {
     private String dateTime;
     private Boolean savedOrder;
     private String userGetOrder;
+    private Boolean showAgain;
 
     public OrderTemp() {
     }
@@ -115,5 +116,13 @@ public class OrderTemp {
 
     public void setUserGetOrder(String userGetOrder) {
         this.userGetOrder = userGetOrder;
+    }
+
+    public Boolean getShowAgain() {
+        return showAgain;
+    }
+
+    public void setShowAgain(Boolean showAgain) {
+        this.showAgain = showAgain;
     }
 }

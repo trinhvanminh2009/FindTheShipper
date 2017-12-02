@@ -887,12 +887,12 @@ public final class R {
         public static final int app_name = 0x7f0f0023;
         public static final int cancel = 0x7f0f002c;
         public static final int channel_name = 0x7f0f0031;
-        public static final int end_navigation = 0x7f0f0085;
-        public static final int notification_arrival_time_format = 0x7f0f074b;
-        public static final int ok = 0x7f0f074f;
-        public static final int search_menu_title = 0x7f0f0783;
-        public static final int settings_alert_title = 0x7f0f078a;
-        public static final int status_bar_notification_info_overflow = 0x7f0f078f;
+        public static final int end_navigation = 0x7f0f0086;
+        public static final int notification_arrival_time_format = 0x7f0f074c;
+        public static final int ok = 0x7f0f0751;
+        public static final int search_menu_title = 0x7f0f0785;
+        public static final int settings_alert_title = 0x7f0f078c;
+        public static final int status_bar_notification_info_overflow = 0x7f0f0791;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100000;
