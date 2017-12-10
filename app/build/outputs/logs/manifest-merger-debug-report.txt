@@ -1,17 +1,18 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-114:12
-INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-114:12
-INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-114:12
-INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-114:12
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-117:12
+INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-117:12
+INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-117:12
+INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-117:12
 MERGED from [io.realm:realm-android-library:3.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\realm-android-library-3.5.0.aar\d48c08f5bc06550cc52e7b2bf4bc9aee\AndroidManifest.xml:2:1-11:12
 MERGED from [com.mikepenz:materialdrawer:5.9.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialdrawer-5.9.2.aar\5dd8b5542f6f38a8260e2cfc6f6b1f74\AndroidManifest.xml:2:1-12:12
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.6.1.aar\7d8adaf978f623dbb93659e73fa0bc43\AndroidManifest.xml:2:1-18:12
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.1.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-plugin-locationlayer-0.1.0.aar\fad2620a861ee81812d0e3fdb3af481d\AndroidManifest.xml:2:1-12:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.7.0.aar\60aa6bd43b6985120a2b5846f2375637\AndroidManifest.xml:2:1-13:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.2.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-plugin-locationlayer-0.2.0.aar\5091ed9b7b6dbcf5d0eb80d10b8ba0f7\AndroidManifest.xml:2:1-10:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:2:1-31:12
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\tastytoast-0.1.1.aar\b6376e222702aa60b0412ea12c17ca4a\AndroidManifest.xml:2:1-14:12
 MERGED from [com.kofigyan.stateprogressbar:stateprogressbar:0.0.6] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\stateprogressbar-0.0.6.aar\721416f1e4f46a620449d676aa1a838d\AndroidManifest.xml:2:1-16:12
 MERGED from [com.github.bassaer:chatmessageview:1.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\chatmessageview-1.6.1.aar\7acc8cfaa50dc860f0fba2d2075d5917\AndroidManifest.xml:2:1-17:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.0.aar\831951d0a9f07d62af3072d150dbcc64\AndroidManifest.xml:2:1-15:12
 MERGED from [com.android.support:design:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\design-26.0.2.aar\d5a39c4c4bff19d603b7cfefe91778d8\AndroidManifest.xml:17:1-31:12
 MERGED from [com.facebook.android:facebook-android-sdk:4.27.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.27.0.aar\e95773b62b9498f64f1cce51042bde08\AndroidManifest.xml:21:1-31:12
 MERGED from [com.facebook.android:facebook-login:4.27.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\facebook-login-4.27.0.aar\1488355c7e9eb681e75a2a44fb51fbe2\AndroidManifest.xml:21:1-31:12
@@ -19,10 +20,9 @@ MERGED from [com.facebook.android:facebook-share:4.27.0] C:\Users\trinh\.gradle\
 MERGED from [com.facebook.android:facebook-common:4.27.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\facebook-common-4.27.0.aar\ba52f3644a89d966c653f4b92f77fa4e\AndroidManifest.xml:21:1-36:12
 MERGED from [com.github.f0ris.sweetalert:library:1.5.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\library-1.5.1.aar\cd149a03e894939104fb441d5463f5c5\AndroidManifest.xml:2:1-13:12
 MERGED from [com.pnikosis:materialish-progress:1.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialish-progress-1.0.aar\1aa299298edce26b888e209b16d73ad6\AndroidManifest.xml:2:1-17:12
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.1-SNAPSHOT.aar\3357ad96f00f6038ced766a753d9760a\AndroidManifest.xml:2:1-15:12
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.9.aar\015b1d91e146fbf108da5bc7fc4935bc\AndroidManifest.xml:2:1-14:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.8] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.8.aar\e066fc9dbc7d57388a6bc8b23b75e60f\AndroidManifest.xml:2:1-14:12
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:2:1-25:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2.2.9.aar\61111481b1057b76e9e2074dd33085b2\AndroidManifest.xml:2:1-13:12
-MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:2:1-34:12
 MERGED from [com.android.support:appcompat-v7:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.2.aar\422e5b545dbe3bc3682efb64c5338ab9\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1df7bd5255dc9c21f42544c5ab3e974e\AndroidManifest.xml:2:1-11:12
 MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\75c31b40caf044fe3e2344cbe38454a8\AndroidManifest.xml:2:1-7:12
@@ -57,7 +57,7 @@ MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\trinh\.gradle\cac
 MERGED from [com.android.support:recyclerview-v7:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.2.aar\54569a1fc74b9d15dc91b37c7cbe57cf\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:animated-vector-drawable:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.2.aar\284215616d5a7893c7833017ff99fd5d\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.2.aar\41f7fa2b08f744759aab446cd997ac09\AndroidManifest.xml:17:1-28:12
-MERGED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:17:1-34:12
+MERGED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:17:1-32:12
 MERGED from [com.android.support:support-fragment:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.2.aar\0a2470895f1864defb5b4ae466844ce1\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-media-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.2.aar\41977e168460ffa7bfee8626ff703a15\AndroidManifest.xml:17:1-31:12
 MERGED from [com.facebook.android:facebook-places:4.27.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\facebook-places-4.27.0.aar\e4532b732d28d0380ac8e0f4fc6df634\AndroidManifest.xml:21:1-31:12
@@ -68,8 +68,8 @@ MERGED from [com.android.support:support-core-utils:26.0.2] C:\Users\trinh\.grad
 MERGED from [com.android.support:support-core-ui:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.2.aar\67d8f7cd433f475b42e5baac502589fb\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:customtabs:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\customtabs-26.0.2.aar\4acdd74271ff7caf810cca2455e52bbd\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.2.aar\c890017e90fd4d46412498e6d205a643\AndroidManifest.xml:17:1-31:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0-alpha3.aar\a5365ace1c79616e095c17e3f881a9ca\AndroidManifest.xml:17:1-26:12
-MERGED from [android.arch.core:core:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\core-1.0.0-alpha3.aar\3d2cd6d64bf39fd0e6f336593244974d\AndroidManifest.xml:17:1-26:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\fba1d696d575cb42cf9a778a4c7d2e48\AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.core:runtime:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\c23e06f65e8855e450374161d080350f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.mikepenz:materialize:1.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialize-1.0.2.aar\8b5cd24d86e8b50360e213de55c7333f\AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:iconics-core:2.8.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\iconics-core-2.8.5.aar\928908ffe1231ebf348a57f26412b618\AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:fastadapter:2.5.3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\fastadapter-2.5.3.aar\45ac3075779c599518935dd1e49ec556\AndroidManifest.xml:2:1-12:12
@@ -88,22 +88,22 @@ MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] C:
 MERGED from [com.google.firebase:firebase-common-license:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.6.2.aar\21fa41cbb2441f4cefe977304082d027\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.2.aar\5c752ac16581516cc8ca1bd4fc1b9313\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.6.2.aar\0d4f958369cd1731d301774dfbbf25c7\AndroidManifest.xml:2:1-6:12
-INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-114:12
-INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-114:12
-INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-114:12
+INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-117:12
+INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-117:12
+INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-117:12
 	package
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:4:5-38
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-114:12
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-117:12
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-114:12
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:1-117:12
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:2:11-69
@@ -115,8 +115,8 @@ uses-permission#android.permission.INTERNET
 ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:13:5-67
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:21:5-67
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:21:5-67
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.9.aar\015b1d91e146fbf108da5bc7fc4935bc\AndroidManifest.xml:12:5-67
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.9.aar\015b1d91e146fbf108da5bc7fc4935bc\AndroidManifest.xml:12:5-67
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.8] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.8.aar\e066fc9dbc7d57388a6bc8b23b75e60f\AndroidManifest.xml:12:5-67
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.8] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.8.aar\e066fc9dbc7d57388a6bc8b23b75e60f\AndroidManifest.xml:12:5-67
 MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\46d7d27b582bef571587086373bb144e\AndroidManifest.xml:20:5-66
 MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\46d7d27b582bef571587086373bb144e\AndroidManifest.xml:20:5-66
 MERGED from [com.onesignal:OneSignal:3.6.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\OneSignal-3.6.5.aar\3fba552b875f42ffbc365b22d3beae72\AndroidManifest.xml:17:5-67
@@ -159,12 +159,16 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:16:5-75
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:16:22-72
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:17:5-81
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:9:5-81
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:9:5-81
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:17:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:18:5-79
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.9.aar\015b1d91e146fbf108da5bc7fc4935bc\AndroidManifest.xml:11:5-79
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.9.aar\015b1d91e146fbf108da5bc7fc4935bc\AndroidManifest.xml:11:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.8] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.8.aar\e066fc9dbc7d57388a6bc8b23b75e60f\AndroidManifest.xml:11:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.8] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.8.aar\e066fc9dbc7d57388a6bc8b23b75e60f\AndroidManifest.xml:11:5-79
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:10:5-79
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:10:5-79
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:18:22-76
 uses-permission#android.permission.CALL_PHONE
@@ -172,9 +176,9 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:19:5-69
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:19:22-66
 application
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:21:5-112:19
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.6.1.aar\7d8adaf978f623dbb93659e73fa0bc43\AndroidManifest.xml:11:5-16:19
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.6.1.aar\7d8adaf978f623dbb93659e73fa0bc43\AndroidManifest.xml:11:5-16:19
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:21:5-115:19
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.7.0.aar\60aa6bd43b6985120a2b5846f2375637\AndroidManifest.xml:9:5-11:19
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.7.0.aar\60aa6bd43b6985120a2b5846f2375637\AndroidManifest.xml:9:5-11:19
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:25:5-29:19
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:25:5-29:19
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\tastytoast-0.1.1.aar\b6376e222702aa60b0412ea12c17ca4a\AndroidManifest.xml:11:5-12:19
@@ -183,6 +187,8 @@ MERGED from [com.kofigyan.stateprogressbar:stateprogressbar:0.0.6] C:\Users\trin
 MERGED from [com.kofigyan.stateprogressbar:stateprogressbar:0.0.6] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\stateprogressbar-0.0.6.aar\721416f1e4f46a620449d676aa1a838d\AndroidManifest.xml:11:5-14:19
 MERGED from [com.github.bassaer:chatmessageview:1.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\chatmessageview-1.6.1.aar\7acc8cfaa50dc860f0fba2d2075d5917\AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.bassaer:chatmessageview:1.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\chatmessageview-1.6.1.aar\7acc8cfaa50dc860f0fba2d2075d5917\AndroidManifest.xml:11:5-15:19
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.0.aar\831951d0a9f07d62af3072d150dbcc64\AndroidManifest.xml:9:5-13:19
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.0.aar\831951d0a9f07d62af3072d150dbcc64\AndroidManifest.xml:9:5-13:19
 MERGED from [com.android.support:design:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\design-26.0.2.aar\d5a39c4c4bff19d603b7cfefe91778d8\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\design-26.0.2.aar\d5a39c4c4bff19d603b7cfefe91778d8\AndroidManifest.xml:25:5-29:19
 MERGED from [com.facebook.android:facebook-android-sdk:4.27.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.27.0.aar\e95773b62b9498f64f1cce51042bde08\AndroidManifest.xml:28:5-29:19
@@ -197,10 +203,8 @@ MERGED from [com.github.f0ris.sweetalert:library:1.5.1] C:\Users\trinh\.gradle\c
 MERGED from [com.github.f0ris.sweetalert:library:1.5.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\library-1.5.1.aar\cd149a03e894939104fb441d5463f5c5\AndroidManifest.xml:11:5-20
 MERGED from [com.pnikosis:materialish-progress:1.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialish-progress-1.0.aar\1aa299298edce26b888e209b16d73ad6\AndroidManifest.xml:11:5-15:19
 MERGED from [com.pnikosis:materialish-progress:1.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialish-progress-1.0.aar\1aa299298edce26b888e209b16d73ad6\AndroidManifest.xml:11:5-15:19
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.1-SNAPSHOT.aar\3357ad96f00f6038ced766a753d9760a\AndroidManifest.xml:9:5-13:19
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.1-SNAPSHOT.aar\3357ad96f00f6038ced766a753d9760a\AndroidManifest.xml:9:5-13:19
-MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:21:5-32:19
-MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:21:5-32:19
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:23:5-20
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.2.aar\422e5b545dbe3bc3682efb64c5338ab9\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.2.aar\422e5b545dbe3bc3682efb64c5338ab9\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1df7bd5255dc9c21f42544c5ab3e974e\AndroidManifest.xml:9:5-20
@@ -255,8 +259,8 @@ MERGED from [com.android.support:animated-vector-drawable:26.0.2] C:\Users\trinh
 MERGED from [com.android.support:animated-vector-drawable:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.2.aar\284215616d5a7893c7833017ff99fd5d\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-vector-drawable:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.2.aar\41f7fa2b08f744759aab446cd997ac09\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-vector-drawable:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.2.aar\41f7fa2b08f744759aab446cd997ac09\AndroidManifest.xml:22:5-26:19
-MERGED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:26:5-32:19
-MERGED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:26:5-32:19
+MERGED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:24:5-30:19
+MERGED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:24:5-30:19
 MERGED from [com.android.support:support-fragment:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.2.aar\0a2470895f1864defb5b4ae466844ce1\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-fragment:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.2.aar\0a2470895f1864defb5b4ae466844ce1\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-media-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.2.aar\41977e168460ffa7bfee8626ff703a15\AndroidManifest.xml:25:5-29:19
@@ -487,7 +491,9 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:108:9-1
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:109:13-53
 activity#com.minh.findtheshipper.common.ChatActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:111:9-66
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:111:9-114:20
+	android:windowSoftInputMode
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:112:13-60
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:111:19-54
 uses-sdk
@@ -498,10 +504,10 @@ MERGED from [io.realm:realm-android-library:3.5.0] C:\Users\trinh\.gradle\caches
 MERGED from [io.realm:realm-android-library:3.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\realm-android-library-3.5.0.aar\d48c08f5bc06550cc52e7b2bf4bc9aee\AndroidManifest.xml:7:5-9:41
 MERGED from [com.mikepenz:materialdrawer:5.9.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialdrawer-5.9.2.aar\5dd8b5542f6f38a8260e2cfc6f6b1f74\AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:materialdrawer:5.9.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialdrawer-5.9.2.aar\5dd8b5542f6f38a8260e2cfc6f6b1f74\AndroidManifest.xml:8:5-10:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.6.1.aar\7d8adaf978f623dbb93659e73fa0bc43\AndroidManifest.xml:7:5-9:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.6.1.aar\7d8adaf978f623dbb93659e73fa0bc43\AndroidManifest.xml:7:5-9:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.1.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-plugin-locationlayer-0.1.0.aar\fad2620a861ee81812d0e3fdb3af481d\AndroidManifest.xml:8:5-10:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.1.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-plugin-locationlayer-0.1.0.aar\fad2620a861ee81812d0e3fdb3af481d\AndroidManifest.xml:8:5-10:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.7.0.aar\60aa6bd43b6985120a2b5846f2375637\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.7.0.aar\60aa6bd43b6985120a2b5846f2375637\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.2.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-plugin-locationlayer-0.2.0.aar\5091ed9b7b6dbcf5d0eb80d10b8ba0f7\AndroidManifest.xml:6:5-8:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.2.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-plugin-locationlayer-0.2.0.aar\5091ed9b7b6dbcf5d0eb80d10b8ba0f7\AndroidManifest.xml:6:5-8:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:6:5-9:51
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:6:5-9:51
 MERGED from [com.sdsmdg.tastytoast:tastytoast:0.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\tastytoast-0.1.1.aar\b6376e222702aa60b0412ea12c17ca4a\AndroidManifest.xml:7:5-9:41
@@ -510,6 +516,8 @@ MERGED from [com.kofigyan.stateprogressbar:stateprogressbar:0.0.6] C:\Users\trin
 MERGED from [com.kofigyan.stateprogressbar:stateprogressbar:0.0.6] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\stateprogressbar-0.0.6.aar\721416f1e4f46a620449d676aa1a838d\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.bassaer:chatmessageview:1.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\chatmessageview-1.6.1.aar\7acc8cfaa50dc860f0fba2d2075d5917\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.bassaer:chatmessageview:1.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\chatmessageview-1.6.1.aar\7acc8cfaa50dc860f0fba2d2075d5917\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.0.aar\831951d0a9f07d62af3072d150dbcc64\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.0.aar\831951d0a9f07d62af3072d150dbcc64\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:design:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\design-26.0.2.aar\d5a39c4c4bff19d603b7cfefe91778d8\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\design-26.0.2.aar\d5a39c4c4bff19d603b7cfefe91778d8\AndroidManifest.xml:21:5-23:62
 MERGED from [com.facebook.android:facebook-android-sdk:4.27.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.27.0.aar\e95773b62b9498f64f1cce51042bde08\AndroidManifest.xml:24:5-26:41
@@ -524,14 +532,12 @@ MERGED from [com.github.f0ris.sweetalert:library:1.5.1] C:\Users\trinh\.gradle\c
 MERGED from [com.github.f0ris.sweetalert:library:1.5.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\library-1.5.1.aar\cd149a03e894939104fb441d5463f5c5\AndroidManifest.xml:7:5-9:41
 MERGED from [com.pnikosis:materialish-progress:1.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialish-progress-1.0.aar\1aa299298edce26b888e209b16d73ad6\AndroidManifest.xml:7:5-9:41
 MERGED from [com.pnikosis:materialish-progress:1.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialish-progress-1.0.aar\1aa299298edce26b888e209b16d73ad6\AndroidManifest.xml:7:5-9:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.1-SNAPSHOT.aar\3357ad96f00f6038ced766a753d9760a\AndroidManifest.xml:5:5-7:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.1-SNAPSHOT.aar\3357ad96f00f6038ced766a753d9760a\AndroidManifest.xml:5:5-7:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.9.aar\015b1d91e146fbf108da5bc7fc4935bc\AndroidManifest.xml:7:5-9:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.9.aar\015b1d91e146fbf108da5bc7fc4935bc\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.8] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.8.aar\e066fc9dbc7d57388a6bc8b23b75e60f\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.8] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.8.aar\e066fc9dbc7d57388a6bc8b23b75e60f\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:5:5-7:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2.2.9.aar\61111481b1057b76e9e2074dd33085b2\AndroidManifest.xml:8:5-11:51
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:2.2.9] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2.2.9.aar\61111481b1057b76e9e2074dd33085b2\AndroidManifest.xml:8:5-11:51
-MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:5:5-7:41
-MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:appcompat-v7:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.2.aar\422e5b545dbe3bc3682efb64c5338ab9\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:appcompat-v7:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.2.aar\422e5b545dbe3bc3682efb64c5338ab9\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1df7bd5255dc9c21f42544c5ab3e974e\AndroidManifest.xml:5:5-7:41
@@ -600,8 +606,8 @@ MERGED from [com.android.support:animated-vector-drawable:26.0.2] C:\Users\trinh
 MERGED from [com.android.support:animated-vector-drawable:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.2.aar\284215616d5a7893c7833017ff99fd5d\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.2.aar\41f7fa2b08f744759aab446cd997ac09\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.2.aar\41f7fa2b08f744759aab446cd997ac09\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:22:5-24:41
-MERGED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:22:5-24:41
+MERGED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.support:support-fragment:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.2.aar\0a2470895f1864defb5b4ae466844ce1\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-fragment:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.2.aar\0a2470895f1864defb5b4ae466844ce1\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.2.aar\41977e168460ffa7bfee8626ff703a15\AndroidManifest.xml:21:5-23:63
@@ -622,10 +628,10 @@ MERGED from [com.android.support:customtabs:26.0.2] C:\Users\trinh\.gradle\cache
 MERGED from [com.android.support:customtabs:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\customtabs-26.0.2.aar\4acdd74271ff7caf810cca2455e52bbd\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.2.aar\c890017e90fd4d46412498e6d205a643\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.2.aar\c890017e90fd4d46412498e6d205a643\AndroidManifest.xml:21:5-23:58
-MERGED from [android.arch.lifecycle:runtime:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0-alpha3.aar\a5365ace1c79616e095c17e3f881a9ca\AndroidManifest.xml:22:5-24:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0-alpha3.aar\a5365ace1c79616e095c17e3f881a9ca\AndroidManifest.xml:22:5-24:41
-MERGED from [android.arch.core:core:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\core-1.0.0-alpha3.aar\3d2cd6d64bf39fd0e6f336593244974d\AndroidManifest.xml:22:5-24:41
-MERGED from [android.arch.core:core:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\core-1.0.0-alpha3.aar\3d2cd6d64bf39fd0e6f336593244974d\AndroidManifest.xml:22:5-24:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\fba1d696d575cb42cf9a778a4c7d2e48\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\fba1d696d575cb42cf9a778a4c7d2e48\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.core:runtime:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\c23e06f65e8855e450374161d080350f\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.core:runtime:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\c23e06f65e8855e450374161d080350f\AndroidManifest.xml:20:5-22:41
 MERGED from [com.mikepenz:materialize:1.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialize-1.0.2.aar\8b5cd24d86e8b50360e213de55c7333f\AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:materialize:1.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialize-1.0.2.aar\8b5cd24d86e8b50360e213de55c7333f\AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:iconics-core:2.8.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\iconics-core-2.8.5.aar\928908ffe1231ebf348a57f26412b618\AndroidManifest.xml:8:5-10:41
@@ -674,14 +680,10 @@ INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
 		INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
-activity#com.mapbox.services.android.navigation.ui.v5.NavigationView
-ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.6.1.aar\7d8adaf978f623dbb93659e73fa0bc43\AndroidManifest.xml:12:9-15:53
-	android:screenOrientation
-		ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.6.1.aar\7d8adaf978f623dbb93659e73fa0bc43\AndroidManifest.xml:14:13-49
-	android:theme
-		ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.6.1.aar\7d8adaf978f623dbb93659e73fa0bc43\AndroidManifest.xml:15:13-50
+activity#com.mapbox.services.android.navigation.ui.v5.NavigationActivity
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.7.0.aar\60aa6bd43b6985120a2b5846f2375637\AndroidManifest.xml:10:9-100
 	android:name
-		ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.6.1.aar\7d8adaf978f623dbb93659e73fa0bc43\AndroidManifest.xml:13:13-87
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-ui-0.7.0.aar\60aa6bd43b6985120a2b5846f2375637\AndroidManifest.xml:10:19-97
 uses-feature#0x00020000
 ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:11:5-13:35
 MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\46d7d27b582bef571587086373bb144e\AndroidManifest.xml:21:5-77
@@ -692,8 +694,8 @@ MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\trinh\.g
 		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:13:9-32
 uses-feature#android.hardware.wifi
 ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:14:5-16:36
-MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:19:5-58
-MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:19:5-58
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:20:5-58
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:20:5-58
 	android:required
 		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:16:9-33
 		MERGED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:14:5-16:36
@@ -701,10 +703,11 @@ MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transf
 		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:15:9-45
 uses-feature#android.hardware.location.gps
 ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:17:5-19:36
-MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:13:5-15:36
-MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:13:5-15:36
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:16:5-66
+MERGED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:16:5-66
 	android:required
 		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:19:9-33
+		MERGED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:17:5-19:36
 	android:name
 		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:18:9-53
 uses-permission#android.permission.ACCESS_WIFI_STATE
@@ -713,10 +716,14 @@ ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh
 		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:23:22-73
 service#com.mapbox.services.android.telemetry.service.TelemetryService
 ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:28:9-98
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.1-SNAPSHOT.aar\3357ad96f00f6038ced766a753d9760a\AndroidManifest.xml:12:9-98
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.1-SNAPSHOT.aar\3357ad96f00f6038ced766a753d9760a\AndroidManifest.xml:12:9-98
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.0.aar\831951d0a9f07d62af3072d150dbcc64\AndroidManifest.xml:12:9-98
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.0.aar\831951d0a9f07d62af3072d150dbcc64\AndroidManifest.xml:12:9-98
 	android:name
 		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-5.2.0-beta.5.aar\58e09454737bb7ff599fe6f485617b20\AndroidManifest.xml:28:18-95
+service#com.mapbox.services.android.navigation.v5.navigation.NavigationService
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.0.aar\831951d0a9f07d62af3072d150dbcc64\AndroidManifest.xml:10:9-106
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.0.aar\831951d0a9f07d62af3072d150dbcc64\AndroidManifest.xml:10:18-103
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\design-26.0.2.aar\d5a39c4c4bff19d603b7cfefe91778d8\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:appcompat-v7:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.2.aar\422e5b545dbe3bc3682efb64c5338ab9\AndroidManifest.xml:26:9-28:38
@@ -755,46 +762,22 @@ activity#com.facebook.CustomTabMainActivity
 ADDED from [com.facebook.android:facebook-common:4.27.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\facebook-common-4.27.0.aar\ba52f3644a89d966c653f4b92f77fa4e\AndroidManifest.xml:33:9-71
 	android:name
 		ADDED from [com.facebook.android:facebook-common:4.27.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\facebook-common-4.27.0.aar\ba52f3644a89d966c653f4b92f77fa4e\AndroidManifest.xml:33:19-68
-service#com.mapbox.services.android.navigation.v5.navigation.NavigationService
-ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.1-SNAPSHOT.aar\3357ad96f00f6038ced766a753d9760a\AndroidManifest.xml:10:9-106
-	android:name
-		ADDED from [com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\mapbox-android-navigation-0.7.1-SNAPSHOT.aar\3357ad96f00f6038ced766a753d9760a\AndroidManifest.xml:10:18-103
 uses-feature#android.hardware.sensor.accelerometer
-ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:9:5-11:36
+ADDED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:12:5-14:36
 	android:required
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:11:9-33
+		ADDED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:14:9-33
 	android:name
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:10:9-61
+		ADDED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:13:9-61
 uses-feature#android.hardware.location
-ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:12:5-62
+ADDED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:15:5-62
 	android:name
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:12:19-59
+		ADDED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:15:19-59
 uses-feature#android.hardware.telephony
-ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:16:5-18:36
+ADDED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:17:5-19:36
 	android:required
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:18:9-33
+		ADDED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:19:9-33
 	android:name
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:17:9-50
-service#com.mapzen.android.lost.internal.FusedLocationProviderService
-ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:22:9-24:39
-	android:process
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:24:13-36
-	android:name
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:23:13-89
-service#com.mapzen.android.lost.internal.GeofencingIntentService
-ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:25:9-29:19
-	android:name
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:25:18-89
-intent-filter#com.mapzen.lost.action.ACTION_GEOFENCING_SERVICE
-ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:26:13-28:29
-action#com.mapzen.lost.action.ACTION_GEOFENCING_SERVICE
-ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:27:17-91
-	android:name
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:27:25-88
-service#com.mapzen.android.lost.internal.DwellIntentService
-ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:30:9-31:19
-	android:name
-		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\f0d697108a2ce980a5e72845a170ff60\AndroidManifest.xml:30:18-84
+		ADDED from [com.mapzen.android:lost:1.1.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\lost-1.1.1.aar\520632c0c8ea877f7dd59c9667388891\AndroidManifest.xml:18:9-50
 meta-data#com.google.android.gms.version
 ADDED from [com.google.maps.android:android-maps-utils:0.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\android-maps-utils-0.5.aar\7d2981e07ce7f7200fd0214fcbb6752a\AndroidManifest.xml:8:9-10:69
 MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\9a67488f323b862c9498f67e1952203b\AndroidManifest.xml:20:9-121
@@ -1127,16 +1110,16 @@ ADDED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\trinh\.gr
 		ADDED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\0781776cadf25beb01fb267ba8509f8e\AndroidManifest.xml:19:86-145
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\0781776cadf25beb01fb267ba8509f8e\AndroidManifest.xml:19:19-85
-provider#android.arch.lifecycle.LifecycleRuntimeTrojanProvider
-ADDED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:27:9-31:43
+provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:25:9-29:43
 	android:authorities
-		ADDED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:29:13-68
+		ADDED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:27:13-68
 	android:multiprocess
-		ADDED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:31:13-40
+		ADDED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:29:13-40
 	android:exported
-		ADDED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:30:13-37
+		ADDED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from [android.arch.lifecycle:extensions:1.0.0-alpha3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0-alpha3.aar\4bde641e350e7f5d8bb28db0e1ad903e\AndroidManifest.xml:28:13-81
+		ADDED from [android.arch.lifecycle:extensions:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\extensions-1.0.0.aar\b238c94e3e15fe189dabfb692b367727\AndroidManifest.xml:26:13-83
 provider#com.facebook.internal.FacebookInitProvider
 ADDED from [com.facebook.android:facebook-core:4.27.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\facebook-core-4.27.0.aar\de2352d3c0ddf6a765a810b1e316a62d\AndroidManifest.xml:39:9-42:40
 	android:authorities

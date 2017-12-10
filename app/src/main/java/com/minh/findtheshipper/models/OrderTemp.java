@@ -18,9 +18,11 @@ public class OrderTemp {
     private Boolean savedOrder;
     private String userGetOrder;
     private Boolean showAgain;
+    private String deliveryTime;
 
     public OrderTemp() {
     }
+
 
     public String getOrderID() {
         return orderID;
@@ -124,5 +126,13 @@ public class OrderTemp {
 
     public void setShowAgain(Boolean showAgain) {
         this.showAgain = showAgain;
+    }
+
+    public String getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(String deliveryTime) {
+        this.deliveryTime = deliveryTime;
     }
 }

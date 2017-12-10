@@ -560,6 +560,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 order.setFinishPoint(listControls.get(1).getContent());
                 order.setAdvancedMoney(editAdvancedMoney.getText().toString() + ",000 VNĐ");
                 order.setDistance(txtDistance.getText().toString());
+                order.setDeliveryTime(txtTime.getText().toString());
                 order.setShipMoney(editShipMoney.getText().toString() + ",000 VNĐ");
                 if (!editNote.getText().toString().equals("")) {
                     order.setNote(getResources().getString(R.string.order_note) + editNote.getText().toString());
@@ -584,6 +585,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Ship Money").setValue(order.getShipMoney());
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Note").setValue(order.getNote());
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Distance").setValue(order.getDistance());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Delivery Time").setValue(order.getDeliveryTime());
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Datetime").setValue(order.getDateTime());
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Save Order").setValue(order.getSaveOrder());
                 //Handle change to created order

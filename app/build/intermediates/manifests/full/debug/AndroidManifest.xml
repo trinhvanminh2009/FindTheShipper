@@ -31,7 +31,7 @@
         android:required="true" /> <!-- Implied by ACCESS_WIFI_STATE. -->
     <uses-feature
         android:name="android.hardware.location.gps"
-        android:required="false" />
+        android:required="true" />
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
@@ -167,30 +167,19 @@
         <activity
             android:name="com.minh.findtheshipper.Shipper.DirectionShipper"
             android:label="@string/title_activity_direction_shipper" />
-        <activity android:name="com.minh.findtheshipper.common.ChatActivity" />
         <activity
-            android:name="com.mapbox.services.android.navigation.ui.v5.NavigationView"
-            android:screenOrientation="portrait"
-            android:theme="@style/NavigationView" /> <!-- Include the telemetry service to simplify set up (https://www.mapbox.com/telemetry) -->
+            android:name="com.minh.findtheshipper.common.ChatActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity android:name="com.mapbox.services.android.navigation.ui.v5.NavigationActivity" /> <!-- Include the telemetry service to simplify set up (https://www.mapbox.com/telemetry) -->
         <service android:name="com.mapbox.services.android.telemetry.service.TelemetryService" />
+        <service android:name="com.mapbox.services.android.navigation.v5.navigation.NavigationService" />
 
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.0.2" />
 
         <activity android:name="com.facebook.CustomTabMainActivity" />
-
-        <service android:name="com.mapbox.services.android.navigation.v5.navigation.NavigationService" />
-        <service
-            android:name="com.mapzen.android.lost.internal.FusedLocationProviderService"
-            android:process=":lost" />
-        <service android:name="com.mapzen.android.lost.internal.GeofencingIntentService" >
-            <intent-filter>
-                <action android:name="com.mapzen.lost.action.ACTION_GEOFENCING_SERVICE" />
-            </intent-filter>
-        </service>
-        <service android:name="com.mapzen.android.lost.internal.DwellIntentService" >
-        </service>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -319,7 +308,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <provider
-            android:name="android.arch.lifecycle.LifecycleRuntimeTrojanProvider"
+            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
             android:authorities="com.minh.findtheshipper.lifecycle-trojan"
             android:exported="false"
             android:multiprocess="true" />

@@ -1,6 +1,7 @@
 package com.minh.findtheshipper.models.Adapters.ShopAdapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kofigyan.stateprogressbar.StateProgressBar;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.Shop.DetailOrderShopActivity;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.OneSignalHelpers;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
@@ -94,8 +96,6 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
 
                 }
             });
-
-
         }
 
         String timeAgo = context.getString(R.string.order_last_updated) +
@@ -111,7 +111,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         /**Start get state order to update
          * Get update for all orders for any order
          * */
-       /* final String[] descriptionData = {"Find", "Confirm", "Delivery", "Done"};
+        final String[] descriptionData = {"Find", "Confirm", "Delivery", "Done"};
         holder.stateProgressBar.setStateDescriptionData(descriptionData);
         final DatabaseReference orderDataBase = FirebaseDatabase.getInstance()
                 .getReference("order").child(key).child("State Order");
@@ -152,7 +152,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });*/
+        });
         /**End update state order
          * */
         final boolean[] isOpen = {false};
@@ -267,7 +267,9 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         holder.btnDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(view.getContext(), DetailOrderShopActivity.class);
+                intent.putExtra("orderKey",key);
+                view.getContext().startActivity(intent);
             }
         });
 

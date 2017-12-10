@@ -133,6 +133,7 @@ public class ChatActivity extends AppCompatActivity {
                         public void run() {
                             //Scroll to end
                             //messageView.scrollToEnd();
+
                             Toast.makeText(ChatActivity.this, "kappears", Toast.LENGTH_SHORT).show();
                         }
                     });

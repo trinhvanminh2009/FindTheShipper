@@ -46,9 +46,13 @@ dependencies {
     compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0-beta.5@aar') {
         transitive = true
     }
-    compile('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.6.1') {
+    compile('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.7.0') {
         transitive = true
     }
+    compile ('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.7.0-SNAPSHOT') {
+        transitive = true
+    }
+
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.jakewharton:butterknife:8.8.1'
@@ -73,10 +77,9 @@ dependencies {
     compile 'com.kofigyan.stateprogressbar:stateprogressbar:0.0.6'
     compile 'com.squareup.okhttp3:okhttp:3.9.1'
     compile 'com.github.f0ris.sweetalert:library:1.5.1'
-    compile 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0'
-    compile 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.1-SNAPSHOT'
     compile 'com.android.support:multidex:1.0.2'
     compile 'com.github.bassaer:chatmessageview:1.6.1'
+    compile 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.7.0'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
     implementation "com.jakewharton:butterknife:8.8.1"

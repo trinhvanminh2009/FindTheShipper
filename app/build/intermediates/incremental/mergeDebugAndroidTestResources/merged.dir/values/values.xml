@@ -217,11 +217,33 @@
     <color name="mapbox_navigation_route_layer_congestion_yellow">#FFAB65</color>
     <color name="mapbox_navigation_route_shield_layer_color">#2C5F99</color>
     <color name="mapbox_navigation_view_color_accent">#4882C6</color>
+    <color name="mapbox_navigation_view_color_accent_dark">#FFFFFF</color>
+    <color name="mapbox_navigation_view_color_accent_text">#424242</color>
+    <color name="mapbox_navigation_view_color_accent_text_dark">#FFFFFF</color>
+    <color name="mapbox_navigation_view_color_banner_background">#37516F</color>
+    <color name="mapbox_navigation_view_color_banner_background_dark">#37516F</color>
+    <color name="mapbox_navigation_view_color_banner_maneuver_primary">#FFFFFF</color>
+    <color name="mapbox_navigation_view_color_banner_maneuver_primary_dark">#FFFFFF</color>
+    <color name="mapbox_navigation_view_color_banner_maneuver_secondary">#4DFFFFFF</color>
+    <color name="mapbox_navigation_view_color_banner_maneuver_secondary_dark">#4DFFFFFF</color>
+    <color name="mapbox_navigation_view_color_banner_primary_text">#FFFFFF</color>
+    <color name="mapbox_navigation_view_color_banner_primary_text_dark">#FFFFFF</color>
+    <color name="mapbox_navigation_view_color_banner_secondary_text">#E6FFFFFF</color>
+    <color name="mapbox_navigation_view_color_banner_secondary_text_dark">#E6FFFFFF</color>
+    <color name="mapbox_navigation_view_color_list_background">#2D3F53</color>
+    <color name="mapbox_navigation_view_color_list_background_dark">#2D3F53</color>
     <color name="mapbox_navigation_view_color_primary">#FFFFFF</color>
+    <color name="mapbox_navigation_view_color_primary_dark">#2D3F53</color>
+    <color name="mapbox_navigation_view_color_primary_text">#424242</color>
+    <color name="mapbox_navigation_view_color_primary_text_dark">#424242</color>
+    <color name="mapbox_navigation_view_color_progress">#4B75A4</color>
+    <color name="mapbox_navigation_view_color_progress_background">#39587B</color>
+    <color name="mapbox_navigation_view_color_progress_background_dark">#39587B</color>
+    <color name="mapbox_navigation_view_color_progress_dark">#4B75A4</color>
     <color name="mapbox_navigation_view_color_secondary">#28353D</color>
+    <color name="mapbox_navigation_view_color_secondary_dark">#D8D8D8</color>
     <color name="mapbox_plugin_location_layer_blue">#4882C6</color>
     <color name="mapbox_plugin_location_layer_gray">#263D57</color>
-    <color name="mapbox_plugin_navigation_route_default_blue">#4882C6</color>
     <color name="material_blue_grey_80">#ff37474f</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_90">#ff263238</color>
@@ -907,7 +929,7 @@
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/><attr format="reference" name="subMenuArrow"/></declare-styleable>
     <declare-styleable name="MessageView"><attr format="dimension" name="message_font_size"/><attr format="dimension" name="username_font_size"/><attr format="dimension" name="time_label_font_size"/><attr format="dimension" name="message_max_width"/><attr format="dimension" name="date_separator_font_size"/></declare-styleable>
     <declare-styleable name="NavigationMapRoute"><attr format="color" name="routeColor"/><attr format="color" name="routeModerateCongestionColor"/><attr format="color" name="routeSevereCongestionColor"/><attr format="color" name="routeShieldColor"/><attr format="float" name="routeScale"/></declare-styleable>
-    <declare-styleable name="NavigationView"><attr name="android:background"/><attr name="android:fitsSystemWindows"/><attr name="android:maxWidth"/><attr name="elevation"/><attr format="reference" name="menu"/><attr format="color" name="itemIconTint"/><attr format="color" name="itemTextColor"/><attr format="reference" name="itemBackground"/><attr format="reference" name="itemTextAppearance"/><attr format="reference" name="headerLayout"/><attr format="color" name="navigationViewPrimary"/><attr format="color" name="navigationViewSecondary"/><attr format="color" name="navigationViewAccent"/></declare-styleable>
+    <declare-styleable name="NavigationView"><attr name="android:background"/><attr name="android:fitsSystemWindows"/><attr name="android:maxWidth"/><attr name="elevation"/><attr format="reference" name="menu"/><attr format="color" name="itemIconTint"/><attr format="color" name="itemTextColor"/><attr format="reference" name="itemBackground"/><attr format="reference" name="itemTextAppearance"/><attr format="reference" name="headerLayout"/><attr format="color" name="navigationViewPrimary"/><attr format="color" name="navigationViewSecondary"/><attr format="color" name="navigationViewAccent"/><attr format="color" name="navigationViewPrimaryText"/><attr format="color" name="navigationViewSecondaryText"/><attr format="color" name="navigationViewListBackground"/><attr format="color" name="navigationViewBannerBackground"/><attr format="color" name="navigationViewBannerPrimaryText"/><attr format="color" name="navigationViewBannerSecondaryText"/><attr format="color" name="navigationViewBannerManeuverPrimary"/><attr format="color" name="navigationViewBannerManeuverSecondary"/><attr format="color" name="navigationViewProgress"/><attr format="color" name="navigationViewProgressBackground"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/><attr name="android:popupAnimationStyle"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
     <declare-styleable name="ProgressWheel"><attr format="boolean" name="progressIndeterminate"/><attr format="color" name="barColor"/><attr format="color" name="rimColor"/><attr format="dimension" name="rimWidth"/><attr format="float" name="spinSpeed"/><attr format="integer" name="barSpinCycleTime"/><attr format="dimension" name="circleRadius"/><attr format="boolean" name="fillRadius"/><attr format="dimension" name="barWidth"/></declare-styleable>
@@ -1483,7 +1505,7 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="attach">Add attachment</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
-    <string name="cancel">Cancel</string>
+    <string name="bottom_sheet_state" translatable="false">bottom_sheet_state</string>
     <string name="channel_name">Navigation Notifications</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="check_icon"></string>
@@ -1527,6 +1549,7 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="dark_theme_enabled" translatable="false">dark_theme_enabled</string>
     <string name="default_date_cell_text">2016/08/08</string>
     <string name="default_text_long">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -3161,6 +3184,8 @@
     <string name="gmd_zoom_out">gmd_zoom_out</string>
     <string name="gmd_zoom_out_map">gmd_zoom_out_map</string>
     <string name="input_hint">Message..</string>
+    <string name="instruction_super_state" translatable="false">instruction_super_state</string>
+    <string name="instruction_visibility" translatable="false">instruction_visibility</string>
     <string name="library_AndroidActionItemBadge_author">Mike Penz</string>
     <string name="library_AndroidActionItemBadge_authorWebsite">http://mikepenz.com/</string>
     <string name="library_AndroidActionItemBadge_isOpenSource">true</string>
@@ -3282,8 +3307,8 @@
     <string name="messenger_send_button_text">Send</string>
     <string name="muted">Muted</string>
     <string name="navigation_guidance_day_v2" translatable="false">mapbox://styles/mapbox/navigation-guidance-day-v2</string>
+    <string name="navigation_guidance_night_v2" translatable="false">mapbox://styles/mapbox/navigation-guidance-night-v2</string>
     <string name="notification_arrival_time_format">Arrive at %s</string>
-    <string name="ok">Ok</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -3292,15 +3317,13 @@
     <string name="place_autocomplete_clear_button">Clear search</string>
     <string name="place_autocomplete_search_hint">Search</string>
     <string name="re_center">Re-Center</string>
+    <string name="recenter_btn_visible" translatable="false">recenter_btn_visible</string>
     <string name="rerouting">Rerouting…</string>
     <string name="search_menu_title">Search</string>
     <string name="seen">Seen</string>
     <string name="send">Send</string>
     <string name="sending">Sending</string>
     <string name="sent">Sent</string>
-    <string name="settings_alert_title">For best results let your device turn on location using
-  Mapzen\'s location service.\n\nClicking \"OK\" will bring you to the device\'s location settings
-    screen. Remember to press the back key after updating your location settings.</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="unknown">Unknown</string>
     <string name="unmuted">Unmuted</string>
@@ -4825,10 +4848,41 @@
         <!-- Scales -->
         <item name="routeScale">1.0</item>
     </style>
-    <style name="NavigationView" parent="Theme.AppCompat.NoActionBar">
+    <style name="NavigationViewDark" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="navigationViewPrimary">@color/mapbox_navigation_view_color_primary_dark</item>
+        <item name="navigationViewSecondary">@color/mapbox_navigation_view_color_secondary_dark</item>
+        <item name="navigationViewAccent">@color/mapbox_navigation_view_color_accent_dark</item>
+        <item name="navigationViewPrimaryText">@color/mapbox_navigation_view_color_secondary_dark</item>
+        <item name="navigationViewSecondaryText">@color/mapbox_navigation_view_color_accent_text_dark</item>
+
+        <item name="navigationViewListBackground">@color/mapbox_navigation_view_color_list_background_dark</item>
+
+        <item name="navigationViewBannerBackground">@color/mapbox_navigation_view_color_banner_background_dark</item>
+        <item name="navigationViewBannerPrimaryText">@color/mapbox_navigation_view_color_banner_primary_text_dark</item>
+        <item name="navigationViewBannerSecondaryText">@color/mapbox_navigation_view_color_banner_secondary_text_dark</item>
+        <item name="navigationViewBannerManeuverPrimary">@color/mapbox_navigation_view_color_banner_maneuver_primary_dark</item>
+        <item name="navigationViewBannerManeuverSecondary">@color/mapbox_navigation_view_color_banner_maneuver_secondary_dark</item>
+
+        <item name="navigationViewProgress">@color/mapbox_navigation_view_color_progress_dark</item>
+        <item name="navigationViewProgressBackground">@color/mapbox_navigation_view_color_progress_background_dark</item>
+    </style>
+    <style name="NavigationViewLight" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="navigationViewPrimary">@color/mapbox_navigation_view_color_primary</item>
         <item name="navigationViewSecondary">@color/mapbox_navigation_view_color_secondary</item>
         <item name="navigationViewAccent">@color/mapbox_navigation_view_color_accent</item>
+        <item name="navigationViewPrimaryText">@color/mapbox_navigation_view_color_secondary</item>
+        <item name="navigationViewSecondaryText">@color/mapbox_navigation_view_color_accent_text</item>
+
+        <item name="navigationViewListBackground">@color/mapbox_navigation_view_color_list_background</item>
+
+        <item name="navigationViewBannerBackground">@color/mapbox_navigation_view_color_banner_background</item>
+        <item name="navigationViewBannerPrimaryText">@color/mapbox_navigation_view_color_banner_primary_text</item>
+        <item name="navigationViewBannerSecondaryText">@color/mapbox_navigation_view_color_banner_secondary_text</item>
+        <item name="navigationViewBannerManeuverPrimary">@color/mapbox_navigation_view_color_banner_maneuver_primary</item>
+        <item name="navigationViewBannerManeuverSecondary">@color/mapbox_navigation_view_color_banner_maneuver_secondary</item>
+
+        <item name="navigationViewProgress">@color/mapbox_navigation_view_color_progress</item>
+        <item name="navigationViewProgressBackground">@color/mapbox_navigation_view_color_progress_background</item>
     </style>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>

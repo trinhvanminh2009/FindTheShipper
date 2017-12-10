@@ -21,6 +21,7 @@ public class Order extends RealmObject{
     private String distance;
     private String phoneNumber;
     private String dateTime;
+    private String deliveryTime;
     private RealmList<Like> likes;
     private RealmList<Dislike>dislikes;
     private RealmList<Comment> comments;
@@ -136,5 +137,13 @@ public class Order extends RealmObject{
 
     public void setSaveOrder(Boolean saveOrder) {
         this.saveOrder = saveOrder;
+    }
+
+    public String getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(String deliveryTime) {
+        this.deliveryTime = deliveryTime;
     }
 }

@@ -108,7 +108,10 @@
         <activity
             android:name=".Shipper.DirectionShipper"
             android:label="@string/title_activity_direction_shipper" />
-        <activity android:name=".common.ChatActivity"></activity>
+        <activity android:name=".common.ChatActivity"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+        </activity>
     </application>
 
 </manifest>

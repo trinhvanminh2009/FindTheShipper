@@ -410,10 +410,10 @@ public class DetailOrderHistoryActivity extends com.minh.findtheshipper.Fragment
 
               /*  Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" + order.getStartPoint() + ""));
                 startActivity(intent);*/
-            /*  updateUsersOnlineFromServer();
+              updateUsersOnlineFromServer();
               LatLng temp = EncodingFirebase.getLocationFromAddress(DetailOrderHistoryActivity.this, order.getStartPoint());
-              TastyToast.makeText(DetailOrderHistoryActivity.this , temp.latitude + "," + temp.longitude, TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);*/
-          //  startActivity(new Intent(DetailOrderHistoryActivity.this, DirectionShipper.class));
+              TastyToast.makeText(DetailOrderHistoryActivity.this , temp.latitude + "," + temp.longitude, TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
+            startActivity(new Intent(DetailOrderHistoryActivity.this, DirectionShipper.class));
                 break;
 
         }
