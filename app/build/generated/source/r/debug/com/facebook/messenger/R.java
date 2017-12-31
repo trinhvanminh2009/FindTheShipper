@@ -8,18 +8,18 @@ package com.facebook.messenger;
 
 public final class R {
     public static final class drawable {
-        public static final int messenger_bubble_large_blue = 0x7f08017f;
-        public static final int messenger_bubble_large_white = 0x7f080180;
-        public static final int messenger_bubble_small_blue = 0x7f080181;
-        public static final int messenger_bubble_small_white = 0x7f080182;
-        public static final int messenger_button_blue_bg_round = 0x7f080183;
-        public static final int messenger_button_blue_bg_selector = 0x7f080184;
-        public static final int messenger_button_send_round_shadow = 0x7f080185;
-        public static final int messenger_button_white_bg_round = 0x7f080186;
-        public static final int messenger_button_white_bg_selector = 0x7f080187;
+        public static final int messenger_bubble_large_blue = 0x7f080184;
+        public static final int messenger_bubble_large_white = 0x7f080185;
+        public static final int messenger_bubble_small_blue = 0x7f080186;
+        public static final int messenger_bubble_small_white = 0x7f080187;
+        public static final int messenger_button_blue_bg_round = 0x7f080188;
+        public static final int messenger_button_blue_bg_selector = 0x7f080189;
+        public static final int messenger_button_send_round_shadow = 0x7f08018a;
+        public static final int messenger_button_white_bg_round = 0x7f08018b;
+        public static final int messenger_button_white_bg_selector = 0x7f08018c;
     }
     public static final class id {
-        public static final int messenger_send_button = 0x7f09011c;
+        public static final int messenger_send_button = 0x7f09011e;
     }
     public static final class layout {
         public static final int messenger_button_send_blue_large = 0x7f0b0086;
@@ -30,7 +30,7 @@ public final class R {
         public static final int messenger_button_send_white_small = 0x7f0b008b;
     }
     public static final class string {
-        public static final int messenger_send_button_text = 0x7f0f074b;
+        public static final int messenger_send_button_text = 0x7f0f074d;
     }
     public static final class style {
         public static final int MessengerButton = 0x7f1000df;

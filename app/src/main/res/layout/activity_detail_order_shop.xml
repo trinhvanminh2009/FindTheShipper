@@ -76,16 +76,37 @@
                             </LinearLayout>
 
                         </LinearLayout>
-
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="15dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <Spinner
+                                android:layout_width="match_parent"
+                                android:id="@+id/spinner"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/shape_edittext"
+                                android:layout_marginStart="20dp"
+                                android:layout_height="30dp">
+                            </Spinner>
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:id="@+id/btnUpdate"
+                                android:text="@string/update"
+                                android:background="@drawable/shape_button"
+                                />
+                        </LinearLayout>
                     </LinearLayout>
-
 
                 </RelativeLayout>
                 <com.kofigyan.stateprogressbar.StateProgressBar
+                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/stateProgressBar"
-                    app:spb_currentStateNumber="three"
+                    app:spb_currentStateNumber="one"
                     app:spb_maxStateNumber="four"
                     app:spb_stateBackgroundColor="#BDBDBD"
                     app:spb_stateForegroundColor="#009688"

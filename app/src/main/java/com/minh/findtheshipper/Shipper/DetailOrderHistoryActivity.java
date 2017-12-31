@@ -367,10 +367,15 @@ public class DetailOrderHistoryActivity extends com.minh.findtheshipper.Fragment
                 v.getContext().startActivity(intentPhone);
                 break;
             case R.id.btnComment:
-                Intent chatAcIntent = new Intent(DetailOrderHistoryActivity.this, ChatActivity.class);
+              /*  Intent chatAcIntent = new Intent(DetailOrderHistoryActivity.this, ChatActivity.class);
                 chatAcIntent.putExtra("orderID", order.getOrderID());
-                startActivity(chatAcIntent);
-
+                startActivity(chatAcIntent);*/
+                Bundle bundle = new Bundle();
+                bundle.putString("orderID", order.getOrderID());
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                final CommentDialogHelpers dialogHelpers = new CommentDialogHelpers();
+                dialogHelpers.show(fragmentManager, "New fragment");
+                dialogHelpers.setArguments(bundle);
 
                 break;
             case R.id.btnDelete:

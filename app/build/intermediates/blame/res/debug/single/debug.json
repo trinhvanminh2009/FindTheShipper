@@ -340,6 +340,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-anydpi-v21\\ic_maneuver_fork_right.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_current_location.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-mdpi\\ic_current_location.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\422e5b545dbe3bc3682efb64c5338ab9\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
@@ -1358,6 +1362,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_ic_account_circle.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\chatmessageview-1.6.1.aar\\7acc8cfaa50dc860f0fba2d2075d5917\\res\\drawable-hdpi-v4\\ic_account_circle.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_status_online.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_status_online.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
@@ -3556,6 +3564,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-5.2.0-beta.5.aar\\58e09454737bb7ff599fe6f485617b20\\res\\drawable-xhdpi-v4\\mapbox_marker_icon_default.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_current_location.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xhdpi\\ic_current_location.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_messenger_bubble_large_white.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-messenger-4.27.0.aar\\cb87963fc26605f7533e44cec38ed8fd\\res\\drawable-mdpi-v4\\messenger_bubble_large_white.png"
     },
@@ -3986,6 +3998,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_places_ic_clear.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.6.2.aar\\79795d0751678a7ad1a5ea440b6b9a6b\\res\\drawable-hdpi-v4\\places_ic_clear.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_gender.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_gender.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
@@ -4992,6 +5008,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\chatmessageview-1.6.1.aar\\7acc8cfaa50dc860f0fba2d2075d5917\\res\\drawable-xxhdpi-v4\\ic_markunread.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_current_location.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-hdpi\\ic_current_location.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21_design_appbar_state_list_animator.xml.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.0.2.aar\\d5a39c4c4bff19d603b7cfefe91778d8\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     },
@@ -5014,6 +5034,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_direction_turn_slight_left.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-xxhdpi-v4\\direction_turn_slight_left.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_ask_question.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_ask_question.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land_turn_lane_background.xml.flat",
@@ -6016,6 +6040,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-messenger-4.27.0.aar\\cb87963fc26605f7533e44cec38ed8fd\\res\\layout\\messenger_button_send_blue_large.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_status_offline.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_status_offline.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4_ic_maneuver_turn_180.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-ldpi-v4\\ic_maneuver_turn_180.png"
     },
@@ -6282,6 +6310,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_ic_report.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\chatmessageview-1.6.1.aar\\7acc8cfaa50dc860f0fba2d2075d5917\\res\\drawable-xhdpi-v4\\ic_report.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_current_location.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_current_location.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_direction_roundabout_slight_left.xml.flat",

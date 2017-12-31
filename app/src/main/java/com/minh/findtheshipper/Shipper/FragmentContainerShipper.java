@@ -351,21 +351,21 @@ public class FragmentContainerShipper extends FragmentActivity {
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order));
         item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order_saved));
-        item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+        item3.withBadge("9").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_order_history));
-        item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+        item4.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_package));
-        item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+        item5.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials));
-        item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+        item6.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile));
-        item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+        item7.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about));
-        item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+        item8.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version));
-        item9.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+        item9.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings));
-        item10.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
+        item10.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).
                 withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout));
 
         result.openDrawer();

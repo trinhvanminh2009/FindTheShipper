@@ -18,6 +18,12 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <string-array name="list_state_order">
+        <item>Find</item>
+        <item>Confirm</item>
+        <item>Delivery</item>
+        <item>Done</item>
+    </string-array>
     <string-array name="multi_select_list_preference_default_value"/>
     <string-array name="pref_example_list_titles" translatable="false">
         <item>Always</item>
@@ -1264,7 +1270,7 @@
     <dimen name="com_facebook_profilepictureview_preset_size_normal">100dp</dimen>
     <dimen name="com_facebook_profilepictureview_preset_size_small">50dp</dimen>
     <dimen name="comment_height">600dp</dimen>
-    <dimen name="comment_width">400dp</dimen>
+    <dimen name="comment_width">330dp</dimen>
     <dimen name="common_circle_width">3dp</dimen>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
     <dimen name="compat_button_inset_vertical_material">6dp</dimen>
@@ -1567,6 +1573,8 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="are_you_sure_content">This order won\'t be shown in history anymore!</string>
     <string name="are_you_sure_title">Are you sure?</string>
+    <string name="ask_for_accept_shipper">Would you like this accept this shipper for delivery this item!</string>
+    <string name="ask_for_accept_shipper_title">Shipper!</string>
     <string name="attach">Add attachment</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="bottom_sheet_state" translatable="false">bottom_sheet_state</string>
@@ -3495,6 +3503,7 @@
     <string name="setting">Settings</string>
     <string name="ship_mode">Ship click right here</string>
     <string name="shipper_information">Shipper Info</string>
+    <string name="shipper_not_found">This order doesn\'t have shipper. Please waiting system find out.</string>
     <string name="shop_mode">Shop click right here</string>
     <string name="start_place">Choose place to start</string>
     <string name="status_already_took_orders">You took orders! Please check in list orders taken!</string>
@@ -3536,6 +3545,7 @@
     <string name="type_comment">Type a comment…</string>
     <string name="unknown">Unknown</string>
     <string name="unmuted">Unmuted</string>
+    <string name="update">Update</string>
     <string name="version">Version</string>
     <string name="wait_find_direction">Just a moment. Finding directions</string>
     <string name="wait_server">Just a moment. Loading data from server</string>

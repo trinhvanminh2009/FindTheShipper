@@ -121,6 +121,11 @@
     <string name="warning_state_order_3">The delivery man is working. This order cannot be canceled</string>
     <string name="warning_state_order_4">Completed order! If you want to remove this order please click detail order.</string>
 
+    <!--String for DetailOrderShopActivity-->
+    <string name="ask_for_accept_shipper_title">Shipper!</string>
+    <string name="ask_for_accept_shipper">Would you like this accept this shipper for delivery this item!</string>
+    <string name="shipper_not_found">This order doesn\'t have shipper. Please waiting system find out.</string>
+
     <string-array name="change_language_array">
         <item>Vietnamese</item>
         <item>English</item>
@@ -188,6 +193,12 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="list_state_order">
+        <item>Find</item>
+        <item>Confirm</item>
+        <item>Delivery</item>
+        <item>Done</item>
+    </string-array>
     <string-array name="multi_select_list_preference_default_value" />
 
     <string name="pref_title_system_sync_settings">System sync settings</string>
@@ -213,4 +224,6 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_main3">Main3Activity</string>
     <string name="title_activity_direction_shipper">Map</string>
+
+    <string name="update">Update</string>
 </resources>

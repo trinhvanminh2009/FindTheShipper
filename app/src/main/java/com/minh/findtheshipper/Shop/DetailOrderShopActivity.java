@@ -1,11 +1,19 @@
 package com.minh.findtheshipper.Shop;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -17,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kofigyan.stateprogressbar.StateProgressBar;
 import com.minh.findtheshipper.R;
-import com.minh.findtheshipper.Shipper.DetailOrderHistoryActivity;
+import com.minh.findtheshipper.common.DialogUserInformation;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.OrderTemp;
@@ -63,11 +71,18 @@ public class DetailOrderShopActivity extends AppCompatActivity {
     at.markushi.ui.CircleButton btnShipperInformation;
     @BindView(R.id.stateProgressBar)
     StateProgressBar stateProgressBar;
+    @BindView(R.id.spinner)
+    Spinner spinner;
+    @BindView(R.id.btnUpdate)
+    Button btnUpdate;
     private Unbinder unbinder;
     private String key = "";
     private String userEmailFromServer = "";
     private OrderTemp order;
     private Realm realm;
+    private String currentShipper;
+    private int currentStateOrder;
+
 
 
     @Override
@@ -76,8 +91,56 @@ public class DetailOrderShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_order_shop);
         unbinder = ButterKnife.bind(this);
         initRealm();
+        showToolBar();
+        changeColorStatusBar();
         loadDataFromServer();
-        updateStateProgressBar();
+        initSpinner();
+       // updateStateProgressBar();
+
+    }
+
+    private void initSpinner(){
+        btnUpdate.setVisibility(View.GONE);
+        ArrayAdapter<CharSequence>adapter = ArrayAdapter.createFromResource(DetailOrderShopActivity.this,
+                R.array.list_state_order, android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                TastyToast.makeText(DetailOrderShopActivity.this, String.valueOf(spinner.getSelectedItemPosition()), TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                TastyToast.makeText(DetailOrderShopActivity.this, "not Changed", TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
+
+            }
+        });
+    }
+
+
+    private void changeColorStatusBar() {
+        Window window = this.getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+
+    }
+
+    private void showToolBar() {
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     @Override
@@ -87,12 +150,34 @@ public class DetailOrderShopActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.btnShipperInformation})
-    public void evenClick(final View view){
-        switch (view.getId()){
+    public void evenClick(final View view) {
+        switch (view.getId()) {
             case R.id.btnShipperInformation:
-
+                showDialogShipperInformation();
                 break;
         }
+    }
+
+    private void showDialogShipperInformation() {
+        Bundle bundle = new Bundle();
+        if(currentShipper != null && !currentShipper.equals("")){
+            bundle.putString("userEmail", currentShipper);
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            final DialogUserInformation dialogHelpers = new DialogUserInformation();
+            dialogHelpers.show(fragmentManager, "New fragment");
+            dialogHelpers.setArguments(bundle);
+        }else{
+            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this);
+            sweetAlertDialog.setTitle(R.string.warning);
+            sweetAlertDialog.setContentText(getString(R.string.shipper_not_found));
+            sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                @Override
+                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                    sweetAlertDialog.dismissWithAnimation();
+                }
+            });
+        }
+
     }
 
     private void loadDataFromServer() {
@@ -114,10 +199,12 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                 String phoneNumber = dataSnapshot.child(orderKey).child("Phone number").getValue(String.class);
                 String shipMoney = dataSnapshot.child(orderKey).child("Ship Money").getValue(String.class);
                 String note = dataSnapshot.child(orderKey).child("Note").getValue(String.class);
+                currentShipper  = dataSnapshot.child(orderKey).child("Shipper").getValue(String.class);
                 String deliveryTime = dataSnapshot.child(orderKey).child("Delivery time").getValue(String.class);
                 String distance = dataSnapshot.child(orderKey).child("Distance").getValue(String.class);
                 String dateTime = dataSnapshot.child(orderKey).child("Datetime").getValue(String.class);
                 Boolean saveOrder = dataSnapshot.child(orderKey).child("Save Order").getValue(Boolean.class);
+                String currentState = dataSnapshot.child(orderKey).child("State Order").getValue(String.class);
                 String shortStartPlace = EncodingFirebase.getShortAddress(startPlace);
                 String shortFinishPlace = EncodingFirebase.getShortAddress(finishPlace);
 
@@ -144,6 +231,44 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                     txtDistance.setText(distance);
                     txtTimeAgo.setText(TimeAgoHelpers.getTimeAgo(dateTime, DetailOrderShopActivity.this));
                 }
+                if(currentState != null){
+                    currentStateOrder = Integer.parseInt(currentState);
+                    String[] descriptionData = {"Find", "Confirm", "Delivery", "Done"};
+                    if(stateProgressBar != null){
+                        stateProgressBar.setStateDescriptionData(descriptionData);
+                        if(currentState.equals("1")){
+                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.ONE);
+                            spinner.setSelection(0, true);
+
+                        }
+                        if(currentState.equals("2")){
+                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
+                            spinner.setSelection(1, true);
+                        }
+                        if (currentState.equals("3")){
+                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
+                            spinner.setSelection(2, true);
+                        }
+                        if (currentState.equals("4")){
+                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.FOUR);
+                            spinner.setSelection(3, true);
+                        }
+                        stateProgressBar.setAnimationDuration(3000);
+                        stateProgressBar.enableAnimationToCurrentState(true);
+                    }
+                    SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this,
+                            SweetAlertDialog.CUSTOM_IMAGE_TYPE);
+                    sweetAlertDialog.setTitle(getString(R.string.ask_for_accept_shipper_title));
+                    sweetAlertDialog.setContentText(getString(R.string.ask_for_accept_shipper));
+                    sweetAlertDialog.setCustomImage(R.drawable.ic_ask_question);
+                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                            sweetAlertDialog.dismissWithAnimation();
+                        }
+                    });
+                    sweetAlertDialog.show();
+                    }
 
 
             }
@@ -180,40 +305,5 @@ public class DetailOrderShopActivity extends AppCompatActivity {
         realm = null;
         realm = Realm.getDefaultInstance();
     }
-
-    private void updateStateProgressBar() {
-
-        final String[] descriptionData = {"Find", "Confirm", "Delivery", "Done"};
-        stateProgressBar.setStateDescriptionData(descriptionData);
-        final DatabaseReference orderDataBase = FirebaseDatabase.getInstance()
-                .getReference("order").child(key).child("State Order");
-
-        orderDataBase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String currentState = dataSnapshot.getValue(String.class);
-                StateProgressBar.StateNumber stateNumber = null;
-                if (stateNumber != null) {
-
-                    stateProgressBar.setCurrentStateNumber(stateNumber);
-                    stateProgressBar.setAnimationDuration(3000);
-                    stateProgressBar.enableAnimationToCurrentState(true);
-
-
-                } else {
-                    Log.e("Error", "In current state number null");
-                }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-
-    }
-
 
 }

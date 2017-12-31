@@ -371,21 +371,21 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 .build();
 
 
-        item1.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+        item1.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_create_new, getTheme()));
         item2.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_list_order, getTheme()));
-        item3.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+        item3.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_tutorials, getTheme()));
-        item4.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+        item4.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_your_profile, getTheme()));
-        item5.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+        item5.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_about, getTheme()));
-        item6.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+        item6.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_version, getTheme()));
-        item7.withBadge("19").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+        item7.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_settings, getTheme()));
-        item8.withBadge("5").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
+        item8.withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE)
                 .withColorRes(R.color.md_green_900)).withIcon(getResources().getDrawable(R.drawable.ic_logout, getTheme()));
         result.openDrawer();
         result.closeDrawer();
