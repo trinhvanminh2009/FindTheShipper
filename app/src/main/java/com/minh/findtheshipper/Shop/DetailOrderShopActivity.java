@@ -6,6 +6,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -25,10 +27,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kofigyan.stateprogressbar.StateProgressBar;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.Shipper.DetailOrderHistoryActivity;
 import com.minh.findtheshipper.common.DialogUserInformation;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.OrderTemp;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.User;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import butterknife.BindView;
@@ -84,7 +89,6 @@ public class DetailOrderShopActivity extends AppCompatActivity {
     private int currentStateOrder;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,31 +99,224 @@ public class DetailOrderShopActivity extends AppCompatActivity {
         changeColorStatusBar();
         loadDataFromServer();
         initSpinner();
-       // updateStateProgressBar();
+        // updateStateProgressBar();
 
     }
 
-    private void initSpinner(){
+    private void initSpinner() {
         btnUpdate.setVisibility(View.GONE);
-        ArrayAdapter<CharSequence>adapter = ArrayAdapter.createFromResource(DetailOrderShopActivity.this,
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(DetailOrderShopActivity.this,
                 R.array.list_state_order, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        /***
+         * Spinner start from 0
+         * CurrentStateOrder start from 1
+         */
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                TastyToast.makeText(DetailOrderShopActivity.this, String.valueOf(spinner.getSelectedItemPosition()), TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
+                int spinnerPosition = spinner.getSelectedItemPosition();
+                SweetAlertDialog sweetAlertDialog;
+                if (spinnerPosition != 0) {
+                    if (currentShipper != null && !TextUtils.isEmpty(currentShipper.trim())) {
+                        if (currentStateOrder == 1) {
+                            switch (spinnerPosition) {
+                                case 1:
+                                    sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                    sweetAlertDialog.setTitle(R.string.warning);
+                                    sweetAlertDialog.setContentText(getString(R.string.are_you_sure_title));
+                                    sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                                    sweetAlertDialog.show();
+                                    sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                            spinner.setSelection(0);
+                                        }
+                                    });
+                                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            spinner.setSelection(1);
+                                        }
+                                    });
+                                    break;
+
+
+                                case 2:
+                                case 3:
+                                    sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                    sweetAlertDialog.setTitle(R.string.warning);
+                                    sweetAlertDialog.setContentText(getString(R.string.warning_order_1));
+                                    sweetAlertDialog.show();
+                                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                        }
+                                    });
+                                    spinner.setSelection(0);
+                                    break;
+
+                            }
+                        }
+                        if (currentStateOrder == 2) {
+                            switch (spinnerPosition) {
+                                case 2:case 3:
+                                    sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                    sweetAlertDialog.setTitle(R.string.warning);
+                                    sweetAlertDialog.setContentText(getString(R.string.warning_order_2));
+                                    sweetAlertDialog.show();
+                                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                        }
+                                    });
+                                    spinner.setSelection(1);
+                                    break;
+                            }
+                        }
+                        if (currentStateOrder == 3) {
+                            switch (spinnerPosition) {
+                                case 1:
+                                    sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                    sweetAlertDialog.setTitle(R.string.warning);
+                                    sweetAlertDialog.setContentText(getString(R.string.warning_order_2));
+                                    sweetAlertDialog.show();
+                                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                        }
+                                    });
+                                    spinner.setSelection(2);
+                                    break;
+                                case 2:
+                                    sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                    sweetAlertDialog.setTitle(R.string.warning);
+                                    sweetAlertDialog.setContentText(getString(R.string.are_you_sure_title));
+                                    sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                                    sweetAlertDialog.show();
+                                    sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                            spinner.setSelection(2);
+                                        }
+                                    });
+                                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            spinner.setSelection(1);
+                                        }
+                                    });
+                                    break;
+                                case 3:
+                                    sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                    sweetAlertDialog.setTitle(R.string.warning);
+                                    sweetAlertDialog.setContentText(getString(R.string.are_you_sure_title));
+                                    sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                                    sweetAlertDialog.show();
+                                    sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                            spinner.setSelection(2);
+                                        }
+                                    });
+                                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            spinner.setSelection(3);
+                                        }
+                                    });
+                                    break;
+                            }
+                        }
+                        if (currentStateOrder == 4) {
+                            switch (spinnerPosition) {
+                                case 1:case 2:
+                                    sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                    sweetAlertDialog.setTitle(R.string.warning);
+                                    sweetAlertDialog.setContentText(getString(R.string.warning_order_4));
+                                    sweetAlertDialog.show();
+                                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                        }
+                                    });
+                                    spinner.setSelection(3);
+                                    break;
+                            }
+
+                        }
+                    } else {
+                        sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                        sweetAlertDialog.setTitle(R.string.warning);
+                        sweetAlertDialog.setContentText(getString(R.string.have_not_shipper));
+                        sweetAlertDialog.show();
+                        sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                            }
+                        });
+                        spinner.setSelection(0);
+                    }
+                } else {
+                    if (currentStateOrder > 1) {
+                        sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                        sweetAlertDialog.setTitle(R.string.warning);
+                        sweetAlertDialog.setContentText(getString(R.string.warning_delete_shipper));
+                        sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                        sweetAlertDialog.show();
+                        //Do not thing
+                        sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                                spinner.setSelection(currentStateOrder - 1);
+                            }
+                        });
+                        //Remove shipper, back order to step 1
+                        sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                if (userEmailFromServer != null && getCurrentUser().getEmail() != null) {
+                                    if (!(DetailOrderShopActivity.this).isFinishing()) { //Make sure activity is running
+
+                                        final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
+                                        orderDataBase.child(key).child("Shipper").removeValue();
+                                        orderDataBase.child(key).child("State Order").setValue(1);
+                                        spinner.setSelection(0);
+                                        sweetAlertDialog.dismissWithAnimation();
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                }
+
+
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                TastyToast.makeText(DetailOrderShopActivity.this, "not Changed", TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
+                TastyToast.makeText(DetailOrderShopActivity.this, "not Changed", TastyToast.LENGTH_SHORT, TastyToast.CONFUSING);
 
             }
         });
     }
 
+    private User getCurrentUser() {
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        return realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
+    }
 
     private void changeColorStatusBar() {
         Window window = this.getWindow();
@@ -160,13 +357,13 @@ public class DetailOrderShopActivity extends AppCompatActivity {
 
     private void showDialogShipperInformation() {
         Bundle bundle = new Bundle();
-        if(currentShipper != null && !currentShipper.equals("")){
+        if (currentShipper != null && !currentShipper.equals("")) {
             bundle.putString("userEmail", currentShipper);
             FragmentManager fragmentManager = getSupportFragmentManager();
             final DialogUserInformation dialogHelpers = new DialogUserInformation();
             dialogHelpers.show(fragmentManager, "New fragment");
             dialogHelpers.setArguments(bundle);
-        }else{
+        } else {
             SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this);
             sweetAlertDialog.setTitle(R.string.warning);
             sweetAlertDialog.setContentText(getString(R.string.shipper_not_found));
@@ -176,6 +373,7 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                     sweetAlertDialog.dismissWithAnimation();
                 }
             });
+            sweetAlertDialog.show();
         }
 
     }
@@ -183,7 +381,6 @@ public class DetailOrderShopActivity extends AppCompatActivity {
     private void loadDataFromServer() {
         order = new OrderTemp();
         key = getIntent().getStringExtra("orderKey");
-        TastyToast.makeText(this, key, TastyToast.LENGTH_SHORT, TastyToast.CONFUSING);
         final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
         final DatabaseReference userDatabase = FirebaseDatabase.getInstance().getReference("user");
 
@@ -199,7 +396,7 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                 String phoneNumber = dataSnapshot.child(orderKey).child("Phone number").getValue(String.class);
                 String shipMoney = dataSnapshot.child(orderKey).child("Ship Money").getValue(String.class);
                 String note = dataSnapshot.child(orderKey).child("Note").getValue(String.class);
-                currentShipper  = dataSnapshot.child(orderKey).child("Shipper").getValue(String.class);
+                currentShipper = dataSnapshot.child(orderKey).child("Shipper").getValue(String.class);
                 String deliveryTime = dataSnapshot.child(orderKey).child("Delivery time").getValue(String.class);
                 String distance = dataSnapshot.child(orderKey).child("Distance").getValue(String.class);
                 String dateTime = dataSnapshot.child(orderKey).child("Datetime").getValue(String.class);
@@ -208,19 +405,24 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                 String shortStartPlace = EncodingFirebase.getShortAddress(startPlace);
                 String shortFinishPlace = EncodingFirebase.getShortAddress(finishPlace);
 
-                order.setOrderID(orderKey);
-                order.setStatus(status);
-                order.setStartPoint(startPlace);
-                order.setFinishPoint(finishPlace);
-                order.setAdvancedMoney(advancedMoney);
-                order.setShipMoney(shipMoney);
-                order.setPhoneNumber(phoneNumber);
-                order.setDistance(distance);
-                order.setDateTime(dateTime);
-                order.setDeliveryTime(deliveryTime);
-                order.setSavedOrder(saveOrder);
-                if (txtStartPlace != null && txtFinishPlace != null && txtAdvancedMoney != null && txtTime != null
-                        && txtPrice != null && txtNote != null && txtDistance != null && txtTimeAgo != null) {
+                if (status != null && startPlace != null && finishPlace != null
+                        && advancedMoney != null && phoneNumber != null
+                        && shipMoney != null && note != null
+                        && deliveryTime != null
+                        & distance != null && currentState != null
+                        && shortStartPlace != null && shortFinishPlace != null) {
+                    order.setOrderID(orderKey);
+                    order.setStatus(status);
+                    order.setStartPoint(startPlace);
+                    order.setFinishPoint(finishPlace);
+                    order.setAdvancedMoney(advancedMoney);
+                    order.setShipMoney(shipMoney);
+                    order.setPhoneNumber(phoneNumber);
+                    order.setDistance(distance);
+                    order.setDateTime(dateTime);
+                    order.setDeliveryTime(deliveryTime);
+                    order.setSavedOrder(saveOrder);
+
                     txtStartPlace.setText(shortStartPlace);
                     txtFinishPlace.setText(shortFinishPlace);
                     txtAdvancedMoney.setText(advancedMoney);
@@ -230,48 +432,45 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                     txtTime.setText(deliveryTime);
                     txtDistance.setText(distance);
                     txtTimeAgo.setText(TimeAgoHelpers.getTimeAgo(dateTime, DetailOrderShopActivity.this));
-                }
-                if(currentState != null){
+
                     currentStateOrder = Integer.parseInt(currentState);
                     String[] descriptionData = {"Find", "Confirm", "Delivery", "Done"};
-                    if(stateProgressBar != null){
-                        stateProgressBar.setStateDescriptionData(descriptionData);
-                        if(currentState.equals("1")){
-                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.ONE);
-                            spinner.setSelection(0, true);
 
-                        }
-                        if(currentState.equals("2")){
-                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
-                            spinner.setSelection(1, true);
-                        }
-                        if (currentState.equals("3")){
-                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
-                            spinner.setSelection(2, true);
-                        }
-                        if (currentState.equals("4")){
-                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.FOUR);
-                            spinner.setSelection(3, true);
-                        }
-                        stateProgressBar.setAnimationDuration(3000);
-                        stateProgressBar.enableAnimationToCurrentState(true);
+                    stateProgressBar.setStateDescriptionData(descriptionData);
+                    if (currentState.equals("1")) {
+                        stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.ONE);
+                        spinner.setSelection(0, true);
+
                     }
-                    SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this,
-                            SweetAlertDialog.CUSTOM_IMAGE_TYPE);
-                    sweetAlertDialog.setTitle(getString(R.string.ask_for_accept_shipper_title));
-                    sweetAlertDialog.setContentText(getString(R.string.ask_for_accept_shipper));
-                    sweetAlertDialog.setCustomImage(R.drawable.ic_ask_question);
-                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sweetAlertDialog) {
-                            sweetAlertDialog.dismissWithAnimation();
-                        }
-                    });
-                    sweetAlertDialog.show();
+                    if (currentState.equals("2")) {
+                        stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
+                        spinner.setSelection(1, true);
                     }
-
-
+                    if (currentState.equals("3")) {
+                        stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
+                        spinner.setSelection(2, true);
+                    }
+                    if (currentState.equals("4")) {
+                        stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.FOUR);
+                        spinner.setSelection(3, true);
+                    }
+                    stateProgressBar.setAnimationDuration(3000);
+                    stateProgressBar.enableAnimationToCurrentState(true);
+                }
+              /*  SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this,
+                        SweetAlertDialog.CUSTOM_IMAGE_TYPE);
+                sweetAlertDialog.setTitle(getString(R.string.ask_for_accept_shipper_title));
+                sweetAlertDialog.setContentText(getString(R.string.ask_for_accept_shipper));
+                sweetAlertDialog.setCustomImage(R.drawable.ic_ask_question);
+                sweetAlertDialog.show();
+                sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        sweetAlertDialog.dismissWithAnimation();
+                    }
+                });*/
             }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -284,7 +483,7 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                 String userKey = EncodingFirebase.getEmailFromUserID(key);
                 String nameCreator = dataSnapshot.child(userKey).child("Name").getValue(String.class);
                 String url = dataSnapshot.child(userKey).child("Avatar").getValue(String.class);
-                if (nameCreator != null && url != null && txtUserName != null && imgUserImage != null) {
+                if (nameCreator != null && url != null) {
                     txtUserName.setText(nameCreator);
                     Glide.with(DetailOrderShopActivity.this).load(EncodingFirebase.decodeString(url))
                             .apply(RequestOptions.circleCropTransform()).thumbnail(0.7f).into(imgUserImage);

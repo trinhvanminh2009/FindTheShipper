@@ -10,14 +10,13 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java" line="113" mnemonic="B" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9924ce03-1f61-418d-933a-926a905939ec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_ask_question.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_gender.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_status_offline.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_status_online.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-10-16-28-01-877.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-10-16-28-01-877.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-31-08-42-38-869.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2018-12-31-08-42-38-869.rawproto" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
@@ -27,15 +26,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_shape_button.xml.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable_shape_button.xml.flat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_detail_order_shipper.xml.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_detail_order_shipper.xml.flat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_detail_order_shop.xml.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_detail_order_shop.xml.flat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_dialog_user_information.xml.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_dialog_user_information.xml.flat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values_values.arsc.flat" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values_values.arsc.flat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/arch/lifecycle/extensions/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/arch/lifecycle/extensions/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/compat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/compat/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/constraint/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/constraint/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreui/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreui/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreutils/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreutils/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/customtabs/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/customtabs/R.java" />
@@ -49,7 +43,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v4/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v4/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/cn/pedant/SweetAlert/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/cn/pedant/SweetAlert/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/common/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/common/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/login/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/login/R.java" />
@@ -57,7 +50,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/share/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/share/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/github/bassaer/chatmessageview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/github/bassaer/chatmessageview/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/maps/android/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/maps/android/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/kofigyan/stateprogressbar/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/kofigyan/stateprogressbar/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/mapbox/mapboxsdk/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/mapbox/mapboxsdk/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/mapbox/mapboxsdk/plugins/locationlayer/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/mapbox/mapboxsdk/plugins/locationlayer/R.java" />
@@ -75,27 +67,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/mikepenz/materialize/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/mikepenz/materialize/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/minh/findtheshipper/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/minh/findtheshipper/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/onesignal/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/onesignal/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/pnikosis/materialishprogress/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/pnikosis/materialishprogress/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/sdsmdg/tastytoast/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/sdsmdg/tastytoast/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/DetailOrderHistoryActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/DetailOrderHistoryActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/FragmentContainerShipper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/FragmentContainerShipper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/HandleMapsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/HandleMapsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/common/DialogUserInformation.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/common/DialogUserInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/shape_button.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/shape_button.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_order_shipper.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_order_shipper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_order_shop.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_order_shop.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_user_information.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_user_information.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimen.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimen.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="Find The Shipper.iws" />
@@ -135,7 +116,88 @@
     <favorites_list name="Find The Shipper" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DetailOrderShopActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="375" column="36" lean-forward="false" selection-start-line="375" selection-start-column="36" selection-end-line="375" selection-end-column="36" />
+              <folding>
+                <element signature="e#4824#4840#0" expanded="true" />
+                <element signature="e#4911#4949#0" expanded="true" />
+                <element signature="e#5019#5045#0" expanded="true" />
+                <element signature="e#5185#5611#0" expanded="true" />
+                <element signature="e#5610#5611#0" expanded="true" />
+                <element signature="e#5691#6032#0" expanded="true" />
+                <element signature="e#6031#6032#0" expanded="true" />
+                <element signature="e#6360#6376#0" expanded="true" />
+                <element signature="e#6447#6482#0" expanded="true" />
+                <element signature="e#6623#6980#0" expanded="true" />
+                <element signature="e#6979#6980#0" expanded="true" />
+                <element signature="e#7500#7516#0" expanded="true" />
+                <element signature="e#7587#7622#0" expanded="true" />
+                <element signature="e#7763#8120#0" expanded="true" />
+                <element signature="e#8119#8120#0" expanded="true" />
+                <element signature="e#8632#8648#0" expanded="true" />
+                <element signature="e#8719#8754#0" expanded="true" />
+                <element signature="e#8895#9252#0" expanded="true" />
+                <element signature="e#9251#9252#0" expanded="true" />
+                <element signature="e#9599#9615#0" expanded="true" />
+                <element signature="e#9686#9724#0" expanded="true" />
+                <element signature="e#9794#9820#0" expanded="true" />
+                <element signature="e#9960#10386#0" expanded="true" />
+                <element signature="e#10385#10386#0" expanded="true" />
+                <element signature="e#10466#10807#0" expanded="true" />
+                <element signature="e#10806#10807#0" expanded="true" />
+                <element signature="e#11093#11109#0" expanded="true" />
+                <element signature="e#11180#11218#0" expanded="true" />
+                <element signature="e#11288#11314#0" expanded="true" />
+                <element signature="e#11454#11880#0" expanded="true" />
+                <element signature="e#11879#11880#0" expanded="true" />
+                <element signature="e#11960#12301#0" expanded="true" />
+                <element signature="e#12300#12301#0" expanded="true" />
+                <element signature="e#12759#12775#0" expanded="true" />
+                <element signature="e#12846#12881#0" expanded="true" />
+                <element signature="e#13022#13379#0" expanded="true" />
+                <element signature="e#13378#13379#0" expanded="true" />
+                <element signature="e#13748#13764#0" expanded="true" />
+                <element signature="e#13823#13859#0" expanded="true" />
+                <element signature="e#13976#14273#0" expanded="true" />
+                <element signature="e#14272#14273#0" expanded="true" />
+                <element signature="e#14597#14613#0" expanded="true" />
+                <element signature="e#14672#14714#0" expanded="true" />
+                <element signature="e#14772#14798#0" expanded="true" />
+                <element signature="e#14953#15327#0" expanded="true" />
+                <element signature="e#15326#15327#0" expanded="true" />
+                <element signature="e#15458#16458#0" expanded="true" />
+                <element signature="e#16457#16458#0" expanded="true" />
+                <marker date="1514906344626" expanded="false" signature="24535:24583" ph="&quot;Shipper!&quot;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DialogUserInformation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/common/DialogUserInformation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="74" column="73" lean-forward="false" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="229" column="62" lean-forward="false" selection-start-line="229" selection-start-column="62" selection-end-line="229" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -172,6 +234,7 @@
       <find>Tas</find>
       <find>spinn</find>
       <find>spin</find>
+      <find>Toas</find>
     </findStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -2007,17 +2070,17 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/OrderTemp.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/RealmObject/Order.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_order_history.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/common/DialogUserInformation.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_user_information.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/shape_button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_order_shop.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/DetailOrderHistoryActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_order_shipper.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/FragmentContainerShipper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/HandleMapsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java" />
       </list>
     </option>
   </component>
@@ -2137,26 +2200,13 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Shop" />
+              <option name="myItemId" value="Shipper" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FindTheShipper" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Production">
@@ -2168,7 +2218,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2357,7 +2406,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514684616632" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514906579016" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2405,7 +2454,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514684616632" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514906579016" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2588,7 +2637,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514684616634" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514906579017" />
       </method>
     </configuration>
     <list size="4">
@@ -2650,6 +2699,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7042735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.4969743" order="6" side_tool="false" content_ui="tabs" />
@@ -2662,12 +2712,12 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6017094" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17576791" sideWeight="0.4969743" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52820516" sideWeight="0.2647504" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2888889" sideWeight="0.2647504" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23298033" sideWeight="0.48634812" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23298033" sideWeight="0.48634812" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2760,7 +2810,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="145" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java</url>
+          <line>381</line>
+          <properties />
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java</url>
+          <line>359</line>
+          <properties />
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="147" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -2769,41 +2833,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/Adapters/ShipperAdapters/CustomAdapterListViewHistoryOrderItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/integer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/minh/findtheshipper/Shop/DetailOrderShopActivity_ViewBinding.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/OrderTemp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/models/RealmObject/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="145" column="16" lean-forward="false" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_info.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-fragment/26.0.2/d96375bf0998e393f8be3509581f498d39188620/support-fragment-26.0.2-sources.jar!/android/support/v4/app/DialogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -2970,14 +2999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="128" column="47" lean-forward="false" selection-start-line="128" selection-start-column="47" selection-end-line="128" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-fragment/26.0.2/d96375bf0998e393f8be3509581f498d39188620/support-fragment-26.0.2-sources.jar!/android/support/v4/app/Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -2988,13 +3009,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_status_online.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/common/DialogUserInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="90" column="45" lean-forward="true" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_status_offline.png">
@@ -3047,7 +3061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2822">
           <caret line="198" column="72" lean-forward="false" selection-start-line="198" selection-start-column="72" selection-end-line="198" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3070,22 +3083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3825">
-          <caret line="263" column="61" lean-forward="false" selection-start-line="263" selection-start-column="61" selection-end-line="263" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/DetailOrderHistoryActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="134" column="48" lean-forward="false" selection-start-line="134" selection-start-column="48" selection-end-line="134" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_detail_order_history.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
@@ -3101,7 +3098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2278">
           <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3132,6 +3128,141 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3274">
           <caret line="132" column="59" lean-forward="false" selection-start-line="132" selection-start-column="59" selection-end-line="132" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/widget/AbsSpinner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+          <folding>
+            <element signature="e#1656#1657#0" expanded="true" />
+            <element signature="e#1707#1708#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shipper/DetailOrderHistoryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="478" column="3" lean-forward="false" selection-start-line="478" selection-start-column="3" selection-end-line="481" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-database-11.6.2.aar/9137522442e1fb65fd7944c36c672577/jars/classes.jar!/com/google/firebase/database/Query.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="93" column="78" lean-forward="false" selection-start-line="93" selection-start-column="78" selection-end-line="93" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="742" column="47" lean-forward="false" selection-start-line="742" selection-start-column="47" selection-end-line="742" selection-end-column="47" />
+          <folding>
+            <element signature="e#26499#26500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/widget/ArrayAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="116" column="121" lean-forward="false" selection-start-line="116" selection-start-column="121" selection-end-line="116" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/app/Instrumentation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="200" column="72" lean-forward="false" selection-start-line="200" selection-start-column="72" selection-end-line="200" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-26/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="1104" column="0" lean-forward="false" selection-start-line="1104" selection-start-column="0" selection-end-line="1104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="229" column="62" lean-forward="false" selection-start-line="229" selection-start-column="62" selection-end-line="229" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/Shop/DetailOrderShopActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="375" column="36" lean-forward="false" selection-start-line="375" selection-start-column="36" selection-end-line="375" selection-end-column="36" />
+          <folding>
+            <element signature="e#4824#4840#0" expanded="true" />
+            <element signature="e#4911#4949#0" expanded="true" />
+            <element signature="e#5019#5045#0" expanded="true" />
+            <element signature="e#5185#5611#0" expanded="true" />
+            <element signature="e#5610#5611#0" expanded="true" />
+            <element signature="e#5691#6032#0" expanded="true" />
+            <element signature="e#6031#6032#0" expanded="true" />
+            <element signature="e#6360#6376#0" expanded="true" />
+            <element signature="e#6447#6482#0" expanded="true" />
+            <element signature="e#6623#6980#0" expanded="true" />
+            <element signature="e#6979#6980#0" expanded="true" />
+            <element signature="e#7500#7516#0" expanded="true" />
+            <element signature="e#7587#7622#0" expanded="true" />
+            <element signature="e#7763#8120#0" expanded="true" />
+            <element signature="e#8119#8120#0" expanded="true" />
+            <element signature="e#8632#8648#0" expanded="true" />
+            <element signature="e#8719#8754#0" expanded="true" />
+            <element signature="e#8895#9252#0" expanded="true" />
+            <element signature="e#9251#9252#0" expanded="true" />
+            <element signature="e#9599#9615#0" expanded="true" />
+            <element signature="e#9686#9724#0" expanded="true" />
+            <element signature="e#9794#9820#0" expanded="true" />
+            <element signature="e#9960#10386#0" expanded="true" />
+            <element signature="e#10385#10386#0" expanded="true" />
+            <element signature="e#10466#10807#0" expanded="true" />
+            <element signature="e#10806#10807#0" expanded="true" />
+            <element signature="e#11093#11109#0" expanded="true" />
+            <element signature="e#11180#11218#0" expanded="true" />
+            <element signature="e#11288#11314#0" expanded="true" />
+            <element signature="e#11454#11880#0" expanded="true" />
+            <element signature="e#11879#11880#0" expanded="true" />
+            <element signature="e#11960#12301#0" expanded="true" />
+            <element signature="e#12300#12301#0" expanded="true" />
+            <element signature="e#12759#12775#0" expanded="true" />
+            <element signature="e#12846#12881#0" expanded="true" />
+            <element signature="e#13022#13379#0" expanded="true" />
+            <element signature="e#13378#13379#0" expanded="true" />
+            <element signature="e#13748#13764#0" expanded="true" />
+            <element signature="e#13823#13859#0" expanded="true" />
+            <element signature="e#13976#14273#0" expanded="true" />
+            <element signature="e#14272#14273#0" expanded="true" />
+            <element signature="e#14597#14613#0" expanded="true" />
+            <element signature="e#14672#14714#0" expanded="true" />
+            <element signature="e#14772#14798#0" expanded="true" />
+            <element signature="e#14953#15327#0" expanded="true" />
+            <element signature="e#15326#15327#0" expanded="true" />
+            <element signature="e#15458#16458#0" expanded="true" />
+            <element signature="e#16457#16458#0" expanded="true" />
+            <marker date="1514906344626" expanded="false" signature="24535:24583" ph="&quot;Shipper!&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/minh/findtheshipper/common/DialogUserInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="74" column="73" lean-forward="false" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
           <folding />
         </state>
       </provider>

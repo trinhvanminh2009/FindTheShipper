@@ -3300,6 +3300,7 @@
     </string>
     <string name="google_storage_bucket" translatable="false">find-the-shipper.appspot.com</string>
     <string name="ha_noi">Ha Noi</string>
+    <string name="have_not_shipper">Shipper not found!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="history">History</string>
     <string name="ho_chi_minh">Ho Chi Minh city</string>
@@ -3550,6 +3551,11 @@
     <string name="wait_find_direction">Just a moment. Finding directions</string>
     <string name="wait_server">Just a moment. Loading data from server</string>
     <string name="warning">Warning!</string>
+    <string name="warning_delete_shipper">Do you want to remove all step?</string>
+    <string name="warning_order_1">Order is in step 1</string>
+    <string name="warning_order_2">Order is in step 2</string>
+    <string name="warning_order_3">Order is in step 3</string>
+    <string name="warning_order_4">This order is done</string>
     <string name="warning_state_order_3">The delivery man is working. This order cannot be canceled</string>
     <string name="warning_state_order_4">Completed order! If you want to remove this order please click detail order.</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

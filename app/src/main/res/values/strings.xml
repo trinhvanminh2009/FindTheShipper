@@ -226,4 +226,11 @@
     <string name="title_activity_direction_shipper">Map</string>
 
     <string name="update">Update</string>
+    <string name="have_not_shipper">Shipper not found!</string>
+    <string name="warning_order_1">Order is in step 1</string>
+    <string name="warning_order_2">Order is in step 2</string>
+    <string name="warning_order_3">Order is in step 3</string>
+    <string name="warning_order_4">This order is done</string>
+    <string name="warning_delete_shipper">Do you want to remove all step?</string>
+
 </resources>

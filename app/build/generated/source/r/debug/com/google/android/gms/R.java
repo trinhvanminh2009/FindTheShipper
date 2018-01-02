@@ -155,8 +155,8 @@ public final class R {
         public static final int common_signin_button_text_long = 0x7f0f0063;
         public static final int fcm_fallback_notification_channel_label = 0x7f0f0331;
         public static final int gcm_fallback_notification_channel_label = 0x7f0f0335;
-        public static final int place_autocomplete_clear_button = 0x7f0f0772;
-        public static final int place_autocomplete_search_hint = 0x7f0f0773;
+        public static final int place_autocomplete_clear_button = 0x7f0f0773;
+        public static final int place_autocomplete_search_hint = 0x7f0f0774;
     }
     public static final class styleable {
         public static final int[] LoadingImageView = { 0x7f040068, 0x7f0400f1, 0x7f0400f2 };

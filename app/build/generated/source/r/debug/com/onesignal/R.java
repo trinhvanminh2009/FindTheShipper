@@ -260,9 +260,9 @@ public final class R {
         public static final int common_signin_button_text_long = 0x7f0f0063;
         public static final int fcm_fallback_notification_channel_label = 0x7f0f0331;
         public static final int gcm_fallback_notification_channel_label = 0x7f0f0335;
-        public static final int place_autocomplete_clear_button = 0x7f0f0772;
-        public static final int place_autocomplete_search_hint = 0x7f0f0773;
-        public static final int status_bar_notification_info_overflow = 0x7f0f079a;
+        public static final int place_autocomplete_clear_button = 0x7f0f0773;
+        public static final int place_autocomplete_search_hint = 0x7f0f0774;
+        public static final int status_bar_notification_info_overflow = 0x7f0f079b;
     }
     public static final class style {
         public static final int TextAppearance_Compat_Notification = 0x7f10014b;

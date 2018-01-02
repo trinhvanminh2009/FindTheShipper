@@ -840,14 +840,14 @@ public final class R {
         public static final int default_user_name_1 = 0x7f0f0070;
         public static final int default_user_name_2 = 0x7f0f0071;
         public static final int error = 0x7f0f008b;
-        public static final int input_hint = 0x7f0f06e4;
-        public static final int search_menu_title = 0x7f0f078d;
-        public static final int seen = 0x7f0f078f;
-        public static final int send = 0x7f0f0790;
-        public static final int sending = 0x7f0f0791;
-        public static final int sent = 0x7f0f0792;
-        public static final int status_bar_notification_info_overflow = 0x7f0f079a;
-        public static final int unknown = 0x7f0f07bf;
+        public static final int input_hint = 0x7f0f06e5;
+        public static final int search_menu_title = 0x7f0f078e;
+        public static final int seen = 0x7f0f0790;
+        public static final int send = 0x7f0f0791;
+        public static final int sending = 0x7f0f0792;
+        public static final int sent = 0x7f0f0793;
+        public static final int status_bar_notification_info_overflow = 0x7f0f079b;
+        public static final int unknown = 0x7f0f07c0;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100000;
