@@ -9,24 +9,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
 import com.minh.findtheshipper.models.Adapters.ShopAdapters.CustomAdapterListviewOrder;
-import com.minh.findtheshipper.models.RealmObject.CurrentUser;
 import com.minh.findtheshipper.models.OrderTemp;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
 import com.minh.findtheshipper.models.RealmObject.User;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import io.realm.Realm;
 
 public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
@@ -46,6 +46,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         Realm.init(getActivity());
         initRealm();
 
+
     }
 
     @Nullable
@@ -61,10 +62,15 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         realm = Realm.getDefaultInstance();
     }
 
+
     @Override
     public void onResume() {
         super.onResume();
+        SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.PROGRESS_TYPE);
+        sweetAlertDialog.setTitle(R.string.LOADING);
+        sweetAlertDialog.show();
         loadAllList();
+        sweetAlertDialog.dismissWithAnimation();
     }
 
     @Override
@@ -77,72 +83,152 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         try {
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
             Query query = mDatabase.orderByChild("Datetime");
-            final List<String> listKeyFromFireBase = new ArrayList<>();
-            query.addValueEventListener(new ValueEventListener() {
+            orderList = new ArrayList<>();
+            query.addChildEventListener(new ChildEventListener() {
                 @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    //Add keys into list template
-                    orderList = new ArrayList<>();
-                    for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        final String key = child.getKey();
-                        listKeyFromFireBase.add(key);
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    getAllData(dataSnapshot);
+                }
 
-                    }
-                    //Check key and then get keys are created by current user
-                    String key;
-                    for (int j = 0; j < checkKey(listKeyFromFireBase).size(); j++) {
-                        key = checkKey(listKeyFromFireBase).get(j);
-                        String status = dataSnapshot.child(key).child("Status").getValue(String.class);
-                        String startPlace = dataSnapshot.child(key).child("Start place").getValue(String.class);
-                        String finishPlace = dataSnapshot.child(key).child("Finish place").getValue(String.class);
-                        String advancedMoney = dataSnapshot.child(key).child("Advanced money").getValue(String.class);
-                        String phoneNumber = dataSnapshot.child(key).child("Phone number").getValue(String.class);
-                        String shipMoney = dataSnapshot.child(key).child("Ship Money").getValue(String.class);
-                        String note = dataSnapshot.child(key).child("Note").getValue(String.class);
-                        String distance = dataSnapshot.child(key).child("Distance").getValue(String.class);
-                        String dateTime = dataSnapshot.child(key).child("Datetime").getValue(String.class);
-                        Boolean saveOrder = dataSnapshot.child(key).child("Save Order").getValue(Boolean.class);
-                        String userGetOrder = dataSnapshot.child(key).child("User Get Order").getValue(String.class);
-                        Boolean showAgain = dataSnapshot.child(key).child("Show Again").getValue(Boolean.class);
-                        OrderTemp orderTemp = new OrderTemp();
-                        orderTemp.setOrderID(key);
-                        orderTemp.setStatus(status);
-                        orderTemp.setStartPoint(startPlace);
-                        orderTemp.setFinishPoint(finishPlace);
-                        orderTemp.setAdvancedMoney(advancedMoney);
-                        orderTemp.setPhoneNumber(phoneNumber);
-                        orderTemp.setShipMoney(shipMoney);
-                        orderTemp.setNote(note);
-                        orderTemp.setDistance(distance);
-                        orderTemp.setDateTime(dateTime);
-                        orderTemp.setSavedOrder(saveOrder);
-                        orderTemp.setUserGetOrder(userGetOrder);
-                        if (showAgain == null || showAgain) {
-                            orderList.add(orderTemp);
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                    updateData(dataSnapshot);
+                }
 
-                        }
-                    }
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+                    deleteItemData(dataSnapshot);
+                }
 
-                    Collections.sort(orderList, new SortOrderTempHelpers());
-                    adapter = new CustomAdapterListviewOrder(getActivity(), orderList);
-                    recyclerView.setAdapter(adapter);
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
+
                 }
             });
+
         } catch (Exception e) {
             Log.e("Error", "In loadAllList in ListOrderCreatedFragment");
-
         }
+    }
+
+    private void getAllData(DataSnapshot dataSnapshot) {
+
+        String key = dataSnapshot.getKey();
+        String status = dataSnapshot.child("Status").getValue(String.class);
+        String startPlace = dataSnapshot.child("Start place").getValue(String.class);
+        String finishPlace = dataSnapshot.child("Finish place").getValue(String.class);
+        String advancedMoney = dataSnapshot.child("Advanced money").getValue(String.class);
+        String phoneNumber = dataSnapshot.child("Phone number").getValue(String.class);
+        String shipMoney = dataSnapshot.child("Ship Money").getValue(String.class);
+        String note = dataSnapshot.child("Note").getValue(String.class);
+        String distance = dataSnapshot.child("Distance").getValue(String.class);
+        String dateTime = dataSnapshot.child("Datetime").getValue(String.class);
+        Boolean saveOrder = dataSnapshot.child("Save Order").getValue(Boolean.class);
+        String userGetOrder = dataSnapshot.child("User Get Order").getValue(String.class);
+        Boolean showAgain = dataSnapshot.child("Show Again").getValue(Boolean.class);
+        OrderTemp orderTemp = new OrderTemp();
+        orderTemp.setOrderID(key);
+        orderTemp.setStatus(status);
+        orderTemp.setStartPoint(startPlace);
+        orderTemp.setFinishPoint(finishPlace);
+        orderTemp.setAdvancedMoney(advancedMoney);
+        orderTemp.setPhoneNumber(phoneNumber);
+        orderTemp.setShipMoney(shipMoney);
+        orderTemp.setNote(note);
+        orderTemp.setDistance(distance);
+        orderTemp.setDateTime(dateTime);
+        orderTemp.setSavedOrder(saveOrder);
+        orderTemp.setUserGetOrder(userGetOrder);
+        if (showAgain != null) {
+            if (showAgain) {
+                if (checkKey(key)) {
+                    orderList.add(orderTemp);
+                }
+            }
+        }
+        Collections.sort(orderList, new SortOrderTempHelpers());
+        adapter = new CustomAdapterListviewOrder(getActivity(), orderList);
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void updateData(DataSnapshot dataSnapshot) {
+        String key = dataSnapshot.getKey();
+        String status = dataSnapshot.child("Status").getValue(String.class);
+        String startPlace = dataSnapshot.child("Start place").getValue(String.class);
+        String finishPlace = dataSnapshot.child("Finish place").getValue(String.class);
+        String advancedMoney = dataSnapshot.child("Advanced money").getValue(String.class);
+        String phoneNumber = dataSnapshot.child("Phone number").getValue(String.class);
+        String shipMoney = dataSnapshot.child("Ship Money").getValue(String.class);
+        String note = dataSnapshot.child("Note").getValue(String.class);
+        String distance = dataSnapshot.child("Distance").getValue(String.class);
+        String dateTime = dataSnapshot.child("Datetime").getValue(String.class);
+        Boolean saveOrder = dataSnapshot.child("Save Order").getValue(Boolean.class);
+        String userGetOrder = dataSnapshot.child("User Get Order").getValue(String.class);
+        Boolean showAgain = dataSnapshot.child("Show Again").getValue(Boolean.class);
+        OrderTemp orderTemp = new OrderTemp();
+        orderTemp.setOrderID(key);
+        orderTemp.setStatus(status);
+        orderTemp.setStartPoint(startPlace);
+        orderTemp.setFinishPoint(finishPlace);
+        orderTemp.setAdvancedMoney(advancedMoney);
+        orderTemp.setPhoneNumber(phoneNumber);
+        orderTemp.setShipMoney(shipMoney);
+        orderTemp.setNote(note);
+        orderTemp.setDistance(distance);
+        orderTemp.setDateTime(dateTime);
+        orderTemp.setSavedOrder(saveOrder);
+        orderTemp.setUserGetOrder(userGetOrder);
+        if (showAgain != null) {
+            if (showAgain) {
+                for (int i = 0; i < orderList.size(); i++) {
+                    if (orderTemp.getOrderID().equals(orderList.get(i).getOrderID())) {
+                        orderList.remove(i);
+                        orderList.add(i, orderTemp);
+                        adapter.notifyItemChanged(i);
+                        adapter.notifyItemRangeChanged(i, orderList.size());
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+
+            }
+            if (!showAgain) {
+                for (int i = 0; i < orderList.size(); i++) {
+                    if (orderTemp.getOrderID().equals(orderList.get(i).getOrderID())) {
+                        orderList.remove(i);
+                        adapter.notifyItemRemoved(i);
+                        adapter.notifyItemRangeChanged(i, orderList.size());
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    private void deleteItemData(DataSnapshot dataSnapshot) {
+        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+            String key = snapshot.getValue(String.class);
+            for (int i = 0; i < orderList.size(); i++) {
+                if (orderList.get(i).getOrderID().equals(key)) {
+                    orderList.remove(orderList.get(i));
+                }
+            }
+        }
+        adapter.notifyDataSetChanged();
+        adapter = new CustomAdapterListviewOrder(getContext(), orderList);
+        recyclerView.setAdapter(adapter);
     }
 
     /**
      * Check key from server created by current user
      */
-    private List<String> checkKey(List<String> keyServer) {
+    /*private List<String> checkKeyList(List<String> keyServer) {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < keyServer.size(); i++) {
             if (getCurrentUser().getEmail() != null) {
@@ -152,12 +238,30 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
             } else {
                 Log.e("Error", "Email of current user is null");
             }
-
-
         }
         return result;
+    }*/
+    private boolean checkKey(String key) {
+        if (getCurrentUser().getEmail() != null) {
+            if (key.contains(EncodingFirebase.encodeString(getCurrentUser().getEmail()))) {
+                return true;
+            }
+        }
+        return false;
     }
 
+
+   /* private ArrayList<OrderTemp> removeDuplicated(ArrayList<OrderTemp> orderList) {
+        ArrayList<OrderTemp> resultList = new ArrayList<>();
+        for (int i = 0; i < orderList.size(); i++) {
+            OrderTemp orderTemp = orderList.get(i);
+            if (!resultList.contains(orderTemp)) {
+                resultList.add(orderTemp);
+            }
+
+        }
+        return resultList;
+    }*/
 
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();

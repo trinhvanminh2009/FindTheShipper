@@ -51,6 +51,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
     private Context context;
     private List<OrderTemp> orderList;
     private Realm realm;
+    private String key;
 
     public CustomAdapterListviewOrder(Context context, List<OrderTemp> orderList) {
         this.context = context;
@@ -70,7 +71,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
     public void onBindViewHolder(final CustomAdapterListviewOrder.ViewHolder holder, int position) {
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         final OrderTemp order = orderList.get(position);
-        final String key = order.getOrderID();
+        key = order.getOrderID();
         final CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
         Glide.with(context).load(currentUser.getAvatar()).apply(RequestOptions.circleCropTransform())
                 .thumbnail(0.5f).into(holder.userImage);
@@ -116,43 +117,48 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         final DatabaseReference orderDataBase = FirebaseDatabase.getInstance()
                 .getReference("order").child(key).child("State Order");
 
-        orderDataBase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String currentState = dataSnapshot.getValue(String.class);
-                StateProgressBar.StateNumber stateNumber = null;
-                if (currentState != null) {
+        try{
+            orderDataBase.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String currentState = dataSnapshot.getValue(String.class);
+                    StateProgressBar.StateNumber stateNumber = null;
+                    if (currentState != null) {
 
-                    if (currentState.equals("1")) {
-                        stateNumber = StateProgressBar.StateNumber.ONE;
-                    }
-                    if (currentState.equals("2")) {
-                        stateNumber = StateProgressBar.StateNumber.TWO;
-                    }
-                    if (currentState.equals("3")) {
-                        stateNumber = StateProgressBar.StateNumber.THREE;
-                    }
-                    if (currentState.equals("4")) {
-                        stateNumber = StateProgressBar.StateNumber.FOUR;
-                    }
-                    if (stateNumber != null) {
+                        if (currentState.equals("1")) {
+                            stateNumber = StateProgressBar.StateNumber.ONE;
+                        }
+                        if (currentState.equals("2")) {
+                            stateNumber = StateProgressBar.StateNumber.TWO;
+                        }
+                        if (currentState.equals("3")) {
+                            stateNumber = StateProgressBar.StateNumber.THREE;
+                        }
+                        if (currentState.equals("4")) {
+                            stateNumber = StateProgressBar.StateNumber.FOUR;
+                        }
+                        if (stateNumber != null) {
 
-                        holder.stateProgressBar.setCurrentStateNumber(stateNumber);
-                        holder.stateProgressBar.setAnimationDuration(3000);
-                        holder.stateProgressBar.enableAnimationToCurrentState(true);
+                            holder.stateProgressBar.setCurrentStateNumber(stateNumber);
+                            holder.stateProgressBar.setAnimationDuration(3000);
+                            holder.stateProgressBar.enableAnimationToCurrentState(true);
 
 
-                    } else {
-                        Log.e("Error", "In current state number null");
+                        } else {
+                            Log.e("Error", "In current state number null");
+                        }
                     }
                 }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
+        }catch (Exception e){
+
+        }
+
         /**End update state order
          * */
         final boolean[] isOpen = {false};
@@ -169,109 +175,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
                 }
             }
         });
-        holder.btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
 
-                final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("order");
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(final DataSnapshot dataSnapshot) {
-                        String stateOrder = dataSnapshot.child(key).child("State Order").getValue(String.class);
-                        if(stateOrder != null){
-                            if(stateOrder.equals("1") || stateOrder.equals("2")){
-                                final SweetAlertDialog dialogCancel = new SweetAlertDialog(view.getContext(), SweetAlertDialog.WARNING_TYPE);
-                                dialogCancel.setTitle(R.string.are_you_sure_title);
-                                String content = view.getContext().getResources().getString(R.string.content_cancel_order) ;
-                                dialogCancel.setContentText(content);
-                                dialogCancel.setCancelText(view.getContext().getResources().getString(R.string.cancel));
-                                dialogCancel.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                    @Override
-                                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                        databaseReference.child(key).child("Show Again").setValue(false);
-                                        String shipper = dataSnapshot.child(key).child("Shipper").getValue(String.class);
-                                        //Send notification to shipper already get this order
-                                        if(shipper != null) {
-                                            String message = getCurrentUser().getFullName() + " " + Resources.getSystem().getString(R.string.notification_shop_canceled_order);
-                                            OneSignalHelpers.sendNotification(EncodingFirebase.decodeString(shipper),
-                                                    getCurrentUser().getEmail(), message);
-                                            String title = "Cancel order";
-                                            String keyNotification = key + "_notification_" + getCountNotification(key);
-                                            databaseReference.child(key).child("Notifications").child(keyNotification).child("From")
-                                                    .setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
-                                            DateFormat datetimeFormat = new SimpleDateFormat("dd/MM/yyyy-HH:mm", Locale.getDefault());
-                                            String date = datetimeFormat.format(Calendar.getInstance().getTime());
-                                            databaseReference.child(key).child("Notifications").child(keyNotification).child("Datetime").setValue(date);
-                                            databaseReference.child(key).child("Notifications").child(keyNotification).child("Message").setValue(message);
-                                            databaseReference.child(key).child("Notifications").child(keyNotification).child("Title").setValue(title);
-                                            databaseReference.child(key).child("Notifications").child(keyNotification).child("Show Again").setValue(true);
-                                            dialogCancel.dismissWithAnimation();
-                                        }
-                                    }
-                                });
-
-                                dialogCancel.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                    @Override
-                                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                        dialogCancel.dismissWithAnimation();
-                                    }
-                                });
-                                dialogCancel.show();
-                            }
-                            if(stateOrder.equals("3")){
-                                final SweetAlertDialog dialogCancel = new SweetAlertDialog(view.getContext(), SweetAlertDialog.WARNING_TYPE);
-                                dialogCancel.setTitle(R.string.warning);
-                                String content = view.getContext().getResources().getString(R.string.warning_state_order_3) ;
-                                dialogCancel.setContentText(content);
-                                dialogCancel.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                    @Override
-                                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                        dialogCancel.dismissWithAnimation();
-                                    }
-                                });
-                            }
-                            if(stateOrder.equals("4")){
-                                final SweetAlertDialog dialogCancel = new SweetAlertDialog(view.getContext(), SweetAlertDialog.WARNING_TYPE);
-                                dialogCancel.setTitle(R.string.warning);
-                                String content = view.getContext().getResources().getString(R.string.warning_state_order_4) ;
-                                dialogCancel.setContentText(content);
-                                dialogCancel.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                                    @Override
-                                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                        dialogCancel.dismissWithAnimation();
-                                    }
-                                });
-                            }
-                        }
-
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-
-
-            }
-        });
-
-        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TastyToast.makeText(view.getContext(), "aaa",TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
-            }
-        });
-
-        holder.btnDetail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), DetailOrderShopActivity.class);
-                intent.putExtra("orderKey",key);
-                view.getContext().startActivity(intent);
-            }
-        });
 
     }
 
@@ -311,7 +215,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         return orderList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView txtStartPlace;
         private TextView txtFinishPlace;
         private TextView txtShipMoney;
@@ -329,7 +233,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
 
 
 
-        public ViewHolder(View view) {
+         ViewHolder(View view) {
             super(view);
             txtStartPlace = view.findViewById(R.id.txtStartPlace);
             txtFinishPlace = view.findViewById(R.id.txtFinishPlace);
@@ -345,6 +249,111 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
             btnCancel = view.findViewById(R.id.btnCancelOrder);
             btnEdit = view.findViewById(R.id.btnEdit);
             btnDetail = view.findViewById(R.id.btnDetail);
+            btnCancel.setOnClickListener(this);
+            btnDetail.setOnClickListener(this);
+            btnEdit.setOnClickListener(this);
         }
-    }
+
+         @Override
+         public void onClick(final View view) {
+             switch (view.getId()){
+                 case R.id.btnEdit:
+                     TastyToast.makeText(view.getContext(), "aaa",TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
+                     break;
+                 case R.id.btnDetail:
+                     Intent intent = new Intent(view.getContext(), DetailOrderShopActivity.class);
+                     intent.putExtra("orderKey",key);
+                     view.getContext().startActivity(intent);
+                     break;
+                 case R.id.btnCancelOrder:
+                     final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("order").child(key);
+                     databaseReference.addValueEventListener(new ValueEventListener() {
+                         @Override
+                         public void onDataChange(final DataSnapshot dataSnapshot) {
+                             String stateOrder = dataSnapshot.child("State Order").getValue(String.class);
+                             if(stateOrder != null){
+                                 switch (stateOrder){
+                                     case "1":case "2":
+                                         Log.e("Minh","Here");
+                                         final SweetAlertDialog dialogCancel = new SweetAlertDialog(view.getContext(), SweetAlertDialog.WARNING_TYPE);
+                                         dialogCancel.setTitle(R.string.are_you_sure_title);
+                                         String content = view.getContext().getResources().getString(R.string.content_cancel_order) ;
+                                         dialogCancel.setContentText(content);
+                                         dialogCancel.setCancelText(view.getContext().getResources().getString(R.string.cancel));
+
+                                         dialogCancel.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                             @Override
+                                             public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                 sweetAlertDialog.dismissWithAnimation();
+                                                 databaseReference.child("Show Again").setValue(false);
+                                                 String shipper = dataSnapshot.child("Shipper").getValue(String.class);
+                                                 //Send notification to shipper already get this order
+                                                 if(shipper != null) {
+                                                     String notificationMessage = context.getResources().getString(R.string.notification_shop_canceled_order);
+                                                     String message = getCurrentUser().getFullName() + " " + notificationMessage;
+                                                     OneSignalHelpers.sendNotification(EncodingFirebase.decodeString(shipper),
+                                                             getCurrentUser().getEmail(), message);
+                                                     String title = "Cancel order";
+                                                     String keyNotification = key + "_notification_" + getCountNotification(key);
+                                                     databaseReference.child("Notifications").child(keyNotification).child("From")
+                                                             .setValue(EncodingFirebase.encodeString(getCurrentUser().getEmail()));
+                                                     DateFormat datetimeFormat = new SimpleDateFormat("dd/MM/yyyy-HH:mm", Locale.getDefault());
+                                                     String date = datetimeFormat.format(Calendar.getInstance().getTime());
+                                                     databaseReference.child("Notifications").child(keyNotification).child("Datetime").setValue(date);
+                                                     databaseReference.child("Notifications").child(keyNotification).child("Message").setValue(message);
+                                                     databaseReference.child("Notifications").child(keyNotification).child("Title").setValue(title);
+                                                     databaseReference.child("Notifications").child(keyNotification).child("Show Again").setValue(true);
+
+
+                                                 }
+                                             }
+                                         });
+
+                                         dialogCancel.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                             @Override
+                                             public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                 sweetAlertDialog.dismissWithAnimation();
+                                             }
+                                         });
+                                         dialogCancel.show();
+                                         break;
+                                     case "3":
+                                         final SweetAlertDialog dialogCancel1 = new SweetAlertDialog(view.getContext(), SweetAlertDialog.WARNING_TYPE);
+                                         dialogCancel1.setTitle(R.string.warning);
+                                         content = view.getContext().getResources().getString(R.string.warning_state_order_3) ;
+                                         dialogCancel1.setContentText(content);
+                                         dialogCancel1.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                             @Override
+                                             public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                 sweetAlertDialog.dismissWithAnimation();
+                                             }
+                                         });
+                                         break;
+                                     case "4":
+                                         final SweetAlertDialog dialogCancel2 = new SweetAlertDialog(view.getContext(), SweetAlertDialog.WARNING_TYPE);
+                                         dialogCancel2.setTitle(R.string.warning);
+                                         content = view.getContext().getResources().getString(R.string.warning_state_order_4) ;
+                                         dialogCancel2.setContentText(content);
+                                         dialogCancel2.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                             @Override
+                                             public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                                 dialogCancel2.dismissWithAnimation();
+                                             }
+                                         });
+                                         break;
+                                 }
+                             }
+
+                         }
+
+                         @Override
+                         public void onCancelled(DatabaseError databaseError) {
+
+                         }
+                     });
+                     break;
+             }
+         }
+     }
+
 }

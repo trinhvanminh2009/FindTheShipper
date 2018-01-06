@@ -588,6 +588,9 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Delivery Time").setValue(order.getDeliveryTime());
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Datetime").setValue(order.getDateTime());
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Save Order").setValue(order.getSaveOrder());
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("State Order").setValue("1");
+                mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Show Again").setValue(true);
+
                 //Handle change to created order
                 getSupportActionBar().setTitle(R.string.created_order);
                 fragmentMaps.setVisibility(View.GONE);

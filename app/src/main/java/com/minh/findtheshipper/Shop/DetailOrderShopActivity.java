@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -164,7 +165,8 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                         }
                         if (currentStateOrder == 2) {
                             switch (spinnerPosition) {
-                                case 2:case 3:
+                                case 2:
+                                case 3:
                                     sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
                                     sweetAlertDialog.setTitle(R.string.warning);
                                     sweetAlertDialog.setContentText(getString(R.string.warning_order_2));
@@ -238,7 +240,8 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                         }
                         if (currentStateOrder == 4) {
                             switch (spinnerPosition) {
-                                case 1:case 2:
+                                case 1:
+                                case 2:
                                     sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
                                     sweetAlertDialog.setTitle(R.string.warning);
                                     sweetAlertDialog.setContentText(getString(R.string.warning_order_4));
@@ -381,6 +384,7 @@ public class DetailOrderShopActivity extends AppCompatActivity {
     private void loadDataFromServer() {
         order = new OrderTemp();
         key = getIntent().getStringExtra("orderKey");
+        Toast.makeText(DetailOrderShopActivity.this, key, Toast.LENGTH_SHORT).show();
         final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
         final DatabaseReference userDatabase = FirebaseDatabase.getInstance().getReference("user");
 
@@ -396,67 +400,95 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                 String phoneNumber = dataSnapshot.child(orderKey).child("Phone number").getValue(String.class);
                 String shipMoney = dataSnapshot.child(orderKey).child("Ship Money").getValue(String.class);
                 String note = dataSnapshot.child(orderKey).child("Note").getValue(String.class);
-                currentShipper = dataSnapshot.child(orderKey).child("Shipper").getValue(String.class);
-                String deliveryTime = dataSnapshot.child(orderKey).child("Delivery time").getValue(String.class);
                 String distance = dataSnapshot.child(orderKey).child("Distance").getValue(String.class);
                 String dateTime = dataSnapshot.child(orderKey).child("Datetime").getValue(String.class);
                 Boolean saveOrder = dataSnapshot.child(orderKey).child("Save Order").getValue(Boolean.class);
                 String currentState = dataSnapshot.child(orderKey).child("State Order").getValue(String.class);
+                String deliveryTime = dataSnapshot.child(orderKey).child("Delivery Time").getValue(String.class);
                 String shortStartPlace = EncodingFirebase.getShortAddress(startPlace);
                 String shortFinishPlace = EncodingFirebase.getShortAddress(finishPlace);
+                currentShipper = dataSnapshot.child(orderKey).child("Shipper").getValue(String.class);
 
-                if (status != null && startPlace != null && finishPlace != null
-                        && advancedMoney != null && phoneNumber != null
-                        && shipMoney != null && note != null
-                        && deliveryTime != null
-                        & distance != null && currentState != null
-                        && shortStartPlace != null && shortFinishPlace != null) {
-                    order.setOrderID(orderKey);
+                order.setOrderID(orderKey);
+                if (status != null) {
                     order.setStatus(status);
+                }
+                if (startPlace != null) {
                     order.setStartPoint(startPlace);
+                }
+                if (finishPlace != null) {
                     order.setFinishPoint(finishPlace);
+
+                }
+                if (advancedMoney != null && txtAdvancedMoney != null) {
                     order.setAdvancedMoney(advancedMoney);
-                    order.setShipMoney(shipMoney);
-                    order.setPhoneNumber(phoneNumber);
-                    order.setDistance(distance);
-                    order.setDateTime(dateTime);
-                    order.setDeliveryTime(deliveryTime);
-                    order.setSavedOrder(saveOrder);
-
-                    txtStartPlace.setText(shortStartPlace);
-                    txtFinishPlace.setText(shortFinishPlace);
                     txtAdvancedMoney.setText(advancedMoney);
+                }
+                if (phoneNumber != null && txtPhoneNumber != null) {
+                    order.setPhoneNumber(phoneNumber);
                     txtPhoneNumber.setText(phoneNumber);
+                }
+                if (shipMoney != null && txtPrice != null) {
+                    order.setShipMoney(shipMoney);
                     txtPrice.setText(shipMoney);
-                    txtNote.setText(note);
-                    txtTime.setText(deliveryTime);
-                    txtDistance.setText(distance);
-                    txtTimeAgo.setText(TimeAgoHelpers.getTimeAgo(dateTime, DetailOrderShopActivity.this));
 
+                }
+                if (distance != null && txtDistance != null) {
+                    order.setDistance(distance);
+                    txtDistance.setText(distance);
+                }
+                if (dateTime != null && txtTimeAgo != null) {
+                    order.setDateTime(dateTime);
+                    txtTimeAgo.setText(TimeAgoHelpers.getTimeAgo(dateTime, DetailOrderShopActivity.this));
+                }
+
+                if (deliveryTime != null && txtTime != null) {
+                    order.setDeliveryTime(deliveryTime);
+                    txtTime.setText(deliveryTime);
+                }
+
+                order.setSavedOrder(saveOrder);
+                if (shortStartPlace != null && txtStartPlace != null) {
+                    txtStartPlace.setText(shortStartPlace);
+
+                }
+                if (shortFinishPlace != null && txtFinishPlace != null) {
+                    txtFinishPlace.setText(shortFinishPlace);
+                }
+                if (note != null && txtNote != null) {
+                    order.setNote(note);
+                    txtNote.setText(note);
+                }
+                if (currentState != null) {
                     currentStateOrder = Integer.parseInt(currentState);
                     String[] descriptionData = {"Find", "Confirm", "Delivery", "Done"};
+                    if (stateProgressBar != null) {
+                        stateProgressBar.setStateDescriptionData(descriptionData);
+                        if (currentState.equals("1")) {
+                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.ONE);
+                            spinner.setSelection(0, true);
 
-                    stateProgressBar.setStateDescriptionData(descriptionData);
-                    if (currentState.equals("1")) {
-                        stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.ONE);
-                        spinner.setSelection(0, true);
+                        }
+                        if (currentState.equals("2")) {
+                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
+                            spinner.setSelection(1, true);
+                        }
+                        if (currentState.equals("3")) {
+                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
+                            spinner.setSelection(2, true);
+                        }
+                        if (currentState.equals("4")) {
+                            stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.FOUR);
+                            spinner.setSelection(3, true);
+                        }
+                        stateProgressBar.setAnimationDuration(3000);
+                        stateProgressBar.enableAnimationToCurrentState(true);
+                    }
 
-                    }
-                    if (currentState.equals("2")) {
-                        stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
-                        spinner.setSelection(1, true);
-                    }
-                    if (currentState.equals("3")) {
-                        stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
-                        spinner.setSelection(2, true);
-                    }
-                    if (currentState.equals("4")) {
-                        stateProgressBar.setCurrentStateNumber(StateProgressBar.StateNumber.FOUR);
-                        spinner.setSelection(3, true);
-                    }
-                    stateProgressBar.setAnimationDuration(3000);
-                    stateProgressBar.enableAnimationToCurrentState(true);
                 }
+
+
+
               /*  SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this,
                         SweetAlertDialog.CUSTOM_IMAGE_TYPE);
                 sweetAlertDialog.setTitle(getString(R.string.ask_for_accept_shipper_title));
