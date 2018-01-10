@@ -232,5 +232,11 @@
     <string name="warning_order_3">Order is in step 3</string>
     <string name="warning_order_4">This order is done</string>
     <string name="warning_delete_shipper">Do you want to remove all step?</string>
+    <string name="phone_number_not_found">Phone number not found!</string>
+    <string name="hasten">Hasten</string>
+    <string name="follow">Follow</string>
+    <string name="title_activity_follow_shipper">Map</string>
+    <string name="tool_bar_follow_shipper">Follow shipper</string>
+
 
 </resources>

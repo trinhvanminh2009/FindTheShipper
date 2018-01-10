@@ -17,9 +17,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.SortOrderTempHelpers;
 import com.minh.findtheshipper.models.Adapters.ShipperAdapters.CustomAdapterListViewOrderItem;
 import com.minh.findtheshipper.models.OrderTemp;
+import com.minh.findtheshipper.models.RealmObject.CurrentUser;
+import com.minh.findtheshipper.models.RealmObject.User;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,7 +47,7 @@ public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragm
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         handleProgressDialog();
         View view = inflater.inflate(R.layout.list_recycle_view, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
+        recyclerView = view.findViewById(R.id.recycle_view);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         Realm.init(getActivity());
@@ -106,7 +109,10 @@ public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragm
                         orderTemp.setDateTime(dateTime);
                         orderTemp.setSavedOrder(saveOrder);
                         if (showAgain == null || showAgain) {
-                            orderList.add(orderTemp);
+                            if(!checkKey(orderTemp.getOrderID())){
+                                orderList.add(orderTemp);
+                            }
+
 
                         }
                     }
@@ -127,6 +133,20 @@ public class ListOrderShipperFragmentCommon extends android.support.v4.app.Fragm
         } catch (Exception e) {
             Log.e("Error", "Error in loadAllList of ListOrderShipperFragmentCommon");
         }
+    }
+
+    private boolean checkKey(String key) {
+        if (getCurrentUser().getEmail() != null) {
+            if (key.contains(EncodingFirebase.encodeString(getCurrentUser().getEmail()))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private User getCurrentUser() {
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        return realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
     }
 
 }

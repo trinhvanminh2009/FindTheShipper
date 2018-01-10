@@ -1,19 +1,23 @@
 package com.minh.findtheshipper.Shop;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,14 +32,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.kofigyan.stateprogressbar.StateProgressBar;
 import com.minh.findtheshipper.R;
-import com.minh.findtheshipper.Shipper.DetailOrderHistoryActivity;
+import com.minh.findtheshipper.common.DialogLocation;
 import com.minh.findtheshipper.common.DialogUserInformation;
+import com.minh.findtheshipper.helpers.CommentDialogHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.TimeAgoHelpers;
 import com.minh.findtheshipper.models.OrderTemp;
 import com.minh.findtheshipper.models.RealmObject.CurrentUser;
 import com.minh.findtheshipper.models.RealmObject.User;
 import com.sdsmdg.tastytoast.TastyToast;
+
+import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -79,8 +87,10 @@ public class DetailOrderShopActivity extends AppCompatActivity {
     StateProgressBar stateProgressBar;
     @BindView(R.id.spinner)
     Spinner spinner;
-    @BindView(R.id.btnUpdate)
-    Button btnUpdate;
+    @BindView(R.id.btnFollow)
+    at.markushi.ui.CircleButton btnFollow;
+    @BindView(R.id.btnHasten)
+    at.markushi.ui.CircleButton btnHasten;
     private Unbinder unbinder;
     private String key = "";
     private String userEmailFromServer = "";
@@ -88,6 +98,7 @@ public class DetailOrderShopActivity extends AppCompatActivity {
     private Realm realm;
     private String currentShipper;
     private int currentStateOrder;
+    private boolean allowCall = false;
 
 
     @Override
@@ -100,12 +111,10 @@ public class DetailOrderShopActivity extends AppCompatActivity {
         changeColorStatusBar();
         loadDataFromServer();
         initSpinner();
-        // updateStateProgressBar();
 
     }
 
     private void initSpinner() {
-        btnUpdate.setVisibility(View.GONE);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(DetailOrderShopActivity.this,
                 R.array.list_state_order, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -133,14 +142,18 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                                     sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                         @Override
                                         public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                            sweetAlertDialog.dismissWithAnimation();
+
                                             spinner.setSelection(0);
+                                            sweetAlertDialog.dismissWithAnimation();
                                         }
                                     });
                                     sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                         @Override
                                         public void onClick(SweetAlertDialog sweetAlertDialog) {
                                             spinner.setSelection(1);
+                                            final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
+                                            orderDataBase.child(key).child("State Order").setValue("2");
+                                            sweetAlertDialog.dismissWithAnimation();
                                         }
                                     });
                                     break;
@@ -166,6 +179,29 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                         if (currentStateOrder == 2) {
                             switch (spinnerPosition) {
                                 case 2:
+                                    sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+                                    sweetAlertDialog.setTitle(R.string.warning);
+                                    sweetAlertDialog.setContentText(getString(R.string.are_you_sure_title));
+                                    sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                                    sweetAlertDialog.show();
+                                    sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+
+                                            spinner.setSelection(1);
+                                            sweetAlertDialog.dismissWithAnimation();
+                                        }
+                                    });
+                                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            spinner.setSelection(2);
+                                            final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
+                                            orderDataBase.child(key).child("State Order").setValue("3");
+                                            sweetAlertDialog.dismissWithAnimation();
+                                        }
+                                    });
+                                    break;
                                 case 3:
                                     sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
                                     sweetAlertDialog.setTitle(R.string.warning);
@@ -227,12 +263,17 @@ public class DetailOrderShopActivity extends AppCompatActivity {
                                         public void onClick(SweetAlertDialog sweetAlertDialog) {
                                             sweetAlertDialog.dismissWithAnimation();
                                             spinner.setSelection(2);
+                                            sweetAlertDialog.dismissWithAnimation();
+
                                         }
                                     });
                                     sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                         @Override
                                         public void onClick(SweetAlertDialog sweetAlertDialog) {
                                             spinner.setSelection(3);
+                                            final DatabaseReference orderDataBase = FirebaseDatabase.getInstance().getReference("order");
+                                            orderDataBase.child(key).child("State Order").setValue("4");
+                                            sweetAlertDialog.dismissWithAnimation();
                                         }
                                     });
                                     break;
@@ -338,7 +379,7 @@ public class DetailOrderShopActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                finish();
             }
         });
     }
@@ -349,12 +390,144 @@ public class DetailOrderShopActivity extends AppCompatActivity {
         unbinder.unbind();
     }
 
-    @OnClick({R.id.btnShipperInformation})
+    @OnClick({R.id.btnShipperInformation, R.id.btnComment, R.id.btnCall, R.id.btnFollow, R.id.btnHasten})
     public void evenClick(final View view) {
         switch (view.getId()) {
             case R.id.btnShipperInformation:
                 showDialogShipperInformation();
                 break;
+
+            case R.id.btnCall:
+                handleCallShipper(view);
+                break;
+            case R.id.btnFollow:
+                openDialogFollowShipperOnMap();
+                break;
+            case R.id.btnHasten:
+                break;
+            case R.id.btnComment:
+                openCommentDialog();
+                break;
+        }
+    }
+
+    private void openCommentDialog() {
+        if (order.getOrderID() != null) {
+            Bundle bundle = new Bundle();
+            bundle.putString("orderID", order.getOrderID());
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            CommentDialogHelpers dialogHelpers = new CommentDialogHelpers();
+            dialogHelpers.show(fragmentManager, "New fragment");
+            dialogHelpers.setArguments(bundle);
+        }
+    }
+
+    private void openDialogFollowShipperOnMap() {
+        if(currentShipper != null){
+            Intent intent = new Intent(DetailOrderShopActivity.this, FollowShipperActivity.class);
+            intent.putExtra("shipper",currentShipper);
+            startActivity(intent);
+
+        }else {
+            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this);
+            sweetAlertDialog.setTitle(R.string.warning);
+            sweetAlertDialog.setContentText(getString(R.string.shipper_not_found));
+            sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                @Override
+                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                    sweetAlertDialog.dismissWithAnimation();
+                }
+            });
+            sweetAlertDialog.show();
+        }
+
+    }
+
+    private void handleCallShipper(final View view) {
+        if (order.getOrderID() != null) {
+            allowCall = true;
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("order")
+                    .child(order.getOrderID());
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String shipper = dataSnapshot.child("Shipper").getValue(String.class);
+                    if (shipper != null) {
+                        shipper = EncodingFirebase.encodeString(shipper);
+                        final DatabaseReference databaseReferenceUser = FirebaseDatabase.getInstance().getReference("user").child(shipper);
+                        databaseReferenceUser.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshotUser) {
+
+                                String phoneNumberUser = dataSnapshotUser.child("Phone number").getValue(String.class);
+                                if (phoneNumberUser != null) {
+                                    if (allowCall) {
+                                        String tempPhone = phoneNumberUser.replaceAll("[^0-9]+", " ");
+                                        List<String> phoneNumber = Arrays.asList(tempPhone.trim().split(" "));
+                                        Intent intentPhone = new Intent(Intent.ACTION_CALL);
+                                        intentPhone.setData(Uri.parse("tel:" + phoneNumber.get(0)));
+                                        if (ActivityCompat.checkSelfPermission(view.getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                            //    ActivityCompat#requestPermissions
+                                            // here to request the missing permissions, and then overriding
+                                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                            //                                          int[] grantResults)
+                                            // to handle the case where the user grants the permission. See the documentation
+                                            // for ActivityCompat#requestPermissions for more details.
+                                            return;
+                                        }
+                                        view.getContext().startActivity(intentPhone);
+                                        allowCall = false;
+                                    }
+                                } else {
+                                    SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this);
+                                    sweetAlertDialog.setTitle(R.string.warning);
+                                    sweetAlertDialog.setContentText(getString(R.string.shipper_not_found));
+                                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                        }
+                                    });
+                                    sweetAlertDialog.show();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+                    } else {
+                        SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this);
+                        sweetAlertDialog.setTitle(R.string.warning);
+                        sweetAlertDialog.setContentText(getString(R.string.shipper_not_found));
+                        sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                            }
+                        });
+                        sweetAlertDialog.show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+        } else {
+            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this, SweetAlertDialog.WARNING_TYPE);
+            sweetAlertDialog.setTitle(R.string.warning);
+            String content = getString(R.string.phone_number_not_found);
+            sweetAlertDialog.setContentText(content);
+            sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                @Override
+                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                    sweetAlertDialog.dismissWithAnimation();
+                }
+            });
         }
     }
 
@@ -487,20 +660,6 @@ public class DetailOrderShopActivity extends AppCompatActivity {
 
                 }
 
-
-
-              /*  SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this,
-                        SweetAlertDialog.CUSTOM_IMAGE_TYPE);
-                sweetAlertDialog.setTitle(getString(R.string.ask_for_accept_shipper_title));
-                sweetAlertDialog.setContentText(getString(R.string.ask_for_accept_shipper));
-                sweetAlertDialog.setCustomImage(R.drawable.ic_ask_question);
-                sweetAlertDialog.show();
-                sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                        sweetAlertDialog.dismissWithAnimation();
-                    }
-                });*/
             }
 
 

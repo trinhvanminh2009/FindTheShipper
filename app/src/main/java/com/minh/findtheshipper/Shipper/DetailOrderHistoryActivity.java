@@ -351,74 +351,88 @@ public class DetailOrderHistoryActivity extends com.minh.findtheshipper.Fragment
                 break;
 
             case R.id.btnCall:
-                String tempPhone = order.getPhoneNumber().replaceAll("[^0-9]+", " ");
-                List<String> phoneNumber = Arrays.asList(tempPhone.trim().split(" "));
-                Intent intentPhone = new Intent(Intent.ACTION_CALL);
-                intentPhone.setData(Uri.parse("tel:" + phoneNumber.get(0)));
-                if (ActivityCompat.checkSelfPermission(v.getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
+                if(order.getPhoneNumber() != null){
+                    String tempPhone = order.getPhoneNumber().replaceAll("[^0-9]+", " ");
+                    List<String> phoneNumber = Arrays.asList(tempPhone.trim().split(" "));
+                    Intent intentPhone = new Intent(Intent.ACTION_CALL);
+                    intentPhone.setData(Uri.parse("tel:" + phoneNumber.get(0)));
+                    if (ActivityCompat.checkSelfPermission(v.getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return;
+                    }
+                    v.getContext().startActivity(intentPhone);
+                }else{
+                    SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderHistoryActivity.this, SweetAlertDialog.WARNING_TYPE);
+                    sweetAlertDialog.setTitle(R.string.warning);
+                    String content = getString(R.string.phone_number_not_found);
+                    sweetAlertDialog.setContentText(content);
+                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                            sweetAlertDialog.dismissWithAnimation();
+                        }
+                    });
                 }
-                v.getContext().startActivity(intentPhone);
+
                 break;
             case R.id.btnComment:
-              /*  Intent chatAcIntent = new Intent(DetailOrderHistoryActivity.this, ChatActivity.class);
-                chatAcIntent.putExtra("orderID", order.getOrderID());
-                startActivity(chatAcIntent);*/
-                Bundle bundle = new Bundle();
-                bundle.putString("orderID", order.getOrderID());
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                final CommentDialogHelpers dialogHelpers = new CommentDialogHelpers();
-                dialogHelpers.show(fragmentManager, "New fragment");
-                dialogHelpers.setArguments(bundle);
+                if(order.getOrderID() != null){
+                    Bundle bundle = new Bundle();
+                    bundle.putString("orderID", order.getOrderID());
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    final CommentDialogHelpers dialogHelpers = new CommentDialogHelpers();
+                    dialogHelpers.show(fragmentManager, "New fragment");
+                    dialogHelpers.setArguments(bundle);
+                }
+
 
                 break;
             case R.id.btnDelete:
-                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
-                sweetAlertDialog.setTitleText(getString(R.string.are_you_sure_title));
-                sweetAlertDialog.setContentText(getString(R.string.are_you_sure_content));
-                sweetAlertDialog.setConfirmText(getString(R.string.ok));
-                sweetAlertDialog.setCancelText(getString(R.string.cancel));
-                sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                        sweetAlertDialog.dismissWithAnimation();
-                    }
-                });
+                if(order.getOrderID() != null){
+                    SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+                    sweetAlertDialog.setTitleText(getString(R.string.are_you_sure_title));
+                    sweetAlertDialog.setContentText(getString(R.string.are_you_sure_content));
+                    sweetAlertDialog.setConfirmText(getString(R.string.ok));
+                    sweetAlertDialog.setCancelText(getString(R.string.cancel));
+                    sweetAlertDialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                            sweetAlertDialog.dismissWithAnimation();
+                        }
+                    });
 
-                sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                        realm.executeTransaction(new Realm.Transaction() {
-                            @Override
-                            public void execute(Realm realm) {
-                                final Order orderRealm = realm.where(Order.class).equalTo("orderID", order.getOrderID()).findFirst();
-                                orderRealm.setSaveOrder(false);
-                                User user = getCurrentUser();
-                                user.getOrderListSave().remove(orderRealm);
-                                realm.insertOrUpdate(user);
-                                onBackPressed();
+                    sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                            realm.executeTransaction(new Realm.Transaction() {
+                                @Override
+                                public void execute(Realm realm) {
+                                    final Order orderRealm = realm.where(Order.class).equalTo("orderID", order.getOrderID()).findFirst();
+                                    orderRealm.setSaveOrder(false);
+                                    User user = getCurrentUser();
+                                    user.getOrderListSave().remove(orderRealm);
+                                    realm.insertOrUpdate(user);
+                                    onBackPressed();
 
-                            }
-                        });
-                    }
-                });
-                sweetAlertDialog.show();
-                finish();
+                                }
+                            });
+                        }
+                    });
+                    sweetAlertDialog.show();
+                    finish();
+                }
+
                 break;
             case R.id.btnDirection:
-
-              /*  Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" + order.getStartPoint() + ""));
-                startActivity(intent);*/
-              updateUsersOnlineFromServer();
-              LatLng temp = EncodingFirebase.getLocationFromAddress(DetailOrderHistoryActivity.this, order.getStartPoint());
-              TastyToast.makeText(DetailOrderHistoryActivity.this , temp.latitude + "," + temp.longitude, TastyToast.LENGTH_SHORT,TastyToast.CONFUSING);
-            startActivity(new Intent(DetailOrderHistoryActivity.this, DirectionShipper.class));
+                if (order.getStartPoint() != null) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" + order.getStartPoint() + ""));
+                    startActivity(intent);
+                }
                 break;
 
         }
@@ -525,12 +539,12 @@ public class DetailOrderHistoryActivity extends com.minh.findtheshipper.Fragment
                 String distance = dataSnapshot.child(orderKey).child("Distance").getValue(String.class);
                 String dateTime = dataSnapshot.child(orderKey).child("Datetime").getValue(String.class);
                 Boolean saveOrder = dataSnapshot.child(orderKey).child("Save Order").getValue(Boolean.class);
-                String shortStartPlace = EncodingFirebase.getShortAddress( placeToGetOrder[0]);
+                String shortStartPlace = EncodingFirebase.getShortAddress(placeToGetOrder[0]);
                 String shortFinishPlace = EncodingFirebase.getShortAddress(placeToGetOrder[1]);
 
                 order.setOrderID(orderKey);
                 order.setStatus(status);
-                order.setStartPoint( placeToGetOrder[0]);
+                order.setStartPoint(placeToGetOrder[0]);
                 order.setFinishPoint(placeToGetOrder[1]);
                 order.setAdvancedMoney(advancedMoney);
                 order.setShipMoney(shipMoney);

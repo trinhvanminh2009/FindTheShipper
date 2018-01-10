@@ -11,6 +11,6 @@ import java.util.Comparator;
 public class SortCommentTempHelpers implements Comparator<CommentTemp> {
     @Override
     public int compare(CommentTemp o1, CommentTemp o2) {
-        return o2.getDateTime().compareTo(o1.getDateTime());
+        return o1.getDateTime().compareTo(o2.getDateTime());
     }
 }

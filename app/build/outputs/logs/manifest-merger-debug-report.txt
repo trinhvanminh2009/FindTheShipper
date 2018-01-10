@@ -28,6 +28,7 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\tr
 MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\75c31b40caf044fe3e2344cbe38454a8\AndroidManifest.xml:2:1-7:12
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.0.original] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\google-material-typeface-3.0.1.0.original.aar\ca78bbac3bf165e11fe50c19ad0a3807\AndroidManifest.xml:17:1-29:12
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\fontawesome-typeface-4.7.0.0.aar\ff26ddeff55acc7fb3282816b780073f\AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.bumptech.glide:glide:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\glide-4.5.0.aar\6918af51f8dc6e268f6500a7816ca50a\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.gms:play-services-places:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-places-11.6.2.aar\79795d0751678a7ad1a5ea440b6b9a6b\AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\46d7d27b582bef571587086373bb144e\AndroidManifest.xml:16:1-25:12
 MERGED from [com.google.maps.android:android-maps-utils:0.5] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\android-maps-utils-0.5.aar\7d2981e07ce7f7200fd0214fcbb6752a\AndroidManifest.xml:2:1-13:12
@@ -68,6 +69,7 @@ MERGED from [com.android.support:support-core-utils:26.0.2] C:\Users\trinh\.grad
 MERGED from [com.android.support:support-core-ui:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.2.aar\67d8f7cd433f475b42e5baac502589fb\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:customtabs:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\customtabs-26.0.2.aar\4acdd74271ff7caf810cca2455e52bbd\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.2.aar\c890017e90fd4d46412498e6d205a643\AndroidManifest.xml:17:1-31:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.5.0.aar\5c91b1e5e12ed152f52e008a9ac1eb59\AndroidManifest.xml:2:1-11:12
 MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\fba1d696d575cb42cf9a778a4c7d2e48\AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.core:runtime:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\c23e06f65e8855e450374161d080350f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.mikepenz:materialize:1.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\materialize-1.0.2.aar\8b5cd24d86e8b50360e213de55c7333f\AndroidManifest.xml:2:1-12:12
@@ -211,6 +213,8 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\tr
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1df7bd5255dc9c21f42544c5ab3e974e\AndroidManifest.xml:9:5-20
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.0.original] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\google-material-typeface-3.0.1.0.original.aar\ca78bbac3bf165e11fe50c19ad0a3807\AndroidManifest.xml:27:5-20
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.0.original] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\google-material-typeface-3.0.1.0.original.aar\ca78bbac3bf165e11fe50c19ad0a3807\AndroidManifest.xml:27:5-20
+MERGED from [com.github.bumptech.glide:glide:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\glide-4.5.0.aar\6918af51f8dc6e268f6500a7816ca50a\AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\glide-4.5.0.aar\6918af51f8dc6e268f6500a7816ca50a\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.gms:play-services-places:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-places-11.6.2.aar\79795d0751678a7ad1a5ea440b6b9a6b\AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-places:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-places-11.6.2.aar\79795d0751678a7ad1a5ea440b6b9a6b\AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\46d7d27b582bef571587086373bb144e\AndroidManifest.xml:24:5-19
@@ -281,6 +285,8 @@ MERGED from [com.android.support:customtabs:26.0.2] C:\Users\trinh\.gradle\cache
 MERGED from [com.android.support:customtabs:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\customtabs-26.0.2.aar\4acdd74271ff7caf810cca2455e52bbd\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.2.aar\c890017e90fd4d46412498e6d205a643\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.2.aar\c890017e90fd4d46412498e6d205a643\AndroidManifest.xml:25:5-29:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.5.0.aar\5c91b1e5e12ed152f52e008a9ac1eb59\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.5.0.aar\5c91b1e5e12ed152f52e008a9ac1eb59\AndroidManifest.xml:9:5-20
 MERGED from [com.jakewharton.timber:timber:4.5.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\timber-4.5.1.aar\5fd6e5b2ada6d7cd1f43e0a42fe521bb\AndroidManifest.xml:8:5-20
 MERGED from [com.jakewharton.timber:timber:4.5.1] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\timber-4.5.1.aar\5fd6e5b2ada6d7cd1f43e0a42fe521bb\AndroidManifest.xml:8:5-20
 MERGED from [com.google.android.gms:play-services-maps-license:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.6.2.aar\cdeb145a1cc137af352ff50709d60f70\AndroidManifest.xml:5:5-20
@@ -429,73 +435,79 @@ ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:84:9-54
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:84:19-51
 activity#com.minh.findtheshipper.Shipper.FragmentContainerShipper
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:85:9-87:20
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:85:9-79
 	android:name
 		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:85:19-67
 activity#com.minh.findtheshipper.Shop.HandleMapsActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:88:9-61
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:86:9-61
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:88:19-58
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:86:19-58
 activity#com.minh.findtheshipper.utils.SettingsActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:89:9-91:63
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:87:9-89:63
 	android:label
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:91:13-60
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:89:13-60
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:90:13-51
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:88:13-51
 activity#com.minh.findtheshipper.Shipper.SettingShipperPreferences
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:92:9-71
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:90:9-71
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:92:19-68
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:90:19-68
 activity#com.minh.findtheshipper.ChoosePlace
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:93:9-49
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:91:9-49
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:93:19-46
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:91:19-46
 activity#com.minh.findtheshipper.FragmentContainer
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:94:9-55
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:92:9-55
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:94:19-52
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:92:19-52
 activity#com.minh.findtheshipper.Shop.SettingsShopPreferences
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:95:9-66
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:93:9-66
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:95:19-63
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:93:19-63
 activity#com.minh.findtheshipper.Shipper.DetailOrderShipperActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:96:9-98:75
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:94:9-96:75
 	android:label
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:98:13-72
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:96:13-72
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:97:13-63
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:95:13-63
 activity#com.minh.findtheshipper.Shop.DetailOrderShopActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:99:9-66
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:97:9-66
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:99:19-63
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:97:19-63
 service#com.minh.findtheshipper.Services.LocationService
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:101:9-104:39
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:99:9-102:39
 	android:enabled
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:103:13-35
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:101:13-35
 	android:exported
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:104:13-36
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:102:13-36
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:102:13-53
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:100:13-53
 service#com.minh.findtheshipper.helpers.listeners.NotificationExtenderHelper
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:105:9-81
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:103:9-81
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:105:18-78
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:103:18-78
 activity#com.minh.findtheshipper.Shipper.DetailOrderHistoryActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:107:9-72
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:105:9-72
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:107:19-69
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:105:19-69
 activity#com.minh.findtheshipper.Shipper.DirectionShipper
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:108:9-110:72
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:106:9-108:72
 	android:label
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:110:13-69
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:108:13-69
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:109:13-53
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:107:13-53
 activity#com.minh.findtheshipper.common.ChatActivity
-ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:111:9-114:20
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:109:9-111:72
 	android:windowSoftInputMode
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:112:13-60
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:111:13-60
 	android:name
-		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:111:19-54
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:110:13-48
+activity#com.minh.findtheshipper.Shop.FollowShipperActivity
+ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:112:9-114:78
+	android:label
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:114:13-66
+	android:name
+		ADDED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml:113:13-55
 uses-sdk
 INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\My Project\FindTheShipper\app\src\main\AndroidManifest.xml
@@ -548,6 +560,8 @@ MERGED from [com.mikepenz:google-material-typeface:3.0.1.0.original] C:\Users\tr
 MERGED from [com.mikepenz:google-material-typeface:3.0.1.0.original] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\google-material-typeface-3.0.1.0.original.aar\ca78bbac3bf165e11fe50c19ad0a3807\AndroidManifest.xml:23:5-25:41
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\fontawesome-typeface-4.7.0.0.aar\ff26ddeff55acc7fb3282816b780073f\AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:fontawesome-typeface:4.7.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\fontawesome-typeface-4.7.0.0.aar\ff26ddeff55acc7fb3282816b780073f\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.bumptech.glide:glide:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\glide-4.5.0.aar\6918af51f8dc6e268f6500a7816ca50a\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\glide-4.5.0.aar\6918af51f8dc6e268f6500a7816ca50a\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-places:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-places-11.6.2.aar\79795d0751678a7ad1a5ea440b6b9a6b\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-places:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-places-11.6.2.aar\79795d0751678a7ad1a5ea440b6b9a6b\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\46d7d27b582bef571587086373bb144e\AndroidManifest.xml:23:5-43
@@ -628,6 +642,8 @@ MERGED from [com.android.support:customtabs:26.0.2] C:\Users\trinh\.gradle\cache
 MERGED from [com.android.support:customtabs:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\customtabs-26.0.2.aar\4acdd74271ff7caf810cca2455e52bbd\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.2.aar\c890017e90fd4d46412498e6d205a643\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:26.0.2] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.2.aar\c890017e90fd4d46412498e6d205a643\AndroidManifest.xml:21:5-23:58
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.5.0.aar\5c91b1e5e12ed152f52e008a9ac1eb59\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.5.0.aar\5c91b1e5e12ed152f52e008a9ac1eb59\AndroidManifest.xml:5:5-7:41
 MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\fba1d696d575cb42cf9a778a4c7d2e48\AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\fba1d696d575cb42cf9a778a4c7d2e48\AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.core:runtime:1.0.0] C:\Users\trinh\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\c23e06f65e8855e450374161d080350f\AndroidManifest.xml:20:5-22:41

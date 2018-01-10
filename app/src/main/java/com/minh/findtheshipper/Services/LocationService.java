@@ -39,7 +39,7 @@ public class LocationService extends Service {
             double latitude = location.getLatitude();
             double longitude = location.getLongitude();
             String currentAddress = EncodingFirebase.getCompleteAddressString(getApplicationContext(), latitude, longitude);
-            TastyToast.makeText(getApplicationContext(), "Location updated:" + currentAddress, TastyToast.LENGTH_SHORT, TastyToast.INFO);
+           // TastyToast.makeText(getApplicationContext(), "Location updated:" + currentAddress, TastyToast.LENGTH_SHORT, TastyToast.INFO);
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
             mDatabase.child(EncodingFirebase.encodeString(getCurrentUser()
                     .getEmail())).child("Last Latitude").setValue(latitude);

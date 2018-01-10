@@ -66,11 +66,8 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.PROGRESS_TYPE);
-        sweetAlertDialog.setTitle(R.string.LOADING);
-        sweetAlertDialog.show();
+
         loadAllList();
-        sweetAlertDialog.dismissWithAnimation();
     }
 
     @Override
@@ -81,6 +78,9 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
     public void loadAllList() {
         try {
+            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.PROGRESS_TYPE);
+            sweetAlertDialog.setTitle(R.string.LOADING);
+            sweetAlertDialog.show();
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
             Query query = mDatabase.orderByChild("Datetime");
             orderList = new ArrayList<>();
@@ -110,7 +110,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
                 }
             });
-
+            sweetAlertDialog.dismissWithAnimation();
         } catch (Exception e) {
             Log.e("Error", "In loadAllList in ListOrderCreatedFragment");
         }
@@ -192,6 +192,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                         adapter.notifyItemChanged(i);
                         adapter.notifyItemRangeChanged(i, orderList.size());
                         adapter.notifyDataSetChanged();
+                        break;
                     }
                 }
 
@@ -203,6 +204,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
                         adapter.notifyItemRemoved(i);
                         adapter.notifyItemRangeChanged(i, orderList.size());
                         adapter.notifyDataSetChanged();
+                        break;
                     }
                 }
             }

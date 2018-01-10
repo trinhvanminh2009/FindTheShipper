@@ -2,6 +2,7 @@ package com.minh.findtheshipper.models;
 
 /**
  * Created by trinh on 7/5/2017.
+ *
  */
 
 public class OrderTemp {

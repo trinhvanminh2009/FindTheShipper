@@ -42,7 +42,12 @@ public class DialogUserInformation extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         getDialog().getWindow().getAttributes().windowAnimations = R.style.MyDialogAnimation;
-        View view = inflater.inflate(R.layout.dialog_user_information, container, false);
+        return inflater.inflate(R.layout.dialog_user_information, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         Bundle bundle = this.getArguments();
         key = bundle.getString("userEmail");
         imgUserImage = view.findViewById(R.id.imgUserImage);
@@ -55,10 +60,7 @@ public class DialogUserInformation extends DialogFragment {
         txtEmail = view.findViewById(R.id.txtEmail);
         ratingBar = view.findViewById(R.id.ratingBar);
         loadUserInformation();
-        return view;
     }
-
-
 
     public void loadUserInformation() {
         final DatabaseReference dataUser = FirebaseDatabase.getInstance().getReference().child("user");

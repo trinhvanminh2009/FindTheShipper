@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -89,7 +90,6 @@ public class CommentDialogHelpers extends DialogFragment {
                 if (!editComment.getText().toString().trim().matches("")) {
                     insertComment();
                     editComment.setText("");
-                    // loadAllList();
                 } else {
                     TastyToast.makeText(getActivity(), "Please type a comment", TastyToast.LENGTH_SHORT, TastyToast.WARNING);
                 }
@@ -104,34 +104,7 @@ public class CommentDialogHelpers extends DialogFragment {
         mDatabase.child(orderID).child("comment").child(idComment).child("user").setValue(getCurrentUser().getEmail());
         mDatabase.child(orderID).child("comment").child(idComment).child("Content").setValue(editComment.getText().toString());
         mDatabase.child(orderID).child("comment").child(idComment).child("Time").setValue(getCurrentTime());
-       /* final Comment[] comment = new Comment[1];
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                Order order = realm.where(Order.class).equalTo("orderID",orderID).findFirst();
-                comment[0] = realm.createObject(Comment.class,"cmt_"+getCurrentUser().getEmail()+"_"+order.getOrderID()+"_"+countOrder());
-                comment[0].setContent(editComment.getText().toString());
-                comment[0].setDateTime(getCurrentTime());
-                comment[0].setUser(getCurrentUser());
-                realm.insertOrUpdate(comment[0]);
-            }
-        });
 
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                Order order = realm.where(Order.class).equalTo("orderID",orderID).findFirst();
-                order.getComments().add(comment[0]);
-                realm.insertOrUpdate(order);
-                //Add comment into server
-                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
-                mDatabase.child(order.getOrderID()).child("comment").child(comment[0].getIdComment()).child("user").setValue(comment[0].getUser().getEmail());
-                mDatabase.child(order.getOrderID()).child("comment").child(comment[0].getIdComment()).child("Content").setValue(comment[0].getContent());
-                mDatabase.child(order.getOrderID()).child("comment").child(comment[0].getIdComment()).child("Time").setValue(comment[0].getDateTime());
-
-            }
-        });
-*/
     }
 
     public String getCurrentTime() {
@@ -148,30 +121,26 @@ public class CommentDialogHelpers extends DialogFragment {
 
     public void loadAllList() {
         try {
+            commentList = new ArrayList<>();
             DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order/" + orderID + "/comment");
-            mDatabaseComment.addValueEventListener(new ValueEventListener() {
+            mDatabaseComment.addChildEventListener(new ChildEventListener() {
                 @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    commentList = new ArrayList<>();
-                    for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        final String key = child.getKey();
-                        String content = dataSnapshot.child(key).child("Content").getValue(String.class);
-                        String time = dataSnapshot.child(key).child("Time").getValue(String.class);
-                        String user = dataSnapshot.child(key).child("user").getValue(String.class);
-                        CommentTemp commentTemp = new CommentTemp();
-                        commentTemp.setIdComment(key);
-                        commentTemp.setDateTime(time);
-                        commentTemp.setUserName(user);
-                        commentTemp.setContent(content);
-                        commentList.add(commentTemp);
-                    }
-                    try {
-                        Collections.sort(commentList, new SortCommentTempHelpers());
-                        adapter = new CustomAdapterListComment(getActivity(), commentList);
-                        recyclerView.setAdapter(adapter);
-                    } catch (Exception e) {
-                        Log.e("Error", "Error in loadAllList");
-                    }
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    addItemComment(dataSnapshot);
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                    updateItem(dataSnapshot);
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
                 }
 
@@ -181,6 +150,64 @@ public class CommentDialogHelpers extends DialogFragment {
                 }
             });
 
+        } catch (Exception e) {
+            Log.e("Error", "Error in loadAllList");
+        }
+    }
+
+    private void addItemComment(DataSnapshot dataSnapshot) {
+
+        try {
+
+            String content = dataSnapshot.child("Content").getValue(String.class);
+            String time = dataSnapshot.child("Time").getValue(String.class);
+            String user = dataSnapshot.child("user").getValue(String.class);
+            CommentTemp commentTemp = new CommentTemp();
+            if (content != null && time != null && user != null) {
+                commentTemp.setIdComment(dataSnapshot.getKey());
+                commentTemp.setDateTime(time);
+                commentTemp.setUserName(user);
+                commentTemp.setContent(content);
+                commentList.add(commentTemp);
+                Collections.sort(commentList, new SortCommentTempHelpers());
+                adapter = new CustomAdapterListComment(getActivity(), commentList);
+                recyclerView.setAdapter(adapter);
+                recyclerView.scrollToPosition(commentList.size() -1);
+            }
+
+        } catch (Exception e) {
+            Log.e("Error", "Error in loadAllList");
+        }
+    }
+
+    private void updateItem(DataSnapshot dataSnapshot){
+
+        try {
+
+            String content = dataSnapshot.child("Content").getValue(String.class);
+            String time = dataSnapshot.child("Time").getValue(String.class);
+            String user = dataSnapshot.child("user").getValue(String.class);
+            CommentTemp commentTemp = new CommentTemp();
+            if (content != null && time != null && user != null) {
+                commentTemp.setIdComment(dataSnapshot.getKey());
+                commentTemp.setDateTime(time);
+                commentTemp.setUserName(user);
+                commentTemp.setContent(content);
+                commentList.add(commentTemp);
+                Collections.sort(commentList, new SortCommentTempHelpers());
+                for(int i = 0 ; i < commentList.size(); i++){
+                    if(commentTemp.getIdComment().equals(commentList.get(i).getIdComment())){
+                        commentList.remove(i);
+                        commentList.add(i, commentTemp);
+                        adapter.notifyItemRemoved(i);
+                        adapter.notifyItemRangeChanged(i, commentList.size());
+                        adapter.notifyDataSetChanged();
+                        recyclerView.scrollToPosition(commentList.size() -1);
+                        break;
+                    }
+
+                }
+            }
 
         } catch (Exception e) {
             Log.e("Error", "Error in loadAllList");
@@ -189,7 +216,7 @@ public class CommentDialogHelpers extends DialogFragment {
 
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
-        return  realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
+        return realm.where(User.class).beginGroup().equalTo("email", currentUser.getEmail()).endGroup().findFirst();
     }
 
     @SuppressWarnings("ConstantConditions")

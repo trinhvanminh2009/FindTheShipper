@@ -142,8 +142,7 @@
         <activity android:name="com.minh.findtheshipper.DistanceMapsActivity" />
         <activity android:name="com.minh.findtheshipper.Test" />
         <activity android:name="com.minh.findtheshipper.FragmentActivity" />
-        <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" >
-        </activity>
+        <activity android:name="com.minh.findtheshipper.Shipper.FragmentContainerShipper" />
         <activity android:name="com.minh.findtheshipper.Shop.HandleMapsActivity" />
         <activity
             android:name="com.minh.findtheshipper.utils.SettingsActivity"
@@ -169,8 +168,10 @@
             android:label="@string/title_activity_direction_shipper" />
         <activity
             android:name="com.minh.findtheshipper.common.ChatActivity"
-            android:windowSoftInputMode="stateAlwaysHidden" >
-        </activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.minh.findtheshipper.Shop.FollowShipperActivity"
+            android:label="@string/title_activity_follow_shipper" />
         <activity android:name="com.mapbox.services.android.navigation.ui.v5.NavigationActivity" /> <!-- Include the telemetry service to simplify set up (https://www.mapbox.com/telemetry) -->
         <service android:name="com.mapbox.services.android.telemetry.service.TelemetryService" />
         <service android:name="com.mapbox.services.android.navigation.v5.navigation.NavigationService" />

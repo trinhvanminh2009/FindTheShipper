@@ -82,9 +82,7 @@
         <activity android:name=".DistanceMapsActivity" />
         <activity android:name=".Test" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".Shipper.FragmentContainerShipper">
-
-        </activity>
+        <activity android:name=".Shipper.FragmentContainerShipper"></activity>
         <activity android:name=".Shop.HandleMapsActivity" />
         <activity
             android:name=".utils.SettingsActivity"
@@ -108,10 +106,12 @@
         <activity
             android:name=".Shipper.DirectionShipper"
             android:label="@string/title_activity_direction_shipper" />
-        <activity android:name=".common.ChatActivity"
-            android:windowSoftInputMode="stateAlwaysHidden">
-
-        </activity>
+        <activity
+            android:name=".common.ChatActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity
+            android:name=".Shop.FollowShipperActivity"
+            android:label="@string/title_activity_follow_shipper"></activity>
     </application>
 
 </manifest>

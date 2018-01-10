@@ -70,9 +70,11 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
 
                 }
             });
+            if(comment.getContent()!= null && comment.getDateTime() != null){
+                holder.txtContent.setText(comment.getContent());
+                holder.txtDateTime.setText(TimeAgoHelpers.getTimeAgo(comment.getDateTime(), context));
+            }
 
-            holder.txtContent.setText(comment.getContent());
-            holder.txtDateTime.setText(TimeAgoHelpers.getTimeAgo(comment.getDateTime(), context));
 
         }
 

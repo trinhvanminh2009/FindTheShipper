@@ -116,6 +116,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\chatmessageview-1.6.1.aar\\7acc8cfaa50dc860f0fba2d2075d5917\\res\\drawable-hdpi-v4\\ic_drafts.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_notification_active.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xxhdpi\\ic_notification_active.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_direction_fork_straight.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-mdpi-v4\\direction_fork_straight.png"
     },
@@ -320,6 +324,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\422e5b545dbe3bc3682efb64c5338ab9\\res\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_notification_active.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-hdpi\\ic_notification_active.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ic_action_info.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\chatmessageview-1.6.1.aar\\7acc8cfaa50dc860f0fba2d2075d5917\\res\\drawable-xxxhdpi-v4\\ic_action_info.png"
     },
@@ -362,6 +370,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_direction_off_ramp_slight_left.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-hdpi-v4\\direction_off_ramp_slight_left.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_follow_shipper.xml.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\activity_follow_shipper.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_app.png.flat",
@@ -2960,6 +2972,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-5.2.0-beta.5.aar\\58e09454737bb7ff599fe6f485617b20\\res\\drawable-xxhdpi-v4\\mapbox_info_icon_default.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_notification_active.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-mdpi\\ic_notification_active.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_direction_notification_right.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-xxxhdpi-v4\\direction_notification_right.png"
     },
@@ -3452,6 +3468,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\422e5b545dbe3bc3682efb64c5338ab9\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_notification_active.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\drawable-xhdpi\\ic_notification_active.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable_message_text_shape_right.xml.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\chatmessageview-1.6.1.aar\\7acc8cfaa50dc860f0fba2d2075d5917\\res\\drawable\\message_text_shape_right.xml"
     },
@@ -3466,6 +3486,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_direction_fork.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-hdpi-v4\\direction_fork.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_fragment_location.xml.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\dialog_fragment_location.xml"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",

@@ -165,7 +165,7 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                key = order.getOrderID();
                 if(!isOpen[0]){
                     holder.linearMoreOptions.setVisibility(View.VISIBLE);
                     isOpen[0] = true;
