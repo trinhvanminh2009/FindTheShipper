@@ -629,6 +629,7 @@ public class DetailOrderHistoryActivity extends com.minh.findtheshipper.Fragment
         mMap.setMyLocationEnabled(true);
         if (mMap.isMyLocationEnabled()) {
             LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            assert locationManager != null;
             Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (location != null) {
                 final double[] longitude = {location.getLongitude()};

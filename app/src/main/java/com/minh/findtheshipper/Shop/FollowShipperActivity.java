@@ -14,20 +14,35 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.minh.findtheshipper.R;
+import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
+import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
+import com.minh.findtheshipper.models.Route;
 
-public class FollowShipperActivity extends AppCompatActivity implements OnMapReadyCallback {
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FollowShipperActivity extends AppCompatActivity implements OnMapReadyCallback, DirectionFinderListeners {
 
     private GoogleMap mMap;
     private android.support.v7.widget.Toolbar toolbar;
     private String currentShipper;
+    private String[]arrGetValues = new String[3];
+    private List<Marker> startMarkers = new ArrayList<>();
+    private List<Marker> finishMarkers = new ArrayList<>();
+    private List<Polyline> polylinePaths = new ArrayList<>();
 
     @SuppressWarnings("ConstantConditions")
     @Override
@@ -46,7 +61,16 @@ public class FollowShipperActivity extends AppCompatActivity implements OnMapRea
     private void getCurrentShipper() {
         Bundle bundle = getIntent().getExtras();
         assert bundle != null;
-        currentShipper = bundle.getString("shipper");
+        arrGetValues = bundle.getStringArray("values");
+        if(arrGetValues != null){
+            currentShipper = arrGetValues[0];
+            String startPlace = arrGetValues[1];
+            String finishPlace = arrGetValues[2];
+            showPathOnMap(startPlace, finishPlace);
+
+        }else{
+            currentShipper = bundle.getString("shipper");
+        }
 
     }
 
@@ -64,7 +88,7 @@ public class FollowShipperActivity extends AppCompatActivity implements OnMapRea
                     String name = dataSnapshot.child("Name").getValue(String.class);
                     LatLng latLng = new LatLng(latitude, longitude);
 
-                    Circle circle = mMap.addCircle(new CircleOptions()
+                     mMap.addCircle(new CircleOptions()
                             .center(latLng)
                             .radius(100)
                             .strokeColor(Color.RED));
@@ -72,7 +96,6 @@ public class FollowShipperActivity extends AppCompatActivity implements OnMapRea
                     mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory
                             .fromResource(R.drawable.ic_delivery_man)).position(latLng).title(name));
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
-
 
 
                 }
@@ -113,5 +136,62 @@ public class FollowShipperActivity extends AppCompatActivity implements OnMapRea
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         showShipperOnMap();
+    }
+
+
+    private void showPathOnMap(String startPlace, String finishPlace) {
+        try {
+            new DirectionHelpers(this, startPlace, finishPlace).execute();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    @Override
+    public void onDirectionFinderStart() {
+        if (startMarkers != null) {
+            for (Marker marker : startMarkers) {
+                marker.remove();
+            }
+        }
+        if (finishMarkers != null) {
+            for (Marker marker : finishMarkers) {
+                marker.remove();
+            }
+        }
+        if (polylinePaths != null) {
+            for (Polyline polyline : polylinePaths) {
+                polyline.remove();
+            }
+        }
+    }
+
+    @Override
+    public void onDirectionFinderSuccess(List<Route> routes) {
+        polylinePaths = new ArrayList<>();
+        startMarkers = new ArrayList<>();
+        finishMarkers = new ArrayList<>();
+        for (Route route : routes) {
+            // Start Zoom path fit with maps
+            LatLngBounds.Builder builder = new LatLngBounds.Builder();
+            builder.include(route.startLocation);
+            builder.include(route.endLocation);
+           // LatLngBounds bounds = builder.build();
+           // mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 10));
+            //End Zoom path fit with maps
+            startMarkers.add(mMap.addMarker(new MarkerOptions().title(route.startAddress)
+                    .position(route.startLocation).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_start_place))));
+            finishMarkers.add(mMap.addMarker(new MarkerOptions().title(route.endAddress)
+                    .position(route.endLocation).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_destination))));
+            PolylineOptions polylineOptions = new PolylineOptions().geodesic(true).color(Color.GREEN).width(12);
+            for (int i = 0; i < route.points.size(); i++) {
+                polylineOptions.add(route.points.get(i));
+            }
+            polylinePaths.add(mMap.addPolyline(polylineOptions));
+
+
+        }
     }
 }

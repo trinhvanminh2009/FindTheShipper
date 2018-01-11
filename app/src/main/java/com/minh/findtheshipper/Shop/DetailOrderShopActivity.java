@@ -3,6 +3,7 @@ package com.minh.findtheshipper.Shop;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -13,6 +14,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -396,7 +398,6 @@ public class DetailOrderShopActivity extends AppCompatActivity {
             case R.id.btnShipperInformation:
                 showDialogShipperInformation();
                 break;
-
             case R.id.btnCall:
                 handleCallShipper(view);
                 break;
@@ -423,23 +424,34 @@ public class DetailOrderShopActivity extends AppCompatActivity {
     }
 
     private void openDialogFollowShipperOnMap() {
-        if(currentShipper != null){
-            Intent intent = new Intent(DetailOrderShopActivity.this, FollowShipperActivity.class);
-            intent.putExtra("shipper",currentShipper);
+        Intent intent = new Intent(DetailOrderShopActivity.this, FollowShipperActivity.class);
+        if (order != null && currentShipper != null) {
+            String valuesToPass[] = new String[3];
+            valuesToPass[0] = currentShipper;
+            valuesToPass[1] = order.getStartPoint();
+            valuesToPass[2] = order.getFinishPoint();
+            intent.putExtra("values",valuesToPass);
             startActivity(intent);
 
-        }else {
-            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this);
-            sweetAlertDialog.setTitle(R.string.warning);
-            sweetAlertDialog.setContentText(getString(R.string.shipper_not_found));
-            sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                @Override
-                public void onClick(SweetAlertDialog sweetAlertDialog) {
-                    sweetAlertDialog.dismissWithAnimation();
-                }
-            });
-            sweetAlertDialog.show();
+        } else {
+            if (currentShipper != null) {
+
+                intent.putExtra("shipper", currentShipper);
+                startActivity(intent);
+            } else {
+                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DetailOrderShopActivity.this);
+                sweetAlertDialog.setTitle(R.string.warning);
+                sweetAlertDialog.setContentText(getString(R.string.shipper_not_found));
+                sweetAlertDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        sweetAlertDialog.dismissWithAnimation();
+                    }
+                });
+                sweetAlertDialog.show();
+            }
         }
+
 
     }
 
