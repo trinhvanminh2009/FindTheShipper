@@ -7,15 +7,7 @@
     android:orientation="vertical"
     tools:context="com.minh.findtheshipper.Shop.FollowShipperActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/md_green_700"
-        android:layout_marginTop="24dp"
-        popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-    </android.support.v7.widget.Toolbar>
+    <include layout="@layout/toolbar"/>
 
     <fragment
 

@@ -70,9 +70,9 @@ public final class R {
         public static final int mapbox_uiZoomGestures = 0x7f040183;
     }
     public static final class color {
-        public static final int mapbox_blue = 0x7f060089;
-        public static final int mapbox_gray = 0x7f06008a;
-        public static final int mapbox_gray_dark = 0x7f06008b;
+        public static final int mapbox_blue = 0x7f06008a;
+        public static final int mapbox_gray = 0x7f06008b;
+        public static final int mapbox_gray_dark = 0x7f06008c;
     }
     public static final class dimen {
         public static final int mapbox_eight_dp = 0x7f0700a7;
@@ -114,19 +114,19 @@ public final class R {
         public static final int infowindow_description = 0x7f0900ba;
         public static final int infowindow_title = 0x7f0900bb;
         public static final int left = 0x7f0900cc;
-        public static final int logoView = 0x7f0900db;
-        public static final int markerViewContainer = 0x7f0900e1;
-        public static final int right = 0x7f090157;
-        public static final int start = 0x7f09018b;
-        public static final int surfaceView = 0x7f09019c;
-        public static final int top = 0x7f0901b8;
-        public static final int userLocationView = 0x7f0901e4;
+        public static final int logoView = 0x7f0900dc;
+        public static final int markerViewContainer = 0x7f0900e2;
+        public static final int right = 0x7f090158;
+        public static final int start = 0x7f09018c;
+        public static final int surfaceView = 0x7f09019d;
+        public static final int top = 0x7f0901b9;
+        public static final int userLocationView = 0x7f0901e5;
     }
     public static final class layout {
-        public static final int mapbox_attribution_list_item = 0x7f0b0062;
-        public static final int mapbox_infowindow_content = 0x7f0b0063;
-        public static final int mapbox_mapview_internal = 0x7f0b0064;
-        public static final int mapbox_view_image_marker = 0x7f0b0065;
+        public static final int mapbox_attribution_list_item = 0x7f0b0063;
+        public static final int mapbox_infowindow_content = 0x7f0b0064;
+        public static final int mapbox_mapview_internal = 0x7f0b0065;
+        public static final int mapbox_view_image_marker = 0x7f0b0066;
     }
     public static final class string {
         public static final int app_name = 0x7f0f0023;

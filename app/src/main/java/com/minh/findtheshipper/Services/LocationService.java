@@ -18,7 +18,7 @@ import com.sdsmdg.tastytoast.TastyToast;
 import io.realm.Realm;
 
 public class LocationService extends Service {
-    private static final String TAG = "Error";
+    private static final String TAG = "Service";
     private LocationManager mLocationManager = null;
     private static final int LOCATION_INTERVAL = 1000;
     private static final float LOCATION_DISTANCE = 10f;
@@ -38,8 +38,6 @@ public class LocationService extends Service {
             mLastLocation.set(location);
             double latitude = location.getLatitude();
             double longitude = location.getLongitude();
-            String currentAddress = EncodingFirebase.getCompleteAddressString(getApplicationContext(), latitude, longitude);
-           // TastyToast.makeText(getApplicationContext(), "Location updated:" + currentAddress, TastyToast.LENGTH_SHORT, TastyToast.INFO);
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
             mDatabase.child(EncodingFirebase.encodeString(getCurrentUser()
                     .getEmail())).child("Last Latitude").setValue(latitude);

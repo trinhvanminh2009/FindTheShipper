@@ -13,6 +13,7 @@ import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -56,6 +57,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -82,6 +84,7 @@ import com.minh.findtheshipper.helpers.DialogHelpers;
 import com.minh.findtheshipper.helpers.DirectionHelpers;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.GlideApp;
+import com.minh.findtheshipper.helpers.OneSignalHelpers;
 import com.minh.findtheshipper.helpers.listeners.DirectionFinderListeners;
 import com.minh.findtheshipper.models.RealmObject.CurrentUser;
 import com.minh.findtheshipper.models.ListControl;
@@ -94,6 +97,7 @@ import com.sdsmdg.tastytoast.TastyToast;
 
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
+import java.text.FieldPosition;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -167,85 +171,101 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     private Realm realm;
     private android.support.v4.app.Fragment fragment = null;
     private long countOrder[] = new long[1];
-    private String TAG = "Error";
+    private String TAG = "Minh";
     private boolean isFabOpen = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_handle_maps);
-        ButterKnife.bind(this);
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        Realm.init(HandleMapsActivity.this);
-        initRealm();
-        setSupportActionBar(toolbar);
-        listControls.add(new ListControl(R.drawable.ic_starting_point, ""));
-        listControls.add(new ListControl(R.drawable.ic_finish_point, ""));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.created_order);
-        startService(new Intent(this, LocationService.class));
-        handleAutoCompleteButton();
-        //Count order on server before create orders. Because server is thread slow.
-        DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order");
-        mDatabaseComment.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+        try {
+            setContentView(R.layout.activity_handle_maps);
+            ButterKnife.bind(this);
+            SupportMapFragment mapFragment =
+                    (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+            Realm.init(HandleMapsActivity.this);
+            initRealm();
+            setSupportActionBar(toolbar);
+            listControls.add(new ListControl(R.drawable.ic_starting_point, ""));
+            listControls.add(new ListControl(R.drawable.ic_finish_point, ""));
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(R.string.created_order);
+            startService(new Intent(this, LocationService.class));
+            handleAutoCompleteButton();
+            //Count order on server before create orders. Because server is thread slow.
+            DatabaseReference mDatabaseComment = FirebaseDatabase.getInstance().getReference("order");
+            checkIsShipper();
+            mDatabaseComment.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
 
-                countOrder[0] = dataSnapshot.getChildrenCount();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-        //Download for set icon in header drawer
-        DrawerImageLoader.init(new AbstractDrawerImageLoader() {
-            @Override
-            public void set(ImageView imageView, Uri uri, Drawable placeholder, String tag) {
-                super.set(imageView, uri, placeholder, tag);
-                GlideApp.with(imageView.getContext()).load(uri).placeholder(placeholder).
-                        error(new ColorDrawable(Color.RED)).into(imageView);
-            }
-
-            @Override
-            public void cancel(ImageView imageView) {
-                super.cancel(imageView);
-                GlideApp.with(imageView.getContext()).clear(imageView);
-
-
-            }
-
-            @Override
-            public Drawable placeholder(Context ctx, String tag) {
-                //define different placeholders for different imageView targets
-                //default tags are accessible via the DrawerImageLoader.Tags
-                //custom ones can be checked via string. see the CustomUrlBasePrimaryDrawerItem LINE 111
-                if (DrawerImageLoader.Tags.PROFILE.name().equals(tag)) {
-                    return DrawerUIUtils.getPlaceHolder(ctx);
-                } else if (DrawerImageLoader.Tags.ACCOUNT_HEADER.name().equals(tag)) {
-                    return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(com.mikepenz.materialdrawer.R.color.primary).sizeDp(56);
-                } else if ("customUrlItem".equals(tag)) {
-                    return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(R.color.md_red_500).sizeDp(56);
+                    countOrder[0] = dataSnapshot.getChildrenCount();
                 }
 
-                //we use the default one for
-                //DrawerImageLoader.Tags.PROFILE_DRAWER_ITEM.name()
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-                return super.placeholder(ctx, tag);
-            }
-        });
+                }
+            });
 
-        NavigationDrawer(toolbar);
-        if (findViewById(R.id.fragmentShipperContainer) != null) {
-            if (savedInstanceState != null) {
-                return;
+            //Download for set icon in header drawer
+            DrawerImageLoader.init(new AbstractDrawerImageLoader() {
+                @Override
+                public void set(ImageView imageView, Uri uri, Drawable placeholder, String tag) {
+                    super.set(imageView, uri, placeholder, tag);
+                    GlideApp.with(imageView.getContext()).load(uri).placeholder(placeholder).
+                            error(new ColorDrawable(Color.RED)).into(imageView);
+                }
+
+                @Override
+                public void cancel(ImageView imageView) {
+                    super.cancel(imageView);
+                    GlideApp.with(imageView.getContext()).clear(imageView);
+
+
+                }
+
+                @Override
+                public Drawable placeholder(Context ctx, String tag) {
+                    //define different placeholders for different imageView targets
+                    //default tags are accessible via the DrawerImageLoader.Tags
+                    //custom ones can be checked via string. see the CustomUrlBasePrimaryDrawerItem LINE 111
+                    if (DrawerImageLoader.Tags.PROFILE.name().equals(tag)) {
+                        return DrawerUIUtils.getPlaceHolder(ctx);
+                    } else if (DrawerImageLoader.Tags.ACCOUNT_HEADER.name().equals(tag)) {
+                        return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(com.mikepenz.materialdrawer.R.color.primary).sizeDp(56);
+                    } else if ("customUrlItem".equals(tag)) {
+                        return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(R.color.md_red_500).sizeDp(56);
+                    }
+
+                    //we use the default one for
+                    //DrawerImageLoader.Tags.PROFILE_DRAWER_ITEM.name()
+
+                    return super.placeholder(ctx, tag);
+                }
+            });
+
+            NavigationDrawer(toolbar);
+            if (findViewById(R.id.fragmentShipperContainer) != null) {
+                if (savedInstanceState != null) {
+                    return;
+                }
             }
+        } catch (Exception e) {
+            Log.e(TAG, "onCreate: " + e.toString());
+        }
+
+    }
+
+    private void checkIsShipper() {
+        if (getCurrentUser().getEmail() != null) {
+            String currentEmail = getCurrentUser().getEmail();
+            String mailOnFireBase = EncodingFirebase.encodeString(currentEmail);
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("user").child(mailOnFireBase);
+            databaseReference.child("IsShipper").setValue(false);
         }
     }
+
 
     @Override
     public void onBackPressed() {
@@ -499,29 +519,44 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         editPhoneNumber.setText(getCurrentUser().getPhoneNumber());
     }
 
-    @OnClick(R.id.btnFloatingAddOrder)
+    @OnClick({R.id.btnFloatingAddOrder, R.id.btnConfirmCreateOrder, R.id.btnCancelOrder, R.id.btnCreateNewOrder, R.id.btnOK})
     public void eventClick(final View view) {
-        Animation fabRotation, fabReturnRotation;
         switch (view.getId()) {
             case R.id.btnFloatingAddOrder:
-                fabRotation = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_rotate);
-                fabReturnRotation = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_return_rotation);
-
-                if (isFabOpen) {
-                    isFabOpen = false;
-                    btnFloatingAddOrder.startAnimation(fabReturnRotation);
-                    layoutPlaces.setVisibility(View.VISIBLE);
-
-                } else {
-                    btnFloatingAddOrder.startAnimation(fabRotation);
-                    layoutPlaces.setVisibility(View.GONE);
-                    isFabOpen = true;
-                }
+                handleFloatingAddOrder();
+                break;
+            case R.id.btnConfirmCreateOrder:
+                confirmCreateOrder();
+                break;
+            case R.id.btnCancelOrder:
+                cancelOrder();
+                break;
+            case R.id.btnCreateNewOrder:
+                createNewOrder();
+                break;
+            case R.id.btnOK:
+                getAddress();
                 break;
         }
     }
 
-    @OnClick(R.id.btnConfirmCreateOrder)
+    private void handleFloatingAddOrder() {
+        Animation fabRotation, fabReturnRotation;
+        fabRotation = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_rotate);
+        fabReturnRotation = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fab_return_rotation);
+
+        if (isFabOpen) {
+            isFabOpen = false;
+            btnFloatingAddOrder.startAnimation(fabReturnRotation);
+            layoutPlaces.setVisibility(View.VISIBLE);
+
+        } else {
+            btnFloatingAddOrder.startAnimation(fabRotation);
+            layoutPlaces.setVisibility(View.GONE);
+            isFabOpen = true;
+        }
+    }
+
     public void confirmCreateOrder() {
         SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(HandleMapsActivity.this, SweetAlertDialog.WARNING_TYPE);
         if (!isPhoneNumberValid(editPhoneNumber.getText().toString())) {
@@ -571,8 +606,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 order.setDateTime(date);
                 order.setSaveOrder(false);
                 realm.insertOrUpdate(order);
-                TastyToast.makeText(getApplicationContext(), order.getShipMoney(), TastyToast.LENGTH_SHORT, TastyToast.INFO);
-
                 user.getOrderArrayList().add(order);
                 realm.insertOrUpdate(user);
                 //Post data into server after added to database, have to encoding before post into FireBase server
@@ -591,6 +624,7 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("State Order").setValue("1");
                 mDatabase.child(EncodingFirebase.encodeString(order.getOrderID())).child("Show Again").setValue(true);
 
+                sendNotificationToShipper(order.getStartPoint());
                 //Handle change to created order
                 getSupportActionBar().setTitle(R.string.created_order);
                 fragmentMaps.setVisibility(View.GONE);
@@ -640,7 +674,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     }
 
 
-    @OnClick(R.id.btnCancelOrder)
     public void cancelOrder() {
         btnCreateNewOrder.setVisibility(View.VISIBLE);
         layoutCreateNewOrder.setVisibility(View.GONE);
@@ -648,7 +681,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     }
 
-    @OnClick(R.id.btnCreateNewOrder)
     public void createNewOrder() {
         btnCreateNewOrder.setVisibility(View.GONE);
         layoutCreateNewOrder.setVisibility(View.VISIBLE);
@@ -657,7 +689,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     }
 
 
-    @OnClick(R.id.btnOK)
     public void getAddress() {
         if (itemClicked == 1) {
             btnCreateNewOrder.setVisibility(View.GONE);
@@ -738,8 +769,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
 
                     }
                 }
-
-
             }
 
             @Override
@@ -832,7 +861,6 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
                     .newInstance(false).show(getSupportFragmentManager(), "dialog");
             showPermissionDeniedDialog = false;
         }
-
     }
 
     @Override
@@ -927,10 +955,9 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
         return true;
     }
 
-    private NotificationData getNotificationData(){
+    private NotificationData getNotificationData() {
         return realm.where(NotificationData.class).findFirst();
     }
-
 
 
     @Override
@@ -946,13 +973,72 @@ public class HandleMapsActivity extends FragmentActivity implements OnMapReadyCa
     }
 
     private void showNotification() {
-
-
         final FragmentManager fragmentManager = getSupportFragmentManager();
         final DialogHelpers dialogHelpers = new DialogHelpers();
         dialogHelpers.show(fragmentManager, "New fragment");
     }
 
+    private void sendNotificationToShipper(final String startPlace) {
+        try {
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("user");
+            databaseReference.addChildEventListener(new ChildEventListener() {
+                @SuppressWarnings("ConstantConditions")
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    if (dataSnapshot.exists()) {
+                        if (getCurrentUser().getEmail() != null) {
+                            if (!(HandleMapsActivity.this).isFinishing()) {
+                                LatLng startPlaceLaLng = EncodingFirebase.getLocationFromAddress(HandleMapsActivity.this, startPlace);
+                                double currentLongitude = startPlaceLaLng.longitude;
+                                double currentLatitude = startPlaceLaLng.latitude;
+                                Location shopLocation = new Location("Shop");
+                                shopLocation.setLongitude(currentLongitude);
+                                shopLocation.setLatitude(currentLatitude);
+
+                                if (dataSnapshot.child("IsShipper").getValue(Boolean.class)) {
+                                    String key = dataSnapshot.getKey();
+                                    double shipperLongitude = dataSnapshot.child("Last Longitude").getValue(Double.class);
+                                    double shipperLatitude = dataSnapshot.child("Last Latitude").getValue(Double.class);
+                                    Location shipperLocation = new Location("Shipper");
+                                    shipperLocation.setLatitude(shipperLatitude);
+                                    shipperLocation.setLongitude(shipperLongitude);
+                                    float distance = shopLocation.distanceTo(shipperLocation);
+                                    float distanceToKm = distance / 1000;
+                                    String shipperEmail = EncodingFirebase.decodeString(key);
+                                    String message = "This order is about " + distanceToKm + " km away from you! Would you like to receive it?";
+                                    OneSignalHelpers.sendNotification(shipperEmail, getCurrentUser().getEmail(), message);
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        } catch (Exception e) {
+            Log.e(TAG, "sendNotificationToShipper: " + e.toString());
+        }
+
+    }
 
     @Override
     protected void onResume() {

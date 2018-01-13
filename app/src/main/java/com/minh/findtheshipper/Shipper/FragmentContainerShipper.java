@@ -22,12 +22,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.mikepenz.actionitembadge.library.ActionItemBadge;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -45,14 +48,17 @@ import com.mikepenz.materialdrawer.util.DrawerUIUtils;
 import com.minh.findtheshipper.FragmentActivity;
 import com.minh.findtheshipper.R;
 import com.minh.findtheshipper.helpers.DialogHelpers;
+import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.helpers.GlideApp;
 import com.minh.findtheshipper.models.RealmObject.CurrentUser;
 import com.minh.findtheshipper.models.RealmObject.NotificationData;
+import com.minh.findtheshipper.models.RealmObject.User;
 import com.sdsmdg.tastytoast.TastyToast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class FragmentContainerShipper extends FragmentActivity {
 
@@ -66,77 +72,82 @@ public class FragmentContainerShipper extends FragmentActivity {
     private Context context = this;
     private Realm realm;
     boolean doubleBackToExitPressedOnce = false;
+    String TAG = "ContainerShipper";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_container_shipper);
-        ButterKnife.bind(this);
-        Realm.init(FragmentContainerShipper.this);
-        initRealm();
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.list_order_shipper);
-        callFirstFragment();
-        //Download for set icon in header drawer
-        DrawerImageLoader.init(new AbstractDrawerImageLoader() {
-            @Override
-            public void set(ImageView imageView, Uri uri, Drawable placeholder, String tag) {
-                super.set(imageView, uri, placeholder, tag);
-                GlideApp.with(imageView.getContext()).load(uri).placeholder(placeholder).
-                        error(new ColorDrawable(Color.RED)).into(imageView);
+        try {
+            setContentView(R.layout.fragment_container_shipper);
+            ButterKnife.bind(this);
+            Realm.init(FragmentContainerShipper.this);
+            initRealm();
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(R.string.list_order_shipper);
+            callFirstFragment();
+            checkIsShipper();
+            //Download for set icon in header drawer
+            DrawerImageLoader.init(new AbstractDrawerImageLoader() {
+                @Override
+                public void set(ImageView imageView, Uri uri, Drawable placeholder, String tag) {
+                    super.set(imageView, uri, placeholder, tag);
+                    GlideApp.with(imageView.getContext()).load(uri).placeholder(placeholder).
+                            error(new ColorDrawable(Color.RED)).into(imageView);
 
 
-            }
-
-            @Override
-            public void cancel(ImageView imageView) {
-                super.cancel(imageView);
-                GlideApp.with(imageView.getContext()).clear(imageView);
-
-
-            }
-
-            @Override
-            public Drawable placeholder(Context ctx, String tag) {
-                //define different placeholders for different imageView targets
-                //default tags are accessible via the DrawerImageLoader.Tags
-                //custom ones can be checked via string. see the CustomUrlBasePrimaryDrawerItem LINE 111
-                if (DrawerImageLoader.Tags.PROFILE.name().equals(tag)) {
-                    return DrawerUIUtils.getPlaceHolder(ctx);
-                } else if (DrawerImageLoader.Tags.ACCOUNT_HEADER.name().equals(tag)) {
-                    return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(com.mikepenz.materialdrawer.R.color.primary).sizeDp(56);
-                } else if ("customUrlItem".equals(tag)) {
-                    return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(R.color.md_red_500).sizeDp(56);
                 }
 
-                //we use the default one for
-                //DrawerImageLoader.Tags.PROFILE_DRAWER_ITEM.name()
+                @Override
+                public void cancel(ImageView imageView) {
+                    super.cancel(imageView);
+                    GlideApp.with(imageView.getContext()).clear(imageView);
 
-                return super.placeholder(ctx, tag);
-            }
-        });
 
-        NavigationDrawer(toolbar);
-        if (findViewById(R.id.fragmentShipperContainer) != null) {
-            if (savedInstanceState != null) {
-                return;
+                }
+
+                @Override
+                public Drawable placeholder(Context ctx, String tag) {
+                    //define different placeholders for different imageView targets
+                    //default tags are accessible via the DrawerImageLoader.Tags
+                    //custom ones can be checked via string. see the CustomUrlBasePrimaryDrawerItem LINE 111
+                    if (DrawerImageLoader.Tags.PROFILE.name().equals(tag)) {
+                        return DrawerUIUtils.getPlaceHolder(ctx);
+                    } else if (DrawerImageLoader.Tags.ACCOUNT_HEADER.name().equals(tag)) {
+                        return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(com.mikepenz.materialdrawer.R.color.primary).sizeDp(56);
+                    } else if ("customUrlItem".equals(tag)) {
+                        return new IconicsDrawable(ctx).iconText(" ").backgroundColorRes(R.color.md_red_500).sizeDp(56);
+                    }
+
+                    //we use the default one for
+                    //DrawerImageLoader.Tags.PROFILE_DRAWER_ITEM.name()
+
+                    return super.placeholder(ctx, tag);
+                }
+            });
+
+            NavigationDrawer(toolbar);
+            if (findViewById(R.id.fragmentShipperContainer) != null) {
+                if (savedInstanceState != null) {
+                    return;
+                }
             }
+
+            /***
+             * Have to request permissions right here . Because can't request permissions in ArrayAdapter.
+             */
+            if (Build.VERSION.SDK_INT >= 23) {
+                String[] PERMISSIONS = {
+                        Manifest.permission.CALL_PHONE
+                };
+                if (!hasPermissions(context, PERMISSIONS)) {
+                    ActivityCompat.requestPermissions((Activity) context, PERMISSIONS, REQUEST);
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "onCreate:" + e.toString());
         }
 
-        /***
-         * Have to request permissions right here . Because can't request permissions in ArrayAdapter.
-         */
-        if (Build.VERSION.SDK_INT >= 23) {
-            String[] PERMISSIONS = {
-                    Manifest.permission.CALL_PHONE
-            };
-            if (!hasPermissions(context, PERMISSIONS)) {
-                ActivityCompat.requestPermissions((Activity) context, PERMISSIONS, REQUEST);
-            } else {
-
-            }
-        }
     }
 
     public void initRealm() {
@@ -144,6 +155,14 @@ public class FragmentContainerShipper extends FragmentActivity {
         realm = Realm.getDefaultInstance();
     }
 
+    private void checkIsShipper() {
+        if (getCurrentUser().getEmail() != null) {
+            String currentEmail = getCurrentUser().getEmail();
+            String mailOnFireBase = EncodingFirebase.encodeString(currentEmail);
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("user").child(mailOnFireBase);
+            databaseReference.child("IsShipper").setValue(true);
+        }
+    }
 
     private Drawable resizeImage(int resId, int w, int h) {
         // load the original Bitmap
@@ -175,15 +194,25 @@ public class FragmentContainerShipper extends FragmentActivity {
         switch (item.getItemId()) {
             case R.id.item_notifycation:
                 showNotification();
-                badgerCount =  getNotificationData().getNumberUnread();
-                 ActionItemBadge.update(item,badgerCount);
+                badgerCount = getNotificationData().getNumberUnread();
+                ActionItemBadge.update(item, badgerCount);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    private NotificationData getNotificationData(){
+    private User getCurrentUser() {
+        CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
+        RealmResults<User> checkUser = realm.where(User.class).equalTo("email", currentUser.getEmail()).findAll();
+        if (checkUser.size() == 0) {
+            //   addUser();
+
+        }
+        return realm.where(User.class).equalTo("email", currentUser.getEmail()).findFirst();
+    }
+
+    private NotificationData getNotificationData() {
         return realm.where(NotificationData.class).findFirst();
     }
 

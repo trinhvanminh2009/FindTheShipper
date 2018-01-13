@@ -238,5 +238,7 @@
     <string name="title_activity_follow_shipper">Map</string>
     <string name="tool_bar_follow_shipper">Follow shipper</string>
 
+    <string name="user_name">Name:</string>
+
 
 </resources>

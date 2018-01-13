@@ -2,9 +2,13 @@ package com.minh.findtheshipper.Shop;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -39,23 +43,28 @@ public class FollowShipperActivity extends AppCompatActivity implements OnMapRea
     private GoogleMap mMap;
     private android.support.v7.widget.Toolbar toolbar;
     private String currentShipper;
-    private String[]arrGetValues = new String[3];
+    String[]arrGetValues = new String[3];
     private List<Marker> startMarkers = new ArrayList<>();
     private List<Marker> finishMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
+    private String TAG = "FollowShipper";
 
     @SuppressWarnings("ConstantConditions")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_follow_shipper);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        showToolBar();
-        getCurrentShipper();
-
+        try {
+            setContentView(R.layout.activity_follow_shipper);
+            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+            showToolBar();
+            getCurrentShipper();
+            changeColorStatusBar();
+        }catch (Exception e){
+            Log.e(TAG, "onCreate: "+e.toString() );
+        }
     }
 
     private void getCurrentShipper() {
@@ -87,7 +96,7 @@ public class FollowShipperActivity extends AppCompatActivity implements OnMapRea
                     double longitude = dataSnapshot.child("Last Longitude").getValue(Double.class);
                     String name = dataSnapshot.child("Name").getValue(String.class);
                     LatLng latLng = new LatLng(latitude, longitude);
-
+                    Log.e("Here","Minh");
                      mMap.addCircle(new CircleOptions()
                             .center(latLng)
                             .radius(100)
@@ -193,5 +202,13 @@ public class FollowShipperActivity extends AppCompatActivity implements OnMapRea
 
 
         }
+    }
+
+    private void changeColorStatusBar() {
+        Window window = this.getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+
     }
 }

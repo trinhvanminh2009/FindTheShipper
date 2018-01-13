@@ -20,8 +20,12 @@ import com.facebook.GraphResponse;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.minh.findtheshipper.Shipper.FragmentContainerShipper;
 import com.minh.findtheshipper.Shop.HandleMapsActivity;
 import com.minh.findtheshipper.helpers.EncodingFirebase;
 import com.minh.findtheshipper.models.RealmObject.CurrentUser;
@@ -42,6 +46,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 
+@SuppressWarnings("ConstantConditions")
 public class MainActivity extends FragmentActivity {
 
 
@@ -52,129 +57,172 @@ public class MainActivity extends FragmentActivity {
     String[] listProfile = new String[4];
     private Realm realm;
     public static String email;
+    String TAG = "MainActivity";
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        Realm.init(this);
-        initRealm();
-        OneSignal.startInit(this)
-                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
-                .unsubscribeWhenNotificationsAreDisabled(true)
-                .init();
-        if (getNotificationData()!= null) {
-            Log.e("notification", "Notification created");
-        } else {
-            createNotificationRealm();
-        }
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
-        progress = new ProgressDialog(MainActivity.this);
-        progress.setMessage(getResources().getString(R.string.please_wait_facebooklogin));
-        progress.setIndeterminate(false);
-        progress.setCancelable(false);
-        callbackManager = CallbackManager.Factory.create();
-        final LoginButton loginButton = findViewById(R.id.login_button);
-        loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
-        try {
-            PackageInfo info = getPackageManager().getPackageInfo(
-                    "com.minh.findtheshipper", PackageManager.GET_SIGNATURES);
-            for (android.content.pm.Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+        try{
+            setContentView(R.layout.activity_main);
+            ButterKnife.bind(this);
+            Realm.init(this);
+            initRealm();
+            OneSignal.startInit(this)
+                    .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                    .unsubscribeWhenNotificationsAreDisabled(true)
+                    .init();
+            if (getNotificationData()!= null) {
+                Log.e("notification", "Notification created");
+            } else {
+                createNotificationRealm();
             }
-        } catch (PackageManager.NameNotFoundException e) {
+            FacebookSdk.sdkInitialize(getApplicationContext());
+            AppEventsLogger.activateApp(this);
+            progress = new ProgressDialog(MainActivity.this);
+            progress.setMessage(getResources().getString(R.string.please_wait_facebooklogin));
+            progress.setIndeterminate(false);
+            progress.setCancelable(false);
+            callbackManager = CallbackManager.Factory.create();
+            final LoginButton loginButton = findViewById(R.id.login_button);
+            loginButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
+            try {
+                PackageInfo info = getPackageManager().getPackageInfo(
+                        "com.minh.findtheshipper", PackageManager.GET_SIGNATURES);
+                for (android.content.pm.Signature signature : info.signatures) {
+                    MessageDigest md = MessageDigest.getInstance("SHA");
+                    md.update(signature.toByteArray());
+                    Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+                }
+            } catch (PackageManager.NameNotFoundException e) {
 
-        } catch (NoSuchAlgorithmException e) {
+            } catch (NoSuchAlgorithmException e) {
 
-        }
-        if (!checkLoginFacebook()) {
-            loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-                @Override
-                public void onSuccess(final LoginResult loginResult) {
+            }
+            if (!checkLoginFacebook()) {
+                loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(final LoginResult loginResult) {
 
-                    final GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-                        @Override
-                        public void onCompleted(JSONObject object, GraphResponse response) {
+                        final GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response) {
 
-                            try {
-                                Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
-                                email = response.getJSONObject().getString("email");
-                                if (email != null) {
-                                    final String gender = response.getJSONObject().getString("gender");
-                                    final String name = response.getJSONObject().getString("name");
-                                    String userID = loginResult.getAccessToken().getUserId();
-                                    final String imageURL = "https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200";
-                                    UserTemp userTemp = new UserTemp();
-                                    userTemp.setAvatar(imageURL);
-                                    userTemp.setEmail(email);
-                                    userTemp.setName(name);
-                                    userTemp.setGender(gender);
+                                try {
+                                    Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
+                                    email = response.getJSONObject().getString("email");
+                                    if (email != null) {
+                                        final String gender = response.getJSONObject().getString("gender");
+                                        final String name = response.getJSONObject().getString("name");
+                                        String userID = loginResult.getAccessToken().getUserId();
+                                        final String imageURL = "https://graph.facebook.com/" + userID + "/picture?width=200" + "&height=200";
+                                        UserTemp userTemp = new UserTemp();
+                                        userTemp.setAvatar(imageURL);
+                                        userTemp.setEmail(email);
+                                        userTemp.setName(name);
+                                        userTemp.setGender(gender);
                                     /*
                                      * Have to save current user into database for all class can access to current user login Facebook.
                                      * */
-                                    realm.executeTransaction(new Realm.Transaction() {
-                                        @Override
-                                        public void execute(Realm realm) {
-                                            CurrentUser currentUser = realm.createObject(CurrentUser.class, email);
-                                            currentUser.setGender(gender);
-                                            currentUser.setName(name);
-                                            currentUser.setAvatar(imageURL);
-                                            realm.insertOrUpdate(currentUser);
-                                        }
-                                    });
-                                    addUser();
+                                        realm.executeTransaction(new Realm.Transaction() {
+                                            @Override
+                                            public void execute(Realm realm) {
+                                                CurrentUser currentUser = realm.createObject(CurrentUser.class, email);
+                                                currentUser.setGender(gender);
+                                                currentUser.setName(name);
+                                                currentUser.setAvatar(imageURL);
+                                                realm.insertOrUpdate(currentUser);
+                                            }
+                                        });
+                                        addUser();
 
-                                    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
-                                    mDatabase.child(EncodingFirebase.encodeString(email)).child("Name").setValue(EncodingFirebase.encodeString(name));
-                                    mDatabase.child(EncodingFirebase.encodeString(email)).child("Gender").setValue(gender);
-                                    mDatabase.child(EncodingFirebase.encodeString(email)).child("Avatar").setValue(EncodingFirebase.encodeString(imageURL));
-                                    OneSignal.sendTag("email", email);
-                                    startActivity(intent);
+                                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
+                                        mDatabase.child(EncodingFirebase.encodeString(email)).child("Name").setValue(EncodingFirebase.encodeString(name));
+                                        mDatabase.child(EncodingFirebase.encodeString(email)).child("Gender").setValue(gender);
+                                        mDatabase.child(EncodingFirebase.encodeString(email)).child("Avatar").setValue(EncodingFirebase.encodeString(imageURL));
+                                        OneSignal.sendTag("email", email);
+                                        startActivity(intent);
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                        Bundle parameters = new Bundle();
+                        parameters.putString("fields", "id,name,email,gender,birthday");
+                        request.setParameters(parameters);
+                        request.executeAsync();
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        TastyToast.makeText(MainActivity.this, "Not Authentication", TastyToast.LENGTH_LONG, TastyToast.CONFUSING);
+                    }
+
+                    @Override
+                    public void onError(FacebookException error) {
+                        TastyToast.makeText(MainActivity.this, "Something wrong!", TastyToast.LENGTH_LONG, TastyToast.ERROR);
+
+                    }
+                });
+
+            } else {
+                realm = Realm.getDefaultInstance();
+                if (getCurrentUser().getEmail() != null) {
+                    email = getCurrentUser().getEmail();
+                    OneSignal.sendTag("email", email);
+                    final String mailOnServer = EncodingFirebase.encodeString(email);
+                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("user");
+                    databaseReference.addChildEventListener(new ChildEventListener() {
+                        @Override
+                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                            if(dataSnapshot.exists()){
+                                if(dataSnapshot.getKey().equals(mailOnServer)){
+                                    boolean isShipper = dataSnapshot.child("IsShipper").getValue(Boolean.class);
+                                    if(isShipper){
+                                        startActivity(new Intent(MainActivity.this, FragmentContainerShipper.class));
+                                    }else{
+                                        startActivity(new Intent(MainActivity.this, HandleMapsActivity.class));
+                                    }
                                 }
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
                             }
                         }
+
+                        @Override
+                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                        }
+
+                        @Override
+                        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                        }
+
+                        @Override
+                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
                     });
-                    Bundle parameters = new Bundle();
-                    parameters.putString("fields", "id,name,email,gender,birthday");
-                    request.setParameters(parameters);
-                    request.executeAsync();
+
+                } else {
+                    finish();
+                    startActivity(getIntent());
+                    Log.e("Null", "Email of current user is null");
                 }
 
-                @Override
-                public void onCancel() {
-                    TastyToast.makeText(MainActivity.this, "Not Authentication", TastyToast.LENGTH_LONG, TastyToast.CONFUSING);
-                }
-
-                @Override
-                public void onError(FacebookException error) {
-                    TastyToast.makeText(MainActivity.this, "Something wrong!", TastyToast.LENGTH_LONG, TastyToast.ERROR);
-
-                }
-            });
-
-        } else {
-            realm = Realm.getDefaultInstance();
-            if (getCurrentUser().getEmail() != null) {
-                email = getCurrentUser().getEmail();
-                OneSignal.sendTag("email", email);
-                Intent intent = new Intent(MainActivity.this, HandleMapsActivity.class);
-                startActivity(intent);
-            } else {
-                finish();
-                startActivity(getIntent());
-                Log.e("Null", "Email of current user is null");
             }
-
+        }catch (Exception e){
+            Log.e(TAG, "onCreate: "+e.toString() );
         }
+
     }
 
     public void initRealm() {

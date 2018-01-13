@@ -3,6 +3,8 @@ package com.minh.findtheshipper.models.Adapters.ShopAdapters;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -71,6 +73,10 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
     public void onBindViewHolder(final CustomAdapterListviewOrder.ViewHolder holder, int position) {
         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         final OrderTemp order = orderList.get(position);
+        if(order.getUserGetOrder() != null){
+
+          holder.linearContainer.setBackgroundColor(context.getResources().getColor( R.color.item_holder_color));
+        }
         key = order.getOrderID();
         final CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();
         Glide.with(context).load(currentUser.getAvatar()).apply(RequestOptions.circleCropTransform())
@@ -88,7 +94,6 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String key = order.getUserGetOrder();
                     String nameCreator = dataSnapshot.child(key).child("Name").getValue(String.class);
-                    TastyToast.makeText(context,nameCreator,TastyToast.LENGTH_SHORT,TastyToast.INFO);
                     holder.txtUserName.setText(nameCreator);
                 }
 
@@ -230,6 +235,8 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
         private CircleButton btnEdit;
         private CircleButton btnDetail;
         private CircleButton btnCancel;
+        private CardView cardView;
+        private LinearLayout linearContainer;
 
 
 
@@ -246,12 +253,16 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
             ratingBarOrder =  view.findViewById(R.id.ratingOrder);
             stateProgressBar = view.findViewById(R.id.stateProgressBar);
             linearMoreOptions = view.findViewById(R.id.linearMoreOptions);
+            cardView = view.findViewById(R.id.card_view);
             btnCancel = view.findViewById(R.id.btnCancelOrder);
             btnEdit = view.findViewById(R.id.btnEdit);
             btnDetail = view.findViewById(R.id.btnDetail);
+             linearContainer = view.findViewById(R.id.linearContainer);
             btnCancel.setOnClickListener(this);
             btnDetail.setOnClickListener(this);
             btnEdit.setOnClickListener(this);
+            ratingBarOrder.setOnClickListener(this);
+
         }
 
          @Override
@@ -351,6 +362,8 @@ public class CustomAdapterListviewOrder  extends RecyclerView.Adapter<CustomAdap
 
                          }
                      });
+                     break;
+                 case R.id.ratingBar:
                      break;
              }
          }

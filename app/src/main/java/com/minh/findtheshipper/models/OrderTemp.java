@@ -20,10 +20,21 @@ public class OrderTemp {
     private String userGetOrder;
     private Boolean showAgain;
     private String deliveryTime;
+    private String currentShipper;
+
+
 
     public OrderTemp() {
     }
 
+
+    public String getCurrentShipper() {
+        return currentShipper;
+    }
+
+    public void setCurrentShipper(String currentShipper) {
+        this.currentShipper = currentShipper;
+    }
 
     public String getOrderID() {
         return orderID;

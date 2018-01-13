@@ -57,7 +57,7 @@ public class CustomAdapterListComment extends RecyclerView.Adapter<CustomAdapter
                     String key = EncodingFirebase.getEmailFromUserID(comment.getIdComment());
                     String url = dataSnapshot.child(key).child("Avatar").getValue(String.class);
                     String name = dataSnapshot.child(key).child("Name").getValue(String.class);
-                    if (url != null && name != null && holder.txtUserName != null && holder.imgAvatar != null) {
+                    if (url != null && name != null && holder.txtUserName != null && holder.imgAvatar != null && context != null) {
                         holder.txtUserName.setText(name);
                         Glide.with(context).load(EncodingFirebase.decodeString(url))
                                 .apply(RequestOptions.circleCropTransform()).thumbnail(0.5f).into(holder.imgAvatar);

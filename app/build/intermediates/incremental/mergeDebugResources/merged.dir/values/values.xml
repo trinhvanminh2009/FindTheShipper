@@ -249,6 +249,7 @@
     <color name="green500">#4CAF50</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
+    <color name="item_holder_color">#b5e1b5</color>
     <color name="lightBlue500">#03A9F4</color>
     <color name="main_blue_color">#2469df</color>
     <color name="main_blue_stroke_color">#205ec7</color>
@@ -1269,7 +1270,7 @@
     <dimen name="com_facebook_profilepictureview_preset_size_large">180dp</dimen>
     <dimen name="com_facebook_profilepictureview_preset_size_normal">100dp</dimen>
     <dimen name="com_facebook_profilepictureview_preset_size_small">50dp</dimen>
-    <dimen name="comment_height">600dp</dimen>
+    <dimen name="comment_height">500dp</dimen>
     <dimen name="comment_width">330dp</dimen>
     <dimen name="common_circle_width">3dp</dimen>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
@@ -3552,6 +3553,7 @@
     <string name="unknown">Unknown</string>
     <string name="unmuted">Unmuted</string>
     <string name="update">Update</string>
+    <string name="user_name">Name:</string>
     <string name="version">Version</string>
     <string name="wait_find_direction">Just a moment. Finding directions</string>
     <string name="wait_server">Just a moment. Loading data from server</string>

@@ -35,18 +35,24 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
     private ArrayList<OrderTemp> orderList;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-
+    private  SweetAlertDialog sweetAlertDialog;
+    private String TAG = "ListOrder";
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView.LayoutManager layoutManager;
-        layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-        Realm.init(getActivity());
-        initRealm();
-
-
+        try{
+            RecyclerView.LayoutManager layoutManager;
+            layoutManager = new LinearLayoutManager(getActivity());
+            recyclerView.setLayoutManager(layoutManager);
+            sweetAlertDialog= new SweetAlertDialog(getActivity(), SweetAlertDialog.PROGRESS_TYPE);
+            sweetAlertDialog.setTitle(R.string.LOADING);
+            sweetAlertDialog.show();
+            Realm.init(getActivity());
+            initRealm();
+        }catch (Exception e){
+            Log.e(TAG, "onViewCreated: "+e.toString() );
+        }
     }
 
     @Nullable
@@ -78,9 +84,8 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
     public void loadAllList() {
         try {
-            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(getActivity(), SweetAlertDialog.PROGRESS_TYPE);
-            sweetAlertDialog.setTitle(R.string.LOADING);
-            sweetAlertDialog.show();
+
+
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("order");
             Query query = mDatabase.orderByChild("Datetime");
             orderList = new ArrayList<>();
@@ -129,7 +134,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         String distance = dataSnapshot.child("Distance").getValue(String.class);
         String dateTime = dataSnapshot.child("Datetime").getValue(String.class);
         Boolean saveOrder = dataSnapshot.child("Save Order").getValue(Boolean.class);
-        String userGetOrder = dataSnapshot.child("User Get Order").getValue(String.class);
+        String userGetOrder = dataSnapshot.child("Shipper").getValue(String.class);
         Boolean showAgain = dataSnapshot.child("Show Again").getValue(Boolean.class);
         OrderTemp orderTemp = new OrderTemp();
         orderTemp.setOrderID(key);
@@ -143,7 +148,10 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         orderTemp.setDistance(distance);
         orderTemp.setDateTime(dateTime);
         orderTemp.setSavedOrder(saveOrder);
-        orderTemp.setUserGetOrder(userGetOrder);
+        if(userGetOrder != null){
+            orderTemp.setUserGetOrder(userGetOrder);
+        }
+
         if (showAgain != null) {
             if (showAgain) {
                 if (checkKey(key)) {
@@ -152,6 +160,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
             }
         }
         Collections.sort(orderList, new SortOrderTempHelpers());
+        sweetAlertDialog.dismissWithAnimation();
         adapter = new CustomAdapterListviewOrder(getActivity(), orderList);
         recyclerView.setAdapter(adapter);
     }
@@ -168,7 +177,7 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         String distance = dataSnapshot.child("Distance").getValue(String.class);
         String dateTime = dataSnapshot.child("Datetime").getValue(String.class);
         Boolean saveOrder = dataSnapshot.child("Save Order").getValue(Boolean.class);
-        String userGetOrder = dataSnapshot.child("User Get Order").getValue(String.class);
+        String userGetOrder = dataSnapshot.child("Shipper").getValue(String.class);
         Boolean showAgain = dataSnapshot.child("Show Again").getValue(Boolean.class);
         OrderTemp orderTemp = new OrderTemp();
         orderTemp.setOrderID(key);
@@ -182,7 +191,10 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         orderTemp.setDistance(distance);
         orderTemp.setDateTime(dateTime);
         orderTemp.setSavedOrder(saveOrder);
-        orderTemp.setUserGetOrder(userGetOrder);
+        if(userGetOrder != null){
+            orderTemp.setUserGetOrder(userGetOrder);
+        }
+
         if (showAgain != null) {
             if (showAgain) {
                 for (int i = 0; i < orderList.size(); i++) {
@@ -212,6 +224,8 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
 
 
     }
+
+
 
     private void deleteItemData(DataSnapshot dataSnapshot) {
         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
@@ -252,18 +266,6 @@ public class ListOrderCreatedFragment extends android.support.v4.app.Fragment {
         return false;
     }
 
-
-   /* private ArrayList<OrderTemp> removeDuplicated(ArrayList<OrderTemp> orderList) {
-        ArrayList<OrderTemp> resultList = new ArrayList<>();
-        for (int i = 0; i < orderList.size(); i++) {
-            OrderTemp orderTemp = orderList.get(i);
-            if (!resultList.contains(orderTemp)) {
-                resultList.add(orderTemp);
-            }
-
-        }
-        return resultList;
-    }*/
 
     private User getCurrentUser() {
         CurrentUser currentUser = realm.where(CurrentUser.class).findFirst();

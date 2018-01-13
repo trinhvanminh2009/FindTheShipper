@@ -1488,6 +1488,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\422e5b545dbe3bc3682efb64c5338ab9\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_stat_onesignal_default.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_stat_onesignal_default.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_direction_end_of_road_left.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-xhdpi-v4\\direction_end_of_road_left.png"
     },
@@ -2832,6 +2836,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-anydpi-v21\\ic_maneuver_roundabout_slight_left.xml"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_stat_onesignal_default.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_stat_onesignal_default.png"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_container.xml.flat",
         "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\fragment_container.xml"
     },
@@ -3002,6 +3010,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_maneuver_depart_right.xml.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-anydpi-v21\\ic_maneuver_depart_right.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_stat_onesignal_default.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-hdpi\\ic_stat_onesignal_default.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_direction_off_ramp_slight_right.png.flat",
@@ -3820,6 +3832,10 @@
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-ldpi-v4\\ic_maneuver_roundabout.png"
     },
     {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_user_profile.xml.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\layout\\fragment_user_profile.xml"
+    },
+    {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_light.xml.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\422e5b545dbe3bc3682efb64c5338ab9\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
@@ -4582,6 +4598,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_dialog_material_background.xml.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.2.aar\\422e5b545dbe3bc3682efb64c5338ab9\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_stat_onesignal_default.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-xhdpi\\ic_stat_onesignal_default.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_ic_maneuver_roundabout_sharp_right.png.flat",
@@ -6710,6 +6730,10 @@
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4_ic_maneuver_turn_30_left.png.flat",
         "source": "C:\\Users\\trinh\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-navigation-0.7.0.aar\\831951d0a9f07d62af3072d150dbcc64\\res\\drawable-ldpi-v4\\ic_maneuver_turn_30_left.png"
+    },
+    {
+        "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_stat_onesignal_default.png.flat",
+        "source": "D:\\My Project\\FindTheShipper\\app\\src\\main\\res\\mipmap-mdpi\\ic_stat_onesignal_default.png"
     },
     {
         "merged": "D:\\My Project\\FindTheShipper\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",

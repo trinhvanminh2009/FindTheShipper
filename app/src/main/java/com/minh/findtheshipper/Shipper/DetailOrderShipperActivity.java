@@ -130,16 +130,21 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_order_shipper);
-        unbinder = ButterKnife.bind(this);
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        showToolBar();
-        changeColorStatusBar();
-        initRealm();
-        loadDataFromServer();
-        showSaveOrDeleteButton();
+        try {
+            setContentView(R.layout.activity_detail_order_shipper);
+            unbinder = ButterKnife.bind(this);
+            SupportMapFragment mapFragment =
+                    (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+            showToolBar();
+            changeColorStatusBar();
+            initRealm();
+            loadDataFromServer();
+            showSaveOrDeleteButton();
+        } catch (Exception e) {
+            Log.e("Minh", "onCreate:" + e.toString());
+        }
+
     }
 
     private void showSaveOrDeleteButton() {
@@ -257,10 +262,10 @@ public class DetailOrderShipperActivity extends AppCompatActivity implements OnM
                                                     orderDataBase.child(key).child("Notifications").child(keyNotification).child("Show Again").setValue(true);
 
 
-                                                        SweetAlertDialog dialogSuccess = new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.SUCCESS_TYPE);
-                                                        dialogSuccess.setTitleText(getString(R.string.success));
-                                                        dialogSuccess.setContentText(getString(R.string.status_took_order));
-                                                        dialogSuccess.show();
+                                                    SweetAlertDialog dialogSuccess = new SweetAlertDialog(DetailOrderShipperActivity.this, SweetAlertDialog.SUCCESS_TYPE);
+                                                    dialogSuccess.setTitleText(getString(R.string.success));
+                                                    dialogSuccess.setContentText(getString(R.string.status_took_order));
+                                                    dialogSuccess.show();
 
                                                 }
                                             });
